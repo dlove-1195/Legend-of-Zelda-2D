@@ -12,7 +12,7 @@ namespace Sprint2.Iplayer
         //Link();
         //other player constructor
         void ChangeToRight();
-        void ChangeToleft();
+        void ChangeToLeft();
         void ChangeToUp();
         void ChangeToDown();
         void GetDamage();
