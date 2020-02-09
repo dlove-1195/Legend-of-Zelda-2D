@@ -9,7 +9,7 @@ namespace Sprint2.Iplayer
     
      interface Iplayer
     {
-        Link();
+        //Link();
         //other player constructor
         void ChangeToRight();
         void ChangeToleft();
