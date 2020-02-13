@@ -60,6 +60,11 @@
     <Compile Include="IPlayerState\LinkWalkUp\LinkWalkUpStateNonAttackNonDamage.cs" />
     <Compile Include="IPlayer\Iplayer.cs" />
     <Compile Include="IPlayer\Link.cs" />
+    <Compile Include="ISprite\DragonStandSprite.cs" />
+    <Compile Include="ISprite\DragonWalkDownSprite.cs" />
+    <Compile Include="ISprite\DragonWalkLeftSprite.cs" />
+    <Compile Include="ISprite\DragonWalkRightSprite.cs" />
+    <Compile Include="ISprite\DragonWalkUpSprite.cs" />
     <Compile Include="ISprite\ISprite.cs" />
     <Compile Include="ISprite\LinkStandRightAttackNonDamSprite.cs" />
     <Compile Include="ISprite\LinkStandDownSprite.cs" />

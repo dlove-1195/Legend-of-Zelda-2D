@@ -10,6 +10,9 @@ namespace Sprint2
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         public Iplayer Link;
+        //unsure line of code
+        public Iplayer player;
+        //
         IController controller;
         public static int WindowWidth;
         public static int WindowHeight;
