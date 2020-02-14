@@ -1,32 +1,30 @@
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-
 
 namespace Sprint2
-{ 
-  public class Link : Iplayer 
+{
+    public class Dragon: IEnemy
     {
-        public Iplayerstate state;
-        public ISprite linkSprite;
 
+        public IEnemyState state;
+        public ISprite  DragonSprite;
         private Vector2 position = new Vector2(200, 200);
-        //???
-        public static int posY = 200;
-        public static int posX = 200;
+         
+        // ?? change later 
         public static int currentFrame;
-        
-
          
 
-          public Link()
+       
+
+        public Dragon()
         {
-            
-            state = new LinkStandLeftNonAttackNonDamageState(this);
+
+            state = new DragonWalkLeftState(this);
         }
         public void ChangeToRight()
         {
@@ -44,28 +42,30 @@ namespace Sprint2
         {
             state.ChangeToDown();
         }
-        
 
-        public void ChangeToStand()
-        {
-            state.ChangeToStand();
-        }
-        public void ChangeToWalk()
-        {
-            state.ChangeToWalk();
-        }
+
+       
 
         public void Update()
         {
-            linkSprite.Update();
-           
+            DragonSprite.Update();
+
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            linkSprite.Draw(spriteBatch, position);
+            DragonSprite.Draw(spriteBatch, position);
         }
 
+        public void RandomStateGenerator()
+        {
+            //a timer or random number generator, ?? change later
+            this.ChangeToDown();
+            this.ChangeToLeft();
+        }
+
+
+        //TRACK THE CURRENT STATUS OF THE LINKSPRITE
         public Vector2 GetPosition()
         {
             return position;
@@ -78,7 +78,5 @@ namespace Sprint2
         }
 
 
-
     }
 }
-

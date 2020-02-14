@@ -49,6 +49,7 @@ namespace Sprint2
 
             if (movingDown)
             {
+
                 Link.posY++;
                 if ( Link.posY == 480)
                     movingDown = false;

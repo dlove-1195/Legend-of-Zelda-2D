@@ -43,10 +43,12 @@ namespace Sprint2
                 sourceLocY = 30;
             }
             delay++;
+            //only have two frames
+            //maybe add more to make a better animation
 
             if (movingUp)
             {
-                Link.posY--;
+                Link.posY++;
                 if ( Link.posY == 0)
                     movingUp = false;
             }

@@ -49,6 +49,13 @@
     <Compile Include="ICommand\QuitCommand.cs" />
     <Compile Include="IController\IController.cs" />
     <Compile Include="IController\KeyboardContorller.cs" />
+    <Compile Include="IEnemyState\DragonWalkDownState.cs" />
+    <Compile Include="IEnemyState\DragonWalkLeftState.cs" />
+    <Compile Include="IEnemyState\DragonWalkRightState.cs" />
+    <Compile Include="IEnemyState\DragonWalkUpState.cs" />
+    <Compile Include="IEnemyState\IEnemyState.cs" />
+    <Compile Include="IEnemy\Dragon.cs" />
+    <Compile Include="IEnemy\IEnemy.cs" />
     <Compile Include="IPlayerState\Iplayerstate.cs" />
     <Compile Include="IPlayerState\LinkStandDown\LinkStandDownNonAttackNonDamageState.cs" />
     <Compile Include="IPlayerState\LinkStandLeft\LinkStandLeftNonAttackNonDamageState.cs" />
