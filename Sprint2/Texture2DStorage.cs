@@ -23,7 +23,7 @@ namespace Sprint2
 
 			linkSpriteSheet = content.Load<Texture2D>("link");
 			enemySpriteSheet = content.Load<Texture2D>("enemy");
-			//itemSpriteSheet = content.Load<Texture2D>("item");
+			itemSpriteSheet = content.Load<Texture2D>("item");
 		  }
 
 		   public static void UnloadAllTextures()

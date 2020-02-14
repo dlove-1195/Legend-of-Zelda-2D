@@ -38,6 +38,7 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Fire.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="ICommand\ChangeToDownCommand.cs" />
     <Compile Include="ICommand\ChangeToLeftCommand.cs" />
@@ -56,6 +57,9 @@
     <Compile Include="IEnemyState\IEnemyState.cs" />
     <Compile Include="IEnemy\Dragon.cs" />
     <Compile Include="IEnemy\IEnemy.cs" />
+    <Compile Include="IItemState\FireAppearState.cs" />
+    <Compile Include="IItemState\FireDisappearState.cs" />
+    <Compile Include="IItemState\IItemState.cs" />
     <Compile Include="IPlayerState\Iplayerstate.cs" />
     <Compile Include="IPlayerState\LinkStandDown\LinkStandDownNonAttackNonDamageState.cs" />
     <Compile Include="IPlayerState\LinkStandLeft\LinkStandLeftNonAttackNonDamageState.cs" />
@@ -72,6 +76,7 @@
     <Compile Include="ISprite\DragonWalkLeftSprite.cs" />
     <Compile Include="ISprite\DragonWalkRightSprite.cs" />
     <Compile Include="ISprite\DragonWalkUpSprite.cs" />
+    <Compile Include="ISprite\FireSprite.cs" />
     <Compile Include="ISprite\ISprite.cs" />
     <Compile Include="ISprite\LinkStandRightAttackNonDamSprite.cs" />
     <Compile Include="ISprite\LinkStandDownSprite.cs" />

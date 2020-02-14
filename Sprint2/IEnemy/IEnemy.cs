@@ -15,7 +15,7 @@ namespace Sprint2
         void ChangeToUp();
         void ChangeToDown();
 
-        
+        void ConnectFire(Fire fire);
         void Update();
         void Draw(SpriteBatch spriteBatch);
 

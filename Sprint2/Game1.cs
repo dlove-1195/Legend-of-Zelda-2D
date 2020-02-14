@@ -12,6 +12,8 @@ namespace Sprint2
          
         public IEnemy enemy;
         public Iplayer player;
+        public Fire fire;
+      
          
         IController controller;
         public static int WindowWidth;
@@ -38,6 +40,9 @@ namespace Sprint2
             spriteBatch = new SpriteBatch(GraphicsDevice);
             player = new Link();
             enemy = new Dragon();
+            fire = new Fire();
+            enemy.ConnectFire(fire);
+         
         }
 
         protected override void UnloadContent()
@@ -48,9 +53,10 @@ namespace Sprint2
         protected override void Update(GameTime gameTime)
         {
 
-             
+            
             player.Update();
             enemy.Update();
+            fire.Update();
             controller.Update();
             base.Update(gameTime);
         }
@@ -60,6 +66,7 @@ namespace Sprint2
             GraphicsDevice.Clear(Color.CornflowerBlue);
             player.Draw(spriteBatch);
             enemy.Draw(spriteBatch);
+            fire.Draw(spriteBatch);
 
 
 

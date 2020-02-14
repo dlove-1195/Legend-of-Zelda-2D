@@ -15,6 +15,7 @@ namespace Sprint2
         public ISprite  DragonSprite;
         public int updateDelay = 0;
         public int totalDelay = 30;
+        private Fire fire = new Fire();
 
 
         // ?? change later 
@@ -49,38 +50,49 @@ namespace Sprint2
         }
 
 
-       
+       public void ConnectFire(Fire fire)
+        {
+            this.fire = fire;
+        }
 
         public void Update()
         {
             DragonSprite.Update();
+            //random move dragon
             updateDelay++;
             if (updateDelay == totalDelay)
             {
                 updateDelay = 0;
-                var rnd = new Random();
-                int randomNumber = rnd.Next(0, 4);
-                
+              
+                   var rnd = new Random();
+                   int randomNumber = rnd.Next(0, 4);
 
-                switch (randomNumber)
-                {
-                    case 0:
-                        this.ChangeToDown();
+
+                   switch (randomNumber)
+                   {
+                       case 0:
+                           this.ChangeToDown();
+                          fire.ChangeToAppear();
+                        
+                           break;
+                       case 1:
+                           this.ChangeToLeft();
+                          fire.ChangeToDisappear();
+                         
                         break;
-                    case 1:
-                        this.ChangeToLeft();
+                       case 2:
+                           this.ChangeToRight();
+                          fire.ChangeToAppear();
                         break;
-                    case 2:
-                        this.ChangeToRight();
+                       case 3:
+                           this.ChangeToUp();
+                        fire.ChangeToDisappear();
                         break;
-                    case 3:
-                        this.ChangeToUp();
-                        break;
-                    default:
-                        Console.WriteLine("error: no such situation");
-                        break;
-                }
-                
+                       default:
+                           Console.WriteLine("error: no such situation");
+                           break;
+                   }   
+
             }
 
         }

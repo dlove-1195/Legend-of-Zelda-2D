@@ -98,3 +98,4 @@ C:\Users\Mingjie\CSE-3902\Sprint2\obj\x86\Debug\Sprint2.csprojAssemblyReference.
 C:\Users\Mingjie\CSE-3902\Sprint2\obj\x86\Debug\Sprint2.csproj.CopyComplete
 C:\Users\Mingjie\CSE-3902\Sprint2\obj\x86\Debug\Sprint2.exe
 C:\Users\Mingjie\CSE-3902\Sprint2\obj\x86\Debug\Sprint2.pdb
+C:\Users\Mingjie\CSE-3902\Sprint2\bin\Windows\x86\Debug\Content\item.xnb
