@@ -9,7 +9,7 @@ namespace Sprint2
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        public Iplayer Link;
+         
         public IEnemy enemy;
         public Iplayer player;
          
@@ -36,7 +36,7 @@ namespace Sprint2
         {
             Texture2DStorage.LoadAllTextures(Content);
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            Link = new Link();
+            player = new Link();
             enemy = new Dragon();
         }
 
@@ -49,7 +49,7 @@ namespace Sprint2
         {
 
              
-            Link.Update();
+            player.Update();
             enemy.Update();
             controller.Update();
             base.Update(gameTime);
@@ -58,7 +58,7 @@ namespace Sprint2
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            Link.Draw(spriteBatch);
+            player.Draw(spriteBatch);
             enemy.Draw(spriteBatch);
 
 

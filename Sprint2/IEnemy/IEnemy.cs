@@ -19,7 +19,7 @@ namespace Sprint2
         void Update();
         void Draw(SpriteBatch spriteBatch);
 
-        void RandomStateGenerator();
+        
 
         Vector2 GetPosition();
         void SetPosition(int posX, int posY);

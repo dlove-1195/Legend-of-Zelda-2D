@@ -18,9 +18,7 @@ namespace Sprint2
         private int totalFrames = 3;
         private int delay = 0;
         private int totalDelay = 3;
-        private int posX = 400;
-        private int posY = 200;
-
+        
         private bool movingRight = true;
 
         public DragonWalkRightSprite(Texture2D texture)
@@ -41,9 +39,9 @@ namespace Sprint2
 
             if (movingRight)
             {
-                posX++;
+                Dragon.posX++;
                 
-                if (posX == 700)
+                if (Dragon.posX == 700)
                     movingRight = false;
             }
             else
@@ -60,7 +58,7 @@ namespace Sprint2
             int sourceLocY = 0;
             int sourceLocX = currentFrame * 45 +4;
             Rectangle sourceRectangle = new Rectangle(sourceLocX, sourceLocY, width, height);
-            Rectangle destinationRectangle = new Rectangle(posX, posY, width * 3, height * 3);
+            Rectangle destinationRectangle = new Rectangle(Dragon.posX, Dragon.posY, width * 3, height * 3);
 
             spriteBatch.Begin();
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);

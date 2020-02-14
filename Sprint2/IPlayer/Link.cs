@@ -15,7 +15,7 @@ namespace Sprint2
         public ISprite linkSprite;
 
         private Vector2 position = new Vector2(200, 200);
-        //???
+        //??? change later
         public static int posY = 200;
         public static int posX = 200;
         public static int currentFrame;
@@ -63,7 +63,7 @@ namespace Sprint2
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            linkSprite.Draw(spriteBatch, position);
+            linkSprite.Draw(spriteBatch, new Vector2(posX, posY));
         }
 
         public Vector2 GetPosition()

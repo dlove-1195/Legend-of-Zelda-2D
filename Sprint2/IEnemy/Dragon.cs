@@ -13,10 +13,15 @@ namespace Sprint2
 
         public IEnemyState state;
         public ISprite  DragonSprite;
-        private Vector2 position = new Vector2(200, 200);
-         
+        public int updateDelay = 0;
+        public int totalDelay = 30;
+
+
         // ?? change later 
+        private Vector2 position = new Vector2(200, 200);
         public static int currentFrame;
+        public static int posX = 400;
+        public static int posY = 200;
          
 
        
@@ -49,20 +54,43 @@ namespace Sprint2
         public void Update()
         {
             DragonSprite.Update();
+            updateDelay++;
+            if (updateDelay == totalDelay)
+            {
+                updateDelay = 0;
+                var rnd = new Random();
+                int randomNumber = rnd.Next(0, 4);
+                
+
+                switch (randomNumber)
+                {
+                    case 0:
+                        this.ChangeToDown();
+                        break;
+                    case 1:
+                        this.ChangeToLeft();
+                        break;
+                    case 2:
+                        this.ChangeToRight();
+                        break;
+                    case 3:
+                        this.ChangeToUp();
+                        break;
+                    default:
+                        Console.WriteLine("error: no such situation");
+                        break;
+                }
+                
+            }
 
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            DragonSprite.Draw(spriteBatch, position);
+            DragonSprite.Draw(spriteBatch, new Vector2(posX, posY));
         }
 
-        public void RandomStateGenerator()
-        {
-            //a timer or random number generator, ?? change later
-            this.ChangeToDown();
-            this.ChangeToLeft();
-        }
+       
 
 
         //TRACK THE CURRENT STATUS OF THE LINKSPRITE
