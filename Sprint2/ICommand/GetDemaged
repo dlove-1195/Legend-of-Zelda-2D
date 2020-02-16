@@ -12,7 +12,7 @@ namespace Sprint2
     class GetDemaged: ICommand
     {
         private Game1 myGame;
-        public ChangeToDownCommand(Game1 game)
+        public GetDemaged(Game1 game)
         {
             myGame = game;
         }
