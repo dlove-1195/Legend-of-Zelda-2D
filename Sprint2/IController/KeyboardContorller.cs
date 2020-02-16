@@ -27,9 +27,9 @@ namespace  Sprint2
             map.Add(Keys.Z, new Attack(myLink));
             map.Add(Keys.N, new Attack(myLink)); */
 
-           /* map.Add(Keys.D1, new gear1(myGame));
-            map.Add(Keys.D2, new gear2(myGame));
-            map.Add(Keys.D3, new gear3(myGame));
+           /* map.Add(Keys.D1, new Gear1(myGame));
+            map.Add(Keys.D2, new Gear2(myGame));
+            map.Add(Keys.D3, new Gear3(myGame));
             map.Add(Keys.U, new previousItem(myGame));
             map.Add(Keys.I, new nextItem(myGame));
             map.Add(Keys.O, new previousEnemy(myGame));
