@@ -11,13 +11,13 @@ namespace Sprint2
     public class DragonWalkRightSprite : ISprite
     {
         public Texture2D Texture;
-        private int width = 24;
-        private int height = 32;
+        private int width;
+        private int height;
+        private int sourceLocX;
+        private int sourceLocY;
 
-        private int currentFrame = 0;
-        private int totalFrames = 3;
         private int delay = 0;
-        private int totalDelay = 3;
+        private int totalDelay = 20;
         
         private bool movingRight = true;
 
@@ -26,16 +26,40 @@ namespace Sprint2
             Texture = texture;
         }
 
+        public DragonWalkRightSprite()
+        {
+            //another constructor, show nothing
+        }
+
+
         public void Update()
         {
-            delay++;
+            width = 28;
+            height = 15;
+            sourceLocX = 85;
+            sourceLocY = 91;
             if (delay == totalDelay)
             {
-                currentFrame++;
                 delay = 0;
+                
+            }
+           
+            if (delay > totalDelay / 4 && delay < 2 * totalDelay / 4)
+            {
+                sourceLocY = 121;
+                width = 28;
+                height = 16;
+            }
+            if (delay >= 2 * totalDelay / 4 && delay < totalDelay)
+            {
+                sourceLocX = 83;
+                sourceLocY = 151;
+                width = 32;
+                height = 16;
+
             }
 
-            if (currentFrame == totalFrames) { currentFrame = 0; }
+            delay++;
 
             if (movingRight)
             {
@@ -55,14 +79,15 @@ namespace Sprint2
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            int sourceLocY = 0;
-            int sourceLocX = currentFrame * 45 +4;
-            Rectangle sourceRectangle = new Rectangle(sourceLocX, sourceLocY, width, height);
-            Rectangle destinationRectangle = new Rectangle(Dragon.posX, Dragon.posY, width * 3, height * 3);
+            if (Texture != null)
+            {
+                Rectangle sourceRectangle = new Rectangle(sourceLocX, sourceLocY, width, height);
+                Rectangle destinationRectangle = new Rectangle(Dragon.posX, Dragon.posY, width * 3, height * 3);
 
-            spriteBatch.Begin();
-            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-            spriteBatch.End();
+                spriteBatch.Begin();
+                spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
+                spriteBatch.End();
+            }
         }
     }
 }

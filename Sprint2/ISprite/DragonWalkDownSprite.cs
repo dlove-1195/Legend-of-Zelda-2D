@@ -11,14 +11,13 @@ namespace Sprint2
     public class DragonWalkDownSprite : ISprite
     {
         public Texture2D Texture;
-        private int width = 24;
-        private int height = 32;
+        private int width;
+        private int height;
+        private int sourceLocX;
+        private int sourceLocY;
 
-        private int currentFrame = 0;
-        private int totalFrames = 3;
         private int delay = 0;
-        private int totalDelay = 3;
-         
+        private int totalDelay = 20;
 
         private bool movingDown = true;
 
@@ -27,16 +26,35 @@ namespace Sprint2
             Texture = texture;
         }
 
+
+        public DragonWalkDownSprite()
+        {
+            //another constructor, show nothing
+        }
         public void Update()
         {
+            
+            width = 15;
+            height = 16;
+            sourceLocX = 1;
+            sourceLocY = 91;
+            if (delay > totalDelay / 4 && delay < 2*totalDelay /4)
+            {
+                sourceLocY = 121;
+                width = 16;
+            }
+            if (delay >= 2*totalDelay / 4 && delay < totalDelay)
+            {
+                sourceLocY = 151;
+                width = 16;
+            }
             delay++;
             if (delay == totalDelay)
             {
-                currentFrame++;
                 delay = 0;
             }
 
-            if (currentFrame == totalFrames) { currentFrame = 0; }
+           
 
             if (movingDown)
             {
@@ -55,8 +73,6 @@ namespace Sprint2
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            int sourceLocY = 0;
-            int sourceLocX = currentFrame * 45 + 4;
             Rectangle sourceRectangle = new Rectangle(sourceLocX, sourceLocY, width, height);
             Rectangle destinationRectangle = new Rectangle(Dragon.posX, Dragon.posY, width * 3, height * 3);
 
