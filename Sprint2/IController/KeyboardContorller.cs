@@ -30,11 +30,11 @@ namespace  Sprint2
            /* map.Add(Keys.D1, new Gear1(myGame));
             map.Add(Keys.D2, new Gear2(myGame));
             map.Add(Keys.D3, new Gear3(myGame));
-            map.Add(Keys.U, new previousItem(myGame));
-            map.Add(Keys.I, new nextItem(myGame));
-            map.Add(Keys.O, new previousEnemy(myGame));
-            map.Add(Keys.P, new nextEnemy(myGame));
-            map.Add(Keys.R, new resetState(myGame));*/
+            map.Add(Keys.U, new PreviousItem(myGame));
+            map.Add(Keys.I, new NextItem(myGame));
+            map.Add(Keys.O, new PreviousEnemy(myGame));
+            map.Add(Keys.P, new NextEnemy(myGame));
+            map.Add(Keys.R, new ResetState(myGame));*/
             map.Add(Keys.Q, new QuitCommand(myGame));  
         }
         public void Update()
