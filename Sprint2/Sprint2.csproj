@@ -71,6 +71,8 @@
     <Compile Include="IPlayerState\LinkWalkUp\LinkWalkUpStateNonAttackNonDamage.cs" />
     <Compile Include="IPlayer\Iplayer.cs" />
     <Compile Include="IPlayer\Link.cs" />
+    <Compile Include="ISprite\BombExplodeSprite.cs" />
+    <Compile Include="ISprite\BombInitialSprite.cs" />
     <Compile Include="ISprite\DragonStandSprite.cs" />
     <Compile Include="ISprite\DragonWalkDownSprite.cs" />
     <Compile Include="ISprite\DragonWalkLeftSprite.cs" />
@@ -78,6 +80,8 @@
     <Compile Include="ISprite\DragonWalkUpSprite.cs" />
     <Compile Include="ISprite\FireSprite.cs" />
     <Compile Include="ISprite\ISprite.cs" />
+    <Compile Include="ISprite\ItemBlueDiamondSprite.cs" />
+    <Compile Include="ISprite\ItemHeartSprite.cs" />
     <Compile Include="ISprite\LinkStandLeftAttackNonDamSprite.cs" />
     <Compile Include="ISprite\LinkStandDownAttackNonDamSprite.cs" />
     <Compile Include="ISprite\LinkStandUpAttackNonDamSprite.cs" />
