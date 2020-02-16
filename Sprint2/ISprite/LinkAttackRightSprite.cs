@@ -15,41 +15,48 @@ namespace Sprint2
         private int posY;
         private int width;
         private int height;
-        private int currentFrame;
-        private int totalFrames;
+        private int delay;
+        private int totaldelay=25;
 
         public LinkAttackRightSprite(Texture2D texture)
         {
             Texture = texture;
-            currentFrame = 0;
-            totalFrames = 40;
-            posX = 90;
-            posY = 80;
-            width = 15;
-            height = 15;
-
+           
         }
 
         public void Update()
         {
-            currentFrame++;
-            if (currentFrame == totalFrames / 20)
-            {
-                posX = 84;
-                posY = 90;
-                width = 27;
-                height = 15;
-
-            }
-            if (currentFrame == totalFrames)
+            delay++;
+            posX = 91;
+            posY = 0;
+            width = 14;
+            height = 15;
+            if (delay > totaldelay / 5 && delay < 2 * totaldelay / 5)
             {
                 posX = 90;
                 posY = 30;
                 width = 15;
                 height = 16;
-                Link.currentFrame = 40;
+
             }
-          
+            if (delay >= 2 * totaldelay / 5 && delay < 3 * totaldelay / 5)
+            {
+
+                posX = 90;
+                posY = 60;
+                width = 15;
+                height = 15;
+            }
+
+            if (delay >= 3 * totaldelay / 6 && delay < 5 * totaldelay / 5)
+            {
+
+                posX = 84;
+                posY = 90;
+                width = 27;
+                height = 15;
+            }
+
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 vector)
