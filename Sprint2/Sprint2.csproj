@@ -90,7 +90,10 @@
     <Compile Include="IPlayer\Link.cs" />
     <Compile Include="ISprite\BombExplodeSprite.cs" />
     <Compile Include="ISprite\BombInitialSprite.cs" />
-    <Compile Include="ISprite\DragonStandSprite.cs" />
+    <Compile Include="ISprite\DragonStandDownSprite.cs" />
+    <Compile Include="ISprite\DragonStandLeftSprite.cs" />
+    <Compile Include="ISprite\DragonStandRightSprite.cs" />
+    <Compile Include="ISprite\DragonStandUpSprite.cs" />
     <Compile Include="ISprite\DragonWalkDownSprite.cs" />
     <Compile Include="ISprite\DragonWalkLeftSprite.cs" />
     <Compile Include="ISprite\DragonWalkRightSprite.cs" />
