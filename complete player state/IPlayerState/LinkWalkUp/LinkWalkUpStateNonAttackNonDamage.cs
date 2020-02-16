@@ -9,7 +9,7 @@ namespace Sprint2
     class LinkWalkUpNonAttackNonDamageState: Iplayerstate
     {
         private Link linkPlayer; 
-
+private Texture2D texture = Texture2DStorage.GetLinkSpriteSheet();
         //non damaged, non attack
         public LinkWalkUpNonAttackNonDamageState(Link link )
         {
