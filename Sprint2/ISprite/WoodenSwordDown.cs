@@ -24,6 +24,10 @@ namespace Sprint2
             Texture = texture;
             currentPos = 0;
         }
+        public WoodenSwordDown()
+        {
+            //do nothing
+        }
 
         public void Update()
         {
@@ -35,13 +39,14 @@ namespace Sprint2
 
         public void Draw(SpriteBatch spriteBatch, Vector2 vector)
         {
-            
-            Rectangle sourceRectangle = new Rectangle(posX, posY, width, height);     
-            Rectangle destinationRectangle = new Rectangle((int)vector.X +gap , (int)vector.Y + currentPos, width * 3, height * 3);    // determine location and demension of the current frame
+            if(Texture != null){
+                Rectangle sourceRectangle = new Rectangle(posX, posY, width, height);     
+                Rectangle destinationRectangle = new Rectangle((int)vector.X +gap , (int)vector.Y + currentPos, width * 3, height * 3);    // determine location and demension of the current frame
 
-            spriteBatch.Begin();
-            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-            spriteBatch.End();
+                spriteBatch.Begin();
+                spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
+                spriteBatch.End();
+            }
         }
 
     }
