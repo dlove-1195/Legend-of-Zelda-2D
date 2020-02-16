@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 
 namespace Sprint2
 {
-    public class LinkStandDownAttackNonDamageSprite : ISprite
+    public class LinkAttackUpSprite : ISprite
     {
         public Texture2D Texture { get; set; }
         private int posX;
@@ -18,14 +18,14 @@ namespace Sprint2
         private int currentFrame;
         private int totalFrames;
 
-        public LinkStandDownAttackNonDamageSprite(Texture2D texture)
+        public LinkAttackUpSprite(Texture2D texture)
         {
             Texture = texture;
             currentFrame = 0;
             totalFrames = 40;
-            posX = 1;
-            posY = 30;
-            width = 13;
+            posX = 60;
+            posY = 60;
+            width = 16;
             height = 16;
 
         }
@@ -33,32 +33,22 @@ namespace Sprint2
         public void Update()
         {
             currentFrame++;
-            if (currentFrame==10)
+            if (currentFrame == totalFrames/20)
             {
-               
-                posX = 0;
-                posY = 60;
-                width = 16;
-                height = 15;
-            }
-            if (currentFrame <20 && currentFrame>10)
-            {
-                posX = 0;
+                posX = 60;
                 posY = 84;
                 width = 16;
-                height = 27;
+                height = 28;
+
             }
-            if(currentFrame== totalFrames)
+            if (currentFrame == totalFrames)
             {
-                posX = 1;
-                posY = 30;
-                width = 13;
+                posX = 60;
+                posY = 60;
+                width = 16;
                 height = 16;
-
             }
-
-
-
+          
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 vector)

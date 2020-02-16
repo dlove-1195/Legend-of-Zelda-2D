@@ -114,13 +114,12 @@
     <Compile Include="ISprite\LinkDamageWalkLeft.cs" />
     <Compile Include="ISprite\LinkDamageWalkRight.cs" />
     <Compile Include="ISprite\LinkDamageWalkUp.cs" />
-    <Compile Include="ISprite\LinkStandLeftAttackNonDamSprite.cs" />
-    <Compile Include="ISprite\LinkStandDownAttackNonDamSprite.cs" />
-    <Compile Include="ISprite\LinkStandUpAttackNonDamSprite.cs" />
-    <Compile Include="ISprite\LinkStandRightAttackNonDamSprite.cs" />
+    <Compile Include="ISprite\LinkAttackLeftSprite.cs" />
+    <Compile Include="ISprite\LinkAttackDownSprite.cs" />
+    <Compile Include="ISprite\LinkAttackUpSprite.cs" />
+    <Compile Include="ISprite\LinkAttackRightSprite.cs" />
     <Compile Include="ISprite\LinkStandDownSprite.cs" />
     <Compile Include="ISprite\LinkStandLeftSprite.cs" />
-    <Compile Include="ISprite\LinkStandRightNonAttackDamSprite.cs" />
     <Compile Include="ISprite\LinkStandRightSprite.cs" />
     <Compile Include="ISprite\LinkWalkUpSprite.cs" />
     <Compile Include="ISprite\LinkWalkDownSprite.cs" />
