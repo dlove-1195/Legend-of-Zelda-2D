@@ -44,8 +44,8 @@ namespace Sprint2
             enemy = new Dragon();
             fire = new Fire();
             texture = Content.Load<Texture2D>("link");
-            attack = new LinkStandLeftAttackNonDamageSprite(texture);
-            wood = new WoodenSwordLeft(texture);
+            attack = new LinkStandDownAttackNonDamageSprite(texture);
+            wood = new WoodenSwordDown(texture);
             enemy.ConnectFire(fire);
  
         }

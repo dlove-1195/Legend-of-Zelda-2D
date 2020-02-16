@@ -16,6 +16,7 @@ namespace Sprint2
         private int width = 16;
         private int height = 7;
         private int currentPos;
+        private int gap = 15;
 
         public WoodenSwordLeft(Texture2D texture)
         {
@@ -31,7 +32,7 @@ namespace Sprint2
         public void Draw(SpriteBatch spriteBatch, Vector2 vector)
         {
             Rectangle sourceRectangle = new Rectangle(posX, posY, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)vector.X + currentPos, (int)vector.Y, width * 3, height * 3);    // determine location and demension of the current frame
+            Rectangle destinationRectangle = new Rectangle((int)vector.X + currentPos, (int)vector.Y+gap, width * 3, height * 3);    // determine location and demension of the current frame
 
             spriteBatch.Begin();
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
