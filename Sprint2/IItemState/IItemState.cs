@@ -4,11 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sprint2 
+namespace Sprint2.IItemState
 {
-    public interface IItemState
+    interface Interface1
     {
-       void ChangeToDisappear();
-        void ChangeToAppear();
     }
 }
