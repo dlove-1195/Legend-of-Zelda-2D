@@ -13,8 +13,7 @@ namespace Sprint2
         public IEnemy enemy;
         public Iplayer player;
         public Fire fire;
-      
-         
+        
         IController controller;
         public static int WindowWidth;
         public static int WindowHeight;
@@ -42,7 +41,7 @@ namespace Sprint2
             enemy = new Dragon();
             fire = new Fire();
             enemy.ConnectFire(fire);
-         
+ 
         }
 
         protected override void UnloadContent()
@@ -67,9 +66,7 @@ namespace Sprint2
             player.Draw(spriteBatch);
             enemy.Draw(spriteBatch);
             fire.Draw(spriteBatch);
-
-
-
+           
             base.Draw(gameTime);
         }
     }

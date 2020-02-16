@@ -1,4 +1,4 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"C:/Users/Mingjie/CSE-3902/Sprint2/Content/enemy.png","C:/Users/Mingjie/CSE-3902/Sprint2/Content/bin/Windows/Content/enemy.xnb","TextureProcessor","Texture2DContent",6976,478913,0.4653529
-"C:/Users/Mingjie/CSE-3902/Sprint2/Content/item.png","C:/Users/Mingjie/CSE-3902/Sprint2/Content/bin/Windows/Content/item.xnb","TextureProcessor","Texture2DContent",1923,202997,0.1249704
-"C:/Users/Mingjie/CSE-3902/Sprint2/Content/link.png","C:/Users/Mingjie/CSE-3902/Sprint2/Content/bin/Windows/Content/link.xnb","TextureProcessor","Texture2DContent",6901,523669,0.024815
+"C:/Users/zz/Desktop/3902/CSE-3902/Sprint2/Content/enemy.png","C:/Users/zz/Desktop/3902/CSE-3902/Sprint2/Content/bin/Windows/Content/enemy.xnb","TextureProcessor","Texture2DContent",6976,478913,0.3100038
+"C:/Users/zz/Desktop/3902/CSE-3902/Sprint2/Content/item.png","C:/Users/zz/Desktop/3902/CSE-3902/Sprint2/Content/bin/Windows/Content/item.xnb","TextureProcessor","Texture2DContent",1923,202997,0.0111718
+"C:/Users/zz/Desktop/3902/CSE-3902/Sprint2/Content/link.png","C:/Users/zz/Desktop/3902/CSE-3902/Sprint2/Content/bin/Windows/Content/link.xnb","TextureProcessor","Texture2DContent",6901,523669,0.0189489

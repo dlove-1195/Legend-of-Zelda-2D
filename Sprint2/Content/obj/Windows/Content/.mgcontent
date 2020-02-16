@@ -4,9 +4,9 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/Mingjie/CSE-3902/Sprint2/Content/enemy.png</File>
-    <File>C:/Users/Mingjie/CSE-3902/Sprint2/Content/item.png</File>
-    <File>C:/Users/Mingjie/CSE-3902/Sprint2/Content/link.png</File>
+    <File>C:/Users/zz/Desktop/3902/CSE-3902/Sprint2/Content/enemy.png</File>
+    <File>C:/Users/zz/Desktop/3902/CSE-3902/Sprint2/Content/item.png</File>
+    <File>C:/Users/zz/Desktop/3902/CSE-3902/Sprint2/Content/link.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />
