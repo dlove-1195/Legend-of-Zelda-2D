@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Sprint2
 {
-    class ItemFireballMovingSprite : ISprite
+    class ItemFireballMoveUpSprite : ISprite
     {
         public Texture2D Texture;
         private int sourceLocX = 334;
@@ -18,12 +18,12 @@ namespace Sprint2
         private int currentFrame = 0;
 
 
-        public ItemFireballMovingSprite(Texture2D texture)
+        public ItemFireballMoveUpSprite(Texture2D texture)
         {
             Texture = texture;
         }
 
-        public ItemFireballMovingSprite()
+        public ItemFireballMoveUpSprite()
         {
             //another constructor, show nothing
         }
@@ -37,7 +37,7 @@ namespace Sprint2
             if (Texture != null)
             {
                 Rectangle sourceRectangle = new Rectangle(sourceLocX, sourceLocY, width, height);
-                Rectangle destinationRectangle = new Rectangle((int)location.X - currentFrame * 3, (int)location.Y, width * 3, height * 3);
+                Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y - currentFrame * 3, width * 3, height * 3);
                 spriteBatch.Begin();
 
                 spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);

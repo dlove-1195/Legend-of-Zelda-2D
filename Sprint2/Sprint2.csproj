@@ -95,9 +95,13 @@
     <Compile Include="ISprite\DragonWalkLeftSprite.cs" />
     <Compile Include="ISprite\DragonWalkRightSprite.cs" />
     <Compile Include="ISprite\DragonWalkUpSprite.cs" />
-    <Compile Include="ISprite\FireSprite.cs" />
+    <Compile Include="ISprite\ItemFireballMoveDownSprite.cs" />
+    <Compile Include="ISprite\ItemFireballMoveLeftSprite.cs" />
+    <Compile Include="ISprite\ItemFireballMoveRightSprite.cs" />
+    <Compile Include="ISprite\ItemFireballSprite.cs" />
     <Compile Include="ISprite\ISprite.cs" />
     <Compile Include="ISprite\ItemBlueDiamondSprite.cs" />
+    <Compile Include="ISprite\ItemFireballMoveUpSprite.cs" />
     <Compile Include="ISprite\ItemHeartSprite.cs" />
     <Compile Include="ISprite\LinkDamageStandDown.cs" />
     <Compile Include="ISprite\LinkDamageStandLeft.cs" />
