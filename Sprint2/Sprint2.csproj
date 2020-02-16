@@ -78,6 +78,7 @@
     <Compile Include="ISprite\DragonWalkUpSprite.cs" />
     <Compile Include="ISprite\FireSprite.cs" />
     <Compile Include="ISprite\ISprite.cs" />
+    <Compile Include="ISprite\LinkStandLeftAttackNonDamSprite - Copy.cs" />
     <Compile Include="ISprite\LinkStandUpAttackNonDamSprite.cs" />
     <Compile Include="ISprite\LinkStandRightAttackNonDamSprite.cs" />
     <Compile Include="ISprite\LinkStandDownSprite.cs" />
@@ -89,6 +90,7 @@
     <Compile Include="ISprite\LinkWalkRightSprite.cs" />
     <Compile Include="ISprite\LinkWalkLeftSprite.cs" />
     <Compile Include="ISprite\LinkStandUpSprite.cs" />
+    <Compile Include="ISprite\WoodenSwordLeft - Copy.cs" />
     <Compile Include="ISprite\WoodenSwordUp.cs" />
     <Compile Include="ISprite\WoodenSwordRight.cs" />
     <Compile Include="Program.cs" />

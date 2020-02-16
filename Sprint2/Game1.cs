@@ -13,7 +13,10 @@ namespace Sprint2
         public IEnemy enemy;
         public Iplayer player;
         public Fire fire;
-        
+
+        public ISprite wood;
+        public ISprite attack;
+        Texture2D texture;
         IController controller;
         public static int WindowWidth;
         public static int WindowHeight;
@@ -40,6 +43,9 @@ namespace Sprint2
             player = new Link();
             enemy = new Dragon();
             fire = new Fire();
+            texture = Content.Load<Texture2D>("link");
+            attack = new LinkStandLeftAttackNonDamageSprite(texture);
+            wood = new WoodenSwordLeft(texture);
             enemy.ConnectFire(fire);
  
         }
@@ -57,6 +63,8 @@ namespace Sprint2
             enemy.Update();
             fire.Update();
             controller.Update();
+            attack.Update();
+            wood.Update();
             base.Update(gameTime);
         }
 
@@ -66,7 +74,11 @@ namespace Sprint2
             player.Draw(spriteBatch);
             enemy.Draw(spriteBatch);
             fire.Draw(spriteBatch);
-           
+            Vector2 vec;
+            vec.X = 250;
+            vec.Y = 250;
+            attack.Draw(spriteBatch,vec);
+            wood.Draw(spriteBatch, vec);
             base.Draw(gameTime);
         }
     }
