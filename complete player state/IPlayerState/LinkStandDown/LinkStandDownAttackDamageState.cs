@@ -9,6 +9,7 @@ namespace Sprint2
     class LinkStandDownAttackDamageState: Iplayerstate
     {
         private Link link;
+        private Texture2D texture = Texture2DStorage.GetLinkSpriteSheet();
         public LinkStandDownAttackDamageState(Link link)
         {
             link = new LinkStandDownAttackDamageSprite(texture);
