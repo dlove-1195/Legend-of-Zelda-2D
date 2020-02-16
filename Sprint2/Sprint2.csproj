@@ -99,6 +99,14 @@
     <Compile Include="ISprite\ISprite.cs" />
     <Compile Include="ISprite\ItemBlueDiamondSprite.cs" />
     <Compile Include="ISprite\ItemHeartSprite.cs" />
+    <Compile Include="ISprite\LinkDamageStandDown.cs" />
+    <Compile Include="ISprite\LinkDamageStandLeft.cs" />
+    <Compile Include="ISprite\LinkDamageStandRight.cs" />
+    <Compile Include="ISprite\LinkDamageStandUp.cs" />
+    <Compile Include="ISprite\LinkDamageWalkDown.cs" />
+    <Compile Include="ISprite\LinkDamageWalkLeft.cs" />
+    <Compile Include="ISprite\LinkDamageWalkRight.cs" />
+    <Compile Include="ISprite\LinkDamageWalkUp.cs" />
     <Compile Include="ISprite\LinkStandLeftAttackNonDamSprite.cs" />
     <Compile Include="ISprite\LinkStandDownAttackNonDamSprite.cs" />
     <Compile Include="ISprite\LinkStandUpAttackNonDamSprite.cs" />

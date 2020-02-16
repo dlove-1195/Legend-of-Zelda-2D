@@ -42,7 +42,7 @@ namespace  Sprint2
             Keys[] pressedKeys = Keyboard.GetState().GetPressedKeys();
             
             foreach (Keys key in pressedKeys) {
-            if map.ContainsKey(key){
+            if (map.ContainsKey(key)){
             map[key].Execute();
             }
                 
