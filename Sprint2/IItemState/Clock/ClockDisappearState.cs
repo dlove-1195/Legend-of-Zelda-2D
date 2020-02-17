@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sprint2
 {
-    public class ClockDisappearState : IStaticitemstate
+    public class ClockDisappearState : IitemState
     {
         private Clock clock;
        

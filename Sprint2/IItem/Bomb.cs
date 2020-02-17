@@ -41,7 +41,7 @@ namespace Sprint2
 
             int totalDelay = 100;
             delay++;
-            if(delay > totalDelay/2 && delay<totalDelay)
+            if(delay > 80 && delay<totalDelay)
             {
                 state.ChangeToExplode();
 

@@ -16,13 +16,12 @@ namespace Sprint2
         void ChangeToDown();
         void nextNpc(Game1 myGame);
 
-        void ConnectFire(Fire fire);
+        
         void Update();
         void Draw(SpriteBatch spriteBatch);
 
         
 
-        Vector2 GetPosition();
-        void SetPosition(int posX, int posY);
+        
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Sprint2
 {
-    public class ClockAppearState : IStaticitemstate
+    public class ClockAppearState : IitemState
     {
         private Clock clock;
         private Texture2D texture = Texture2DStorage.GetItemSpriteSheet();

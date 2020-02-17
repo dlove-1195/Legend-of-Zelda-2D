@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Sprint2
 {
-    public class SwordAppearLeftState : IMovingitemstate
+    public class SwordAppearLeftState : IitemState
     {
         private Sword sword;
         private Texture2D texture = Texture2DStorage.GetLinkSpriteSheet();
@@ -25,23 +25,6 @@ namespace Sprint2
         {
             sword.state = new SwordDisappearState(sword);
         }
-        public void ChangeToRight()
-        {
-            sword.state = new SwordAppearRightState(sword);
-        }
-       
-        public void ChangeToUp()
-        {
-            sword.state = new SwordAppearUpState(sword);
-        }
-        public void ChangeToDown()
-        {
-            sword.state = new SwordAppearDownState(sword);
-        }
-
-        public void ChangeToLeft()
-        {
-            //already left, do nothing
-        }
+        
     }
 }

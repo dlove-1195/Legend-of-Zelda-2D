@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Sprint2
 {
-    public class FireAppearLeftState : IMovingitemstate
+    public class FireAppearLeftState : IitemState
     {
         private Fire fire;
-        private Texture2D texture = Texture2DStorage.GetItemSpriteSheet();
+        private Texture2D texture = Texture2DStorage.GetEnemySpriteSheet2();
 
         public FireAppearLeftState(Fire fire)
         {
@@ -26,22 +26,6 @@ namespace Sprint2
         {
             fire.state = new FireDisappearState(fire);
         }
-        public void ChangeToDown()
-        {
-            fire.state = new FireAppearDownState(fire);
-        }
-        public void ChangeToUp()
-        {
-            fire.state = new FireAppearUpState(fire);
-        }
-        public void ChangeToRight()
-        {
-            fire.state = new FireAppearRightState(fire);
-        }
-
-        public void ChangeToLeft()
-        {
-          
-        }
+        
     }
 }

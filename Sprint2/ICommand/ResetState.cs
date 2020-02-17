@@ -19,13 +19,14 @@ namespace Sprint2
             myGame.player.ChangeToRight();
             Link.posX = 200;
             Link.posY = 200;
+           
             myGame.item = new Heart();
            
             myGame.enemy = new Dragon();
             Dragon.posX = 400;
             Dragon.posY = 200;
 
-            myGame.enemy.ConnectFire(new Fire());
+             
         }
     }
 }

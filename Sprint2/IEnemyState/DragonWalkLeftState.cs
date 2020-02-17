@@ -16,6 +16,7 @@ namespace Sprint2
 
             this.dragon = dragon;
             dragon.DragonSprite = new DragonWalkLeftSprite(texture);
+            dragon.fire = new Fire(Dragon.posX-30, Dragon.posY, 2);
         }
         public void ChangeToRight()
         {

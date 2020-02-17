@@ -10,7 +10,7 @@ namespace Sprint2
     public class BombAppearExplodeState : IBombitemstate
     {
         private Bomb bomb;
-        private Texture2D texture = Texture2DStorage.GetItemSpriteSheet();
+        private Texture2D texture = Texture2DStorage.GetLinkSpriteSheet();
 
         public BombAppearExplodeState(Bomb bomb)
         {

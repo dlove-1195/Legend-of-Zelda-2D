@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Sprint2
 {
-    public class BlueDiamondAppearState : IStaticitemstate
+    public class BlueDiamondAppearState : IitemState
     {
         private BlueDiamond blueDiamond;
         private Texture2D texture = Texture2DStorage.GetItemSpriteSheet();

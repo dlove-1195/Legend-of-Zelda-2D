@@ -10,76 +10,71 @@ namespace Sprint2
 {
     public class Sword: Iitem
     {
-        public IMovingitemstate state;
+        public IitemState state;
         public ISprite swordSprite;
         //initial position which closed to Link
         public int posX;
         public int posY;
-        private int delay= 0; 
-
+        
+        private int delay = 0;
+        private int facingDirection; 
         public Sword(int posX, int posY, int direction)
         {
-            switch (direction)
-            {
-                case 0:
-                    state = new SwordAppearUpState(this);
-                    break;
-                case 1:
-                    state = new SwordAppearDownState(this);
-                    break;
-                case 2:
-                    state = new SwordAppearLeftState(this);
-                    break;
-                case 3:
-                    state = new SwordAppearRightState(this);
-                    break;
-                default:
-                    Console.WriteLine("error: no such situation");
-                    break;
-            }
+            state = new SwordDisappearState(this);
+
+            facingDirection = direction;
             this.posX = posX;
             this.posY = posY;
+            
             
         }
         
         public void Update() {
-            swordSprite.Update();
-            int totalDelay = 30;
-          
+            
+                swordSprite.Update();
+            
+                int totalDelay = 100;
+
                 delay++;
-                if(delay == totalDelay)
+            if ( delay ==40 )
+            {
+                switch (facingDirection)
                 {
-                    
-                    state.ChangeToDisappear();
+                    case 0:
+                        state = new SwordAppearUpState(this);
+                        break;
+                    case 1:
+                        state = new SwordAppearDownState(this);
+                        break;
+                    case 2:
+                        state = new SwordAppearLeftState(this);
+                        break;
+                    case 3:
+                        state = new SwordAppearRightState(this);
+                        break;
+                    default:
+                        Console.WriteLine("error: no such situation");
+                        break;
                 }
+
+
+            }
+            else if(delay>=totalDelay)
+                 {
+                state.ChangeToDisappear();
+                }
+            
             }
 
         
         public void Draw(SpriteBatch spriteBatch)
         {
-            swordSprite.Draw(spriteBatch, new Vector2(posX, posY));
+           
+                swordSprite.Draw(spriteBatch, new Vector2(posX, posY));
+            
         }
 
-        public void goUp()
-        {
-            state.ChangeToUp();
-        }
-
-        public void goDown()
-        {
-            state.ChangeToDown();
-        }
-
-        public void goRight()
-        {
-            state.ChangeToRight();
-        }
-
-        public void goLeft()
-        {
-            state.ChangeToLeft();
-        }
-
+     
         public void preItem(Game1 myGame)
         {
             //nothing

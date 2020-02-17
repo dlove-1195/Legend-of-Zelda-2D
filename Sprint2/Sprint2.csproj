@@ -81,8 +81,7 @@
     <Compile Include="IItemState\Heart\HeartAppearState.cs" />
     <Compile Include="IItemState\Heart\HeartDisappearState.cs" />
     <Compile Include="IItemState\IBombitemstate.cs" />
-    <Compile Include="IItemState\IMovingitemstate.cs" />
-    <Compile Include="IItemState\IStaticitemstate.cs" />
+    <Compile Include="IItemState\IitemState.cs" />
     <Compile Include="IItemState\Sword\SwordAppearDownState.cs" />
     <Compile Include="IItemState\Sword\SwordAppearLeftState.cs" />
     <Compile Include="IItemState\Sword\SwordAppearRightState.cs" />
@@ -91,7 +90,7 @@
     <Compile Include="IItem\BlueDiamond.cs" />
     <Compile Include="IItem\Bomb.cs" />
     <Compile Include="IItem\Clock.cs" />
-    <Compile Include="Fire.cs" />
+    <Compile Include="IItem\Fire.cs" />
     <Compile Include="IItem\Heart.cs" />
     <Compile Include="IItem\Iitem.cs" />
     <Compile Include="INpcState\INpcState.cs" />
