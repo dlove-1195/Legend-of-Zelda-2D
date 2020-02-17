@@ -11,10 +11,10 @@ namespace Sprint2
     public class LinkAttackRightSprite : ISprite
     {
         public Texture2D Texture { get; set; }
-        private int posX;
-        private int posY;
-        private int width;
-        private int height;
+        private int posX=91;
+        private int posY=0;
+        private int width=14;
+        private int height=15;
         private int delay;
         private int totaldelay=25;
 
@@ -26,11 +26,13 @@ namespace Sprint2
 
         public void Update()
         {
-            delay++;
+            
             posX = 91;
             posY = 0;
             width = 14;
             height = 15;
+
+            
             if (delay > totaldelay / 5 && delay < 2 * totaldelay / 5)
             {
                 posX = 90;
@@ -48,7 +50,7 @@ namespace Sprint2
                 height = 15;
             }
 
-            if (delay >= 3 * totaldelay / 6 && delay < 5 * totaldelay / 5)
+            if (delay >= 3 * totaldelay / 5 && delay < 5 * totaldelay / 5)
             {
 
                 posX = 84;
@@ -56,6 +58,12 @@ namespace Sprint2
                 width = 27;
                 height = 15;
             }
+            delay++;
+            if (delay == totaldelay)
+            {
+                delay = 0;
+            }
+
 
         }
 

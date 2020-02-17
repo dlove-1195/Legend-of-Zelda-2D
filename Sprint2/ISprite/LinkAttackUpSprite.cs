@@ -11,10 +11,10 @@ namespace Sprint2
     public class LinkAttackUpSprite : ISprite
     {
         public Texture2D Texture { get; set; }
-        private int posX;
-        private int posY;
-        private int width;
-        private int height;
+        private int posX =62;
+        private int posY=0;
+        private int width=12;
+        private int height=16;
         private int delay;
         private int totaldelay=25;
 
@@ -26,11 +26,14 @@ namespace Sprint2
 
         public void Update()
         {
-            delay++;
+            
+
             posX = 62;
             posY = 0;
             width = 12;
             height = 16;
+
+           
             if (delay > totaldelay / 5 && delay < 2 * totaldelay / 5)
             {
                 posX = 62;
@@ -48,7 +51,7 @@ namespace Sprint2
                 height = 16;
             }
 
-            if (delay >= 3 * totaldelay / 6 && delay < 5 * totaldelay / 5)
+            if (delay >= 3 * totaldelay / 5 && delay < 5 * totaldelay / 5)
             {
 
                 posX = 60;
@@ -57,6 +60,12 @@ namespace Sprint2
                 height = 28;
             }
 
+            if (delay == totaldelay)
+            {
+                delay = 0;
+            }
+
+            delay++;
 
         }
 
