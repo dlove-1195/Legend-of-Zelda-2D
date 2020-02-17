@@ -25,11 +25,13 @@ namespace Sprint2
 
         public void Update()
         {
-            
-            posX = 30;
-            posY = 0;
-            width = 15;
-            height = 16;
+            if (delay <= totalDelay / 5)
+            {
+                posX = 30;
+                posY = 0;
+                width = 15;
+                height = 16;
+            }
 
 
             if (delay > totalDelay/5 && delay < 2*totalDelay/5)
