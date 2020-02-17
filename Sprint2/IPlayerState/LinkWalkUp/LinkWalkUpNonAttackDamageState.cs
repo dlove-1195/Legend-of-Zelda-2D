@@ -33,6 +33,7 @@ private Texture2D texture = Texture2DStorage.GetLinkSpriteSheet();
         {
             // NO-OP
             // already up, do nothing
+            linkPlayer.state = new LinkWalkUpNonAttackNonDamageState(linkPlayer);
 
         }
         public void ChangeToDown()
