@@ -22,6 +22,7 @@ namespace Sprint2
         {
             // NO-OP
             // already right, do nothing
+            linkPlayer.state = new LinkWalkRightNonAttackNonDamageState(linkPlayer);
 
         }
         public void ChangeToLeft()
