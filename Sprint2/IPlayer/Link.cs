@@ -69,6 +69,7 @@ namespace Sprint2
 
         public void LinkWithBomb()
         {
+
             state.LinkWithBomb();
 
         }

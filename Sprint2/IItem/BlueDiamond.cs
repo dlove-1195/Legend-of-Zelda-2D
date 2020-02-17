@@ -10,7 +10,7 @@ namespace Sprint2
 {
     public class BlueDiamond : Iitem
     {
-        public IStaticitemstate state;
+        public IitemState state;
         public ISprite blueDiamondSprite;
         //initial position on the ground
         public int posX = 120;

@@ -15,7 +15,7 @@ namespace Sprint2
         {
             this.link = link;
             link.linkSprite = new LinkAttackLeftSprite(texture);
-            link.sword = new Sword((Link.posX-20), Link.posY,2);
+            link.sword = new Sword((Link.posX-45), Link.posY,2);
             
 
         }

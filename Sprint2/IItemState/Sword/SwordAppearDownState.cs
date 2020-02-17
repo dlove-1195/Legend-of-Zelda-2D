@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Sprint2
 {
-    public class SwordAppearDownState : IMovingitemstate
+    public class SwordAppearDownState : IitemState
     {
         private Sword sword;
         private Texture2D texture = Texture2DStorage.GetLinkSpriteSheet();
@@ -15,7 +15,7 @@ namespace Sprint2
         public SwordAppearDownState(Sword sword)
         {
             this.sword = sword;
-            sword.swordSprite = new WoodenSwordDown(texture);//erro missing sword down sprite
+            sword.swordSprite = new WoodenSwordDown(texture); 
         }
         public void ChangeToAppear()
         {
@@ -26,22 +26,6 @@ namespace Sprint2
         {
             sword.state = new SwordDisappearState(sword);
         }
-        public void ChangeToRight()
-        {
-            sword.state = new SwordAppearRightState(sword);
-        }
-        public void ChangeToLeft()
-        {
-            sword.state = new SwordAppearLeftState(sword);
-        }
-        public void ChangeToUp()
-        {
-            sword.state = new SwordAppearUpState(sword);
-        }
-
-        public void ChangeToDown()
-        {
-            //already down, do nothing
-        }
+        
     }
 }

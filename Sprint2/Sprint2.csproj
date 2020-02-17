@@ -80,8 +80,7 @@
     <Compile Include="IItemState\Heart\HeartAppearState.cs" />
     <Compile Include="IItemState\Heart\HeartDisappearState.cs" />
     <Compile Include="IItemState\IBombitemstate.cs" />
-    <Compile Include="IItemState\IMovingitemstate.cs" />
-    <Compile Include="IItemState\IStaticitemstate.cs" />
+    <Compile Include="IItemState\IitemState.cs" />
     <Compile Include="IItemState\Sword\SwordAppearDownState.cs" />
     <Compile Include="IItemState\Sword\SwordAppearLeftState.cs" />
     <Compile Include="IItemState\Sword\SwordAppearRightState.cs" />

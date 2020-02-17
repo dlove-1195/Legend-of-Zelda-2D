@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sprint2
 {
-    public class SwordDisappearState : IMovingitemstate
+    public class SwordDisappearState : IitemState
     {
         private Sword sword;
         public SwordDisappearState(Sword sword)
@@ -24,24 +24,6 @@ namespace Sprint2
             //already disappear, do nothing
         }
 
-        public void ChangeToDown()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void ChangeToLeft()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void ChangeToRight()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void ChangeToUp()
-        {
-            throw new NotImplementedException();
-        }
+      
     }
 }

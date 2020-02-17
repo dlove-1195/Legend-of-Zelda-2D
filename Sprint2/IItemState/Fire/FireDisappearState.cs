@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sprint2
 {
-    public class FireDisappearState : IMovingitemstate
+    public class FireDisappearState : IitemState
     {
         private Fire fire;
         public FireDisappearState(Fire fire)
@@ -27,24 +27,6 @@ namespace Sprint2
             //already disappear, do nothing
         }
 
-        public void ChangeToDown()
-        {
-            
-        }
-
-        public void ChangeToLeft()
-        {
-            
-        }
-
-        public void ChangeToRight()
-        {
-             
-        }
-
-        public void ChangeToUp()
-        {
-            
-        }
+       
     }
 }

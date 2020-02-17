@@ -10,7 +10,7 @@ namespace Sprint2
 {
     public class Fire : Iitem
     {
-        public IMovingitemstate state;
+        public IitemState state;
         public ISprite fireSprite;
         private int delay = 0;
         //initial position closed to dragon
@@ -61,22 +61,7 @@ namespace Sprint2
 
 
         }
-      /*  public void goUp()
-        {
-            state.ChangeToUp();
-        }
-        public void goDown()
-        {
-            state.ChangeToDown();
-        }
-        public void goRight()
-        {
-            state.ChangeToRight();
-        }
-        public void goLeft()
-        {
-            state.ChangeToLeft();
-        } */
+      
         public void preItem(Game1 myGame)
         {
             //nothing

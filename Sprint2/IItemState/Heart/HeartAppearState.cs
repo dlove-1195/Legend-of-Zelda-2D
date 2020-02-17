@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Sprint2
 {
-    public class HeartAppearState : IStaticitemstate
+    public class HeartAppearState : IitemState
     {
         private Heart heart;
         private Texture2D texture = Texture2DStorage.GetItemSpriteSheet();

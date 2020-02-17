@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sprint2
 {
-    public class BlueDiamondDisappearState : IStaticitemstate
+    public class BlueDiamondDisappearState : IitemState
     {
         private BlueDiamond blueDiamond;
         public BlueDiamondDisappearState(BlueDiamond blueDiamond)

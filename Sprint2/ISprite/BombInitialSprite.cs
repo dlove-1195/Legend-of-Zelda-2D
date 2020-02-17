@@ -11,8 +11,8 @@ namespace Sprint2
     class BombInitialSprite : ISprite
     {
         public Texture2D Texture;
-        private int sourceLocX = 204;
-        private int sourceLocY = 1;
+        private int sourceLocX = 364;
+        private int sourceLocY = 226;
         private int width = 8;
         private int height = 14;
 
@@ -34,7 +34,7 @@ namespace Sprint2
                 Rectangle sourceRectangle = new Rectangle(sourceLocX, sourceLocY, width, height);
                 Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width * 3, height * 3);
                 spriteBatch.Begin();
-                Console.WriteLine("make it to the draw part");
+                
                 spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
                 spriteBatch.End();
             }

@@ -20,23 +20,23 @@ namespace Sprint2
 
         public void ChangeToRight()
         {
-            linkPlayer.state = new LinkWalkRightNonAttackDamageState(linkPlayer);
+            linkPlayer.state = new LinkWalkRightNonAttackNonDamageState(linkPlayer);
 
         }
         public void ChangeToLeft()
         {
-            linkPlayer.state = new LinkWalkLeftNonAttackDamageState(linkPlayer);
+            linkPlayer.state = new LinkWalkLeftNonAttackNonDamageState(linkPlayer);
              
 
         }
         public void ChangeToUp()
         {
-            linkPlayer.state = new LinkWalkUpNonAttackDamageState(linkPlayer);
+            linkPlayer.state = new LinkWalkUpNonAttackNonDamageState(linkPlayer);
 
         }
         public void ChangeToDown()
         {
-            linkPlayer.state = new LinkWalkDownNonAttackDamageState(linkPlayer);
+            linkPlayer.state = new LinkWalkDownNonAttackNonDamageState(linkPlayer);
 
 
         }
@@ -58,7 +58,7 @@ namespace Sprint2
         }
         public void ChangeToStand()
         {
-            linkPlayer.state = new LinkStandLeftNonAttackDamageState(linkPlayer);
+            linkPlayer.state = new LinkStandLeftNonAttackNonDamageState(linkPlayer);
         }
 
         public void LinkWithBomb()

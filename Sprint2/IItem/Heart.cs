@@ -11,7 +11,7 @@ namespace Sprint2
 {
     public class Heart : Iitem
     {
-        public IStaticitemstate state;
+        public IitemState state;
         public ISprite heartSprite;
         //initial position in the center
         public int posX =120;
