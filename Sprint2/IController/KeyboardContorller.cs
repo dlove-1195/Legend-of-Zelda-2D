@@ -11,7 +11,8 @@ namespace  Sprint2
     public class KeyboardController : IController
     {
         private Dictionary<Keys, ICommand> map;
-
+        private delay = 0;
+        private totalDelay = 5;
         private Game1 myGame;
         private ICommand i;
         public KeyboardController(Game1 game)
@@ -43,15 +44,20 @@ namespace  Sprint2
         }
         public void Update()
         {
+            delay++;
+            if(delay == totalDelay){
             Keys[] pressedKeys = Keyboard.GetState().GetPressedKeys();
             
             foreach (Keys key in pressedKeys) {
             if (map.ContainsKey(key)){
             map[key].Execute();
             }
-                
+            
                 
             }
+            delay = 0; 
+            }
+            
 
            
 
