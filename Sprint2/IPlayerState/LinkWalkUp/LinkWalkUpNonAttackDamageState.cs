@@ -20,12 +20,12 @@ private Texture2D texture = Texture2DStorage.GetLinkSpriteSheet();
 
         public void ChangeToRight()
         {
-            linkPlayer.state = new LinkWalkRightNonAttackDamageState(linkPlayer);
+            linkPlayer.state = new LinkWalkRightNonAttackNonDamageState(linkPlayer);
             
         }
         public void ChangeToLeft()
         {
-            linkPlayer.state = new LinkWalkLeftNonAttackDamageState(linkPlayer);
+            linkPlayer.state = new LinkWalkLeftNonAttackNonDamageState(linkPlayer);
             
 
         }
@@ -33,11 +33,12 @@ private Texture2D texture = Texture2DStorage.GetLinkSpriteSheet();
         {
             // NO-OP
             // already up, do nothing
+            linkPlayer.state = new LinkWalkUpNonAttackNonDamageState(linkPlayer);
 
         }
         public void ChangeToDown()
         {
-            linkPlayer.state = new LinkWalkDownNonAttackDamageState(linkPlayer);
+            linkPlayer.state = new LinkWalkDownNonAttackNonDamageState(linkPlayer);
              
 
         }
@@ -59,7 +60,7 @@ private Texture2D texture = Texture2DStorage.GetLinkSpriteSheet();
         }
         public void ChangeToStand()
         {
-            linkPlayer.state = new LinkStandUpNonAttackDamageState(linkPlayer);
+            linkPlayer.state = new LinkStandUpNonAttackNonDamageState(linkPlayer);
         }
         public void LinkWithBomb()
         {

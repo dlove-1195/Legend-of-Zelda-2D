@@ -22,22 +22,23 @@ namespace Sprint2
         {
             // NO-OP
             // already right, do nothing
+            linkPlayer.state = new LinkWalkRightNonAttackNonDamageState(linkPlayer);
 
         }
         public void ChangeToLeft()
         {
-            linkPlayer.state = new LinkWalkLeftNonAttackDamageState(linkPlayer);
+            linkPlayer.state = new LinkWalkLeftNonAttackNonDamageState(linkPlayer);
             
 
         }
         public void ChangeToUp()
         {
-            linkPlayer.state = new LinkWalkUpNonAttackDamageState(linkPlayer);
+            linkPlayer.state = new LinkWalkUpNonAttackNonDamageState(linkPlayer);
 
         }
         public void ChangeToDown()
         {
-            linkPlayer.state = new LinkWalkDownNonAttackDamageState(linkPlayer);
+            linkPlayer.state = new LinkWalkDownNonAttackNonDamageState(linkPlayer);
 
 
         }
@@ -59,7 +60,7 @@ namespace Sprint2
         }
         public void ChangeToStand()
         {
-            linkPlayer.state = new LinkStandRightNonAttackDamageState(linkPlayer);
+            linkPlayer.state = new LinkStandRightNonAttackNonDamageState(linkPlayer);
         }
 
         public void LinkWithBomb()
