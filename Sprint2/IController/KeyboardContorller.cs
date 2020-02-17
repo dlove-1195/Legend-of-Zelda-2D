@@ -34,6 +34,7 @@ namespace Sprint2
             map.Add(Keys.I, new NextItemCommand(myGame));
 
 <<<<<<< HEAD
+<<<<<<< HEAD
              map.Add(Keys.D1, new Gear1(myGame));
              map.Add(Keys.D2, new Gear2(myGame));
             /* map.Add(Keys.D3, new Gear3(myGame));*/
@@ -41,12 +42,17 @@ namespace Sprint2
              map.Add(Keys.P, new NextNpc(myGame));
              map.Add(Keys.R, new ResetState(myGame)); 
 =======
+=======
+>>>>>>> ba55c543995b85dd56b6950a590507da5c4f25a7
             map.Add(Keys.D1, new Gear1(myGame));
             map.Add(Keys.D2, new Gear2(myGame));
             /* map.Add(Keys.D3, new Gear3(myGame));
               map.Add(Keys.O, new PreviousEnemy(myGame));
              map.Add(Keys.P, new NextEnemy(myGame));*/
             map.Add(Keys.R, new ResetState(myGame));
+<<<<<<< HEAD
+>>>>>>> ba55c543995b85dd56b6950a590507da5c4f25a7
+=======
 >>>>>>> ba55c543995b85dd56b6950a590507da5c4f25a7
             map.Add(Keys.Q, new QuitCommand(myGame));
         }
@@ -67,6 +73,7 @@ namespace Sprint2
             foreach (Keys key in pressedKeys)
             {
 
+<<<<<<< HEAD
 
                 if (key.Equals(Keys.U) || key.Equals(Keys.I))
                 {
@@ -75,6 +82,16 @@ namespace Sprint2
                 {
 
 
+=======
+
+                if (key.Equals(Keys.U) || key.Equals(Keys.I))
+                {
+                }
+                else if (map.ContainsKey(key))
+                {
+
+
+>>>>>>> ba55c543995b85dd56b6950a590507da5c4f25a7
                     map[key].Execute();
                 }
 

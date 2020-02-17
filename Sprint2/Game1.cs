@@ -14,10 +14,15 @@ namespace Sprint2
         public Iplayer player;
         public Iitem item;
 <<<<<<< HEAD
+<<<<<<< HEAD
         public INpc npc;
         
         public  Fire fire;
         
+=======
+         
+      
+>>>>>>> ba55c543995b85dd56b6950a590507da5c4f25a7
 =======
          
       
@@ -50,15 +55,21 @@ namespace Sprint2
             enemy = new Dragon();
             item = new Heart();
 <<<<<<< HEAD
+<<<<<<< HEAD
             npc = new Princess();
             //connect fire with enenmy 
             fire = new Fire();
             enemy.ConnectFire(fire);
 =======
+=======
+>>>>>>> ba55c543995b85dd56b6950a590507da5c4f25a7
             
 
          
            
+<<<<<<< HEAD
+>>>>>>> ba55c543995b85dd56b6950a590507da5c4f25a7
+=======
 >>>>>>> ba55c543995b85dd56b6950a590507da5c4f25a7
             
  
@@ -76,7 +87,12 @@ namespace Sprint2
             enemy.Update();
             item.Update();
 <<<<<<< HEAD
+<<<<<<< HEAD
             fire.Update();
+=======
+            
+            
+>>>>>>> ba55c543995b85dd56b6950a590507da5c4f25a7
 =======
             
             
@@ -93,9 +109,12 @@ namespace Sprint2
             enemy.Draw(spriteBatch);
             item.Draw(spriteBatch);
 <<<<<<< HEAD
+<<<<<<< HEAD
             fire.Draw(spriteBatch);
             npc.Draw(spriteBatch);
 =======
+=======
+>>>>>>> ba55c543995b85dd56b6950a590507da5c4f25a7
             
            
 >>>>>>> ba55c543995b85dd56b6950a590507da5c4f25a7

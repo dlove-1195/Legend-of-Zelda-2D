@@ -17,7 +17,11 @@ namespace Sprint2
 			private static Texture2D itemSpriteSheet;
 		    private static Texture2D linkSpriteSheet;
 <<<<<<< HEAD
+<<<<<<< HEAD
 			private static Texture2D npcSpriteSheet;
+=======
+		    private static Texture2D enemySpriteSheet2;
+>>>>>>> ba55c543995b85dd56b6950a590507da5c4f25a7
 =======
 		    private static Texture2D enemySpriteSheet2;
 >>>>>>> ba55c543995b85dd56b6950a590507da5c4f25a7
@@ -30,9 +34,13 @@ namespace Sprint2
 			enemySpriteSheet = content.Load<Texture2D>("enemy");
 			itemSpriteSheet = content.Load<Texture2D>("item");
 <<<<<<< HEAD
+<<<<<<< HEAD
 			npcSpriteSheet = content.Load<Texture2D>("characters");
 
 
+=======
+			enemySpriteSheet2 = content.Load<Texture2D>("enemy2");
+>>>>>>> ba55c543995b85dd56b6950a590507da5c4f25a7
 =======
 			enemySpriteSheet2 = content.Load<Texture2D>("enemy2");
 >>>>>>> ba55c543995b85dd56b6950a590507da5c4f25a7

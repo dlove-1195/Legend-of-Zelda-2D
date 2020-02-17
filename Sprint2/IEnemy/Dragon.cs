@@ -30,6 +30,7 @@ namespace Sprint2
 
             state = new DragonWalkLeftState(this);
 <<<<<<< HEAD
+<<<<<<< HEAD
         }
 
         public void nextNpc(Game1 myGame)
@@ -38,10 +39,15 @@ namespace Sprint2
 
         }
 =======
+=======
+>>>>>>> ba55c543995b85dd56b6950a590507da5c4f25a7
          }
 
 
 
+<<<<<<< HEAD
+>>>>>>> ba55c543995b85dd56b6950a590507da5c4f25a7
+=======
 >>>>>>> ba55c543995b85dd56b6950a590507da5c4f25a7
         public void ChangeToRight()
         {
@@ -61,10 +67,15 @@ namespace Sprint2
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
        public void ConnectFire(Fire fire)
         {
             this.fire = fire;
         }
+=======
+
+        
+>>>>>>> ba55c543995b85dd56b6950a590507da5c4f25a7
 =======
 
         
