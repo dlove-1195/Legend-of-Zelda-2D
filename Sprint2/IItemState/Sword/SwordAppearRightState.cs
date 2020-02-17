@@ -10,7 +10,7 @@ namespace Sprint2
     public class SwordAppearRightState : IMovingitemstate
     {
         private Sword sword;
-        private Texture2D texture = Texture2DStorage.GetItemSpriteSheet();
+        private Texture2D texture = Texture2DStorage.GetLinkSpriteSheet();
         public SwordAppearRightState(Sword sword)
         {
             this.sword = sword;

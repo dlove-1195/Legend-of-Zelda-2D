@@ -11,11 +11,12 @@ namespace Sprint2
     public class WoodenSwordRight : ISprite
     {
         public Texture2D Texture { get; set; }
-        private int posX = 40;
-        private int posY = 85;
+        private int posX = 90;
+        private int posY = 199;
         private int width = 16;
         private int height = 7;
         private int currentPos;
+        private int gap = 15;
 
         public WoodenSwordRight(Texture2D texture)
         {
@@ -38,7 +39,7 @@ namespace Sprint2
             if (Texture != null)
             {
                 Rectangle sourceRectangle = new Rectangle(posX, posY, width, height);
-                Rectangle destinationRectangle = new Rectangle((int)vector.X + currentPos, (int)vector.Y, width * 3, height * 3);    // determine location and demension of the current frame
+                Rectangle destinationRectangle = new Rectangle((int)vector.X + currentPos, (int)vector.Y+gap, width * 3, height * 3);    // determine location and demension of the current frame
 
                 spriteBatch.Begin();
                 spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
