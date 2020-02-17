@@ -10,7 +10,7 @@ namespace Sprint2
     public class FireAppearDownState : IMovingitemstate
     {
         private Fire fire;
-        private Texture2D texture = Texture2DStorage.GetItemSpriteSheet();
+        private Texture2D texture = Texture2DStorage.GetEnemySpriteSheet2();
         public FireAppearDownState(Fire fire)
         {
             this.fire = fire;

@@ -12,22 +12,35 @@ namespace Sprint2
     {
         public IMovingitemstate state;
         public ISprite fireSprite;
+        private int delay = 0;
         //initial position closed to dragon
-        public int posX;
-        public int posY;
-        public Fire()
+        private int posX;
+        private int posY;
+        public Fire(int posX, int posY, int direction)
         {
+            this.posX = posX;
+            this.posY = posY;
             state = new FireAppearLeftState(this);
+            switch (direction)
+            {
+                case 0:
+                    state = new FireAppearUpState(this);
+                    break;
+                case 1:
+                    state = new FireAppearDownState(this);
+                    break;
+                case 2:
+                    state = new FireAppearLeftState(this);
+                    break;
+                case 3:
+                    state = new FireAppearRightState(this);
+                    break;
+                default:
+                    Console.WriteLine("error: no such situation");
+                    break;
+            }
         }
-        public void Appear()
-        {
-            state.ChangeToAppear();
-        }
-
-        public void Disappear()
-        {
-            state.ChangeToDisappear();
-        }
+       
 
         public void Draw(SpriteBatch spriteBatch)
         {
@@ -37,8 +50,18 @@ namespace Sprint2
         public void Update()
         {
             fireSprite.Update();
+            int totalDelay = 30;
+
+            delay++;
+            if (delay == totalDelay)
+            {
+
+                state.ChangeToDisappear();
+            }
+
+
         }
-        public void goUp()
+      /*  public void goUp()
         {
             state.ChangeToUp();
         }
@@ -53,7 +76,7 @@ namespace Sprint2
         public void goLeft()
         {
             state.ChangeToLeft();
-        }
+        } */
         public void preItem(Game1 myGame)
         {
             //nothing

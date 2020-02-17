@@ -90,7 +90,7 @@
     <Compile Include="IItem\BlueDiamond.cs" />
     <Compile Include="IItem\Bomb.cs" />
     <Compile Include="IItem\Clock.cs" />
-    <Compile Include="Fire.cs" />
+    <Compile Include="IItem\Fire.cs" />
     <Compile Include="IItem\Heart.cs" />
     <Compile Include="IItem\Iitem.cs" />
     <Compile Include="IPlayerState\LinkWithSword\LinkLeftWithSwordState.cs" />

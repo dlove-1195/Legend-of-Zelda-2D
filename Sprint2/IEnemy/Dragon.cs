@@ -15,12 +15,10 @@ namespace Sprint2
         public ISprite  DragonSprite;
         public int updateDelay = 0;
         public int totalDelay = 30;
-        private Fire fire;
+        public Iitem fire;
 
 
-        // ?? change later 
-        private Vector2 position = new Vector2(200, 200);
-        
+       //the current position of the dragon
         public static int posX = 400;
         public static int posY = 200;
          
@@ -31,7 +29,10 @@ namespace Sprint2
         {
 
             state = new DragonWalkLeftState(this);
-        }
+         }
+
+
+
         public void ChangeToRight()
         {
             state.ChangeToRight();
@@ -50,14 +51,15 @@ namespace Sprint2
         }
 
 
-       public void ConnectFire(Fire fire)
-        {
-            this.fire = fire;
-        }
+        
 
         public void Update()
         {
             DragonSprite.Update();
+            if(fire!= null)
+            {
+                fire.Update();
+            }
             //random move dragon
             updateDelay++;
             if (updateDelay == totalDelay)
@@ -72,24 +74,22 @@ namespace Sprint2
                    {
                        case 0:
                            this.ChangeToDown();
-                          fire.Appear();
-                          fire.goDown();
+                          
                         
                            break;
                        case 1:
                            this.ChangeToLeft();
-                          fire.Disappear();
+                          
                         
                          
                         break;
                        case 2:
                            this.ChangeToRight();
-                          fire.Appear();
-                          fire.goRight();
+                           
                         break;
                        case 3:
                            this.ChangeToUp();
-                        fire.Disappear();
+                        
                         break;
                        default:
                            Console.WriteLine("error: no such situation");
@@ -103,22 +103,16 @@ namespace Sprint2
         public void Draw(SpriteBatch spriteBatch)
         {
             DragonSprite.Draw(spriteBatch, new Vector2(posX, posY));
+            if (fire != null)
+            {
+                fire.Draw(spriteBatch);
+            }
         }
 
        
 
 
-        //TRACK THE CURRENT STATUS OF THE LINKSPRITE
-        public Vector2 GetPosition()
-        {
-            return position;
-        }
-
-        public void SetPosition(int posX, int posY)
-        {
-            position.X = posX;
-            position.Y = posY;
-        }
+       
 
 
     }

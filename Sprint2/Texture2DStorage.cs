@@ -16,15 +16,17 @@ namespace Sprint2
 			private static Texture2D enemySpriteSheet;
 			private static Texture2D itemSpriteSheet;
 		    private static Texture2D linkSpriteSheet;
+		    private static Texture2D enemySpriteSheet2;
 
 		//initialize the Texture2D fields
-		  public static void LoadAllTextures(ContentManager content)
+		public static void LoadAllTextures(ContentManager content)
 			{
 
 			linkSpriteSheet = content.Load<Texture2D>("link");
 			enemySpriteSheet = content.Load<Texture2D>("enemy");
 			itemSpriteSheet = content.Load<Texture2D>("item");
-		  }
+			enemySpriteSheet2 = content.Load<Texture2D>("enemy2");
+		}
 
 		   public static void UnloadAllTextures()
 			{
@@ -37,7 +39,13 @@ namespace Sprint2
 				return enemySpriteSheet;
 			}
 
-			public static Texture2D GetItemSpriteSheet()
+		public static Texture2D GetEnemySpriteSheet2()
+		{
+			return enemySpriteSheet2;
+		}
+
+
+		public static Texture2D GetItemSpriteSheet()
 			{
 				return itemSpriteSheet;
 			}

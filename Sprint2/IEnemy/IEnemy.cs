@@ -15,13 +15,12 @@ namespace Sprint2
         void ChangeToUp();
         void ChangeToDown();
 
-        void ConnectFire(Fire fire);
+        
         void Update();
         void Draw(SpriteBatch spriteBatch);
 
         
 
-        Vector2 GetPosition();
-        void SetPosition(int posX, int posY);
+        
     }
 }

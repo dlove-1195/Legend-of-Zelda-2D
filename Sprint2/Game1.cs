@@ -14,10 +14,7 @@ namespace Sprint2
         public Iplayer player;
         public Iitem item;
          
-        
-        
-        public  Fire fire;
-        
+      
       
         IController controller;
         public static int WindowWidth;
@@ -47,9 +44,8 @@ namespace Sprint2
             item = new Heart();
             
 
-            //connect fire with enenmy 
-            fire = new Fire();
-            enemy.ConnectFire(fire);
+         
+           
             
  
         }
@@ -66,7 +62,7 @@ namespace Sprint2
             enemy.Update();
             item.Update();
             
-            fire.Update();
+            
             controller.Update();
            
             base.Update(gameTime);
@@ -78,7 +74,7 @@ namespace Sprint2
             player.Draw(spriteBatch);
             enemy.Draw(spriteBatch);
             item.Draw(spriteBatch);
-            fire.Draw(spriteBatch);
+            
            
             base.Draw(gameTime);
         }
