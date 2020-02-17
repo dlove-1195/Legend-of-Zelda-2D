@@ -15,7 +15,7 @@ namespace Sprint2
         }
         public void Execute()
         {
-            //later
+            myGame.npc.previousEnemy(myGame);
         }
     }
 }

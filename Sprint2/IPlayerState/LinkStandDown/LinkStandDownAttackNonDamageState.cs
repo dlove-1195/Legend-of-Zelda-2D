@@ -18,6 +18,7 @@ namespace Sprint2 {
         }
         public void ChangeToRight()
         {
+            
             link.state = new LinkStandRightNonAttackNonDamageState(link);
         }
         public void ChangeToLeft()

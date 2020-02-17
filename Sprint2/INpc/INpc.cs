@@ -8,21 +8,15 @@ using System.Threading.Tasks;
 
 namespace Sprint2
 {
-    public interface IEnemy
+    public interface INpc
     {
         void ChangeToLeft();
         void ChangeToRight();
         void ChangeToUp();
         void ChangeToDown();
-        void nextNpc(Game1 myGame);
-
-        void ConnectFire(Fire fire);
+        void previousEnemy(Game1 myGame);
         void Update();
         void Draw(SpriteBatch spriteBatch);
 
-        
-
-        Vector2 GetPosition();
-        void SetPosition(int posX, int posY);
     }
 }

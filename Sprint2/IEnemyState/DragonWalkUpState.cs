@@ -36,5 +36,14 @@ namespace Sprint2
         {
             dragon.state = new DragonWalkDownState(dragon);
         }
+
+        public void ChangeToAppear()
+        {
+            //do nothing, already appear 
+        }
+        public void ChangeToDisappear()
+        {
+            dragon.state = new DragonDisappearState(dragon);
+        }
     }
 }

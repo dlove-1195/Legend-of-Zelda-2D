@@ -50,7 +50,7 @@
     <Compile Include="ICommand\Gear2.cs" />
     <Compile Include="ICommand\GetDemagedCommand.cs" />
     <Compile Include="ICommand\ICommand.cs" />
-    <Compile Include="ICommand\NextEnemy.cs" />
+    <Compile Include="ICommand\NextNpc.cs" />
     <Compile Include="ICommand\NextItemCommand.cs" />
     <Compile Include="ICommand\PreviousEnemy.cs" />
     <Compile Include="ICommand\PreviousItemCommand.cs" />
@@ -61,6 +61,7 @@
     <Compile Include="IEnemyState\DragonWalkDownState.cs" />
     <Compile Include="IEnemyState\DragonWalkLeftState.cs" />
     <Compile Include="IEnemyState\DragonWalkRightState.cs" />
+    <Compile Include="IEnemyState\DragonDisappearState.cs" />
     <Compile Include="IEnemyState\DragonWalkUpState.cs" />
     <Compile Include="IEnemyState\IEnemyState.cs" />
     <Compile Include="IEnemy\Dragon.cs" />
@@ -93,6 +94,11 @@
     <Compile Include="Fire.cs" />
     <Compile Include="IItem\Heart.cs" />
     <Compile Include="IItem\Iitem.cs" />
+    <Compile Include="INpcState\INpcState.cs" />
+    <Compile Include="INpcState\PrincessState\PrincessDisappearState.cs" />
+    <Compile Include="INpcState\PrincessState\PrincessStandState.cs" />
+    <Compile Include="INpc\Princess.cs" />
+    <Compile Include="INpc\INpc.cs" />
     <Compile Include="IPlayerState\LinkWithSword\LinkLeftWithSwordState.cs" />
     <Compile Include="IPlayerState\LinkWithSword\LinkRightWithSwordState.cs" />
     <Compile Include="IPlayerState\LinkWithSword\LinkUpWithSwordState.cs" />
@@ -164,7 +170,7 @@
     <Compile Include="ISprite\LinkWalkLeftSprite.cs" />
     <Compile Include="ISprite\LinkWalkRightSprite.cs" />
     <Compile Include="ISprite\LinkWalkUpSprite.cs" />
-    <Compile Include="ISprite\PrincessAnimatedSprite.cs" />
+    <Compile Include="ISprite\PrincessStandSprite.cs" />
     <Compile Include="ISprite\WoodenSwordDown.cs" />
     <Compile Include="ISprite\WoodenSwordLeft.cs" />
     <Compile Include="ISprite\WoodenSwordRight.cs" />

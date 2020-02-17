@@ -10,7 +10,7 @@ namespace Sprint2
 {
     public class Dragon: IEnemy
     {
-
+        public INpc princess;
         public IEnemyState state;
         public ISprite  DragonSprite;
         public int updateDelay = 0;
@@ -32,6 +32,12 @@ namespace Sprint2
 
             state = new DragonWalkLeftState(this);
         }
+
+        public void nextNpc(Game1 myGame)
+        {
+            state = new DragonDisappearState(this);
+
+        }
         public void ChangeToRight()
         {
             state.ChangeToRight();
@@ -48,7 +54,6 @@ namespace Sprint2
         {
             state.ChangeToDown();
         }
-
 
        public void ConnectFire(Fire fire)
         {

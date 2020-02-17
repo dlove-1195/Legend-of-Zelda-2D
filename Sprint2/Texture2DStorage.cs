@@ -16,6 +16,7 @@ namespace Sprint2
 			private static Texture2D enemySpriteSheet;
 			private static Texture2D itemSpriteSheet;
 		    private static Texture2D linkSpriteSheet;
+			private static Texture2D npcSpriteSheet;
 
 		//initialize the Texture2D fields
 		  public static void LoadAllTextures(ContentManager content)
@@ -24,7 +25,10 @@ namespace Sprint2
 			linkSpriteSheet = content.Load<Texture2D>("link");
 			enemySpriteSheet = content.Load<Texture2D>("enemy");
 			itemSpriteSheet = content.Load<Texture2D>("item");
-		  }
+			npcSpriteSheet = content.Load<Texture2D>("characters");
+
+
+		}
 
 		   public static void UnloadAllTextures()
 			{
@@ -44,8 +48,13 @@ namespace Sprint2
 
 		    public static Texture2D GetLinkSpriteSheet()
 		    {
-			return linkSpriteSheet;
+				return linkSpriteSheet;
 		    }
+			public static Texture2D GetNpcSpriteSheet()
+			{
+				return npcSpriteSheet;
+			}
+
 
 	}
 	

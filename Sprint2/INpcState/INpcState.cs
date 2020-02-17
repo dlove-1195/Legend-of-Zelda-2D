@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 
 namespace Sprint2 
 {
-    public interface IEnemyState
+    public interface INpcState
     {
         void ChangeToLeft();
         void ChangeToRight();
         void ChangeToUp();
         void ChangeToDown();
-
-        void ChangeToAppear();
         void ChangeToDisappear();
+        void ChangeToAppear();
     }
 }

@@ -13,8 +13,7 @@ namespace Sprint2
         public IEnemy enemy;
         public Iplayer player;
         public Iitem item;
-         
-        
+        public INpc npc;
         
         public  Fire fire;
         
@@ -45,8 +44,7 @@ namespace Sprint2
             player = new Link();
             enemy = new Dragon();
             item = new Heart();
-            
-
+            npc = new Princess();
             //connect fire with enenmy 
             fire = new Fire();
             enemy.ConnectFire(fire);
@@ -65,7 +63,6 @@ namespace Sprint2
             player.Update();
             enemy.Update();
             item.Update();
-            
             fire.Update();
             controller.Update();
            
@@ -79,7 +76,7 @@ namespace Sprint2
             enemy.Draw(spriteBatch);
             item.Draw(spriteBatch);
             fire.Draw(spriteBatch);
-           
+            npc.Draw(spriteBatch);
             base.Draw(gameTime);
         }
     }

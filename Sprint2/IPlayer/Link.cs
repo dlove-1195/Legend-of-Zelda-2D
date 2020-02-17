@@ -22,10 +22,6 @@ namespace Sprint2
         public static int posY = 200;
         public static int posX = 200;
         
-        
-
-         
-
           public Link()
         {
             
@@ -115,8 +111,6 @@ namespace Sprint2
             position.X = posX;
             position.Y = posY;
         }
-
-
 
     }
 }
