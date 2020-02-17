@@ -15,8 +15,8 @@ namespace Sprint2
         private int posY=0;
         private int width=14;
         private int height=15;
-        private int delay;
-        private int totaldelay=25;
+        private int delay=0;
+        private int totalDelay=25;
 
         public LinkAttackRightSprite(Texture2D texture)
         {
@@ -33,7 +33,7 @@ namespace Sprint2
             height = 15;
 
             
-            if (delay > totaldelay / 5 && delay < 2 * totaldelay / 5)
+            if (delay > totalDelay / 5 && delay < 2 * totalDelay / 5)
             {
                 posX = 90;
                 posY = 30;
@@ -41,7 +41,7 @@ namespace Sprint2
                 height = 16;
 
             }
-            if (delay >= 2 * totaldelay / 5 && delay < 3 * totaldelay / 5)
+            if (delay >= 2 * totalDelay / 5 && delay < 3 * totalDelay / 5)
             {
 
                 posX = 90;
@@ -50,7 +50,7 @@ namespace Sprint2
                 height = 15;
             }
 
-            if (delay >= 3 * totaldelay / 5 && delay < 5 * totaldelay / 5)
+            if (delay >= 3 * totalDelay / 5 && delay < 5 * totalDelay / 5)
             {
 
                 posX = 84;
@@ -59,7 +59,7 @@ namespace Sprint2
                 height = 15;
             }
             delay++;
-            if (delay == totaldelay)
+            if (delay == totalDelay)
             {
                 delay = 0;
             }

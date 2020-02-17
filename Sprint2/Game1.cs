@@ -52,7 +52,6 @@ namespace Sprint2
 
         protected override void Update(GameTime gameTime)
         {
-
             
             player.Update();
             enemy.Update();

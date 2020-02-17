@@ -15,8 +15,8 @@ namespace Sprint2
         private int posY=0;
         private int width=15;
         private int height=16;
-        private int delay;
-        private int totaldelay=25;
+        private int delay=0;
+        private int totalDelay=25;
 
         public LinkAttackDownSprite(Texture2D texture)
         {
@@ -40,7 +40,7 @@ namespace Sprint2
             height = 16;
 
             
-            if (delay > totaldelay / 5 && delay < 2 * totaldelay / 5)
+            if (delay > totalDelay / 5 && delay < 2 * totalDelay / 5)
             {
                 posX = 1;
                 posY = 30;
@@ -48,7 +48,7 @@ namespace Sprint2
                 height = 16;
 
             }
-            if (delay >= 2 * totaldelay / 5 && delay < 3 * totaldelay / 5)
+            if (delay >= 2 * totalDelay / 5 && delay < 3 * totalDelay / 5)
             {
 
                 posX = 0;
@@ -57,7 +57,7 @@ namespace Sprint2
                 height = 15;
             }
 
-            if (delay >= 3 * totaldelay / 6 && delay < 5 * totaldelay / 5)
+            if (delay >= 3 * totalDelay / 6 && delay < 5 * totalDelay / 5)
             {
 
                 posX = 0;
@@ -67,7 +67,7 @@ namespace Sprint2
             }
 
             delay++;
-            if (delay == totaldelay)
+            if (delay == totalDelay)
             {
                 delay = 0;
             }
