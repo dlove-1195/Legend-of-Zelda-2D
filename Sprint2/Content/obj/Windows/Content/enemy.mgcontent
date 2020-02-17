@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Mingjie/CSE3902/Sprint2/Content/enemy.png</SourceFile>
-  <SourceTime>2020-02-17T14:30:57.8775231-05:00</SourceTime>
-  <DestFile>C:/Users/Mingjie/CSE3902/Sprint2/Content/bin/Windows/Content/enemy.xnb</DestFile>
-  <DestTime>2020-02-17T14:32:38.2211543-05:00</DestTime>
+  <SourceFile>D:/osu 2020 sp/3902/CSE-3902/Sprint2/Content/enemy.png</SourceFile>
+  <SourceTime>2020-02-17T15:13:31.0165974-05:00</SourceTime>
+  <DestFile>D:/osu 2020 sp/3902/CSE-3902/Sprint2/Content/bin/Windows/Content/enemy.xnb</DestFile>
+  <DestTime>2020-02-17T17:37:00.0861219-05:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

@@ -35,12 +35,12 @@ namespace Sprint2
 
 <<<<<<< HEAD
 <<<<<<< HEAD
-             map.Add(Keys.D1, new Gear1(myGame));
-             map.Add(Keys.D2, new Gear2(myGame));
+            map.Add(Keys.D1, new Gear1(myGame));
+            map.Add(Keys.D2, new Gear2(myGame));
             /* map.Add(Keys.D3, new Gear3(myGame));*/
-              map.Add(Keys.O, new PreviousEnemy(myGame));
-             map.Add(Keys.P, new NextNpc(myGame));
-             map.Add(Keys.R, new ResetState(myGame)); 
+            map.Add(Keys.O, new PreviousEnemy(myGame));
+            map.Add(Keys.P, new NextNpc(myGame));
+            map.Add(Keys.R, new ResetState(myGame));
 =======
 =======
 >>>>>>> ba55c543995b85dd56b6950a590507da5c4f25a7
@@ -119,6 +119,3 @@ namespace Sprint2
         }
     }
 }
-
-
-
