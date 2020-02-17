@@ -9,32 +9,25 @@ using Microsoft.Xna.Framework;
 
 namespace Sprint2
 {
-    class Bomb : Iitem
+    public class Bomb : Iitem
     {
         public IBombitemstate state;
         public ISprite bombSprite;
+        private int delay = 0;
         //initial position closed to link
-        public int posX;
-        public int posY;
-
-        public Bomb()
+        public   int posX;
+        public   int posY;
+        
+        public Bomb(int posX, int posY)
         {
+             
             state = new BombAppearUnExplodeState(this);
+            this.posX = posX;
+            this.posY = posY; 
         }
 
-        public void explode()
-        {
-            state.ChangeToExplode();
-        }
-        public void Appear()
-        {
-            state.ChangeToAppear();
-        }
-
-        public void Disappear()
-        {
-            state.ChangeToDisappear();
-        }
+        
+         
 
         public void Draw(SpriteBatch spriteBatch)
         {
@@ -45,16 +38,30 @@ namespace Sprint2
         public void Update()
         {
             bombSprite.Update();
+
+            int totalDelay = 100;
+            delay++;
+            if(delay > totalDelay/2 && delay<totalDelay)
+            {
+                state.ChangeToExplode();
+
+            }
+            else if(delay>=totalDelay)
+            {
+                state.ChangeToDisappear();
+            }
+            
+         
         }
 
-        public void nextItem()
+        public void nextItem(Game1 myGame)
         {
-            throw new NotImplementedException();
+            
         }
 
-        public void preItem()
+        public void preItem(Game1 myGame)
         {
-            throw new NotImplementedException();
+             
         }
     }
 }

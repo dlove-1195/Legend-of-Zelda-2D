@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sprint2
 {
-    interface IMovingitemstate
+    public interface IMovingitemstate
     {
         void ChangeToDisappear();
         void ChangeToAppear();

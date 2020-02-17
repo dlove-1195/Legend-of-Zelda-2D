@@ -11,8 +11,8 @@ namespace Sprint2
     public class WoodenSwordRight : ISprite
     {
         public Texture2D Texture { get; set; }
-        private int posX = 90;
-        private int posY = 199;
+        private int posX = 40;
+        private int posY = 85;
         private int width = 16;
         private int height = 7;
         private int currentPos;

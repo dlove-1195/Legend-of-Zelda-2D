@@ -21,6 +21,11 @@ namespace Sprint2
         
         void ChangeToStand();
         void ChangeToWalk();
+
+        void GetDamaged();
+        void Attack();
+        void LinkWithBomb();
+        void LinkWithSword();
         void Update();
         void Draw(SpriteBatch spriteBatch);
         Vector2 GetPosition();

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sprint2
 {
-    class BombDisappearState : IBombitemstate
+    public  class BombDisappearState : IBombitemstate
     {
         private Bomb bomb;
        
@@ -28,7 +28,7 @@ namespace Sprint2
         public void ChangeToExplode()
         {
             //no explode
-            throw new NotImplementedException();
+            
         }
     }
 }

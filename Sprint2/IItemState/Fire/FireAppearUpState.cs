@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework.Graphics;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Sprint2
 {
-    class FireAppearUpState : IMovingitemstate
+    public class FireAppearUpState : IMovingitemstate
     {
         private Fire fire;
         private Texture2D texture = Texture2DStorage.GetItemSpriteSheet();
@@ -14,7 +15,7 @@ namespace Sprint2
         public FireAppearUpState(Fire fire)
         {
             this.fire = fire;
-            fire.fireSprite = new ItemFireballMoveUpSprite(Texture);//error missing up sprite
+            fire.fireSprite = new ItemFireballMoveUpSprite(texture);//error missing up sprite
         }
         public void ChangeToAppear()
         {
@@ -41,7 +42,7 @@ namespace Sprint2
 
         public void ChangeToUp()
         {
-            throw new NotImplementedException();
+           
         }
     }
 }

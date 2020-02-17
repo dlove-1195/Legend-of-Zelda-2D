@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework.Graphics;
 namespace Sprint2
 {
-    interface Iitem
+    public interface Iitem
     {
-        void nextItem();
-        void preItem();
-        void Appear();
-        void Disappear();
+        void nextItem(Game1 myGame);
+        void preItem(Game1 myGame);
+       /* void Appear();
+        void Disappear(); */
         void Update();
         void Draw(SpriteBatch spriteBatch);
     }

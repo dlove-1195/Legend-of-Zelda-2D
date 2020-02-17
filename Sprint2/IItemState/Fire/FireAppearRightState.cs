@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework.Graphics;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Sprint2
 {
-    class FireAppearRightState : IMovingitemstate
+    public class FireAppearRightState : IMovingitemstate
     {
         private Fire fire;
         private Texture2D texture = Texture2DStorage.GetItemSpriteSheet();
@@ -41,7 +42,7 @@ namespace Sprint2
 
         public void ChangeToRight()
         {
-            throw new NotImplementedException();
+            
         }
     }
 }

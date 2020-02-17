@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace Sprint2 
 {
-    class NextItem: ICommand
+    public class PreviousItemCommand: ICommand
     {
         private Game1 myGame;
-        public NextItem(Game1 game)
+        public PreviousItemCommand(Game1 game)
         {
             myGame = game;
         }
         public void Execute()
         {
-            myGame.player.NextItem(); 
+            myGame.item.preItem(myGame); 
         }
     }
 }

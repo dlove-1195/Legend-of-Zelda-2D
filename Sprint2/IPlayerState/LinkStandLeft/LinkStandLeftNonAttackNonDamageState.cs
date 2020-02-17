@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Sprint2 
 {
-    class LinkStandLeftNonAttackNonDamageState: Iplayerstate
+    public class LinkStandLeftNonAttackNonDamageState: Iplayerstate
     {
         private Link link;
          
@@ -35,7 +35,14 @@ namespace Sprint2
         {
             link.state = new LinkStandDownNonAttackNonDamageState(link);
         }
-        
+        public void GetDamaged()
+        {
+            link.state = new LinkStandLeftNonAttackDamageState(link);
+        }
+        public void Attack()
+        {
+            link.state = new LinkStandLeftAttackNonDamageState(link);
+        }
         public void ChangeToWalk()
         {
             link.state = new LinkWalkLeftNonAttackNonDamageState(link);
@@ -43,6 +50,16 @@ namespace Sprint2
         public void ChangeToStand()
         {
             //already stand
+        }
+
+        public void LinkWithBomb()
+        {
+            link.state = new LinkLeftWithBombState(link);
+        }
+
+        public void LinkWithSword()
+        {
+            link.state = new LinkLeftWithSwordState(link);
         }
     }
 }

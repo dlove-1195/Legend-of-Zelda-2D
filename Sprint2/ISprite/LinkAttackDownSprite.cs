@@ -71,7 +71,10 @@ namespace Sprint2
             delay++;
             if (delay == totalDelay)
             {
-                delay = 0;
+                posX = 0;
+                posY = 0;
+                width = 15;
+                height = 16;
             }
 
 

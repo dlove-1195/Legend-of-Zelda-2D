@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sprint2 
 {
-    class ChangeToRightCommand: ICommand
+    public class ChangeToRightCommand : ICommand
     {
         private Game1 myGame;
         public ChangeToRightCommand(Game1 game)

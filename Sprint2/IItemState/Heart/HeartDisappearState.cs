@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sprint2
 {
-    class HeartDisappearState : IStaticitemstate
+    public class HeartDisappearState : IStaticitemstate
     {
         private Heart heart;
         public HeartDisappearState(Heart heart)

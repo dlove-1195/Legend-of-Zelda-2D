@@ -9,28 +9,20 @@ using Microsoft.Xna.Framework;
 
 namespace Sprint2
 {
-    class Heart : Iitem
+    public class Heart : Iitem
     {
         public IStaticitemstate state;
         public ISprite heartSprite;
         //initial position in the center
         public int posX =120;
         public int posY =400;
-
+        
         public Heart()
         {
-            state = new HeartAppearState();
+            state = new HeartAppearState(this);
+           
         }
-        public void Appear()
-        {
-            state.ChangeToAppear();
-        }
-
-        public void Disappear()
-        {
-            state.ChangeToDisappear();
-        }
-
+       
         public void Draw(SpriteBatch spriteBatch)
         {
             heartSprite.Draw(spriteBatch, new Vector2(posX, posY));
@@ -40,13 +32,17 @@ namespace Sprint2
         {
             heartSprite.Update();
         }
-        public void preItem()
+        public void preItem(Game1 myGame)
         {
-            Clock clock = new Clock();
+           
+            myGame.item = new Clock();
+            
         }
-        public void nextItem()
+        public void nextItem(Game1 myGame)
         {
-            BlueDiamond blueDiamond = new BlueDiamond();
+            
+            myGame.item = new BlueDiamond();
+            
         }
     }
 }

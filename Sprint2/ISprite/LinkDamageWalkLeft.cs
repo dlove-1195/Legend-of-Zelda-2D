@@ -11,14 +11,16 @@ namespace Sprint2
     public class LinkDamageWalkLeftSprite : ISprite
     {
         public Texture2D Texture;
-        private int sourceLocX = 589;
-        private int sourceLocY = 2;
-        private int width = 14;
-        private int height = 15;
+        private int sourceLocX = 77;
+        private int sourceLocY = 1;
+        private int width = 15;
+        private int height = 16;
         private int blinkTimes = 0;
-        private int totalBlink = 10;
+        
         private int delay = 0;
-        private int totalDelay = 10;
+        private int totalDelay = 30;
+
+
         private bool movingLeft = true;
 
         public LinkDamageWalkLeftSprite(Texture2D texture)
@@ -29,38 +31,37 @@ namespace Sprint2
 
         public void Update()
         {
-            if (delay <= totalDelay / 2)
+            if (delay < totalDelay / 2)
             {
-                width = 14;
-                height = 15;
                 if (blinkTimes == 0)
                 {
-                    sourceLocX = 589;
-                    sourceLocY = 2;
+                    sourceLocX = 96;
+                    sourceLocY = 1;
                 }
                 else if (blinkTimes == 1)
                 {
-                    sourceLocX = 589;
-                    sourceLocY = 146;
+                    sourceLocX = 96;
+                    sourceLocY = 145;
                 }
                 else if (blinkTimes == 2)
                 {
-                    sourceLocX = 589;
-                    sourceLocY = 110;
+                    sourceLocX = 96;
+                    sourceLocY = 109;
                 }
                 else if (blinkTimes == 3)
                 {
-                    sourceLocX = 589;
-                    sourceLocY = 128;
+                    sourceLocX = 96;
+                    sourceLocY = 127;
                 }
                 else if (blinkTimes == 4)
                 {
-                    sourceLocX = 589;
-                    sourceLocY = 146;
+                    sourceLocX = 96;
+                    sourceLocY = 145;
                 }
-                if (delay == totalDelay)
+                else
                 {
-                    delay = 0;
+                    sourceLocX = 30;
+                    sourceLocY = 0;
                 }
             }
             else
@@ -69,47 +70,50 @@ namespace Sprint2
                 height = 16;
                 if (blinkTimes == 5)
                 {
-                    sourceLocX = 570;
+                    sourceLocX = 77;
                     sourceLocY = 1;
                 }
                 else if (blinkTimes == 6)
                 {
-                    sourceLocX = 570;
+                    sourceLocX = 77;
                     sourceLocY = 145;
                 }
                 else if (blinkTimes == 7)
                 {
-                    sourceLocX = 570;
-                    sourceLocY = 109;
+                    sourceLocX = 77;
+                    sourceLocY = 127;
                 }
                 else if (blinkTimes == 8)
                 {
-                    sourceLocX = 570;
-                    sourceLocY = 127;
+                    sourceLocX = 77;
+                    sourceLocY = 1;
                 }
                 else if (blinkTimes == 9)
                 {
-                    sourceLocX = 570;
+                    sourceLocX = 77;
                     sourceLocY = 145;
                 }
-            }
+                else
+                {
+                    sourceLocX = 31;
+                    sourceLocY = 30;
+                }
+                if (delay == totalDelay)
+                {
+                    delay = 0;
+                }
+                width = 14;
+                height = 15;
 
+            }
             delay++;
             blinkTimes++;
-            if (delay == totalDelay)
-            {
-                delay = 0;
-            }
-            if (blinkTimes == totalBlink)
-            {
-                blinkTimes = 0;
-            }
-
-            //moving left and right 
+          
+          
             if (movingLeft)
             {
                 Link.posX--;
-                if (Link.posX <= 0)
+                if (Link.posX <=0)
                     movingLeft = false;
             }
             else
@@ -122,9 +126,8 @@ namespace Sprint2
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-
             Rectangle sourceRectangle = new Rectangle(sourceLocX, sourceLocY, width, height);
-            Rectangle destinationRectangle = new Rectangle(Link.posX, Link.posY, width * 3, height * 3);
+            Rectangle destinationRectangle = new Rectangle( (int)location.X, (int)location.Y, width*3 , height*3);
 
             spriteBatch.Begin();
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);

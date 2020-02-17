@@ -15,12 +15,12 @@ namespace Sprint2
         public ISprite  DragonSprite;
         public int updateDelay = 0;
         public int totalDelay = 30;
-        private Fire fire = new Fire();
+        private Fire fire;
 
 
         // ?? change later 
         private Vector2 position = new Vector2(200, 200);
-        public static int currentFrame;
+        
         public static int posX = 400;
         public static int posY = 200;
          
@@ -72,21 +72,24 @@ namespace Sprint2
                    {
                        case 0:
                            this.ChangeToDown();
-                          fire.ChangeToAppear();
+                          fire.Appear();
+                          fire.goDown();
                         
                            break;
                        case 1:
                            this.ChangeToLeft();
-                          fire.ChangeToDisappear();
+                          fire.Disappear();
+                        
                          
                         break;
                        case 2:
                            this.ChangeToRight();
-                          fire.ChangeToAppear();
+                          fire.Appear();
+                          fire.goRight();
                         break;
                        case 3:
                            this.ChangeToUp();
-                        fire.ChangeToDisappear();
+                        fire.Disappear();
                         break;
                        default:
                            Console.WriteLine("error: no such situation");

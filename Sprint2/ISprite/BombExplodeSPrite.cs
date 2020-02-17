@@ -11,10 +11,10 @@ namespace Sprint2
     class BombExplodeSprite : ISprite
     {
         public Texture2D Texture;
-        private int sourceLocX = 179;
-        private int sourceLocY = 282;
-        private int width = 17;
-        private int height = 21;
+        private int sourceLocX = 364;
+        private int sourceLocY = 40;
+        private int width = 8;
+        private int height = 16;
 
 
         public BombExplodeSprite(Texture2D texture)

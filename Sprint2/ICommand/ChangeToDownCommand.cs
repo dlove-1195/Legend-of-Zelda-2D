@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sprint2 
 {
-    class ChangeToDownCommand: ICommand
+    public class ChangeToDownCommand: ICommand
     {
         private Game1 myGame;
         public ChangeToDownCommand(Game1 game)

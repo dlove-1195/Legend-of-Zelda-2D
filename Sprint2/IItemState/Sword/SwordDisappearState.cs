@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sprint2
 {
-    class SwordDisappearState : IMovingitemstate
+    public class SwordDisappearState : IMovingitemstate
     {
         private Sword sword;
         public SwordDisappearState(Sword sword)

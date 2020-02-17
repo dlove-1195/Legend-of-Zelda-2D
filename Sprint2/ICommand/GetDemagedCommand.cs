@@ -1,3 +1,6 @@
+using Microsoft.Xna.Framework.Input;
+using System;
+using System.Collections.Generic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,16 +9,16 @@ using System.Threading.Tasks;
 
 namespace Sprint2 
 {
-    class PreviousEnemy: ICommand
+   public class GetDamagedCommand: ICommand
     {
         private Game1 myGame;
-        public PreviousEnemy(Game1 game)
+        public GetDamagedCommand(Game1 game)
         {
             myGame = game;
         }
         public void Execute()
         {
-            myGame.player.PreviousEnemy(); 
+            myGame.player.GetDamaged(); 
         }
     }
 }

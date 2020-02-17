@@ -9,9 +9,8 @@ namespace Sprint2
 {
     class LinkWalkUpNonAttackNonDamageState: Iplayerstate
     {
-        private Link linkPlayer;
-        private Texture2D texture = Texture2DStorage.GetLinkSpriteSheet();
-
+        private Link linkPlayer; 
+private Texture2D texture = Texture2DStorage.GetLinkSpriteSheet();
         //non damaged, non attack
         public LinkWalkUpNonAttackNonDamageState(Link link )
         {
@@ -42,7 +41,19 @@ namespace Sprint2
              
 
         }
-       
+        public void GetDamaged()
+        {
+            linkPlayer.state = new LinkWalkUpNonAttackDamageState(linkPlayer);
+            
+
+        }
+        public void Attack()
+        {
+            
+            
+
+        }
+
         public void ChangeToWalk()
         {
             //already walk
@@ -52,7 +63,15 @@ namespace Sprint2
             linkPlayer.state = new LinkStandUpNonAttackNonDamageState(linkPlayer);
         }
 
+        public void LinkWithBomb()
+        {
 
+        }
+
+        public void LinkWithSword()
+        {
+
+        }
 
 
 

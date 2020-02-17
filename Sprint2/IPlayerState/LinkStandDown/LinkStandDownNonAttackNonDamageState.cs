@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Sprint2 
 {
-    class LinkStandDownNonAttackNonDamageState:Iplayerstate
+    public class LinkStandDownNonAttackNonDamageState:Iplayerstate
     {
         private Link link;
         private Texture2D texture = Texture2DStorage.GetLinkSpriteSheet();
@@ -33,8 +33,14 @@ namespace Sprint2
         {
             //alrady down
         }
-        
-       
+        public void GetDamaged()
+        {
+            link.state = new LinkStandDownNonAttackDamageState(link);
+        }
+        public void Attack()
+        {
+            link.state = new LinkStandDownAttackNonDamageState(link);
+        }
         public void ChangeToWalk()
         {
             link.state = new LinkWalkDownNonAttackNonDamageState(link);
@@ -42,6 +48,16 @@ namespace Sprint2
         public void ChangeToStand()
         {
             //already stand
+        }
+        public void LinkWithBomb()
+        {
+             
+            link.state = new LinkDownWithBombState(link);
+        }
+
+        public void LinkWithSword()
+        {
+            link.state = new LinkDownWithSwordState(link);
         }
     }
 }

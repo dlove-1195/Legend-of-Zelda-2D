@@ -48,7 +48,7 @@ namespace Sprint2
             }
             else if (blinkTimes == 4)
             {
-
+                
                 sourceLocY = 145;
             }
 
@@ -56,7 +56,9 @@ namespace Sprint2
             blinkTimes++;
             if (blinkTimes == totalBlink)
             {
-                blinkTimes = 0;
+                sourceLocX = 0; 
+                sourceLocY = 0;
+                 
             }
         }
 

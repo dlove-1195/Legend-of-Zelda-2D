@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sprint2
 {
-    interface IBombitemstate
+    public interface IBombitemstate
     {
         void ChangeToDisappear();
         void ChangeToAppear();

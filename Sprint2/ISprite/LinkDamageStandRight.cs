@@ -56,7 +56,8 @@ namespace Sprint2
             blinkTimes++;
             if (blinkTimes == totalBlink)
             {
-                blinkTimes = 0;
+                sourceLocX = 91;
+                sourceLocY = 0;
             }
         }
 

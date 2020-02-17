@@ -12,8 +12,11 @@ namespace Sprint2
         void ChangeToLeft();
         void ChangeToUp();
         void ChangeToDown();
-        
+        void GetDamaged();
+        void Attack();
         void ChangeToWalk();
         void ChangeToStand();
+        void LinkWithBomb();
+        void LinkWithSword();
     }
 }

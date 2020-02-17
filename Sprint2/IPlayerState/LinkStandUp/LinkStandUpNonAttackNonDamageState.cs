@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Sprint2 
 {
-    class LinkStandUpNonAttackNonDamageState:Iplayerstate
+    public class LinkStandUpNonAttackNonDamageState:Iplayerstate
     {
         private Link link;
         private Texture2D texture = Texture2DStorage.GetLinkSpriteSheet();
@@ -33,7 +33,14 @@ namespace Sprint2
         {
             link.state = new LinkStandDownNonAttackNonDamageState(link);
         }
-      
+        public void GetDamaged()
+        {
+            link.state = new LinkStandUpNonAttackDamageState(link);
+        }
+        public void Attack()
+        {
+            link.state = new LinkStandUpAttackNonDamageState(link);
+        }
         public void ChangeToWalk()
         {
             link.state = new LinkWalkUpNonAttackNonDamageState(link);
@@ -41,6 +48,16 @@ namespace Sprint2
         public void ChangeToStand()
         {
             //already stand
+        }
+
+        public void LinkWithBomb()
+        {
+            link.state = new LinkUpWithBombState(link);
+        }
+
+        public void LinkWithSword()
+        {
+            link.state = new LinkUpWithSwordState(link);
         }
     }
 }

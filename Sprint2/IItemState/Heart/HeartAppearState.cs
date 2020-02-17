@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework.Graphics;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Sprint2
 {
-    class HeartAppearState : IStaticitemstate
+    public class HeartAppearState : IStaticitemstate
     {
         private Heart heart;
         private Texture2D texture = Texture2DStorage.GetItemSpriteSheet();

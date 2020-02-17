@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sprint2 
 {
-    class ChangeToWalkCommand: ICommand
+    public class ChangeToWalkCommand : ICommand
     {
         private Game1 myGame;
         public ChangeToWalkCommand(Game1 game)

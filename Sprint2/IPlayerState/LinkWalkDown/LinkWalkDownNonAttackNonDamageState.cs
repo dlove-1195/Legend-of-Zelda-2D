@@ -41,7 +41,19 @@ namespace  Sprint2
             // already down, do nothing
 
         }
-       
+        public void GetDamaged()
+        {
+            linkPlayer.state = new LinkWalkDownNonAttackDamageState(linkPlayer);
+            
+
+        }
+        public void Attack()
+        {
+            
+            
+
+        }
+
         public void ChangeToWalk()
         {
             //already walk
@@ -49,6 +61,16 @@ namespace  Sprint2
         public void ChangeToStand()
         {
             linkPlayer.state = new LinkStandDownNonAttackNonDamageState(linkPlayer);
+        }
+
+        public void LinkWithBomb()
+        {
+
+        }
+
+        public void LinkWithSword()
+        {
+
         }
 
 

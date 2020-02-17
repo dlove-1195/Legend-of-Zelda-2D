@@ -16,7 +16,7 @@ namespace Sprint2
         private int width = 15;
         private int height = 16;
         private int blinkTimes = 0;
-        private int totalBlink = 10;
+        
         private int delay = 0;
         private int totalDelay = 30;
 
@@ -58,6 +58,11 @@ namespace Sprint2
                     sourceLocX = 96;
                     sourceLocY = 145;
                 }
+                else
+                {
+                    sourceLocX = 0;
+                    sourceLocY = 0;
+                }
             }
             else
             {
@@ -88,6 +93,11 @@ namespace Sprint2
                     sourceLocX = 77;
                     sourceLocY = 145;
                 }
+                else
+                {
+                    sourceLocX = 1;
+                    sourceLocY = 30;
+                }
                 if (delay == totalDelay)
                 {
                     delay = 0;
@@ -98,15 +108,8 @@ namespace Sprint2
             }
             delay++;
             blinkTimes++;
-            if (delay == totalDelay)
-            {
-                delay = 0;
-            }
-            if (blinkTimes == totalBlink)
-            {
-                blinkTimes = 0;
-            }
-
+          
+          
             if (movingDown)
             {
                 Link.posY++;
