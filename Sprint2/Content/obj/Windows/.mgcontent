@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>Reach</Profile>
+  <Platform>Windows</Platform>
+  <Config />
+  <SourceFiles>
+    <File>D:/osu 2020 sp/3902/CSE-3902/Sprint2/Content/enemy.png</File>
+    <File>D:/osu 2020 sp/3902/CSE-3902/Sprint2/Content/enemy2.png</File>
+    <File>D:/osu 2020 sp/3902/CSE-3902/Sprint2/Content/item.png</File>
+    <File>D:/osu 2020 sp/3902/CSE-3902/Sprint2/Content/link.png</File>
+  </SourceFiles>
+  <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+  </DestFiles>
+</SourceFileCollection>
