@@ -5,34 +5,28 @@
 Mingjie Song, Wei Zong, Tina Liang, Yilai Yan, Wenzhuo Wang, Xinyi Chen
 
 ## Game Introduction:
-In Sprint2, there are one player Link, one enemy dragon, and one non-player character princess Zelda. Player Link uses tools such as wooden sord and bomb; enemy dragon moves randomly on screen while constantly spiting fire; a non-animated princess Zelda can be showen by clicking the switch key; other items such as clock, heart, and blue diamond can be cycled between each other at the bottom of screen. All characters and items have no interactions with each other for now.
+In Sprint2, there are one player Link, one enemy dragon, and one non-player character princess Zelda. Player Link uses tools such as wooden sord and bomb; enemy dragon moves randomly on screen while constantly projecting fire; a non-animated princess Zelda can be showen by clicking the switch key; other items such as clock, heart, and blue diamond can be cycled between each other at the bottom of screen. All characters and items have no interactions with each other for now.
 
 ## Game Pattern:
 
 ## Current Features:
- ### Player
- - Link
- ### Enemy and NPC 
- #### Enemy
- - Dragon
  
- #### NPC 
- - Princess
- 
- ### Item
- - Player's tool
-   - Bomb
-   - Wooden sord
- - Enemy's tool
-   - Fire
- - other item
-   - Clock
-   - Heart
-   - Blue diamond
+#### Player controls
+- Arrow and "wasd" keys move Link and change his facing direction.
+- The 'z' and 'n' key cause Link to attack using his sword.
+- Number keys 1 can be used to have Link use drop a bomb, and number key 2 can be used to have Link use a wooden sord.
+- The 'e' can change Link to damaged state
 
-Keyboard: For this project, player and use wasd to control the avatar,z and n to attack, e to get the avatar demaged,
-1 and 2 to equip different gears/weapons for the avatar and u and i to switch between items.
+#### Item controls
+- The keys "u" and "i" cycle between which item is currently being shown, the items that can be shown includes clock, heart, and blue diamond. 
+- Items do not interact with any other objects for now
 
-All sprites are not interacting with each other in this project as required in the instruction.
+#### Enemy/NPC (other character) controls
+- The keys "o" and "p" cycle between enemy dragon and npc princess Zelda
+- Dragon have animated states and move randomly while projecting fire
+- Princess Zelda stay non-animated.
+- They do not interact with any other objects for now
 
-There is a moving enemy that shoots and attack , a item that is static and a character available for player to control.
+#### Other controls
+- The 'q' key quits game
+- The 'r' key resets the program back to its initial state.
