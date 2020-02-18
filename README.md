@@ -1,4 +1,31 @@
-# CSE-3902
+# The Legend of Zelda
+## Sprint2:
+
+## Author: 
+Mingjie Song, Wei Zong, Tina Liang, Yilai Yan, Wenzhuo Wang, Yinyi Chen
+
+## Game Introduction:
+
+## Current Features:
+ ### Player
+ - Link
+ ### Enemy and NPC 
+ #### Enemy
+ - Dragon
+ 
+ #### NPC 
+ - Princess
+ 
+ ### Item
+ - Player's tool
+   - Bomb
+   - Wooden sord
+ - Enemy's tool
+   - Fire
+ - other item
+   - Clock
+   - Heart
+   - Blue diamond
 
 Keyboard: For this project, player and use wasd to control the avatar,z and n to attack, e to get the avatar demaged,
 1 and 2 to equip different gears/weapons for the avatar and u and i to switch between items.
