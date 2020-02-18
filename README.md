@@ -45,4 +45,8 @@ In Sprint2, there are one player Link, one enemy dragon, and one non-player char
 - The 'r' key resets the program back to its initial state.
 
 ## Code Analysis
-- The number of warnings and errors: 
+- We use  FxCop Analyzers to analyze our code and we receive one error and 168 warnings. 
+The one error said "an unknown error occurred while running code analysis". We are not sure is it because of the configuration of the code analysis or an error in our code. However, our code works well with all the funcitonings that we want to implement. 
+Since we finished our project just before the due, we couldn't find time to fix the warnings.
+Most of the warning are about the visibility of the instance fields. We will try to fix it before we start working on sprint3. 
+
