@@ -36,6 +36,7 @@ namespace Sprint2
         public void GetDamaged()
         {
             link.state = new LinkStandDownNonAttackDamageState(link);
+            Link.ifDamage = true;
         }
         public void Attack()
         {

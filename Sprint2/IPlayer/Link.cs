@@ -21,6 +21,8 @@ namespace Sprint2
         //??? change later
         public static int posY = 200;
         public static int posX = 200;
+        public static Boolean ifDamage = false;
+        public int timer = 0;
         
           public Link()
         {
@@ -85,6 +87,18 @@ namespace Sprint2
             if (sword != null)
             {
                 sword.Update();
+            }
+            if (ifDamage)
+            {
+                timer++;
+                if(timer == 100)
+                {
+                    ifDamage = false;
+                }
+            }
+            else
+            {
+                timer = 0;
             }
            
         }

@@ -57,7 +57,7 @@ namespace Sprint2
             if (movingLeft)
             {
                 Link.posX--;
-                if ( Link.posX == 0)
+                if ( Link.posX <= 0)
                     movingLeft = false;
             }
             else

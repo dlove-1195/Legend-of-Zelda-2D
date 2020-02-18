@@ -48,7 +48,7 @@ namespace Sprint2
             if (movingUp)
             {
                 Link.posY--;
-                if ( Link.posY == 0)
+                if ( Link.posY <= 0)
                     movingUp = false;
             }
             else

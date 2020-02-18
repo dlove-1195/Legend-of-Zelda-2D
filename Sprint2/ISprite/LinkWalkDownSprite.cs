@@ -51,7 +51,7 @@ namespace Sprint2
             {
 
                 Link.posY++;
-                if ( Link.posY == 480)
+                if (Link.posY >= Game1.WindowHeight - height * 3)
                     movingDown = false;
             }
             else

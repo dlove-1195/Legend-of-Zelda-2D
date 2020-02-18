@@ -19,23 +19,51 @@ namespace Sprint2
         }
         public void ChangeToRight()
         {
-            link.state = new LinkStandRightNonAttackNonDamageState(link);
+            if (Link.ifDamage)
+            {
+                link.state = new LinkStandRightNonAttackDamageState(link);
+            }
+            else
+            {
+                link.state = new LinkStandRightNonAttackNonDamageState(link);
+            }
         }
         public void ChangeToLeft()
         {
-            link.state = new LinkStandLeftNonAttackNonDamageState(link);
+            if (Link.ifDamage)
+            {
+                link.state = new LinkStandLeftNonAttackDamageState(link);
+            }
+            else
+            {
+                link.state = new LinkStandLeftNonAttackNonDamageState(link);
+            }
         }
         public void ChangeToUp()
         {
-            link.state = new LinkStandUpNonAttackNonDamageState(link);
+            if (Link.ifDamage)
+            {
+                link.state = new LinkStandUpNonAttackDamageState(link);
+            }
+            else
+            {
+                link.state = new LinkStandUpNonAttackNonDamageState(link);
+            }
         }
         public void ChangeToDown()
         {
-            link.state = new LinkStandDownNonAttackNonDamageState(link);
+            if (Link.ifDamage)
+            {
+                link.state = new LinkStandDownNonAttackDamageState(link);
+            }
+            else
+            {
+                link.state = new LinkStandDownNonAttackNonDamageState(link);
+            }
         }
         public void GetDamaged()
         {
-            link.linkSprite = new LinkDamageStandUpSprite(texture);
+            link.state = new LinkStandUpNonAttackDamageState(link);
         }
         public void Attack()
         {
@@ -43,11 +71,21 @@ namespace Sprint2
         }
         public void ChangeToWalk()
         {
-            link.state = new LinkWalkUpNonAttackNonDamageState(link);
+            if (Link.ifDamage)
+            {
+                link.state = new LinkWalkUpNonAttackDamageState(link);
+            }
+            else
+            {
+                link.state = new LinkWalkUpNonAttackNonDamageState(link);
+            }
         }
         public void ChangeToStand()
         {
-            //already stand
+            if (!Link.ifDamage)
+            {
+                link.state = new LinkStandUpNonAttackNonDamageState(link);
+            }
         }
 
         public void LinkWithBomb()

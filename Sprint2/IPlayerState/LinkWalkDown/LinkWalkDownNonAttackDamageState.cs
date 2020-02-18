@@ -20,30 +20,48 @@ namespace Sprint2
 
         public void ChangeToRight()
         {
-            linkPlayer.state = new LinkWalkRightNonAttackNonDamageState(linkPlayer);
-            
+            if (Link.ifDamage)
+            {
+                linkPlayer.state = new LinkWalkRightNonAttackDamageState(linkPlayer);
+            }
+            else
+            {
+                linkPlayer.state = new LinkWalkRightNonAttackNonDamageState(linkPlayer);
+            }
+
         }
         public void ChangeToLeft()
         {
-            linkPlayer.state = new LinkWalkLeftNonAttackNonDamageState(linkPlayer);
-            
+            if (Link.ifDamage)
+            {
+                linkPlayer.state = new LinkWalkLeftNonAttackDamageState(linkPlayer);
+            }
+            else
+            {
+                linkPlayer.state = new LinkWalkLeftNonAttackNonDamageState(linkPlayer);
+            }
+
 
         }
         public void ChangeToUp()
         {
-            linkPlayer.state = new LinkWalkUpNonAttackNonDamageState(linkPlayer);
-
+            if (Link.ifDamage)
+            {
+                linkPlayer.state = new LinkWalkUpNonAttackDamageState(linkPlayer);
+            }
+            else
+            {
+                linkPlayer.state = new LinkWalkUpNonAttackNonDamageState(linkPlayer);
+            }
         }
         public void ChangeToDown()
         {
-            linkPlayer.state = new LinkWalkDownNonAttackNonDamageState(linkPlayer);
+           
 
 
         }
         public void GetDamaged()
         {
-            // NO-OP
-            // already damage, do nothing
 
         }
         public void Attack()
@@ -54,11 +72,23 @@ namespace Sprint2
 
         public void ChangeToWalk()
         {
-            //already walk
+           if (!Link.ifDamage)
+            {
+                linkPlayer.state = new LinkWalkDownNonAttackNonDamageState(linkPlayer);
+            }
         }
         public void ChangeToStand()
         {
-            linkPlayer.state = new LinkStandDownNonAttackNonDamageState(linkPlayer);
+    
+            
+            if (Link.ifDamage)
+            {
+                linkPlayer.state = new LinkStandDownNonAttackDamageState(linkPlayer);
+            }
+            else
+            {
+                linkPlayer.state = new LinkStandDownNonAttackNonDamageState(linkPlayer);
+            } 
         }
 
         public void LinkWithBomb()

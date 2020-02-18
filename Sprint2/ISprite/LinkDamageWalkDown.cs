@@ -16,7 +16,7 @@ namespace Sprint2
         private int width = 15;
         private int height = 16;
         private int blinkTimes = 0;
-        
+        private int totalBlink = 10;
         private int delay = 0;
         private int totalDelay = 30;
 
@@ -33,6 +33,8 @@ namespace Sprint2
         {
             if (delay < totalDelay / 2)
             {
+                width = 13;
+                height = 16;
                 if (blinkTimes == 0)
                 {
                     sourceLocX = 96;
@@ -57,11 +59,6 @@ namespace Sprint2
                 {
                     sourceLocX = 96;
                     sourceLocY = 145;
-                }
-                else
-                {
-                    sourceLocX = 0;
-                    sourceLocY = 0;
                 }
             }
             else
@@ -93,33 +90,26 @@ namespace Sprint2
                     sourceLocX = 77;
                     sourceLocY = 145;
                 }
-                else
-                {
-                    sourceLocX = 1;
-                    sourceLocY = 30;
-                }
-                if (delay == totalDelay)
-                {
-                    delay = 0;
-                }
-                width = 13;
-                height = 16;
 
             }
             delay++;
             blinkTimes++;
-          
-          
+            if (delay == totalDelay)
+            {
+                delay = 0;
+            }
+            if (blinkTimes == totalBlink)
+            {
+                blinkTimes = 0;
+            }
+
             if (movingDown)
             {
                 Link.posY++;
                 if (Link.posY >= Game1.WindowHeight - height * 3)
                     movingDown = false;
             }
-            else
-            {
-                //doNothing
-            }
+
 
 
         }

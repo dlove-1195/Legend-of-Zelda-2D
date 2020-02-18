@@ -58,7 +58,7 @@ namespace Sprint2
             if (movingRight)
             {
                 Link.posX++;
-                if ( Link.posX == 800)
+                if (Link.posX >= Game1.WindowWidth - width * 3)
                     movingRight = false;
             }
             else
