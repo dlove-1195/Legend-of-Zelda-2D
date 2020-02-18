@@ -8,6 +8,18 @@ Mingjie Song, Wei Zong, Tina Liang, Yilai Yan, Wenzhuo Wang, Xinyi Chen
 In Sprint2, there are one player Link, one enemy dragon, and one non-player character princess Zelda. Player Link uses tools such as wooden sord and bomb; enemy dragon moves randomly on screen while constantly projecting fire; a non-animated princess Zelda can be showen by clicking the switch key; other items such as clock, heart, and blue diamond can be cycled between each other at the bottom of screen. All characters and items have no interactions with each other for now.
 
 ## Game Pattern:
+#### state pattern
+- ICommand is implemented by Command classes
+- IController is implemented by KeyboardController classes 
+- IPlayer is implemented by Link classes
+- IPlayerState is implemented Link state classes
+- IEnemyOrNPC is implemented by Enemy and NPC classes 
+- IEnemyState is implemented by Dragon state classes
+- INpcState is implemented by NPC state classes
+- IItem is implemented by item states classes including bomb, clock, and fire etc.
+- IItemState is implemented by all items state classes
+- ISprite is implemented by all sprites classes
+- Texture2DStorage class is used to store all sprites' textures
 
 ## Current Features:
  
@@ -31,3 +43,6 @@ In Sprint2, there are one player Link, one enemy dragon, and one non-player char
 #### Other controls
 - The 'q' key quits game
 - The 'r' key resets the program back to its initial state.
+
+## Code Analysis
+- The number of warnings and errors: 
