@@ -19,6 +19,7 @@ In Sprint2, there are one player Link, one enemy dragon, and one non-player char
 
 #### Item controls
 - The keys "u" and "i" cycle between which item is currently being shown, the items that can be shown includes clock, heart, and blue diamond. 
+- The number key 1 causes Link drop a bomb, and number key 2 causes Link to use his wooden sord.
 - Items do not interact with any other objects for now
 
 #### Enemy/NPC (other character) controls
