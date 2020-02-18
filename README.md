@@ -27,7 +27,7 @@ In Sprint2, there are one player Link, one enemy dragon, and one non-player char
 - Arrow and "wasd" keys move Link and change his facing direction.
 - The 'z' and 'n' key cause Link to attack using his sword.
 - Number keys 1 can be used to have Link use drop a bomb, and number key 2 can be used to have Link use a wooden sord.
-- The 'e' can change Link to damaged state. For now, Link can only get damaged at Stand State. 
+- The 'e' can change Link to damaged state. For now, Link can only get damaged at Stand State. WalkDamage states will be implemented in the future.
 
 #### Item controls
 - The keys "u" and "i" cycle between which item is currently being shown, the items that can be shown includes clock, heart, and blue diamond. 
