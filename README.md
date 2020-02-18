@@ -7,7 +7,7 @@ Mingjie Song, Wei Zong, Tina Liang, Yilai Yan, Wenzhuo Wang, Yinyi Chen
 ## Game Introduction:
 In Sprint2, there are one player Link, one enemy dragon, and one non-player character princess. Player Link uses tools such as wooden sord and bomb; enemy dragon move randomly on screen while constantly spiting fire
 
-### Game Pattern:
+## Game Pattern:
 
 ## Current Features:
  ### Player
