@@ -17,7 +17,7 @@ namespace Sprint2
         private int height = 16;
         private int blinkTimes = 0;
         private int totalBlink = 5;
-
+ 
         public LinkDamageStandDownSprite(Texture2D texture)
         {
             Texture = texture;
@@ -26,40 +26,41 @@ namespace Sprint2
 
         public void Update()
         {
-            if (blinkTimes == 0)
-            {
+         
+                if (blinkTimes == 0)
+                {
 
-                sourceLocY = 1;
-            }
-            else if (blinkTimes == 1)
-            {
+                    sourceLocY = 1;
+                }
+                else if (blinkTimes == 1)
+                {
 
-                sourceLocY = 145;
-            }
-            else if (blinkTimes == 2)
-            {
+                    sourceLocY = 145;
+                }
+                else if (blinkTimes == 2)
+                {
 
-                sourceLocY = 109;
-            }
-            else if (blinkTimes == 3)
-            {
+                    sourceLocY = 109;
+                }
+                else if (blinkTimes == 3)
+                {
 
-                sourceLocY = 127;
-            }
-            else if (blinkTimes == 4)
-            {
-                
-                sourceLocY = 145;
-            }
+                    sourceLocY = 127;
+                }
+                else if (blinkTimes == 4)
+                {
+
+                    sourceLocY = 145;
+                }
 
 
-            blinkTimes++;
-            if (blinkTimes == totalBlink)
-            {
-                sourceLocX = 0; 
-                sourceLocY = 0;
-                 
-            }
+                blinkTimes++;
+                if (blinkTimes == totalBlink)
+                {
+    
+                    blinkTimes = 0;
+                }
+
         }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
