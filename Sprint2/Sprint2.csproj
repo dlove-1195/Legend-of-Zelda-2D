@@ -172,6 +172,7 @@
     <Compile Include="ISprite\ItemSprite\WoodenSwordLeft.cs" />
     <Compile Include="ISprite\ItemSprite\WoodenSwordRight.cs" />
     <Compile Include="ISprite\ItemSprite\WoodenSwordUp.cs" />
+    <Compile Include="LinkSpriteFactory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Texture2DStorage.cs" />
