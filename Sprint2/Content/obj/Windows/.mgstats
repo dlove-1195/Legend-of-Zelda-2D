@@ -1,5 +1,8 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"D:/osu 2020 sp/3902/CSE-3902/Sprint2/Content/enemy.png","D:/osu 2020 sp/3902/CSE-3902/Sprint2/Content/bin/Windows/enemy.xnb","TextureProcessor","Texture2DContent",6976,478913,0.1555359
-"D:/osu 2020 sp/3902/CSE-3902/Sprint2/Content/enemy2.png","D:/osu 2020 sp/3902/CSE-3902/Sprint2/Content/bin/Windows/enemy2.xnb","TextureProcessor","Texture2DContent",10081,604893,0.0284034
-"D:/osu 2020 sp/3902/CSE-3902/Sprint2/Content/item.png","D:/osu 2020 sp/3902/CSE-3902/Sprint2/Content/bin/Windows/item.xnb","TextureProcessor","Texture2DContent",1923,202997,0.0239378
-"D:/osu 2020 sp/3902/CSE-3902/Sprint2/Content/link.png","D:/osu 2020 sp/3902/CSE-3902/Sprint2/Content/bin/Windows/link.xnb","TextureProcessor","Texture2DContent",6901,523669,0.0229372
+"C:/Users/zz/Desktop/3902/CSE-3902/Sprint2/Content/bow.png","C:/Users/zz/Desktop/3902/CSE-3902/Sprint2/Content/bin/Windows/bow.xnb","TextureProcessor","Texture2DContent",465,14245,0.3730003
+"C:/Users/zz/Desktop/3902/CSE-3902/Sprint2/Content/characters.png","C:/Users/zz/Desktop/3902/CSE-3902/Sprint2/Content/bin/Windows/characters.xnb","TextureProcessor","Texture2DContent",939,26293,0.024934
+"C:/Users/zz/Desktop/3902/CSE-3902/Sprint2/Content/enemy.png","C:/Users/zz/Desktop/3902/CSE-3902/Sprint2/Content/bin/Windows/enemy.xnb","TextureProcessor","Texture2DContent",6976,478913,0.0319139
+"C:/Users/zz/Desktop/3902/CSE-3902/Sprint2/Content/enemy2.png","C:/Users/zz/Desktop/3902/CSE-3902/Sprint2/Content/bin/Windows/enemy2.xnb","TextureProcessor","Texture2DContent",10081,604893,0.0468756
+"C:/Users/zz/Desktop/3902/CSE-3902/Sprint2/Content/item.png","C:/Users/zz/Desktop/3902/CSE-3902/Sprint2/Content/bin/Windows/item.xnb","TextureProcessor","Texture2DContent",1923,202997,0.0369008
+"C:/Users/zz/Desktop/3902/CSE-3902/Sprint2/Content/link.png","C:/Users/zz/Desktop/3902/CSE-3902/Sprint2/Content/bin/Windows/link.xnb","TextureProcessor","Texture2DContent",6901,523669,0.0308989
+"C:/Users/zz/Desktop/3902/CSE-3902/Sprint2/Content/link--final.png","C:/Users/zz/Desktop/3902/CSE-3902/Sprint2/Content/bin/Windows/link--final.xnb","TextureProcessor","Texture2DContent",30417,1077597,0.0448792
