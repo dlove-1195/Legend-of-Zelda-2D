@@ -6,7 +6,7 @@ namespace Sprint2
 {
    
     public class Game1 : Game
-    {
+    { 
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
          

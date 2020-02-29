@@ -301,3 +301,28 @@ C:\Users\Mingjie\OneDrive\Documents\latestVersionSprint2\Sprint2\obj\x86\Debug\S
 C:\Users\Mingjie\OneDrive\Documents\latestVersionSprint2\Sprint2\obj\x86\Debug\Sprint2.csproj.CopyComplete
 C:\Users\Mingjie\OneDrive\Documents\latestVersionSprint2\Sprint2\obj\x86\Debug\Sprint2.exe
 C:\Users\Mingjie\OneDrive\Documents\latestVersionSprint2\Sprint2\obj\x86\Debug\Sprint2.pdb
+D:\osu 2020 sp\3902\CSE-3902\Sprint2\bin\Windows\x86\Debug\Content\characters.xnb
+D:\osu 2020 sp\3902\CSE-3902\Sprint2\bin\Windows\x86\Debug\Content\enemy.xnb
+D:\osu 2020 sp\3902\CSE-3902\Sprint2\bin\Windows\x86\Debug\Content\enemy2.xnb
+D:\osu 2020 sp\3902\CSE-3902\Sprint2\bin\Windows\x86\Debug\Content\item.xnb
+D:\osu 2020 sp\3902\CSE-3902\Sprint2\bin\Windows\x86\Debug\Content\link--final.xnb
+D:\osu 2020 sp\3902\CSE-3902\Sprint2\bin\Windows\x86\Debug\Content\link.xnb
+D:\osu 2020 sp\3902\CSE-3902\Sprint2\bin\Windows\x86\Debug\Sprint2.exe
+D:\osu 2020 sp\3902\CSE-3902\Sprint2\bin\Windows\x86\Debug\Sprint2.pdb
+D:\osu 2020 sp\3902\CSE-3902\Sprint2\bin\Windows\x86\Debug\MonoGame.Framework.dll
+D:\osu 2020 sp\3902\CSE-3902\Sprint2\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+D:\osu 2020 sp\3902\CSE-3902\Sprint2\bin\Windows\x86\Debug\SharpDX.dll
+D:\osu 2020 sp\3902\CSE-3902\Sprint2\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+D:\osu 2020 sp\3902\CSE-3902\Sprint2\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+D:\osu 2020 sp\3902\CSE-3902\Sprint2\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+D:\osu 2020 sp\3902\CSE-3902\Sprint2\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+D:\osu 2020 sp\3902\CSE-3902\Sprint2\bin\Windows\x86\Debug\SharpDX.XInput.dll
+D:\osu 2020 sp\3902\CSE-3902\Sprint2\bin\Windows\x86\Debug\MonoGame.Framework.xml
+D:\osu 2020 sp\3902\CSE-3902\Sprint2\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+D:\osu 2020 sp\3902\CSE-3902\Sprint2\bin\Windows\x86\Debug\SharpDX.xml
+D:\osu 2020 sp\3902\CSE-3902\Sprint2\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+D:\osu 2020 sp\3902\CSE-3902\Sprint2\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+D:\osu 2020 sp\3902\CSE-3902\Sprint2\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+D:\osu 2020 sp\3902\CSE-3902\Sprint2\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+D:\osu 2020 sp\3902\CSE-3902\Sprint2\bin\Windows\x86\Debug\SharpDX.XInput.xml
+D:\osu 2020 sp\3902\CSE-3902\Sprint2\obj\x86\Debug\Sprint2.csproj.CopyComplete

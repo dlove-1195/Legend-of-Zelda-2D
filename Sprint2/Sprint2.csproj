@@ -98,6 +98,7 @@
     <Compile Include="IPlayerState\LinkWithBomb\LinkUpWithBombState.cs" />
     <Compile Include="IPlayerState\LinkWithBomb\LinkRightWithBombState.cs" />
     <Compile Include="IPlayerState\LinkWithBomb\LinkLeftWithBombState.cs" />
+    <Compile Include="ISprite\FlameSprite\FlameSilentBurningSprite.cs" />
     <Compile Include="ISprite\LinkSprite\LinkDamageWalkLeft.cs" />
     <Compile Include="IItem\Sword.cs" />
     <Compile Include="IPlayerState\Iplayerstate.cs" />
