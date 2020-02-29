@@ -37,10 +37,8 @@ namespace Sprint2
             {
                 Rectangle sourceRectangle = new Rectangle(sourceLocX, sourceLocY, width, height);
                 Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width * 2, height * 2);
-                spriteBatch.Begin();
 
                 spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-                spriteBatch.End();
             }
         }
 
