@@ -21,19 +21,19 @@ namespace Sprint2
         }
         public void ChangeToRight()
         {
-            link.state = new LinkStandRightAttackNonDamageState(link);
+            link.state = new LinkStandRightNonAttackNonDamageState(link);
         }
         public void ChangeToLeft()
         {
-            link.state = new LinkStandLeftAttackNonDamageState(link);
+            link.state = new LinkStandLeftNonAttackNonDamageState(link);
         }
         public void ChangeToUp()
         {
-            link.state = new LinkStandUpAttackNonDamageState(link);
+            link.state = new LinkStandUpNonAttackNonDamageState(link);
         }
         public void ChangeToDown()
         {
-            link.state = new LinkStandDownAttackNonDamageState(link);
+            link.state = new LinkStandDownNonAttackNonDamageState(link);
         }
         public void GetDamaged()
         {
