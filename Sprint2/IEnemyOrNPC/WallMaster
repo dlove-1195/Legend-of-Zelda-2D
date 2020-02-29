@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Sprint2
 {
-    public class Dragon : IEnemyOrNPC
+    public class WallMater : IEnemyOrNPC
     {
 
         public IEnemyState state;
