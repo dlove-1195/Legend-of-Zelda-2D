@@ -42,6 +42,7 @@ private Texture2D texture = Texture2DStorage.GetLinkSpriteSheet();
         }
         public void GetDamaged()
         {
+            Link.ifDamage = true;
             linkPlayer.state = new LinkWalkRightNonAttackDamageState(linkPlayer);
             
 

@@ -43,6 +43,7 @@ namespace  Sprint2
         }
         public void GetDamaged()
         {
+            Link.ifDamage = true;
             linkPlayer.state = new LinkWalkDownNonAttackDamageState(linkPlayer);
             
 
