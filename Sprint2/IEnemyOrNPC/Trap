@@ -1,0 +1,76 @@
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Sprint2
+{
+    public class Dragon : IEnemyOrNPC
+    {
+
+        public IEnemyState state;
+        public ISprite TrapSprite;
+        
+        public static int posX = 400;
+        public static int posY = 200;
+
+
+
+
+        public Dragon()
+        {
+
+            state = new TrapStandStill(this);
+        }
+
+
+
+        public void ChangeToRight()
+        {
+           
+        }
+        public void ChangeToLeft()
+        {
+            
+        }
+        public void ChangeToUp()
+        {
+           
+        }
+        public void ChangeToDown()
+        {
+            
+        }
+
+
+
+
+        public void Update()
+        {
+              TrapSprite.Update();
+            }
+
+        }
+
+        public void Draw(SpriteBatch spriteBatch)
+        {
+            TrapSprite.Draw(spriteBatch, new Vector2(posX, posY));
+        }
+
+        public void previousEnemy(Game1 game)
+        {
+            game.enemy = new Princess();
+        }
+        public void nextEnemy(Game1 game)
+        {
+            game.enemy = new Princess();
+        }
+
+
+
+
+    }
+}
