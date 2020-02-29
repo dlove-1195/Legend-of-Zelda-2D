@@ -15,11 +15,11 @@ namespace Sprint2
         //initial position on the ground
         public int posX = 120;
         public int posY =400;
-        
+        private Texture2D texture = Texture2DStorage.GetItemSpriteSheet();
         public BlueDiamond()
         {
-            state = new BlueDiamondAppearState(this);
-          
+            blueDiamondSprite = new ItemBlueDiamondSprite(texture);
+
         }
          
 

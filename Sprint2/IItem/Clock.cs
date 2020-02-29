@@ -10,15 +10,17 @@ namespace Sprint2
 {
     public class Clock : Iitem
     {
-        public IitemState state;
+       
         public ISprite clockSprite;
         //initial position on the ground
         public int posX =120;
         public int posY= 400;
-         
+        private Texture2D texture = Texture2DStorage.GetItemSpriteSheet();
         public Clock()
         {
-            state = new ClockAppearState(this);
+            //factory 
+              
+        clockSprite = new ClockSprite(texture); 
         }
          
 

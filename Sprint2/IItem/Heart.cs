@@ -16,11 +16,11 @@ namespace Sprint2
         //initial position in the center
         public int posX =120;
         public int posY =400;
-        
+        private Texture2D texture = Texture2DStorage.GetItemSpriteSheet();
         public Heart()
         {
-            state = new HeartAppearState(this);
-           
+            heartSprite = new ItemHeartSprite(texture);
+
         }
        
         public void Draw(SpriteBatch spriteBatch)

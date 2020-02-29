@@ -10,8 +10,7 @@ namespace Sprint2
     {
         void nextItem(Game1 myGame);
         void preItem(Game1 myGame);
-       /* void Appear();
-        void Disappear(); */
+       
         void Update();
         void Draw(SpriteBatch spriteBatch);
     }
