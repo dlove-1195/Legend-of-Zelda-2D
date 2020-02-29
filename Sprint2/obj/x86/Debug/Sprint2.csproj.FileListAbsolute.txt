@@ -326,3 +326,8 @@ D:\osu 2020 sp\3902\CSE-3902\Sprint2\bin\Windows\x86\Debug\SharpDX.Direct3D11.xm
 D:\osu 2020 sp\3902\CSE-3902\Sprint2\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
 D:\osu 2020 sp\3902\CSE-3902\Sprint2\bin\Windows\x86\Debug\SharpDX.XInput.xml
 D:\osu 2020 sp\3902\CSE-3902\Sprint2\obj\x86\Debug\Sprint2.csproj.CopyComplete
+C:\Users\zz\Desktop\3902\CSE-3902\Sprint2\bin\Windows\x86\Debug\Content\bow.xnb
+C:\Users\zz\Desktop\3902\CSE-3902\Sprint2\bin\Windows\x86\Debug\Content\characters.xnb
+C:\Users\zz\Desktop\3902\CSE-3902\Sprint2\bin\Windows\x86\Debug\Content\enemy2.xnb
+C:\Users\zz\Desktop\3902\CSE-3902\Sprint2\bin\Windows\x86\Debug\Content\link--final.xnb
+C:\Users\zz\Desktop\3902\CSE-3902\Sprint2\bin\Windows\x86\Debug\Content\woodenboomerang.xnb

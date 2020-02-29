@@ -13,15 +13,7 @@ namespace Sprint2
         public IEnemyOrNPC enemy;
         public Iplayer player;
         public Iitem item;
- 
-       
-        
-       
-        
- 
-      
- 
-      
+
         IController controller;
         public static int WindowWidth;
         public static int WindowHeight;
@@ -49,11 +41,6 @@ namespace Sprint2
             enemy = new Dragon();
             item = new Heart();
  
-            
-
-         
-           
- 
  
         }
 
@@ -68,9 +55,7 @@ namespace Sprint2
             player.Update();
             enemy.Update();
             item.Update();
- 
             
- 
             controller.Update();
            
             base.Update(gameTime);
@@ -82,7 +67,6 @@ namespace Sprint2
             player.Draw(spriteBatch);
             enemy.Draw(spriteBatch);
             item.Draw(spriteBatch);
- 
             base.Draw(gameTime);
         }
     }

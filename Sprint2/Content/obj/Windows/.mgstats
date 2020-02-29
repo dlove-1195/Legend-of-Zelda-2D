@@ -6,3 +6,4 @@ Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Siz
 "C:/Users/zz/Desktop/3902/CSE-3902/Sprint2/Content/item.png","C:/Users/zz/Desktop/3902/CSE-3902/Sprint2/Content/bin/Windows/item.xnb","TextureProcessor","Texture2DContent",1923,202997,0.0369008
 "C:/Users/zz/Desktop/3902/CSE-3902/Sprint2/Content/link.png","C:/Users/zz/Desktop/3902/CSE-3902/Sprint2/Content/bin/Windows/link.xnb","TextureProcessor","Texture2DContent",6901,523669,0.0308989
 "C:/Users/zz/Desktop/3902/CSE-3902/Sprint2/Content/link--final.png","C:/Users/zz/Desktop/3902/CSE-3902/Sprint2/Content/bin/Windows/link--final.xnb","TextureProcessor","Texture2DContent",30417,1077597,0.0448792
+"C:/Users/zz/Desktop/3902/CSE-3902/Sprint2/Content/woodenboomerang.png","C:/Users/zz/Desktop/3902/CSE-3902/Sprint2/Content/bin/Windows/woodenboomerang.xnb","TextureProcessor","Texture2DContent",1211,10965,0.1615684

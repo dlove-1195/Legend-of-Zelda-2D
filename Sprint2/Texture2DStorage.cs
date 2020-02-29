@@ -19,8 +19,9 @@ namespace Sprint2
 			private static Texture2D linkSpriteSheet2;
 			private static Texture2D bowSpriteSheet;
 			private static Texture2D npcSpriteSheet;
- 
-		    private static Texture2D enemySpriteSheet2;
+		private static Texture2D woodenBoomerangSpriteSheet;
+
+			private static Texture2D enemySpriteSheet2;
  
  
 
@@ -35,10 +36,9 @@ namespace Sprint2
 			npcSpriteSheet = content.Load<Texture2D>("characters");
 
 			linkSpriteSheet2 = content.Load<Texture2D>("link--final");
-
 			enemySpriteSheet2 = content.Load<Texture2D>("enemy2");
 			bowSpriteSheet = content.Load<Texture2D>("bow");
- 
+			woodenBoomerangSpriteSheet = content.Load<Texture2D>("woodenboomerang");
 		}
 
 		   public static void UnloadAllTextures()
@@ -65,7 +65,11 @@ namespace Sprint2
 			{
 				return itemSpriteSheet;
 			}
-
+	
+		public static Texture2D GetWoodBoomerangSpriteSheet()
+		{
+			return woodenBoomerangSpriteSheet;
+		}
 		    public static Texture2D GetLinkSpriteSheet()
 		    {
 				return linkSpriteSheet;
