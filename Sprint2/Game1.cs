@@ -13,7 +13,6 @@ namespace Sprint2
         public IEnemyOrNPC enemy;
         public Iplayer player;
         public Iitem item;
-
         IController controller;
         public static int WindowWidth;
         public static int WindowHeight;
@@ -55,7 +54,6 @@ namespace Sprint2
             player.Update();
             enemy.Update();
             item.Update();
-            
             controller.Update();
            
             base.Update(gameTime);

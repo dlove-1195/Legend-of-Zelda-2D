@@ -99,6 +99,8 @@
     <Compile Include="IPlayerState\LinkWithBomb\LinkRightWithBombState.cs" />
     <Compile Include="IPlayerState\LinkWithBomb\LinkLeftWithBombState.cs" />
     <Compile Include="ISprite\FlameSprite\FlameSilentBurningSprite.cs" />
+    <Compile Include="ISprite\ItemSprite\BlueCandleUpRight.cs" />
+    <Compile Include="ISprite\ItemSprite\BlueCandleDownLeft.cs" />
     <Compile Include="ISprite\ItemSprite\BowRight.cs" />
     <Compile Include="ISprite\ItemSprite\BowLeft.cs" />
     <Compile Include="ISprite\ItemSprite\BowUp.cs" />

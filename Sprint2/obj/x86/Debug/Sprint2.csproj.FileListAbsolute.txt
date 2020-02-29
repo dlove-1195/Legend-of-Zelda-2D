@@ -331,3 +331,4 @@ C:\Users\zz\Desktop\3902\CSE-3902\Sprint2\bin\Windows\x86\Debug\Content\characte
 C:\Users\zz\Desktop\3902\CSE-3902\Sprint2\bin\Windows\x86\Debug\Content\enemy2.xnb
 C:\Users\zz\Desktop\3902\CSE-3902\Sprint2\bin\Windows\x86\Debug\Content\link--final.xnb
 C:\Users\zz\Desktop\3902\CSE-3902\Sprint2\bin\Windows\x86\Debug\Content\woodenboomerang.xnb
+C:\Users\zz\Desktop\3902\CSE-3902\Sprint2\bin\Windows\x86\Debug\Content\candle.xnb
