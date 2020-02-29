@@ -44,49 +44,39 @@ namespace Sprint2
         public void Update()
         {
             newState = Keyboard.GetState();
+            Keys[] newPressedKeys =  newState.GetPressedKeys();
+            Keys[] oldPressedKeys = { };
             Keys[] pressedKeys = newState.GetPressedKeys();
 
-            if ((oldState.IsKeyUp(Keys.U) && newState.IsKeyDown(Keys.U)) || (oldState.IsKeyUp(Keys.I) && newState.IsKeyDown(Keys.I))||
-                 (oldState.IsKeyUp(Keys.O) && newState.IsKeyDown(Keys.O)) || (oldState.IsKeyUp(Keys.P) && newState.IsKeyDown(Keys.P)))
+            if (oldState != null)
             {
-                if (newState.IsKeyDown(Keys.U))
-                {
-                    map[Keys.U].Execute();
-                }
-                if (newState.IsKeyDown(Keys.I))
-                {
-                    map[Keys.I].Execute();
-                }
-                if (newState.IsKeyDown(Keys.P))
-                {
-                    map[Keys.P].Execute();
-                }
-                if (newState.IsKeyDown(Keys.O))
-                {
-                    map[Keys.O].Execute();
-                }
-
-
+                oldPressedKeys = oldState.GetPressedKeys();
             }
+
+          
+            if (newPressedKeys.Length > oldPressedKeys.Length)
+            {
+                pressedKeys=newPressedKeys.Where(x => ! oldPressedKeys.Contains(x)).ToArray();
+              
+            }
+
+            if (newState != oldState)
+            {
+                foreach (Keys key in pressedKeys)
+                {
+                    if (map.ContainsKey(key))
+                    {
+                        Console.WriteLine(key);
+                        map[key].Execute();
+                    }
+                }
+            }
+             
             oldState = newState;
-            foreach (Keys key in pressedKeys)
-            {
 
 
-                if (key.Equals(Keys.U) || key.Equals(Keys.I) || key.Equals(Keys.P)|| key.Equals(Keys.O))
-                {
-                }
-                else if (map.ContainsKey(key))
-                {
-
-
-                    map[key].Execute();
-                }
-
-
-            }
             //link can walk only when key (A,W,D,S) is pressed
-            if (Keyboard.GetState().IsKeyDown(Keys.A) || Keyboard.GetState().IsKeyDown(Keys.W) || Keyboard.GetState().IsKeyDown(Keys.D) || Keyboard.GetState().IsKeyDown(Keys.S))
+             if (Keyboard.GetState().IsKeyDown(Keys.A) || Keyboard.GetState().IsKeyDown(Keys.W) || Keyboard.GetState().IsKeyDown(Keys.D) || Keyboard.GetState().IsKeyDown(Keys.S))
             {
                 i = new ChangeToWalkCommand(myGame);
 
@@ -99,7 +89,7 @@ namespace Sprint2
 
             }
 
-            i.Execute();
+            i.Execute(); 
 
 
 
