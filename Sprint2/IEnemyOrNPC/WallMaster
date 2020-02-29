@@ -24,7 +24,7 @@ namespace Sprint2
 
 
 
-        public Dragon()
+        public WallMater()
         {
 
             state = new WallMaterWalkLeftState(this);
@@ -54,12 +54,7 @@ namespace Sprint2
 
         public void Update()
         {
-            DragonSprite.Update();
-            if (fire != null)
-            {
-                fire.Update();
-            }
-            //random move dragon
+            WallMaterSprite.Update();
             updateDelay++;
             if (updateDelay == totalDelay)
             {
@@ -102,10 +97,6 @@ namespace Sprint2
         public void Draw(SpriteBatch spriteBatch)
         {
             WallMasterSprite.Draw(spriteBatch, new Vector2(posX, posY));
-            if (fire != null)
-            {
-                fire.Draw(spriteBatch);
-            }
         }
 
         public void previousEnemy(Game1 game)
