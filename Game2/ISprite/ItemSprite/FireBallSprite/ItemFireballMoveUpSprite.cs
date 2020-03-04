@@ -11,10 +11,10 @@ namespace Sprint2
     class ItemFireballMoveUpSprite : ISprite
     {
         public Texture2D Texture;
-        private int sourceLocX = 204;
-        private int sourceLocY = 40;
+        private int sourceLocX =334;
+        private int sourceLocY = 3;
         private int width = 8;
-        private int height = 16;
+        private int height = 10;
         private int currentFrame = 0;
 
 
