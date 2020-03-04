@@ -44,7 +44,7 @@ namespace Sprint2
             Texture2DStorage.LoadAllTextures(Content);
             spriteBatch = new SpriteBatch(GraphicsDevice);
             player = new Link();
-            enemy = new  Rope();
+            enemy = new  Dragon();
             item = new Heart();
             npcs = new  Princess();
 

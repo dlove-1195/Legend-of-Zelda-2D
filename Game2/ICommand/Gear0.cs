@@ -21,15 +21,19 @@ namespace Sprint2
             {
                 case 0:
                     myGame.player.SetLinkWithItemUpState(itemNum);
+                    myGame.player.SetLinkWithItemUpState(3);
                     break;
                 case 1:
                     myGame.player.SetLinkWithItemDownState(itemNum);
+                    myGame.player.SetLinkWithItemDownState(3);
                     break;
                 case 2:
                     myGame.player.SetLinkWithItemLeftState(itemNum);
+                    myGame.player.SetLinkWithItemLeftState(3);
                     break;
                 case 3:
                     myGame.player.SetLinkWithItemRightState(itemNum);
+                    myGame.player.SetLinkWithItemRightState(3);
                     break;
                 default:
                     Console.WriteLine("not gonna happen ");
