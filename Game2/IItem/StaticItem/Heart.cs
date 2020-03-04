@@ -13,11 +13,11 @@ namespace Sprint2
     {
         private int p = 10;
         //Sprite parameter
-        private Texture2D texture = Texture2DStorage.GetItemSpriteSheet();
-        private int sourceLocX = 241;
-        private int sourceLocY = 41;
-        private int width = 13;
-        private int height = 13;
+        private Texture2D texture = Texture2DStorage.GetLinkSpriteSheet();
+        private int sourceLocX = 244;
+        private int sourceLocY = 199;
+        private int width = 7;
+        private int height = 8;
 
         //Sprite Object
         public ISprite heartSprite;
