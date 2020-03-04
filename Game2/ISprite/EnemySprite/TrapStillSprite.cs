@@ -1,4 +1,4 @@
-﻿/*using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -45,10 +45,9 @@ namespace Sprint2
                 Rectangle sourceRectangle = new Rectangle(sourceLocX, sourceLocY, width, height);
                 Rectangle destinationRectangle = new Rectangle(Trap.posX, Trap.posY, width * 3, height * 3);
 
-                spriteBatch.Begin();
+
                 spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-                spriteBatch.End();
             }
         }
     }
-}*/
+}

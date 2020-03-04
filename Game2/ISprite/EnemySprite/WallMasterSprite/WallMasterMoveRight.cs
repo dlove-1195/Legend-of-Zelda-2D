@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 
 namespace Sprint2
 {
-    public class WallMaterRightCloseSprite : ISprite
+    public class WallMaterMoveRightSprite : ISprite
     {
         public Texture2D Texture;
         private int width;
@@ -18,16 +18,13 @@ namespace Sprint2
         int delay = 0;
         int totalDelay =30;
 
-        public WallMaterRightCloseSprite(Texture2D texture)
+        public WallMaterMoveRightSprite(Texture2D texture)
         {
             Texture = texture;
         }
 
 
-        public WallMaterRightCloseSprite()
-        {
-            //another constructor, show nothing
-        }
+       
         public void Update()
         {
 
@@ -56,10 +53,10 @@ namespace Sprint2
             if (Texture != null)
             {
                 Rectangle sourceRectangle = new Rectangle(sourceLocX, sourceLocY, width, height);
-             //   Rectangle destinationRectangle = new Rectangle(WallMaster.posX + delay*3, WallMaster.posY, width * 3, height * 3);
+              Rectangle destinationRectangle = new Rectangle(WallMaster.posX + delay*3, WallMaster.posY, width * 3, height * 3);
 
                
-             //   spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
+             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
                
             }
         }

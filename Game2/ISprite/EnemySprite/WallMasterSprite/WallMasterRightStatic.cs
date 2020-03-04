@@ -22,10 +22,7 @@ namespace Sprint2
         }
 
 
-        public WallMasterRightStatic()
-        {
-            //another constructor, show nothing
-        }
+       
         public void Update()
         {
 
@@ -43,10 +40,10 @@ namespace Sprint2
             if (Texture != null)
             {
                 Rectangle sourceRectangle = new Rectangle(sourceLocX, sourceLocY, width, height);
-               // Rectangle destinationRectangle = new Rectangle(WallMaster.posX, WallMaster.posY, width * 3, height * 3);
+                Rectangle destinationRectangle = new Rectangle(WallMaster.posX, WallMaster.posY, width * 3, height * 3);
 
                  
-               // spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
+                 spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
                  
             }
         }

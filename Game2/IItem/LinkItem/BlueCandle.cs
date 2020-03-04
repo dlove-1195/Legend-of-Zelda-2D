@@ -51,8 +51,7 @@ namespace Sprint2
             int totalDelay = 100;
 
             delay++;
-            if (delay == 40)
-            {
+           
                 switch (facingDirection)
                 {
                     case 0:
@@ -73,8 +72,8 @@ namespace Sprint2
                 }
 
 
-            }
-            else if (delay >= totalDelay)
+      
+            if (delay >= totalDelay)
             {
                 state.ChangeToDisappear();
             }

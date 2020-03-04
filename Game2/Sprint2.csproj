@@ -72,6 +72,10 @@
     <Compile Include="IEnemyState\SimpleMoveEnemyState\EnemyWalkLeftState.cs" />
     <Compile Include="IEnemyState\SimpleMoveEnemyState\EnemyWalkRightState.cs" />
     <Compile Include="IEnemyState\SimpleMoveEnemyState\EnemyWalkUpState.cs" />
+    <Compile Include="IEnemyState\WallMasterState\WallMasterLeftDynamicState.cs" />
+    <Compile Include="IEnemyState\WallMasterState\WallMasterLeftStaticState.cs" />
+    <Compile Include="IEnemyState\WallMasterState\WallMasterRightDynamicState.cs" />
+    <Compile Include="IEnemyState\WallMasterState\WallMasterRightStaticState.cs" />
     <Compile Include="IEnemy\Dragon.cs" />
     <Compile Include="IEnemy\IEnemy.cs" />
     <Compile Include="IEnemy\SimpleMoveEnemy\Goriya.cs" />
@@ -79,6 +83,9 @@
     <Compile Include="IEnemy\SimpleMoveEnemy\Rope.cs" />
     <Compile Include="IEnemy\SimpleMoveEnemy\Stalfos.cs" />
     <Compile Include="IEnemy\SimpleMoveEnemy\Zol.cs" />
+    <Compile Include="IEnemy\staticEnemy\Flame.cs" />
+    <Compile Include="IEnemy\staticEnemy\Trap.cs" />
+    <Compile Include="IEnemy\WallMaster.cs" />
     <Compile Include="IItemState\BombState\BombAppearExplodeState.cs" />
     <Compile Include="IItemState\BombState\BombAppearUnExplodeState.cs" />
     <Compile Include="IItemState\BombState\BombDisappearState.cs" />

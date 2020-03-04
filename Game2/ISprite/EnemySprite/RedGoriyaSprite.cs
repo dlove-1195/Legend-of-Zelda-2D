@@ -26,10 +26,7 @@ namespace Sprint2
             Texture = texture;
             Direction = direction;
         }
-        public RedGoriyaSprite()
-        {
-            //do nothing
-        }
+       
 
         public void Update()
         {
