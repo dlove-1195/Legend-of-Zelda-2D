@@ -11,9 +11,8 @@ namespace Sprint2
     
      public interface Iplayer
     {
-        //Link();
-        //other player constructor
-       
+         Rectangle boundingBox { get; set; }
+
         void ChangeToRight();
         void ChangeToLeft();
         void ChangeToUp();
@@ -22,21 +21,20 @@ namespace Sprint2
         void ChangeToStand();
         void ChangeToWalk();
         int GetDirection();
-       /* void ChangeX(int i);*/
+      
 
         void GetDamaged();
         void Attack();
         
-        //add
+         
         void SetLinkWithItemLeftState(int itemNum);
         void SetLinkWithItemRightState(int itemNum);
         void SetLinkWithItemUpState(int itemNum);
         void SetLinkWithItemDownState(int itemNum);
-        //end
+       
         void Update();
         void Draw(SpriteBatch spriteBatch);
-        Vector2 GetPosition();
-        void SetPosition(int posX, int posY);
+        
 
     }
 }

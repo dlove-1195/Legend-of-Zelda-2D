@@ -10,6 +10,7 @@ namespace Sprint2
 {
     public interface IEnemy
     {
+        Rectangle boundingBox { get; set; }
         void ChangeToLeft();
         void ChangeToRight();
         void ChangeToUp();

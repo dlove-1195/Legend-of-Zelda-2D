@@ -8,6 +8,7 @@ namespace Sprint2
     public class Goriya : IEnemy
     {
 
+
         public IEnemyState state;
         public ISprite GoriyaSprite;
         public int updateDelay = 0;

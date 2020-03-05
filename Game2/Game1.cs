@@ -14,6 +14,7 @@ namespace Sprint2
         public Iplayer player;
         public Iitem item;
         public Inpc npcs;
+        public ICollisionDetection detection;
 
 
         IController controller;
@@ -23,9 +24,10 @@ namespace Sprint2
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-           
-            graphics.PreferredBackBufferWidth = 1200;
-            graphics.PreferredBackBufferHeight = 1000;
+           // graphics.IsFullScreen = false;
+             graphics.PreferredBackBufferWidth = WindowWidth;
+             graphics.PreferredBackBufferHeight = WindowHeight;
+            // graphics.ApplyChanges();
         }
 
         protected override void Initialize()
@@ -44,10 +46,12 @@ namespace Sprint2
             Texture2DStorage.LoadAllTextures(Content);
             spriteBatch = new SpriteBatch(GraphicsDevice);
             player = new Link();
-            enemy = new  Dragon();
+            enemy = new  Keese();
             item = new Heart();
             npcs = new  Princess();
 
+            //ROOM load in camera controller ?? 
+            //detection = new LinkCollisionDetection(room, player);
 
 
 
@@ -69,9 +73,10 @@ namespace Sprint2
             item.Update();
             npcs.Update();
 
-
+           // detection.Update();
 
             controller.Update();
+
 
             base.Update(gameTime);
         }

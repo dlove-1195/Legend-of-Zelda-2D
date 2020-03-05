@@ -42,6 +42,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Game1.cs" />
+    <Compile Include="ICollisionDetector\EnemyCollisionDetection.cs" />
+    <Compile Include="ICollisionHandler\ICollisionHandler.cs" />
+    <Compile Include="ICollisionHandler\EnemyCollisonHandler.cs" />
+    <Compile Include="ICollisionHandler\LinkCollisonHandler.cs" />
+    <Compile Include="ICollisionDetector\ICollisionDetection.cs" />
+    <Compile Include="ICollisionDetector\LinkCollisionDetection.cs" />
     <Compile Include="ICommand\AttackCommand.cs" />
     <Compile Include="ICommand\Gear3.cs" />
     <Compile Include="ICommand\ChangeToDownCommand.cs" />
@@ -100,7 +106,7 @@
     <Compile Include="IItem\LinkItem\Bomb.cs" />
     <Compile Include="IItem\LinkItem\Bow.cs" />
     <Compile Include="IItem\LinkItem\Fire.cs" />
-    <Compile Include="IItem\LinkItem\Iitem.cs" />
+    <Compile Include="IItem\Iitem.cs" />
     <Compile Include="IItem\LinkItem\Sword.cs" />
     <Compile Include="IItem\LinkItem\WoodenBoomerang.cs" />
     <Compile Include="IItem\StaticItem\BlueDiamond.cs" />
