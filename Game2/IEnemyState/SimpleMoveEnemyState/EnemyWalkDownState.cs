@@ -9,7 +9,7 @@ namespace Sprint2
         private IEnemy  enemy;
         private Texture2D texture1 = Texture2DStorage.GetEnemySpriteSheet();
         private Texture2D texture2 = Texture2DStorage.GetEnemySpriteSheet2();
-        
+        private Texture2D texture3 = Texture2DStorage.GetEnemySpriteSheet3();
         public EnemyWalkDownState(IEnemy enemy, int number)
         {
             this.number = number;
@@ -17,17 +17,17 @@ namespace Sprint2
             switch (number)
             {
                 case 0:
-                    enemy.ChangeSprite(new BatSprite(texture1, "Down"));
+                    enemy.ChangeSprite(new BatSprite(texture3, "Down"));
                     break;
                 case 1:
-                    enemy.ChangeSprite(new StalfoSprite(texture2, "Down"));
+                    enemy.ChangeSprite(new StalfoSprite(texture3, "Down"));
                     break;
                 case 2:
 
-                    enemy.ChangeSprite(new RedGoriyaSprite(texture2, "Down"));
+                    enemy.ChangeSprite(new RedGoriyaSprite(texture3, "Down"));
                     break;
                 case 3:
-                    enemy.ChangeSprite(new ZolSprite(texture1, "Down"));
+                    enemy.ChangeSprite(new ZolSprite(texture3, "Down"));
                     break;
                 case 4:
                    

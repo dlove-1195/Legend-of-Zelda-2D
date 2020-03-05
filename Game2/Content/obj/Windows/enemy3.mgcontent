@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Mingjie/OneDrive/Documents/gameZelda/Game2/Content/woodenboomerang.png</SourceFile>
-  <SourceTime>2020-03-05T09:05:52.5404353-05:00</SourceTime>
-  <DestFile>C:/Users/Mingjie/OneDrive/Documents/gameZelda/Game2/Content/bin/Windows/woodenboomerang.xnb</DestFile>
-  <DestTime>2020-03-05T09:25:27.734716-05:00</DestTime>
+  <SourceFile>C:/Users/Mingjie/OneDrive/Documents/gameZelda/Game2/Content/enemy3.png</SourceFile>
+  <SourceTime>2020-03-05T09:05:52.3998422-05:00</SourceTime>
+  <DestFile>C:/Users/Mingjie/OneDrive/Documents/gameZelda/Game2/Content/bin/Windows/enemy3.xnb</DestFile>
+  <DestTime>2020-03-05T09:38:22.7961854-05:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

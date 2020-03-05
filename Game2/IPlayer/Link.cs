@@ -16,28 +16,37 @@ namespace Sprint2
         public Iitem bomb;
         public Iitem sword;
 
-        //add
+
+       
         public Iitem bow;
         public Iitem arrow;
         public Iitem boomerang;
         public Iitem bluecandle;
-        //end
+        
 
         private int direction ;
 
-        private Vector2 position = new Vector2(200, 200);
-        //??? change later
+         
+       
+        /* public int positionX { get; set; } = 200 ;
+         public int positionY { get; set; } = 200;  better choice
+          can be used in sprite class, change later -------- */
         public static int posY = 200;
         public static int posX = 200;
         public static Boolean ifDamage = false;
         public int timer = 0;
-        
-        
-          public Link()
+       
+        //----for detection class --- start
+        private int linkWidth = 15 ;
+        private int linkHeight = 16;
+
+        public Rectangle boundingBox { get; set; } 
+        // ---  end ---
+        public Link()
         {
             
             state = new LinkStandRightNonAttackNonDamageState(this);
-           
+            
 
             
         }
@@ -100,6 +109,7 @@ namespace Sprint2
 
         public void Update()
         {
+            boundingBox = new Rectangle(posX, posY, linkWidth * 3, linkHeight * 3);
             linkSprite.Update();
             if (bomb != null)
             {
@@ -145,6 +155,7 @@ namespace Sprint2
 
         public void Draw(SpriteBatch spriteBatch)
         {
+             
             linkSprite.Draw(spriteBatch, new Vector2(posX, posY));
             if (bomb != null)
             {
@@ -172,16 +183,8 @@ namespace Sprint2
             }
         }
 
-        public Vector2 GetPosition()
-        {
-            return position;
-        }
-
-        public void SetPosition(int posX, int posY)
-        {
-            position.X = posX;
-            position.Y = posY;
-        }
+       
+       
         
          public void ChangeDirection(int i)
         {

@@ -117,7 +117,7 @@ namespace Sprint2
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             Rectangle sourceRectangle = new Rectangle(sourceLocX, sourceLocY, width, height);
-            Rectangle destinationRectangle = new Rectangle(Link.posX, Link.posY, width * 3, height * 3);
+            Rectangle destinationRectangle = new Rectangle( Link.posX, Link.posY, width * 3, height * 3);
 
            
             spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);

@@ -9,6 +9,7 @@ namespace Sprint2
         private IEnemy  enemy;
         private Texture2D texture1 = Texture2DStorage.GetEnemySpriteSheet();
         private Texture2D texture2 = Texture2DStorage.GetEnemySpriteSheet2();
+        private Texture2D texture3 = Texture2DStorage.GetEnemySpriteSheet3();
         public EnemyWalkRightState(IEnemy enemy, int number)
         {
             this.number = number;
@@ -16,17 +17,17 @@ namespace Sprint2
             switch (number)
             {
                 case 0:
-                  enemy.ChangeSprite(new BatSprite(texture1, "Right"));
+                  enemy.ChangeSprite(new BatSprite(texture3, "Right"));
                    break;
                 case 1:
-                    enemy.ChangeSprite(new StalfoSprite(texture2, "Right"));
+                    enemy.ChangeSprite(new StalfoSprite(texture3, "Right"));
                     break;
                 case 2:
 
-                   enemy.ChangeSprite(new RedGoriyaSprite(texture2, "Left"));
+                   enemy.ChangeSprite(new RedGoriyaSprite(texture3, "Left"));
                    break;
                 case 3:
-                    enemy.ChangeSprite(new ZolSprite(texture1, "Right"));
+                    enemy.ChangeSprite(new ZolSprite(texture3, "Right"));
                     break;
                 case 4:
                     enemy.ChangeSprite(new RopeSprite(texture2, "Right"));
