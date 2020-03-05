@@ -4,56 +4,56 @@
   <Item>
     <ObjectType>Player</ObjectType>
     <ObjectName>Link</ObjectName>
-    <Location.X>3 165</Location.X>
-    <Location.Y>9 165</Location.Y>
+    <Location.X>3</Location.X>
+    <Location.Y>165</Location.Y>
   </Item>
   <!--  player  -->
   <!--  enemy  -->
   <Item>
     <ObjectType>Enemy</ObjectType>
     <ObjectName>Dragon</ObjectName>
-    <Location.X>4 165</Location.X>
-    <Location.Y>1 165</Location.Y>
+    <Location.X>4</Location.X>
+    <Location.Y>165</Location.Y>
   </Item>
   <Item>
     <ObjectType>Enemy</ObjectType>
     <ObjectName>WallMaster</ObjectName>
-    <Location.X>4 165</Location.X>
-    <Location.Y>1 165</Location.Y>
+    <Location.X>6</Location.X>
+    <Location.Y>65</Location.Y>
   </Item>
   <!--  enemy  -->
   <!--  item  -->
   <Item>
     <ObjectType>Item</ObjectType>
     <ObjectName>Clock</ObjectName>
-    <Location.X>4 165</Location.X>
-    <Location.Y>1 165</Location.Y>
+    <Location.X>45</Location.X>
+    <Location.Y>15</Location.Y>
   </Item>
   <Item>
     <ObjectType>Item</ObjectType>
     <ObjectName>Heart</ObjectName>
-    <Location.X>4 165</Location.X>
-    <Location.Y>1 165</Location.Y>
+    <Location.X>45</Location.X>
+    <Location.Y>5</Location.Y>
   </Item>
   <!--  item  -->
   <!--  NPC  -->
   <Item>
     <ObjectType>NPC</ObjectType>
     <ObjectName>Merchant</ObjectName>
-    <Location.X>4 165</Location.X>
-    <Location.Y>1 165</Location.Y>
+    <Location.X>5</Location.X>
+    <Location.Y>115</Location.Y>
   </Item>
   <Item>
     <ObjectType>NPC</ObjectType>
     <ObjectName>OldMan</ObjectName>
-    <Location.X>4 165</Location.X>
-    <Location.Y>1 165</Location.Y>
+    <Location.X>400</Location.X>
+    <Location.Y>405</Location.Y>
   </Item>
   <Item>
     <ObjectType>NPC</ObjectType>
     <ObjectName>Princess</ObjectName>
-    <Location.X>4 165</Location.X>
-    <Location.Y>1 165</Location.Y>
+    <Location.X>495</Location.X>
+    <Location.Y>165</Location.Y>
   </Item>
   <!--  NPC  -->
 </Asset>
