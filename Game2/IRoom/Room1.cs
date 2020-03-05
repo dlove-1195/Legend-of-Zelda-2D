@@ -16,7 +16,7 @@ namespace Sprint2
         private int posX;
         private int posY;
 
-        public Iplayer player { get; set; }
+        public List<KeyValuePair<Iplayer,Vector2>> player { get; set; }
         public List<KeyValuePair<IEnemy,Vector2>> enemies { get; set; }
         public List<KeyValuePair<Iitem, Vector2>> pickUpItems{ get;set;}
         public List<KeyValuePair<Inpc, Vector2>> npcs { get; set; }
@@ -38,7 +38,8 @@ namespace Sprint2
 
                 if (type == "Player")
                 {
-                    player = new Link();
+                    player.Add(new KeyValuePair<Iplayer, Vector2>(new Link(), new Vector2(posX, posY)));
+                    
                     
                 } else if (type == "Enemy")
                 {
@@ -89,7 +90,13 @@ namespace Sprint2
         }
         public void Draw(SpriteBatch spriteBatch)
         {
-            player.Draw(spriteBatch);
+
+            foreach (KeyValuePair<Iplayer, Vector2> pair in player)
+            {
+
+                pair.Key.Draw(spriteBatch, pair.Value);
+
+            }
 
             foreach (KeyValuePair < IEnemy,Vector2 > pair in enemies){
 
