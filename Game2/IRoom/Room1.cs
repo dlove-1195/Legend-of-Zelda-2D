@@ -13,7 +13,8 @@ namespace Sprint2
         XmlNodeList nodeList;
         private String type;
         private String name; 
-        private String location;
+        private String posX;
+        private String posY;
 
         public Iplayer player { get; set; }
         public List<IEnemy> enemies { get; set; }
@@ -32,9 +33,10 @@ namespace Sprint2
             foreach (XmlNode node in nodeList){
                 type = node.ChildNodes[0].InnerText;
                 name = node.ChildNodes[1].InnerText;
-                location = node.ChildNodes[2].InnerText;
+                posX = node.ChildNodes[2].InnerText;
+                posY = node.ChildNodes[3].InnerText;
 
-                if(type == "Player")
+                if (type == "Player")
                 {
                     player = new Link();
                 } else if (type == "Enemy")
@@ -73,9 +75,7 @@ namespace Sprint2
                         npcs.Add(new Princess());
                     }
                 }
-
             }
-
         }
 
         public void Update()
