@@ -13,19 +13,19 @@ namespace Sprint2
         XmlNodeList nodeList;
         private String type;
         private String name; 
-        private String posX;
-        private String posY;
+        private int posX;
+        private int posY;
 
         public Iplayer player { get; set; }
-        public List<IEnemy> enemies { get; set; }
-        public List<Iitem> pickUpItems{ get;set;}
-        public List<Inpc> npcs { get; set; }
+        public List<KeyValuePair<IEnemy,Vector2>> enemies { get; set; }
+        public List<KeyValuePair<Iitem, Vector2>> pickUpItems{ get;set;}
+        public List<KeyValuePair<Inpc, Vector2>> npcs { get; set; }
 
         public Room1()
         {
-            enemies = new List<IEnemy>();
-            pickUpItems = new List<Iitem>();
-            npcs = new List<Inpc>();
+            enemies = new List<KeyValuePair<IEnemy, Vector2>>();
+            pickUpItems = new List<KeyValuePair<Iitem, Vector2>>();
+            npcs = new List<KeyValuePair<Inpc, Vector2>>();
             doc = new XmlDocument();
             doc.Load("room1.xml");
 
@@ -33,46 +33,51 @@ namespace Sprint2
             foreach (XmlNode node in nodeList){
                 type = node.ChildNodes[0].InnerText;
                 name = node.ChildNodes[1].InnerText;
-                posX = node.ChildNodes[2].InnerText;
-                posY = node.ChildNodes[3].InnerText;
+                posX = Int32.Parse(node.ChildNodes[2].InnerText);
+                posY = Int32.Parse(node.ChildNodes[3].InnerText);
 
                 if (type == "Player")
                 {
                     player = new Link();
+                    
                 } else if (type == "Enemy")
                 {
                     if(name == "Dragon")
                     {
-                        enemies.Add(new Dragon());
+                        enemies.Add(new KeyValuePair<IEnemy, Vector2>(new Dragon(), new Vector2(posX, posY)));
                     }
                     if(name == "WallMaster")
                     {
-                        enemies.Add(new WallMaster());
+                        enemies.Add(new KeyValuePair<IEnemy, Vector2>(new WallMaster(), new Vector2(posX, posY)));
                     }
                 }else if (type == "Item")
                 {
                     if(name == "Clock")
                     {
-                        pickUpItems.Add(new Clock());
+                        pickUpItems.Add(new KeyValuePair<Iitem, Vector2>(new Clock(), new Vector2(posX, posY)));
                     }
                     if (name == "Heart")
                     {
-                        pickUpItems.Add(new Heart());
+
+                        pickUpItems.Add(new KeyValuePair<Iitem, Vector2>(new Heart(), new Vector2(posX, posY)));
                     }
                 }
                 else if (type == "NPC")
                 {
                     if (name == "Merchant")
                     {
-                        npcs.Add(new Merchant());
+
+                        npcs.Add(new KeyValuePair<Inpc, Vector2>(new Merchant(), new Vector2(posX, posY)));
+                      
                     }
                     if (name == "OldMan")
                     {
-                        npcs.Add(new OldMan());
+
+                        npcs.Add(new KeyValuePair<Inpc, Vector2>(new OldMan(), new Vector2(posX, posY)));
                     }
                     if (name == "Princess")
                     {
-                        npcs.Add(new Princess());
+                        npcs.Add(new KeyValuePair<Inpc, Vector2>(new Princess(), new Vector2(posX, posY)));
                     }
                 }
             }
@@ -84,20 +89,24 @@ namespace Sprint2
         }
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Begin();
             player.Draw(spriteBatch);
-            foreach (IEnemy enemy in enemies){
-                enemy.Draw(spriteBatch);
+
+            foreach (KeyValuePair < IEnemy,Vector2 > pair in enemies){
+
+                pair.Key.Draw(spriteBatch, pair.Value);
+               
             }
-            foreach (Iitem item in pickUpItems)
+            foreach (KeyValuePair<Iitem, Vector2> pair in pickUpItems)
             {
-                item.Draw(spriteBatch);
+                pair.Key.Draw(spriteBatch, pair.Value);
+
             }
-            foreach (Inpc npc in npcs)
+            foreach (KeyValuePair<Inpc, Vector2> pair in npcs)
             {
-                npc.Draw(spriteBatch);
+                pair.Key.Draw(spriteBatch, pair.Value);
+
             }
-            spriteBatch.End();
+            
         
     }
     }
