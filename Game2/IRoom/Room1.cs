@@ -47,20 +47,76 @@ namespace Sprint2
                     {
                         enemies.Add(new KeyValuePair<IEnemy, Vector2>(new Dragon(), new Vector2(posX, posY)));
                     }
-                    if(name == "WallMaster")
+                    if (name == "WallMaster")
                     {
                         enemies.Add(new KeyValuePair<IEnemy, Vector2>(new WallMaster(), new Vector2(posX, posY)));
                     }
-                }else if (type == "Item")
+                    if (name == "Flame")
+                    {
+                        enemies.Add(new KeyValuePair<IEnemy, Vector2>(new Flame(), new Vector2(posX, posY)));
+                    }
+                    if (name == "Trap")
+                    {
+                        enemies.Add(new KeyValuePair<IEnemy, Vector2>(new Trap(), new Vector2(posX, posY)));
+                    }
+                    if (name == "Goriya")
+                    {
+                        enemies.Add(new KeyValuePair<IEnemy, Vector2>(new Goriya(), new Vector2(posX, posY)));
+                    }
+                    if (name == "Keese")
+                    {
+                        enemies.Add(new KeyValuePair<IEnemy, Vector2>(new Keese(), new Vector2(posX, posY)));
+                    }
+                    if (name == "Rope")
+                    {
+                        enemies.Add(new KeyValuePair<IEnemy, Vector2>(new Rope(), new Vector2(posX, posY)));
+                    }
+                    if (name == "Stalfos")
+                    {
+                        enemies.Add(new KeyValuePair<IEnemy, Vector2>(new Stalfos(), new Vector2(posX, posY)));
+                    }
+                    if (name == "Zol")
+                    {
+                        enemies.Add(new KeyValuePair<IEnemy, Vector2>(new Zol(), new Vector2(posX, posY)));
+                    }
+                }
+                else if (type == "Item")
                 {
-                    if(name == "Clock")
+                    if (name == "BlueDiamond")
+                    {
+                        pickUpItems.Add(new KeyValuePair<Iitem, Vector2>(new BlueDiamond(), new Vector2(posX, posY)));
+                    }
+                    if (name == "Clock")
                     {
                         pickUpItems.Add(new KeyValuePair<Iitem, Vector2>(new Clock(), new Vector2(posX, posY)));
                     }
+                    if (name == "Compass")
+                    {
+                        pickUpItems.Add(new KeyValuePair<Iitem, Vector2>(new Compass(), new Vector2(posX, posY)));
+                    }
+                    if (name == "Fairy")
+                    {
+                        pickUpItems.Add(new KeyValuePair<Iitem, Vector2>(new Fairy(), new Vector2(posX, posY)));
+                    }
                     if (name == "Heart")
                     {
-
                         pickUpItems.Add(new KeyValuePair<Iitem, Vector2>(new Heart(), new Vector2(posX, posY)));
+                    }
+                    if (name == "HeartContainer")
+                    {
+                        pickUpItems.Add(new KeyValuePair<Iitem, Vector2>(new HeartContainer(), new Vector2(posX, posY)));
+                    }
+                    if (name == "Key")
+                    {
+                        pickUpItems.Add(new KeyValuePair<Iitem, Vector2>(new Key(), new Vector2(posX, posY)));
+                    }
+                    if (name == "Map")
+                    {
+                        pickUpItems.Add(new KeyValuePair<Iitem, Vector2>(new Map(), new Vector2(posX, posY)));
+                    }
+                    if (name == "TriforcePiece")
+                    {
+                        pickUpItems.Add(new KeyValuePair<Iitem, Vector2>(new TriforcePiece(), new Vector2(posX, posY)));
                     }
                 }
                 else if (type == "NPC")
