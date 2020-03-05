@@ -2,136 +2,142 @@
 <Asset Type="MyDataTypes.LevelObjectData[]">
   <!--  player  -->
   <Item>
+    <ObjectType>Room</ObjectType>
+    <ObjectName>Room1</ObjectName>
+    <width>22</width>
+    <height>165</height>
+  </Item>
+  <Item>
     <ObjectType>Player</ObjectType>
     <ObjectName>Link</ObjectName>
-    <Location.X>3</Location.X>
-    <Location.Y>165</Location.Y>
+    <posX>33</posX>
+    <posY>165</posY>
   </Item>
   <!--  player  -->
   <!--  enemy  -->
   <Item>
     <ObjectType>Enemy</ObjectType>
     <ObjectName>Dragon</ObjectName>
-    <Location.X>4</Location.X>
-    <Location.Y>165</Location.Y>
+    <posX>33</posX>
+    <posY>165</posY>
   </Item>
   <Item>
     <ObjectType>Enemy</ObjectType>
     <ObjectName>WallMaster</ObjectName>
-    <Location.X>6</Location.X>
-    <Location.Y>65</Location.Y>
+    <posX>33</posX>
+    <posY>165</posY>
   </Item>
   <Item>
     <ObjectType>Enemy</ObjectType>
     <ObjectName>Flame</ObjectName>
-    <Location.X>6</Location.X>
-    <Location.Y>65</Location.Y>
+    <posX>33</posX>
+    <posY>165</posY>
   </Item>
   <Item>
     <ObjectType>Enemy</ObjectType>
     <ObjectName>Trap</ObjectName>
-    <Location.X>6</Location.X>
-    <Location.Y>65</Location.Y>
+    <posX>33</posX>
+    <posY>165</posY>
   </Item>
   <Item>
     <ObjectType>Enemy</ObjectType>
     <ObjectName>Goriya</ObjectName>
-    <Location.X>6</Location.X>
-    <Location.Y>65</Location.Y>
+    <posX>33</posX>
+    <posY>165</posY>
   </Item>
   <Item>
     <ObjectType>Enemy</ObjectType>
     <ObjectName>Keese</ObjectName>
-    <Location.X>6</Location.X>
-    <Location.Y>65</Location.Y>
+    <posX>33</posX>
+    <posY>165</posY>
   </Item>
   <Item>
     <ObjectType>Enemy</ObjectType>
     <ObjectName>Rope</ObjectName>
-    <Location.X>6</Location.X>
-    <Location.Y>65</Location.Y>
+    <posX>33</posX>
+    <posY>165</posY>
   </Item>
   <Item>
     <ObjectType>Enemy</ObjectType>
     <ObjectName>Stalfos</ObjectName>
-    <Location.X>6</Location.X>
-    <Location.Y>65</Location.Y>
+    <posX>33</posX>
+    <posY>165</posY>
   </Item>
   <Item>
     <ObjectType>Enemy</ObjectType>
     <ObjectName>Zol</ObjectName>
-    <Location.X>6</Location.X>
-    <Location.Y>65</Location.Y>
+    <posX>33</posX>
+    <posY>165</posY>
   </Item>
   <!--  enemy  -->
   <!--  item  -->
   <Item>
     <ObjectType>Item</ObjectType>
     <ObjectName>Clock</ObjectName>
-    <Location.X>45</Location.X>
-    <Location.Y>15</Location.Y>
+    <posX>33</posX>
+    <posY>165</posY>
   </Item>
   <Item>
     <ObjectType>Item</ObjectType>
     <ObjectName>Compass</ObjectName>
-    <Location.X>45</Location.X>
-    <Location.Y>5</Location.Y>
+    <posX>33</posX>
+    <posY>165</posY>
   </Item>
   <Item>
     <ObjectType>Item</ObjectType>
     <ObjectName>Fairy</ObjectName>
-    <Location.X>45</Location.X>
-    <Location.Y>5</Location.Y>
+    <posX>33</posX>
+    <posY>165</posY>
   </Item>
   <Item>
     <ObjectType>Item</ObjectType>
     <ObjectName>Heart</ObjectName>
-    <Location.X>45</Location.X>
-    <Location.Y>5</Location.Y>
+    <posX>33</posX>
+    <posY>165</posY>
   </Item>
   <Item>
     <ObjectType>Item</ObjectType>
     <ObjectName>HeartContainer</ObjectName>
-    <Location.X>45</Location.X>
-    <Location.Y>5</Location.Y>
+    <posX>33</posX>
+    <posY>165</posY>
   </Item>
   <Item>
     <ObjectType>Item</ObjectType>
     <ObjectName>Key</ObjectName>
-    <Location.X>45</Location.X>
-    <Location.Y>5</Location.Y>
+    <posX>33</posX>
+    <posY>165</posY>
   </Item>
   <Item>
     <ObjectType>Item</ObjectType>
     <ObjectName>Map</ObjectName>
-    <Location.X>45</Location.X>
-    <Location.Y>5</Location.Y>
+    <posX>33</posX>
+    <posY>165</posY>
   </Item>
   <Item>
     <ObjectType>Item</ObjectType>
     <ObjectName>TriforcePiece</ObjectName>
-    <Location.X>45</Location.X>
-    <Location.Y>5</Location.Y>
+    <posX>33</posX>
+    <posY>165</posY>
   </Item>
   <!--  item  -->
   <!--  NPC  -->
   <Item>
     <ObjectType>NPC</ObjectType>
     <ObjectName>Merchant</ObjectName>
-    <Location.X>5</Location.X>
-    <Location.Y>115</Location.Y>
+    <posX>33</posX>
+    <posY>165</posY>
   </Item>
   <Item>
     <ObjectType>NPC</ObjectType>
     <ObjectName>OldMan</ObjectName>
-    <Location.X>400</Location.X>
-    <Location.Y>405</Location.Y>
+    <posX>33</posX>
+    <posY>165</posY>
   </Item>
   <Item>
     <ObjectType>NPC</ObjectType>
     <ObjectName>Princess</ObjectName>
-    <Location.X>495</Location.X>
-    <Location.Y>165</Location.Y>
+    <posX>33</posX>
+    <posY>165</posY>
   </Item>
   <!--  NPC  -->
 </Asset>

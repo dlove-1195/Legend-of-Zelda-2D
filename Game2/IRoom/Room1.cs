@@ -15,7 +15,8 @@ namespace Sprint2
         private String name; 
         private int posX;
         private int posY;
-
+        
+        public Vector2 roomSize { get; set; }
         public List<KeyValuePair<Iplayer,Vector2>> player { get; set; }
         public List<KeyValuePair<IEnemy,Vector2>> enemies { get; set; }
         public List<KeyValuePair<Iitem, Vector2>> pickUpItems{ get;set;}
@@ -36,12 +37,18 @@ namespace Sprint2
                 posX = Int32.Parse(node.ChildNodes[2].InnerText);
                 posY = Int32.Parse(node.ChildNodes[3].InnerText);
 
-                if (type == "Player")
+                if (type == "Room")
+                {
+                    roomSize = new Vector2(posX, posY);
+
+                }
+                else if (type == "Player")
                 {
                     player.Add(new KeyValuePair<Iplayer, Vector2>(new Link(), new Vector2(posX, posY)));
                     
                     
-                } else if (type == "Enemy")
+                } 
+                else if (type == "Enemy")
                 {
                     if(name == "Dragon")
                     {
@@ -149,13 +156,12 @@ namespace Sprint2
 
             foreach (KeyValuePair<Iplayer, Vector2> pair in player)
             {
-
                 pair.Key.Draw(spriteBatch, pair.Value);
 
             }
 
-            foreach (KeyValuePair < IEnemy,Vector2 > pair in enemies){
-
+            foreach (KeyValuePair < IEnemy,Vector2 > pair in enemies)
+            {
                 pair.Key.Draw(spriteBatch, pair.Value);
                
             }
@@ -167,10 +173,7 @@ namespace Sprint2
             foreach (KeyValuePair<Inpc, Vector2> pair in npcs)
             {
                 pair.Key.Draw(spriteBatch, pair.Value);
-
             }
-            
-        
-    }
+        }
     }
 }
