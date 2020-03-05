@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using System.Xml;
 
 namespace Sprint2
 {
@@ -14,6 +15,7 @@ namespace Sprint2
         public Iplayer player;
         public Iitem item;
         public Inpc npcs;
+        public IRoom room;
 
 
         IController controller;
@@ -23,7 +25,7 @@ namespace Sprint2
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-           
+            
             graphics.PreferredBackBufferWidth = 1200;
             graphics.PreferredBackBufferHeight = 1000;
         }
@@ -34,8 +36,8 @@ namespace Sprint2
             controller = new KeyboardController(this);
             this.IsMouseVisible = true;
             
-             
-           
+
+
             base.Initialize();
         }
 
@@ -47,13 +49,9 @@ namespace Sprint2
             enemy = new  Dragon();
             item = new Heart();
             npcs = new  Princess();
+            room = new Room1();
 
-
-
-
-
-
-
+            
         }
 
         protected override void UnloadContent()
@@ -68,11 +66,8 @@ namespace Sprint2
             enemy.Update();
             item.Update();
             npcs.Update();
-
-
-
             controller.Update();
-
+            room.Update();
             base.Update(gameTime);
         }
 
@@ -82,12 +77,11 @@ namespace Sprint2
             spriteBatch.Begin();
             player.Draw(spriteBatch);
 
-           
             enemy.Draw(spriteBatch);
             item.Draw(spriteBatch);
             npcs.Draw(spriteBatch);
             spriteBatch.End();
-
+            room.Draw(spriteBatch);
             base.Draw(gameTime);
         }
     }

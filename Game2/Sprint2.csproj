@@ -143,6 +143,8 @@
     <Compile Include="IPlayerState\LinkWithItem\LinkWithItemUpState.cs" />
     <Compile Include="IPlayer\Iplayer.cs" />
     <Compile Include="IPlayer\Link.cs" />
+    <Compile Include="IRoom\Room1.cs" />
+    <Compile Include="IRoom\IRoom.cs" />
     <Compile Include="ISprite\EnemySprite\BatSprite.cs" />
     <Compile Include="ISprite\EnemySprite\DragonSprite\DragonWalkDownSprite.cs" />
     <Compile Include="ISprite\EnemySprite\DragonSprite\DragonWalkLeftSprite.cs" />
@@ -230,6 +232,7 @@
     <Content Include="Content\link.png" />
     <Content Include="Content\woodenboomerang.png" />
     <Content Include="Icon.ico" />
+    <Content Include="XML\room1.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.manifest" />

@@ -1,0 +1,52 @@
+<XnaContent>
+<Asset Type="MyDataTypes.LevelObjectData[]">
+  <!--  player  -->
+  <Item>
+    <ObjectType>Player</ObjectType>
+    <ObjectName>Link</ObjectName>
+    <Location>0 165</Location>
+  </Item>
+  <!--  player  -->
+  <!--  enemy  -->
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Dragon</ObjectName>
+    <Location>60 185</Location>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>WallMaster</ObjectName>
+    <Location>50 185</Location>
+  </Item>
+  <!--  enemy  -->
+  <!--  item  -->
+  <Item>
+    <ObjectType>Item</ObjectType>
+    <ObjectName>Clock</ObjectName>
+    <Location>136 40</Location>
+  </Item>
+  <Item>
+    <ObjectType>Item</ObjectType>
+    <ObjectName>Heart</ObjectName>
+    <Location>184 184</Location>
+  </Item>
+  <!--  item  -->
+  <!--  NPC  -->
+  <Item>
+    <ObjectType>NPC</ObjectType>
+    <ObjectName>Merchant</ObjectName>
+    <Location>100 184</Location>
+  </Item>
+  <Item>
+    <ObjectType>NPC</ObjectType>
+    <ObjectName>OldMan</ObjectName>
+    <Location>184 184</Location>
+  </Item>
+  <Item>
+    <ObjectType>NPC</ObjectType>
+    <ObjectName>Princess</ObjectName>
+    <Location>184 184</Location>
+  </Item>
+  <!--  NPC  -->
+</Asset>
+</XnaContent>
