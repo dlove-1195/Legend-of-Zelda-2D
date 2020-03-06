@@ -7,7 +7,7 @@ using System.Xml;
 namespace Sprint2
 {
 
-    public class RoomY : IRoom
+    public class Room9 : IRoom
     {
         XmlDocument doc;
         XmlNodeList nodeList;
@@ -24,13 +24,13 @@ namespace Sprint2
         public List<Iitem> pickUpItems { get; set; }
         public List<Inpc> npcs { get; set; }
 
-        public RoomY()
+        public Room9()
         {
             enemies = new List<IEnemy>();
             pickUpItems = new List<Iitem>();
             npcs = new List<Inpc>();
             doc = new XmlDocument();
-            doc.Load("room1.xml");
+            doc.Load("room9.xml");
 
             nodeList = doc.GetElementsByTagName("Item");
             foreach (XmlNode node in nodeList)
@@ -153,7 +153,22 @@ namespace Sprint2
 
         public void Update()
         {
-            //do nothing
+            player.Update();
+
+            foreach (IEnemy enemy in enemies)
+            {
+                enemy.Update();
+
+            }
+            foreach (Iitem item in pickUpItems)
+            {
+                item.Update();
+
+            }
+            foreach (Inpc npc in npcs)
+            {
+                npc.Update();
+            }
         }
         public void Draw(SpriteBatch spriteBatch)
         {
