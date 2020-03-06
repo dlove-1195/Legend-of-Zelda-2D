@@ -1,0 +1,11 @@
+Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/Mingjie/OneDrive/Documents/gameZelda/Game2/Content/bow.png","C:/Users/Mingjie/OneDrive/Documents/gameZelda/Game2/Content/bin/Windows/bow.xnb","TextureProcessor","Texture2DContent",465,14245,0.505914
+"C:/Users/Mingjie/OneDrive/Documents/gameZelda/Game2/Content/candle.png","C:/Users/Mingjie/OneDrive/Documents/gameZelda/Game2/Content/bin/Windows/candle.xnb","TextureProcessor","Texture2DContent",514,15765,0.0468642
+"C:/Users/Mingjie/OneDrive/Documents/gameZelda/Game2/Content/characters.png","C:/Users/Mingjie/OneDrive/Documents/gameZelda/Game2/Content/bin/Windows/characters.xnb","TextureProcessor","Texture2DContent",939,26293,0.0156217
+"C:/Users/Mingjie/OneDrive/Documents/gameZelda/Game2/Content/enemy.png","C:/Users/Mingjie/OneDrive/Documents/gameZelda/Game2/Content/bin/Windows/enemy.xnb","TextureProcessor","Texture2DContent",6976,478913,0.0468635
+"C:/Users/Mingjie/OneDrive/Documents/gameZelda/Game2/Content/enemy2.png","C:/Users/Mingjie/OneDrive/Documents/gameZelda/Game2/Content/bin/Windows/enemy2.xnb","TextureProcessor","Texture2DContent",10081,604893,0.0468638
+"C:/Users/Mingjie/OneDrive/Documents/gameZelda/Game2/Content/enemy3.png","C:/Users/Mingjie/OneDrive/Documents/gameZelda/Game2/Content/bin/Windows/enemy3.xnb","TextureProcessor","Texture2DContent",212843,1088085,0.2186994
+"C:/Users/Mingjie/OneDrive/Documents/gameZelda/Game2/Content/item.png","C:/Users/Mingjie/OneDrive/Documents/gameZelda/Game2/Content/bin/Windows/item.xnb","TextureProcessor","Texture2DContent",1923,202997,0.0156212
+"C:/Users/Mingjie/OneDrive/Documents/gameZelda/Game2/Content/link.png","C:/Users/Mingjie/OneDrive/Documents/gameZelda/Game2/Content/bin/Windows/link.xnb","TextureProcessor","Texture2DContent",6901,523669,0.0312415
+"C:/Users/Mingjie/OneDrive/Documents/gameZelda/Game2/Content/link--final.png","C:/Users/Mingjie/OneDrive/Documents/gameZelda/Game2/Content/bin/Windows/link--final.xnb","TextureProcessor","Texture2DContent",30417,1077597,0.0468642
+"C:/Users/Mingjie/OneDrive/Documents/gameZelda/Game2/Content/woodenboomerang.png","C:/Users/Mingjie/OneDrive/Documents/gameZelda/Game2/Content/bin/Windows/woodenboomerang.xnb","TextureProcessor","Texture2DContent",1211,10965,0
