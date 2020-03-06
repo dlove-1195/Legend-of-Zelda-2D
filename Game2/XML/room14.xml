@@ -77,27 +77,27 @@
   <!--  Block  -->
   <Item>
     <ObjectType>Block</ObjectType>
-    <ObjectName>Block2</ObjectName>
-    <posX>579</posX>
-    <posY>934</posY>
+    <ObjectName>Block1</ObjectName>
+    <posX>32</posX>
+    <posY>16</posY>
   </Item>
   <Item>
     <ObjectType>Block</ObjectType>
-    <ObjectName>Block1</ObjectName>
-    <posX>691</posX>
-    <posY>934</posY>
+    <ObjectName>Block2</ObjectName>
+    <posX>144</posX>
+    <posY>16</posY>
   </Item>
     <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block3</ObjectName>
-    <posX>579</posX>
-    <posY>998</posY>
+    <posX>32</posX>
+    <posY>80</posY>
   </Item>
   <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block4</ObjectName>
-    <posX>691</posX>
-    <posY>998</posY>
+    <posX>144</posX>
+    <posY>80</posY>
   </Item>
   <!--  Block  -->
 </Asset>
