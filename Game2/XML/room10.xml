@@ -78,74 +78,74 @@
   <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block1</ObjectName>
-    <posX>65</posX>
-    <posY>596</posY>
+    <posX>32</posX>
+    <posY>32</posY>
   </Item>
   <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block2</ObjectName>
-    <posX>65</posX>
-    <posY>612</posY>
+    <posX>32</posX>
+    <posY>48</posY>
   </Item>
     <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block3</ObjectName>
-    <posX>65</posX>
-    <posY>628</posY>
+    <posX>32</posX>
+    <posY>64</posY>
   </Item>
   <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block4</ObjectName>
-    <posX>81</posX>
-    <posY>596</posY>
+    <posX>48</posX>
+    <posY>32</posY>
   </Item>
   <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block5</ObjectName>
-    <posX>81</posX>
-    <posY>612</posY>
+    <posX>48</posX>
+    <posY>48</posY>
   </Item>
     <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block6</ObjectName>
-    <posX>81</posX>
-    <posY>628</posY>
+    <posX>48</posX>
+    <posY>64</posY>
   </Item>
   <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block7</ObjectName>
-    <posX>161</posX>
-    <posY>596</posY>
+    <posX>128</posX>
+    <posY>32</posY>
   </Item>
     <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block8</ObjectName>
-    <posX>161</posX>
-    <posY>612</posY>
+    <posX>128</posX>
+    <posY>48</posY>
   </Item>
   <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block9</ObjectName>
-    <posX>161</posX>
-    <posY>628</posY>
+    <posX>128</posX>
+    <posY>64</posY>
   </Item>
     <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block10</ObjectName>
-    <posX>177</posX>
-    <posY>596</posY>
+    <posX>160</posX>
+    <posY>32</posY>
   </Item>
     <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block11</ObjectName>
-    <posX>177</posX>
-    <posY>612</posY>
+    <posX>160</posX>
+    <posY>48</posY>
   </Item>
   <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block12</ObjectName>
-    <posX>177</posX>
-    <posY>628</posY>
+    <posX>160</posX>
+    <posY>64</posY>
   </Item>
   <!--  Block  -->
 </Asset>
