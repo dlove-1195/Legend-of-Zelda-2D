@@ -1,0 +1,23 @@
+﻿<XnaContent>
+  <!-- boss room -->
+  <Asset Type="MyDataTypes.LevelObjectData[]">
+    <Item>
+      <ObjectType>Room</ObjectType>
+      <ObjectName>Room3</ObjectName>
+      <width>255</width>
+      <height>176</height>
+    </Item>
+    <!--  player  -->
+    <!--no need-->
+    <!--the position would be 125 145-->
+    <!-- player -->
+    <!--Insert all wanted items here-->>
+
+    <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>Dragon</ObjectName>
+      <posX>121</posX>
+      <posY>93</posY>
+    </Item>
+  </Asset>
+</XnaContent>
