@@ -61,13 +61,13 @@ namespace Sprint2
         {
 
 
-            myGame.item = new Key();
+           // myGame.item = new Key();
         }
 
         public void preItem(Game1 myGame)
         {
 
-            myGame.item = new Heart();
+            //myGame.item = new Heart();
         }
     }
 }

@@ -129,3 +129,6 @@ C:\Users\Mingjie\OneDrive\Documents\gameZelda\Game2\obj\x86\Debug\Sprint2.csproj
 C:\Users\Mingjie\OneDrive\Documents\gameZelda\Game2\obj\x86\Debug\Sprint2.csproj.CopyComplete
 C:\Users\Mingjie\OneDrive\Documents\gameZelda\Game2\obj\x86\Debug\Game2.exe
 C:\Users\Mingjie\OneDrive\Documents\gameZelda\Game2\obj\x86\Debug\Game2.pdb
+C:\Users\Yilai\CSE-3902\Game2\obj\x86\Debug\Sprint2.csprojAssemblyReference.cache
+C:\Users\Yilai\CSE-3902\Game2\obj\x86\Debug\Game2.exe
+C:\Users\Yilai\CSE-3902\Game2\obj\x86\Debug\Game2.pdb

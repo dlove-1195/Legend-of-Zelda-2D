@@ -59,13 +59,13 @@ namespace Sprint2
         public void preItem(Game1 myGame)
         {
 
-            myGame.item = new Key();
+          //  myGame.item = new Key();
 
         }
         public void nextItem(Game1 myGame)
         {
 
-            myGame.item = new TriforcePiece();
+            //myGame.item = new TriforcePiece();
 
         }
     }
