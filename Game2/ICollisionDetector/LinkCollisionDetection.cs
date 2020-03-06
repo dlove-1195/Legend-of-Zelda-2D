@@ -1,9 +1,7 @@
-﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Sprint2 {
 
@@ -15,18 +13,18 @@ namespace Sprint2 {
         private List<Iitem> item;
         private List<Inpc> npc;
         private List<KeyValuePair<int, int>> blockLocation;
-        //private List<Iitem> projectile; 
+      
         private Iplayer player ;
         private int roomWidth;
         private int roomHeight;
 
         public  LinkCollisionDetection (IRoom room, Iplayer link)
         {
-            roomWidth = room.vector.x;
-            roomHeight = room.vector.y;
-            enemy = room.enemy;
-            item = room.item;
-            npc = room.npc;
+            roomWidth =(int) room.roomSize.X;
+            roomHeight =(int) room.roomSize.Y;
+            enemy = room.enemies;
+            item = room.pickUpItems;
+            npc = room.npcs;
             blockLocation = room.blockLocation;
             player = link;
             linkHandler =new LinkCollisionHandler(player) ;
@@ -37,6 +35,7 @@ namespace Sprint2 {
 
 
             Rectangle overlapRec;
+            //---fix later-- player's bounding box needs to become bigger when link do simple attack 
             Rectangle linkRectangle = player.boundingBox;
             //loop for link/enemy collision 
             int listLength = enemy.Count();
@@ -47,14 +46,13 @@ namespace Sprint2 {
                  overlapRec = Rectangle.Intersect(linkRectangle, singleEnemyRec);
                 if (!overlapRec.IsEmpty)
                 {
-                    //link damage
-                    linkHandler.HandleLinkEnemyCollsion();
+                    //link damage and being pushed in opposite direction
+                   String direction= detectCollisionDirection(overlapRec, linkRectangle, singleEnemyRec);
+                    linkHandler.HandleLinkEnemyCollsion(direction);
                 }
-
                  
-                    
-                    
-               
+
+
                 //detect link collision with enemy projectile 
                 List<Rectangle> EnemyProjectileRec = enemy[i].getProjectileRec();
                 for (int j = 0; j < EnemyProjectileRec.Count(); j++)
@@ -62,16 +60,14 @@ namespace Sprint2 {
                      overlapRec = Rectangle.Intersect(linkRectangle, EnemyProjectileRec[j]);
                     if (!overlapRec.IsEmpty)
                     {
-                        //link damage
-                        linkHandler.HandleLinkEnemyCollsion();
+                        //link damage by projectile, will not be pushed
+                         
+                        linkHandler.HandleLinkProjectileCollsion();
+                        
                     }
-
-
-
+                     
                 }
-
-
-
+ 
                 // detect link weapon collison with enemy 
                 List<Rectangle> linkWeaponRec =player.getUsingItemRec();
                 for(int j= 0; j<linkWeaponRec.Count(); j++)
@@ -85,14 +81,7 @@ namespace Sprint2 {
                      
                      
                 }
-
-                 
-
-
-          
-
-
-
+  
             }
 
             //loop for link/item collsion 
@@ -105,6 +94,7 @@ namespace Sprint2 {
                 overlapRec = Rectangle.Intersect(linkRectangle, singleItemRec);
                 if (!overlapRec.IsEmpty)
                 {
+
                     linkHandler.HandleLinkItemCollsion();
                 }
  
@@ -140,7 +130,9 @@ namespace Sprint2 {
                 overlapRec = Rectangle.Intersect(linkRectangle,  singleBlockRec);
                 if (!overlapRec.IsEmpty)
                 {
-                    linkHandler.HandleLinkBlockCollsion();
+                    String direction = detectCollisionDirection(overlapRec, linkRectangle, singleBlockRec);
+                    linkHandler.HandleLinkBlockCollsion(direction);
+                   
                 }
                 
 
@@ -166,21 +158,42 @@ namespace Sprint2 {
         }
         
  
-        //maybe need to add a another helping method to detect direction, return a string
-        //call this method inside the update before handleCollison method
-        //use Rectangle.Intersect(recA, recB) 
-        //return a new rec that is the overlap area, otherwise an empty rec
-
-        public string detectCollisionDirection(Rectangle overlapRec, Rectangle objectRec)
+         
+        public string detectCollisionDirection(Rectangle overlapRec, Rectangle linkRec, Rectangle objectRec)
         {
  
-            string direction; 
+            string direction;
+            if (overlapRec.Width >= overlapRec.Height) //top/buttom collison
+            {
+                if (linkRec.Y >= objectRec.Y)
+                {
+                    direction = "top";
+                }
+                else
+                {
+                    direction = "bottom";
+                }
+            }
+            else //left/right collison
+            {
+                if (linkRec.X >= objectRec.X)
+                {
+                    direction = "right";
+                }
+                else
+                {
+                    direction = "left";
+                }
+
+            }
                   
-                return "";
+                return direction;
         }
  
     }
 }
 
+    
+ 
     
  
