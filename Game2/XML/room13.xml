@@ -65,134 +65,134 @@
   <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block1</ObjectName>
-    <posX>161</posX>
-    <posY>741</posY>
+    <posX>176</posX>
+    <posY>0</posY>
   </Item>
   <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block2</ObjectName>
-    <posX>171</posX>
-    <posY>741</posY>
+    <posX>176</posX>
+    <posY>16</posY>
   </Item>
     <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block3</ObjectName>
-    <posX>193</posX>
-    <posY>741</posY>
+    <posX>176</posX>
+    <posY>32</posY>
   </Item>
   <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block4</ObjectName>
-    <posX>209</posX>
-    <posY>741</posY>
+    <posX>176</posX>
+    <posY>64</posY>
   </Item>
   <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block5</ObjectName>
-    <posX>161</posX>
-    <posY>757</posY>
+    <posX>176</posX>
+    <posY>80</posY>
   </Item>
     <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block6</ObjectName>
-    <posX>171</posX>
-    <posY>757</posY>
+    <posX>176</posX>
+    <posY>96</posY>
   </Item>
   <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block7</ObjectName>
-    <posX>193</posX>
-    <posY>757</posY>
+    <posX>160</posX>
+    <posY>0</posY>
   </Item>
     <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block8</ObjectName>
-    <posX>209</posX>
-    <posY>757</posY>
+    <posX>160</posX>
+    <posY>16</posY>
   </Item>
   <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block9</ObjectName>
-    <posX>171</posX>
-    <posY>773</posY>
+    <posX>160</posX>
+    <posY>32</posY>
   </Item>
     <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block10</ObjectName>
-    <posX>193</posX>
-    <posY>773</posY>
+    <posX>160</posX>
+    <posY>64</posY>
   </Item>
     <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block11</ObjectName>
-    <posX>209</posX>
-    <posY>773</posY>
+    <posX>160</posX>
+    <posY>80</posY>
   </Item>
   <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block12</ObjectName>
-    <posX>171</posX>
-    <posY>805</posY>
+    <posX>160</posX>
+    <posY>96</posY>
   </Item>
     <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block13</ObjectName>
-    <posX>193</posX>
-    <posY>805</posY>
+    <posX>144</posX>
+    <posY>0</posY>
   </Item>
     <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block14</ObjectName>
-    <posX>209</posX>
-    <posY>805</posY>
+    <posX>144</posX>
+    <posY>16</posY>
   </Item>
   <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block15</ObjectName>
-    <posX>161</posX>
-    <posY>821</posY>
+    <posX>144</posX>
+    <posY>32</posY>
   </Item>
   <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block16</ObjectName>
-    <posX>171</posX>
-    <posY>821</posY>
+    <posX>144</posX>
+    <posY>64</posY>
   </Item>
     <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block17</ObjectName>
-    <posX>193</posX>
-    <posY>821</posY>
+    <posX>144</posX>
+    <posY>80</posY>
   </Item>
   <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block18</ObjectName>
-    <posX>209</posX>
-    <posY>821</posY>
+    <posX>144</posX>
+    <posY>96</posY>
   </Item>
     <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block19</ObjectName>
-    <posX>161</posX>
-    <posY>837</posY>
+    <posX>128</posX>
+    <posY>0</posY>
   </Item>
   <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block20</ObjectName>
-    <posX>171</posX>
-    <posY>837</posY>
+    <posX>128</posX>
+    <posY>16</posY>
   </Item>
     <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block21</ObjectName>
-    <posX>193</posX>
-    <posY>837</posY>
+    <posX>128</posX>
+    <posY>80</posY>
   </Item>
     <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block22</ObjectName>
-    <posX>209</posX>
-    <posY>837</posY>
+    <posX>128</posX>
+    <posY>96</posY>
   </Item>
   <!--  Block  -->
 </Asset>
