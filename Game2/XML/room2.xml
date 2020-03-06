@@ -30,6 +30,15 @@
       <posX>127</posX>
       <posY>70</posY>
     </Item>
-    
+    <Room>
+      <ObjectType>Door</ObjectType>
+      <ObjectName>Room1</ObjectName>
+      <!--create a new class called door with empty spritesheet, placed at location on door detect collision for camera/room switch??-->>
+      <posX></posX>
+        <posY></posY>
+      </Room>
+    <Room>
+      
+      </Room>
   </Asset>
 </XnaContent>
