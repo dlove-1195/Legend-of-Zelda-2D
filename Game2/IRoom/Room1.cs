@@ -6,23 +6,26 @@ using System.Xml;
 
 namespace Sprint2
 {
-    
+
     public class Room1 : IRoom
     {
         XmlDocument doc;
         XmlNodeList nodeList;
         private String type;
-        private String name; 
+        private String name;
         private int posX;
         private int posY;
         private Vector2 vector;
+
         ICamera camera;
         public Vector2 roomSize { get; set; }
 
         public Iplayer player { get; set; }
         public List<IEnemy> enemies { get; set; }
-        public List<Iitem> pickUpItems{ get;set;}
+        public List<Iitem> pickUpItems { get; set; }
         public List<Inpc> npcs { get; set; }
+
+        public List<KeyValuePair<int, int>> blockLocation { get; set; }
 
         public Room1()
         {
@@ -33,7 +36,8 @@ namespace Sprint2
             doc.Load("room1.xml");
 
             nodeList = doc.GetElementsByTagName("Item");
-            foreach (XmlNode node in nodeList){
+            foreach (XmlNode node in nodeList)
+            {
                 type = node.ChildNodes[0].InnerText;
                 name = node.ChildNodes[1].InnerText;
                 posX = Int32.Parse(node.ChildNodes[2].InnerText);
@@ -49,11 +53,11 @@ namespace Sprint2
                 else if (type == "Player")
                 {
                     player = new Link(vector);
-                    
-                } 
+
+                }
                 else if (type == "Enemy")
                 {
-                    if(name == "Dragon")
+                    if (name == "Dragon")
                     {
                         enemies.Add(new Dragon(vector));
                     }
@@ -135,7 +139,7 @@ namespace Sprint2
                     {
 
                         npcs.Add(new Merchant(vector));
-                      
+
                     }
                     if (name == "OldMan")
                     {
@@ -146,6 +150,10 @@ namespace Sprint2
                     {
                         npcs.Add(new Princess(vector));
                     }
+                }
+                else if (type == "Block")
+                {
+                    blockLocation.Add(new KeyValuePair<int, int>(posX, posY));
                 }
             }
         }
@@ -162,7 +170,7 @@ namespace Sprint2
             foreach (IEnemy enemy in enemies)
             {
                 enemy.Draw(spriteBatch);
-               
+
             }
             foreach (Iitem item in pickUpItems)
             {
@@ -175,3 +183,4 @@ namespace Sprint2
             }
         }
     }
+}
