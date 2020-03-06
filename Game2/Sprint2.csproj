@@ -42,6 +42,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Game1.cs" />
+    <Compile Include="ICamera\camera.cs" />
+    <Compile Include="ICamera\CameraController.cs" />
+    <Compile Include="ICamera\ICamera.cs" />
     <Compile Include="ICollisionDetector\EnemyCollisionDetection.cs" />
     <Compile Include="ICollisionDetector\ICollisionDetection.cs" />
     <Compile Include="ICollisionDetector\LinkCollisionDetection.cs" />
@@ -148,10 +151,7 @@
     <Compile Include="IPlayerState\LinkWithItem\LinkWithItemUpState.cs" />
     <Compile Include="IPlayer\Iplayer.cs" />
     <Compile Include="IPlayer\Link.cs" />
-    <Compile Include="IRoom\Room1.cs" />
     <Compile Include="IRoom\IRoom.cs" />
-    <Compile Include="IRoom\RoomY.cs" />
-    <Compile Include="IRoom\RoomZ.cs" />
     <Compile Include="ISprite\EnemySprite\BatSprite.cs" />
     <Compile Include="ISprite\EnemySprite\DragonSprite\DragonWalkDownSprite.cs" />
     <Compile Include="ISprite\EnemySprite\DragonSprite\DragonWalkLeftSprite.cs" />
@@ -285,6 +285,7 @@
     <None Include="Content\obj\Windows\link.mgcontent" />
     <None Include="Content\obj\Windows\woodenboomerang.mgcontent" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

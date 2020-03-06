@@ -25,11 +25,12 @@ namespace Sprint2
 		private static Texture2D woodenBoomerangSpriteSheet;
         private static Texture2D blueCandleSpriteSheet;
         private static Texture2D bowSpriteSheet;
+		private static Texture2D dungeonSpriteSheet;
 
 
 
-        //initialize the Texture2D fields
-        public static void LoadAllTextures(ContentManager content)
+		//initialize the Texture2D fields
+		public static void LoadAllTextures(ContentManager content)
 			{
 
 			linkSpriteSheet = content.Load<Texture2D>("link");
@@ -44,8 +45,9 @@ namespace Sprint2
 			bowSpriteSheet = content.Load<Texture2D>("bow");
             woodenBoomerangSpriteSheet = content.Load<Texture2D>("woodenboomerang");
             blueCandleSpriteSheet = content.Load<Texture2D>("candle");
+			dungeonSpriteSheet = content.Load<Texture2D>("dugeon");
 
-        }
+		}
 
 		   public static void UnloadAllTextures()
 			{
@@ -98,7 +100,10 @@ namespace Sprint2
 		{
 			return linkSpriteSheet2;
 		}
-
+		public static Texture2D GetDungeonSpriteSheet()
+		{
+			return dungeonSpriteSheet;
+		}
 	}
 	
 }

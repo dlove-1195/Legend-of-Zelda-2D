@@ -21,6 +21,8 @@ namespace Sprint2
 
 
         IController keyboardController;
+        IController cameraController;
+        public ICamera background = new camera("");
         public static int WindowWidth=800;
         public static int WindowHeight=600;
         public Game1()
@@ -52,7 +54,6 @@ namespace Sprint2
             spriteBatch = new SpriteBatch(GraphicsDevice);
             player = new Link();
            
-            room = new Room1();
             linkDetection = new LinkCollisionDetection(room, player);
             enemyDetection = new EnemyCollisionDetection(room);
 
@@ -77,8 +78,9 @@ namespace Sprint2
             linkDetection.Update();
             enemyDetection.Update();
             room.Update();
-            
- 
+            cameraController.Update();
+            background.Update();
+
             base.Update(gameTime);
         }
 
@@ -86,6 +88,7 @@ namespace Sprint2
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin();
+            background.Draw(spriteBatch);
             player.Draw(spriteBatch);
             room.Draw(spriteBatch);
  
