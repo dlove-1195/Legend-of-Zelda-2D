@@ -15,15 +15,17 @@ namespace Sprint2
 
 
         //the current position of the dragon
-        public static int posX = 400;
-        public static int posY = 200;
+        public static int posX ;
+        public static int posY ;
 
+        public Rectangle boundingBox { get; set; }
 
-
-
-        public Dragon()
+        private int width =15;
+        private int height =16;
+        public Dragon(Vector2 vector)
         {
-
+            vector.X = posX;
+            vector.Y = posY;
             state = new DragonWalkLeftState(this);
         }
 
@@ -59,6 +61,7 @@ namespace Sprint2
 
         public void Update()
         {
+            boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
             DragonSprite.Update();
             if (fire != null)
             {

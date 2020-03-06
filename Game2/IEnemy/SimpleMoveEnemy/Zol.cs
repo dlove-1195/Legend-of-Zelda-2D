@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
- 
+
 
 namespace Sprint2
 {
@@ -16,15 +16,16 @@ namespace Sprint2
 
 
         //the current position of the Keese
-        public static int posX = 400;
-        public static int posY = 200;
+        public static int posX;
+        public static int posY;
 
         private int enemyNumber = 3;
 
-
-        public Zol()
+        public Rectangle boundingBox { get; set; }
+        public Zol(Vector2 vector)
         {
-
+            vector.X = posX;
+            vector.Y = posY;
             state = new EnemyWalkLeftState(this, enemyNumber);
         }
 
@@ -43,7 +44,7 @@ namespace Sprint2
             state.ChangeToRight();
         }
 
-         
+
         public void ChangeToLeft()
         {
             state.ChangeToLeft();
@@ -62,6 +63,7 @@ namespace Sprint2
 
         public void Update()
         {
+            boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
             GelSprite.Update();
 
             //random move dragon

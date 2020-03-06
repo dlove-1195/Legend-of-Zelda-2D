@@ -15,14 +15,17 @@ namespace Sprint2
 
 
         //the current position of the trap
-        public static int posX = 400;
-        public static int posY = 200;
+        public static int posX ;
+        public static int posY ;
 
 
-
-
-        public Trap()
+        public Rectangle boundingBox { get; set; }
+        private int width =8;
+        private int height =14;
+        public Trap(Vector2 vector)
         {
+            vector.X = posX;
+            vector.Y = posY;
             trapSprite = new TrapSprite(Texture2DStorage.GetEnemySpriteSheet2());
         }
 
@@ -59,6 +62,7 @@ namespace Sprint2
 
         public void Update()
         {
+            boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
             trapSprite.Update();
 
         }
