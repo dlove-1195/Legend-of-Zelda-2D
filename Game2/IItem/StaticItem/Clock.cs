@@ -29,8 +29,8 @@ namespace Sprint2
 
         public Clock(Vector2 vector)
         {
-            vector.X = posX;
-            vector.Y = posY;
+            posX = (int)vector.X;
+            posY = (int)vector.Y;
             clockSprite = new StaticSprite(texture, sourceLocX, sourceLocY, width, height);
         }
         public int getItem()

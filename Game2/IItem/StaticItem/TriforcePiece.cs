@@ -25,8 +25,10 @@ namespace Sprint2
         public int posX;
         public int posY ;
 
-        public TriforcePiece()
+        public TriforcePiece(Vector2 vector)
         {
+            posX = (int)vector.X;
+            posY = (int)vector.Y;
             triforcePieceSprite = new StaticSprite(texture, sourceLocX, sourceLocY, width, height);
 
         }

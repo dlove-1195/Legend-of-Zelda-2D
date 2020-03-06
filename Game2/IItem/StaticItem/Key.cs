@@ -28,8 +28,8 @@ namespace Sprint2
 
         public Key(Vector2 vector)
         {
-            vector.X = posX;
-            vector.Y = posY;
+            posX = (int)vector.X;
+            posY = (int)vector.Y;
 
             keySprite = new StaticSprite(texture, sourceLocX, sourceLocY, width, height);
 

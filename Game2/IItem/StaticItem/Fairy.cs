@@ -28,8 +28,8 @@ namespace Sprint2
 
         public Fairy(Vector2 vector)
         {
-            vector.X = posX;
-            vector.Y = posY;
+            posX = (int)vector.X;
+            posY = (int)vector.Y;
             fairySprite = new StaticSprite(texture, sourceLocX, sourceLocY, width, height);
 
         }
