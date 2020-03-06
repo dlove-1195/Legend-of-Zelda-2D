@@ -26,13 +26,13 @@ namespace Sprint2
         public List<Inpc> npcs { get; set; }
         public List<KeyValuePair<int, int>> blockLocation { get; set; }
 
-        public Room1()
+        public Room1(String xmlFile)
         {
             enemies = new List<IEnemy>();
             pickUpItems = new List<Iitem>();
             npcs = new List<Inpc>();
             doc = new XmlDocument();
-            doc.Load("room1.xml");
+            doc.Load(xmlFile);
 
             nodeList = doc.GetElementsByTagName("Item");
             foreach (XmlNode node in nodeList)
