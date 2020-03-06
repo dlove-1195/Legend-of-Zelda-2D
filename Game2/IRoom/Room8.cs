@@ -30,7 +30,7 @@ namespace Sprint2
             pickUpItems = new List<Iitem>();
             npcs = new List<Inpc>();
             doc = new XmlDocument();
-            doc.Load("roomZ.xml");
+            doc.Load("room8.xml");
 
             nodeList = doc.GetElementsByTagName("Item");
             foreach (XmlNode node in nodeList)
