@@ -23,6 +23,7 @@ namespace Sprint2
         public List<IEnemy> enemies { get; set; }
         public List<Iitem> pickUpItems{ get;set;}
         public List<Inpc> npcs { get; set; }
+        public List<KeyValuePair<int, int>> blockLocation { get; set; }
 
         public Room1()
         {
@@ -146,6 +147,10 @@ namespace Sprint2
                     {
                         npcs.Add(new Princess(vector));
                     }
+                }
+                 else if (type == "Block")
+                {
+                    blockLocation.Add(new KeyValuePair<int, int>(posX, posY));
                 }
             }
         }
