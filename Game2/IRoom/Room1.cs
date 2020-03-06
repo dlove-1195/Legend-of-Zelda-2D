@@ -159,7 +159,22 @@ namespace Sprint2
 
         public void Update()
         {
-            //do nothing
+            player.Update();
+
+            foreach (IEnemy enemy in enemies)
+            {
+                enemy.Update();
+
+            }
+            foreach (Iitem item in pickUpItems)
+            {
+                item.Update();
+
+            }
+            foreach (Inpc npc in npcs)
+            {
+                npc.Update();
+            }
         }
         public void Draw(SpriteBatch spriteBatch)
         {
