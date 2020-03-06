@@ -20,13 +20,15 @@ namespace Sprint2
 
         //Sprite Object
         public ISprite heartContainerSprite;
-
+        public Rectangle boundingBox { get; set; }
         //initial position on the ground
-        public int posX = 120;
-        public int posY = 400;
+        public int posX;
+        public int posY;
 
-        public HeartContainer()
+        public HeartContainer(Vector2 vector)
         {
+            vector.X = posX;
+            vector.Y = posY;
             heartContainerSprite = new StaticSprite(texture, sourceLocX, sourceLocY, width, height);
 
         }
@@ -39,6 +41,7 @@ namespace Sprint2
 
         public void Update()
         {
+            boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
             heartContainerSprite.Update();
         }
         public int getItem()

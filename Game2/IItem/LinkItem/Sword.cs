@@ -8,17 +8,21 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Sprint2
 {
-    public class Sword: Iitem
+    public class Sword : Iitem
     {
-        public int itemNum =4;
+        public int itemNum = 4;
         public IitemState state;
         public ISprite swordSprite;
         //initial position which closed to Link
         public int posX;
         public int posY;
-        
+
+        private int swordWidth = 7;//sprite width
+        private int swordHeight = 16;//sprite height
+        public Rectangle boundingBox { get; set; }
+
         private int delay = 0;
-        private int facingDirection; 
+        private int facingDirection;
         public Sword(int posX, int posY, int direction)
         {
             state = new DisappearState(this);
@@ -26,19 +30,21 @@ namespace Sprint2
             facingDirection = direction;
             this.posX = posX;
             this.posY = posY;
-            
-            
-        }
-      
-        
-        public void Update() {
-            
-                swordSprite.Update();
-            
-                int totalDelay = 100;
 
-                delay++;
-            if ( delay ==40 )
+
+        }
+
+
+        public void Update()
+        {
+
+            boundingBox = new Rectangle(posX, posY, swordWidth * 3, swordHeight * 3);
+            swordSprite.Update();
+
+            int totalDelay = 100;
+
+            delay++;
+            if (delay == 40)
             {
                 switch (facingDirection)
                 {
@@ -61,22 +67,22 @@ namespace Sprint2
 
 
             }
-            else if(delay>=totalDelay)
-                 {
+            else if (delay >= totalDelay)
+            {
                 state.ChangeToDisappear();
-                }
-            
             }
 
-        
-        public void Draw(SpriteBatch spriteBatch)
-        {
-           
-                swordSprite.Draw(spriteBatch, new Vector2(posX, posY));
-            
         }
 
-     
+
+        public void Draw(SpriteBatch spriteBatch)
+        {
+
+            swordSprite.Draw(spriteBatch, new Vector2(posX, posY));
+
+        }
+
+
         public void preItem(Game1 myGame)
         {
             //nothing

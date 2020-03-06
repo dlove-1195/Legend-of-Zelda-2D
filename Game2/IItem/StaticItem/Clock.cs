@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 
 namespace Sprint2
-{   
+{
     public class Clock : Iitem
     {
         private int p = 7;
@@ -18,17 +18,20 @@ namespace Sprint2
         private int width = 11;
         private int height = 16;
 
+        public Rectangle boundingBox { get; set; }
+
         //Sprite Object
         public ISprite clockSprite;
 
         //initial position on the ground
-        public int posX =120;
-        public int posY= 400;
-      
-        public Clock()
+        public int posX;
+        public int posY;
+
+        public Clock(Vector2 vector)
         {
-            
-          clockSprite = new StaticSprite(texture, sourceLocX, sourceLocY, width, height);
+            vector.X = posX;
+            vector.Y = posY;
+            clockSprite = new StaticSprite(texture, sourceLocX, sourceLocY, width, height);
         }
         public int getItem()
         {
@@ -51,9 +54,10 @@ namespace Sprint2
 
         public void Update()
         {
+            boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
             clockSprite.Update();
         }
-      
+
 
         public void preItem(Game1 myGame)
         {

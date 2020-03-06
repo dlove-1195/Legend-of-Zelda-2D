@@ -19,6 +19,10 @@ namespace Sprint2
 
         private int delay = 0;
         private int facingDirection;
+
+        private int bowWidth = 16;//sprite width
+        private int bowHeight = 8;//sprite height
+        public Rectangle boundingBox { get; set; }
         public Bow(int posX, int posY, int direction)
         {
             state = new DisappearState(this);
@@ -44,7 +48,7 @@ namespace Sprint2
 
         public void Update()
         {
-
+            boundingBox = new Rectangle(posX, posY, bowWidth * 3, bowHeight * 3);
             bowSprite.Update();
 
             int totalDelay = 100;
@@ -75,6 +79,7 @@ namespace Sprint2
             }
             else if (delay >= totalDelay)
             {
+                boundingBox =
                 state.ChangeToDisappear();
             }
 

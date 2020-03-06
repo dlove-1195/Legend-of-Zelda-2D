@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework;
 
 namespace Sprint2
 {
-    public class Key: Iitem
+    public class Key : Iitem
     {
         private int p = 12;
         //Sprite parameter
@@ -18,17 +18,19 @@ namespace Sprint2
         private int sourceLocY = 40;
         private int width = 8;
         private int height = 16;
-
+        public Rectangle boundingBox { get; set; }
         //Sprite Object
         public ISprite keySprite;
 
         //initial position in the center
-        public int posX = 120;
-        public int posY = 400;
+        public int posX;
+        public int posY;
 
-        public Key()
+        public Key(Vector2 vector)
         {
-            
+            vector.X = posX;
+            vector.Y = posY;
+
             keySprite = new StaticSprite(texture, sourceLocX, sourceLocY, width, height);
 
         }
@@ -40,6 +42,7 @@ namespace Sprint2
 
         public void Update()
         {
+            boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
             keySprite.Update();
         }
         public int getItem()

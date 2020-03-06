@@ -20,13 +20,16 @@ namespace Sprint2
 
         //Sprite Object
         public ISprite fairySprite;
+        public Rectangle boundingBox { get; set; }
 
         //initial position on the ground
-        public int posX = 120;
-        public int posY = 400;
+        public int posX;
+        public int posY;
 
-        public Fairy()
+        public Fairy(Vector2 vector)
         {
+            vector.X = posX;
+            vector.Y = posY;
             fairySprite = new StaticSprite(texture, sourceLocX, sourceLocY, width, height);
 
         }
@@ -39,6 +42,9 @@ namespace Sprint2
 
         public void Update()
         {
+
+            boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
+
             fairySprite.Update();
         }
         public int getItem()

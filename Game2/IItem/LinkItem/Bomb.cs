@@ -16,15 +16,19 @@ namespace Sprint2
         public ISprite bombSprite;
         private int delay = 0;
         //initial position closed to link
-        public   int posX;
-        public   int posY;
-        
+        public int posX;
+        public int posY;
+
+        private int bombWidth = 8;//sprite width
+        private int bombHeight = 14;//sprite height
+        public Rectangle boundingBox { get; set; }
+
         public Bomb(int posX, int posY)
         {
-             
+
             state = new BombAppearUnExplodeState(this);
             this.posX = posX;
-            this.posY = posY; 
+            this.posY = posY;
         }
 
 
@@ -33,40 +37,45 @@ namespace Sprint2
             return itemNum;
         }
 
-      
+
         public void Draw(SpriteBatch spriteBatch)
         {
             bombSprite.Draw(spriteBatch, new Vector2(posX, posY));
         }
-       
+
 
         public void Update()
         {
+            boundingBox = new Rectangle(posX, posY, bombWidth * 3, bombHeight * 3);
             bombSprite.Update();
 
             int totalDelay = 100;
             delay++;
-            if(delay > 80 && delay<totalDelay)
+            if (delay > 80 && delay < totalDelay)
             {
+                bombWidth = 17;
+                bombHeight = 21;
                 //state.ChangeToExplode();
                 state = new BombAppearExplodeState(this);
+                boundingBox = new Rectangle(posX, posY, bombWidth * 3, bombHeight * 3);
+
             }
-            else if(delay>=totalDelay)
+            else if (delay >= totalDelay)
             {
                 state.ChangeToDisappear();
             }
-            
-         
+
+
         }
 
         public void nextItem(Game1 myGame)
         {
-            
+
         }
 
         public void preItem(Game1 myGame)
         {
-             
+
         }
 
         public void changeState(IitemState state)

@@ -19,6 +19,11 @@ namespace Sprint2
 
         private int delay = 0;
         private int facingDirection;
+
+        private int boomerWidth = 9;//sprite width
+        private int boomerHeight = 9;//sprite height
+        public Rectangle boundingBox { get; set; }
+
         public WoodenBoomerang(int posX, int posY, int direction)
         {
             state = new DisappearState(this);
@@ -45,8 +50,10 @@ namespace Sprint2
 
         public void Update()
         {
+            boundingBox = new Rectangle(posX, posY, boomerWidth * 3, boomerHeight * 3);
 
             woodenBoomerangSprite.Update();
+
 
             int totalDelay = 100;
 

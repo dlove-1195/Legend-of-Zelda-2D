@@ -19,19 +19,24 @@ namespace Sprint2
         private int width = 7;
         private int height = 8;
 
+        public Rectangle boundingBox { get; set; }
+
+
         //Sprite Object
         public ISprite heartSprite;
 
         //initial position in the center
-        public int posX =120;
-        public int posY =400;
-        
-        public Heart()
+        public int posX;
+        public int posY;
+
+        public Heart(Vector2 vector)
         {
+            vector.X = posX;
+            vector.Y = posY;
             heartSprite = new StaticSprite(texture, sourceLocX, sourceLocY, width, height);
 
         }
-       
+
         public void Draw(SpriteBatch spriteBatch)
         {
             heartSprite.Draw(spriteBatch, new Vector2(posX, posY));
@@ -39,6 +44,7 @@ namespace Sprint2
 
         public void Update()
         {
+            boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
             heartSprite.Update();
         }
         public int getItem()
@@ -56,15 +62,15 @@ namespace Sprint2
         }
         public void preItem(Game1 myGame)
         {
-           
+
             myGame.item = new Fairy();
-            
+
         }
         public void nextItem(Game1 myGame)
         {
-            
+
             myGame.item = new HeartContainer();
-            
+
         }
     }
 }

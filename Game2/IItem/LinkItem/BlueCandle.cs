@@ -19,6 +19,11 @@ namespace Sprint2
 
         private int delay = 0;
         private int facingDirection;
+
+        private int bluecandleWidth = 8;//sprite width
+        private int bluecandleHeight = 16;//sprite height
+        public Rectangle boundingBox { get; set; }
+
         public BlueCandle(int posX, int posY, int direction)
         {
             state = new DisappearState(this);
@@ -45,34 +50,34 @@ namespace Sprint2
 
         public void Update()
         {
-
+            boundingBox = new Rectangle(posX, posY, bluecandleWidth * 3, bluecandleHeight * 3);
             blueCandleSprite.Update();
 
             int totalDelay = 100;
 
             delay++;
-           
-                switch (facingDirection)
-                {
-                    case 0:
-                        state = new AppearUpState(this);
-                        break;
-                    case 1:
-                        state = new AppearDownState(this);
-                        break;
-                    case 2:
-                        state = new AppearLeftState(this);
-                        break;
-                    case 3:
-                        state = new AppearRightState(this);
-                        break;
-                    default:
-                        Console.WriteLine("error: no such situation");
-                        break;
-                }
+
+            switch (facingDirection)
+            {
+                case 0:
+                    state = new AppearUpState(this);
+                    break;
+                case 1:
+                    state = new AppearDownState(this);
+                    break;
+                case 2:
+                    state = new AppearLeftState(this);
+                    break;
+                case 3:
+                    state = new AppearRightState(this);
+                    break;
+                default:
+                    Console.WriteLine("error: no such situation");
+                    break;
+            }
 
 
-      
+
             if (delay >= totalDelay)
             {
                 state.ChangeToDisappear();

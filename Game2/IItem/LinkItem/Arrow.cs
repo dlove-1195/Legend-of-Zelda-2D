@@ -19,6 +19,11 @@ namespace Sprint2
 
         private int delay = 0;
         private int facingDirection;
+
+        private int arrowWidth = 5;//sprite width
+        private int arrowHeight = 16;//sprite height
+        public Rectangle boundingBox { get; set; }
+
         public Arrow(int posX, int posY, int direction)
         {
             state = new DisappearState(this);
@@ -44,7 +49,7 @@ namespace Sprint2
 
         public void Update()
         {
-
+            boundingBox = new Rectangle(posX, posY, arrowWidth * 3, arrowHeight * 3);
             arrowSprite.Update();
 
             int totalDelay = 100;

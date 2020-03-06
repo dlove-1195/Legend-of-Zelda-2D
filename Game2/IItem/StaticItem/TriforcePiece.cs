@@ -17,13 +17,13 @@ namespace Sprint2
         private int sourceLocY = 123;
         private int width = 10;
         private int height = 10;
-
+        public Rectangle boundingBox { get; set; }
         //Sprite Object
         public ISprite triforcePieceSprite;
 
         //initial position on the ground
-        public int posX = 120;
-        public int posY = 400;
+        public int posX;
+        public int posY ;
 
         public TriforcePiece()
         {
@@ -39,6 +39,7 @@ namespace Sprint2
 
         public void Update()
         {
+            boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
             triforcePieceSprite.Update();
         }
         public int getItem()

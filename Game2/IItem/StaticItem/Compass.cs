@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 
 namespace Sprint2
 {
-    public class Compass: Iitem
+    public class Compass : Iitem
     {
         private int p = 8;
         //Sprite class parameter
@@ -18,15 +18,20 @@ namespace Sprint2
         private int width = 11;
         private int height = 12;
 
+        public Rectangle boundingBox { get; set; }
+
+
         //Sprite Object
         public ISprite compassSprite;
 
         //initial position on the ground
-        public int posX = 120;
-        public int posY = 400;
+        public int posX;
+        public int posY;
 
-        public Compass()
-        { 
+        public Compass(Vector2 vector)
+        {
+            vector.X = posX;
+            vector.Y = posY;
             compassSprite = new StaticSprite(texture, sourceLocX, sourceLocY, width, height);
 
         }
@@ -39,6 +44,7 @@ namespace Sprint2
 
         public void Update()
         {
+            boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
             compassSprite.Update();
         }
 

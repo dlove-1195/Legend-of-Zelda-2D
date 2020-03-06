@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Sprint2
 {
-    public class Fire: Iitem
+    public class Fire : Iitem
     {
         public int itemNum = 15;
         public IitemState state;
@@ -17,19 +17,23 @@ namespace Sprint2
         public int posX;
         public int posY;
 
+        private int fireWidth = 8;//sprite width
+        private int fireHeight = 10;//sprite height
+        public Rectangle boundingBox { get; set; }
+
         private int delay = 0;
-        
+
         public Fire(int posX, int posY, int direction)
         {
 
-            switch ( direction)
+            switch (direction)
             {
                 case 0:
                     state = new AppearUpState(this);
                     break;
                 case 1:
                     state = new AppearDownState(this);
-                   
+
                     break;
                 case 2:
                     state = new AppearLeftState(this);
@@ -43,7 +47,7 @@ namespace Sprint2
             }
 
 
-          
+
             this.posX = posX;
             this.posY = posY;
 
@@ -59,20 +63,23 @@ namespace Sprint2
         }
         public void changeSprite(ISprite sprite)
         {
-             fireSprite = sprite;
+            fireSprite = sprite;
         }
 
         public void Update()
         {
+
             if (fireSprite != null)
             {
+                boundingBox = new Rectangle(posX, posY, fireWidth * 3, fireHeight * 3);
                 fireSprite.Update();
+
             }
             int totalDelay = 100;
 
             delay++;
-            
-             if (delay >= totalDelay)
+
+            if (delay >= totalDelay)
             {
                 state.ChangeToDisappear();
             }
