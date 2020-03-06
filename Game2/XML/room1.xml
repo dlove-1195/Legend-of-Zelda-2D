@@ -143,15 +143,15 @@
   <!--  Block  -->
   <Item>
     <ObjectType>Block</ObjectType>
-    <ObjectName>Block2</ObjectName>
-    <posX>611</posX>
-    <posY>258</posY>
+    <ObjectName>Block1</ObjectName>
+    <posX>64</posX>
+    <posY>48</posY>
   </Item>
   <Item>
     <ObjectType>Block</ObjectType>
-    <ObjectName>Block1</ObjectName>
-    <posX>659</posX>
-    <posY>258</posY>
+    <ObjectName>Block2</ObjectName>
+    <posX>112</posX>
+    <posY>48</posY>
     
   </Item>
   <!--  Block  -->
