@@ -1,4 +1,4 @@
-﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +12,7 @@ namespace Sprint2
         //maybe need to add a another helping method to detect direction, 
         //return a string
         void Update();
-        string detectCollisionDirection(Rectangle overlapRec, Rectangle objectRec);
+        string detectCollisionDirection(Rectangle overlapRec,Rectangle testRec, Rectangle objectRec);
         
     }
 }
