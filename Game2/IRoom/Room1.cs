@@ -1,4 +1,4 @@
-﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
@@ -15,18 +15,20 @@ namespace Sprint2
         private String name; 
         private int posX;
         private int posY;
-        
+        private Vector2 vector;
+        ICamera camera;
         public Vector2 roomSize { get; set; }
-        public List<KeyValuePair<Iplayer,Vector2>> player { get; set; }
-        public List<KeyValuePair<IEnemy,Vector2>> enemies { get; set; }
-        public List<KeyValuePair<Iitem, Vector2>> pickUpItems{ get;set;}
-        public List<KeyValuePair<Inpc, Vector2>> npcs { get; set; }
+
+        public Iplayer player { get; set; }
+        public List<IEnemy> enemies { get; set; }
+        public List<Iitem> pickUpItems{ get;set;}
+        public List<Inpc> npcs { get; set; }
 
         public Room1()
         {
-            enemies = new List<KeyValuePair<IEnemy, Vector2>>();
-            pickUpItems = new List<KeyValuePair<Iitem, Vector2>>();
-            npcs = new List<KeyValuePair<Inpc, Vector2>>();
+            enemies = new List<IEnemy>();
+            pickUpItems = new List<Iitem>();
+            npcs = new List<Inpc>();
             doc = new XmlDocument();
             doc.Load("room1.xml");
 
@@ -36,6 +38,8 @@ namespace Sprint2
                 name = node.ChildNodes[1].InnerText;
                 posX = Int32.Parse(node.ChildNodes[2].InnerText);
                 posY = Int32.Parse(node.ChildNodes[3].InnerText);
+                vector.X = camera.posX + posX;
+                vector.Y = camera.posX + posY;
 
                 if (type == "Room")
                 {
@@ -44,86 +48,85 @@ namespace Sprint2
                 }
                 else if (type == "Player")
                 {
-                    player.Add(new KeyValuePair<Iplayer, Vector2>(new Link(), new Vector2(posX, posY)));
-                    
+                    player = new Link(vector);
                     
                 } 
                 else if (type == "Enemy")
                 {
                     if(name == "Dragon")
                     {
-                        enemies.Add(new KeyValuePair<IEnemy, Vector2>(new Dragon(), new Vector2(posX, posY)));
+                        enemies.Add(new Dragon(vector));
                     }
                     if (name == "WallMaster")
                     {
-                        enemies.Add(new KeyValuePair<IEnemy, Vector2>(new WallMaster(), new Vector2(posX, posY)));
+                        enemies.Add(new WallMaster(vector));
                     }
                     if (name == "Flame")
                     {
-                        enemies.Add(new KeyValuePair<IEnemy, Vector2>(new Flame(), new Vector2(posX, posY)));
+                        enemies.Add(new Flame(vector));
                     }
                     if (name == "Trap")
                     {
-                        enemies.Add(new KeyValuePair<IEnemy, Vector2>(new Trap(), new Vector2(posX, posY)));
+                        enemies.Add(new Trap(vector));
                     }
                     if (name == "Goriya")
                     {
-                        enemies.Add(new KeyValuePair<IEnemy, Vector2>(new Goriya(), new Vector2(posX, posY)));
+                        enemies.Add(new Goriya(vector));
                     }
                     if (name == "Keese")
                     {
-                        enemies.Add(new KeyValuePair<IEnemy, Vector2>(new Keese(), new Vector2(posX, posY)));
+                        enemies.Add(new Keese(vector));
                     }
                     if (name == "Rope")
                     {
-                        enemies.Add(new KeyValuePair<IEnemy, Vector2>(new Rope(), new Vector2(posX, posY)));
+                        enemies.Add(new Rope(vector));
                     }
                     if (name == "Stalfos")
                     {
-                        enemies.Add(new KeyValuePair<IEnemy, Vector2>(new Stalfos(), new Vector2(posX, posY)));
+                        enemies.Add(new Stalfos(vector));
                     }
                     if (name == "Zol")
                     {
-                        enemies.Add(new KeyValuePair<IEnemy, Vector2>(new Zol(), new Vector2(posX, posY)));
+                        enemies.Add(new Zol(vector));
                     }
                 }
                 else if (type == "Item")
                 {
                     if (name == "BlueDiamond")
                     {
-                        pickUpItems.Add(new KeyValuePair<Iitem, Vector2>(new BlueDiamond(), new Vector2(posX, posY)));
+                        pickUpItems.Add(new BlueDiamond(vector));
                     }
                     if (name == "Clock")
                     {
-                        pickUpItems.Add(new KeyValuePair<Iitem, Vector2>(new Clock(), new Vector2(posX, posY)));
+                        pickUpItems.Add(new Clock(vector));
                     }
                     if (name == "Compass")
                     {
-                        pickUpItems.Add(new KeyValuePair<Iitem, Vector2>(new Compass(), new Vector2(posX, posY)));
+                        pickUpItems.Add(new Compass(vector));
                     }
                     if (name == "Fairy")
                     {
-                        pickUpItems.Add(new KeyValuePair<Iitem, Vector2>(new Fairy(), new Vector2(posX, posY)));
+                        pickUpItems.Add(new Fairy(vector));
                     }
                     if (name == "Heart")
                     {
-                        pickUpItems.Add(new KeyValuePair<Iitem, Vector2>(new Heart(), new Vector2(posX, posY)));
+                        pickUpItems.Add(new Heart(vector));
                     }
                     if (name == "HeartContainer")
                     {
-                        pickUpItems.Add(new KeyValuePair<Iitem, Vector2>(new HeartContainer(), new Vector2(posX, posY)));
+                        pickUpItems.Add(new HeartContainer(vector));
                     }
                     if (name == "Key")
                     {
-                        pickUpItems.Add(new KeyValuePair<Iitem, Vector2>(new Key(), new Vector2(posX, posY)));
+                        pickUpItems.Add(new Key(vector));
                     }
                     if (name == "Map")
                     {
-                        pickUpItems.Add(new KeyValuePair<Iitem, Vector2>(new Map(), new Vector2(posX, posY)));
+                        pickUpItems.Add(new Map(vector));
                     }
                     if (name == "TriforcePiece")
                     {
-                        pickUpItems.Add(new KeyValuePair<Iitem, Vector2>(new TriforcePiece(), new Vector2(posX, posY)));
+                        pickUpItems.Add(new TriforcePiece(vector));
                     }
                 }
                 else if (type == "NPC")
@@ -131,17 +134,17 @@ namespace Sprint2
                     if (name == "Merchant")
                     {
 
-                        npcs.Add(new KeyValuePair<Inpc, Vector2>(new Merchant(), new Vector2(posX, posY)));
+                        npcs.Add(new Merchant(vector));
                       
                     }
                     if (name == "OldMan")
                     {
 
-                        npcs.Add(new KeyValuePair<Inpc, Vector2>(new OldMan(), new Vector2(posX, posY)));
+                        npcs.Add(new OldMan(vector));
                     }
                     if (name == "Princess")
                     {
-                        npcs.Add(new KeyValuePair<Inpc, Vector2>(new Princess(), new Vector2(posX, posY)));
+                        npcs.Add(new Princess(vector));
                     }
                 }
             }
@@ -154,26 +157,21 @@ namespace Sprint2
         public void Draw(SpriteBatch spriteBatch)
         {
 
-            foreach (KeyValuePair<Iplayer, Vector2> pair in player)
-            {
-                pair.Key.Draw(spriteBatch, pair.Value);
+            player.Draw(spriteBatch);
 
-            }
-
-            foreach (KeyValuePair < IEnemy,Vector2 > pair in enemies)
+            foreach (IEnemy enemy in enemies)
             {
-                pair.Key.Draw(spriteBatch, pair.Value);
+                enemy.Draw(spriteBatch);
                
             }
-            foreach (KeyValuePair<Iitem, Vector2> pair in pickUpItems)
+            foreach (Iitem item in pickUpItems)
             {
-                pair.Key.Draw(spriteBatch, pair.Value);
+                item.Draw(spriteBatch);
 
             }
-            foreach (KeyValuePair<Inpc, Vector2> pair in npcs)
+            foreach (Inpc npc in npcs)
             {
-                pair.Key.Draw(spriteBatch, pair.Value);
+                npc.Draw(spriteBatch);
             }
         }
     }
-}
