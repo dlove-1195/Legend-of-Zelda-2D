@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System;
+
 
 namespace Sprint2
 {
@@ -22,10 +19,10 @@ namespace Sprint2
             //change to different direction depends on collision direction
             switch (direction)
             {
-                case "up":
+                case "top":
                     enemy.ChangeToDown();
                     break;
-                case "down":
+                case "buttom":
                     enemy.ChangeToUp();
                     break;
                 case "left":
@@ -38,27 +35,27 @@ namespace Sprint2
             }
            
         }
-        public void HandleEnemyCollsion(string direction)
-        {
-             
-        }
-
-        public void changeDirection(string direction)
+        public void HandleEnemyCollsion(string direction, IEnemy otherEnemy)
         {
             switch (direction)
 
             {
                 case "left":
-                    enemy.ChangeToRight();
+                    enemy.ChangeToLeft();
+                    otherEnemy.ChangeToRight();
                     break;
                 case "right":
-                    enemy.ChangeToLeft();
+                    enemy.ChangeToRight();
+                    otherEnemy.ChangeToLeft();
+                     
                     break;
-                case "up":
+                case "top":
                     enemy.ChangeToUp();
+                    otherEnemy.ChangeToDown();
                     break;
-                case "down":
+                case "bottom":
                     enemy.ChangeToDown();
+                    otherEnemy.ChangeToUp();
                     break;
                 default:
                     Console.WriteLine("error: no such situation");
@@ -66,6 +63,5 @@ namespace Sprint2
             }
 
         }
-
     }
 }
