@@ -24,7 +24,8 @@ namespace Sprint2
         public List<IEnemy> enemies { get; set; }
         public List<Iitem> pickUpItems { get; set; }
         public List<Inpc> npcs { get; set; }
-        public List<KeyValuePair<string, Vector2>> blockLocation { get; set; }
+        public List<KeyValuePair<int, int>> blockLocation { get; set; }
+        public List<KeyValuePair<string, Vector2>> doorLocation { get; set; }
 
         
 
