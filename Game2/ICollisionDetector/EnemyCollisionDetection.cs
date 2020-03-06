@@ -1,4 +1,4 @@
-﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,9 +20,9 @@ namespace Sprint2
 
         public EnemyCollisionDetection(IRoom room)
         {
-            roomWidth=room.vector.x;
-            roomHeight=room.vector.y;
-            enemy = room.enemy;
+            roomWidth=(int) room.roomSize.X;
+            roomHeight=(int) room.roomSize.Y;
+            enemy = room.enemies;
             blockLocation = room.blockLocation;
             //no collision between enemy and pickupItem/npc 
 
@@ -38,6 +38,7 @@ namespace Sprint2
                 enemyHandler = new EnemyCollisionHandler(testEnemy);
                 Rectangle testEnemyRectangle = testEnemy.boundingBox;
                 Rectangle overlapRec;
+                string direction="";
 
                 //detect enemy collision with block
                 int listLength = blockLocation.Count();
@@ -51,7 +52,7 @@ namespace Sprint2
                     overlapRec = Rectangle.Intersect(testEnemyRectangle, singleBlockRec);
                     if (!overlapRec.IsEmpty)
                     {
-                        string direction = detectCollisionDirection(overlapRec, singleBlockRec);
+                        direction = detectCollisionDirection(overlapRec, testEnemyRectangle, singleBlockRec);
                         enemyHandler.HandleEnemyBlockCollsion(direction);
                     }
                 }
@@ -69,47 +70,72 @@ namespace Sprint2
                         overlapRec = Rectangle.Intersect(testEnemyRectangle, singleEnemyRec);
                         if (!overlapRec.IsEmpty)
                         {
-                            string direction = detectCollisionDirection(overlapRec, singleEnemyRec);
-                            enemyHandler.HandleEnemyCollsion(direction);
+                              direction = detectCollisionDirection(overlapRec, testEnemyRectangle, singleEnemyRec);
+                            enemyHandler.HandleEnemyCollsion(direction,  enemy[j]);
                         }
                     }
 
                 }
 
                 //enemy edge detection
+               
                 if (testEnemyRectangle.X > roomWidth)
                 {
-                     enemyHandler.changeDirection("right");
+                    direction = "right";
                 }
                 else if (testEnemyRectangle.X < 0)
                 {
-                    enemyHandler.changeDirection("left");
+                    direction = "left";
                 }
                 else if (testEnemyRectangle.Y > roomHeight)
                 {
-                    enemyHandler.changeDirection("down");
+                    direction = "buttom";
                 }
                 else if (testEnemyRectangle.Y < 0)
                 {
-                    enemyHandler.changeDirection("up");
+                    direction = "top";
                 }
-              
-                     
+                if (!direction.Equals(""))
+                {
+                    enemyHandler.HandleEnemyBlockCollsion(direction);
+                }
+
 
 
 
             }
         }
 
-
-        //maybe need to add a another helping method to detect direction, return a string
-        //call this method inside the update before handleCollison method
-        //use Rectangle.Intersect(recA, recB) 
-        //return a new rec that is the overlap area, otherwise an empty rec
-        public string detectCollisionDirection(Rectangle overlapRec, Rectangle objectRec)
+ 
+        public string detectCollisionDirection(Rectangle overlapRec, Rectangle testEnemyRec, Rectangle objectRec)
         {
-             
-            return "";
+
+            string direction;
+            if (overlapRec.Width >= overlapRec.Height) //top/buttom collison
+            {
+                if (testEnemyRec.Y >= objectRec.Y)
+                {
+                    direction = "top";
+                }
+                else
+                {
+                    direction = "bottom";
+                }
+            }
+            else //left/right collison
+            {
+                if (testEnemyRec.X >= objectRec.X)
+                {
+                    direction = "right";
+                }
+                else
+                {
+                    direction = "left";
+                }
+
+            }
+
+            return direction;
         }
     }
 
