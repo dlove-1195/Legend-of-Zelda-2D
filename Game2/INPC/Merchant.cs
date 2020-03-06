@@ -21,8 +21,8 @@ namespace Sprint2
         // ---  end ---
         public Merchant(Vector2 vector)
         {
-            vector.X = posX;
-            vector.Y = posY;
+            posX = (int)vector.X;
+            posY = (int)vector.Y;
             //initial sprite
             MerchantSprite = new StaticSprite(texture, 61, 5, 14, 16);//14= merchantWidth, 16=merchantHeight
         }

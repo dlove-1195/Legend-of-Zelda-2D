@@ -19,8 +19,8 @@ namespace Sprint2
         public Rectangle boundingBox { get; set; }
         public Princess(Vector2 vector)
         {
-            vector.X = posX;
-            vector.Y = posY;
+            posX = (int)vector.X;
+            posY = (int)vector.Y;
             //initial sprite
             PrincessSprite = new StaticSprite(texture, 121, 5, 14, 26);
         }

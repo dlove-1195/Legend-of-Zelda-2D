@@ -20,8 +20,8 @@ namespace Sprint2
 
         public OldMan(Vector2 vector)
         {
-            vector.X = posX;
-            vector.Y = posY;
+            posX = (int)vector.X;
+            posY = (int)vector.Y;
             //initial sprite
             OldManSprite = new StaticSprite(texture, 0, 5, 16, 16);
         }
