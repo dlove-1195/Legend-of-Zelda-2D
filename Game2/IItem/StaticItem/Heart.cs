@@ -63,13 +63,13 @@ namespace Sprint2
         public void preItem(Game1 myGame)
         {
 
-            myGame.item = new Fairy();
+          //  myGame.item = new Fairy();
 
         }
         public void nextItem(Game1 myGame)
         {
 
-            myGame.item = new HeartContainer();
+            //myGame.item = new HeartContainer();
 
         }
     }

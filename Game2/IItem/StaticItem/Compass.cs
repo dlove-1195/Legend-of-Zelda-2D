@@ -66,13 +66,13 @@ namespace Sprint2
         {
 
 
-            myGame.item = new Fairy();
+           // myGame.item = new Fairy();
         }
 
         public void preItem(Game1 myGame)
         {
 
-            myGame.item = new Clock();
+         //   myGame.item = new Clock();
         }
     }
 }

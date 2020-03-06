@@ -54,7 +54,7 @@ namespace Sprint2
         {
 
 
-            myGame.item = new Clock();
+          //  myGame.item = new Clock();
 
 
         }
@@ -62,7 +62,7 @@ namespace Sprint2
         public void preItem(Game1 myGame)
         {
 
-            myGame.item = new TriforcePiece();
+           // myGame.item = new TriforcePiece();
         }
 
         public void changeState(IitemState state)

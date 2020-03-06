@@ -62,12 +62,12 @@ namespace Sprint2
         public void preItem(Game1 myGame)
         {
             //state.ChangeToDisappear();
-            myGame.item = new BlueDiamond();
+           // myGame.item = new BlueDiamond();
         }
         public void nextItem(Game1 myGame)
         {
             //state.ChangeToDisappear();
-            myGame.item = new Compass();
+           // myGame.item = new Compass();
         }
     }
 }
