@@ -81,6 +81,7 @@ namespace Sprint2
 
             if (delay >= totalDelay)
             {
+                boundingBox = new Rectangle(0, 0, 0, 0);
                 state.ChangeToDisappear();
             }
 
