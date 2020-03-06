@@ -24,8 +24,8 @@ namespace Sprint2
         private int height =14;
         public Trap(Vector2 vector)
         {
-            vector.X = posX;
-            vector.Y = posY;
+            posX = (int)vector.X;
+            posY = (int)vector.Y;
             trapSprite = new TrapSprite(Texture2DStorage.GetEnemySpriteSheet2());
         }
 

@@ -27,8 +27,8 @@ namespace Sprint2
 
         public WallMaster(Vector2 vector )
         {
-            posX = (int)(vector.X);
-            posY = (int)(vector.Y);
+            posX = (int)vector.X;
+            posY = (int)vector.Y;
             state = new WallMasterLeftStaticState(this);
         }
 

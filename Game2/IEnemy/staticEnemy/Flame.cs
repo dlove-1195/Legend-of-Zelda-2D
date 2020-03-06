@@ -20,8 +20,8 @@ namespace Sprint2
 
         public Flame(Vector2 vector)
         {
-            vector.X = posX;
-            vector.Y = posY;
+            posX = (int)vector.X;
+            posY = (int)vector.Y;
             flameSprite = new FlameSilentBurningSprite(Texture2DStorage.GetEnemySpriteSheet2());
         }
 

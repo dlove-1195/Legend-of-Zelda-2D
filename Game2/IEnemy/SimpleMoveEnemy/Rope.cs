@@ -30,8 +30,8 @@ namespace Sprint2
         public Rope(Vector2 vector)
 
         {
-            vector.X = posX;
-            vector.Y = posY;
+            posX = (int)vector.X;
+            posY = (int)vector.Y;
             state = new EnemyWalkLeftState(this, enemyNumber);
         }
 

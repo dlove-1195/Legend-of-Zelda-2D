@@ -25,8 +25,8 @@ namespace Sprint2
         private int height =16;
         public Dragon(Vector2 vector)
         {
-            vector.X = posX;
-            vector.Y = posY;
+            posX = (int)vector.X;
+            posY = (int)vector.Y;
             state = new DragonWalkLeftState(this);
         }
 
