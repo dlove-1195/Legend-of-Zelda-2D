@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,12 +17,61 @@ namespace Sprint2
 
         // public void HandleLinkNpcCollsion(String side);
         //may need add side in the future 
-        public void HandleLinkBlockCollsion()
+        public void HandleLinkBlockCollsion(string direction)
         {
-            link.ChangeToStand();
+            int originPosX = Link.posX;
+            int originPosY = Link.posY;
+            switch (direction)
+            {
+                case "left":
+                    Link.posX --;
+                    break;
+                case "right":
+                    Link.posX ++;
+                    break;
+                case "up":
+                    Link.posY --;
+
+                    break;
+                case "down":
+                    Link.posY  ++;
+                    break;
+
+                default:
+                    Console.WriteLine("error: no such situation");
+                    break;
+            }
         }
-        public void HandleLinkEnemyCollsion()
+        public void HandleLinkEnemyCollsion(string direction)
         {
+            //link get damaged and being pushed to opposite direction
+            link.GetDamaged();
+            switch (direction)
+            {
+                case "left":
+                    Link.posX = Link.posX -3;
+                    break;
+                case "right":
+                    Link.posX= Link.posX + 3;
+                    break;
+                case "up":
+                    Link.posY =Link.posY+3;
+
+                    break;
+                case "down":
+                    Link.posY = Link.posY - 3;
+                    break;
+
+                default:
+                    Console.WriteLine("error: no such situation");
+                    break;
+            }
+
+        }
+
+        public void HandleLinkProjectileCollsion()
+        {
+            //link just damage
             link.GetDamaged();
         }
 
