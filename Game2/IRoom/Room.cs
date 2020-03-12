@@ -159,22 +159,31 @@ namespace Sprint2
                 }
                 else if (type == "Door")
                 {
-                    doorLocation.Add(new KeyValuePair<string, Vector2>(name, (posX, posY)));
+                    doorLocation.Add(new KeyValuePair<string, Vector2>(name, new Vector2(posX, posY)));
                 }
             }
         }
-
+        //index here would be for the list, not the actual item code for each item, other wise unable to locate several same items.
+        public void setItemToNull(int itemNum) {
+            pickUpItems[itemNum] = null;
+        }
+        public void setEnemyToNull(int enemyNum) {
+            enemies[enemyNum] = null;
+        
+        }
         public void Update()
         {
             player.Update();
 
             foreach (IEnemy enemy in enemies)
             {
+                if(enemy!=null)
                 enemy.Update();
 
             }
             foreach (Iitem item in pickUpItems)
             {
+                if(item!=null)
                 item.Update();
 
             }
@@ -190,11 +199,13 @@ namespace Sprint2
 
             foreach (IEnemy enemy in enemies)
             {
+                if (enemy!=null)
                 enemy.Draw(spriteBatch);
 
             }
             foreach (Iitem item in pickUpItems)
             {
+                if(item!=null)
                 item.Draw(spriteBatch);
 
             }

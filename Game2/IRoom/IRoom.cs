@@ -13,10 +13,13 @@ namespace Sprint2
         List <Iitem> pickUpItems { get; set; }
         List <Inpc> npcs { get; set; }
         List <KeyValuePair<int, int>> blockLocation { get; set; }
-        List<KeyValuePair<string, Vector2>> doorLocation { get; set; } 
-       //add door collisoin detecter and door collision handler to construct new room??
-       //can use block detector for door collision detect
+        List<KeyValuePair<string, Vector2>> doorLocation { get; set; }
+        //add door collisoin detecter and door collision handler to construct new room??
+        //can use block detector for door collision detect
+        void setItemToNull(int itemNum);
+        void setEnemyToNull(int enemyNum);      
         void Update();
+
         void Draw(SpriteBatch spriteBatch);
     }
 }
