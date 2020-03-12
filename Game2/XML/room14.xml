@@ -1,0 +1,104 @@
+<XnaContent>
+<Asset Type="MyDataTypes.LevelObjectData[]">
+  <!--  player  -->
+  <Item>
+    <ObjectType>Room</ObjectType>
+    <ObjectName>Room1</ObjectName>
+    <width>192</width>
+    <height>112</height>
+  </Item>
+  <Item>
+    <ObjectType>Player</ObjectType>
+    <ObjectName>Link</ObjectName>
+    <posX>96</posX>
+    <posY>0</posY>
+  </Item>
+  <!--  player  -->
+  <!--  enemy  -->
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>WallMaster</ObjectName>
+    <posX>64</posX>
+    <posY>16</posY>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>WallMaster</ObjectName>
+    <posX>176</posX>
+    <posY>16</posY>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>WallMaster</ObjectName>
+    <posX>64</posX>
+    <posY>16</posY>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Keese</ObjectName>
+    <posX>16</posX>
+    <posY>32</posY>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Keese</ObjectName>
+    <posX>48</posX>
+    <posY>80</posY>
+  </Item>
+  <!--  enemy  -->
+  <!--  item  -->
+  <Item>
+    <ObjectType>Item</ObjectType>
+    <ObjectName>Clock</ObjectName>
+    <posX>32</posX>
+    <posY>96</posY>
+  </Item>
+  <Item>
+    <ObjectType>Item</ObjectType>
+    <ObjectName>Key</ObjectName>
+    <posX>176</posX>
+    <posY>0</posY>
+  </Item>
+  <Item>
+    <ObjectType>Item</ObjectType>
+    <ObjectName>TriforcePiece</ObjectName>
+    <posX>96</posX>
+    <posY>48</posY>
+  </Item>
+  <!--  item  -->
+  <!--  NPC  -->
+  <Item>
+    <ObjectType>NPC</ObjectType>
+    <ObjectName>OldMan</ObjectName>
+    <posX>112</posX>
+    <posY>96</posY>
+  </Item>
+  <!--  NPC  -->
+  <!--  Block  -->
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>Block1</ObjectName>
+    <posX>32</posX>
+    <posY>16</posY>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>Block2</ObjectName>
+    <posX>144</posX>
+    <posY>16</posY>
+  </Item>
+    <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>Block3</ObjectName>
+    <posX>32</posX>
+    <posY>80</posY>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>Block4</ObjectName>
+    <posX>144</posX>
+    <posY>80</posY>
+  </Item>
+  <!--  Block  -->
+</Asset>
+</XnaContent>
