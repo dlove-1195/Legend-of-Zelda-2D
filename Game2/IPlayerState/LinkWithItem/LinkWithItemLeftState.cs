@@ -23,16 +23,22 @@ namespace Sprint2
                     //arrow
                     link.linkSprite = new LinkAttackLeftSprite(textureLink);
                     link.arrow = new Arrow((Link.posX - 20), Link.posY, 2);
+                    if (!Link.linkDropItem)
+                        link.arrow = null;
                     break;
                 case 1:
                     //blue candle
                     link.linkSprite = new LinkStandLeftSprite(textureLink);
                     link.bluecandle = new BlueCandle((Link.posX - 20), Link.posY, 2);
+                    if (!Link.linkDropItem)
+                        link.bluecandle = null;
                     break;
                 case 2:
                     //bomb
                     link.linkSprite = new LinkStandLeftSprite(textureLink);
                     link.bomb = new Bomb((Link.posX - 20), Link.posY);
+                    if (!Link.linkDropItem)
+                        link.bomb = null;
                     break;
 
                 case 3:
@@ -40,16 +46,22 @@ namespace Sprint2
                     Console.WriteLine("bow change to left");
                     link.linkSprite = new LinkAttackLeftSprite(textureLink);
                     link.bow = new Bow((Link.posX - 20), Link.posY, 2);
+                    if (!Link.linkDropItem)
+                        link.bow = null;
                     break;
                 case 4:
                     //sword
                     link.linkSprite = new LinkAttackLeftSprite(textureLink);
                     link.sword = new Sword((Link.posX - 20), Link.posY, 2);
+                    if (!Link.linkDropItem)
+                        link.sword = null;
                     break;
                 case 5:
                     //Boomerang
                     link.linkSprite = new LinkAttackLeftSprite(textureLink);
                     link.boomerang = new WoodenBoomerang((Link.posX - 20), Link.posY, 2);
+                    if (!Link.linkDropItem)
+                        link.boomerang = null;
                     break;
                 default:
                     break;

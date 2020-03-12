@@ -24,32 +24,44 @@ namespace Sprint2
                     //arrow
                     link.linkSprite = new LinkAttackUpSprite(textureLink);
                     link.arrow = new Arrow(Link.posX, (Link.posY - 20),0);
+                    if (!Link.linkDropItem)
+                        link.arrow = null;
                     break;
                 case 1:
                     //blue candle
                     link.linkSprite = new LinkStandUpSprite(textureLink);
                     link.bluecandle = new BlueCandle(Link.posX, (Link.posY - 20),0);
+                    if (!Link.linkDropItem)
+                        link.bluecandle = null;
                     break;
                 case 2:
                     //bomb
                     link.linkSprite = new LinkStandUpSprite(textureLink);
                     link.bomb = new Bomb(Link.posX, (Link.posY - 20));
+                    if (!Link.linkDropItem)
+                        link.bomb = null;
                     break;
 
                 case 3:
                     //bow
                     link.linkSprite = new LinkAttackUpSprite(textureLink);
                     link.bow = new Bow(Link.posX, (Link.posY - 20),0);
+                    if (!Link.linkDropItem)
+                        link.bow = null;
                     break;
                 case 4:
                     //sword
                     link.linkSprite = new LinkAttackUpSprite(textureLink);
                     link.sword = new Sword(Link.posX, (Link.posY - 20), 0);
+                    if (!Link.linkDropItem)
+                        link.sword= null;
                     break;
                 case 5:
                     //Boomerang
                     link.linkSprite = new LinkAttackUpSprite(textureLink);
                     link.boomerang = new WoodenBoomerang(Link.posX, (Link.posY - 20), 0);
+                    if (!Link.linkDropItem)
+                        link.boomerang = null;
                     break;
                 default:
                     break;

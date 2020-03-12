@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -31,9 +31,11 @@ namespace Sprint2
         public static int posY ;
         public static int posX ;
         public static Boolean ifDamage = false;
-        public static Boolean ifAttack = false;
+        //public static Boolean ifAttack = false;
+        public static Boolean linkDropItem = false;
         private int damageTimer = 0;
-        private int attackTimer = 0;
+       // private int attackTimer = 0;
+        private int itemTimer = 0;
         
        
         //----for detection class --- start
@@ -149,31 +151,38 @@ namespace Sprint2
         {
             boundingBox = new Rectangle(posX, posY, linkWidth * 3, linkHeight * 3);
             linkSprite.Update();
+
             if (bomb != null)
             {
                 bomb.Update();
+               // lastDropItem.add( bomb);
             }
             if (sword != null)
             {
                 sword.Update();
+               // lastDropItem.add( sword;
             }
             
             if ( bow!= null)
             {
                 bow.Update();
+              //  lastDropItem = bow;
                 
             }
             if (bluecandle!= null)
             {
                 bluecandle.Update();
+              //  lastDropItem = bluecandle;
             }
             if (arrow != null)
             {
                 arrow.Update();
+              //  lastDropItem = arrow;
             }
             if (boomerang != null)
             {
                 boomerang.Update();
+              //  lastDropItem = boomerang;
             }
             
             if (ifDamage)
@@ -190,19 +199,19 @@ namespace Sprint2
             }
 
 
-            if (ifDamage)
-            {
-                attackTimer++;
-                if (attackTimer == 25)
+
+            if (linkDropItem) {
+                itemTimer++;
+                if (itemTimer == 50)
                 {
-                    ifAttack = false;
+                    linkDropItem = false;
+                }
+                else
+                {
+                    itemTimer = 0;
                 }
             }
-            else
-            {
-                attackTimer = 0;
-                
-            }
+            //我改了LinkWithItem四个state
 
         }
 
