@@ -1,168 +1,184 @@
 <XnaContent>
 <Asset Type="MyDataTypes.LevelObjectData[]">
-<!--  Start Objects before first gap  -->
-<Item>
-<ObjectType>Background</ObjectType>
-<ObjectName>Hill2</ObjectName>
-<Location>0 165</Location>
-</Item>
-<Item>
-<ObjectType>Mario</ObjectType>
-<ObjectName>MarioBase</ObjectName>
-<Location>60 185</Location>
-</Item>
-<Item>
-<ObjectType>Background</ObjectType>
-<ObjectName>Cloud1</ObjectName>
-<Location>136 40</Location>
-</Item>
-<Item>
-<ObjectType>Background</ObjectType>
-<ObjectName>Bush3</ObjectName>
-<Location>184 184</Location>
-</Item>
-<Item>
-<ObjectType>Background</ObjectType>
-<ObjectName>Hill1</ObjectName>
-<Location>256 184</Location>
-</Item>
-<Item>
-<ObjectType>Block</ObjectType>
-<ObjectName>QuestionBlockCoin</ObjectName>
-<Location>256 136</Location>
-</Item>
-<Item>
-<ObjectType>Background</ObjectType>
-<ObjectName>Cloud1</ObjectName>
-<Location>312 24</Location>
-</Item>
-<Item>
-<ObjectType>Block</ObjectType>
-<ObjectName>BrickBlock</ObjectName>
-<Location>320 136</Location>
-</Item>
-<Item>
-<!--  Shroom Block  -->
-<ObjectType>Block</ObjectType>
-<ObjectName>QuestionBlockShroom</ObjectName>
-<Location>336 136</Location>
-</Item>
-<Item>
-<ObjectType>Block</ObjectType>
-<ObjectName>BrickBlock</ObjectName>
-<Location>352 136</Location>
-</Item>
-<Item>
-<ObjectType>Block</ObjectType>
-<ObjectName>QuestionBlockCoin</ObjectName>
-<Location>368 136</Location>
-</Item>
-<Item>
-<ObjectType>Background</ObjectType>
-<ObjectName>Bush1</ObjectName>
-<Location>376 184</Location>
-</Item>
-<Item>
-<ObjectType>Block</ObjectType>
-<ObjectName>BrickBlock</ObjectName>
-<Location>384 136</Location>
-</Item>
-<Item>
-<ObjectType>Block</ObjectType>
-<ObjectName>QuestionBlockCoin</ObjectName>
-<Location>352 72</Location>
-</Item>
-<Item>
-<ObjectType>Enemy</ObjectType>
-<ObjectName>Goomba</ObjectName>
-<Location>329 185</Location>
-</Item>
-<Item>
-<ObjectType>Background</ObjectType>
-<ObjectName>Cloud3</ObjectName>
-<Location>440 40</Location>
-</Item>
-<Item>
-<ObjectType>Pipe</ObjectType>
-<ObjectName>PipeSmall</ObjectName>
-<Location>448 169</Location>
-</Item>
-<Item>
-<ObjectType>Background</ObjectType>
-<ObjectName>Cloud2</ObjectName>
-<Location>584 24</Location>
-</Item>
-<Item>
-<ObjectType>Pipe</ObjectType>
-<ObjectName>PipeMedium</ObjectName>
-<Location>608 153</Location>
-</Item>
-<Item>
-<ObjectType>Background</ObjectType>
-<ObjectName>Bush2</ObjectName>
-<Location>664 184</Location>
-</Item>
-<Item>
-<ObjectType>Enemy</ObjectType>
-<ObjectName>Goomba</ObjectName>
-<Location>660 185</Location>
-</Item>
-<Item>
-<ObjectType>Pipe</ObjectType>
-<ObjectName>PipeLarge</ObjectName>
-<Location>736 137</Location>
-</Item>
-<Item>
-<ObjectType>Background</ObjectType>
-<ObjectName>Hill2</ObjectName>
-<Location>768 165</Location>
-</Item>
-<Item>
-<ObjectType>Enemy</ObjectType>
-<ObjectName>Goomba</ObjectName>
-<Location>841 185</Location>
-</Item>
-<Item>
-<ObjectType>Enemy</ObjectType>
-<ObjectName>Goomba</ObjectName>
-<Location>865 185</Location>
-</Item>
-<Item>
-<ObjectType>Background</ObjectType>
-<ObjectName>Cloud1</ObjectName>
-<Location>904 40</Location>
-</Item>
-<Item>
-<ObjectType>Pipe</ObjectType>
-<ObjectName>PipeLarge</ObjectName>
-<Location>912 137</Location>
-</Item>
-<Item>
-<ObjectType>Background</ObjectType>
-<ObjectName>Bush3</ObjectName>
-<Location>952 184</Location>
-</Item>
-<Item>
-<ObjectType>Background</ObjectType>
-<ObjectName>Hill1</ObjectName>
-<Location>1024 184</Location>
-</Item>
-<Item>
-<!--  Fire Shroom Block  -->
-<ObjectType>Block</ObjectType>
-<ObjectName>HiddenBlock</ObjectName>
-<Location>1024 120</Location>
-</Item>
-<Item>
-<ObjectType>Background</ObjectType>
-<ObjectName>Cloud1</ObjectName>
-<Location>1080 24</Location>
-</Item>
-<Item>
-<ObjectType>Background</ObjectType>
-<ObjectName>Bush1</ObjectName>
-<Location>1144 184</Location>
-</Item>
-<!--  End Objects before first gap  -->
+  <!--  player  -->
+  <Item>
+    <ObjectType>Room</ObjectType>
+    <ObjectName>Room1</ObjectName>
+    <width>192</width>
+    <height>112</height>
+  </Item>
+  <Item>
+    <ObjectType>Room</ObjectType>
+    <ObjectName>Up</ObjectName>
+    <UpRoom>2</UpRoom>
+    <UpRoom>2</UpRoom>
+  </Item>
+  <Item>
+    <ObjectType>Room</ObjectType>
+    <ObjectName>Down</ObjectName>
+    <DownRoom>17</DownRoom>
+    <DownRoom>17</DownRoom>
+  </Item>
+  <Item>
+    <ObjectType>Player</ObjectType>
+    <ObjectName>Link</ObjectName>
+    <posX>16</posX>
+    <posY>48</posY>
+  </Item>
+  <!--  player  -->
+  <!--  enemy  -->
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Dragon</ObjectName>
+    <posX>64</posX>
+    <posY>80</posY>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>WallMaster</ObjectName>
+    <posX>128</posX>
+    <posY>64</posY>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Flame</ObjectName>
+    <posX>48</posX>
+    <posY>0</posY>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Trap</ObjectName>
+    <posX>160</posX>
+    <posY>16</posY>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Goriya</ObjectName>
+    <posX>16</posX>
+    <posY>80</posY>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Keese</ObjectName>
+    <posX>112</posX>
+    <posY>16</posY>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Rope</ObjectName>
+    <posX>160</posX>
+    <posY>80</posY>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Stalfos</ObjectName>
+    <posX>32</posX>
+    <posY>32</posY>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Zol</ObjectName>
+    <posX>96</posX>
+    <posY>112</posY>
+  </Item>
+  <!--  enemy  -->
+  <!--  item  -->
+  <Item>
+    <ObjectType>Item</ObjectType>
+    <ObjectName>Clock</ObjectName>
+    <posX>112</posX>
+    <posY>48</posY>
+  </Item>
+  <Item>
+    <ObjectType>Item</ObjectType>
+    <ObjectName>Compass</ObjectName>
+    <posX>144</posX>
+    <posY>0</posY>
+  </Item>
+  <Item>
+    <ObjectType>Item</ObjectType>
+    <ObjectName>Fairy</ObjectName>
+    <posX>48</posX>
+    <posY>64</posY>
+  </Item>
+  <Item>
+    <ObjectType>Item</ObjectType>
+    <ObjectName>Heart</ObjectName>
+    <posX>160</posX>
+    <posY>48</posY>
+  </Item>
+  <Item>
+    <ObjectType>Item</ObjectType>
+    <ObjectName>HeartContainer</ObjectName>
+    <posX>32</posX>
+    <posY>32</posY>
+  </Item>
+  <Item>
+    <ObjectType>Item</ObjectType>
+    <ObjectName>Key</ObjectName>
+    <posX>144</posX>
+    <posY>80</posY>
+  </Item>
+  <Item>
+    <ObjectType>Item</ObjectType>
+    <ObjectName>Map</ObjectName>
+    <posX>64</posX>
+    <posY>16</posY>
+  </Item>
+  <Item>
+    <ObjectType>Item</ObjectType>
+    <ObjectName>TriforcePiece</ObjectName>
+    <posX>80</posX>
+    <posY>64</posY>
+  </Item>
+  <!--  item  -->
+  <!--  NPC  -->
+  <Item>
+    <ObjectType>NPC</ObjectType>
+    <ObjectName>Merchant</ObjectName>
+    <posX>0</posX>
+    <posY>0</posY>
+  </Item>
+  <Item>
+    <ObjectType>NPC</ObjectType>
+    <ObjectName>OldMan</ObjectName>
+    <posX>0</posX>
+    <posY>64</posY>
+  </Item>
+  <Item>
+    <ObjectType>NPC</ObjectType>
+    <ObjectName>Princess</ObjectName>
+    <posX>128</posX>
+    <posY>16</posY>
+  </Item>
+  <!--  NPC  -->
+  <!--  Block  -->
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>Block1</ObjectName>
+    <posX>64</posX>
+    <posY>48</posY>
+  </Item>
+  <Item>
+    <ObjectType>Block</ObjectType>
+    <ObjectName>Block2</ObjectName>
+    <posX>112</posX>
+    <posY>48</posY>
+  </Item>
+  <!--  Block  -->
+  <!--  Door  -->
+  <Item>
+    <ObjectType>Door</ObjectType>
+    <ObjectName>Up</ObjectName>
+    <posX>87</posX>
+    <posY>0</posY>
+  </Item>
+  <Item>
+    <ObjectType>Door</ObjectType>
+    <ObjectName>Down</ObjectName>
+    <posX>87</posX>
+    <posY>112</posY>
+  </Item>
+  <!--  Door  -->
 </Asset>
 </XnaContent>

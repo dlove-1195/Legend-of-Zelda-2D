@@ -37,14 +37,15 @@ namespace Sprint2
             npcs = new List<Inpc>();
             doc = new XmlDocument();
             doc.Load(fileName);
-            
-            nodeList = doc.SelectNodes("Item");
+            nodeList = doc.SelectNodes("//Item");
+           
             foreach (XmlNode node in nodeList)
             {
                 type = node.ChildNodes[0].InnerText;
                 name = node.ChildNodes[1].InnerText;
                 x = Int32.Parse(node.ChildNodes[2].InnerText);
                 y = Int32.Parse(node.ChildNodes[3].InnerText);
+         
                 vector.X =  x;
                 vector.Y =  y;
 
@@ -87,7 +88,6 @@ namespace Sprint2
                 }
                 else if (type == "Player")
                 {
-                    Console.WriteLine("hi");
                     player = new Link(vector);
 
                 }
