@@ -8,6 +8,18 @@
     <height>112</height>
   </Item>
   <Item>
+    <ObjectType>Room</ObjectType>
+    <ObjectName>Up</ObjectName>
+    <UpRoom>2</UpRoom>
+    <UpRoom>2</UpRoom>
+  </Item>
+  <Item>
+    <ObjectType>Room</ObjectType>
+    <ObjectName>Down</ObjectName>
+    <DownRoom>17</DownRoom>
+    <DownRoom>17</DownRoom>
+  </Item>
+  <Item>
     <ObjectType>Player</ObjectType>
     <ObjectName>Link</ObjectName>
     <posX>16</posX>
@@ -152,7 +164,6 @@
     <ObjectName>Block2</ObjectName>
     <posX>112</posX>
     <posY>48</posY>
-    
   </Item>
   <!--  Block  -->
 </Asset>

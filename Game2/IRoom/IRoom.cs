@@ -6,6 +6,10 @@ namespace Sprint2
 {
     public interface IRoom
     {
+        int leftRoomNum { get; set; }
+        int rightRoomNum { get; set; }
+        int upRoomNum { get; set; }
+        int downRoomNum { get; set; }
         Vector2 roomSize { get; set; }
 
         Iplayer player { get; set; }

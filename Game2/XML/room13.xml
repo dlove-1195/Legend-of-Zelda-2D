@@ -8,6 +8,12 @@
     <height>112</height>
   </Item>
   <Item>
+    <ObjectType>Room</ObjectType>
+    <ObjectName>Up</ObjectName>
+    <UpRoom>10</UpRoom>
+    <UpRoom>10</UpRoom>
+  </Item>
+  <Item>
     <ObjectType>Player</ObjectType>
     <ObjectName>Link</ObjectName>
     <posX>32</posX>

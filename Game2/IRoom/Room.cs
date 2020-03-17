@@ -13,13 +13,16 @@ namespace Sprint2
         XmlNodeList nodeList;
         private String type;
         private String name;
-        private int posX;
-        private int posY;
+        private int x;
+        private int y;
         private Vector2 vector;
 
         ICamera camera;
         public Vector2 roomSize { get; set; }
-
+        public int leftRoomNum { get; set; }
+        public int rightRoomNum { get; set; }
+        public int upRoomNum { get; set; }
+        public int downRoomNum { get; set; }
         public Iplayer player { get; set; }
         public List<IEnemy> enemies { get; set; }
         public List<Iitem> pickUpItems { get; set; }
@@ -42,14 +45,46 @@ namespace Sprint2
             {
                 type = node.ChildNodes[0].InnerText;
                 name = node.ChildNodes[1].InnerText;
-                posX = Int32.Parse(node.ChildNodes[2].InnerText);
-                posY = Int32.Parse(node.ChildNodes[3].InnerText);
-                vector.X =  posX;
-                vector.Y =   posY;
+                x = Int32.Parse(node.ChildNodes[2].InnerText);
+                y = Int32.Parse(node.ChildNodes[3].InnerText);
+                vector.X =  x;
+                vector.Y =  y;
 
                 if (type == "Room")
                 {
-                    roomSize = new Vector2(posX, posY);
+                    roomSize = new Vector2(x, y);
+                    if(name == "Up")
+                    {
+                        upRoomNum = x;
+                    }
+                    else
+                    {
+                        upRoomNum = 0;
+                    }
+                    if(name == "Down")
+                    {
+                        downRoomNum = x;
+                    }
+                    else
+                    {
+                        downRoomNum = 0;
+                    }
+                    if (name == "Left")
+                    {
+                        leftRoomNum = x;
+                    }
+                    else
+                    {
+                        leftRoomNum = 0;
+                    }
+                    if (name == "Right")
+                    {
+                        rightRoomNum = x;
+                    }
+                    else
+                    {
+                        rightRoomNum = 0;
+                    }
 
                 }
                 else if (type == "Player")
@@ -155,11 +190,11 @@ namespace Sprint2
                 }
                 else if (type == "Block")
                 {
-                    blockLocation.Add(new KeyValuePair<int, int>(posX, posY));
+                    blockLocation.Add(new KeyValuePair<int, int>(x, y));
                 }
                 else if (type == "Door")
                 {
-                    doorLocation.Add(new KeyValuePair<int, int>( posX, posY));
+                    doorLocation.Add(new KeyValuePair<int, int>( x, y));
                 }
             }
         }

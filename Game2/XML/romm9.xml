@@ -3,10 +3,29 @@
     <!--  player  -->
     <Item>
       <ObjectType>Room</ObjectType>
-      <ObjectName>RoomZ</ObjectName>
+      <ObjectName>Room9</ObjectName>
       <width>245</width>
       <height>165</height>
     </Item>
+    <Item>
+      <ObjectType>Room</ObjectType>
+      <ObjectName>Up</ObjectName>
+      <UpRoom>11</UpRoom>
+      <UpRoom>11</UpRoom>
+    </Item>
+    <Item>
+      <ObjectType>Room</ObjectType>
+      <ObjectName>Left</ObjectName>
+      <LeftRoom>8</LeftRoom>
+      <LeftRoom>8</LeftRoom>
+    </Item>
+    <Item>
+      <ObjectType>Room</ObjectType>
+      <ObjectName>Right</ObjectName>
+      <RightRoom>12</RightRoom>
+      <RightRoom>12</RightRoom>
+    
+  </Item>
     <Item>
       <ObjectType>Player</ObjectType>
       <ObjectName>Link</ObjectName>
