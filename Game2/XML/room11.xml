@@ -1,4 +1,5 @@
 <XnaContent>
+<!--  contain enemy 6 Dragon, WallMaster, Flame and Trap, item Clock, Compass, Fairy, Heart and Map, 3 doors at designed position -->
 <Asset Type="MyDataTypes.LevelObjectData[]">
   <!--  room  -->
   <Item>

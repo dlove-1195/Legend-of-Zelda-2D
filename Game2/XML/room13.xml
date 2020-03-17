@@ -1,4 +1,5 @@
 <XnaContent>
+<!--  contain enemy 2 Goriya and 2 Zol, item Compass, Key, TriforcePiece, 22 blocks, 1 door, 1 stair at designed position  -->
 <Asset Type="MyDataTypes.LevelObjectData[]">
   <!--  room  -->
   <Item>

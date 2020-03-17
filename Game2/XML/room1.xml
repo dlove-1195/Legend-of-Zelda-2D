@@ -1,4 +1,5 @@
 <XnaContent>
+<!-- contain all items, enemies, and npc at designed position-->
 <Asset Type="MyDataTypes.LevelObjectData[]">
   <Item>
     <ObjectType>Room</ObjectType>
