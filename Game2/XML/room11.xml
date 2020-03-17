@@ -1,6 +1,6 @@
 <XnaContent>
 <Asset Type="MyDataTypes.LevelObjectData[]">
-  <!--  player  -->
+  <!--  room  -->
   <Item>
     <ObjectType>Room</ObjectType>
     <ObjectName>Room11</ObjectName>
@@ -25,13 +25,7 @@
     <RightRoom>7</RightRoom>
     <RightRoom>7</RightRoom>
   </Item>
-  <Item>
-    <ObjectType>Player</ObjectType>
-    <ObjectName>Link</ObjectName>
-    <posX>48</posX>
-    <posY>56</posY>
-  </Item>
-  <!--  player  -->
+  <!--  room  -->
   <!--  enemy  -->
   <Item>
     <ObjectType>Enemy</ObjectType>

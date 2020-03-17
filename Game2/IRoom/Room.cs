@@ -21,7 +21,6 @@ namespace Sprint2
         public int rightRoomNum { get; set; }
         public int upRoomNum { get; set; }
         public int downRoomNum { get; set; }
-        public Iplayer player { get; set; }
         public List<IEnemy> enemies { get; set; }
         public List<Iitem> pickUpItems { get; set; }
         public List<Inpc> npcs { get; set; }
@@ -84,11 +83,6 @@ namespace Sprint2
                     {
                         rightRoomNum = 0;
                     }
-
-                }
-                else if (type == "Player")
-                {
-                    player = new Link(vector);
 
                 }
                 else if (type == "Enemy")
@@ -209,7 +203,7 @@ namespace Sprint2
         }
         public void Update()
         {
-            player.Update();
+        
 
             foreach (IEnemy enemy in enemies)
             {
@@ -231,7 +225,6 @@ namespace Sprint2
         public void Draw(SpriteBatch spriteBatch)
         {
 
-            player.Draw(spriteBatch);
 
             foreach (IEnemy enemy in enemies)
             {

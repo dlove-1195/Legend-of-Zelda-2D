@@ -11,8 +11,6 @@ namespace Sprint2
         int upRoomNum { get; set; }
         int downRoomNum { get; set; }
         Vector2 roomSize { get; set; }
-
-        Iplayer player { get; set; }
         List <IEnemy>enemies { get; set; }
         List <Iitem> pickUpItems { get; set; }
         List <Inpc> npcs { get; set; }
