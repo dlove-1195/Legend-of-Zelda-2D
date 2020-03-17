@@ -53,7 +53,7 @@ namespace Sprint2
             Texture2DStorage.LoadAllTextures(Content);
             spriteBatch = new SpriteBatch(GraphicsDevice);
             player = new Link(new Vector2(0,0));
-           
+            level = new Level1();
             linkDetection = new LinkCollisionDetection(level, player);
             enemyDetection = new EnemyCollisionDetection(level);
              
@@ -73,7 +73,7 @@ namespace Sprint2
             player.Update(); 
             //will have mouse controller in the future 
             keyboardController.Update();
-            linkDetection.Update();
+            //linkDetection.Update();
             enemyDetection.Update();
             level.Update();
             

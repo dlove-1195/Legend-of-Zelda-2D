@@ -140,5 +140,19 @@
     <posY>64</posY>
   </Item>
   <!--  Block  -->
+  <!--  Door  -->
+  <Item>
+    <ObjectType>Door</ObjectType>
+    <ObjectName>Up</ObjectName>
+    <posX>87</posX>
+    <posY>0</posY>
+  </Item>
+  <Item>
+    <ObjectType>Door</ObjectType>
+    <ObjectName>Left</ObjectName>
+    <posX>0</posX>
+    <posY>48</posY>
+  </Item>
+  <!--  Door  -->
 </Asset>
 </XnaContent>

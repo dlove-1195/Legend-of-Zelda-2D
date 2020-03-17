@@ -121,5 +121,25 @@
     <posY>33</posY>
   </Item>
   <!--  item  -->
+  <!--  Door  -->
+  <Item>
+    <ObjectType>Door</ObjectType>
+    <ObjectName>Down</ObjectName>
+    <posX>87</posX>
+    <posY>112</posY>
+  </Item>
+  <Item>
+    <ObjectType>Door</ObjectType>
+    <ObjectName>Left</ObjectName>
+    <posX>0</posX>
+    <posY>48</posY>
+  </Item>
+  <Item>
+    <ObjectType>Door</ObjectType>
+    <ObjectName>Right</ObjectName>
+    <posX>192</posX>
+    <posY>48</posY>
+  </Item>
+  <!--  Door  -->
 </Asset>
 </XnaContent>

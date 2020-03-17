@@ -16,8 +16,6 @@ namespace Sprint2
         private int x;
         private int y;
         private Vector2 vector;
-
-        ICamera camera;
         public Vector2 roomSize { get; set; }
         public int leftRoomNum { get; set; }
         public int rightRoomNum { get; set; }
@@ -39,8 +37,8 @@ namespace Sprint2
             npcs = new List<Inpc>();
             doc = new XmlDocument();
             doc.Load(fileName);
-
-            nodeList = doc.GetElementsByTagName("Item");
+            
+            nodeList = doc.SelectNodes("Item");
             foreach (XmlNode node in nodeList)
             {
                 type = node.ChildNodes[0].InnerText;
@@ -89,6 +87,7 @@ namespace Sprint2
                 }
                 else if (type == "Player")
                 {
+                    Console.WriteLine("hi");
                     player = new Link(vector);
 
                 }
