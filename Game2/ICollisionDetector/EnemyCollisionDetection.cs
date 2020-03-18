@@ -21,8 +21,8 @@ namespace Sprint2
         public EnemyCollisionDetection(ILevel level)
         {
             IRoom room = level.room;
-            roomWidth=(int) room.roomSize.X;
-            roomHeight=(int) room.roomSize.Y;
+            roomWidth=(int) room.roomPos.X;
+            roomHeight=(int) room.roomPos.Y;
             enemy = room.enemies;
             blockLocation = room.blockLocation;
             //no collision between enemy and pickupItem/npc 

@@ -16,7 +16,7 @@ namespace Sprint2
         private int x;
         private int y;
         private Vector2 vector;
-        public Vector2 roomSize { get; set; }
+        public Vector2 roomPos { get; set; }
         public int leftRoomNum { get; set; }
         public int rightRoomNum { get; set; }
         public int upRoomNum { get; set; }
@@ -31,6 +31,8 @@ namespace Sprint2
 
         public Room(String fileName)
         {
+            int windowWidth = Game1.WindowWidth;
+            int windowHeight = Game1.WindowHeight;
             enemies = new List<IEnemy>();
             pickUpItems = new List<Iitem>();
             npcs = new List<Inpc>();
@@ -42,15 +44,18 @@ namespace Sprint2
             {
                 type = node.ChildNodes[0].InnerText;
                 name = node.ChildNodes[1].InnerText;
-                x = Int32.Parse(node.ChildNodes[2].InnerText);
+                x = Int32.Parse(node.ChildNodes[2].InnerText); 
                 y = Int32.Parse(node.ChildNodes[3].InnerText);
-         
-                vector.X =  x;
-                vector.Y =  y;
+                
+                vector.X =  (x / 100) * windowWidth;
+                vector.Y =  (y / 100) * windowHeight;  
 
                 if (type == "Room")
                 {
-                    roomSize = new Vector2(x, y);
+                    if(name == "Room") {
+                        roomPos = new Vector2(vector.X, vector.Y);
+                    }
+                 
                     if(name == "Up")
                     {
                         upRoomNum = x;

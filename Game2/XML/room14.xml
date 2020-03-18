@@ -4,9 +4,9 @@
   <!--  room  -->
   <Item>
     <ObjectType>Room</ObjectType>
-    <ObjectName>Room1</ObjectName>
-    <width>192</width>
-    <height>112</height>
+    <ObjectName>Room</ObjectName>
+    <posX>13</posX> 
+    <posY>19</posY>
   </Item>
   <Item>
     <ObjectType>Room</ObjectType>
@@ -25,51 +25,51 @@
   <Item>
     <ObjectType>Enemy</ObjectType>
     <ObjectName>WallMaster</ObjectName>
-    <posX>64</posX>
-    <posY>16</posY>
+    <posX>38</posX>
+    <posY>28</posY>
   </Item>
   <Item>
     <ObjectType>Enemy</ObjectType>
     <ObjectName>WallMaster</ObjectName>
-    <posX>176</posX>
-    <posY>16</posY>
+    <posX>76</posX>
+    <posY>26</posY>
   </Item>
   <Item>
     <ObjectType>Enemy</ObjectType>
     <ObjectName>WallMaster</ObjectName>
-    <posX>64</posX>
-    <posY>16</posY>
+    <posX>80</posX>
+    <posY>60</posY>
   </Item>
   <Item>
     <ObjectType>Enemy</ObjectType>
     <ObjectName>Keese</ObjectName>
-    <posX>16</posX>
-    <posY>32</posY>
+    <posX>19</posX>
+    <posY>36</posY>
   </Item>
   <Item>
     <ObjectType>Enemy</ObjectType>
     <ObjectName>Keese</ObjectName>
-    <posX>48</posX>
-    <posY>80</posY>
+    <posX>32</posX>
+    <posY>60</posY>
   </Item>
   <!--  enemy  -->
   <!--  item  -->
   <Item>
     <ObjectType>Item</ObjectType>
     <ObjectName>Clock</ObjectName>
-    <posX>32</posX>
-    <posY>96</posY>
+    <posX>37</posX>
+    <posY>62</posY>
   </Item>
   <Item>
     <ObjectType>Item</ObjectType>
     <ObjectName>Key</ObjectName>
-    <posX>176</posX>
-    <posY>0</posY>
+    <posX>65</posX>
+    <posY>47</posY>
   </Item>
   <Item>
     <ObjectType>Item</ObjectType>
     <ObjectName>TriforcePiece</ObjectName>
-    <posX>96</posX>
+    <posX>50</posX>
     <posY>48</posY>
   </Item>
   <!--  item  -->
@@ -77,48 +77,48 @@
   <Item>
     <ObjectType>NPC</ObjectType>
     <ObjectName>OldMan</ObjectName>
-    <posX>112</posX>
-    <posY>96</posY>
+    <posX>52</posX>
+    <posY>67</posY>
   </Item>
   <!--  NPC  -->
   <!--  Block  -->
   <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block1</ObjectName>
-    <posX>32</posX>
-    <posY>16</posY>
+    <posX>25</posX>
+    <posY>28</posY>
   </Item>
   <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block2</ObjectName>
-    <posX>144</posX>
-    <posY>16</posY>
+    <posX>25</posX>
+    <posY>64</posY>
   </Item>
     <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block3</ObjectName>
-    <posX>32</posX>
-    <posY>80</posY>
+    <posX>69</posX>
+    <posY>28</posY>
   </Item>
   <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block4</ObjectName>
-    <posX>144</posX>
-    <posY>80</posY>
+    <posX>69</posX>
+    <posY>64</posY>
   </Item>
   <!--  Block  -->
   <!--  Door  -->
   <Item>
     <ObjectType>Door</ObjectType>
     <ObjectName>Up</ObjectName>
-    <posX>87</posX>
-    <posY>0</posY>
+    <posX>46</posX>
+    <posY>14</posY>
   </Item>
   <Item>
     <ObjectType>Door</ObjectType>
     <ObjectName>Right</ObjectName>
-    <posX>192</posX>
-    <posY>48</posY>
+    <posX>87</posX>
+    <posY>46</posY>
   </Item>
   <!--  Door  -->
   

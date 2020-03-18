@@ -1,12 +1,12 @@
 <XnaContent>
-<!--  contain enemy 2 WallMaster, 2 Flame and 3 Keese, item Clock, Compass, Heart, Map and TriforcePiece, 6 blocks, 2 doors at designed position -->
+<!--  contain enemy 2 WallMaster, 2 Flame and 2 Keese, item Clock, Compass and Heart, 6 blocks, 2 doors at designed position -->
 <Asset Type="MyDataTypes.LevelObjectData[]">
   <!--  room  -->
   <Item>
     <ObjectType>Room</ObjectType>
     <ObjectName>Room12</ObjectName>
-    <width>192</width>
-    <height>112</height>
+    <width>13</width>
+    <height>19</height>
   </Item>
   <Item>
     <ObjectType>Room</ObjectType>
@@ -25,128 +25,110 @@
   <Item>
     <ObjectType>Enemy</ObjectType>
     <ObjectName>WallMaster</ObjectName>
-    <posX>70</posX>
-    <posY>56</posY>
+    <posX>19</posX>
+    <posY>37</posY>
   </Item>
   <Item>
     <ObjectType>Enemy</ObjectType>
     <ObjectName>WallMaster</ObjectName>
-    <posX>60</posX>
+    <posX>69</posX>
     <posY>28</posY>
   </Item>
   <Item>
     <ObjectType>Enemy</ObjectType>
     <ObjectName>Flame</ObjectName>
-    <posX>90</posX>
-    <posY>27</posY>
+    <posX>62</posX>
+    <posY>54</posY>
   </Item>
   <Item>
     <ObjectType>Enemy</ObjectType>
     <ObjectName>Flame</ObjectName>
-    <posX>180</posX>
-    <posY>100</posY>
+    <posX>19</posX>
+    <posY>60</posY>
   </Item>
   <Item>
     <ObjectType>Enemy</ObjectType>
     <ObjectName>Keese</ObjectName>
-    <posX>113</posX>
-    <posY>34</posY>
+    <posX>32</posX>
+    <posY>28</posY>
   </Item>
   <Item>
     <ObjectType>Enemy</ObjectType>
     <ObjectName>Keese</ObjectName>
-    <posX>130</posX>
-    <posY>48</posY>
-  </Item>
-  <Item>
-    <ObjectType>Enemy</ObjectType>
-    <ObjectName>Keese</ObjectName>
-    <posX>190</posX>
-    <posY>50</posY>
+    <posX>75</posX>
+    <posY>60</posY>
   </Item>
   <!--  enemy  -->
   <!--  item  -->
   <Item>
     <ObjectType>Item</ObjectType>
     <ObjectName>Clock</ObjectName>
-    <posX>32</posX>
-    <posY>80</posY>
+    <posX>79</posX>
+    <posY>22</posY>
   </Item>
   <Item>
     <ObjectType>Item</ObjectType>
     <ObjectName>Compass</ObjectName>
-    <posX>70</posX>
-    <posY>70</posY>
+    <posX>31</posX>
+    <posY>59</posY>
   </Item>
   <Item>
     <ObjectType>Item</ObjectType>
     <ObjectName>Heart</ObjectName>
-    <posX>130</posX>
-    <posY>85</posY>
-  </Item>
-  <Item>
-    <ObjectType>Item</ObjectType>
-    <ObjectName>Map</ObjectName>
-    <posX>140</posX>
-    <posY>20</posY>
-  </Item>
-  <Item>
-    <ObjectType>Item</ObjectType>
-    <ObjectName>TriforcePiece</ObjectName>
-    <posX>30</posX>
-    <posY>90</posY>
+    <posX>53</posX>
+    <posY>24</posY>
   </Item>
   <!--  item  -->
   <!--  Block  -->
   <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block1</ObjectName>
-    <posX>80</posX>
-    <posY>32</posY>
+    <posX>44</posX>
+    <posY>37</posY>
   </Item>
   <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block2</ObjectName>
-    <posX>80</posX>
-    <posY>48</posY>
+    <posX>44</posX>
+    <posY>46</posY>
   </Item>
     <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block3</ObjectName>
-    <posX>80</posX>
-    <posY>64</posY>
+    <posX>44</posX>
+    <posY>55</posY>
   </Item>
   <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block4</ObjectName>
-    <posX>96</posX>
-    <posY>32</posY>
+    <posX>50</posX>
+    <posY>37</posY>
   </Item>  
   <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block5</ObjectName>
-    <posX>96</posX>
-    <posY>48</posY>
+    <posX>50</posX>
+    <posY>46</posY>
   </Item>
   <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block6</ObjectName>
-    <posX>96</posX>
-    <posY>64</posY>
+    <posX>50</posX>
+    <posY>55</posY>
   </Item>
   <!--  Block  -->
   <!--  Door  -->
   <Item>
     <ObjectType>Door</ObjectType>
     <ObjectName>Up</ObjectName>
-    <posX>87</posX>
-    <posY>0</posY>
+    <posX>46</posX>
+    <posY>14</posY>
   </Item>
   <Item>
     <ObjectType>Door</ObjectType>
     <ObjectName>Left</ObjectName>
-    <posX>0</posX>
-    <posY>48</posY>
+    <posX>10</posX>
+    <posY>46</posY>
   </Item>
   <!--  Door  -->
 </Asset>

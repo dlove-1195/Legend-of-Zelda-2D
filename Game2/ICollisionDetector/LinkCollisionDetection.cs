@@ -24,8 +24,8 @@ namespace Sprint2 {
         {
             
             IRoom room = level.room;
-            roomWidth =(int)  room.roomSize.X;
-            roomHeight =(int) room.roomSize.Y;
+            roomWidth =(int)  room.roomPos.X;
+            roomHeight =(int) room.roomPos.Y;
             enemy = room.enemies;
             item =  room.pickUpItems;
             npc =  room.npcs;

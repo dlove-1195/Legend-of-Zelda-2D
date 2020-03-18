@@ -10,7 +10,7 @@ namespace Sprint2
         int rightRoomNum { get; set; }
         int upRoomNum { get; set; }
         int downRoomNum { get; set; }
-        Vector2 roomSize { get; set; }
+        Vector2 roomPos { get; set; }
         List <IEnemy>enemies { get; set; }
         List <Iitem> pickUpItems { get; set; }
         List <Inpc> npcs { get; set; }
