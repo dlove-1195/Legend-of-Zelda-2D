@@ -15,6 +15,8 @@ namespace Sprint2
         private String name;
         private int x;
         private int y;
+        private int boxWidth;
+        private int boxHeight;
         private Vector2 vector;
         public Vector2 roomPos { get; set; }
         public int leftRoomNum { get; set; } = 0;
@@ -24,9 +26,12 @@ namespace Sprint2
         public List<IEnemy> enemies { get; set; }
         public List<Iitem> pickUpItems { get; set; }
         public List<Inpc> npcs { get; set; }
+
+        public List<KeyValuePair<int, int>> stairLocation { get; set; }
         public List<KeyValuePair<int, int>> blockLocation { get; set; }
         public List<KeyValuePair<int,int>> doorLocation { get; set; }
 
+        public List<Rectangle> boundingBox { get; set; }
 
 
         public Room(String fileName)
@@ -37,6 +42,8 @@ namespace Sprint2
             pickUpItems = new List<Iitem>();
             blockLocation = new List<KeyValuePair<int, int>>();
             doorLocation = new List<KeyValuePair<int, int>>();
+            stairLocation = new List<KeyValuePair<int, int>>();
+            boundingBox = new List<Rectangle>();
             npcs = new List<Inpc>();
             doc = new XmlDocument();
             doc.Load(fileName);
@@ -185,6 +192,23 @@ namespace Sprint2
                 else if (type == "Door")
                 {
                     doorLocation.Add(new KeyValuePair<int, int>((int)vector.X, (int)vector.Y));
+                }
+                else if (type == "Stair")
+                {
+                    stairLocation.Add(new KeyValuePair<int, int>((int)vector.X, (int)vector.Y));
+
+
+                }
+                //for bounding box in room15
+                else if (type == "Box")
+                {
+                    int width = Int32.Parse(node.ChildNodes[4].InnerText);
+                    int height = Int32.Parse(node.ChildNodes[5].InnerText);
+                    boxWidth = width / 100 * windowWidth;
+                    boxHeight = height / 100 * windowHeight;
+
+                    boundingBox.Add(new Rectangle((int)vector.X, (int)vector.Y, (int)boxWidth, (int)boxHeight));
+
                 }
             }
              

@@ -53,7 +53,13 @@ namespace Sprint2
                  
             
         }
-            public void HandleLinkEnemyCollsion(string direction)
+        public void HandleLinkStairCollsion(string direction)
+        {
+
+            level.switchRoom(direction);
+
+        }
+        public void HandleLinkEnemyCollsion(string direction)
         {
             //link get damaged and being pushed to opposite direction
             link.GetDamaged();

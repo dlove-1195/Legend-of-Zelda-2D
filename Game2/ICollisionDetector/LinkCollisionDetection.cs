@@ -14,6 +14,8 @@ namespace Sprint2 {
         private List<Inpc> npc;
         private List<KeyValuePair<int, int>> blockLocation;
         private List<KeyValuePair<int, int>> doorLocation;
+
+        private List<KeyValuePair<int, int>> stairLocation;
         private int roomLeftCornerPosX;
         private int roomLeftCornerPosY;
         private int roomRightCornerPosX;
@@ -37,6 +39,7 @@ namespace Sprint2 {
             npc =  room.npcs;
             blockLocation =  room.blockLocation;
             doorLocation = room.doorLocation;
+            stairLocation = room.stairLocation;
 
             player = link;
             linkHandler =new LinkCollisionHandler(player, level) ;
@@ -190,6 +193,24 @@ namespace Sprint2 {
 
 
 
+            //loop for stair collision
+            listLength = stairLocation.Count();
+            for (int i = 0; i < listLength; i++)
+            {
+                KeyValuePair<int, int> singleStairLocation = stairLocation[i];
+                Rectangle singleStairRec = new Rectangle(singleStairLocation.Key, singleStairLocation.Value, 48, 54);
+
+                overlapRec = Rectangle.Intersect(linkRectangle, singleStairRec);
+                if (!overlapRec.IsEmpty)
+                {
+                    String direction = detectCollisionDirection(overlapRec, linkRectangle, singleStairRec);
+                    if (direction.Equals("left"))
+                    {
+                        string downstair = "down";
+                        linkHandler.HandleLinkStairCollsion(downstair);
+                    }
+                }
+            }
 
 
 
@@ -198,8 +219,8 @@ namespace Sprint2 {
 
 
 
-             
-             
+
+
 
 
             //link edge collison 
