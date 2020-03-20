@@ -2,8 +2,6 @@
 <!--  contain enemy 3 WallMaster and 2 Keese, item Clock, Key and TriforcePiece, npc OldMan, 4 blocks, 2 doors at designed position -->
 <Asset Type="MyDataTypes.LevelObjectData[]">
   <!--  room  -->
-   
-   
   <Item>
     <ObjectType>Room</ObjectType>
     <ObjectName>Room</ObjectName>

@@ -14,6 +14,7 @@ namespace Sprint2 {
         private List<Inpc> npc;
         private List<KeyValuePair<int, int>> blockLocation;
         private List<KeyValuePair<int, int>> doorLocation;
+        private List<KeyValuePair<int, int>> stairLocation;
         private int roomLeftCornerPosX;
         private int roomLeftCornerPosY;
         private int roomRightCornerPosX;
@@ -26,8 +27,8 @@ namespace Sprint2 {
         {
             
             IRoom room = level.room;
-            int roomWidth = (int)(Game1.WindowWidth * 0.75);
-            int roomHeight = (int)(Game1.WindowHeight * 0.63);
+            int roomWidth = (int)(Game1.WindowWidth * 0.68);
+            int roomHeight = (int)(Game1.WindowHeight * 0.55);
             roomLeftCornerPosX = (int) (room.roomPos.X);
             roomLeftCornerPosY = (int)(room.roomPos.Y);
             roomRightCornerPosX = roomWidth+ (int)(room.roomPos.X);
@@ -37,7 +38,7 @@ namespace Sprint2 {
             npc =  room.npcs;
             blockLocation =  room.blockLocation;
             doorLocation = room.doorLocation;
-
+            stairLocation = room.stairLocation;
             player = link;
             linkHandler =new LinkCollisionHandler(player, level) ;
     }
@@ -162,8 +163,6 @@ namespace Sprint2 {
                    
                 }
                 
-
-
             }
 
 
@@ -172,10 +171,9 @@ namespace Sprint2 {
             for (int i = 0; i < listLength; i++)
             {
                 KeyValuePair<int, int> singleDoorLocation = doorLocation[i];
-                //for now, assume block width is 100 and height is 20, will change later based on the doungeon spritesheet we found 
                 Rectangle singleDoorRec = new Rectangle(singleDoorLocation.Key, singleDoorLocation.Value,
-                    50, 50);
-
+                    48, 54);
+                
                 overlapRec = Rectangle.Intersect(linkRectangle, singleDoorRec);
                 if (!overlapRec.IsEmpty)
                 {
@@ -183,26 +181,31 @@ namespace Sprint2 {
                     linkHandler.HandleLinkDoorCollsion(direction);
 
                 }
+            }
 
 
+            //loop for stair collision
+            listLength = stairLocation.Count();
+            for (int i = 0; i < listLength; i++)
+            {
+                KeyValuePair<int, int> singleStairLocation = stairLocation[i];
+                Rectangle singleStairRec = new Rectangle(singleStairLocation.Key, singleStairLocation.Value, 48, 54);
 
+                overlapRec = Rectangle.Intersect(linkRectangle, singleStairRec);
+                if (!overlapRec.IsEmpty)
+                {
+                    String direction = detectCollisionDirection(overlapRec, linkRectangle, singleStairRec);
+                    if (direction.Equals("left"))
+                    {
+                        string downstair = "down";
+                        linkHandler.HandleLinkStairCollsion(downstair);
+                    }
+                }
             }
 
 
 
-
-
-
-
-
-
-
-
-             
-             
-
-
-            //link edge collison 
+                //link edge collison 
             if (Link.posX > roomRightCornerPosX)
             {
                 

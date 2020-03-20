@@ -14,6 +14,12 @@
     <UpRoom>10</UpRoom>
     <UpRoom>10</UpRoom>
   </Item>
+  <Item>
+    <ObjectType>Room</ObjectType>
+    <ObjectName>Down</ObjectName>
+    <UpRoom>15</UpRoom>
+    <UpRoom>15</UpRoom>
+  </Item>
   <!--  room  -->
   <!--  enemy  -->
   <Item>
@@ -207,7 +213,7 @@
   <!--  Stair  -->
   <Item>
     <ObjectType>Stair</ObjectType>
-    <ObjectName>Down</ObjectName>
+    <ObjectName>Stair</ObjectName>
     <posX>81</posX>
     <posY>46</posY>
   </Item>

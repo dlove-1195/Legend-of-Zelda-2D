@@ -4,7 +4,7 @@
   <!--  room  -->
   <Item>
     <ObjectType>Room</ObjectType>
-    <ObjectName>Room11</ObjectName>
+    <ObjectName>Room</ObjectName>
     <width>13</width>
     <height>19</height>
   </Item>
