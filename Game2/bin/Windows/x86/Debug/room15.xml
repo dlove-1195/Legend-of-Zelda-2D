@@ -97,13 +97,17 @@
     <height>10</height>
   </Item>
   <!--  Box  -->
- 
+
   <!--  Stair  -->
+  <!--  stair position precentage relates to the room  -->
+  <!--  destination room position on level map  -->
   <Item>
     <ObjectType>Stair</ObjectType>
     <ObjectName>Up</ObjectName>
     <posX>19</posX>
     <posY>0</posY>
+    <destX>0</destX>
+    <destY>707</destY>
   </Item>
   <!--  Stair  -->
 </Asset>

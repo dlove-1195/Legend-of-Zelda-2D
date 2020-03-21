@@ -27,7 +27,7 @@ namespace Sprint2
         public List<Iitem> pickUpItems { get; set; }
         public List<Inpc> npcs { get; set; }
 
-        public List<KeyValuePair<int, int>> stairLocation { get; set; }
+        public List<KeyValuePair<Vector2,Vector2>> stair { get; set; }
         public List<KeyValuePair<int, int>> blockLocation { get; set; }
         public List<string> doorDirection { get; set; } //store door direction Up, Down, Right, Left as string
 
@@ -41,7 +41,7 @@ namespace Sprint2
             pickUpItems = new List<Iitem>();
             blockLocation = new List<KeyValuePair<int, int>>();
             doorDirection = new List<string>();
-            stairLocation = new List<KeyValuePair<int, int>>();
+            stair = new List<KeyValuePair<Vector2, Vector2>>();
             boundingBox = new List<Rectangle>();
             npcs = new List<Inpc>();
           
@@ -56,7 +56,7 @@ namespace Sprint2
             pickUpItems = new List<Iitem>();
             blockLocation = new List<KeyValuePair<int, int>>();
             doorDirection = new List<string>();
-            stairLocation = new List<KeyValuePair<int, int>>();
+            stair = new List<KeyValuePair<Vector2, Vector2>>();
             boundingBox = new List<Rectangle>();
             npcs = new List<Inpc>();
             doc = new XmlDocument();
@@ -71,14 +71,17 @@ namespace Sprint2
                 y = Int32.Parse(node.ChildNodes[3].InnerText);
 
                 vector.X = ((float)(x) / 100) * windowWidth;
-                vector.Y = ((float)y / 100) * windowHeight;
+                vector.Y = ((float)(y) / 100) * windowHeight;
 
 
                 if (type == "Room")
                 {
                     if (name == "Room")
                     {
-                        roomPos = new Vector2(vector.X, vector.Y);
+                        roomPos = vector;// new Vector2((int)vector.X,(int)vector.Y);
+
+                        Console.WriteLine(roomPos.X);
+                        Console.WriteLine(roomPos.Y);
                     }
 
                     if (name == "Up")
@@ -210,8 +213,16 @@ namespace Sprint2
                 }
                 else if (type == "Stair")
                 {
-                    stairLocation.Add(new KeyValuePair<int, int>((int)vector.X, (int)vector.Y));
+                    int destPosX = Int32.Parse(node.ChildNodes[4].InnerText);
+                    int destPosY = Int32.Parse(node.ChildNodes[5].InnerText);
 
+                    Vector2 stairPos = vector;
+                    Vector2 stairDestPos = new Vector2(destPosX, destPosY);
+
+                    stair.Add(new KeyValuePair<Vector2, Vector2>(stairPos, stairDestPos));
+                    foreach (KeyValuePair<Vector2, Vector2> pair in stair) {
+                        Console.WriteLine(pair);
+                    }
 
                 }
                 //for bounding box in room15

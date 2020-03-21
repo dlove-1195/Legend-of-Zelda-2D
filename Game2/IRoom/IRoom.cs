@@ -17,7 +17,8 @@ namespace Sprint2
         List <Inpc> npcs { get; set; }
         List<KeyValuePair<int, int>> blockLocation { get; set; }
         List<string> doorDirection { get; set; }
-        List<KeyValuePair<int, int>> stairLocation { get; set; }
+        List<KeyValuePair<Vector2, Vector2>> stair { get; set; }
+
         List<Rectangle> boundingBox { get; set; }
 
         void setItemToNull(int itemNum);

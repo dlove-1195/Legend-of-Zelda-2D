@@ -13,7 +13,7 @@ namespace Sprint2 {
         private List<Iitem> item;
         private List<Inpc> npc;
         private List<KeyValuePair<int, int>> blockLocation;
-        private List<KeyValuePair<int, int>> stairLocation;
+        private List<KeyValuePair<Vector2,Vector2>> stair;
         public List<string> doorDirection;
 
         private List<Rectangle> boundingBox; //for room15
@@ -40,7 +40,7 @@ namespace Sprint2 {
             npc =  room.npcs;
             blockLocation =  room.blockLocation;
             doorDirection = room.doorDirection;
-            stairLocation = room.stairLocation;
+            stair = room.stair;
 
             boundingBox = room.boundingBox;
             player = link;
@@ -242,17 +242,19 @@ namespace Sprint2 {
             } 
 
             //loop for stair collision
-            listLength = stairLocation.Count();
+            listLength = stair.Count();
             for (int i = 0; i < listLength; i++)
             {
-                KeyValuePair<int, int> singleStairLocation = stairLocation[i];
-                Rectangle singleStairRec = new Rectangle(singleStairLocation.Key, singleStairLocation.Value, 48, 54);
+                KeyValuePair<Vector2,Vector2> singleStair = stair[i];
+                Vector2 stairPos = singleStair.Key;
+                Vector2 stairDest = singleStair.Value;
+
+                Rectangle singleStairRec = new Rectangle((int)stairPos.X, (int)stairPos.Y, 48, 54);
 
                 overlapRec = Rectangle.Intersect(linkRectangle, singleStairRec);
                 if (!overlapRec.IsEmpty)
                 { 
-                    linkHandler.HandleLinkStairCollsion();
-                    
+                    linkHandler.HandleLinkStairCollsion(stairDest);
                 }
             }
 

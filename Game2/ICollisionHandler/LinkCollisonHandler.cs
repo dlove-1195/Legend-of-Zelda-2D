@@ -1,3 +1,4 @@
+using Microsoft.Xna.Framework;
 using System;
  
 
@@ -44,9 +45,9 @@ namespace Sprint2
             }
         }
 
-        public void HandleLinkStairCollsion()
+        public void HandleLinkStairCollsion(Vector2 destRoomPos)
         {
-            
+            //switch room to destRoomPos
             //level.switchUnderGround();
 
         }
