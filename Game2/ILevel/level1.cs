@@ -26,8 +26,8 @@ namespace Sprint2
                 room = new Room("room" + roomNum + ".xml");
                 //change link's position using door location
                 //need to know its current enter door and position 
-                Link.posX = (int)room.doorLocation[0].Value.X;
-                Link.posX = (int)room.doorLocation[0].Value.Y;
+                //Link.posX = (int)room.doorLocation[0].Value.X;
+//Link.posX = (int)room.doorLocation[0].Value.Y;
 
 
             }

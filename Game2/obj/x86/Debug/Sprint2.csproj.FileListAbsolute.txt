@@ -289,3 +289,22 @@ C:\Users\Mingjie\OneDrive\桌面\from web\CSE-3902-master\Game2\obj\x86\Debug\Sp
 C:\Users\Mingjie\OneDrive\桌面\from web\CSE-3902-master\Game2\obj\x86\Debug\Sprint2.csproj.CopyComplete
 C:\Users\Mingjie\OneDrive\桌面\from web\CSE-3902-master\Game2\obj\x86\Debug\Game2.exe
 C:\Users\Mingjie\OneDrive\桌面\from web\CSE-3902-master\Game2\obj\x86\Debug\Game2.pdb
+D:\3902\CSE-3902\Game2\bin\Windows\x86\Debug\Game2.exe
+D:\3902\CSE-3902\Game2\bin\Windows\x86\Debug\Game2.pdb
+D:\3902\CSE-3902\Game2\bin\Windows\x86\Debug\MonoGame.Framework.dll
+D:\3902\CSE-3902\Game2\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+D:\3902\CSE-3902\Game2\bin\Windows\x86\Debug\SharpDX.dll
+D:\3902\CSE-3902\Game2\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+D:\3902\CSE-3902\Game2\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+D:\3902\CSE-3902\Game2\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+D:\3902\CSE-3902\Game2\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+D:\3902\CSE-3902\Game2\bin\Windows\x86\Debug\SharpDX.XInput.dll
+D:\3902\CSE-3902\Game2\bin\Windows\x86\Debug\MonoGame.Framework.xml
+D:\3902\CSE-3902\Game2\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+D:\3902\CSE-3902\Game2\bin\Windows\x86\Debug\SharpDX.xml
+D:\3902\CSE-3902\Game2\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+D:\3902\CSE-3902\Game2\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+D:\3902\CSE-3902\Game2\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+D:\3902\CSE-3902\Game2\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+D:\3902\CSE-3902\Game2\bin\Windows\x86\Debug\SharpDX.XInput.xml
+D:\3902\CSE-3902\Game2\obj\x86\Debug\Sprint2.csproj.CopyComplete
