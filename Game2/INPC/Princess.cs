@@ -38,7 +38,7 @@ namespace Sprint2
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            PrincessSprite.Draw(spriteBatch, new Vector2(400, 120));
+            PrincessSprite.Draw(spriteBatch, new Vector2(posX, posY));
         }
 
 
