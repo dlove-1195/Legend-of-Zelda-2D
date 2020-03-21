@@ -247,6 +247,10 @@
     <Content Include="XML\room13.xml" />
     <Content Include="XML\room14.xml" />
     <Content Include="XML\room15.xml" />
+    <Content Include="XML\room16.xml" />
+    <Content Include="XML\room17.xml" />
+    <Content Include="XML\room18.xml" />
+    <Content Include="XML\room19.xml" />
     <Content Include="XML\room2.xml" />
     <Content Include="XML\room3.xml" />
     <Content Include="XML\room4.xml" />
@@ -254,6 +258,7 @@
     <Content Include="XML\room6.xml" />
     <Content Include="XML\room7.xml" />
     <Content Include="XML\room8.xml" />
+    <Content Include="XML\room9.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.manifest" />
