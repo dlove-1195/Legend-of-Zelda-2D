@@ -163,14 +163,14 @@
   <Item>
     <ObjectType>Door</ObjectType>
     <ObjectName>Up</ObjectName>
-    <posX>46</posX>
-    <posY>14</posY>
+    <posX>47</posX>
+    <posY>19</posY>
   </Item>
   <Item>
     <ObjectType>Door</ObjectType>
     <ObjectName>Down</ObjectName>
     <posX>47</posX>
-    <posY>81</posY>
+    <posY>82</posY>
   </Item>
   <!--  Door  -->
 </Asset>

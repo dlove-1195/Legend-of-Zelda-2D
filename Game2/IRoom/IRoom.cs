@@ -15,8 +15,8 @@ namespace Sprint2
         List <IEnemy>enemies { get; set; }
         List <Iitem> pickUpItems { get; set; }
         List <Inpc> npcs { get; set; }
-        List <KeyValuePair<int, int>> blockLocation { get; set; }
-        List<KeyValuePair<int, int>> doorLocation { get; set; }
+        List<KeyValuePair<int, int>> blockLocation { get; set; }
+        List<KeyValuePair<string, Vector2>>doorLocation { get; set; }
         List<KeyValuePair<int, int>> stairLocation { get; set; }
         List<Rectangle> boundingBox { get; set; }
 

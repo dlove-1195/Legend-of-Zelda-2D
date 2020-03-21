@@ -13,8 +13,8 @@ namespace Sprint2 {
         private List<Iitem> item;
         private List<Inpc> npc;
         private List<KeyValuePair<int, int>> blockLocation;
-        private List<KeyValuePair<int, int>> doorLocation;
         private List<KeyValuePair<int, int>> stairLocation;
+        public List<KeyValuePair<string, Vector2>> doorLocation;
 
         private List<Rectangle> boundingBox; //for room15
         private int roomLeftCornerPosX;
