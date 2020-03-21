@@ -9,5 +9,6 @@ namespace Sprint2
         void Draw(SpriteBatch spriteBatch); 
        
         string direction { get; set; }
+        bool switchRoom { get; set; }
     }
 }

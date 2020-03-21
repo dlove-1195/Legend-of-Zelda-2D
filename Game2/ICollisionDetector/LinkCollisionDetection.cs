@@ -200,22 +200,44 @@ namespace Sprint2 {
             }
 
 
-            //loop for door collision 
+            //loop for door collision (for each door in each room)
 
             listLength = doorLocation.Count();
             for (int i = 0; i < listLength; i++)
             {
-                KeyValuePair<int, int> singleDoorLocation = doorLocation[i];
-               
-                Rectangle singleDoorRec = new Rectangle(singleDoorLocation.Key, singleDoorLocation.Value,
+                KeyValuePair<string, Vector2> singleDoorLocation = doorLocation[i];
+                string doorDirection = singleDoorLocation.Key;
+                /*Rectangle singleDoorRec = new Rectangle((int)singleDoorLocation.Value.X, (int)singleDoorLocation.Value.Y,
                     50, 50);
 
-                overlapRec = Rectangle.Intersect(linkRectangle, singleDoorRec);
-                if (!overlapRec.IsEmpty && !Camera.switchRoom)
+                overlapRec = Rectangle.Intersect(linkRectangle, singleDoorRec); */
+                if (doorDirection.Equals("Up"))
                 {
-                    String direction = detectCollisionDirection(overlapRec, linkRectangle, singleDoorRec);
-                    linkHandler.HandleLinkDoorCollsion(direction);
-
+                    if (Link.posY <= (int)singleDoorLocation.Value.Y)
+                    {
+                        linkHandler.HandleLinkDoorCollsion(doorDirection);
+                    }
+                }
+                else if (doorDirection.Equals("Down"))
+                {
+                    if (Link.posY >= (int)singleDoorLocation.Value.Y)
+                    {
+                        linkHandler.HandleLinkDoorCollsion(doorDirection);
+                    }
+                }
+                else if (doorDirection.Equals("Left"))
+                {
+                    if (Link.posX <= (int)singleDoorLocation.Value.X)
+                    {
+                        linkHandler.HandleLinkDoorCollsion(doorDirection);
+                    }
+                }
+                else if (doorDirection.Equals("Down"))
+                {
+                    if (Link.posX >= (int)singleDoorLocation.Value.X)
+                    {
+                        linkHandler.HandleLinkDoorCollsion(doorDirection);
+                    }
                 }
 
 

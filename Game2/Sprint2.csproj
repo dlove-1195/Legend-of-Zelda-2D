@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="Game1.cs" />
     <Compile Include="ICamera\camera.cs" />
-    <Compile Include="ICamera\CameraController.cs" />
     <Compile Include="ICamera\ICamera.cs" />
     <Compile Include="ICollisionDetector\EnemyCollisionDetection.cs" />
     <Compile Include="ICollisionDetector\ICollisionDetection.cs" />

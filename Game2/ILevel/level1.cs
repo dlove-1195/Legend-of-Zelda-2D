@@ -22,7 +22,7 @@ namespace Sprint2
             if (roomNum != 0)
             {
                 camera.direction = direction;
-                Camera.switchRoom = true;
+                camera.switchRoom = true;
                 room = new Room("room" + roomNum + ".xml");
                 
 

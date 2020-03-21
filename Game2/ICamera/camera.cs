@@ -7,6 +7,7 @@ namespace Sprint2
     {
         public Texture2D Texture = Texture2DStorage.GetDungeonSpriteSheet();
         public string direction { get; set; }
+        public bool switchRoom { get; set; }
 
         //room15 is smaller (257,160)
         //other rooms (257,178)
@@ -16,13 +17,13 @@ namespace Sprint2
         private int sourceLocY = 0;
         //room1:(515,179) room10:(1,532) room11:(772,353) room12:(1030,530) room13:(0,707) room14:(515,885) room15:(0,0)
 
-        public static bool switchRoom = false;
         private int delay = 0;
 
 
         public Camera()
         {
-            //this.direction = direction;
+            direction = "";
+            switchRoom = false;
         }
 
         public void Update()
