@@ -99,6 +99,7 @@
   <!--  Box  -->
  
   <!--  Stair  -->
+  <!--  stored in doorLocation list in room  -->
   <Item>
     <ObjectType>Door</ObjectType>
     <ObjectName>Up</ObjectName>

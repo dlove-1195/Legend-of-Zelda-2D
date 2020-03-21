@@ -19,6 +19,7 @@ namespace Sprint2
         List<KeyValuePair<int, int>> doorLocation { get; set; }
 
         List<KeyValuePair<int, int>> stairLocation { get; set; }
+        List<Rectangle> boundingBox { get; set; }
         //add door collisoin detecter and door collision handler to construct new room??
         //can use block detector for door collision detect
 
