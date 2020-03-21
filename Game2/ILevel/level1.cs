@@ -10,7 +10,7 @@ namespace Sprint2
         private ICamera camera;
         public Level1()
         {
-            room = new Room("room1.xml");
+            room = new Room("room15.xml");
             camera = new Camera();
             camera.direction = "";
         }

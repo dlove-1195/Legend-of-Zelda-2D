@@ -15,6 +15,8 @@ namespace Sprint2 {
         private List<KeyValuePair<int, int>> blockLocation;
         private List<KeyValuePair<int, int>> doorLocation;
         private List<KeyValuePair<int, int>> stairLocation;
+
+        private List<Rectangle> boundingBox; //for room15
         private int roomLeftCornerPosX;
         private int roomLeftCornerPosY;
         private int roomRightCornerPosX;
@@ -40,6 +42,7 @@ namespace Sprint2 {
             doorLocation = room.doorLocation;
             stairLocation = room.stairLocation;
 
+            boundingBox = room.boundingBox;
             player = link;
             linkHandler =new LinkCollisionHandler(player, level) ;
     }
@@ -154,33 +157,51 @@ namespace Sprint2 {
 
             }
 
-            //loop for link/Block collsion 
 
-            listLength = blockLocation.Count();
-            for (int i = 0; i < listLength; i++)
+            //loop for link/Block collsion when no boundingBox
+            if (boundingBox.Count == 0)
             {
-                KeyValuePair<int, int> singleBlockLocation = blockLocation[i];
-                //for now, assume block width and height are 100, will change later based on the doungeon spritesheet we found 
-                Rectangle singleBlockRec = new Rectangle(singleBlockLocation.Key, singleBlockLocation.Value,
-                    48, 54);
-
-                overlapRec = Rectangle.Intersect(linkRectangle,  singleBlockRec);
-                   
-                if (!overlapRec.IsEmpty)
+                listLength = blockLocation.Count();
+                for (int i = 0; i < listLength; i++)
                 {
-                    String direction = detectCollisionDirection(overlapRec, linkRectangle, singleBlockRec);
-                  
-                    linkHandler.HandleLinkBlockCollsion(direction);
-                   
+                    KeyValuePair<int, int> singleBlockLocation = blockLocation[i];
+                    //for now, assume block width and height are 100, will change later based on the doungeon spritesheet we found 
+                    Rectangle singleBlockRec = new Rectangle(singleBlockLocation.Key, singleBlockLocation.Value,
+                        48, 54);
+
+                    overlapRec = Rectangle.Intersect(linkRectangle, singleBlockRec);
+
+                    if (!overlapRec.IsEmpty)
+                    {
+                        String direction = detectCollisionDirection(overlapRec, linkRectangle, singleBlockRec);
+
+                        linkHandler.HandleLinkBlockCollsion(direction);
+
+                    }
                 }
-                
+            }
+            //loop for Link/boundingBox collsion for room15
+            else
+            {
+                listLength = boundingBox.Count();
+                for (int i = 0; i < listLength; i++)
+                {
+                    Rectangle singleBoxRec = boundingBox[i];
+                    overlapRec = Rectangle.Intersect(linkRectangle, singleBoxRec);
 
+                    if (!overlapRec.IsEmpty)
+                    {
+                        String direction = detectCollisionDirection(overlapRec, linkRectangle, singleBoxRec);
 
+                        linkHandler.HandleLinkBlockCollsion(direction); //LinkBoxCollsion is same as LinkBlockCollsion
+
+                    }
+                }
             }
 
 
             //loop for door collision 
-            
+
             listLength = doorLocation.Count();
             for (int i = 0; i < listLength; i++)
             {
@@ -222,24 +243,31 @@ namespace Sprint2 {
 
 
 
+            //link edge collision if no boundingBox in room
+            //room15 no Link edge collision
+            if (boundingBox.Count == 0)
+            {
+                if (Link.posX > roomRightCornerPosX)
+                {
 
-            //link edge collison 
-            if (Link.posX > roomRightCornerPosX)
-            {
-                
-                linkHandler.remainPosition(  "right");
-            }else if (Link.posX < roomLeftCornerPosX)
-            {
-                linkHandler.remainPosition(  "left");
-            }else if (Link.posY > roomRightCornerPosY)
-            {
-                linkHandler.remainPosition( "down");
-            }else if(Link.posY < roomLeftCornerPosY)
-            {
-                linkHandler.remainPosition(  "up");
+                    linkHandler.remainPosition("right");
+                }
+                else if (Link.posX < roomLeftCornerPosX)
+                {
+                    linkHandler.remainPosition("left");
+                }
+                else if (Link.posY > roomRightCornerPosY)
+                {
+                    linkHandler.remainPosition("down");
+                }
+                else if (Link.posY < roomLeftCornerPosY)
+                {
+                    linkHandler.remainPosition("up");
+                }
+
             }
-                 
-          
+
+
         }
         
  

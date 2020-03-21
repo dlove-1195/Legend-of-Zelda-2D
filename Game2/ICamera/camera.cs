@@ -11,9 +11,9 @@ namespace Sprint2
         //room15 is smaller (257,160)
         //other rooms (257,178)
         private int width = 257;
-        private int height = 178;
-        private int sourceLocX = 515;
-        private int sourceLocY = 179;
+        private int height = 160;
+        private int sourceLocX = 0;
+        private int sourceLocY = 0;
         //room1:(515,179) room10:(1,532) room11:(772,353) room12:(1030,530) room13:(0,707) room14:(515,885) room15:(0,0)
 
         public static bool switchRoom = false;

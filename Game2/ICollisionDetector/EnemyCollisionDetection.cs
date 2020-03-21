@@ -11,10 +11,12 @@ namespace Sprint2
         private EnemyCollisionHandler enemyHandler;
         private List<IEnemy> enemy;
         private List<KeyValuePair<int, int>> blockLocation;
+        private List<Rectangle> boundingBox; //for room15
         private int roomLeftCornerPosX;
         private int roomLeftCornerPosY;
         private int roomRightCornerPosX;
         private int roomRightCornerPosY;
+
 
 
         public EnemyCollisionDetection(ILevel level)
@@ -28,6 +30,7 @@ namespace Sprint2
             roomRightCornerPosY = roomHeight + (int)(room.roomPos.Y);
             enemy = room.enemies;
             blockLocation = room.blockLocation;
+            boundingBox = room.boundingBox;
             //no collision between enemy and pickupItem/npc 
             //no collision between item and item/block 
 
@@ -49,27 +52,50 @@ namespace Sprint2
                     Rectangle overlapRec;
                     string direction = "";
 
-                    //detect enemy collision with block
-                    int listLength = blockLocation.Count();
-                    for (int j = 0; j < listLength; j++)
+                    int listLength = 0;
+                    //detect enemy collision with block when no boundingBox 
+                    if (boundingBox.Count == 0)
                     {
-                        KeyValuePair<int, int> singleBlockLocation = blockLocation[j];
-                        
-                        Rectangle singleBlockRec = new Rectangle(singleBlockLocation.Key, singleBlockLocation.Value,
-                            48, 54);
 
-                        overlapRec = Rectangle.Intersect(testEnemyRectangle, singleBlockRec);
-                        if (!overlapRec.IsEmpty)
+                        listLength = blockLocation.Count();
+                        for (int j = 0; j < listLength; j++)
                         {
-                            direction = detectCollisionDirection(overlapRec, testEnemyRectangle, singleBlockRec);
-                            enemyHandler.HandleEnemyBlockCollsion(direction);
+                            KeyValuePair<int, int> singleBlockLocation = blockLocation[j];
+
+                            Rectangle singleBlockRec = new Rectangle(singleBlockLocation.Key, singleBlockLocation.Value,
+                                48, 54);
+
+                            overlapRec = Rectangle.Intersect(testEnemyRectangle, singleBlockRec);
+                            if (!overlapRec.IsEmpty)
+                            {
+                                direction = detectCollisionDirection(overlapRec, testEnemyRectangle, singleBlockRec);
+                                enemyHandler.HandleEnemyBlockCollsion(direction);
+                            }
+                        }
+                    }
+                    else
+                    {
+                        listLength = boundingBox.Count();
+                        for (int j = 0; j < listLength; j++)
+                        {
+                            Rectangle singleBoxRec = boundingBox[j];
+                            overlapRec = Rectangle.Intersect(testEnemyRectangle, singleBoxRec);
+
+                            if (!overlapRec.IsEmpty)
+                            {
+                                direction = detectCollisionDirection(overlapRec, testEnemyRectangle, singleBoxRec);
+
+                                enemyHandler.HandleEnemyBlockCollsion(direction); //EnemyBoxCollsion is same as EnemyBlockCollsion
+
+                            }
                         }
                     }
 
 
 
+
                     //detect testEnemy collision with all other enemy 
-                     listLength = enemy.Count();
+                    listLength = enemy.Count();
 
                     for (int j = 0; j < listLength; j++)
                     {
@@ -89,27 +115,32 @@ namespace Sprint2
 
                     }
 
-                    //enemy edge detection
-                    direction = "";
-                    if (testEnemyRectangle.X > roomRightCornerPosX)
+
+                    //enemy edge detection when no boundingBox
+                    if (boundingBox.Count == 0)
                     {
-                        direction = "right";
-                    }
-                    else if (testEnemyRectangle.X < roomLeftCornerPosX)
-                    {
-                        direction = "left";
-                    }
-                    else if (testEnemyRectangle.Y > roomRightCornerPosY)
-                    {
-                        direction = "down";
-                    }
-                    else if (testEnemyRectangle.Y < roomLeftCornerPosY)
-                    {
-                        direction = "up";
-                    }
-                    if (!direction.Equals(""))
-                    {
-                        enemyHandler.HandleEnemyWallCollsion(direction);
+                        
+                        direction = "";
+                        if (testEnemyRectangle.X > roomRightCornerPosX)
+                        {
+                            direction = "right";
+                        }
+                        else if (testEnemyRectangle.X < roomLeftCornerPosX)
+                        {
+                            direction = "left";
+                        }
+                        else if (testEnemyRectangle.Y > roomRightCornerPosY)
+                        {
+                            direction = "down";
+                        }
+                        else if (testEnemyRectangle.Y < roomLeftCornerPosY)
+                        {
+                            direction = "up";
+                        }
+                        if (!direction.Equals(""))
+                        {
+                            enemyHandler.HandleEnemyWallCollsion(direction);
+                        }
                     }
 
 

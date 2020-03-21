@@ -206,9 +206,10 @@ namespace Sprint2
                 {
                     int width = Int32.Parse(node.ChildNodes[4].InnerText);
                     int height = Int32.Parse(node.ChildNodes[5].InnerText);
-                    boxWidth = width / 100 * windowWidth;
-                    boxHeight = height / 100 * windowHeight;
-
+                    float widthFloat = ((float)width / 100) * windowWidth;
+                    float heightFloat = ((float)height / 100) * windowHeight;
+                    boxWidth = (int)widthFloat;
+                    boxHeight = (int)heightFloat;
                     boundingBox.Add(new Rectangle((int)vector.X, (int)vector.Y, (int)boxWidth, (int)boxHeight));
 
                 }

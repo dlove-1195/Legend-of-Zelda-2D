@@ -18,7 +18,7 @@ namespace Sprint2
         List <KeyValuePair<int, int>> blockLocation { get; set; }
         List<KeyValuePair<int, int>> doorLocation { get; set; }
         List<KeyValuePair<int, int>> stairLocation { get; set; }
-         
+        List<Rectangle> boundingBox { get; set; }
 
         void setItemToNull(int itemNum);
         void setEnemyToNull(int enemyNum);
