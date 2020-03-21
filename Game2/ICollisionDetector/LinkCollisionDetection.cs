@@ -14,7 +14,7 @@ namespace Sprint2 {
         private List<Inpc> npc;
         private List<KeyValuePair<int, int>> blockLocation;
         private List<KeyValuePair<int, int>> stairLocation;
-        public List<KeyValuePair<string, Vector2>> doorLocation;
+        public List<string> doorDirection;
 
         private List<Rectangle> boundingBox; //for room15
         private int roomLeftCornerPosX;
@@ -39,7 +39,7 @@ namespace Sprint2 {
             item =  room.pickUpItems;
             npc =  room.npcs;
             blockLocation =  room.blockLocation;
-            doorLocation = room.doorLocation;
+            doorDirection = room.doorDirection;
             stairLocation = room.stairLocation;
 
             boundingBox = room.boundingBox;
@@ -202,38 +202,38 @@ namespace Sprint2 {
 
             //loop for door collision (for each door in each room)
             
-            listLength = doorLocation.Count();
+            listLength = doorDirection.Count();
             for (int i = 0; i < listLength; i++)
             {
-                KeyValuePair<string, Vector2> singleDoorLocation = doorLocation[i];
-                string doorDirection = singleDoorLocation.Key;
+                string singleDoorDirection = doorDirection[i];
+
  
                 if (doorDirection.Equals("Up") )
                 {
                     if (  Link.posY <= roomLeftCornerPosY&&! Camera.switchRoom)//(int)singleDoorLocation.Value.Y)
                     {
-                        linkHandler.HandleLinkDoorCollsion(doorDirection);
+                        linkHandler.HandleLinkDoorCollsion(singleDoorDirection);
                     }
                 }
                 else if (doorDirection.Equals("Down"))
                 {
                     if (Link.posY >= roomRightCornerPosY&& !Camera.switchRoom)
                     {
-                        linkHandler.HandleLinkDoorCollsion(doorDirection);
+                        linkHandler.HandleLinkDoorCollsion(singleDoorDirection);
                     }
                 }
                 else if (doorDirection.Equals("Left"))
                 {
                     if (Link.posX <= roomLeftCornerPosX && !Camera.switchRoom)
                     {
-                        linkHandler.HandleLinkDoorCollsion(doorDirection);
+                        linkHandler.HandleLinkDoorCollsion(singleDoorDirection);
                     }
                 }
                 else if (doorDirection.Equals("Down"))
                 {
                     if (Link.posX >= roomRightCornerPosX && !Camera.switchRoom)
                     {
-                        linkHandler.HandleLinkDoorCollsion(doorDirection);
+                        linkHandler.HandleLinkDoorCollsion(singleDoorDirection);
                     }
                 }
 

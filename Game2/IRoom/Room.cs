@@ -29,7 +29,7 @@ namespace Sprint2
 
         public List<KeyValuePair<int, int>> stairLocation { get; set; }
         public List<KeyValuePair<int, int>> blockLocation { get; set; }
-        public List<KeyValuePair<string, Vector2>> doorLocation { get; set; } //store door direction Up, Down, Right, Left as string
+        public List<string> doorDirection { get; set; } //store door direction Up, Down, Right, Left as string
 
         public List<Rectangle> boundingBox { get; set; }
 
@@ -41,7 +41,7 @@ namespace Sprint2
             enemies = new List<IEnemy>();
             pickUpItems = new List<Iitem>();
             blockLocation = new List<KeyValuePair<int, int>>();
-            doorLocation = new List<KeyValuePair<string, Vector2>>();
+            doorDirection = new List<string>();
             stairLocation = new List<KeyValuePair<int, int>>();
             boundingBox = new List<Rectangle>();
             npcs = new List<Inpc>();
@@ -192,9 +192,7 @@ namespace Sprint2
                 }
                 else if (type == "Door")
                 {
-                    Vector2 doorPos = new Vector2(vector.X, vector.Y);
-                    doorLocation.Add(new KeyValuePair<string,Vector2>(name, doorPos)); //door direction stores in name
-                    
+                    doorDirection.Add(name); //door direction stores in name
                 }
                 else if (type == "Stair")
                 {
