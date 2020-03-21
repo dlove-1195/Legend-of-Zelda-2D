@@ -54,7 +54,7 @@ namespace Sprint2
             delay++;
        
             
-                Link.posX--;
+                Link.posX-=2;
              
         }
 

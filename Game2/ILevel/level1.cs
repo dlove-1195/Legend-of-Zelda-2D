@@ -10,7 +10,7 @@ namespace Sprint2
         private ICamera camera;
         public Level1()
         {
-            room = new Room("room15.xml");
+            room = new Room("room1.xml");
             camera = new Camera();
             camera.direction = "";
         }
@@ -34,16 +34,16 @@ namespace Sprint2
             int num = 0 ;
             switch (direction)
             {
-                case "left":
+                case "Left":
                     num = room.leftRoomNum;
                     break;
-                case "right":
+                case "Right":
                     num = room.rightRoomNum;
                     break;
-                case "up":
+                case "Up":
                     num = room.upRoomNum;
                     break;
-                case "down":
+                case "Down":
                     num = room.downRoomNum;
                     break;
 

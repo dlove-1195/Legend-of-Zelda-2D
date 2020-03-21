@@ -56,7 +56,7 @@ namespace Sprint2
        
             //moving left and right 
             
-                Link.posX++;
+                Link.posX+=2;
               
 
 

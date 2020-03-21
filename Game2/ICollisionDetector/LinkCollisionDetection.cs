@@ -201,40 +201,37 @@ namespace Sprint2 {
 
 
             //loop for door collision (for each door in each room)
-
+            
             listLength = doorLocation.Count();
             for (int i = 0; i < listLength; i++)
             {
                 KeyValuePair<string, Vector2> singleDoorLocation = doorLocation[i];
                 string doorDirection = singleDoorLocation.Key;
-                /*Rectangle singleDoorRec = new Rectangle((int)singleDoorLocation.Value.X, (int)singleDoorLocation.Value.Y,
-                    50, 50);
-
-                overlapRec = Rectangle.Intersect(linkRectangle, singleDoorRec); */
+ 
                 if (doorDirection.Equals("Up"))
                 {
-                    if (Link.posY <= (int)singleDoorLocation.Value.Y)
+                    if (Link.posY <= roomLeftCornerPosY)//(int)singleDoorLocation.Value.Y)
                     {
                         linkHandler.HandleLinkDoorCollsion(doorDirection);
                     }
                 }
                 else if (doorDirection.Equals("Down"))
                 {
-                    if (Link.posY >= (int)singleDoorLocation.Value.Y)
+                    if (Link.posY >= roomRightCornerPosY)
                     {
                         linkHandler.HandleLinkDoorCollsion(doorDirection);
                     }
                 }
                 else if (doorDirection.Equals("Left"))
                 {
-                    if (Link.posX <= (int)singleDoorLocation.Value.X)
+                    if (Link.posX <= roomLeftCornerPosX)
                     {
                         linkHandler.HandleLinkDoorCollsion(doorDirection);
                     }
                 }
                 else if (doorDirection.Equals("Down"))
                 {
-                    if (Link.posX >= (int)singleDoorLocation.Value.X)
+                    if (Link.posX >= roomRightCornerPosX)
                     {
                         linkHandler.HandleLinkDoorCollsion(doorDirection);
                     }
@@ -242,7 +239,7 @@ namespace Sprint2 {
 
 
 
-            }
+            } 
 
             //loop for stair collision
             listLength = stairLocation.Count();
@@ -269,22 +266,21 @@ namespace Sprint2 {
             //room15 no Link edge collision
             if (boundingBox.Count == 0)
             {
-                if (Link.posX > roomRightCornerPosX)
+                if (Link.posX > roomRightCornerPosX && (Link.posY < Game1.WindowHeight * 0.45 || Link.posY > Game1.WindowHeight * (0.45 + 0.1)))
                 {
-
-                    linkHandler.remainPosition("right");
+                    linkHandler.remainPosition("Right");
                 }
-                else if (Link.posX < roomLeftCornerPosX)
+                else if (Link.posX < roomLeftCornerPosX && (Link.posY < Game1.WindowHeight * 0.45 || Link.posY > Game1.WindowHeight * (0.45 + 0.1)))
                 {
-                    linkHandler.remainPosition("left");
+                    linkHandler.remainPosition("Left");
                 }
-                else if (Link.posY > roomRightCornerPosY)
+                else if (Link.posY > roomRightCornerPosY &&(Link.posX < Game1.WindowWidth * 0.465 || Link.posX > Game1.WindowWidth * (0.465 + 0.07)))
                 {
-                    linkHandler.remainPosition("down");
+                    linkHandler.remainPosition("Down");
                 }
-                else if (Link.posY < roomLeftCornerPosY)
+                else if (Link.posY < roomLeftCornerPosY && (Link.posX < Game1.WindowWidth * 0.465 || Link.posX > Game1.WindowWidth * (0.465 + 0.07)))
                 {
-                    linkHandler.remainPosition("up");
+                    linkHandler.remainPosition("Up");
                 }
 
             }
@@ -302,22 +298,22 @@ namespace Sprint2 {
             {
                 if (linkRec.Y >= objectRec.Y)
                 {
-                    direction = "up";
+                    direction = "Up";
                 }
                 else
                 {
-                    direction = "down";
+                    direction = "Down";
                 }
             }
             else //left/right collison
             {
                 if (linkRec.X >= objectRec.X)
                 {
-                    direction = "right";
+                    direction = "Right";
                 }
                 else
                 {
-                    direction = "left";
+                    direction = "Left";
                 }
 
             }

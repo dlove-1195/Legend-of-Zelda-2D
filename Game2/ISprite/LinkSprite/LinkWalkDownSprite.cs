@@ -43,7 +43,7 @@ namespace Sprint2
 
 
           
-                Link.posY++;
+                Link.posY+=2;
              
 
         }

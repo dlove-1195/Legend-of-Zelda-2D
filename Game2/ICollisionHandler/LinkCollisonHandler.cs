@@ -24,17 +24,17 @@ namespace Sprint2
             
             switch (direction)
             {
-                case "left":
+                case "Left":
                     Link.posX --;
                     break;
-                case "right":
+                case "Right":
                     Link.posX ++;
                     break;
-                case "up":
+                case "Up":
                     Link.posY ++;
 
                     break;
-                case "down":
+                case "Down":
                     Link.posY --;
                     break;
 
@@ -64,17 +64,17 @@ namespace Sprint2
             link.GetDamaged();
             switch (direction)
             {
-                case "left":
+                case "Left":
                     Link.posX = Link.posX -3;
                     break;
-                case "right":
+                case "Right":
                     Link.posX= Link.posX + 3;
                     break;
-                case "up":
+                case "Up":
                     Link.posY =Link.posY+3;
 
                     break;
-                case "down":
+                case "Down":
                     Link.posY = Link.posY - 3;
                     break;
 
@@ -103,17 +103,17 @@ namespace Sprint2
         {
             switch (direction)
             {
-                case "left":
+                case "Left":
                     Link.posX--; 
                     break;
-                case "right":
+                case "Right":
                     Link.posX ++ ;
                     break;
-                case "up":
+                case "Up":
                     Link.posY ++;
 
                     break;
-                case "down":
+                case "Down":
                     Link.posY --;
                     break;
 
@@ -137,23 +137,23 @@ namespace Sprint2
             //later add field to show how many items link have 
         }
 
-        public void remainPosition(  string direction)
+        public void remainPosition(string direction)
         {
             
             switch(direction)
               
             {
-                case "left":
+                case "Left":
                     Link.posX++;
                     break;
-                case "right":
+                case "Right":
                     Link.posX--;
                     break;
-                case "up":
+                case "Up":
                     Link.posY++;
                   
                     break;
-                case "down":
+                case "Down":
                     Link.posY--;
                     break;
                 
