@@ -41,8 +41,8 @@
   <Item>
     <ObjectType>Enemy</ObjectType>
     <ObjectName>Trap</ObjectName>
-    <posX>25</posX>
-    <posY>54</posY>
+    <posX>27</posX>
+    <posY>58</posY>
   </Item>
   <Item>
     <ObjectType>Enemy</ObjectType>
@@ -135,13 +135,13 @@
   <Item>
     <ObjectType>NPC</ObjectType>
     <ObjectName>OldMan</ObjectName>
-    <posX>65</posX>
-    <posY>67</posY>
+    <posX>76</posX>
+    <posY>70</posY>
   </Item>
   <Item>
     <ObjectType>NPC</ObjectType>
     <ObjectName>Princess</ObjectName>
-    <posX>48</posX>
+    <posX>53</posX>
     <posY>21</posY>
   </Item>
   <!--  NPC  -->
