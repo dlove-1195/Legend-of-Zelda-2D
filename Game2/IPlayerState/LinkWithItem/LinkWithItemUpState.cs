@@ -52,7 +52,7 @@ namespace Sprint2
                 case 4:
                     //sword
                     link.linkSprite = new LinkAttackUpSprite(textureLink);
-                    Iitem item4 = new Sword(Link.posX, (Link.posY - 20), 0);
+                    Iitem item4 = new Sword(Link.posX+7, (Link.posY - 20), 0);
                     item4.appear = true;
                     link.items.Add(item4);
                     break;
