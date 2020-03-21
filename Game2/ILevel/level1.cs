@@ -13,7 +13,7 @@ namespace Sprint2
         private String direction;
         public Level1()
         {
-            room = new Room("room13.xml");
+            room = new Room("room1.xml");
             camera = new Camera();
             camera.direction = "";
         }

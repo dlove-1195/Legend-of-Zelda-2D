@@ -78,10 +78,7 @@ namespace Sprint2
                 {
                     if (name == "Room")
                     {
-                        roomPos = vector;// new Vector2((int)vector.X,(int)vector.Y);
-
-                        Console.WriteLine(roomPos.X);
-                        Console.WriteLine(roomPos.Y);
+                        roomPos = vector;
                     }
 
                     if (name == "Up")
@@ -220,9 +217,7 @@ namespace Sprint2
                     Vector2 stairDestPos = new Vector2(destPosX, destPosY);
 
                     stair.Add(new KeyValuePair<Vector2, Vector2>(stairPos, stairDestPos));
-                    foreach (KeyValuePair<Vector2, Vector2> pair in stair) {
-                        Console.WriteLine(pair);
-                    }
+                
 
                 }
                 //for bounding box in room15
