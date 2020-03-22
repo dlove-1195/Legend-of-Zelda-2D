@@ -142,7 +142,7 @@ namespace Sprint2
                         {
                             direction = "up";
                         }
-                        if (!direction.Equals(""))
+                        if(direction.Length!=0)
                         {
                             enemyHandler.HandleEnemyWallCollsion(direction);
                         }
