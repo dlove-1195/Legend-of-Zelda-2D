@@ -34,9 +34,9 @@ namespace Sprint2
             map.Add(Keys.Z, new AttackCommand(myGame));
             map.Add(Keys.N, new AttackCommand(myGame));
           
-
-            map.Add(Keys.U, new PreviousItemCommand(myGame));
-            map.Add(Keys.I, new NextItemCommand(myGame));
+          //for now no need to swtich between items
+          //  map.Add(Keys.U, new PreviousItemCommand(myGame));
+          // map.Add(Keys.I, new NextItemCommand(myGame));
 
             map.Add(Keys.D1, new Gear1(myGame));
             map.Add(Keys.D2, new Gear2(myGame));
