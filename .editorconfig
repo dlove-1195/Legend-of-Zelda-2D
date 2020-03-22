@@ -14,3 +14,6 @@ dotnet_diagnostic.IDE0052.severity = none
 
 # IDE0055: Fix formatting
 dotnet_diagnostic.IDE0055.severity = none
+
+# CA3075: Insecure DTD processing in XML
+dotnet_diagnostic.CA3075.severity = suggestion

@@ -61,10 +61,16 @@ namespace Sprint2
             stair = new List<KeyValuePair<Vector2, Vector2>>();
             boundingBox = new List<Rectangle>();
             npcs = new List<INpc>();
-#pragma warning disable CA3075 // Insecure DTD processing in XML
+
+            XmlReader reader;
+            XmlReaderSettings settings = new XmlReaderSettings();
+            XmlUrlResolver resolver = new XmlUrlResolver();
+            reader = XmlReader.Create(fileName, settings);
             doc = new XmlDocument();
-#pragma warning restore CA3075 // Insecure DTD processing in XML
-            doc.Load(fileName);
+            doc.XmlResolver = resolver;
+            doc.Load(reader);
+            reader.Close();
+
             nodeList = doc.SelectNodes("//Item");
 
             foreach (XmlNode node in nodeList)

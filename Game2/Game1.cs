@@ -31,7 +31,7 @@ namespace Sprint2
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
  
-            // graphics.IsFullScreen = true;
+            //graphics.IsFullScreen = true;
             graphics.PreferredBackBufferWidth = WindowWidth;
             graphics.PreferredBackBufferHeight = WindowHeight;
             graphics.ApplyChanges();
