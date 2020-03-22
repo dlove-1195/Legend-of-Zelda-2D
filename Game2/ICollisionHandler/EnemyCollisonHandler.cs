@@ -75,28 +75,28 @@ namespace Sprint2
                     otherEnemy.posX+=5;
                     enemy.ChangeToLeft();
                     otherEnemy.ChangeToRight();
-                    break;
+                   break;
                 case "right":
                     enemy.posX += 5;
                     otherEnemy.posX -= 5;
                     enemy.ChangeToRight();
                     otherEnemy.ChangeToLeft();
-                    break;
-                case "up":
+                   break;
+                case "down":
                     enemy.posY += 5;
                     otherEnemy.posY -= 5;
+                    enemy.ChangeToDown();
+                    otherEnemy.ChangeToUp();
+                   break;
+                case "up":
+                    enemy.posY -= 5;
+                    otherEnemy.posY += 5;
                     enemy.ChangeToUp();
                     otherEnemy.ChangeToDown();
                     break;
-                case "down":
-                    enemy.posY -= 5;
-                    otherEnemy.posY += 5;
-                    enemy.ChangeToDown();
-                    otherEnemy.ChangeToUp();
-                    break;
                 default:
                     Console.WriteLine("error: no such situation");
-                    break;
+                   break;
             }
 
         }
