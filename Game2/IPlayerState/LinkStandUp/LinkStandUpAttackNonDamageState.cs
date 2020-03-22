@@ -11,6 +11,10 @@ namespace Sprint2
         private Texture2D texture = Texture2DStorage.GetLinkSpriteSheet();
         public LinkStandUpAttackNonDamageState(Link link)
         {
+            if (link == null)
+            {
+                throw new System.ArgumentNullException(nameof(link));
+            }
             link.linkSprite = new LinkAttackUpSprite(texture);
             this.link = link;
             this.link.ChangeDirection(0);

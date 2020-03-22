@@ -45,14 +45,10 @@ namespace Sprint2
             }
         }
 
-<<<<<<< HEAD
-        public void HandleLinkStairCollsion()
-        {    
-             
-=======
+
         public void HandleLinkStairCollsion(Vector2 destRoomPos, String direction)
         {
->>>>>>> 9a16a24b6eff0151e8c2d4def253ead5893f4309
+
             //switch room to destRoomPos
             
             switch (direction)

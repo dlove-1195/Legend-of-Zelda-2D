@@ -255,15 +255,12 @@ namespace Sprint2 {
                 overlapRec = Rectangle.Intersect(linkRectangle, singleStairRec);
                  
                 if (!overlapRec.IsEmpty)
-<<<<<<< HEAD
+
                 { 
-                    linkHandler.HandleLinkStairCollsion();
-                    //stairDest
-=======
-                {
+                   
                     String direction = detectCollisionDirection(overlapRec, linkRectangle, singleStairRec);
                     linkHandler.HandleLinkStairCollsion(stairDest, direction);
->>>>>>> 9a16a24b6eff0151e8c2d4def253ead5893f4309
+
                 }
             }
 
