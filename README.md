@@ -22,7 +22,7 @@
 
 ### BUGS
 
-####Game play:  
+#### Game play:  
 
 currently empty itemstate interface  
 
@@ -30,7 +30,7 @@ rooms always refresh to initial state when entering
 
 partial funtionalities  
 
-####Unresolved warnings:  
+#### Unresolved warnings:  
 
 Warning CA1303: Do not pass literals as localized parameters. These warnings happen when we use strings as parameter without defined or localized before.   
 
