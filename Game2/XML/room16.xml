@@ -29,31 +29,31 @@
     <!--  enemy  -->
     <Item>
       <ObjectType>Enemy</ObjectType>
-      <ObjectName>Dragon</ObjectName>
+      <ObjectName>Rope</ObjectName>
       <posX>44</posX>
       <posY>48</posY>
     </Item>
     <Item>
-      <ObjectType>Enemy</ObjectType>
-      <ObjectName>Trap1</ObjectName>
+      <ObjectType>Block</ObjectType>
+      <ObjectName>Block25</ObjectName>
       <posX>32</posX>
       <posY>47</posY>
     </Item>
     <Item>
-      <ObjectType>Enemy</ObjectType>
-      <ObjectName>Trap2</ObjectName>
+      <ObjectType>Block</ObjectType>
+      <ObjectName>Block26</ObjectName>
       <posX>38</posX>
       <posY>38</posY>
     </Item>
     <Item>
-      <ObjectType>Enemy</ObjectType>
-      <ObjectName>Trap3</ObjectName>
+      <ObjectType>Block</ObjectType>
+      <ObjectName>Block27</ObjectName>
       <posX>56</posX>
       <posY>38</posY>
     </Item>
     <Item>
-      <ObjectType>Enemy</ObjectType>
-      <ObjectName>Trap4</ObjectName>
+      <ObjectType>Block</ObjectType>
+      <ObjectName>Block28</ObjectName>
       <posX>63</posX>
       <posY>47</posY>
     </Item>
