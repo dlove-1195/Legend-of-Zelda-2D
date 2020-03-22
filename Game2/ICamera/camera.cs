@@ -10,10 +10,10 @@ namespace Sprint2
         public static bool SwitchRoom { get; set; }
         
         public static int width = 257;
-        public static int height = 178;
+        public static int height = 177;
         public  static int sourceLocX = 515;
-        public static int sourceLocY = 179;
-        //room1:(515,179) room10:(1,532) room11:(772,353) room12:(1030,530) room13:(0,707) room14:(515,885) room15:(0,0)
+        public static int sourceLocY = 177;
+        //room1:(515,177) room10:(1,532) room11:(772,353) room12:(1030,530) room13:(0,707) room14:(515,885) room15:(0,0)
 
         private int delay = 0;
 
@@ -33,9 +33,9 @@ namespace Sprint2
             {
                 if (SwitchRoom)
                 {
-                    sourceLocY--;
+                    sourceLocY++;
                     delay++;
-                    if (delay >= 176)
+                    if (delay >= 177)
                     {
                         SwitchRoom = false;
 
@@ -55,7 +55,7 @@ namespace Sprint2
                 {
                     sourceLocY++;
                     delay++;
-                    if (delay >= 176)
+                    if (delay >= 177)
                     {
                         SwitchRoom = false;
                     }
@@ -73,7 +73,7 @@ namespace Sprint2
                 {
                     sourceLocX--;
                     delay++;
-                    if (delay >= 256)
+                    if (delay >= 257)
                     {
                         SwitchRoom = false;
                     }
@@ -91,7 +91,7 @@ namespace Sprint2
                 {
                     sourceLocX++;
                     delay++;
-                    if (delay >= 256)
+                    if (delay >= 257)
                     {
                         SwitchRoom = false;
                     }
