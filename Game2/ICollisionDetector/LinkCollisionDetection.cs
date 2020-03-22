@@ -10,7 +10,7 @@ namespace Sprint2 {
         //string to determine collision type : up,down,left, right 
         private LinkCollisionHandler linkHandler;
         private List<IEnemy> enemy;
-        private List<Iitem> item;
+        private List<IItem> item;
         private List<INpc> npc;
         private List<KeyValuePair<int, int>> blockLocation;
         private List<KeyValuePair<Vector2,Vector2>> stair;
@@ -124,7 +124,7 @@ namespace Sprint2 {
             {
                 if (item[i] != null)
                 {
-                    Rectangle singleItemRec = item[i].boundingBox;
+                    Rectangle singleItemRec = item[i].BoundingBox;
 
 
                     overlapRec = Rectangle.Intersect(linkRectangle, singleItemRec);
@@ -212,28 +212,28 @@ namespace Sprint2 {
  
                 if (singleDoorDirection.Equals("Up", StringComparison.Ordinal) )
                 {
-                    if (  Link.posY <= roomLeftCornerPosY-45&&! Camera.switchRoom)//(int)singleDoorLocation.Value.Y)
+                    if (  Link.posY <= roomLeftCornerPosY-45&&! Camera.SwitchRoom)//(int)singleDoorLocation.Value.Y)
                     {
                         linkHandler.HandleLinkDoorCollsion(singleDoorDirection);
                     }
                 }
                 else if (singleDoorDirection.Equals("Down", StringComparison.Ordinal))
                 {
-                    if (Link.posY >= roomRightCornerPosY+45&& !Camera.switchRoom)
+                    if (Link.posY >= roomRightCornerPosY+45&& !Camera.SwitchRoom)
                     {
                         linkHandler.HandleLinkDoorCollsion(singleDoorDirection);
                     }
                 }
                 else if (singleDoorDirection.Equals("Left", StringComparison.Ordinal))
                 {
-                    if (Link.posX <= roomLeftCornerPosX -45&& !Camera.switchRoom)
+                    if (Link.posX <= roomLeftCornerPosX -45&& !Camera.SwitchRoom)
                     {
                         linkHandler.HandleLinkDoorCollsion(singleDoorDirection);
                     }
                 }
                 else if (singleDoorDirection.Equals("Right", StringComparison.Ordinal))
                 {
-                    if (Link.posX >= roomRightCornerPosX+45 && !Camera.switchRoom)
+                    if (Link.posX >= roomRightCornerPosX+45 && !Camera.SwitchRoom)
                     {
                         linkHandler.HandleLinkDoorCollsion(singleDoorDirection);
                     }

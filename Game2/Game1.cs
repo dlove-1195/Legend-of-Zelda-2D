@@ -6,13 +6,13 @@ namespace Sprint2
 
     public class Game1 : Game
     {
-        GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
+        private GraphicsDeviceManager graphics;
+        private SpriteBatch spriteBatch;
 
 
         public IEnemy enemy;
         public IPlayer player;
-        public Iitem item;
+        public IItem item;
         public INpc npcs;
 
         private ILevel level;

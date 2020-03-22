@@ -10,7 +10,7 @@ namespace Sprint2
 {
     public class StaticSprite : ISprite
     {
-        public Texture2D Texture;
+        private Texture2D Texture;
         private int width;
         private int height;
 
@@ -19,13 +19,13 @@ namespace Sprint2
 
 
 
-        public StaticSprite(Texture2D texture, int posX, int posY, int sprite_width, int sprite_height)
+        public StaticSprite(Texture2D texture, int posX, int posY, int spriteWidth, int spriteHeight)
         {
             Texture = texture;
             sourceLocX = posX;
             sourceLocY = posY;
-            width = sprite_width;
-            height = sprite_height;
+            width = spriteWidth;
+            height = spriteHeight;
 
         }
         public StaticSprite()
@@ -41,6 +41,10 @@ namespace Sprint2
 
         public void Draw(SpriteBatch spriteBatch, Vector2 vector)
         {
+            if (spriteBatch == null)
+            {
+                throw new ArgumentNullException(nameof(spriteBatch));
+            }
             if (Texture != null)
             {
                 Rectangle sourceRectangle = new Rectangle(sourceLocX, sourceLocY, width, height);

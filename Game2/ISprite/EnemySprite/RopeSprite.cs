@@ -100,18 +100,18 @@ namespace Sprint2
                 
             }
 
-          if (direction.Equals("Left")) {
+          if (direction.Equals("Left", StringComparison.Ordinal)) {
                
                     Rope.posX--;
                    
                 
             }
-            else if (direction.Equals("Right"))
+            else if (direction.Equals("Right", StringComparison.Ordinal))
             { 
                     Rope.posX++;
               
             }
-            else if (direction.Equals("Down"))
+            else if (direction.Equals("Down", StringComparison.Ordinal))
             {
                  
                     Rope.posY++;
@@ -134,6 +134,10 @@ namespace Sprint2
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
+            if (spriteBatch == null)
+            {
+                throw new ArgumentNullException(nameof(spriteBatch));
+            }
             if (Texture != null)
             {
                 Rectangle sourceRectangle = new Rectangle(sourceLocX, sourceLocY, width, height);

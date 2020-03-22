@@ -10,7 +10,7 @@ namespace Sprint2
 {
     public class LinkDamageWalkLeftSprite : ISprite
     {
-        public Texture2D Texture;
+        private Texture2D Texture;
         private int sourceLocX = 589;
         private int sourceLocY = 2;
         private int width = 14;
@@ -111,7 +111,10 @@ namespace Sprint2
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-
+            if (spriteBatch == null)
+            {
+                throw new ArgumentNullException(nameof(spriteBatch));
+            }
             Rectangle sourceRectangle = new Rectangle(sourceLocX, sourceLocY, width, height);
             Rectangle destinationRectangle = new Rectangle(Link.posX, Link.posY, width * 3, height * 3);
 

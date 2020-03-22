@@ -4,39 +4,39 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Sprint2
 {
-    public class Bow : Iitem
+    public class Bow : IItem
     {
-        public int count { get; set; } = 0;
-        public int totalCount { get; set; } = 30;
-        public bool appear { get; set; } = false;
+        public int Count { get; set; } = 0;
+        public int TotalCount { get; set; } = 30;
+        public bool Appear { get; set; } = false;
         private int itemNum = 3;
         private IItemState state;
         private ISprite bowSprite;
         //initial position which closed to Link
-        public int posX { get; set; }
-        public int posY { get; set; }
+        public int PosX { get; set; }
+        public int PosY { get; set; }
 
  
         private int facingDirection;
 
         private int bowWidth = 16;//sprite width
         private int bowHeight = 8;//sprite height
-        public Rectangle boundingBox { get; set; }
+        public Rectangle BoundingBox { get; set; }
         public Bow(int posX, int posY, int direction)
         {
              
             facingDirection = direction;
-            this.posX = posX;
-            this.posY = posY;
+            this.PosX = posX;
+            this.PosY = posY;
 
 
         }
-        public int getItem()
+        public int GetItem()
         {
             return itemNum;
         }
       
-        public void changeSprite(ISprite sprite)
+        public void ChangeSprite(ISprite sprite)
         {
             this.bowSprite = sprite;
         }
@@ -45,7 +45,7 @@ namespace Sprint2
         {
             if (bowSprite != null)
             {
-                boundingBox = new Rectangle(posX, posY, bowWidth * 3, bowHeight * 3);
+                BoundingBox = new Rectangle(PosX, PosY, bowWidth * 3, bowHeight * 3);
 
                 bowSprite.Update();
             }
@@ -65,8 +65,10 @@ namespace Sprint2
                         state = new AppearRightState(this);
                         break;
                     default:
-                        Console.WriteLine("error: no such situation");
-                        break;
+#pragma warning disable CA1303 // Do not pass literals as localized parameters
+                    Console.WriteLine("error: no such situation");
+#pragma warning restore CA1303 // Do not pass literals as localized parameters
+                    break;
                 }
              
 
@@ -77,18 +79,18 @@ namespace Sprint2
         {
             if (bowSprite != null)
             {
-                bowSprite.Draw(spriteBatch, new Vector2(posX, posY));
+                bowSprite.Draw(spriteBatch, new Vector2(PosX, PosY));
             }
             
         }
 
 
-        public void preItem(Game1 myGame)
+        public void PreItem(Game1 myGame)
         {
             //nothing
         }
 
-        public void nextItem(Game1 myGame)
+        public void NextItem(Game1 myGame)
         {
             //nothing
         }

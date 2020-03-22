@@ -15,7 +15,7 @@ namespace Sprint2
         }
         public void Execute()
         {
-            myGame.item.nextItem(myGame); 
+            myGame.item.NextItem(myGame); 
         }
     }
 }

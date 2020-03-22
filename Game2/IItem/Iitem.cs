@@ -7,19 +7,19 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 namespace Sprint2
 {
-    public interface Iitem
+    public interface IItem
     {
-        Rectangle boundingBox { get; set; }
-         int posX { get; set; }
-         int posY { get; set; }
-         int count { get; set; }
-         int totalCount { get; set; }
-        bool appear { get; set; }
+        Rectangle BoundingBox { get; set; }
+         int PosX { get; set; }
+         int PosY { get; set; }
+         int Count { get; set; }
+         int TotalCount { get; set; }
+        bool Appear { get; set; }
 
-        void changeSprite(ISprite sprite);
-        void nextItem(Game1 myGame);
-        void preItem(Game1 myGame);
-        int getItem();
+        void ChangeSprite(ISprite sprite);
+        void NextItem(Game1 myGame);
+        void PreItem(Game1 myGame);
+        int GetItem();
         void Update();
         void Draw(SpriteBatch spriteBatch);
     }

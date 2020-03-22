@@ -8,9 +8,9 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Sprint2
 {
-    class ItemBlueDiamondSprite : ISprite
+    public class ItemBlueDiamondSprite : ISprite
     {
-        public Texture2D Texture;
+        private Texture2D Texture;
         private int sourceLocX = 204;
         private int sourceLocY = 120;
         private int width = 8;
@@ -25,6 +25,10 @@ namespace Sprint2
         
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
+            if (spriteBatch == null)
+            {
+                throw new ArgumentNullException(nameof(spriteBatch));
+            }
             if (Texture != null)
             {
                 Rectangle sourceRectangle = new Rectangle(sourceLocX, sourceLocY, width, height);

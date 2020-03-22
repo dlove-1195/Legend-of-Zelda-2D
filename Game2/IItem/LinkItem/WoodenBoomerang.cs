@@ -8,17 +8,17 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Sprint2
 {
-    public class WoodenBoomerang : Iitem
+    public class WoodenBoomerang : IItem
     {
-        public int count { get; set; } = 0;
-        public int totalCount { get; set; } = 48;
-        public bool appear { get; set; } = false;
+        public int Count { get; set; } = 0;
+        public int TotalCount { get; set; } = 48;
+        public bool Appear { get; set; } = false;
         private int itemNum = 5;
         private IItemState state;
         private ISprite woodenBoomerangSprite;
         //initial position which closed to Link
-        public int posX { get; set; }
-        public int posY { get; set; }
+        public int PosX { get; set; }
+        public int PosY { get; set; }
 
 
         private int delay = 0;
@@ -26,23 +26,23 @@ namespace Sprint2
 
         private int boomerWidth = 9;//sprite width
         private int boomerHeight = 9;//sprite height
-        public Rectangle boundingBox { get; set; }
+        public Rectangle BoundingBox { get; set; }
 
         public WoodenBoomerang(int posX, int posY, int direction)
         {
-            boundingBox = new Rectangle(0, 0, 0, 0);
+            BoundingBox = new Rectangle(0, 0, 0, 0);
             facingDirection = direction;
-            this.posX = posX;
-            this.posY = posY;
+            this.PosX = posX;
+            this.PosY = posY;
 
 
         }
-        public int getItem()
+        public int GetItem()
         {
             return itemNum;
         }
  
-        public void changeSprite(ISprite sprite)
+        public void ChangeSprite(ISprite sprite)
         {
             this.woodenBoomerangSprite = sprite;
         }
@@ -51,7 +51,7 @@ namespace Sprint2
         {
             if (woodenBoomerangSprite != null)
             {
-                boundingBox = new Rectangle(posX, posY, boomerWidth * 3, boomerHeight * 3);
+                BoundingBox = new Rectangle(PosX, PosY, boomerWidth * 3, boomerHeight * 3);
                 woodenBoomerangSprite.Update();
             }
             
@@ -88,17 +88,17 @@ namespace Sprint2
         {
             if (woodenBoomerangSprite != null)
             {
-                woodenBoomerangSprite.Draw(spriteBatch, new Vector2(posX, posY));
+                woodenBoomerangSprite.Draw(spriteBatch, new Vector2(PosX, PosY));
             }
         }
 
 
-        public void preItem(Game1 myGame)
+        public void PreItem(Game1 myGame)
         {
             //nothing
         }
 
-        public void nextItem(Game1 myGame)
+        public void NextItem(Game1 myGame)
         {
             //nothing
         }

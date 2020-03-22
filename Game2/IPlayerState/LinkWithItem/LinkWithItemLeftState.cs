@@ -26,26 +26,26 @@ namespace Sprint2
                 case 0:
                     //arrow
                     link.linkSprite = new LinkStandLeftSprite(textureLink);
-                     Iitem item0 = new Arrow((Link.posX - 20), Link.posY, 2);
-                    Iitem bow = new Bow((Link.posX - 20), Link.posY, 2);
-                    item0.appear = true;
-                    bow.appear =true;
+                     IItem item0 = new Arrow((Link.posX - 20), Link.posY, 2);
+                    IItem bow = new Bow((Link.posX - 20), Link.posY, 2);
+                    item0.Appear = true;
+                    bow.Appear =true;
                     link.items.Add(item0);
                     link.items.Add(bow);
                     break;
                 case 1:
                     //blue candle
                     link.linkSprite = new LinkStandLeftSprite(textureLink);
-                    Iitem item1 = new BlueCandle((Link.posX - 20), Link.posY, 2);
-                    item1.appear = true;
+                    IItem item1 = new BlueCandle((Link.posX - 20), Link.posY, 2);
+                    item1.Appear = true;
                     link.items.Add(item1);
                     break;
                 case 2:
                     //bomb
                     link.linkSprite = new LinkStandLeftSprite(textureLink);
-                    Iitem item2 = new Bomb((Link.posX - 20), Link.posY);
+                    IItem item2 = new Bomb((Link.posX - 20), Link.posY);
                    
-                    item2.appear = true;
+                    item2.Appear = true;
                     link.items.Add(item2);
                     break;
 
@@ -55,17 +55,17 @@ namespace Sprint2
                 case 4:
                     //sword
                     link.linkSprite = new LinkAttackLeftSprite(textureLink);
-                    Iitem item4 = new Sword((Link.posX - 20), Link.posY +17, 2);
+                    IItem item4 = new Sword((Link.posX - 20), Link.posY +17, 2);
                    
-                    item4.appear = true;
+                    item4.Appear = true;
                     link.items.Add(item4);
                     break;
                 case 5:
                     //Boomerang
                     link.linkSprite = new LinkStandLeftSprite(textureLink);
-                    Iitem item5 = new WoodenBoomerang((Link.posX - 20), Link.posY, 2);
+                    IItem item5 = new WoodenBoomerang((Link.posX - 20), Link.posY, 2);
                      
-                    item5.appear = true;
+                    item5.Appear = true;
                     link.items.Add(item5);
                     break;
                 default:

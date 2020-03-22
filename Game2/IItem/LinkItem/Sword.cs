@@ -8,23 +8,23 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Sprint2
 {
-    public class Sword : Iitem
+    public class Sword : IItem
     {
-        public int count { get; set; } = 0;
-        public int totalCount { get; set; } = 100;
-        public bool appear { get; set; } = false;
+        public int Count { get; set; } = 0;
+        public int TotalCount { get; set; } = 100;
+        public bool Appear { get; set; } = false;
 
         private int itemNum = 4;
         private IItemState state;
         private ISprite swordSprite;
         //initial position which closed to Link
-        public int posX { get; set; }
-        public int posY { get; set; }
+        public int PosX { get; set; }
+        public int PosY { get; set; }
 
 
         private int swordWidth = 7;//sprite width
         private int swordHeight = 16;//sprite height
-        public Rectangle boundingBox { get; set; }
+        public Rectangle BoundingBox { get; set; }
 
         private int delay = 0;
         private int facingDirection;
@@ -32,8 +32,8 @@ namespace Sprint2
         {
            
             facingDirection = direction;
-            this.posX = posX;
-            this.posY = posY;
+            this.PosX = posX;
+            this.PosY = posY;
 
 
         }
@@ -43,7 +43,7 @@ namespace Sprint2
         {
             if (swordSprite != null)
             {
-                boundingBox = new Rectangle(posX, posY, swordWidth * 3, swordHeight * 3);
+                BoundingBox = new Rectangle(PosX, PosY, swordWidth * 3, swordHeight * 3);
                 swordSprite.Update();
             }
             
@@ -65,7 +65,9 @@ namespace Sprint2
                         state = new AppearRightState(this);
                         break;
                     default:
+#pragma warning disable CA1303 // Do not pass literals as localized parameters
                         Console.WriteLine("error: no such situation");
+#pragma warning restore CA1303 // Do not pass literals as localized parameters
                         break;
                 }
 
@@ -79,27 +81,27 @@ namespace Sprint2
         {
             if (swordSprite != null)
             {
-                swordSprite.Draw(spriteBatch, new Vector2(posX, posY));
+                swordSprite.Draw(spriteBatch, new Vector2(PosX, PosY));
             }
         }
 
 
-        public void preItem(Game1 myGame)
+        public void PreItem(Game1 myGame)
         {
             //nothing
         }
 
-        public void nextItem(Game1 myGame)
+        public void NextItem(Game1 myGame)
         {
             //nothing
         }
  
-        public void changeSprite(ISprite sprite)
+        public void ChangeSprite(ISprite sprite)
         {
             this.swordSprite = sprite;
         }
 
-        public int getItem()
+        public int GetItem()
         {
             return itemNum;
         }

@@ -10,7 +10,7 @@ namespace Sprint2
     public class AppearUpState : IItemState
     {
 
-        private Iitem linkItem;
+        private IItem linkItem;
 
         private Texture2D texture = Texture2DStorage.GetItemSpriteSheet();
         private Texture2D textureBow = Texture2DStorage.GetBowSpriteSheet();
@@ -22,42 +22,42 @@ namespace Sprint2
 
 
 
-        public AppearUpState(Iitem item)
+        public AppearUpState(IItem item)
         {
             if (item == null)
             {
                 throw new ArgumentNullException(nameof(item));
             }
             this.linkItem = item;
-            num = item.getItem();
+            num = item.GetItem();
 
             if (num == 0)
             {
-                linkItem.changeSprite(new ArrowUp(texture, linkItem));
+                linkItem.ChangeSprite(new ArrowUp(texture, linkItem));
             }
               if (num == 1)
             {
-                linkItem.changeSprite(new BlueCandleDownLeft(textureBlueCandle));
+                linkItem.ChangeSprite(new BlueCandleDownLeft(textureBlueCandle));
             }
               if (num == 2)
             {
-                linkItem.changeSprite(new BombInitialSprite(texture));
+                linkItem.ChangeSprite(new BombInitialSprite(texture));
             }
              if (num == 3)
             {
-                linkItem.changeSprite(new BowUp(textureBow));
+                linkItem.ChangeSprite(new BowUp(textureBow));
             }
              if (num == 4)
             {
-                linkItem.changeSprite(new WoodenSwordUp(texturesword, linkItem));
+                linkItem.ChangeSprite(new WoodenSwordUp(texturesword, linkItem));
             }
              if (num == 5)
             {
-                linkItem.changeSprite(new WoodBoomerangUp(textureBoomer, linkItem));
+                linkItem.ChangeSprite(new WoodBoomerangUp(textureBoomer, linkItem));
             }
               if (num == 15)
             {
-                linkItem.changeSprite(new ItemFireballMoveUpSprite(textureFire, linkItem));
+                linkItem.ChangeSprite(new ItemFireballMoveUpSprite(textureFire, linkItem));
             }
 
         }

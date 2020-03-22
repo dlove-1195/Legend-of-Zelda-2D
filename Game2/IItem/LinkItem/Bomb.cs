@@ -5,35 +5,35 @@ using Microsoft.Xna.Framework;
 
 namespace Sprint2
 {
-    public class Bomb : Iitem
+    public class Bomb : IItem
     {
-        public int count { get; set; } = 0;
-        public int totalCount { get; set; } = 100;
-        public bool appear { get; set; } = false;
+        public int Count { get; set; } = 0;
+        public int TotalCount { get; set; } = 100;
+        public bool Appear { get; set; } = false;
 
         private int itemNum = 2;
         public IItemState state;
         public ISprite bombSprite;
         private int delay = 0;
         //initial position closed to link
-        public int posX { get; set; }
-        public int posY { get; set; }
+        public int PosX { get; set; }
+        public int PosY { get; set; }
 
 
         private int bombWidth = 8;//sprite width
         private int bombHeight = 14;//sprite height
-        public Rectangle boundingBox { get; set; }
+        public Rectangle BoundingBox { get; set; }
 
         public Bomb(int posX, int posY)
         {
 
             state = new BombAppearUnExplodeState(this);
-            this.posX = posX;
-            this.posY = posY;
+            this.PosX = posX;
+            this.PosY = posY;
         }
 
 
-        public int getItem()
+        public int GetItem()
         {
             return itemNum;
         }
@@ -41,7 +41,7 @@ namespace Sprint2
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            bombSprite.Draw(spriteBatch, new Vector2(posX, posY));
+            bombSprite.Draw(spriteBatch, new Vector2(PosX, PosY));
         }
 
 
@@ -58,7 +58,7 @@ namespace Sprint2
                 bombHeight = 21;
                 //state.ChangeToExplode();
                 state = new BombAppearExplodeState(this);
-                boundingBox = new Rectangle(posX, posY, bombWidth * 3, bombHeight * 3);
+                BoundingBox = new Rectangle(PosX, PosY, bombWidth * 3, bombHeight * 3);
 
             }
            
@@ -66,12 +66,12 @@ namespace Sprint2
 
         }
 
-        public void nextItem(Game1 myGame)
+        public void NextItem(Game1 myGame)
         {
 
         }
 
-        public void preItem(Game1 myGame)
+        public void PreItem(Game1 myGame)
         {
 
         }
@@ -81,7 +81,7 @@ namespace Sprint2
             this.state = state;
         }
 
-        public void changeSprite(ISprite sprite)
+        public void ChangeSprite(ISprite sprite)
         {
             this.bombSprite = sprite;
         }

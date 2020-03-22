@@ -15,8 +15,8 @@ namespace Sprint2
         private int posY = 195;
         private int width = 7;
         private int height = 16;
-        private Iitem sword;
-        public WoodenSwordDown(Texture2D texture, Iitem sword)
+        private IItem sword;
+        public WoodenSwordDown(Texture2D texture, IItem sword)
         {
             Texture = texture;
             this.sword = sword;
@@ -24,7 +24,7 @@ namespace Sprint2
       
         public void Update()
         {
-             sword.posY += 7;
+             sword.PosY += 7;
             
 
             
@@ -32,9 +32,13 @@ namespace Sprint2
 
         public void Draw(SpriteBatch spriteBatch, Vector2 vector)
         {
-            if(Texture != null){
+            if (spriteBatch == null)
+            {
+                throw new ArgumentNullException(nameof(spriteBatch));
+            }
+            if (Texture != null){
                 Rectangle sourceRectangle = new Rectangle(posX, posY, width, height);     
-                Rectangle destinationRectangle = new Rectangle(sword.posX, sword.posY, width * 3, height * 3);    // determine location and demension of the current frame
+                Rectangle destinationRectangle = new Rectangle(sword.PosX, sword.PosY, width * 3, height * 3);    // determine location and demension of the current frame
                  
                 spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
                 

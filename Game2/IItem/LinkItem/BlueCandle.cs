@@ -8,18 +8,18 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Sprint2
 {
-    public class BlueCandle : Iitem
+    public class BlueCandle : IItem
     {
-        public int count { get; set; } = 0;
-        public int totalCount { get; set; } = 100;
-        public bool appear { get; set; } = false;
+        public int Count { get; set; } = 0;
+        public int TotalCount { get; set; } = 100;
+        public bool Appear { get; set; } = false;
 
         private int itemNum = 1;
         private IItemState state;
         private ISprite blueCandleSprite;
         //initial position which closed to Link
-        public int posX { get; set; }
-        public int posY { get; set; }
+        public int PosX { get; set; }
+        public int PosY { get; set; }
 
 
         
@@ -27,15 +27,15 @@ namespace Sprint2
 
         private int bluecandleWidth = 8;//sprite width
         private int bluecandleHeight = 16;//sprite height
-        public Rectangle boundingBox { get; set; }
+        public Rectangle BoundingBox { get; set; }
 
         public BlueCandle(int posX, int posY, int direction)
         {
             
 
             facingDirection = direction;
-            this.posX = posX;
-            this.posY = posY;
+            this.PosX = posX;
+            this.PosY = posY;
 
             switch (facingDirection)
             {
@@ -61,12 +61,12 @@ namespace Sprint2
 
 
         }
-        public int getItem()
+        public int GetItem()
         {
             return itemNum;
         }
        
-        public void changeSprite(ISprite sprite)
+        public void ChangeSprite(ISprite sprite)
         {
             this.blueCandleSprite = sprite;
         }
@@ -75,7 +75,7 @@ namespace Sprint2
         public void Update()
         {
           
-                boundingBox = new Rectangle(posX, posY, bluecandleWidth * 3, bluecandleHeight * 3);
+                BoundingBox = new Rectangle(PosX, PosY, bluecandleWidth * 3, bluecandleHeight * 3);
                 blueCandleSprite.Update();
          
            
@@ -85,17 +85,17 @@ namespace Sprint2
         public void Draw(SpriteBatch spriteBatch)
         {
            
-                blueCandleSprite.Draw(spriteBatch, new Vector2(posX, posY));
+                blueCandleSprite.Draw(spriteBatch, new Vector2(PosX, PosY));
            
         }
 
 
-        public void preItem(Game1 myGame)
+        public void PreItem(Game1 myGame)
         {
             //nothing
         }
 
-        public void nextItem(Game1 myGame)
+        public void NextItem(Game1 myGame)
         {
             //nothing
         }

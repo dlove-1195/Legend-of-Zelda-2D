@@ -94,6 +94,10 @@ namespace Sprint2
 
         public void Draw(SpriteBatch spriteBatch, Vector2 vector)
         {
+            if (spriteBatch == null)
+            {
+                throw new ArgumentNullException(nameof(spriteBatch));
+            }
             if (Texture != null)
             {
                 Rectangle sourceRectangle = new Rectangle(sourceLocX, sourceLocY, width, height);

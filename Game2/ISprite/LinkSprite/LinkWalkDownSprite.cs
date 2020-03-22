@@ -5,7 +5,7 @@ namespace Sprint2
 {
     public class LinkWalkDownSprite : ISprite
     {
-        public Texture2D Texture;
+        private Texture2D Texture;
         private int width = 15;
         private int height = 16;
         private int sourceLocX = 0;
@@ -50,6 +50,10 @@ namespace Sprint2
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
+            if (spriteBatch == null)
+            {
+                throw new System.ArgumentNullException(nameof(spriteBatch));
+            }
             Rectangle sourceRectangle = new Rectangle(sourceLocX, sourceLocY, width, height);
             Rectangle destinationRectangle = new Rectangle(Link.posX,Link.posY , width*3 , height*3 );
              

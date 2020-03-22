@@ -7,7 +7,7 @@ namespace Sprint2
     {
         private Texture2D Texture = Texture2DStorage.GetDungeonSpriteSheet();
         public string direction { get; set; }
-        public static bool switchRoom { get; set; }
+        public static bool SwitchRoom { get; set; }
         
         //room15 is smaller (257,160)
         //other rooms (257,178)
@@ -31,15 +31,15 @@ namespace Sprint2
             {
                 // do nothing
             }
-            else if (direction.Equals("Up"))
+            else if (direction.Equals("Up", System.StringComparison.Ordinal))
             {
-                if (switchRoom)
+                if (SwitchRoom)
                 {
                     sourceLocY--;
                     delay++;
                     if (delay >= 176)
                     {
-                        switchRoom = false;
+                        SwitchRoom = false;
 
                     }
 
@@ -50,16 +50,16 @@ namespace Sprint2
                     direction = "";
                 }
             }
-            else if (direction.Equals("Down"))
+            else if (direction.Equals("Down", System.StringComparison.Ordinal))
             {
 
-                if (switchRoom)
+                if (SwitchRoom)
                 {
                     sourceLocY++;
                     delay++;
                     if (delay >= 176)
                     {
-                        switchRoom = false;
+                        SwitchRoom = false;
                     }
 
                 }
@@ -69,15 +69,15 @@ namespace Sprint2
                     direction = "";
                 }
             }
-            else if (direction.Equals("Left"))
+            else if (direction.Equals("Left", System.StringComparison.Ordinal))
             {
-                if (switchRoom)
+                if (SwitchRoom)
                 {
                     sourceLocX--;
                     delay++;
                     if (delay >= 256)
                     {
-                        switchRoom = false;
+                        SwitchRoom = false;
                     }
 
                 }
@@ -89,13 +89,13 @@ namespace Sprint2
             }
             else if (direction.Equals("Right"))
             {
-                if (switchRoom)
+                if (SwitchRoom)
                 {
                     sourceLocX++;
                     delay++;
                     if (delay >= 256)
                     {
-                        switchRoom = false;
+                        SwitchRoom = false;
                     }
 
                 }
@@ -112,6 +112,10 @@ namespace Sprint2
 
         public void Draw(SpriteBatch spriteBatch)
         {
+            if (spriteBatch == null)
+            {
+                throw new System.ArgumentNullException(nameof(spriteBatch));
+            }
             if (Texture != null)
             {
                 Rectangle sourceRectangle = new Rectangle(sourceLocX, sourceLocY, width, height);

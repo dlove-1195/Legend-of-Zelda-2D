@@ -11,7 +11,7 @@ namespace Sprint2
     public class AppearRightState: IItemState
     {
        
-            private Iitem linkItem;
+            private IItem linkItem;
 
         private Texture2D texture = Texture2DStorage.GetItemSpriteSheet();
         private Texture2D textureBow = Texture2DStorage.GetBowSpriteSheet();
@@ -23,42 +23,42 @@ namespace Sprint2
 
 
 
-            public AppearRightState(Iitem item)
+            public AppearRightState(IItem item)
             {
             if (item == null)
             {
                 throw new ArgumentNullException(nameof(item));
             }
             this.linkItem = item;
-                num = item.getItem();
+                num = item.GetItem();
               
                 if (num == 0)
                 {
-                linkItem.changeSprite(new ArrowRight(texture, linkItem));
+                linkItem.ChangeSprite(new ArrowRight(texture, linkItem));
                 }
                if (num == 1)
                 {
-                linkItem.changeSprite(new BlueCandleUpRight(textureBlueCandle));
+                linkItem.ChangeSprite(new BlueCandleUpRight(textureBlueCandle));
                 }
                   if (num == 2)
                 {
-                linkItem.changeSprite(new BombInitialSprite(texture));
+                linkItem.ChangeSprite(new BombInitialSprite(texture));
                 }
                  if (num == 3)
                 {
-                linkItem.changeSprite(new BowRight(textureBow));
+                linkItem.ChangeSprite(new BowRight(textureBow));
                 }
                if (num == 4)
                 {
-                linkItem.changeSprite(new WoodenSwordRight(texturesword, linkItem));
+                linkItem.ChangeSprite(new WoodenSwordRight(texturesword, linkItem));
                 }
                if (num == 5)
                 {
-                linkItem.changeSprite(new WoodBoomerangRight(textureBoomer, linkItem));
+                linkItem.ChangeSprite(new WoodBoomerangRight(textureBoomer, linkItem));
                 }
            if (num == 15)
             {
-                linkItem.changeSprite(new ItemFireballMoveRightSprite(textureFire, linkItem));
+                linkItem.ChangeSprite(new ItemFireballMoveRightSprite(textureFire, linkItem));
             }
         }
           

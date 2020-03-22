@@ -11,9 +11,9 @@ namespace Sprint2
         private int posY = 0;
         private int width = 5;
         private int height = 16;
-        private Iitem arrow;
+        private IItem arrow;
 
-        public ArrowDown(Texture2D texture, Iitem arrow)
+        public ArrowDown(Texture2D texture, IItem arrow)
         {
             Texture = texture;
             this.arrow = arrow;
@@ -23,7 +23,7 @@ namespace Sprint2
 
         public void Update()
         {
-            arrow.posY+=4;
+            arrow.PosY+=4;
  
         }
 
@@ -36,7 +36,7 @@ namespace Sprint2
             if (Texture != null)
             {
                 Rectangle sourceRectangle = new Rectangle(posX, posY, width, height);
-                Rectangle destinationRectangle = new Rectangle( arrow.posX,arrow.posY, width * 3, height * 3);   
+                Rectangle destinationRectangle = new Rectangle( arrow.PosX,arrow.PosY, width * 3, height * 3);   
 
                 
                 spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);

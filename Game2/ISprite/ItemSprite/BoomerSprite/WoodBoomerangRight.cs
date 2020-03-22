@@ -14,9 +14,9 @@ namespace Sprint2
          
         private int boom = 0;
         private int totalBoom = 24;
-        private Iitem boomerang;
+        private IItem boomerang;
 
-        public WoodBoomerangRight(Texture2D texture, Iitem boomerang)
+        public WoodBoomerangRight(Texture2D texture, IItem boomerang)
         {
             Texture = texture;
 
@@ -40,7 +40,7 @@ namespace Sprint2
                 posY = 5;
                 width = 9;
                 height = 9;
-                boomerang.posX += 12;
+                boomerang.PosX += 12;
             }
             else if (boom == 4 * 2) //7
             {
@@ -48,7 +48,7 @@ namespace Sprint2
                 posY = 5;
                 width = 8;
                 height = 5;
-                boomerang.posX += 12;
+                boomerang.PosX += 12;
             }
             else if (boom == 6 * 2) //8
             {
@@ -56,7 +56,7 @@ namespace Sprint2
                 posY = 5;
                 width = 9;
                 height = 9;
-                boomerang.posX += 12;
+                boomerang.PosX += 12;
             }
             else if (boom == 8 * 2) //1
             {
@@ -64,7 +64,7 @@ namespace Sprint2
                 posY = 3;
                 width = 5;
                 height = 8;
-                boomerang.posX += 12;
+                boomerang.PosX += 12;
             }
             else if (boom == 10 * 2) //2
             {
@@ -72,7 +72,7 @@ namespace Sprint2
                 posY = 6;
                 width = 9;
                 height = 9;
-                boomerang.posX += 12;
+                boomerang.PosX += 12;
             }
             else if (boom == 12 * 2) //3
             {
@@ -80,7 +80,7 @@ namespace Sprint2
                 posY = 4;
                 width = 8;
                 height = 5;
-                boomerang.posX += 12;
+                boomerang.PosX += 12;
             }
             else if (boom == 14 * 2) //4
             {
@@ -88,7 +88,7 @@ namespace Sprint2
                 posY = 6;
                 width = 9;
                 height = 9;
-                boomerang.posX -= 12;
+                boomerang.PosX -= 12;
             }
             else if (boom == 16 * 2) //5
             {
@@ -96,7 +96,7 @@ namespace Sprint2
                 posY = 3;
                 width = 5;
                 height = 8;
-                boomerang.posX -= 12;
+                boomerang.PosX -= 12;
             }
             else if (boom == 18 * 2) //6
             {
@@ -104,7 +104,7 @@ namespace Sprint2
                 posY = 5;
                 width = 9;
                 height = 9;
-                boomerang.posX -= 12;
+                boomerang.PosX -= 12;
                 
             }
             else if (boom == 20 * 2) //7
@@ -113,7 +113,7 @@ namespace Sprint2
                 posY = 5;
                 width = 8;
                 height = 5;
-                boomerang.posX -= 12;
+                boomerang.PosX -= 12;
             }
             else if (boom == 22 * 2) //8
             {
@@ -121,7 +121,7 @@ namespace Sprint2
                 posY = 5;
                 width = 9;
                 height = 9;
-                boomerang.posX -= 12;
+                boomerang.PosX -= 12;
             }
 
             else if (boom == totalBoom * 2) //1 return boom
@@ -137,10 +137,14 @@ namespace Sprint2
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 vector)
         {
+            if (spriteBatch == null)
+            {
+                throw new System.ArgumentNullException(nameof(spriteBatch));
+            }
             if (Texture != null)
             {
                 Rectangle sourceRectangle = new Rectangle(posX, posY, width, height);
-                Rectangle destinationRectangle = new Rectangle( boomerang.posX,boomerang.posY, width * 4, height * 4);     
+                Rectangle destinationRectangle = new Rectangle( boomerang.PosX,boomerang.PosY, width * 4, height * 4);     
                      
                 spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
                 

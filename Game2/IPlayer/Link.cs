@@ -11,7 +11,7 @@ namespace Sprint2
         public IPlayerstate state;
         public ISprite linkSprite;
      
-        public List<Iitem> items = new List<Iitem>();
+        public List<IItem> items = new List<IItem>();
 
         private int direction ;
          
@@ -116,7 +116,7 @@ namespace Sprint2
         {
             boundingBox = new Rectangle(posX, posY, linkWidth * 3, linkHeight * 3);
             linkSprite.Update();
-            foreach (Iitem item in items)
+            foreach (IItem item in items)
             {
                 item.Update();
             }
@@ -140,7 +140,7 @@ namespace Sprint2
         {
              
             linkSprite.Draw(spriteBatch, new Vector2(posX, posY));
-            foreach (Iitem item in items)
+            foreach (IItem item in items)
             {
                 item.Draw(spriteBatch);
             }
@@ -168,9 +168,9 @@ namespace Sprint2
             //add those items' current rectangle in a list and use in the collision detection class
             List<Rectangle> weaponRec = new List<Rectangle>();
 
-            foreach (Iitem item in items)
+            foreach (IItem item in items)
             {
-                weaponRec.Add(item.boundingBox);
+                weaponRec.Add(item.BoundingBox);
             }
            
             return weaponRec;
@@ -178,19 +178,19 @@ namespace Sprint2
 
         public void manageLinkItem()
         {
-            foreach (Iitem item in items)
+            foreach (IItem item in items)
             {
-                item.count++;
-                if(item.count >= item.totalCount)
+                item.Count++;
+                if(item.Count >= item.TotalCount)
                 {
-                    item.appear = false;
-                    item.count = 0;
+                    item.Appear = false;
+                    item.Count = 0;
                     
                 }
             }
             for(int i=0; i<items.Count; i++)
             {
-                if (!items[i].appear)
+                if (!items[i].Appear)
                 {
                     items.RemoveAt(i);
                 }

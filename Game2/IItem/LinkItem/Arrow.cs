@@ -4,17 +4,17 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Sprint2
 {
-    public class Arrow : Iitem
+    public class Arrow : IItem
     {
-        public int count { get; set; } = 0;
-        public int totalCount { get; set; } = 100;
-        public bool appear { get; set; } = false;
+        public int Count { get; set; } = 0;
+        public int TotalCount { get; set; } = 100;
+        public bool Appear { get; set; } = false;
         private int itemNum = 0;
         private IItemState state;
         private ISprite arrowSprite;
         //initial position which closed to Link
-        public int posX { get; set; }
-        public int posY { get; set; }
+        public int PosX { get; set; }
+        public int PosY { get; set; }
 
 
         private int delay = 0;
@@ -22,7 +22,7 @@ namespace Sprint2
 
         private int arrowWidth = 5;//sprite width
         private int arrowHeight = 16;//sprite height
-        public Rectangle boundingBox { get; set; }
+        public Rectangle BoundingBox { get; set; }
 
         
         public Arrow(int posX, int posY, int direction)
@@ -30,16 +30,16 @@ namespace Sprint2
             
             facingDirection = direction;
     
-                this.posX = posX;
-                this.posY = posY;
+                this.PosX = posX;
+                this.PosY = posY;
  
         }
-        public int getItem()
+        public int GetItem()
         {
             return itemNum;
         }
       
-        public void changeSprite(ISprite sprite)
+        public void ChangeSprite(ISprite sprite)
         {
             this.arrowSprite = sprite;
         }
@@ -77,7 +77,7 @@ namespace Sprint2
 
             if (arrowSprite != null)
             {
-                boundingBox = new Rectangle(posX, posY, arrowWidth * 3, arrowHeight * 3);
+                BoundingBox = new Rectangle(PosX, PosY, arrowWidth * 3, arrowHeight * 3);
                 arrowSprite.Update();
             }
           }
@@ -87,18 +87,18 @@ namespace Sprint2
         {
             if (arrowSprite != null)
             {
-                arrowSprite.Draw(spriteBatch, new Vector2(posX, posY));
+                arrowSprite.Draw(spriteBatch, new Vector2(PosX, PosY));
                  
             } 
         }
 
 
-        public void preItem(Game1 myGame)
+        public void PreItem(Game1 myGame)
         {
             //nothing
         }
 
-        public void nextItem(Game1 myGame)
+        public void NextItem(Game1 myGame)
         {
             //nothing
         }

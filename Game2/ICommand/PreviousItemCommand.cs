@@ -15,7 +15,7 @@ namespace Sprint2
         }
         public void Execute()
         {
-            myGame.item.preItem(myGame); 
+            myGame.item.PreItem(myGame); 
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Sprint2
 {
     public class AppearLeftState:IItemState
     {
-        private Iitem linkItem;
+        private IItem linkItem;
         private Texture2D texture = Texture2DStorage.GetItemSpriteSheet();
         private Texture2D textureBow = Texture2DStorage.GetBowSpriteSheet();
         private Texture2D textureBoomer = Texture2DStorage.GetWoodBoomerangSpriteSheet();
@@ -20,43 +20,43 @@ namespace Sprint2
 
 
 
-        public AppearLeftState(Iitem item)
+        public AppearLeftState(IItem item)
         {
             if (item == null)
             {
                 throw new ArgumentNullException(nameof(item));
             }
             this.linkItem = item;
-            num = item.getItem();
+            num = item.GetItem();
            
             if (num == 0)
             {
-                linkItem.changeSprite(new ArrowLeft(texture, linkItem));
+                linkItem.ChangeSprite(new ArrowLeft(texture, linkItem));
             }
              if (num == 1)
             {
-                linkItem.changeSprite(new BlueCandleDownLeft(textureBlueCandle));
+                linkItem.ChangeSprite(new BlueCandleDownLeft(textureBlueCandle));
             }
               if (num == 2)
             {
-                linkItem.changeSprite(new BombInitialSprite(texture));
+                linkItem.ChangeSprite(new BombInitialSprite(texture));
             }
               if (num == 3)
             {
                 
-                linkItem.changeSprite(new BowLeft(textureBow));
+                linkItem.ChangeSprite(new BowLeft(textureBow));
             }
              if (num == 4)
             {
-                linkItem.changeSprite(new WoodenSwordLeft(texturesword, linkItem));
+                linkItem.ChangeSprite(new WoodenSwordLeft(texturesword, linkItem));
             }
             if (num == 5)
             {
-                linkItem.changeSprite(new WoodBoomerangLeft(textureBoomer, linkItem));
+                linkItem.ChangeSprite(new WoodBoomerangLeft(textureBoomer, linkItem));
             }
              if (num == 15)
             {
-                linkItem.changeSprite(new ItemFireballMoveLeftSprite(textureFire, linkItem));
+                linkItem.ChangeSprite(new ItemFireballMoveLeftSprite(textureFire, linkItem));
             }
         }
        

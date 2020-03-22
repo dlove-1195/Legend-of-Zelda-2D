@@ -8,11 +8,11 @@ using Microsoft.Xna.Framework;
 
 namespace Sprint2
 {
-    public class Fairy : Iitem
+    public class Fairy : IItem
     {
-        public int count { get; set; } = 0;
-        public int totalCount { get; set; } = 100;
-        public bool appear { get; set; } = false;
+        public int Count { get; set; } = 0;
+        public int TotalCount { get; set; } = 100;
+        public bool Appear { get; set; } = false;
         private int p = 9;
         //Sprite class parameter
         private Texture2D texture = Texture2DStorage.GetItemSpriteSheet();
@@ -23,17 +23,17 @@ namespace Sprint2
 
         //Sprite Object
         private ISprite fairySprite;
-        public Rectangle boundingBox { get; set; }
+        public Rectangle BoundingBox { get; set; }
 
         //initial position on the ground
-        public int posX { get; set; }
-        public int posY { get; set; }
+        public int PosX { get; set; }
+        public int PosY { get; set; }
 
 
         public Fairy(Vector2 vector)
         {
-            posX = (int)vector.X;
-            posY = (int)vector.Y;
+            PosX = (int)vector.X;
+            PosY = (int)vector.Y;
             fairySprite = new StaticSprite(texture, sourceLocX, sourceLocY, width, height);
 
         }
@@ -41,17 +41,17 @@ namespace Sprint2
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            fairySprite.Draw(spriteBatch, new Vector2(posX, posY));
+            fairySprite.Draw(spriteBatch, new Vector2(PosX, PosY));
         }
 
         public void Update()
         {
 
-            boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
+            BoundingBox = new Rectangle(PosX, PosY, width * 3, height * 3);
 
             fairySprite.Update();
         }
-        public int getItem()
+        public int GetItem()
         {
             return p;
         }
@@ -60,18 +60,18 @@ namespace Sprint2
             //do nothing
         }
 
-        public void changeSprite(ISprite sprite)
+        public void ChangeSprite(ISprite sprite)
         {
             //do nothing
         }
-        public void nextItem(Game1 myGame)
+        public void NextItem(Game1 myGame)
         {
 
 
           //  myGame.item = new Heart();
         }
 
-        public void preItem(Game1 myGame)
+        public void PreItem(Game1 myGame)
         {
 
             //myGame.item = new Compass();

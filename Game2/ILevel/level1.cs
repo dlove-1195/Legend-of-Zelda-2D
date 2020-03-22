@@ -15,8 +15,10 @@ namespace Sprint2
         public Level1()
         {
             room = new Room("room1.xml");
-            camera = new Camera();
-            camera.direction = "";
+            camera = new Camera
+            {
+                direction = ""
+            };
         }
 
         //switch room and camera 
@@ -28,7 +30,7 @@ namespace Sprint2
             if (roomNum != 0)
             {
                 camera.direction = direction;
-                Camera.switchRoom = true;
+                Camera.SwitchRoom = true;
                 load = true;
                 room = new Room(); 
                 Link.posX = 3000;
@@ -88,7 +90,7 @@ namespace Sprint2
             return num;
         }
 
-        private void setLinkPosInNewRoom(string diretion)
+        private void SetLinkPosInNewRoom(String direction)
         {
             switch (direction)
             {
@@ -117,11 +119,11 @@ namespace Sprint2
         }
         public void Update()
         {
-           if(load && !Camera.switchRoom)
+           if(load && !Camera.SwitchRoom)
             {
                 load = false;
                 room = new Room("room" + roomNum + ".xml");
-                setLinkPosInNewRoom(direction);
+                SetLinkPosInNewRoom(direction);
                 
             }
             camera.Update();

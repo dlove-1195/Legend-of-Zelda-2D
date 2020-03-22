@@ -15,16 +15,16 @@ namespace Sprint2
         private int height;
         private int sourceLocX;
         private int sourceLocY;
-        int delay = 0;
-        int totalDelay =30;
-        private int originalX;
+        private int delay = 0;
+        //private int totalDelay =30;
+       private int originalX;
 
         private IEnemy WallMaster;
 
         public WallMaterMoveRightSprite(Texture2D texture, IEnemy WallMaster)
         {
             Texture = texture;
-            this.WallMaster = WallMaster;
+            this.WallMaster = WallMaster ?? throw new ArgumentNullException(nameof(WallMaster));
             originalX = WallMaster.posX;
         }
 
@@ -80,6 +80,10 @@ namespace Sprint2
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
+            if (spriteBatch == null)
+            {
+                throw new ArgumentNullException(nameof(spriteBatch));
+            }
             if (Texture != null)
             {
                 Rectangle sourceRectangle = new Rectangle(sourceLocX, sourceLocY, width, height);

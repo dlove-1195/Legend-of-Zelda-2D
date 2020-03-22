@@ -12,7 +12,7 @@ namespace Sprint2
         public ISprite DragonSprite;
         private int updateDelay = 0;
         private int totalDelay = 100;
-        public Iitem fire;
+        public IItem fire;
         public static Boolean hasFire = false;
         private int fireTimer = 0;
 
@@ -122,7 +122,9 @@ namespace Sprint2
                         height = 30;
                         break;
                     default:
+#pragma warning disable CA1303 // Do not pass literals as localized parameters
                         Console.WriteLine("error: no such situation");
+#pragma warning restore CA1303 // Do not pass literals as localized parameters
                         break;
                 }
 
@@ -146,7 +148,7 @@ namespace Sprint2
             if (fire != null)
             {
 
-                projectileRec.Add(fire.boundingBox);
+                projectileRec.Add(fire.BoundingBox);
 
             }
 

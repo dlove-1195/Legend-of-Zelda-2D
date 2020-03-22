@@ -15,11 +15,11 @@ namespace Sprint2
         private int sourceLocY = 3;
         private int width = 8;
         private int height = 10;
-        private Iitem fire;
+        private IItem fire;
          
 
 
-        public ItemFireballMoveDownSprite(Texture2D texture, Iitem fire)
+        public ItemFireballMoveDownSprite(Texture2D texture, IItem fire)
         {
             Texture = texture;
             this.fire = fire;
@@ -29,14 +29,14 @@ namespace Sprint2
 
         public void Update()
         {
-               fire.posY+=3;
+               fire.PosY+=3;
         }
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
             if (Texture != null)
             {
                 Rectangle sourceRectangle = new Rectangle(sourceLocX, sourceLocY, width, height);
-                Rectangle destinationRectangle = new Rectangle( fire.posX, fire.posY, width * 3, height * 3);
+                Rectangle destinationRectangle = new Rectangle( fire.PosX, fire.PosY, width * 3, height * 3);
              
 
                 spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);

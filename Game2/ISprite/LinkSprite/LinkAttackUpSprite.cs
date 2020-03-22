@@ -76,6 +76,10 @@ namespace Sprint2
 
         public void Draw(SpriteBatch spriteBatch, Vector2 vector)
         {
+            if (spriteBatch == null)
+            {
+                throw new ArgumentNullException(nameof(spriteBatch));
+            }
             Rectangle sourceRectangle = new Rectangle(posX, posY, width, height);     // determine which frame
             Rectangle destinationRectangle = new Rectangle((int)vector.X, (int)vector.Y, width * 3, height * 3);    // determine location and demension of the current frame
 

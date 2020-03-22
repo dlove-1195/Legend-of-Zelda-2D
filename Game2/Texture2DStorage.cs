@@ -32,7 +32,10 @@ namespace Sprint2
 		//initialize the Texture2D fields
 		public static void LoadAllTextures(ContentManager content)
 			{
-
+			if (content == null)
+			{
+				throw new System.ArgumentNullException(nameof(content));
+			}
 			linkSpriteSheet = content.Load<Texture2D>("link");
 			enemySpriteSheet = content.Load<Texture2D>("enemy");
 			itemSpriteSheet = content.Load<Texture2D>("item");

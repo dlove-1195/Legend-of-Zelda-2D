@@ -25,7 +25,7 @@ namespace Sprint2
         public int downRoomNum { get; set; } = 0;
         public List<IEnemy> enemies { get; set; }
 #pragma warning disable CA2227 // Collection properties should be read only
-        public List<Iitem> pickUpItems { get; set; }
+        public List<IItem> pickUpItems { get; set; }
 #pragma warning restore CA2227 // Collection properties should be read only
         public List<INpc> npcs { get; set; }
 
@@ -40,7 +40,7 @@ namespace Sprint2
             int windowWidth = Game1.WindowWidth;
             int windowHeight = Game1.WindowHeight;
             enemies = new List<IEnemy>();
-            pickUpItems = new List<Iitem>();
+            pickUpItems = new List<IItem>();
             blockLocation = new List<KeyValuePair<int, int>>();
             doorDirection = new List<string>();
             stair = new List<KeyValuePair<Vector2, Vector2>>();
@@ -55,7 +55,7 @@ namespace Sprint2
             int windowWidth = Game1.WindowWidth;
             int windowHeight = Game1.WindowHeight;
             enemies = new List<IEnemy>();
-            pickUpItems = new List<Iitem>();
+            pickUpItems = new List<IItem>();
             blockLocation = new List<KeyValuePair<int, int>>();
             doorDirection = new List<string>();
             stair = new List<KeyValuePair<Vector2, Vector2>>();
@@ -214,8 +214,8 @@ namespace Sprint2
                 }
                 else if (type == "Stair")
                 {
-                    int destPosX = Int32.Parse(node.ChildNodes[4].InnerText);
-                    int destPosY = Int32.Parse(node.ChildNodes[5].InnerText);
+                    int destPosX = int.Parse(node.ChildNodes[4].InnerText);
+                    int destPosY = int.Parse(node.ChildNodes[5].InnerText);
 
                     Vector2 stairPos = vector;
                     Vector2 stairDestPos = new Vector2(destPosX, destPosY);
@@ -259,7 +259,7 @@ namespace Sprint2
                     enemy.Update();
 
             }
-            foreach (Iitem item in pickUpItems)
+            foreach (IItem item in pickUpItems)
             {
                 if (item != null)
                     item.Update();
@@ -281,7 +281,7 @@ namespace Sprint2
 
 
             }
-            foreach (Iitem item in pickUpItems)
+            foreach (IItem item in pickUpItems)
             {
                 if (item != null)
                     item.Draw(spriteBatch);
