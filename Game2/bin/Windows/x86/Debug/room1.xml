@@ -29,8 +29,8 @@
   <Item>
     <ObjectType>Enemy</ObjectType>
     <ObjectName>WallMaster</ObjectName>
-    <posX>63</posX>
-    <posY>28</posY>
+    <posX>50</posX>
+    <posY>35</posY>
   </Item>
   <Item>
     <ObjectType>Enemy</ObjectType>

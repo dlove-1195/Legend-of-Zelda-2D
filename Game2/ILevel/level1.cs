@@ -24,7 +24,7 @@ namespace Sprint2
         //switch room and camera 
         public void switchRoom(string direction)
         {
-           int roomNum= getNextRoomNum(direction);
+            int roomNum= getNextRoomNum(direction);
             this.roomNum = roomNum;
             this.direction = direction;
             if (roomNum != 0)

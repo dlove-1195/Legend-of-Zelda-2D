@@ -9,8 +9,6 @@ namespace Sprint2
         public string direction { get; set; }
         public static bool SwitchRoom { get; set; }
         
-        //room15 is smaller (257,160)
-        //other rooms (257,178)
         public static int width = 257;
         public static int height = 178;
         public  static int sourceLocX = 515;
