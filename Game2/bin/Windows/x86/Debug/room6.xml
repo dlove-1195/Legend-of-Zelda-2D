@@ -3,9 +3,27 @@
   <Asset Type="MyDataTypes.LevelObjectData[]">
     <Item>
       <ObjectType>Room</ObjectType>
-      <ObjectName>Room3</ObjectName>
-      <width>255</width>
-      <height>176</height>
+      <ObjectName>Room</ObjectName>
+      <posX>13</posX>
+      <posY>19</posY>
+    </Item>
+    <Item>
+      <ObjectType>Room</ObjectType>
+      <ObjectName>Up</ObjectName>
+      <UpRoom>5</UpRoom>
+      <UpRoom>5</UpRoom>
+    </Item>
+    <Item>
+      <ObjectType>Room</ObjectType>
+      <ObjectName>Left</ObjectName>
+      <LeftRoom>10</LeftRoom>
+      <LeftRoom>10</LeftRoom>
+    </Item>
+    <Item>
+      <ObjectType>Room</ObjectType>
+      <ObjectName>Right</ObjectName>
+      <RightRoom>8</RightRoom>
+      <RightRoom>8</RightRoom>
     </Item>
     <!--  player  -->
     <!--no need-->
@@ -14,28 +32,34 @@
     <!--Insert all wanted items here-->>
     <Item>
       <ObjectType>Enemy</ObjectType>
-      <ObjectName>Rope</ObjectName>
-      <posX>33</posX>
-      <posY>165</posY>
+      <ObjectName>Dragon</ObjectName>
+      <posX>38</posX>
+      <posY>28</posY>
     </Item>
     <Item>
       <ObjectType>Enemy</ObjectType>
-      <ObjectName>Rope</ObjectName>
-      <posX>33</posX>
-      <posY>165</posY>
+      <ObjectName>Keese</ObjectName>
+      <posX>32</posX>
+      <posY>60</posY>
     </Item>
     <Item>
-      <ObjectType>Enemy</ObjectType>
-      <ObjectName>Rope</ObjectName>
-      <posX>33</posX>
-      <posY>165</posY>
-    </Item>
-    <Item>
-      <ObjectType>Item</ObjectType>
-      <ObjectName>Heart</ObjectName>
-      <posX>33</posX>
-      <posY>165</posY>
+      <ObjectType>Door</ObjectType>
+      <ObjectName>Up</ObjectName>
+      <posX>47</posX>
+      <posY>19</posY>
     </Item>
 
+    <Item>
+      <ObjectType>Door</ObjectType>
+      <ObjectName>Left</ObjectName>
+      <posX>13</posX>
+      <posY>46</posY>
+    </Item>
+    <Item>
+      <ObjectType>Door</ObjectType>
+      <ObjectName>Right</ObjectName>
+      <posX>88</posX>
+      <posY>46</posY>
+    </Item>
   </Asset>
 </XnaContent>

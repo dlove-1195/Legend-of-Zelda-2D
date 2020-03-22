@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 
 namespace Sprint2
@@ -29,14 +30,36 @@ namespace Sprint2
                 camera.direction = direction;
                 Camera.switchRoom = true;
                 load = true;
-                room = new Room();
+                room = new Room(); 
                 Link.posX = 3000;
                 Link.posY = 3000; //cannot be seen when room switching
-                //change link's position using door location
-                //need to know its current enter door and position 
+                
         
             }
         }
+
+
+
+        public void switchUnderground(Vector2 destRoomPos, string direction)
+        {
+            Camera.sourceLocX = (int)destRoomPos.X;
+            Camera.sourceLocY = (int)destRoomPos.Y;
+            int roomNum = getNextRoomNum(direction);
+            room = new Room("room" + roomNum + ".xml");
+            Link.posX = 400;
+            Link.posY = 300;
+            if (roomNum == 15)
+            {
+                Camera.width = 257;
+                Camera.height = 160;
+            }
+            else
+            {
+                Camera.width = 257;
+                Camera.height = 178;
+            }
+        }
+             
 
         public int getNextRoomNum(string direction)
         {
@@ -65,36 +88,41 @@ namespace Sprint2
             return num;
         }
 
+        private void setLinkPosInNewRoom(string diretion)
+        {
+            switch (direction)
+            {
+                case "Up":
+                    Link.posX = (int)(room.roomPos.X + Game1.WindowWidth * (0.30));
+                    Link.posY = (int)(room.roomPos.Y + Game1.WindowHeight * (0.5));
+                    break;
 
+                case "Down":
+                    Link.posX = (int)(room.roomPos.X + Game1.WindowWidth * (0.30));
+                    Link.posY = (int)(room.roomPos.Y);
+                    break;
+
+                case "Left":
+                    Link.posX = (int)(room.roomPos.X + Game1.WindowWidth * (0.6));
+                    Link.posY = (int)(room.roomPos.Y + Game1.WindowHeight * (0.24));
+                    break;
+
+                case "Right":
+                    Link.posX = (int)(room.roomPos.X);
+                    Link.posY = (int)(room.roomPos.Y + Game1.WindowHeight * (0.24));
+                    break;
+
+            }
+
+        }
         public void Update()
         {
            if(load && !Camera.switchRoom)
             {
                 load = false;
                 room = new Room("room" + roomNum + ".xml");
-                switch (direction)
-                {
-                    case "Up":
-                        Link.posX = (int)(room.roomPos.X + Game1.WindowWidth * (0.30));
-                        Link.posY = (int)(room.roomPos.Y + Game1.WindowHeight * (0.5));
-                        break;
-
-                    case "Down":
-                        Link.posX = (int)(room.roomPos.X + Game1.WindowWidth * (0.30));
-                        Link.posY = (int)(room.roomPos.Y);
-                        break;
-
-                    case "Left":
-                        Link.posX = (int)(room.roomPos.X + Game1.WindowWidth * (0.6));
-                        Link.posY = (int)(room.roomPos.Y + Game1.WindowHeight * (0.24));
-                        break;
-
-                    case "Right":
-                        Link.posX = (int)(room.roomPos.X);
-                        Link.posY = (int)(room.roomPos.Y + Game1.WindowHeight * (0.24));
-                        break;
-
-                }
+                setLinkPosInNewRoom(direction);
+                
             }
             camera.Update();
 

@@ -25,8 +25,8 @@ namespace Sprint2
         private int damageTimer = 0; 
        
         //----for detection class --- start
-        private int linkWidth = 13 ;
-        private int linkHeight = 13;
+        private int linkWidth = 14 ;
+        private int linkHeight = 14;
         
         public Rectangle boundingBox { get; set; }
         public Rectangle simpleAttackBox { get; set; }

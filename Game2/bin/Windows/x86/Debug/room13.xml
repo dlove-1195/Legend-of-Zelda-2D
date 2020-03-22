@@ -16,10 +16,12 @@
   </Item>
   <Item>
     <ObjectType>Room</ObjectType>
-    <ObjectName>Down</ObjectName>
+    <ObjectName>Right</ObjectName>
     <UpRoom>15</UpRoom>
     <UpRoom>15</UpRoom>
   </Item>
+
+   
   <!--  room  -->
   <!--  enemy  -->
   <Item>
@@ -210,6 +212,7 @@
     <posY>19</posY>
   </Item>
   <!--  Door  -->
+
   <!--  Stair  -->
   <!--  stair position precentage relates to the room  -->
   <!--  destination room position on level map  -->

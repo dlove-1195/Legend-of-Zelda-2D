@@ -24,7 +24,24 @@
       <ObjectName>Right</ObjectName>
       <RightRoom>12</RightRoom>
       <RightRoom>12</RightRoom>
-
+    </Item>
+    <Item>
+      <ObjectType>Door</ObjectType>
+      <ObjectName>Up</ObjectName>
+      <posX>46</posX>
+      <posY>14</posY>
+    </Item>
+    <Item>
+      <ObjectType>Door</ObjectType>
+      <ObjectName>Left</ObjectName>
+      <posX>10</posX>
+      <posY>46</posY>
+    </Item>
+    <Item>
+      <ObjectType>Door</ObjectType>
+      <ObjectName>Right</ObjectName>
+      <posX>95</posX>
+      <posY>48</posY>
     </Item>
     <Item>
       <ObjectType>Player</ObjectType>

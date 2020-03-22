@@ -248,7 +248,6 @@
     <Content Include="Content\link.png" />
     <Content Include="Content\woodenboomerang.png" />
     <Content Include="Icon.ico" />
-    <Content Include="XML\romm9.xml" />
     <Content Include="XML\room1.xml" />
     <Content Include="XML\room10.xml" />
     <Content Include="XML\room11.xml" />

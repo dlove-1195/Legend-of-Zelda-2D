@@ -68,13 +68,10 @@ namespace Sprint2
             boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
             WallMasterSprite.Update();
             updateDelay++;
-            if (updateDelay == 20)
+            if (updateDelay == 10)
             {
 
-                 this.ChangeToLeft();
-                
-                 
-
+                 this.ChangeToLeft(); 
             }else if(updateDelay == 40)
             {
                  

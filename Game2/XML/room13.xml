@@ -16,10 +16,12 @@
   </Item>
   <Item>
     <ObjectType>Room</ObjectType>
-    <ObjectName>Down</ObjectName>
+    <ObjectName>Right</ObjectName>
     <UpRoom>15</UpRoom>
     <UpRoom>15</UpRoom>
   </Item>
+
+   
   <!--  room  -->
   <!--  enemy  -->
   <Item>

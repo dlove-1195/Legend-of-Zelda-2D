@@ -250,14 +250,20 @@ namespace Sprint2 {
                 KeyValuePair<Vector2,Vector2> singleStair = stair[i];
                 Vector2 stairPos = singleStair.Key;
                 Vector2 stairDest = singleStair.Value;
-
+              
                 Rectangle singleStairRec = new Rectangle((int)stairPos.X, (int)stairPos.Y, 48, 54);
-
                 overlapRec = Rectangle.Intersect(linkRectangle, singleStairRec);
+                 
                 if (!overlapRec.IsEmpty)
+<<<<<<< HEAD
                 { 
                     linkHandler.HandleLinkStairCollsion();
                     //stairDest
+=======
+                {
+                    String direction = detectCollisionDirection(overlapRec, linkRectangle, singleStairRec);
+                    linkHandler.HandleLinkStairCollsion(stairDest, direction);
+>>>>>>> 9a16a24b6eff0151e8c2d4def253ead5893f4309
                 }
             }
 

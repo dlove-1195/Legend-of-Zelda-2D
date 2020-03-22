@@ -326,10 +326,10 @@ C:\Users\Mingjie\OneDrive\桌面\zelda\Game2\bin\Windows\x86\Debug\SharpDX.DXGI.
 C:\Users\Mingjie\OneDrive\桌面\zelda\Game2\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
 C:\Users\Mingjie\OneDrive\桌面\zelda\Game2\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
 C:\Users\Mingjie\OneDrive\桌面\zelda\Game2\bin\Windows\x86\Debug\SharpDX.XInput.xml
-C:\Users\Mingjie\OneDrive\桌面\zelda\Game2\obj\x86\Debug\Sprint2.csprojAssemblyReference.cache
 C:\Users\Mingjie\OneDrive\桌面\zelda\Game2\obj\x86\Debug\Sprint2.csproj.CopyComplete
 C:\Users\Mingjie\OneDrive\桌面\zelda\Game2\obj\x86\Debug\Game2.exe
 C:\Users\Mingjie\OneDrive\桌面\zelda\Game2\obj\x86\Debug\Game2.pdb
+<<<<<<< HEAD
 C:\Users\Yilai\CSE-3902\Game2\bin\Windows\x86\Debug\Game2.exe
 C:\Users\Yilai\CSE-3902\Game2\bin\Windows\x86\Debug\Game2.pdb
 C:\Users\Yilai\CSE-3902\Game2\bin\Windows\x86\Debug\MonoGame.Framework.dll
@@ -349,3 +349,6 @@ C:\Users\Yilai\CSE-3902\Game2\bin\Windows\x86\Debug\SharpDX.XInput.xml
 C:\Users\Yilai\CSE-3902\Game2\obj\x86\Debug\Sprint2.csproj.CopyComplete
 C:\Users\Yilai\CSE-3902\Game2\bin\Windows\x86\Debug\Game2.exe.CodeAnalysisLog.xml
 C:\Users\Yilai\CSE-3902\Game2\bin\Windows\x86\Debug\Game2.exe.lastcodeanalysissucceeded
+=======
+C:\Users\Mingjie\OneDrive\桌面\zelda\Game2\obj\x86\Debug\Sprint2.csprojAssemblyReference.cache
+>>>>>>> 9a16a24b6eff0151e8c2d4def253ead5893f4309
