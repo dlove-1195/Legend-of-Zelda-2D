@@ -10,7 +10,7 @@ namespace Sprint2
 {
     public class WallMaterMoveRightSprite : ISprite
     {
-        public Texture2D Texture;
+        private Texture2D Texture;
         private int width;
         private int height;
         private int sourceLocX;

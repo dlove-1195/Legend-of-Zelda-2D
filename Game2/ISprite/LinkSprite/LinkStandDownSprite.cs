@@ -10,7 +10,7 @@ namespace Sprint2
 {
     public class LinkStandDownSprite : ISprite
     {
-        public Texture2D Texture;
+        private Texture2D Texture;
         private int sourceLocX = 0;
         private int sourceLocY = 0;
         private int width = 15;

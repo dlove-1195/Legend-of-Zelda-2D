@@ -8,10 +8,10 @@ namespace Sprint2
     public class Zol : IEnemy
     {
 
-        public IEnemyState state;
-        public ISprite GelSprite;
-        public int updateDelay = 0;
-        public int totalDelay = 30;
+        private IEnemyState state;
+        private ISprite GelSprite;
+        private int updateDelay = 0;
+        private int totalDelay = 30;
 
 
 
@@ -100,7 +100,9 @@ namespace Sprint2
 
                         break;
                     default:
+#pragma warning disable CA1303 // Do not pass literals as localized parameters
                         Console.WriteLine("error: no such situation");
+#pragma warning restore CA1303 // Do not pass literals as localized parameters
                         break;
                 }
 

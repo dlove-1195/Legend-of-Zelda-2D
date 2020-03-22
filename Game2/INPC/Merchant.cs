@@ -4,16 +4,16 @@ using System;
 
 namespace Sprint2
 {
-    public class Merchant : Inpc
+    public class Merchant : INpc
     {
 
 
-        public ISprite MerchantSprite;
+        private ISprite MerchantSprite;
         private Texture2D texture = Texture2DStorage.GetNpcSpriteSheet();
 
         //----for detection class --- start
-        public int posY;
-        public int posX;
+        private int posY;
+        private int posX;
         private int merchantWidth = 14;//sprite width
         private int merchantHeight = 16;//sprite height
 

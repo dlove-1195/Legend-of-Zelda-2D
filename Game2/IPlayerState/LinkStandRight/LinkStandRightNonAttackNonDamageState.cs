@@ -8,13 +8,16 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Sprint2 
 {
-   public class LinkStandRightNonAttackNonDamageState: Iplayerstate
+   public class LinkStandRightNonAttackNonDamageState: IPlayerstate
     {
         private Link link;
         private Texture2D texture = Texture2DStorage.GetLinkSpriteSheet();
         public LinkStandRightNonAttackNonDamageState(Link link)
         {
-            
+            if (link == null)
+            {
+                throw new ArgumentNullException(nameof(link));
+            }
             this.link = link;
             link.linkSprite = new LinkStandRightSprite(texture);
             this.link.ChangeDirection(3);

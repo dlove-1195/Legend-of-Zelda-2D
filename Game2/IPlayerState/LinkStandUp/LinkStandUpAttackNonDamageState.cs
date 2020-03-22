@@ -5,7 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Sprint2 
 {
-    public class LinkStandUpAttackNonDamageState:Iplayerstate
+    public class LinkStandUpAttackNonDamageState:IPlayerstate
     {
         private Link link;
         private Texture2D texture = Texture2DStorage.GetLinkSpriteSheet();

@@ -9,10 +9,10 @@ namespace Sprint2
     {
 
 
-        public IEnemyState state;
-        public ISprite GoriyaSprite;
-        public int updateDelay = 0;
-        public int totalDelay = 90;
+        private IEnemyState state;
+        private ISprite GoriyaSprite;
+        private int updateDelay = 0;
+        private int totalDelay = 90;
         public int posX { get; set; }
         public int posY { get; set; }
 

@@ -22,7 +22,7 @@ namespace Sprint2
         private int height = 13;
 
         //Sprite Object
-        public ISprite heartContainerSprite;
+        private ISprite heartContainerSprite;
         public Rectangle boundingBox { get; set; }
         //initial position on the ground
         public int posX { get; set; }
@@ -52,7 +52,7 @@ namespace Sprint2
         {
             return p;
         }
-        public void changeState(IitemState state)
+        public static void changeState()
         {
             //do nothing
         }

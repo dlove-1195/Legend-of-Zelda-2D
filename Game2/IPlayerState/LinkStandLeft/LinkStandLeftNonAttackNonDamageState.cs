@@ -8,13 +8,17 @@ using System.Threading.Tasks;
 
 namespace Sprint2 
 {
-    public class LinkStandLeftNonAttackNonDamageState: Iplayerstate
+    public class LinkStandLeftNonAttackNonDamageState: IPlayerstate
     {
         private Link link;
          
         private Texture2D texture = Texture2DStorage.GetLinkSpriteSheet() ; 
         public LinkStandLeftNonAttackNonDamageState(Link link)
         {
+            if (link == null)
+            {
+                throw new ArgumentNullException(nameof(link));
+            }
             this.link = link;
             link.linkSprite = new LinkStandLeftSprite(texture);
             this.link.ChangeDirection(2);

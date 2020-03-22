@@ -13,7 +13,10 @@ namespace Sprint2
         private Texture2D texture = Texture2DStorage.GetEnemySpriteSheet();
         public DragonWalkLeftState(Dragon dragon)
         {
-
+            if (dragon == null)
+            {
+                throw new ArgumentNullException(nameof(dragon));
+            }
             this.dragon = dragon;
             dragon.DragonSprite = new DragonWalkLeftSprite(texture, dragon);
             dragon.fire = new Fire(dragon.posX-30, dragon.posY, 2);

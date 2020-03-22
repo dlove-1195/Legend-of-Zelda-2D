@@ -10,7 +10,7 @@ namespace Sprint2
 {
     public class BowDown : ISprite
     {
-        public Texture2D Texture;
+        private Texture2D Texture;
         private int posX = 12;
         private int posY = 12;
         private int width = 16;

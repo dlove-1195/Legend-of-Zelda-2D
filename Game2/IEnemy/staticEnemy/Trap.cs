@@ -11,7 +11,7 @@ namespace Sprint2
     public class Trap : IEnemy
     {
 
-        public ISprite trapSprite;
+        private ISprite trapSprite;
 
 
         //the current position of the trap

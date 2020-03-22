@@ -13,9 +13,9 @@ namespace Sprint2
         public int count { get; set; } = 0;
         public int totalCount { get; set; } = 100;
         public bool appear { get; set; } = false;
-        public int itemNum = 15;
-        public IitemState state;
-        public static ISprite fireSprite;
+        private int itemNum = 15;
+        private IItemState state;
+        private static ISprite fireSprite;
         //initial position which closed to Link
         public int posX { get; set; }
         public int posY { get; set; }

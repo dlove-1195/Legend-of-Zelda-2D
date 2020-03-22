@@ -5,7 +5,7 @@ namespace Sprint2
 {
     public class Camera : ICamera
     {
-        public Texture2D Texture = Texture2DStorage.GetDungeonSpriteSheet();
+        private Texture2D Texture = Texture2DStorage.GetDungeonSpriteSheet();
         public string direction { get; set; }
         public static bool switchRoom { get; set; }
 

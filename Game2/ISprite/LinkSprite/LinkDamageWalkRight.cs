@@ -10,7 +10,7 @@ namespace Sprint2
 {
     public class LinkDamageWalkRightSprite : ISprite
     {
-        public Texture2D Texture;
+        private Texture2D Texture;
         private int sourceLocX = 131;
         private int sourceLocY = 2;
         private int width = 14;

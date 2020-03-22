@@ -6,9 +6,9 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Sprint2
 { 
-  public class Link : Iplayer 
+  public class Link : IPlayer 
     {
-        public Iplayerstate state;
+        public IPlayerstate state;
         public ISprite linkSprite;
      
         public List<Iitem> items = new List<Iitem>();

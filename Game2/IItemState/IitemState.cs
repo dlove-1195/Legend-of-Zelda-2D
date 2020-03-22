@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Sprint2
 {
-    public interface IitemState
+    public interface IItemState
     {
       
-       
+       //should be fixed for next sprint
     }
 }

@@ -24,7 +24,7 @@ namespace Sprint2
         public Rectangle boundingBox { get; set; }
 
         //Sprite Object
-        public ISprite clockSprite;
+        private ISprite clockSprite;
 
         //initial position on the ground
         public int posX { get; set; }
@@ -40,7 +40,7 @@ namespace Sprint2
         {
             return p;
         }
-        public void changeState(IitemState state)
+        public static void changeState()
         {
             //do nothing
         }

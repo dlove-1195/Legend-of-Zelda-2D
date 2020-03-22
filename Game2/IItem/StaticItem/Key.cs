@@ -23,7 +23,7 @@ namespace Sprint2
         private int height = 16;
         public Rectangle boundingBox { get; set; }
         //Sprite Object
-        public ISprite keySprite;
+        private ISprite keySprite;
 
         //initial position in the center
         public int posX { get; set; }
@@ -53,7 +53,7 @@ namespace Sprint2
         {
             return p;
         }
-        public void changeState(IitemState state)
+        public static void changeState()
         {
             //do nothing
         }

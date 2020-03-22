@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Sprint2
 {
-    class LinkWalkRightNonAttackNonDamageState: Iplayerstate
+    class LinkWalkRightNonAttackNonDamageState: IPlayerstate
     {
         private Link linkPlayer; 
 private Texture2D texture = Texture2DStorage.GetLinkSpriteSheet();

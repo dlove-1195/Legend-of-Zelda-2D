@@ -10,7 +10,7 @@ namespace Sprint2
 {
     public class DragonWalkRightSprite : ISprite
     {
-        public Texture2D Texture;
+        private Texture2D Texture;
         private int width;
         private int height;
         private int sourceLocX;
@@ -68,6 +68,10 @@ namespace Sprint2
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
+            if (spriteBatch == null)
+            {
+                throw new ArgumentNullException(nameof(spriteBatch));
+            }
             if (Texture != null)
             {
                 Rectangle sourceRectangle = new Rectangle(sourceLocX, sourceLocY, width, height);

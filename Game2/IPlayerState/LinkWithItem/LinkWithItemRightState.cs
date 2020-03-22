@@ -7,14 +7,17 @@ using System.Threading.Tasks;
 
 namespace Sprint2
 {
-    public class LinkWithItemRightState : Iplayerstate
+    public class LinkWithItemRightState : IPlayerstate
     {
         private Link link;
         private Texture2D textureLink = Texture2DStorage.GetLinkSpriteSheet();
        // private Texture2D textureItem;
         public LinkWithItemRightState(Link link, int itemNum)
         {
-
+            if (link == null)
+            {
+                throw new ArgumentNullException(nameof(link));
+            }
             this.link = link;
             link.ChangeDirection(3);
              

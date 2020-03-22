@@ -9,21 +9,22 @@ namespace Sprint2
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        public IEnemy enemy;
-        public Iplayer player;
-        public Iitem item;
-        public Inpc npcs;
 
-        public ILevel level;
+        public IEnemy enemy;
+        public IPlayer player;
+        public Iitem item;
+        public INpc npcs;
+
+        private ILevel level;
  
-        public ICollisionDetection linkDetection;
-        public ICollisionDetection enemyDetection;
+        private ICollisionDetection linkDetection;
+        private ICollisionDetection enemyDetection;
 
 
         IController keyboardController;
-       
-        public static int WindowWidth=800;
-        public static int WindowHeight=600;
+
+        public static int WindowWidth = 800;
+        public static int WindowHeight = 600;
         public static int seed = 0;
         public Game1()
         {
@@ -42,7 +43,7 @@ namespace Sprint2
 
             keyboardController = new KeyboardController(this);
             
-            this.IsMouseVisible = true;
+            IsMouseVisible = true;
             
 
 

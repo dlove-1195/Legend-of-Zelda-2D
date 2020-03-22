@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace Sprint2 
 {
-    class ClockSprite: ISprite
+    public class ClockSprite: ISprite
     {
-        public Texture2D Texture;
+        private Texture2D Texture;
         private int sourceLocX = 362;
         private int sourceLocY = 0;
         private int width = 11;
@@ -28,6 +28,10 @@ namespace Sprint2
         {
             if (Texture != null)
             {
+                if (spriteBatch == null)
+                {
+                    throw new ArgumentNullException(nameof(spriteBatch));
+                }
                 Rectangle sourceRectangle = new Rectangle(sourceLocX, sourceLocY, width, height);
                 Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width * 3, height * 3);
                  

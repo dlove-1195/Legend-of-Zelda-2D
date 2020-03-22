@@ -50,7 +50,7 @@ namespace Sprint2
         {
             return p;
         }
-        public void changeState(IitemState state)
+        public void changeState()
         {
             //do nothing
         }

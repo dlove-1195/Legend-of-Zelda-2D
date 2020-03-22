@@ -10,12 +10,12 @@ namespace Sprint2
 {
     public class TrapSprite : ISprite
     {
-        public Texture2D Texture;
+        private Texture2D Texture;
         private int width;
         private int height;
         private int sourceLocX;
         private int sourceLocY;
-        public IEnemy Trap;
+        private IEnemy Trap;
         public TrapSprite(Texture2D texture, IEnemy enemy)
         {
             Texture = texture;

@@ -13,7 +13,10 @@ namespace Sprint2
         private Texture2D texture = Texture2DStorage.GetEnemySpriteSheet2();
         public WallMasterRightStaticState(WallMaster w)
         {
-
+            if (w == null)
+            {
+                throw new System.ArgumentNullException(nameof(w));
+            }
             this.wallMaster = w;
             wallMaster.WallMasterSprite = new WallMasterRightStatic(texture, wallMaster);
         }

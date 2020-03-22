@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Sprint2
 {
-   public class AppearDownState:IitemState
+   public class AppearDownState:IItemState
     {
         private Iitem linkItem;
 
@@ -23,6 +23,10 @@ namespace Sprint2
 
         public AppearDownState(Iitem item)
         {
+            if (item == null)
+            {
+                throw new ArgumentNullException(nameof(item));
+            }
             this.linkItem = item;
             num = item.getItem();
            

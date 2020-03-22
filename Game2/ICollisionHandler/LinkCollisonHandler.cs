@@ -7,11 +7,11 @@ namespace Sprint2
     class LinkCollisionHandler 
     {
 
-        Iplayer link;
+        IPlayer link;
         IRoom room;
         ILevel level;
         
-        public LinkCollisionHandler(Iplayer link, ILevel level)
+        public LinkCollisionHandler(IPlayer link, ILevel level)
         {
             this.link = link;
             this.room = level.room;
@@ -45,8 +45,9 @@ namespace Sprint2
             }
         }
 
-        public void HandleLinkStairCollsion(Vector2 destRoomPos)
-        {
+        public void HandleLinkStairCollsion()
+        {    
+             
             //switch room to destRoomPos
             //level.switchUnderGround();
 
@@ -80,7 +81,9 @@ namespace Sprint2
                     break;
 
                 default:
+#pragma warning disable CA1303 // Do not pass literals as localized parameters
                     Console.WriteLine("error: no such situation");
+#pragma warning restore CA1303 // Do not pass literals as localized parameters
                     break;
             }
 
@@ -119,7 +122,9 @@ namespace Sprint2
                     break;
 
                 default:
+#pragma warning disable CA1303 // Do not pass literals as localized parameters
                     Console.WriteLine("error: no such situation");
+#pragma warning restore CA1303 // Do not pass literals as localized parameters
                     break;
             }
             
@@ -159,7 +164,9 @@ namespace Sprint2
                     break;
                 
                 default:
+#pragma warning disable CA1303 // Do not pass literals as localized parameters
                     Console.WriteLine("error: no such situation");
+#pragma warning restore CA1303 // Do not pass literals as localized parameters
                     break;
             }
         }

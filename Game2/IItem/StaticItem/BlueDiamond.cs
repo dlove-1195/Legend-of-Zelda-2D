@@ -24,7 +24,7 @@ namespace Sprint2
         public Rectangle boundingBox { get; set; }
 
         //Sprite Object
-        public ISprite blueDiamondSprite;
+        private ISprite blueDiamondSprite;
 
         //initial position on the ground
         public int posX { get; set; }
@@ -69,7 +69,7 @@ namespace Sprint2
            // myGame.item = new TriforcePiece();
         }
 
-        public void changeState(IitemState state)
+        public static void changeState()
         {
             //do nothing
         }

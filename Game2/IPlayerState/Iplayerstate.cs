@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sprint2
 {
-    public interface Iplayerstate
+    public interface IPlayerstate
     {
         void ChangeToRight();
         void ChangeToLeft();

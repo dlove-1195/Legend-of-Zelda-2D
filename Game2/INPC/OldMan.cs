@@ -4,15 +4,15 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Sprint2
 {
-    public class OldMan : Inpc
+    public class OldMan : INpc
     {
 
 
-        public ISprite OldManSprite;
+        private ISprite OldManSprite;
         private Texture2D texture = Texture2DStorage.GetNpcSpriteSheet();
 
-        public int posY;
-        public int posX;
+        private int posY;
+        private int posX;
         private int oldManWidth = 16;//sprite width
         private int oldManHeight = 16;//sprite height
 

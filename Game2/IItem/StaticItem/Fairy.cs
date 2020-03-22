@@ -22,7 +22,7 @@ namespace Sprint2
         private int height = 16;
 
         //Sprite Object
-        public ISprite fairySprite;
+        private ISprite fairySprite;
         public Rectangle boundingBox { get; set; }
 
         //initial position on the ground
@@ -55,7 +55,7 @@ namespace Sprint2
         {
             return p;
         }
-        public void changeState(IitemState state)
+        public static void changeState()
         {
             //do nothing
         }

@@ -12,7 +12,7 @@ namespace Sprint2
         public bool appear { get; set; } = false;
 
         private int itemNum = 2;
-        public IitemState state;
+        public IItemState state;
         public ISprite bombSprite;
         private int delay = 0;
         //initial position closed to link
@@ -76,7 +76,7 @@ namespace Sprint2
 
         }
 
-        public void changeState(IitemState state)
+        public void changeState(IItemState state)
         {
             this.state = state;
         }

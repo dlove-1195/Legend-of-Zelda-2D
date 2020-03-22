@@ -8,10 +8,10 @@ namespace Sprint2
     public class Rope : IEnemy
     {
 
-        public IEnemyState state;
-        public ISprite RopeSprite;
-        public int updateDelay = 0;
-        public int totalDelay = 30;
+        private IEnemyState state;
+        private ISprite RopeSprite;
+        private int updateDelay = 0;
+        private int totalDelay = 30;
 
 
 
@@ -87,27 +87,37 @@ namespace Sprint2
                 {
                     case 0:
                         this.ChangeToDown();
+#pragma warning disable CA1303 // Do not pass literals as localized parameters
                         Console.WriteLine("HAVE ROPE DOWN");
+#pragma warning restore CA1303 // Do not pass literals as localized parameters
 
                         break;
                     case 1:
                         this.ChangeToLeft();
+#pragma warning disable CA1303 // Do not pass literals as localized parameters
                         Console.WriteLine("HAVE ROPE LEFT");
+#pragma warning restore CA1303 // Do not pass literals as localized parameters
 
 
                         break;
                     case 2:
                         this.ChangeToRight();
+#pragma warning disable CA1303 // Do not pass literals as localized parameters
                         Console.WriteLine("HAVE ROPE RIGHT ");
+#pragma warning restore CA1303 // Do not pass literals as localized parameters
                         break;
                     case 3:
                         this.ChangeToUp();
+#pragma warning disable CA1303 // Do not pass literals as localized parameters
                         Console.WriteLine("HAVE ROPE UP");
+#pragma warning restore CA1303 // Do not pass literals as localized parameters
 
 
                         break;
                     default:
+#pragma warning disable CA1303 // Do not pass literals as localized parameters
                         Console.WriteLine("error: no such situation");
+#pragma warning restore CA1303 // Do not pass literals as localized parameters
                         break;
                 }
 

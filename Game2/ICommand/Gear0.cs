@@ -2,7 +2,7 @@
 
 namespace Sprint2
 {
-    class Gear0 : ICommand
+    public class Gear0 : ICommand
     {
         private Game1 myGame;
         public Gear0(Game1 game)

@@ -2,7 +2,7 @@ using System;
  
 namespace Sprint2 
 {
-    class Gear1: ICommand
+    public class Gear1: ICommand
     {
         private Game1 myGame;
         public Gear1(Game1 game)

@@ -21,7 +21,12 @@ namespace Sprint2
 
         public EnemyCollisionDetection(ILevel level)
         {
+            if (level == null)
+            {
+                throw new System.ArgumentNullException(nameof(level));
+            }
             IRoom room = level.room;
+            
             int roomWidth = (int)(Game1.WindowWidth * 0.68);
             int roomHeight = (int)(Game1.WindowHeight * 0.55);
             roomLeftCornerPosX = (int)(room.roomPos.X);
@@ -57,7 +62,7 @@ namespace Sprint2
                     if (boundingBox.Count == 0)
                     {
 
-                        listLength = blockLocation.Count();
+                        listLength = blockLocation.Count;
                         for (int j = 0; j < listLength; j++)
                         {
                             KeyValuePair<int, int> singleBlockLocation = blockLocation[j];
@@ -75,7 +80,7 @@ namespace Sprint2
                     }
                     else
                     {
-                        listLength = boundingBox.Count();
+                        listLength = boundingBox.Count;
                         for (int j = 0; j < listLength; j++)
                         {
                             Rectangle singleBoxRec = boundingBox[j];
@@ -95,7 +100,7 @@ namespace Sprint2
 
 
                     //detect testEnemy collision with all other enemy 
-                    listLength = enemy.Count();
+                    listLength = enemy.Count;
 
                     for (int j = 0; j < listLength; j++)
                     {

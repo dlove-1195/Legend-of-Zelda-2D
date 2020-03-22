@@ -7,20 +7,24 @@ using System.Threading.Tasks;
 
 namespace Sprint2
 {
-    public class BombAppearExplodeState  : IitemState
+    public class BombAppearExplodeState  : IItemState
     {
         private Bomb bomb;
         private Texture2D texture = Texture2DStorage.GetLinkSpriteSheet();
 
         public BombAppearExplodeState(Bomb bomb)
         {
+            if (bomb == null)
+            {
+                throw new ArgumentNullException(nameof(bomb));
+            }
             this.bomb = bomb;
             bomb.bombSprite = new BombExplodeSprite(texture);
         }
       
 
          
-        public void ChangeToExplode()
+        public static void ChangeToExplode()
         {
             //already explode
            

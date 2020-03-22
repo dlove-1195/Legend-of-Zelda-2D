@@ -12,9 +12,9 @@ namespace Sprint2
         int downRoomNum { get; set; }
          Vector2 roomPos { get; set; }
 
-        List <IEnemy>enemies { get; set; }
+        List <IEnemy> enemies { get; set; }
         List <Iitem> pickUpItems { get; set; }
-        List <Inpc> npcs { get; set; }
+        List <INpc> npcs { get; set; }
         List<KeyValuePair<int, int>> blockLocation { get; set; }
         List<string> doorDirection { get; set; }
         List<KeyValuePair<Vector2, Vector2>> stair { get; set; }

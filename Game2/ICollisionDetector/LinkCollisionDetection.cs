@@ -11,23 +11,25 @@ namespace Sprint2 {
         private LinkCollisionHandler linkHandler;
         private List<IEnemy> enemy;
         private List<Iitem> item;
-        private List<Inpc> npc;
+        private List<INpc> npc;
         private List<KeyValuePair<int, int>> blockLocation;
         private List<KeyValuePair<Vector2,Vector2>> stair;
-        public List<string> doorDirection;
-
         private List<Rectangle> boundingBox; //for room15
         private int roomLeftCornerPosX;
         private int roomLeftCornerPosY;
         private int roomRightCornerPosX;
         private int roomRightCornerPosY;
 
-        private Iplayer player ;
-        
+        private IPlayer player ;
 
-        public  LinkCollisionDetection (ILevel level, Iplayer link)
+        private List<string> DoorDirection { get; set; }
+
+        public  LinkCollisionDetection (ILevel level, IPlayer link)
         {
-            
+            if (level == null)
+            {
+                throw new ArgumentNullException(nameof(level));
+            }
             IRoom room = level.room;
             int roomWidth = (int)(Game1.WindowWidth * 0.68);
             int roomHeight = (int)(Game1.WindowHeight * 0.55);
@@ -39,7 +41,7 @@ namespace Sprint2 {
             item =  room.pickUpItems;
             npc =  room.npcs;
             blockLocation =  room.blockLocation;
-            doorDirection = room.doorDirection;
+            DoorDirection = room.doorDirection;
             stair = room.stair;
 
             boundingBox = room.boundingBox;
@@ -56,7 +58,7 @@ namespace Sprint2 {
             Rectangle linkRectangle = player.boundingBox;
             
             //loop for link/enemy collision 
-            int listLength = enemy.Count();
+            int listLength = enemy.Count;
             for(int i = 0;i< listLength; i++)
             {
                 if (enemy[i] != null)
@@ -75,7 +77,7 @@ namespace Sprint2 {
 
                     //detect link collision with enemy projectile 
                     List<Rectangle> EnemyProjectileRec = enemy[i].getProjectileRec();
-                    for (int j = 0; j < EnemyProjectileRec.Count(); j++)
+                    for (int j = 0; j < EnemyProjectileRec.Count; j++)
                     {
                         overlapRec = Rectangle.Intersect(linkRectangle, EnemyProjectileRec[j]);
                         if (!overlapRec.IsEmpty)
@@ -100,7 +102,7 @@ namespace Sprint2 {
 
                     // detect link weapon collison with enemy 
                     List<Rectangle> linkWeaponRec = player.getUsingItemRec();
-                    for (int j = 0; j < linkWeaponRec.Count(); j++)
+                    for (int j = 0; j < linkWeaponRec.Count; j++)
                     {
                         overlapRec = Rectangle.Intersect(singleEnemyRec, linkWeaponRec[j]);
                         if (!overlapRec.IsEmpty)
@@ -117,7 +119,7 @@ namespace Sprint2 {
 
             //loop for link/item collsion 
 
-            listLength = item.Count();
+            listLength = item.Count;
             for (int i = 0; i < listLength; i++)
             {
                 if (item[i] != null)
@@ -138,7 +140,7 @@ namespace Sprint2 {
 
             //loop for link/NPC collsion 
 
-            listLength = npc.Count();
+            listLength = npc.Count;
             
             for (int i = 0; i < listLength; i++)
             {
@@ -161,7 +163,7 @@ namespace Sprint2 {
             //loop for link/Block collsion when no boundingBox
             if (boundingBox.Count == 0)
             {
-                listLength = blockLocation.Count();
+                listLength = blockLocation.Count;
                 for (int i = 0; i < listLength; i++)
                 {
                     KeyValuePair<int, int> singleBlockLocation = blockLocation[i];
@@ -183,7 +185,7 @@ namespace Sprint2 {
             //loop for Link/boundingBox collsion for room15
             else
             {
-                listLength = boundingBox.Count();
+                listLength = boundingBox.Count;
                 for (int i = 0; i < listLength; i++)
                 {
                     Rectangle singleBoxRec = boundingBox[i];
@@ -202,34 +204,34 @@ namespace Sprint2 {
 
             //loop for door collision (for each door in each room)
             
-            listLength = doorDirection.Count();
+            listLength = DoorDirection.Count;
             for (int i = 0; i < listLength; i++)
             {
-                string singleDoorDirection = doorDirection[i];
+                String singleDoorDirection = DoorDirection[i];
 
  
-                if (singleDoorDirection.Equals("Up") )
+                if (singleDoorDirection.Equals("Up", StringComparison.Ordinal) )
                 {
                     if (  Link.posY <= roomLeftCornerPosY-45&&! Camera.switchRoom)//(int)singleDoorLocation.Value.Y)
                     {
                         linkHandler.HandleLinkDoorCollsion(singleDoorDirection);
                     }
                 }
-                else if (singleDoorDirection.Equals("Down"))
+                else if (singleDoorDirection.Equals("Down", StringComparison.Ordinal))
                 {
                     if (Link.posY >= roomRightCornerPosY+45&& !Camera.switchRoom)
                     {
                         linkHandler.HandleLinkDoorCollsion(singleDoorDirection);
                     }
                 }
-                else if (singleDoorDirection.Equals("Left"))
+                else if (singleDoorDirection.Equals("Left", StringComparison.Ordinal))
                 {
                     if (Link.posX <= roomLeftCornerPosX -45&& !Camera.switchRoom)
                     {
                         linkHandler.HandleLinkDoorCollsion(singleDoorDirection);
                     }
                 }
-                else if (singleDoorDirection.Equals("Right"))
+                else if (singleDoorDirection.Equals("Right", StringComparison.Ordinal))
                 {
                     if (Link.posX >= roomRightCornerPosX+45 && !Camera.switchRoom)
                     {
@@ -242,7 +244,7 @@ namespace Sprint2 {
             } 
 
             //loop for stair collision
-            listLength = stair.Count();
+            listLength = stair.Count;
             for (int i = 0; i < listLength; i++)
             {
                 KeyValuePair<Vector2,Vector2> singleStair = stair[i];
@@ -254,7 +256,8 @@ namespace Sprint2 {
                 overlapRec = Rectangle.Intersect(linkRectangle, singleStairRec);
                 if (!overlapRec.IsEmpty)
                 { 
-                    linkHandler.HandleLinkStairCollsion(stairDest);
+                    linkHandler.HandleLinkStairCollsion();
+                    //stairDest
                 }
             }
 
@@ -264,7 +267,7 @@ namespace Sprint2 {
             //room15 no Link edge collision
             if (boundingBox.Count == 0)
             {
-                if (doorDirection.Contains("Right"))
+                if (DoorDirection.Contains("Right"))
                 {
                     if (Link.posX > roomRightCornerPosX && (Link.posY < Game1.WindowHeight * 0.45 || Link.posY > Game1.WindowHeight * (0.45 + 0.1)))
                     {
@@ -278,7 +281,7 @@ namespace Sprint2 {
                         linkHandler.remainPosition("Right");
                     }
                 }
-                if (doorDirection.Contains("Left"))
+                if (DoorDirection.Contains("Left"))
                 {
                     if (Link.posX < roomLeftCornerPosX && (Link.posY < Game1.WindowHeight * 0.45 || Link.posY > Game1.WindowHeight * (0.45 + 0.1)))
                     {
@@ -293,7 +296,7 @@ namespace Sprint2 {
                         linkHandler.remainPosition("Left");
                     }
                 }
-                if (doorDirection.Contains("Down"))
+                if (DoorDirection.Contains("Down"))
                 {
                     if (Link.posY > roomRightCornerPosY && (Link.posX < Game1.WindowWidth * 0.465 || Link.posX > Game1.WindowWidth * (0.465 + 0.07)))
                     {
@@ -307,7 +310,7 @@ namespace Sprint2 {
                         linkHandler.remainPosition("Down");
                     }
                 }
-                if (doorDirection.Contains("Up"))
+                if (DoorDirection.Contains("Up"))
                 {
                     if (Link.posY < roomLeftCornerPosY && (Link.posX < Game1.WindowWidth * 0.465 || Link.posX > Game1.WindowWidth * (0.465 + 0.07)))
                     {

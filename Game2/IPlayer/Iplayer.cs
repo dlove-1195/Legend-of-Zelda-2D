@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 namespace Sprint2
 {
     
-     public interface Iplayer
+     public interface IPlayer
     {
          Rectangle boundingBox { get; set; }
           Rectangle simpleAttackBox { get; set; }

@@ -3,13 +3,16 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Sprint2 
 {
-    public class LinkStandDownNonAttackNonDamageState:Iplayerstate
+    public class LinkStandDownNonAttackNonDamageState:IPlayerstate
     {
         private Link link;
         private Texture2D texture = Texture2DStorage.GetLinkSpriteSheet();
         public LinkStandDownNonAttackNonDamageState(Link link)
         {
-            
+            if (link == null)
+            {
+                throw new System.ArgumentNullException(nameof(link));
+            }
             this.link = link;
             link.linkSprite = new LinkStandDownSprite(texture);
             this.link.ChangeDirection(1);
@@ -37,7 +40,7 @@ namespace Sprint2
             link.state = new LinkStandDownNonAttackDamageState(link);
            
         }
-        public int getFaceDirection()
+        public static int getFaceDirection()
         {
             return 1;
         }

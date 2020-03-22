@@ -10,8 +10,8 @@ namespace Sprint2
 
         public IEnemyState state;
         public ISprite DragonSprite;
-        public int updateDelay = 0;
-        public int totalDelay = 100;
+        private int updateDelay = 0;
+        private int totalDelay = 100;
         public Iitem fire;
         public static Boolean hasFire = false;
         private int fireTimer = 0;

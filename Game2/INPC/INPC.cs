@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Sprint2 
 {
-   public interface Inpc
+   public interface INpc
     {
 
         Rectangle boundingBox { get; set; }

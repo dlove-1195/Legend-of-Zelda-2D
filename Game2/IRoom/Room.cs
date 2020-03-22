@@ -24,8 +24,10 @@ namespace Sprint2
         public int upRoomNum { get; set; } = 0;
         public int downRoomNum { get; set; } = 0;
         public List<IEnemy> enemies { get; set; }
+#pragma warning disable CA2227 // Collection properties should be read only
         public List<Iitem> pickUpItems { get; set; }
-        public List<Inpc> npcs { get; set; }
+#pragma warning restore CA2227 // Collection properties should be read only
+        public List<INpc> npcs { get; set; }
 
         public List<KeyValuePair<Vector2,Vector2>> stair { get; set; }
         public List<KeyValuePair<int, int>> blockLocation { get; set; }
@@ -43,7 +45,7 @@ namespace Sprint2
             doorDirection = new List<string>();
             stair = new List<KeyValuePair<Vector2, Vector2>>();
             boundingBox = new List<Rectangle>();
-            npcs = new List<Inpc>();
+            npcs = new List<INpc>();
           
 
 
@@ -58,8 +60,10 @@ namespace Sprint2
             doorDirection = new List<string>();
             stair = new List<KeyValuePair<Vector2, Vector2>>();
             boundingBox = new List<Rectangle>();
-            npcs = new List<Inpc>();
+            npcs = new List<INpc>();
+#pragma warning disable CA3075 // Insecure DTD processing in XML
             doc = new XmlDocument();
+#pragma warning restore CA3075 // Insecure DTD processing in XML
             doc.Load(fileName);
             nodeList = doc.SelectNodes("//Item");
 
@@ -261,7 +265,7 @@ namespace Sprint2
                     item.Update();
 
             }
-            foreach (Inpc npc in npcs)
+            foreach (INpc npc in npcs)
             {
                 npc.Update();
             }
@@ -283,7 +287,7 @@ namespace Sprint2
                     item.Draw(spriteBatch);
 
             }
-            foreach (Inpc npc in npcs)
+            foreach (INpc npc in npcs)
             {
                 npc.Draw(spriteBatch);
             }

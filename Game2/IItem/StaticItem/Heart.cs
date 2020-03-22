@@ -26,7 +26,7 @@ namespace Sprint2
 
 
         //Sprite Object
-        public ISprite heartSprite;
+        private ISprite heartSprite;
 
         //initial position in the center
         public int posX { get; set; }
@@ -54,7 +54,7 @@ namespace Sprint2
         {
             return p;
         }
-        public void changeState(IitemState state)
+        public static void changeState()
         {
             //do nothing
         }

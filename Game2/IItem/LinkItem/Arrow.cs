@@ -9,9 +9,9 @@ namespace Sprint2
         public int count { get; set; } = 0;
         public int totalCount { get; set; } = 100;
         public bool appear { get; set; } = false;
-        public int itemNum = 0;
-        public IitemState state;
-        public ISprite arrowSprite;
+        private int itemNum = 0;
+        private IItemState state;
+        private ISprite arrowSprite;
         //initial position which closed to Link
         public int posX { get; set; }
         public int posY { get; set; }
@@ -66,8 +66,10 @@ namespace Sprint2
                     state = new AppearRightState(this);
                     break;
                 default:
-                    Console.WriteLine("error: no such situation");
-                    break;
+#pragma warning disable CA1303 // Do not pass literals as localized parameters
+                        Console.WriteLine("error: no such situation");
+#pragma warning restore CA1303 // Do not pass literals as localized parameters
+                        break;
             }
 
         }

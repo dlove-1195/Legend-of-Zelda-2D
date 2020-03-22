@@ -32,7 +32,9 @@ namespace Sprint2
                     myGame.player.SetLinkWithItemRightState(itemNum);
                     break;
                 default:
+#pragma warning disable CA1303 // Do not pass literals as localized parameters
                     Console.WriteLine("not gonna happen ");
+#pragma warning restore CA1303 // Do not pass literals as localized parameters
                     break;
 
 

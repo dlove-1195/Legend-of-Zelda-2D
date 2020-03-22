@@ -7,7 +7,7 @@ namespace Sprint2
     public class Flame : IEnemy
     {
 
-        public ISprite flameSprite;
+        private ISprite flameSprite;
 
 
         //the current position of the trap

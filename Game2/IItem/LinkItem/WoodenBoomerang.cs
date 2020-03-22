@@ -13,9 +13,9 @@ namespace Sprint2
         public int count { get; set; } = 0;
         public int totalCount { get; set; } = 48;
         public bool appear { get; set; } = false;
-        public int itemNum = 5;
-        public IitemState state;
-        public ISprite woodenBoomerangSprite;
+        private int itemNum = 5;
+        private IItemState state;
+        private ISprite woodenBoomerangSprite;
         //initial position which closed to Link
         public int posX { get; set; }
         public int posY { get; set; }

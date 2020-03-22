@@ -25,7 +25,7 @@ namespace Sprint2
 
 
         //Sprite Object
-        public ISprite compassSprite;
+        private ISprite compassSprite;
 
         //initial position on the ground
         public int posX { get; set; }
@@ -56,7 +56,7 @@ namespace Sprint2
         {
             return p;
         }
-        public void changeState(IitemState state)
+        public static void changeState()
         {
             //do nothing
         }

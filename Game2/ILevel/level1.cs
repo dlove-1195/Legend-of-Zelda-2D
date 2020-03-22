@@ -57,7 +57,9 @@ namespace Sprint2
                     break;
 
                 default:
+#pragma warning disable CA1303 // Do not pass literals as localized parameters
                     Console.WriteLine("error: no such situation");
+#pragma warning restore CA1303 // Do not pass literals as localized parameters
                     break;
             }
             return num;

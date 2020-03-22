@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Sprint2
 {
-    public class AppearRightState: IitemState
+    public class AppearRightState: IItemState
     {
        
             private Iitem linkItem;
@@ -25,7 +25,11 @@ namespace Sprint2
 
             public AppearRightState(Iitem item)
             {
-                this.linkItem = item;
+            if (item == null)
+            {
+                throw new ArgumentNullException(nameof(item));
+            }
+            this.linkItem = item;
                 num = item.getItem();
               
                 if (num == 0)

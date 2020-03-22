@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Sprint2
 {
-    class LinkWalkLeftNonAttackDamageState : Iplayerstate
+    class LinkWalkLeftNonAttackDamageState : IPlayerstate
     {
         private Link linkPlayer;
 

@@ -14,9 +14,9 @@ namespace Sprint2
         public int totalCount { get; set; } = 100;
         public bool appear { get; set; } = false;
 
-        public int itemNum = 1;
-        public IitemState state;
-        public ISprite blueCandleSprite;
+        private int itemNum = 1;
+        private IItemState state;
+        private ISprite blueCandleSprite;
         //initial position which closed to Link
         public int posX { get; set; }
         public int posY { get; set; }
@@ -52,7 +52,9 @@ namespace Sprint2
                     state = new AppearRightState(this);
                     break;
                 default:
+#pragma warning disable CA1303 // Do not pass literals as localized parameters
                     Console.WriteLine("error: no such situation");
+#pragma warning restore CA1303 // Do not pass literals as localized parameters
                     break;
             }
 

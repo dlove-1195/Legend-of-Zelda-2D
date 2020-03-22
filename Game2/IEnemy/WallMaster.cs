@@ -13,8 +13,8 @@ namespace Sprint2
 
         public IEnemyState state;
         public ISprite WallMasterSprite;
-        public int updateDelay = 0;
-        public int totalDelay = 100;
+        private int updateDelay = 0;
+        private int totalDelay = 100;
 
 
         //the current position of the dragon
