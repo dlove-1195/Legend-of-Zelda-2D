@@ -87,7 +87,7 @@ namespace Sprint2
                     direction = "";
                 }
             }
-            else if (direction.Equals("Right"))
+            else if (direction.Equals("Right", System.StringComparison.Ordinal))
             {
                 if (SwitchRoom)
                 {
