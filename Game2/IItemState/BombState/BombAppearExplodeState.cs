@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Sprint2
 {
-    public class BombAppearExplodeState  : IItemState
+    public class BombAppearExplodeState:IItemState
     {
         private Bomb bomb;
         private Texture2D texture = Texture2DStorage.GetLinkSpriteSheet();

@@ -25,7 +25,7 @@ namespace Sprint2
 
         public void Update()
         {
-            if (direction.Equals(""))
+            if (direction.Length == 0)
             {
                 // do nothing
             }

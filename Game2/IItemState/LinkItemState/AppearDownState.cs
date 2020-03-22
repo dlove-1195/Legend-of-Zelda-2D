@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Sprint2
 {
-   public class AppearDownState:IItemState
+   public class AppearDownState: IItemState
     {
         private IItem linkItem;
 

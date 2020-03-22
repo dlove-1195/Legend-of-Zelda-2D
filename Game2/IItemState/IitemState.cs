@@ -9,6 +9,5 @@ namespace Sprint2
     public interface IItemState
     {
       
-       //should be fixed for next sprint
     }
 }

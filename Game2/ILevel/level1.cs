@@ -66,6 +66,7 @@ namespace Sprint2
         public int getNextRoomNum(string direction)
         {
             int num = 0 ;
+
             switch (direction)
             {
                 case "Left":

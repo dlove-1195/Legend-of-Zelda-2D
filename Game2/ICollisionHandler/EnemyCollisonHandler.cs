@@ -82,13 +82,13 @@ namespace Sprint2
                     enemy.ChangeToRight();
                     otherEnemy.ChangeToLeft();
                     break;
-                case "top":
+                case "up":
                     enemy.posY += 5;
                     otherEnemy.posY -= 5;
                     enemy.ChangeToUp();
                     otherEnemy.ChangeToDown();
                     break;
-                case "bottom":
+                case "down":
                     enemy.posY -= 5;
                     otherEnemy.posY += 5;
                     enemy.ChangeToDown();

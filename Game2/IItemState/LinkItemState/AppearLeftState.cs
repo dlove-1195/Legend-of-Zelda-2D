@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Sprint2
 {
-    public class AppearLeftState:IItemState
+    public class AppearLeftState: IItemState
     {
         private IItem linkItem;
         private Texture2D texture = Texture2DStorage.GetItemSpriteSheet();
