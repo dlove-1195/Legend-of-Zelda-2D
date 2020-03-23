@@ -25,8 +25,8 @@ namespace Sprint2
                     {
                 case 0:
                     //arrow
-                     IItem arrow = new Arrow(Link.posX, (Link.posY + 20), 1);
-                    IItem bow = new Bow(Link.posX, (Link.posY + 20), 1);
+                     IItem arrow = new Arrow(Link.posX+15, (Link.posY + 20), 1);
+                    IItem bow = new Bow(Link.posX, (Link.posY + 40), 1);
                     arrow.Appear = true;
                     bow.Appear = true;
                     link.items.Add(arrow);

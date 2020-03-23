@@ -25,8 +25,8 @@ namespace Sprint2
                 case 0:
                     //arrow
                     link.linkSprite = new LinkStandUpSprite(textureLink);
-                     IItem item0= new Arrow(Link.posX, (Link.posY - 20),0);
-                     IItem bow = new Bow(Link.posX, (Link.posY - 20), 0);
+                     IItem item0= new Arrow(Link.posX+12, (Link.posY - 20),0);
+                     IItem bow = new Bow(Link.posX-4, (Link.posY - 25), 0);
                     item0.Appear = true;
                     bow.Appear = true;
                     link.items.Add(item0);
