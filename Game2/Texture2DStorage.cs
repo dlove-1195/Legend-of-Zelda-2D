@@ -26,8 +26,10 @@ namespace Sprint2
         private static Texture2D blueCandleSpriteSheet;
         private static Texture2D bowSpriteSheet;
 		private static Texture2D dungeonSpriteSheet;
-
-
+		//start state
+		private static Texture2D LogoSpriteSheet;
+		private static Texture2D ButtonSpriteSheet;
+		private static Texture2D ZeldaStorySpriteSheet;
 
 		//initialize the Texture2D fields
 		public static void LoadAllTextures(ContentManager content)
@@ -36,6 +38,7 @@ namespace Sprint2
 			{
 				throw new System.ArgumentNullException(nameof(content));
 			}
+
 			linkSpriteSheet = content.Load<Texture2D>("link");
 			enemySpriteSheet = content.Load<Texture2D>("enemy");
 			itemSpriteSheet = content.Load<Texture2D>("item");
@@ -49,6 +52,11 @@ namespace Sprint2
             woodenBoomerangSpriteSheet = content.Load<Texture2D>("woodenboomerang");
             blueCandleSpriteSheet = content.Load<Texture2D>("candle");
 			dungeonSpriteSheet = content.Load<Texture2D>("dugeon");
+
+			//start state
+			LogoSpriteSheet = content.Load<Texture2D>("Logo");
+			ButtonSpriteSheet = content.Load<Texture2D>("Button");
+			ZeldaStorySpriteSheet = content.Load<Texture2D>("Zelda_story");
 
 		}
 
@@ -106,6 +114,23 @@ namespace Sprint2
 		public static Texture2D GetDungeonSpriteSheet()
 		{
 			return dungeonSpriteSheet;
+		}
+
+
+		//start state
+		public static Texture2D GetLogoSpriteSheet()
+		{
+			return LogoSpriteSheet;
+		}
+
+		public static Texture2D GetButtonSpriteSheet()
+		{
+			return ButtonSpriteSheet;
+		}
+
+		public static Texture2D GetZeldaStorySpriteSheet()
+		{
+			return ZeldaStorySpriteSheet;
 		}
 	}
 	
