@@ -23,7 +23,12 @@ namespace Sprint2
             this.link.ChangeDirection(3);
             Link.ifDamage = true;
         }
-      
+
+        public void Win()
+        {
+            link.state = new LinkWinningState(link);
+
+        }
         public void ChangeToRight()
         {
             if (Link.ifDamage)

@@ -119,24 +119,34 @@ namespace Sprint2 {
 
             //loop for link/item collsion 
 
+           
             listLength = item.Count;
+            
             for (int i = 0; i < listLength; i++)
             {
                 if (item[i] != null)
                 {
+                    
                     Rectangle singleItemRec = item[i].BoundingBox;
-
-
                     overlapRec = Rectangle.Intersect(linkRectangle, singleItemRec);
                     if (!overlapRec.IsEmpty)
                     {
+                        //need count to 3 later in play state
+                        //this is for testing purpose
+                        if (item[i] is TriforcePiece)
+                        {
+                            player.Win();
 
+
+                        }
                         linkHandler.HandleLinkItemCollsion(i);
                     }
-                }
- 
-            }
 
+                    
+
+                }
+
+            }
 
             //loop for link/NPC collsion 
 

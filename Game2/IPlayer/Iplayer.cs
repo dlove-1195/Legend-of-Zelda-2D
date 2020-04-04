@@ -20,6 +20,7 @@ namespace Sprint2
         
         void ChangeToStand();
         void ChangeToWalk();
+        void Win();
         int GetDirection();
       
 

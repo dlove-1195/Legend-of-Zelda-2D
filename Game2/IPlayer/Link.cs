@@ -95,6 +95,11 @@ namespace Sprint2
             state.Attack();
        
         }
+        public void Win()
+        {
+            state.Win();
+            simpleAttackBox = new Rectangle(0, 0, 0, 0);
+        }
 
         
             //add

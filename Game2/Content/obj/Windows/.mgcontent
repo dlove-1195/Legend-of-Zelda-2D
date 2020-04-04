@@ -4,20 +4,20 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/Mingjie/OneDrive/Documents/zelda/Game2/Content/../../../../桌面/dugeon.png</File>
-    <File>C:/Users/Mingjie/OneDrive/Documents/zelda/Game2/Content/bow.png</File>
-    <File>C:/Users/Mingjie/OneDrive/Documents/zelda/Game2/Content/candle.png</File>
-    <File>C:/Users/Mingjie/OneDrive/Documents/zelda/Game2/Content/characters.png</File>
-    <File>C:/Users/Mingjie/OneDrive/Documents/zelda/Game2/Content/enemy.png</File>
-    <File>C:/Users/Mingjie/OneDrive/Documents/zelda/Game2/Content/enemy2.png</File>
-    <File>C:/Users/Mingjie/OneDrive/Documents/zelda/Game2/Content/enemy3.png</File>
-    <File>C:/Users/Mingjie/OneDrive/Documents/zelda/Game2/Content/item.png</File>
-    <File>C:/Users/Mingjie/OneDrive/Documents/zelda/Game2/Content/link.png</File>
-    <File>C:/Users/Mingjie/OneDrive/Documents/zelda/Game2/Content/link--final.png</File>
-    <File>C:/Users/Mingjie/OneDrive/Documents/zelda/Game2/Content/woodenboomerang.png</File>
+    <File>C:/Users/zz/Desktop/CSE-3902/Game2/Content/3tri.png</File>
+    <File>C:/Users/zz/Desktop/CSE-3902/Game2/Content/bow.png</File>
+    <File>C:/Users/zz/Desktop/CSE-3902/Game2/Content/candle.png</File>
+    <File>C:/Users/zz/Desktop/CSE-3902/Game2/Content/characters.png</File>
+    <File>C:/Users/zz/Desktop/CSE-3902/Game2/Content/enemy.png</File>
+    <File>C:/Users/zz/Desktop/CSE-3902/Game2/Content/enemy2.png</File>
+    <File>C:/Users/zz/Desktop/CSE-3902/Game2/Content/enemy3.png</File>
+    <File>C:/Users/zz/Desktop/CSE-3902/Game2/Content/item.png</File>
+    <File>C:/Users/zz/Desktop/CSE-3902/Game2/Content/link.png</File>
+    <File>C:/Users/zz/Desktop/CSE-3902/Game2/Content/link--final.png</File>
+    <File>C:/Users/zz/Desktop/CSE-3902/Game2/Content/woodenboomerang.png</File>
   </SourceFiles>
   <DestFiles>
-    <File>dugeon.png</File>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

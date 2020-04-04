@@ -36,6 +36,10 @@ namespace Sprint2
                 link.state = new LinkStandRightNonAttackNonDamageState(link);
             }
         }
+        public void Win()
+        {
+            link.state = new LinkWinningState(link);
+        }
         public void ChangeToLeft()
         {
             if (Link.ifDamage)

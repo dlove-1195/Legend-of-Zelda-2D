@@ -44,6 +44,10 @@ namespace Sprint2
 
           linkPlayer.state = new LinkWalkDownNonAttackNonDamageState(linkPlayer);
         }
+        public void Win()
+        {
+            linkPlayer.state = new LinkWinningState(linkPlayer);
+        }
         public void GetDamaged()
         {
              

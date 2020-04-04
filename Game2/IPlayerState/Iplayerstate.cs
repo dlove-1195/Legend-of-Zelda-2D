@@ -16,7 +16,7 @@ namespace Sprint2
         void Attack();
         void ChangeToWalk();
         void ChangeToStand();
-       
+        void Win();
 
         //delete
         // void LinkWithBomb();

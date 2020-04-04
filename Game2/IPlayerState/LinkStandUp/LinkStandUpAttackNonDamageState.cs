@@ -21,7 +21,10 @@ namespace Sprint2
             link.simpleAttackBox = new Rectangle(Link.posX+10, Link.posY - 45, 25,45);
 
         }
-       
+        public void Win()
+        {
+            link.state = new LinkWinningState(link);
+        }
         public void ChangeToRight()
         {
             link.state = new LinkStandRightNonAttackNonDamageState(link);

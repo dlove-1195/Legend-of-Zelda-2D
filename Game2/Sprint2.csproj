@@ -133,6 +133,7 @@
     <Compile Include="INPC\OldMan.cs" />
     <Compile Include="INPC\Princess.cs" />
     <Compile Include="IPlayerState\Iplayerstate.cs" />
+    <Compile Include="IPlayerState\LinkWinning\LinkWinningState.cs" />
     <Compile Include="IPlayerState\LinkStandDown\LinkStandDownAttackNonDamageState.cs" />
     <Compile Include="IPlayerState\LinkStandDown\LinkStandDownNonAttackDamageState.cs" />
     <Compile Include="IPlayerState\LinkStandDown\LinkStandDownNonAttackNonDamageState.cs" />
@@ -216,6 +217,7 @@
     <Compile Include="ISprite\LinkSprite\LinkDamageWalkLeft.cs" />
     <Compile Include="ISprite\LinkSprite\LinkDamageWalkRight.cs" />
     <Compile Include="ISprite\LinkSprite\LinkDamageWalkUp.cs" />
+    <Compile Include="ISprite\LinkSprite\LinkWinningSprite.cs" />
     <Compile Include="ISprite\LinkSprite\LinkStandDownSprite.cs" />
     <Compile Include="ISprite\LinkSprite\LinkStandLeftSprite.cs" />
     <Compile Include="ISprite\LinkSprite\LinkStandRightSprite.cs" />

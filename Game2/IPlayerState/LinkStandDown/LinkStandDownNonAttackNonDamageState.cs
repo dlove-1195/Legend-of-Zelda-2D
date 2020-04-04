@@ -1,5 +1,9 @@
-﻿ 
-using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework.Graphics;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Sprint2 
 {
@@ -17,6 +21,11 @@ namespace Sprint2
             link.linkSprite = new LinkStandDownSprite(texture);
             this.link.ChangeDirection(1);
 
+
+        }
+        public void Win()
+        {
+            link.state = new LinkWinningState(link);
 
         }
         public void ChangeToRight()

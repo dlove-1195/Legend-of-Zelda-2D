@@ -43,6 +43,10 @@ private Texture2D texture = Texture2DStorage.GetLinkSpriteSheet();
              
 
         }
+        public void Win()
+        {
+            linkPlayer.state = new LinkWinningState(linkPlayer);
+        }
         public void GetDamaged()
         {
              

@@ -66,6 +66,10 @@ namespace Sprint2
             }
 
         }
+        public void Win()
+        {
+            linkPlayer.state = new LinkWinningState(linkPlayer);
+        }
         public void GetDamaged()
         {
             // NO-OP

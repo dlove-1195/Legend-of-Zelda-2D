@@ -94,7 +94,10 @@ namespace Sprint2
             }
    
         }
-
+        public void Win()
+        {
+            linkPlayer.state = new LinkWinningState(linkPlayer);
+        }
         public void LinkWithItemUp(int item)
         {
             linkPlayer.state = new LinkWithItemDownState(linkPlayer, item);

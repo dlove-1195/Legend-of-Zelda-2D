@@ -59,6 +59,12 @@
     </Item>
     <!--  enemy  -->
     <!--  item  -->
+    <Item>
+      <ObjectType>Item</ObjectType>
+      <ObjectName>TriforcePiece</ObjectName>
+      <posX>48</posX>
+      <posY>47</posY>
+    </Item>
     <!--  item  -->
     <!--  NPC  -->
     <!--  NPC  -->

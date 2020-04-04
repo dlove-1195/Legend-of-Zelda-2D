@@ -23,7 +23,11 @@ namespace Sprint2
             this.link.ChangeDirection(3);
 
         }
-      
+        public void Win()
+        {
+            link.state = new LinkWinningState(link);
+
+        }
         public void ChangeToRight()
         {
             //already right

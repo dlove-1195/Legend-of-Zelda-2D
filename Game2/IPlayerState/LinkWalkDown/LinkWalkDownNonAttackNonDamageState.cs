@@ -19,8 +19,11 @@ namespace  Sprint2
             link.ChangeDirection(1);
 
         }
-       
 
+        public void Win()
+        {
+            linkPlayer.state = new LinkWinningState(linkPlayer);
+        }
         public void ChangeToRight()
         {
             linkPlayer.state = new LinkWalkRightNonAttackNonDamageState(linkPlayer);

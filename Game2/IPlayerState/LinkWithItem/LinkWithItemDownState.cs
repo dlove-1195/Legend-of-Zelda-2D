@@ -66,8 +66,8 @@ namespace Sprint2
                     boomerang.Appear = true;
                     link.linkSprite = new LinkStandDownSprite(textureLink);
                     link.items.Add(boomerang);
-                   
                     break;
+               
                 default:
                     break;
 
@@ -76,7 +76,10 @@ namespace Sprint2
 
 
         }
-      
+        public void Win()
+        {
+            link.state = new LinkWinningState(link);
+        }
         public void ChangeToRight()
         {
             link.state = new LinkStandRightNonAttackNonDamageState(link);

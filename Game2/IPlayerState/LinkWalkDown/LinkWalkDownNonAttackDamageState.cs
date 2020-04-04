@@ -21,7 +21,10 @@ namespace Sprint2
             Link.ifDamage = true;
 
         }
-       
+        public void Win()
+        {
+            linkPlayer.state = new LinkWinningState(linkPlayer);
+        }
 
         public void ChangeToRight()
         {

@@ -94,6 +94,10 @@ private Texture2D texture = Texture2DStorage.GetLinkSpriteSheet2();
                 linkPlayer.state = new LinkStandUpNonAttackNonDamageState(linkPlayer);
             }
         }
+        public void Win()
+        {
+            linkPlayer.state = new LinkWinningState(linkPlayer);
+        }
         public void LinkWithItemUp(int item)
         {
            // linkPlayer.state = new LinkWithItemDownState(linkPlayer, item);
@@ -113,6 +117,7 @@ private Texture2D texture = Texture2DStorage.GetLinkSpriteSheet2();
         {
              linkPlayer.state = new LinkWithItemRightState(linkPlayer, item);
         }
+
 
     }
 }
