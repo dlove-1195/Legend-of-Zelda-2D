@@ -4,12 +4,13 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Sprint2 {
      
-    class StartState: IGameState
+    public class StartState: IGameState
     {
       
          
        
         //private Texture2D LinkTexture = Texture2DStorage.GetLinkSpriteSheet();
+        
         private Texture2D LogoTexture = Texture2DStorage.GetLogoSpriteSheet();
         private Texture2D ButtonTexture = Texture2DStorage.GetButtonSpriteSheet();
         private Texture2D StoryTexture = Texture2DStorage.GetZeldaStorySpriteSheet();
@@ -48,7 +49,7 @@ namespace Sprint2 {
             Rectangle destinationLogoRectangle = new Rectangle(300, 50, 200, 150);
             spriteBatch.Draw(LogoTexture, destinationLogoRectangle, sourceLogoRectangle, Color.White);
             //BUTTON 
-            Rectangle sourceButtonRectangle = new Rectangle(17,49, 100, 30);
+            Rectangle sourceButtonRectangle = new Rectangle(20,42, 90, 35);
             Rectangle destinationButtonRectangle = new Rectangle((int)buttonLocation.X, (int)buttonLocation.Y, 200, 100);
             spriteBatch.Draw(ButtonTexture, destinationButtonRectangle, sourceButtonRectangle, Color.White);
         }

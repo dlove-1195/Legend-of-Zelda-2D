@@ -31,6 +31,9 @@ namespace Sprint2
 		private static Texture2D ButtonSpriteSheet;
 		private static Texture2D ZeldaStorySpriteSheet;
 
+		//win state
+		private static Texture2D triPieceSpriteSheet;
+
 		//initialize the Texture2D fields
 		public static void LoadAllTextures(ContentManager content)
 			{
@@ -58,6 +61,7 @@ namespace Sprint2
 			ButtonSpriteSheet = content.Load<Texture2D>("Button");
 			ZeldaStorySpriteSheet = content.Load<Texture2D>("Zelda_story");
 
+			triPieceSpriteSheet = content.Load<Texture2D>("TriForce");
 		}
 
 		   public static void UnloadAllTextures()
@@ -131,6 +135,10 @@ namespace Sprint2
 		public static Texture2D GetZeldaStorySpriteSheet()
 		{
 			return ZeldaStorySpriteSheet;
+		}
+		public static Texture2D GetTriPiecesSpriteSheet()
+		{
+			return triPieceSpriteSheet;
 		}
 	}
 	

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/zz/Desktop/CSE-3902/Game2/Content/3tri.png</SourceFile>
-  <SourceTime>2020-04-03T20:51:21.888207-04:00</SourceTime>
-  <DestFile>C:/Users/zz/Desktop/CSE-3902/Game2/Content/bin/Windows/3tri.xnb</DestFile>
-  <DestTime>2020-04-03T23:10:56.5385153-04:00</DestTime>
+  <SourceFile>C:/Users/zz/Desktop/CSE-3902/Game2/Content/TriForce.png</SourceFile>
+  <SourceTime>2020-04-04T00:48:59.8907665-04:00</SourceTime>
+  <DestFile>C:/Users/zz/Desktop/CSE-3902/Game2/Content/bin/Windows/TriForce.xnb</DestFile>
+  <DestTime>2020-04-04T01:03:23.3651217-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
