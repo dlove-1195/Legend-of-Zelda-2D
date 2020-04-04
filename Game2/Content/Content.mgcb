@@ -37,6 +37,18 @@
 /processorParam:TextureFormat=Color
 /build:bow.png
 
+#begin button.jpg
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:button.jpg
+
 #begin candle.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -133,6 +145,18 @@
 /processorParam:TextureFormat=Color
 /build:link--final.png
 
+#begin Logo.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Logo.png
+
 #begin woodenboomerang.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -144,4 +168,16 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:woodenboomerang.png
+
+#begin Zelda_story.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Zelda_story.png
 

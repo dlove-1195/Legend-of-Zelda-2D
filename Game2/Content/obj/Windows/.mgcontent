@@ -4,8 +4,8 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/Mingjie/OneDrive/Documents/zelda/Game2/Content/../../../../桌面/dugeon.png</File>
     <File>C:/Users/Mingjie/OneDrive/Documents/zelda/Game2/Content/bow.png</File>
+    <File>C:/Users/Mingjie/OneDrive/Documents/zelda/Game2/Content/button.jpg</File>
     <File>C:/Users/Mingjie/OneDrive/Documents/zelda/Game2/Content/candle.png</File>
     <File>C:/Users/Mingjie/OneDrive/Documents/zelda/Game2/Content/characters.png</File>
     <File>C:/Users/Mingjie/OneDrive/Documents/zelda/Game2/Content/enemy.png</File>
@@ -14,10 +14,14 @@
     <File>C:/Users/Mingjie/OneDrive/Documents/zelda/Game2/Content/item.png</File>
     <File>C:/Users/Mingjie/OneDrive/Documents/zelda/Game2/Content/link.png</File>
     <File>C:/Users/Mingjie/OneDrive/Documents/zelda/Game2/Content/link--final.png</File>
+    <File>C:/Users/Mingjie/OneDrive/Documents/zelda/Game2/Content/Logo.png</File>
     <File>C:/Users/Mingjie/OneDrive/Documents/zelda/Game2/Content/woodenboomerang.png</File>
+    <File>C:/Users/Mingjie/OneDrive/Documents/zelda/Game2/Content/Zelda_story.png</File>
   </SourceFiles>
   <DestFiles>
-    <File>dugeon.png</File>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

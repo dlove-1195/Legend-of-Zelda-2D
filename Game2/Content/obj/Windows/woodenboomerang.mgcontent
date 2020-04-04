@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>C:/Users/Mingjie/OneDrive/Documents/zelda/Game2/Content/woodenboomerang.png</SourceFile>
-  <SourceTime>2020-03-11T20:08:28.2739719-04:00</SourceTime>
+  <SourceTime>2020-04-03T17:02:20.4118237-04:00</SourceTime>
   <DestFile>C:/Users/Mingjie/OneDrive/Documents/zelda/Game2/Content/bin/Windows/woodenboomerang.xnb</DestFile>
-  <DestTime>2020-03-12T23:41:59.1170041-04:00</DestTime>
+  <DestTime>2020-04-03T17:47:20.4478131-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
