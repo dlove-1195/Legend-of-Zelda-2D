@@ -6,6 +6,7 @@ namespace Sprint2
 {
     public interface IRoom
     {
+        int roomNumber {get;set;}
         int leftRoomNum { get; set; }
         int rightRoomNum { get; set; }
         int upRoomNum { get; set; }

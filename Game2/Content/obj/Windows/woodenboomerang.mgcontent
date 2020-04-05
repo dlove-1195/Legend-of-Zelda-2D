@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/zz/Desktop/CSE-3902/Game2/Content/woodenboomerang.png</SourceFile>
-  <SourceTime>2020-04-01T23:37:32.0783812-04:00</SourceTime>
-  <DestFile>C:/Users/zz/Desktop/CSE-3902/Game2/Content/bin/Windows/woodenboomerang.xnb</DestFile>
-  <DestTime>2020-04-04T01:03:23.3850681-04:00</DestTime>
+  <SourceFile>C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/woodenboomerang.png</SourceFile>
+  <SourceTime>2020-04-05T01:25:48.7731369-04:00</SourceTime>
+  <DestFile>C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/bin/Windows/woodenboomerang.xnb</DestFile>
+  <DestTime>2020-04-05T01:27:45.9891109-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

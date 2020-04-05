@@ -64,9 +64,13 @@ namespace Sprint2
 			ButtonSpriteSheet = content.Load<Texture2D>("Button");
 			ZeldaStorySpriteSheet = content.Load<Texture2D>("Zelda_story");
 
+<<<<<<< HEAD
 			triPieceSpriteSheet = content.Load<Texture2D>("TriForce");
 			//play state
 			inventorySpriteSheet = content.Load<Texture2D>("Inventory");
+=======
+			triPieceSpriteSheet = content.Load<Texture2D>("WinLogo");
+>>>>>>> refs/remotes/origin/master
 		}
 
 		   public static void UnloadAllTextures()
@@ -145,7 +149,7 @@ namespace Sprint2
 		{
 			return ZeldaStorySpriteSheet;
 		}
-		public static Texture2D GetTriPiecesSpriteSheet()
+		public static Texture2D GetTriForceSpriteSheet()
 		{
 			return triPieceSpriteSheet;
 		}

@@ -4,6 +4,12 @@
   <!--  room  -->
   <Item>
     <ObjectType>Room</ObjectType>
+    <ObjectName>RoomNum</ObjectName>
+    <num>12</num>
+    <num>12</num>
+  </Item>
+  <Item>
+    <ObjectType>Room</ObjectType>
     <ObjectName>Room</ObjectName>
     <width>13</width>
     <height>19</height>

@@ -4,6 +4,7 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
+<<<<<<< HEAD
     <File>C:/Users/Yilai/CSE-3902/Game2/Content/Inventory.jpg</File>
     <File>C:/Users/Yilai/CSE-3902/Game2/Content/Zelda_story.png</File>
     <File>C:/Users/Yilai/CSE-3902/Game2/Content/characters.png</File>
@@ -21,6 +22,22 @@
     <File>C:/Users/zz/Desktop/CSE-3902/Game2/Content/TriForce.png</File>
     <File>C:/Users/zz/Desktop/CSE-3902/Game2/Content/woodenboomerang.png</File>
     <File>C:/Users/zz/Desktop/CSE-3902/Game2/Content/Zelda_story.png</File>
+=======
+    <File>C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/bow.png</File>
+    <File>C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/button.jpg</File>
+    <File>C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/candle.png</File>
+    <File>C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/characters.png</File>
+    <File>C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/enemy.png</File>
+    <File>C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/enemy2.png</File>
+    <File>C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/enemy3.png</File>
+    <File>C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/item.png</File>
+    <File>C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/link.png</File>
+    <File>C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/link--final.png</File>
+    <File>C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/Logo.png</File>
+    <File>C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/winLogo.png</File>
+    <File>C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/woodenboomerang.png</File>
+    <File>C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/Zelda_story.png</File>
+>>>>>>> refs/remotes/origin/master
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

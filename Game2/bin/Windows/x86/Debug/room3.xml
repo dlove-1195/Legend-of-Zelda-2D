@@ -3,6 +3,12 @@
   <Asset Type="MyDataTypes.LevelObjectData[]">
     <Item>
       <ObjectType>Room</ObjectType>
+      <ObjectName>RoomNum</ObjectName>
+      <num>3</num>
+      <num>3</num>
+    </Item>
+    <Item>
+      <ObjectType>Room</ObjectType>
       <ObjectName>Room</ObjectName>
       <posX>13</posX>
       <posY>19</posY>

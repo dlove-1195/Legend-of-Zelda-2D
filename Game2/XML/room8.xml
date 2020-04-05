@@ -1,6 +1,11 @@
 ﻿<XnaContent>
   <Asset Type="MyDataTypes.LevelObjectData[]">
-   
+    <Item>
+      <ObjectType>Room</ObjectType>
+      <ObjectName>RoomNum</ObjectName>
+      <num>8</num>
+      <num>8</num>
+    </Item>
     <Item>
       <ObjectType>Room</ObjectType>
       <ObjectName>Room</ObjectName>

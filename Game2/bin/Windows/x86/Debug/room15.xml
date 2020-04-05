@@ -3,6 +3,12 @@
 <Asset Type="MyDataTypes.LevelObjectData[]">
   <Item>
     <ObjectType>Room</ObjectType>
+    <ObjectName>RoomNum</ObjectName>
+    <num>15</num>
+    <num>15</num>
+  </Item>
+  <Item>
+    <ObjectType>Room</ObjectType>
     <ObjectName>Room</ObjectName>
     <width>13</width>
     <height>19</height>
@@ -97,7 +103,7 @@
     <height>10</height>
   </Item>
   <!--  Box  -->
-
+ 
   <!--  Stair  -->
   <!--  stair position precentage relates to the room  -->
   <!--  destination room position on level map  -->
@@ -106,7 +112,7 @@
     <ObjectName>Up</ObjectName>
     <posX>19</posX>
     <posY>0</posY>
-    <destX>0</destX>
+    <destX>0</destX> 
     <destY>707</destY>
   </Item>
   <!--  Stair  -->

@@ -3,6 +3,12 @@
     <!--  player  -->
     <Item>
       <ObjectType>Room</ObjectType>
+      <ObjectName>RoomNum</ObjectName>
+      <num>16</num>
+      <num>16</num>
+    </Item>
+    <Item>
+      <ObjectType>Room</ObjectType>
       <ObjectName>Room</ObjectName>
       <width>13</width>
       <height>19</height>
@@ -59,12 +65,6 @@
     </Item>
     <!--  enemy  -->
     <!--  item  -->
-    <Item>
-      <ObjectType>Item</ObjectType>
-      <ObjectName>TriforcePiece</ObjectName>
-      <posX>48</posX>
-      <posY>47</posY>
-    </Item>
     <!--  item  -->
     <!--  NPC  -->
     <!--  NPC  -->
