@@ -5,6 +5,7 @@
   <Config />
   <SourceFiles>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <File>C:/Users/Yilai/CSE-3902/Game2/Content/Inventory.jpg</File>
     <File>C:/Users/Yilai/CSE-3902/Game2/Content/Zelda_story.png</File>
     <File>C:/Users/Yilai/CSE-3902/Game2/Content/characters.png</File>
@@ -23,6 +24,8 @@
     <File>C:/Users/zz/Desktop/CSE-3902/Game2/Content/woodenboomerang.png</File>
     <File>C:/Users/zz/Desktop/CSE-3902/Game2/Content/Zelda_story.png</File>
 =======
+=======
+>>>>>>> refs/remotes/origin/master
     <File>C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/bow.png</File>
     <File>C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/button.jpg</File>
     <File>C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/candle.png</File>
@@ -37,6 +40,9 @@
     <File>C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/winLogo.png</File>
     <File>C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/woodenboomerang.png</File>
     <File>C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/Zelda_story.png</File>
+<<<<<<< HEAD
+>>>>>>> refs/remotes/origin/master
+=======
 >>>>>>> refs/remotes/origin/master
   </SourceFiles>
   <DestFiles>

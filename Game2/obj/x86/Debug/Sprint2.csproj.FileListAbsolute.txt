@@ -120,6 +120,7 @@ C:\Users\Mingjie\OneDrive\Documents\zelda\Game2\obj\x86\Debug\Game2.pdb
 C:\Users\Yilai\CSE-3902\Game2\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
 C:\Users\Yilai\CSE-3902\Game2\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
 =======
+>>>>>>> refs/remotes/origin/master
 C:\Users\zz\Desktop\22\CSE-3902\Game2\bin\Windows\x86\Debug\Game2.exe
 C:\Users\zz\Desktop\22\CSE-3902\Game2\bin\Windows\x86\Debug\Game2.pdb
 C:\Users\zz\Desktop\22\CSE-3902\Game2\bin\Windows\x86\Debug\Game2.exe.CodeAnalysisLog.xml
@@ -144,4 +145,3 @@ C:\Users\zz\Desktop\22\CSE-3902\Game2\obj\x86\Debug\Sprint2.csprojAssemblyRefere
 C:\Users\zz\Desktop\22\CSE-3902\Game2\obj\x86\Debug\Sprint2.csproj.CopyComplete
 C:\Users\zz\Desktop\22\CSE-3902\Game2\obj\x86\Debug\Game2.exe
 C:\Users\zz\Desktop\22\CSE-3902\Game2\obj\x86\Debug\Game2.pdb
->>>>>>> refs/remotes/origin/master

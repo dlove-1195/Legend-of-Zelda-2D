@@ -1,5 +1,6 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
 <<<<<<< HEAD
+<<<<<<< HEAD
 "C:/Users/Yilai/CSE-3902/Game2/Content/characters.png","C:/Users/Yilai/CSE-3902/Game2/Content/bin/Windows/characters.xnb","TextureProcessor","Texture2DContent",939,26293,0.1888923
 "C:/Users/Yilai/CSE-3902/Game2/Content/Inventory.jpg","C:/Users/Yilai/CSE-3902/Game2/Content/bin/Windows/Inventory.xnb","TextureProcessor","Texture2DContent",5433,1257377,0.2034734
 "C:/Users/Yilai/CSE-3902/Game2/Content/Zelda_story.png","C:/Users/Yilai/CSE-3902/Game2/Content/bin/Windows/Zelda_story.xnb","TextureProcessor","Texture2DContent",4978,245845,0.2112035
@@ -18,6 +19,8 @@ Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Siz
 "C:/Users/zz/Desktop/CSE-3902/Game2/Content/woodenboomerang.png","C:/Users/zz/Desktop/CSE-3902/Game2/Content/bin/Windows/woodenboomerang.xnb","TextureProcessor","Texture2DContent",1211,10965,0.0179451
 "C:/Users/zz/Desktop/CSE-3902/Game2/Content/Zelda_story.png","C:/Users/zz/Desktop/CSE-3902/Game2/Content/bin/Windows/Zelda_story.xnb","TextureProcessor","Texture2DContent",4978,245845,0.0329107
 =======
+=======
+>>>>>>> refs/remotes/origin/master
 "C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/bow.png","C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/bin/Windows/bow.xnb","TextureProcessor","Texture2DContent",465,14245,0.7060094
 "C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/button.jpg","C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/bin/Windows/button.xnb","TextureProcessor","Texture2DContent",234028,944085,0.0578982
 "C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/candle.png","C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/bin/Windows/candle.xnb","TextureProcessor","Texture2DContent",514,15765,0.04227
@@ -32,4 +35,7 @@ Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Siz
 "C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/winLogo.png","C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/bin/Windows/winLogo.xnb","TextureProcessor","Texture2DContent",61179,1988405,0.1276286
 "C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/woodenboomerang.png","C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/bin/Windows/woodenboomerang.xnb","TextureProcessor","Texture2DContent",1211,10965,0.0379739
 "C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/Zelda_story.png","C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/bin/Windows/Zelda_story.xnb","TextureProcessor","Texture2DContent",4978,245845,0.0444844
+<<<<<<< HEAD
+>>>>>>> refs/remotes/origin/master
+=======
 >>>>>>> refs/remotes/origin/master
