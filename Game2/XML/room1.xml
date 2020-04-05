@@ -108,6 +108,12 @@
   </Item>
   <Item>
     <ObjectType>Item</ObjectType>
+    <ObjectName>StaticBomb</ObjectName>
+    <posX>55</posX>
+    <posY>55</posY>
+  </Item> 
+  <Item>
+    <ObjectType>Item</ObjectType>
     <ObjectName>Key</ObjectName>
     <posX>28</posX>
     <posY>46</posY>

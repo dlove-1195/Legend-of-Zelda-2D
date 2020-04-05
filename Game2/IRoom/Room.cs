@@ -191,6 +191,10 @@ namespace Sprint2
                     {
                         pickUpItems.Add(new TriforcePiece(vector));
                     }
+                    if (name == "StaticBomb")
+                    {
+                        pickUpItems.Add(new staticBomb(vector));
+                    }
                 }
                 else if (type == "NPC")
                 {

@@ -107,6 +107,7 @@
     <Compile Include="IItem\StaticItem\HeartContainer.cs" />
     <Compile Include="IItem\StaticItem\Key.cs" />
     <Compile Include="IItem\StaticItem\Map.cs" />
+    <Compile Include="IItem\StaticItem\staticBomb.cs" />
     <Compile Include="IItem\StaticItem\TriforcePiece.cs" />
     <Compile Include="ILevel\ILevel.cs" />
     <Compile Include="ILevel\level1.cs" />
