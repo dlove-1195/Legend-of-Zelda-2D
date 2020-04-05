@@ -12,7 +12,7 @@ namespace Sprint2
 {
     public class PlayState : IGameState
     {
-
+        
         private Viewport topViewport;
 
         private Texture2D inventoryTexture = Texture2DStorage.GetInventorySpriteSheet();
@@ -28,6 +28,7 @@ namespace Sprint2
     // Rectangle sourceRectangle2 = new Rectangle(Game1.WindowHeight/4, 0, Game1.WindowWidth, (Game1.WindowHeight*3)/4);
         public PlayState()
         {
+            
             player = new Link(new Vector2(200, 300));
            // this.player = player;
             
@@ -54,6 +55,7 @@ namespace Sprint2
 
         public void Update()
         {
+            
             player.Update();
             linkDetection.Update();
             enemyDetection.Update();
