@@ -14,6 +14,7 @@ namespace Sprint2
     {
         
         private Viewport topViewport;
+        private Viewport bottomViewport;
 
         private Texture2D inventoryTexture = Texture2DStorage.GetInventorySpriteSheet();
         private static int width = 601;
@@ -41,13 +42,14 @@ namespace Sprint2
             
             //draw inventory in the topView
             // Rectangle sourceRectangle1 = new Rectangle(0, 0, width, height-100);
-            Rectangle sourceRectangle1 = new Rectangle(0, height - 120, width, Game1.WindowHeight / 4);
-            topViewport = new Viewport(sourceRectangle1);
+            Rectangle sourceRectangle1 = new Rectangle(0, height - 120, width, Game1.WindowHeight / 4);          
             Rectangle destinationRectangle = new Rectangle(0, 0, Game1.WindowWidth, Game1.WindowHeight/4);
+           topViewport = new Viewport(destinationRectangle);
+           
             spriteBatch.Draw(inventoryTexture, destinationRectangle, sourceRectangle1, Color.White);
-            
 
-            
+
+            bottomViewport = new Viewport(new Rectangle(Game1.WindowWidth, Game1.WindowHeight / 4, Game1.WindowWidth, Game1.WindowHeight));
             level.Draw(spriteBatch);
             player.Draw(spriteBatch);
             
