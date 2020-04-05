@@ -19,7 +19,7 @@ namespace Sprint2
         private int index = 0;
         public Level1()
         {
-            room = new Room("room1.xml");
+            room = new Room("room13.xml");
             existingRooms.Add(room);
             camera = new Camera
             {
@@ -59,16 +59,29 @@ namespace Sprint2
 
         public void switchUnderground(Vector2 destRoomPos, string direction)
         {
+            
             Camera.sourceLocX = (int)destRoomPos.X;
             Camera.sourceLocY = (int)destRoomPos.Y;
-            int roomNum = getNextRoomNum(direction);
-            room = new Room("room" + roomNum + ".xml");
+             roomNum = getNextRoomNum(direction);
+            if (roomNum != 0)
+            { 
+                load = true; 
+            }
             Link.posX = 400;
-            Link.posY = 300;
+            Link.posY = 500;
+            for (int i = 0; i < existingRooms.Count; i++)
+            {
+                if (existingRooms[i].roomNumber == roomNum)
+                {
+                    visit = true;
+                    index = i;
+                }
+            }
             if (roomNum == 15)
             {
                 Camera.width = 257;
                 Camera.height = 160;
+                
             }
             else
             {

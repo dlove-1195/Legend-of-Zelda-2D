@@ -11,8 +11,8 @@ namespace Sprint2
         
         public static int width = 257;
         public static int height = 177;
-        public  static int sourceLocX = 515;
-        public static int sourceLocY = 177;
+        public  static int sourceLocX = 0;
+        public static int sourceLocY = 707;
         //room1:(515,177) room10:(1,532) room11:(772,353) room12:(1030,530) room13:(0,707) room14:(515,885) room15:(0,0)
 
         private int delay = 0;
