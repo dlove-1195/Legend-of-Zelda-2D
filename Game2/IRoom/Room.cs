@@ -53,7 +53,7 @@ namespace Sprint2
         public Room(String fileName)
         {
             int windowWidth = Game1.WindowWidth;
-            int windowHeight = Game1.WindowHeight;
+            int windowHeight =Game1.WindowHeight;
             enemies = new List<IEnemy>();
             pickUpItems = new List<IItem>();
             blockLocation = new List<KeyValuePair<int, int>>();

@@ -117,8 +117,8 @@ namespace Sprint2
             if (Texture != null)
             {
                 Rectangle sourceRectangle = new Rectangle(sourceLocX, sourceLocY, width, height);
-                Rectangle destinationRectangle = new Rectangle(0, 0, Game1.WindowWidth, Game1.WindowHeight);
-
+                Rectangle destinationRectangle = new Rectangle(100, Game1.WindowHeight/4, Game1.WindowWidth-200, Game1.WindowHeight-200);
+                //0,0,Game1.WindowWidth, Game1.WindowHeight original setting
 
                 spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
 

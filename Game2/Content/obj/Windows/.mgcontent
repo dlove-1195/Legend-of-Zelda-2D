@@ -4,6 +4,9 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
+    <File>C:/Users/Yilai/CSE-3902/Game2/Content/Inventory.jpg</File>
+    <File>C:/Users/Yilai/CSE-3902/Game2/Content/Zelda_story.png</File>
+    <File>C:/Users/Yilai/CSE-3902/Game2/Content/characters.png</File>
     <File>C:/Users/zz/Desktop/CSE-3902/Game2/Content/bow.png</File>
     <File>C:/Users/zz/Desktop/CSE-3902/Game2/Content/button.jpg</File>
     <File>C:/Users/zz/Desktop/CSE-3902/Game2/Content/candle.png</File>
@@ -20,19 +23,6 @@
     <File>C:/Users/zz/Desktop/CSE-3902/Game2/Content/Zelda_story.png</File>
   </SourceFiles>
   <DestFiles>
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
     <File xsi:nil="true" />
   </DestFiles>
 </SourceFileCollection>

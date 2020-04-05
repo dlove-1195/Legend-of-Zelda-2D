@@ -10,19 +10,20 @@ namespace Sprint2
         private SpriteBatch spriteBatch;
 
         //only needed in when actually start playing(play state)
-        /*public IEnemy enemy;
-        public IPlayer player;
+        public IEnemy enemy;
+      //  public IPlayer player;
         public IItem item;
         public INpc npcs;
-        private ILevel level;
-        private ICollisionDetection linkDetection;
-        private ICollisionDetection enemyDetection;*/
+        //private ILevel level;
+        //private ICollisionDetection linkDetection;
+        //private ICollisionDetection enemyDetection;
 
         private IGameState gameState;
         
 
 
-       // IController keyboardController;
+
+        // IController keyboardController;
 
         public static int WindowWidth = 800;
         public static int WindowHeight = 600;
@@ -42,7 +43,7 @@ namespace Sprint2
         protected override void Initialize()
         {
 
-            //keyboardController = new KeyboardController(this);
+          //  keyboardController = new KeyboardController(this);
             
             IsMouseVisible = true;
             
@@ -55,7 +56,7 @@ namespace Sprint2
         {
             Texture2DStorage.LoadAllTextures(Content);
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            gameState = new StartState();
+            gameState = new PlayState();
 
             /* 
               player = new Link(new Vector2(200,300));
@@ -78,7 +79,7 @@ namespace Sprint2
 
            
             //will have mouse controller in the future 
-            //keyboardController.Update();
+          //  keyboardController.Update();
             gameState.Update();
             /* 
              player.Update(); 
