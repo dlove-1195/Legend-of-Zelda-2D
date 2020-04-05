@@ -29,7 +29,7 @@ namespace Sprint2
         public PlayState()
         {
             
-            player = new Link(new Vector2(200, 300));
+            player = new Link(new Vector2(200, 500));
            // this.player = player;
             
             level = new Level1();
@@ -41,7 +41,7 @@ namespace Sprint2
             
             //draw inventory in the topView
             // Rectangle sourceRectangle1 = new Rectangle(0, 0, width, height-100);
-            Rectangle sourceRectangle1 = new Rectangle(0, height - 100, width, Game1.WindowHeight / 4);
+            Rectangle sourceRectangle1 = new Rectangle(0, height - 120, width, Game1.WindowHeight / 4);
             topViewport = new Viewport(sourceRectangle1);
             Rectangle destinationRectangle = new Rectangle(0, 0, Game1.WindowWidth, Game1.WindowHeight/4);
             spriteBatch.Draw(inventoryTexture, destinationRectangle, sourceRectangle1, Color.White);

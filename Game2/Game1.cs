@@ -26,7 +26,7 @@ namespace Sprint2
         //IController keyboardController;
 
         public static int WindowWidth = 800;
-        public static int WindowHeight = 600;
+        public static int WindowHeight = 800;
         public static int seed = 0;
         public Game1()
         {

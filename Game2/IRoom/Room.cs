@@ -53,8 +53,8 @@ namespace Sprint2
         }
         public Room(String fileName)
         {
-            int windowWidth = Game1.WindowWidth;
-            int windowHeight =Game1.WindowHeight;
+            int windowWidth = 800;// Game1.WindowWidth;
+            int windowHeight = 600;// Game1.WindowHeight;
             enemies = new List<IEnemy>();
             pickUpItems = new List<IItem>();
             blockLocation = new List<KeyValuePair<int, int>>();
@@ -82,7 +82,7 @@ namespace Sprint2
                 y = Int32.Parse(node.ChildNodes[3].InnerText);
 
                 vector.X = ((float)(x) / 100) * windowWidth;
-                vector.Y = ((float)(y) / 100) * windowHeight;
+                vector.Y = ((float)(y) / 100) * windowHeight+200;
 
 
                 if (type == "Room")
