@@ -19,7 +19,7 @@ namespace Sprint2
         public ILevel level;
         public ICollisionDetection linkDetection;
         public ICollisionDetection enemyDetection;
-        // Rectangle sourceRectangle2 = new Rectangle(Game1.WindowHeight/4, 0, Game1.WindowWidth, (Game1.WindowHeight*3)/4);
+      
 
         public string name { get; set; }
         private IController playStateController; 
@@ -27,7 +27,7 @@ namespace Sprint2
         {
             name = "play";
             player = new Link(new Vector2(200, 500)); 
-            level = new Level1();
+            level = new Level1(player);
             linkDetection = new LinkCollisionDetection(level, player);
             enemyDetection = new EnemyCollisionDetection(level);
             playStateController = new PlayStateController( game,this);

@@ -17,9 +17,11 @@ namespace Sprint2
         //new add
         private bool visit = false;
         private int index = 0;
-        public Level1()
+        private IPlayer link;
+        public Level1(IPlayer player)
         {
-            room = new Room("room13.xml");
+            link = player;
+            room = new Room("room1.xml");
             existingRooms.Add(room);
             camera = new Camera
             {
@@ -64,11 +66,21 @@ namespace Sprint2
             Camera.sourceLocY = (int)destRoomPos.Y;
              roomNum = getNextRoomNum(direction);
             if (roomNum != 0)
-            { 
-                load = true; 
+            {
+                load = true;
+                if (roomNum == 13)
+                {
+                    Link.posX = 600;
+                    Link.posY = 500;
+                    link.ChangeToLeft();
+                }else if (roomNum == 15)
+                {
+                    Link.posX = 170;
+                    Link.posY =280;
+                    link.ChangeToDown();
+                }
             }
-            Link.posX = 400;
-            Link.posY = 500;
+            
             for (int i = 0; i < existingRooms.Count; i++)
             {
                 if (existingRooms[i].roomNumber == roomNum)
