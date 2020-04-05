@@ -3,7 +3,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Sprint2 {
+namespace Sprint2
+{
 
     public class LinkCollisionDetection : ICollisionDetection
     {
@@ -13,53 +14,53 @@ namespace Sprint2 {
         private List<IItem> item;
         private List<INpc> npc;
         private List<KeyValuePair<int, int>> blockLocation;
-        private List<KeyValuePair<Vector2,Vector2>> stair;
+        private List<KeyValuePair<Vector2, Vector2>> stair;
         private List<Rectangle> boundingBox; //for room15
         private int roomLeftCornerPosX;
         private int roomLeftCornerPosY;
         private int roomRightCornerPosX;
         private int roomRightCornerPosY;
 
-        private IPlayer player ;
+        private IPlayer player;
 
         private List<string> DoorDirection { get; set; }
 
-        public  LinkCollisionDetection (ILevel level, IPlayer link)
+        public LinkCollisionDetection(ILevel level, IPlayer link)
         {
             if (level == null)
             {
                 throw new ArgumentNullException(nameof(level));
             }
             IRoom room = level.room;
-            int roomWidth = (int)(Game1.WindowWidth * 0.68);
-            int roomHeight = (int)(Game1.WindowHeight * 0.55);
-            roomLeftCornerPosX = (int) (room.roomPos.X);
+            int roomWidth = (int)( 800* 0.68);
+            int roomHeight = (int)(  600* 0.55);
+            roomLeftCornerPosX = (int)(room.roomPos.X);
             roomLeftCornerPosY = (int)(room.roomPos.Y);
-            roomRightCornerPosX = roomWidth+ (int)(room.roomPos.X);
-            roomRightCornerPosY = roomHeight+(int)(room.roomPos.Y);
+            roomRightCornerPosX = roomWidth + (int)(room.roomPos.X);
+            roomRightCornerPosY = roomHeight + (int)(room.roomPos.Y);
             enemy = room.enemies;
-            item =  room.pickUpItems;
-            npc =  room.npcs;
-            blockLocation =  room.blockLocation;
+            item = room.pickUpItems;
+            npc = room.npcs;
+            blockLocation = room.blockLocation;
             DoorDirection = room.doorDirection;
             stair = room.stair;
 
             boundingBox = room.boundingBox;
             player = link;
-            linkHandler =new LinkCollisionHandler(player, level) ;
-    }
+            linkHandler = new LinkCollisionHandler(player, level);
+        }
 
         public void Update()
         {
 
 
             Rectangle overlapRec;
-       
+
             Rectangle linkRectangle = player.boundingBox;
-            
+
             //loop for link/enemy collision 
             int listLength = enemy.Count;
-            for(int i = 0;i< listLength; i++)
+            for (int i = 0; i < listLength; i++)
             {
                 if (enemy[i] != null)
                 {
@@ -92,7 +93,7 @@ namespace Sprint2 {
 
                     //detect link's simple attack collsion with enemy
                     Rectangle swordRec = player.simpleAttackBox;
-                    overlapRec = Rectangle.Intersect( swordRec, singleEnemyRec);
+                    overlapRec = Rectangle.Intersect(swordRec, singleEnemyRec);
                     if (!overlapRec.IsEmpty)
                     {
                         //enemy damage 
@@ -114,58 +115,48 @@ namespace Sprint2 {
 
                     }
                 }
-  
+
             }
 
             //loop for link/item collsion 
 
-           
             listLength = item.Count;
-            
             for (int i = 0; i < listLength; i++)
             {
                 if (item[i] != null)
                 {
-                    
                     Rectangle singleItemRec = item[i].BoundingBox;
+
+
                     overlapRec = Rectangle.Intersect(linkRectangle, singleItemRec);
                     if (!overlapRec.IsEmpty)
                     {
-                        //need count to 3 later in play state
-                        //this is for testing purpose
-                        if (item[i] is TriforcePiece)
-                        {
-                            player.Win();
 
-
-                        }
                         linkHandler.HandleLinkItemCollsion(i);
                     }
-
-                    
-
                 }
 
             }
 
+
             //loop for link/NPC collsion 
 
             listLength = npc.Count;
-            
+
             for (int i = 0; i < listLength; i++)
             {
 
                 Rectangle singleNpcRec = npc[i].boundingBox;
-               
+
                 overlapRec = Rectangle.Intersect(linkRectangle, singleNpcRec);
-                
+
                 if (!overlapRec.IsEmpty)
                 {
                     String direction = detectCollisionDirection(overlapRec, linkRectangle, singleNpcRec);
                     linkHandler.HandleLinkNpcCollsion(direction);
                 }
-                
- 
+
+
 
             }
 
@@ -177,7 +168,7 @@ namespace Sprint2 {
                 for (int i = 0; i < listLength; i++)
                 {
                     KeyValuePair<int, int> singleBlockLocation = blockLocation[i];
-                    
+
                     Rectangle singleBlockRec = new Rectangle(singleBlockLocation.Key, singleBlockLocation.Value,
                         30, 30);
 
@@ -213,37 +204,37 @@ namespace Sprint2 {
 
 
             //loop for door collision (for each door in each room)
-            
+
             listLength = DoorDirection.Count;
             for (int i = 0; i < listLength; i++)
             {
                 String singleDoorDirection = DoorDirection[i];
 
- 
-                if (singleDoorDirection.Equals("Up", StringComparison.Ordinal) )
+
+                if (singleDoorDirection.Equals("Up", StringComparison.Ordinal))
                 {
-                    if (  Link.posY <= roomLeftCornerPosY-45&&! Camera.SwitchRoom)//(int)singleDoorLocation.Value.Y)
+                    if (Link.posY <= roomLeftCornerPosY - 45 && !Camera.SwitchRoom)//(int)singleDoorLocation.Value.Y)
                     {
                         linkHandler.HandleLinkDoorCollsion(singleDoorDirection);
                     }
                 }
                 else if (singleDoorDirection.Equals("Down", StringComparison.Ordinal))
                 {
-                    if (Link.posY >= roomRightCornerPosY+45&& !Camera.SwitchRoom)
+                    if (Link.posY >= roomRightCornerPosY + 45 && !Camera.SwitchRoom)
                     {
                         linkHandler.HandleLinkDoorCollsion(singleDoorDirection);
                     }
                 }
                 else if (singleDoorDirection.Equals("Left", StringComparison.Ordinal))
                 {
-                    if (Link.posX <= roomLeftCornerPosX -45&& !Camera.SwitchRoom)
+                    if (Link.posX <= roomLeftCornerPosX - 45 && !Camera.SwitchRoom)
                     {
                         linkHandler.HandleLinkDoorCollsion(singleDoorDirection);
                     }
                 }
                 else if (singleDoorDirection.Equals("Right", StringComparison.Ordinal))
                 {
-                    if (Link.posX >= roomRightCornerPosX+45 && !Camera.SwitchRoom)
+                    if (Link.posX >= roomRightCornerPosX + 45 && !Camera.SwitchRoom)
                     {
                         linkHandler.HandleLinkDoorCollsion(singleDoorDirection);
                     }
@@ -251,23 +242,23 @@ namespace Sprint2 {
 
 
 
-            } 
+            }
 
             //loop for stair collision
             listLength = stair.Count;
             for (int i = 0; i < listLength; i++)
             {
-                KeyValuePair<Vector2,Vector2> singleStair = stair[i];
+                KeyValuePair<Vector2, Vector2> singleStair = stair[i];
                 Vector2 stairPos = singleStair.Key;
                 Vector2 stairDest = singleStair.Value;
-              
+
                 Rectangle singleStairRec = new Rectangle((int)stairPos.X, (int)stairPos.Y, 48, 54);
                 overlapRec = Rectangle.Intersect(linkRectangle, singleStairRec);
-                 
+
                 if (!overlapRec.IsEmpty)
 
-                { 
-                   
+                {
+
                     String direction = detectCollisionDirection(overlapRec, linkRectangle, singleStairRec);
                     linkHandler.HandleLinkStairCollsion(stairDest, direction);
 
@@ -282,7 +273,7 @@ namespace Sprint2 {
             {
                 if (DoorDirection.Contains("Right"))
                 {
-                    if (Link.posX > roomRightCornerPosX && (Link.posY < Game1.WindowHeight * 0.45 || Link.posY > Game1.WindowHeight * (0.45 + 0.1)))
+                    if (Link.posX > roomRightCornerPosX && (Link.posY < 900 * 0.45 || Link.posY > 900* (0.45 + 0.1)))
                     {
                         linkHandler.remainPosition("Right");
                     }
@@ -296,7 +287,7 @@ namespace Sprint2 {
                 }
                 if (DoorDirection.Contains("Left"))
                 {
-                    if (Link.posX < roomLeftCornerPosX && (Link.posY < Game1.WindowHeight * 0.45 || Link.posY > Game1.WindowHeight * (0.45 + 0.1)))
+                    if (Link.posX < roomLeftCornerPosX && (Link.posY <900 * 0.45 || Link.posY > 900 * (0.45 + 0.1)))
                     {
                         linkHandler.remainPosition("Left");
                     }
@@ -341,12 +332,12 @@ namespace Sprint2 {
 
 
         }
-        
- 
-         
+
+
+
         public string detectCollisionDirection(Rectangle overlapRec, Rectangle linkRec, Rectangle objectRec)
         {
- 
+
             string direction;
             if (overlapRec.Width >= overlapRec.Height) //top/buttom collison
             {
@@ -371,14 +362,10 @@ namespace Sprint2 {
                 }
 
             }
-                  
-                return direction;
+
+            return direction;
         }
- 
+
     }
 }
 
-    
- 
-    
- 

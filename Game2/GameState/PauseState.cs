@@ -15,15 +15,17 @@ namespace Sprint2
         private Texture2D ButtonTexture = Texture2DStorage.GetButtonSpriteSheet();
         private Vector2 buttonLocation = new Vector2(300, 250);
         //Texture2D whiteRectangle;
-        public PauseState()
+
+        private IController pauseStateController;
+        public PauseState(Game1 game)
         {
             name = "pause";
-
+            pauseStateController = new PauseStateController(game );
         }
 
         public void Update()
         {
-
+            pauseStateController.Update();
         }
         public void Draw(SpriteBatch spriteBatch)
         {

@@ -27,8 +27,8 @@ namespace Sprint2
             }
             IRoom room = level.room;
             
-            int roomWidth = (int)(Game1.WindowWidth * 0.68);
-            int roomHeight = (int)(Game1.WindowHeight * 0.55);
+            int roomWidth = (int)( 800* 0.68);
+            int roomHeight = (int)( 600 * 0.55);
             roomLeftCornerPosX = (int)(room.roomPos.X);
             roomLeftCornerPosY = (int)(room.roomPos.Y);
             roomRightCornerPosX = roomWidth + (int)(room.roomPos.X);

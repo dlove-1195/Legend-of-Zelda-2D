@@ -7,19 +7,13 @@ namespace Sprint2
     public class Game1 : Game
     {
         private GraphicsDeviceManager graphics;
-        private SpriteBatch spriteBatch;
+        private SpriteBatch spriteBatch; 
 
-        //only needed in when actually start playing(play state)
-        public IEnemy enemy;
-      //  public IPlayer player;
-        public IItem item;
-        public INpc npcs;
-        //private ILevel level;
-        //private ICollisionDetection linkDetection;
-        //private ICollisionDetection enemyDetection;
+        //responsible for start/pause/win/gameOver state
+        public IGameState gameState { get; set; }
+        //responsible for play state
+        public IGameState playState { get; set; }
 
-        private IGameState gameState;
-        
 
 
 
@@ -42,30 +36,16 @@ namespace Sprint2
 
         protected override void Initialize()
         {
-
-          //  keyboardController = new KeyboardController(this);
-            
-            IsMouseVisible = true;
-            
-
-
-            base.Initialize();
+ 
+            IsMouseVisible = true; 
+            base.Initialize(); 
         }
 
         protected override void LoadContent()
         {
             Texture2DStorage.LoadAllTextures(Content);
-            spriteBatch = new SpriteBatch(GraphicsDevice);
-            gameState = new PlayState();
-
-            /* 
-              player = new Link(new Vector2(200,300));
-             level = new Level1();
-             linkDetection = new LinkCollisionDetection(level, player);
-             enemyDetection = new EnemyCollisionDetection(level);
-
-           */
-
+            spriteBatch = new SpriteBatch(GraphicsDevice); 
+            gameState = new StartState(this);
 
         }
 
@@ -75,20 +55,16 @@ namespace Sprint2
         }
 
         protected override void Update(GameTime gameTime)
-        {
+        { 
+            if(gameState!=null)
+            { 
+                gameState.Update();
+            }
+           else if (playState != null)
+            {
+                playState.Update();
+            }
 
-           
-            //will have mouse controller in the future 
-          //keyboardController.Update();
-            gameState.Update();
-            /* 
-             player.Update(); 
-             linkDetection.Update();
-             enemyDetection.Update();
-             level.Update();
-             linkDetection = new LinkCollisionDetection(level, player);
-             enemyDetection = new EnemyCollisionDetection(level);
-             */
             seed++;
             base.Update(gameTime);
         }
@@ -97,12 +73,16 @@ namespace Sprint2
         {
             GraphicsDevice.Clear(Color.Black);
             spriteBatch.Begin();
-            gameState.Draw(spriteBatch);
-           
-           
-         /*   level.Draw(spriteBatch);
-            player.Draw(spriteBatch);
-            */
+            if (playState != null)
+            {
+                playState.Draw(spriteBatch);
+            }
+            if (gameState != null)
+            {
+                gameState.Draw(spriteBatch);
+            }
+            
+          
             spriteBatch.End();
            
             base.Draw(gameTime);

@@ -16,13 +16,17 @@ namespace Sprint2
         private int height = 70;
         private Vector2 triLoc = new Vector2(250, -70);
         //add font "you win" later 
-
-        public WinState()
+        public string name { get; set; }
+        private IController winStateController;
+        public WinState(Game1 game)
         {
+            name = "win";
+            winStateController = new WinStateController(game);
         }
 
         public void Update()
         {
+            winStateController.Update();
             if (triLoc.Y < 180 && width < 290 && height < 220)
             {
                 triLoc.Y++;

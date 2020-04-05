@@ -112,7 +112,7 @@ namespace Sprint2
             {
                 case "Up":
                     Link.posX = (int)(room.roomPos.X + Game1.WindowWidth * (0.30));
-                    Link.posY = (int)(room.roomPos.Y + Game1.WindowHeight * (0.5));
+                    Link.posY = (int)(room.roomPos.Y + 600* (0.5));
                     break;
 
                 case "Down":
@@ -122,12 +122,12 @@ namespace Sprint2
 
                 case "Left":
                     Link.posX = (int)(room.roomPos.X + Game1.WindowWidth * (0.6));
-                    Link.posY = (int)(room.roomPos.Y + Game1.WindowHeight * (0.24));
+                    Link.posY = (int)(room.roomPos.Y +600* (0.24));
                     break;
 
                 case "Right":
                     Link.posX = (int)(room.roomPos.X);
-                    Link.posY = (int)(room.roomPos.Y + Game1.WindowHeight * (0.24));
+                    Link.posY = (int)(room.roomPos.Y +  600 * (0.24));
                     break;
 
             }

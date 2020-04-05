@@ -1,9 +1,4 @@
-﻿using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Xna.Framework.Graphics; 
 using Microsoft.Xna.Framework;
 
 
@@ -20,31 +15,31 @@ namespace Sprint2
         private static int width = 601;
         private static int height = 523;
        
-        public IPlayer player;
-       // public IItem item;
-       // public INpc npcs;
+        public IPlayer player; 
         public ILevel level;
         public ICollisionDetection linkDetection;
         public ICollisionDetection enemyDetection;
-    // Rectangle sourceRectangle2 = new Rectangle(Game1.WindowHeight/4, 0, Game1.WindowWidth, (Game1.WindowHeight*3)/4);
-        public PlayState()
+        // Rectangle sourceRectangle2 = new Rectangle(Game1.WindowHeight/4, 0, Game1.WindowWidth, (Game1.WindowHeight*3)/4);
+
+        public string name { get; set; }
+        private IController playStateController; 
+        public PlayState(Game1 game)
         {
-            
-            player = new Link(new Vector2(200, 500));
-           // this.player = player;
-            
+            name = "play";
+            player = new Link(new Vector2(200, 500)); 
             level = new Level1();
             linkDetection = new LinkCollisionDetection(level, player);
             enemyDetection = new EnemyCollisionDetection(level);
+            playStateController = new PlayStateController( game,this);
+
         }
         public void Draw(SpriteBatch spriteBatch)
         {
             
-            //draw inventory in the topView
-            // Rectangle sourceRectangle1 = new Rectangle(0, 0, width, height-100);
+            //draw inventory in the topView 
             Rectangle sourceRectangle1 = new Rectangle(0, height - 120, width, Game1.WindowHeight / 4);          
             Rectangle destinationRectangle = new Rectangle(0, 0, Game1.WindowWidth, Game1.WindowHeight/4);
-           topViewport = new Viewport(destinationRectangle);
+            topViewport = new Viewport(destinationRectangle);
            
             spriteBatch.Draw(inventoryTexture, destinationRectangle, sourceRectangle1, Color.White);
 
@@ -57,7 +52,7 @@ namespace Sprint2
 
         public void Update()
         {
-            
+            playStateController.Update();
             player.Update();
             linkDetection.Update();
             enemyDetection.Update();
@@ -65,5 +60,8 @@ namespace Sprint2
             linkDetection = new LinkCollisionDetection(level, player);
             enemyDetection = new EnemyCollisionDetection(level);
         }
+
+      
+        
     }
 }
