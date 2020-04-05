@@ -23,7 +23,7 @@ namespace Sprint2
 
 
 
-        // IController keyboardController;
+        //IController keyboardController;
 
         public static int WindowWidth = 800;
         public static int WindowHeight = 600;
@@ -79,7 +79,7 @@ namespace Sprint2
 
            
             //will have mouse controller in the future 
-          //  keyboardController.Update();
+          //keyboardController.Update();
             gameState.Update();
             /* 
              player.Update(); 

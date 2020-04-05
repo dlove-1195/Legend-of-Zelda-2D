@@ -50,6 +50,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Game1.cs" />
+    <Compile Include="GameState\PauseState.cs" />
     <Compile Include="GameState\PlayState.cs" />
     <Compile Include="GameState\WinState.cs" />
     <Compile Include="GameState\StartState.cs" />
