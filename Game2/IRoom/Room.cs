@@ -19,6 +19,7 @@ namespace Sprint2
         private int boxHeight;
         private Vector2 vector;
         public Vector2 roomPos { get; set; }
+        public int roomNumber { get; set; } = 0;
         public int leftRoomNum { get; set; } = 0;
         public int rightRoomNum { get; set; } = 0;
         public int upRoomNum { get; set; } = 0;
@@ -45,7 +46,7 @@ namespace Sprint2
             doorDirection = new List<string>();
             stair = new List<KeyValuePair<Vector2, Vector2>>();
             boundingBox = new List<Rectangle>();
-            npcs = new List<INpc>();
+            npcs = new List<INpc>(); 
           
 
 
@@ -86,6 +87,10 @@ namespace Sprint2
 
                 if (type == "Room")
                 {
+                    if(name == "RoomNum")
+                    {
+                        roomNumber = x;
+                    }
                     if (name == "Room")
                     {
                         roomPos = vector;
