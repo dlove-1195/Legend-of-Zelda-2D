@@ -1,41 +1,19 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-<<<<<<< HEAD
-<<<<<<< HEAD
-"C:/Users/Yilai/CSE-3902/Game2/Content/characters.png","C:/Users/Yilai/CSE-3902/Game2/Content/bin/Windows/characters.xnb","TextureProcessor","Texture2DContent",939,26293,0.1888923
-"C:/Users/Yilai/CSE-3902/Game2/Content/Inventory.jpg","C:/Users/Yilai/CSE-3902/Game2/Content/bin/Windows/Inventory.xnb","TextureProcessor","Texture2DContent",5433,1257377,0.2034734
-"C:/Users/Yilai/CSE-3902/Game2/Content/Zelda_story.png","C:/Users/Yilai/CSE-3902/Game2/Content/bin/Windows/Zelda_story.xnb","TextureProcessor","Texture2DContent",4978,245845,0.2112035
-"C:/Users/zz/Desktop/CSE-3902/Game2/Content/bow.png","C:/Users/zz/Desktop/CSE-3902/Game2/Content/bin/Windows/bow.xnb","TextureProcessor","Texture2DContent",465,14245,0.1575776
-"C:/Users/zz/Desktop/CSE-3902/Game2/Content/button.jpg","C:/Users/zz/Desktop/CSE-3902/Game2/Content/bin/Windows/button.xnb","TextureProcessor","Texture2DContent",234028,944085,0.0498678
-"C:/Users/zz/Desktop/CSE-3902/Game2/Content/candle.png","C:/Users/zz/Desktop/CSE-3902/Game2/Content/bin/Windows/candle.xnb","TextureProcessor","Texture2DContent",514,15765,0.0329091
-"C:/Users/zz/Desktop/CSE-3902/Game2/Content/characters.png","C:/Users/zz/Desktop/CSE-3902/Game2/Content/bin/Windows/characters.xnb","TextureProcessor","Texture2DContent",939,26293,0.0179551
-"C:/Users/zz/Desktop/CSE-3902/Game2/Content/enemy.png","C:/Users/zz/Desktop/CSE-3902/Game2/Content/bin/Windows/enemy.xnb","TextureProcessor","Texture2DContent",6976,478913,0.032913
-"C:/Users/zz/Desktop/CSE-3902/Game2/Content/enemy2.png","C:/Users/zz/Desktop/CSE-3902/Game2/Content/bin/Windows/enemy2.xnb","TextureProcessor","Texture2DContent",10081,604893,0.0369001
-"C:/Users/zz/Desktop/CSE-3902/Game2/Content/enemy3.png","C:/Users/zz/Desktop/CSE-3902/Game2/Content/bin/Windows/enemy3.xnb","TextureProcessor","Texture2DContent",212843,1088085,0.0508626
-"C:/Users/zz/Desktop/CSE-3902/Game2/Content/item.png","C:/Users/zz/Desktop/CSE-3902/Game2/Content/bin/Windows/item.xnb","TextureProcessor","Texture2DContent",1923,202997,0.0378977
-"C:/Users/zz/Desktop/CSE-3902/Game2/Content/link.png","C:/Users/zz/Desktop/CSE-3902/Game2/Content/bin/Windows/link.xnb","TextureProcessor","Texture2DContent",6901,523669,0.0438832
-"C:/Users/zz/Desktop/CSE-3902/Game2/Content/link--final.png","C:/Users/zz/Desktop/CSE-3902/Game2/Content/bin/Windows/link--final.xnb","TextureProcessor","Texture2DContent",30417,1077597,0.052859
-"C:/Users/zz/Desktop/CSE-3902/Game2/Content/Logo.png","C:/Users/zz/Desktop/CSE-3902/Game2/Content/bin/Windows/Logo.xnb","TextureProcessor","Texture2DContent",827231,5731285,0.2632953
-"C:/Users/zz/Desktop/CSE-3902/Game2/Content/TriForce.png","C:/Users/zz/Desktop/CSE-3902/Game2/Content/bin/Windows/TriForce.xnb","TextureProcessor","Texture2DContent",2525,202045,0.0269359
-"C:/Users/zz/Desktop/CSE-3902/Game2/Content/woodenboomerang.png","C:/Users/zz/Desktop/CSE-3902/Game2/Content/bin/Windows/woodenboomerang.xnb","TextureProcessor","Texture2DContent",1211,10965,0.0179451
-"C:/Users/zz/Desktop/CSE-3902/Game2/Content/Zelda_story.png","C:/Users/zz/Desktop/CSE-3902/Game2/Content/bin/Windows/Zelda_story.xnb","TextureProcessor","Texture2DContent",4978,245845,0.0329107
-=======
-=======
->>>>>>> refs/remotes/origin/master
-"C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/bow.png","C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/bin/Windows/bow.xnb","TextureProcessor","Texture2DContent",465,14245,0.7060094
-"C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/button.jpg","C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/bin/Windows/button.xnb","TextureProcessor","Texture2DContent",234028,944085,0.0578982
-"C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/candle.png","C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/bin/Windows/candle.xnb","TextureProcessor","Texture2DContent",514,15765,0.04227
-"C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/characters.png","C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/bin/Windows/characters.xnb","TextureProcessor","Texture2DContent",939,26293,0.0235234
-"C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/enemy.png","C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/bin/Windows/enemy.xnb","TextureProcessor","Texture2DContent",6976,478913,0.0318424
-"C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/enemy2.png","C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/bin/Windows/enemy2.xnb","TextureProcessor","Texture2DContent",10081,604893,0.0309153
-"C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/enemy3.png","C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/bin/Windows/enemy3.xnb","TextureProcessor","Texture2DContent",212843,1088085,0.0539521
-"C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/item.png","C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/bin/Windows/item.xnb","TextureProcessor","Texture2DContent",1923,202997,0.038894
-"C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/link.png","C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/bin/Windows/link.xnb","TextureProcessor","Texture2DContent",6901,523669,0.0415405
-"C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/link--final.png","C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/bin/Windows/link--final.xnb","TextureProcessor","Texture2DContent",30417,1077597,0.0498686
-"C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/Logo.png","C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/bin/Windows/Logo.xnb","TextureProcessor","Texture2DContent",827231,5731285,0.2642937
-"C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/winLogo.png","C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/bin/Windows/winLogo.xnb","TextureProcessor","Texture2DContent",61179,1988405,0.1276286
-"C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/woodenboomerang.png","C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/bin/Windows/woodenboomerang.xnb","TextureProcessor","Texture2DContent",1211,10965,0.0379739
-"C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/Zelda_story.png","C:/Users/zz/Desktop/22/CSE-3902/Game2/Content/bin/Windows/Zelda_story.xnb","TextureProcessor","Texture2DContent",4978,245845,0.0444844
-<<<<<<< HEAD
->>>>>>> refs/remotes/origin/master
-=======
->>>>>>> refs/remotes/origin/master
+"D:/osu 2020 sp/3902/newest version/CSE-3902/Game2/Content/bow.png","D:/osu 2020 sp/3902/newest version/CSE-3902/Game2/Content/bin/Windows/bow.xnb","TextureProcessor","Texture2DContent",465,14245,0.1496002
+"D:/osu 2020 sp/3902/newest version/CSE-3902/Game2/Content/button.jpg","D:/osu 2020 sp/3902/newest version/CSE-3902/Game2/Content/bin/Windows/button.xnb","TextureProcessor","Texture2DContent",234028,944085,0.0628305
+"D:/osu 2020 sp/3902/newest version/CSE-3902/Game2/Content/candle.png","D:/osu 2020 sp/3902/newest version/CSE-3902/Game2/Content/bin/Windows/candle.xnb","TextureProcessor","Texture2DContent",514,15765,0.0269295
+"D:/osu 2020 sp/3902/newest version/CSE-3902/Game2/Content/characters.png","D:/osu 2020 sp/3902/newest version/CSE-3902/Game2/Content/bin/Windows/characters.xnb","TextureProcessor","Texture2DContent",939,26293,0.0159925
+"D:/osu 2020 sp/3902/newest version/CSE-3902/Game2/Content/enemy.png","D:/osu 2020 sp/3902/newest version/CSE-3902/Game2/Content/bin/Windows/enemy.xnb","TextureProcessor","Texture2DContent",6976,478913,0.0219069
+"D:/osu 2020 sp/3902/newest version/CSE-3902/Game2/Content/enemy2.png","D:/osu 2020 sp/3902/newest version/CSE-3902/Game2/Content/bin/Windows/enemy2.xnb","TextureProcessor","Texture2DContent",10081,604893,0.0239371
+"D:/osu 2020 sp/3902/newest version/CSE-3902/Game2/Content/enemy3.png","D:/osu 2020 sp/3902/newest version/CSE-3902/Game2/Content/bin/Windows/enemy3.xnb","TextureProcessor","Texture2DContent",212843,1088085,0.0489129
+"D:/osu 2020 sp/3902/newest version/CSE-3902/Game2/Content/Inventory.jpg","D:/osu 2020 sp/3902/newest version/CSE-3902/Game2/Content/bin/Windows/Inventory.xnb","TextureProcessor","Texture2DContent",5433,1257377,0.0468746
+"D:/osu 2020 sp/3902/newest version/CSE-3902/Game2/Content/item.png","D:/osu 2020 sp/3902/newest version/CSE-3902/Game2/Content/bin/Windows/item.xnb","TextureProcessor","Texture2DContent",1923,202997,0.0209771
+"D:/osu 2020 sp/3902/newest version/CSE-3902/Game2/Content/item-Inventory.PNG","D:/osu 2020 sp/3902/newest version/CSE-3902/Game2/Content/bin/Windows/item-Inventory.xnb","TextureProcessor","Texture2DContent",47638,278685,0.0219797
+"D:/osu 2020 sp/3902/newest version/CSE-3902/Game2/Content/link.png","D:/osu 2020 sp/3902/newest version/CSE-3902/Game2/Content/bin/Windows/link.xnb","TextureProcessor","Texture2DContent",6901,523669,0.0248963
+"D:/osu 2020 sp/3902/newest version/CSE-3902/Game2/Content/link--final.png","D:/osu 2020 sp/3902/newest version/CSE-3902/Game2/Content/bin/Windows/link--final.xnb","TextureProcessor","Texture2DContent",30417,1077597,0.0518599
+"D:/osu 2020 sp/3902/newest version/CSE-3902/Game2/Content/Logo.png","D:/osu 2020 sp/3902/newest version/CSE-3902/Game2/Content/bin/Windows/Logo.xnb","TextureProcessor","Texture2DContent",827231,5731285,0.236369
+"D:/osu 2020 sp/3902/newest version/CSE-3902/Game2/Content/LoseScreen.png","D:/osu 2020 sp/3902/newest version/CSE-3902/Game2/Content/bin/Windows/LoseScreen.xnb","TextureProcessor","Texture2DContent",4954,862317,0.0548529
+"D:/osu 2020 sp/3902/newest version/CSE-3902/Game2/Content/Text.png","D:/osu 2020 sp/3902/newest version/CSE-3902/Game2/Content/bin/Windows/Text.xnb","TextureProcessor","Texture2DContent",28184,1342549,0.0598403
+"D:/osu 2020 sp/3902/newest version/CSE-3902/Game2/Content/winLogo.png","D:/osu 2020 sp/3902/newest version/CSE-3902/Game2/Content/bin/Windows/winLogo.xnb","TextureProcessor","Texture2DContent",61179,1988405,0.0807825
+"D:/osu 2020 sp/3902/newest version/CSE-3902/Game2/Content/woodenboomerang.png","D:/osu 2020 sp/3902/newest version/CSE-3902/Game2/Content/bin/Windows/woodenboomerang.xnb","TextureProcessor","Texture2DContent",1211,10965,0.0129629
+"D:/osu 2020 sp/3902/newest version/CSE-3902/Game2/Content/Zelda_story.png","D:/osu 2020 sp/3902/newest version/CSE-3902/Game2/Content/bin/Windows/Zelda_story.xnb","TextureProcessor","Texture2DContent",4978,245845,0.0299203

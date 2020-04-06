@@ -44,6 +44,7 @@ namespace Sprint2
          
             map.Add(Keys.Q, new QuitCommand(myGame));
             map.Add(Keys.P, new SwitchToPauseCommand(myGame));
+            map.Add(Keys.Escape, new SwitchToLoseCommand(myGame));
         }
         public void Update()
         {

@@ -50,6 +50,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Game1.cs" />
+    <Compile Include="GameState\LoseState.cs" />
     <Compile Include="GameState\PauseState.cs" />
     <Compile Include="GameState\PlayState.cs" />
     <Compile Include="GameState\WinState.cs" />
@@ -76,11 +77,16 @@
     <Compile Include="ICommand\Gear5.cs" />
     <Compile Include="ICommand\GetDemagedCommand.cs" />
     <Compile Include="ICommand\ICommand.cs" />
+    <Compile Include="ICommand\NextInListCommand.cs" />
+    <Compile Include="ICommand\PreviousInListCommand.cs" />
     <Compile Include="ICommand\QuitCommand.cs" />
+    <Compile Include="ICommand\SelectInListCommand.cs" />
+    <Compile Include="ICommand\SwitchToLoseCommand.cs" />
     <Compile Include="ICommand\SwitchToStartCommand.cs" />
     <Compile Include="ICommand\SwitchToPlayCommand.cs" />
     <Compile Include="ICommand\SwitchToPauseCommand.cs" />
     <Compile Include="IController\IController.cs" />
+    <Compile Include="IController\LoseStateController.cs" />
     <Compile Include="IController\WinStateController.cs" />
     <Compile Include="IController\StartStateController.cs" />
     <Compile Include="IController\PauseStateController.cs" />
@@ -252,10 +258,13 @@
     <Content Include="Content\characters.png" />
     <Content Include="Content\enemy.png" />
     <Content Include="Content\enemy2.png" />
+    <Content Include="Content\item-Inventory.PNG" />
     <Content Include="Content\item.png" />
     <Content Include="Content\link--final.png" />
     <Content Include="Content\link-final.png" />
     <Content Include="Content\link.png" />
+    <Content Include="Content\LoseScreen.png" />
+    <Content Include="Content\Text.png" />
     <Content Include="Content\woodenboomerang.png" />
     <Content Include="Icon.ico" />
     <Content Include="XML\room1.xml" />

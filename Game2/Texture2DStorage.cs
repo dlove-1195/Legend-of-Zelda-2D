@@ -37,6 +37,14 @@ namespace Sprint2
 		//play state
 		private static Texture2D inventorySpriteSheet;
 
+		//lose state
+		private static Texture2D loseSpriteSheet;
+
+
+		//letters and numbers
+		private static Texture2D numberSpriteSheet;
+		private static Texture2D letterSpriteSheet;
+
 		//initialize the Texture2D fields
 		public static void LoadAllTextures(ContentManager content)
 			{
@@ -72,7 +80,13 @@ namespace Sprint2
 
 			triPieceSpriteSheet = content.Load<Texture2D>("WinLogo");
 
-		}
+			//lose state
+			loseSpriteSheet = content.Load<Texture2D>("LoseScreen");
+
+			numberSpriteSheet = content.Load<Texture2D>("item-Inventory");
+
+			letterSpriteSheet = content.Load<Texture2D>("Text");
+				}
 
 		   public static void UnloadAllTextures()
 			{
@@ -153,6 +167,15 @@ namespace Sprint2
 		public static Texture2D GetTriForceSpriteSheet()
 		{
 			return triPieceSpriteSheet;
+		}
+		public static Texture2D GetLoseSpriteSheet() {
+			return loseSpriteSheet;
+		}
+		public static Texture2D GetNumberSpriteSheet() {
+			return numberSpriteSheet;
+		}
+		public static Texture2D GetLetterSpriteSheet() {
+			return letterSpriteSheet;
 		}
 	}
 	
