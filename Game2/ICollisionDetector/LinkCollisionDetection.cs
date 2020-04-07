@@ -73,6 +73,7 @@ namespace Sprint2
                         //link damage and being pushed in opposite direction
                         String direction = detectCollisionDirection(overlapRec, linkRectangle, singleEnemyRec);
                         linkHandler.HandleLinkEnemyCollsion(direction);
+                        
                     }
 
 

@@ -31,6 +31,7 @@ namespace Sprint2
             linkDetection = new LinkCollisionDetection(level, player);
             enemyDetection = new EnemyCollisionDetection(level);
             playStateController = new PlayStateController( game,this);
+            Sound.PlayRoom();
 
         }
         public void Draw(SpriteBatch spriteBatch)

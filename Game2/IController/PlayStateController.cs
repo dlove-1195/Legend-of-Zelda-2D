@@ -17,6 +17,7 @@ namespace Sprint2
         private Game1 myGame;
         public PlayStateController(Game1 game, PlayState play)
         {
+            
             myPlay = play;
             myGame = game;
             map = new Dictionary<Keys, ICommand>();

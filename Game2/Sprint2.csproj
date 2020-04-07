@@ -49,6 +49,7 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Sound.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="GameState\LoseState.cs" />
     <Compile Include="GameState\PauseState.cs" />

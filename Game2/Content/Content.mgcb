@@ -25,6 +25,12 @@
 /processorParam:TextureFormat=Color
 /build:../../../../桌面/dugeon.png;dugeon.png
 
+#begin bgm.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:bgm.mp3
+
 #begin bow.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -72,6 +78,12 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:characters.png
+
+#begin collision.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:collision.wav
 
 #begin enemy.png
 /importer:TextureImporter
@@ -133,6 +145,12 @@
 /processorParam:TextureFormat=Color
 /build:item.png
 
+#begin itemCollision.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:itemCollision.wav
+
 #begin item-Inventory.PNG
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -192,6 +210,12 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:LoseScreen.png
+
+#begin room.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:room.mp3
 
 #begin Text.png
 /importer:TextureImporter
