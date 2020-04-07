@@ -13,6 +13,7 @@ namespace Sprint2
 
         private ISprite trapSprite;
 
+        public int blood { get; set; } = 1;
 
         //the current position of the trap
         public int posX { get; set; }

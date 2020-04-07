@@ -23,7 +23,7 @@ namespace Sprint2
         public Rectangle boundingBox { get; set; }
         private int width = 14;
         private int height = 15;
-       
+        public int blood { get; set; } = 50;
 
         public WallMaster(Vector2 vector )
         {

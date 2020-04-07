@@ -24,6 +24,7 @@ namespace Sprint2
         private IPlayer player;
 
         private List<string> DoorDirection { get; set; }
+        
 
         public LinkCollisionDetection(ILevel level, IPlayer link)
         {
@@ -96,8 +97,10 @@ namespace Sprint2
                     overlapRec = Rectangle.Intersect(swordRec, singleEnemyRec);
                     if (!overlapRec.IsEmpty)
                     {
-                        //enemy damage 
-                        linkHandler.HandleLinkWeaponEnemyCollsion(i);
+                        //enemy damage
+                      
+                        linkHandler.HandleLinkWeaponEnemyCollsion(i );
+                       
                     }
 
 
@@ -109,7 +112,9 @@ namespace Sprint2
                         if (!overlapRec.IsEmpty)
                         {
                             //enemy damage 
-                            linkHandler.HandleLinkWeaponEnemyCollsion(i);
+                            
+                            linkHandler.HandleLinkWeaponEnemyCollsion(i );
+                            
                         }
 
 

@@ -6,6 +6,7 @@ namespace Sprint2
 {
     public class Flame : IEnemy
     {
+        public int blood { get; set; } = 1;
 
         private ISprite flameSprite;
 

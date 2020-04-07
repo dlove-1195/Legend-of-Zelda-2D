@@ -24,6 +24,8 @@ namespace Sprint2
         private int height = 16;
         
         public Rectangle boundingBox { get; set; }
+        public int  blood { get; set; } = 1;
+
 
         public Goriya(Vector2 vector)
         {

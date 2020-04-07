@@ -12,6 +12,7 @@ namespace Sprint2
         private ISprite RopeSprite;
         private int updateDelay = 0;
         private int totalDelay = 30;
+        public int blood { get; set; } = 1;
 
 
 

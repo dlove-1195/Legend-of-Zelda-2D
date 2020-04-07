@@ -12,7 +12,7 @@ namespace Sprint2
         private ISprite GelSprite;
         private int updateDelay = 0;
         private int totalDelay = 30;
-
+        public int blood { get; set; } = 1;
 
 
         //the current position of the Keese

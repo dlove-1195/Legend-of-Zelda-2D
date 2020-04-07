@@ -107,10 +107,16 @@ namespace Sprint2
             link.GetDamaged();
         }
 
-        public void HandleLinkWeaponEnemyCollsion(  int enemyNum)
+        public void HandleLinkWeaponEnemyCollsion(  int enemyNum )
         {
-            //enemy damage, disappear directly 
-             room.setEnemyToNull(enemyNum);
+            //enemy damage 
+             
+                    room.enemies[enemyNum].blood--; ;
+             
+            if (room.enemies[enemyNum]!=null &&room.enemies[enemyNum].blood <= 0 )
+            {
+                room.setEnemyToNull(enemyNum);
+            }
             //-----FIXME-----------
              //enemy damage, drop blood or disappear 
              //maybe need add a field in enemy class to record the live of the enemy 
