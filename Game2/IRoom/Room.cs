@@ -124,6 +124,10 @@ namespace Sprint2
                     {
                         enemies.Add(new Dragon(vector));
                     }
+                    if (name == "GreenDragon")
+                    {
+                        enemies.Add(new GreenDragon(vector));
+                    }
                     if (name == "WallMaster")
                     {
 

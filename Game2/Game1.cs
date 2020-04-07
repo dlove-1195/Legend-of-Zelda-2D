@@ -45,7 +45,7 @@ namespace Sprint2
         {
             Texture2DStorage.LoadAllTextures(Content);
             spriteBatch = new SpriteBatch(GraphicsDevice); 
-            gameState = new StartState(this);
+            gameState = new PlayState(this);
             Sound.LoadBGM(Content);
             Sound.PlayMainSong();
 

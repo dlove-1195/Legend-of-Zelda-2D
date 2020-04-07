@@ -49,6 +49,15 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="IEnemyState\DragonState\GreenDragonWalkLeftDamageState.cs" />
+    <Compile Include="IEnemyState\DragonState\GreenDragonWalkLeftState.cs" />
+    <Compile Include="IEnemyState\DragonState\GreenDragonWalkRightDamageState.cs" />
+    <Compile Include="IEnemyState\DragonState\GreenDragonWalkRightState.cs" />
+    <Compile Include="IEnemy\GreenDragon.cs" />
+    <Compile Include="ISprite\EnemySprite\DragonSprite\GreenDragonDamageWalkLeftSprite.cs" />
+    <Compile Include="ISprite\EnemySprite\DragonSprite\GreenDragonDamageWalkRightSprite.cs" />
+    <Compile Include="ISprite\EnemySprite\DragonSprite\GreenDragonWalkLeftSprite.cs" />
+    <Compile Include="ISprite\EnemySprite\DragonSprite\GreenDragonWalkRightSprite.cs" />
     <Compile Include="Sound.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="GameState\LoseState.cs" />
@@ -268,25 +277,25 @@
     <Content Include="Content\Text.png" />
     <Content Include="Content\woodenboomerang.png" />
     <Content Include="Icon.ico" />
-    <Content Include="XML\room1.xml" />
-    <Content Include="XML\room10.xml" />
-    <Content Include="XML\room11.xml" />
-    <Content Include="XML\room12.xml" />
-    <Content Include="XML\room13.xml" />
-    <Content Include="XML\room14.xml" />
-    <Content Include="XML\room15.xml" />
-    <Content Include="XML\room16.xml" />
-    <Content Include="XML\room17.xml" />
-    <Content Include="XML\room18.xml" />
-    <Content Include="XML\room19.xml" />
-    <Content Include="XML\room2.xml" />
-    <Content Include="XML\room3.xml" />
-    <Content Include="XML\room4.xml" />
-    <Content Include="XML\room5.xml" />
-    <Content Include="XML\room6.xml" />
-    <Content Include="XML\room7.xml" />
-    <Content Include="XML\room8.xml" />
-    <Content Include="XML\room9.xml" />
+    <Content Include="IRoom\XML\room1.xml" />
+    <Content Include="IRoom\XML\room10.xml" />
+    <Content Include="IRoom\XML\room11.xml" />
+    <Content Include="IRoom\XML\room12.xml" />
+    <Content Include="IRoom\XML\room13.xml" />
+    <Content Include="IRoom\XML\room14.xml" />
+    <Content Include="IRoom\XML\room15.xml" />
+    <Content Include="IRoom\XML\room16.xml" />
+    <Content Include="IRoom\XML\room17.xml" />
+    <Content Include="IRoom\XML\room18.xml" />
+    <Content Include="IRoom\XML\room19.xml" />
+    <Content Include="IRoom\XML\room2.xml" />
+    <Content Include="IRoom\XML\room3.xml" />
+    <Content Include="IRoom\XML\room4.xml" />
+    <Content Include="IRoom\XML\room5.xml" />
+    <Content Include="IRoom\XML\room6.xml" />
+    <Content Include="IRoom\XML\room7.xml" />
+    <Content Include="IRoom\XML\room8.xml" />
+    <Content Include="IRoom\XML\room9.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.manifest" />
