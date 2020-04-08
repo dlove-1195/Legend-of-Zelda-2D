@@ -25,7 +25,7 @@ namespace Sprint2
 
         void ChangeSprite(ISprite sprite);
         List<Rectangle> getProjectileRec();
-         
+        void GetDamage();
 
 
 

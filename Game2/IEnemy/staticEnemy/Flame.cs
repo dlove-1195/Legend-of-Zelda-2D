@@ -55,7 +55,10 @@ namespace Sprint2
             //only one sprite
             
         }
-
+        public void GetDamage()
+        {
+            //none
+        }
 
 
         public void Update()

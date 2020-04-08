@@ -65,7 +65,10 @@ namespace Sprint2
         {
             state.ChangeToDown();
         }
-
+        public void GetDamage()
+        {
+            //none
+        }
 
 
 

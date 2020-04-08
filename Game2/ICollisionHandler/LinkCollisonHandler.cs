@@ -113,7 +113,7 @@ namespace Sprint2
         {
             //enemy damage 
             Sound.PlayLinkDemage();
-            room.enemies[enemyNum].blood--; ;
+            room.enemies[enemyNum].blood--; 
              
             if (room.enemies[enemyNum]!=null &&room.enemies[enemyNum].blood <= 0 )
             {

@@ -60,6 +60,10 @@ namespace Sprint2
         {
             //none
         }
+        public void GetDamage()
+        {
+            //none
+        }
 
 
 
