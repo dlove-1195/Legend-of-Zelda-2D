@@ -15,6 +15,7 @@ namespace Sprint2
         public ISprite WallMasterSprite;
         private int updateDelay = 0;
         private int totalDelay = 100;
+        public bool damage { set; get; }
 
 
         //the current position of the dragon

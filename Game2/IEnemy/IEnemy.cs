@@ -27,6 +27,7 @@ namespace Sprint2
         List<Rectangle> getProjectileRec();
         void GetDamage();
 
+        bool damage { get; set; }
 
 
     }

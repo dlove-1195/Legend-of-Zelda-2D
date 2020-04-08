@@ -13,6 +13,7 @@ namespace Sprint2
         private int updateDelay = 0;
         private int totalDelay = 30;
         public int blood { get; set; } = 1;
+        public bool damage { set; get; }
 
 
 

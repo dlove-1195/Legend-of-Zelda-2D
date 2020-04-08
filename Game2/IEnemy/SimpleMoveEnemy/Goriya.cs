@@ -8,7 +8,8 @@ namespace Sprint2
     public class Goriya : IEnemy
     {
 
-
+        
+        public bool damage { get; set; }
         private IEnemyState state;
         private ISprite GoriyaSprite;
         private int updateDelay = 0;
@@ -64,6 +65,7 @@ namespace Sprint2
         {
             //none
         }
+
 
 
 

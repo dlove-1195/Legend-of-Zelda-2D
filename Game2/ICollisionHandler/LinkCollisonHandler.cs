@@ -113,8 +113,12 @@ namespace Sprint2
         {
             //enemy damage 
             Sound.PlayLinkDemage();
-            room.enemies[enemyNum].blood--; 
-             
+            room.enemies[enemyNum].blood--;
+            if (room.enemies[enemyNum] is GreenDragon)
+            {
+                room.enemies[enemyNum].GetDamage();
+
+            }
             if (room.enemies[enemyNum]!=null &&room.enemies[enemyNum].blood <= 0 )
             {
                 room.setEnemyToNull(enemyNum);

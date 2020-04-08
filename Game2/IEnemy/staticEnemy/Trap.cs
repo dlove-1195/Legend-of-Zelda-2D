@@ -12,7 +12,7 @@ namespace Sprint2
     {
 
         private ISprite trapSprite;
-
+        public bool damage { set; get; }
         public int blood { get; set; } = 1;
 
         //the current position of the trap

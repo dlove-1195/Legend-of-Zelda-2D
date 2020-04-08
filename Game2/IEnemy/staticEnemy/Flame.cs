@@ -7,7 +7,7 @@ namespace Sprint2
     public class Flame : IEnemy
     {
         public int blood { get; set; } = 1;
-
+        public bool damage { set; get; }
         private ISprite flameSprite;
 
 

@@ -5,15 +5,19 @@ using System.Collections.Generic;
 
 namespace Sprint2
 {
-    public class GreenDragon : IEnemy 
+    public class GreenDragon : IEnemy
     {
         public IEnemyState state;
         public ISprite GreenDragonSprite;
+        public bool damage { get; set; } = false;
         private int updateDelay = 0;
         private int totalDelay = 100;
         public IItem fire;
         public static Boolean hasFire = false;
         private int fireTimer = 0;
+        private int timer = 0;
+        private int damageTimer = 0;
+
         public int blood { get; set; } = 50;
 
         //the current position of the dragon
@@ -23,26 +27,27 @@ namespace Sprint2
 
         public Rectangle boundingBox { get; set; } = new Rectangle();
 
-        private int width =24;
-        private int height =32;
+        private int width = 24;
+        private int height = 32;
         public GreenDragon(Vector2 vector)
         {
             posX = (int)vector.X;
             posY = (int)vector.Y;
 
             state = new GreenDragonWalkLeftState(this);
+
             boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
         }
 
 
         public void ChangeState(IEnemyState state)
         {
-            this.state = state;
+            //no op
         }
 
         public void ChangeSprite(ISprite sprite)
         {
-             //no op
+            //no op
         }
         public void ChangeToRight()
         {
@@ -54,7 +59,7 @@ namespace Sprint2
         }
         public void ChangeToUp()
         {
-           //none
+            //none
         }
         public void ChangeToDown()
         {
@@ -62,7 +67,7 @@ namespace Sprint2
         }
         public void GetDamage()
         {
-            //none
+            state.GetDamaged();
         }
 
 
@@ -70,6 +75,7 @@ namespace Sprint2
 
         public void Update()
         {
+
             boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
             GreenDragonSprite.Update();
             if (fire != null)
@@ -80,7 +86,7 @@ namespace Sprint2
             if (hasFire)
             {
                 fireTimer++;
-                if(fireTimer == 100)
+                if (fireTimer == 100)
                 {
                     hasFire = false;
                 }
@@ -90,7 +96,7 @@ namespace Sprint2
                 fireTimer = 0;
                 fire = null;
             }
-            
+
             //random move dragon
             updateDelay++;
             if (updateDelay == totalDelay)
@@ -103,20 +109,35 @@ namespace Sprint2
 
                 switch (randomNumber)
                 {
-                   
+
                     case 0:
                         this.ChangeToLeft();
                         break;
                     case 1:
                         this.ChangeToRight();
                         break;
-                 
+
                     default:
                         Console.WriteLine("error: no such situation");
                         break;
                 }
 
             }
+            if (damage)
+            {
+                damageTimer++;
+                if (damageTimer >= 100)
+                {
+                    damage = false;
+                }
+            }
+            else
+            {
+                damageTimer = 0;
+            }
+
+
+
 
         }
 
