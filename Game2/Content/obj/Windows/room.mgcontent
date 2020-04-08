@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>C:/Users/zz/Desktop/3902/CSE-3902/Game2/Content/room.mp3</SourceFile>
+  <SourceTime>2020-04-07T18:46:38.5443918-04:00</SourceTime>
+  <DestFile>C:/Users/zz/Desktop/3902/CSE-3902/Game2/Content/bin/Windows/room.xnb</DestFile>
+  <DestTime>2020-04-07T18:58:54.1757594-04:00</DestTime>
+  <Importer>Mp3Importer</Importer>
+  <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
+  <Processor>SongProcessor</Processor>
+  <ProcessorTime>2018-12-08T11:35:54-05:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput>
+    <string>C:/Users/zz/Desktop/3902/CSE-3902/Game2/Content/bin/Windows/room.wma</string>
+  </BuildOutput>
+</PipelineBuildEvent>

@@ -20,14 +20,17 @@ namespace Sprint2 {
         public string name { get; set; }
         private IController startStateController;
         public StartState(Game1 game)
-        {
+        {   
             name = "start";
             startStateController = new StartStateController(game);
+            
+            
             
         }
 
         public void Update()
         {
+            
             startStateController.Update();
             timer++;
             if (timer % 2 == 0)

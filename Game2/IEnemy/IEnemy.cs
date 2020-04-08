@@ -1,15 +1,12 @@
 ﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using System;
+using Microsoft.Xna.Framework.Graphics; 
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+ 
 namespace Sprint2
 {
     public interface IEnemy
     {
+        int blood { get; set; }  
         Rectangle boundingBox { get; set; }
          int posX { get; set; }
         int posY { get; set; }
@@ -28,8 +25,9 @@ namespace Sprint2
 
         void ChangeSprite(ISprite sprite);
         List<Rectangle> getProjectileRec();
-         
+        void GetDamage();
 
+        bool damage { get; set; }
 
 
     }

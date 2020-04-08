@@ -12,8 +12,8 @@ namespace Sprint2
         private ISprite GelSprite;
         private int updateDelay = 0;
         private int totalDelay = 30;
-
-
+        public int blood { get; set; } = 1;
+        public bool damage { set; get; }
 
         //the current position of the Keese
         public int posX { get; set; }
@@ -60,7 +60,10 @@ namespace Sprint2
             state.ChangeToDown();
         }
 
-
+        public void GetDamage()
+        {
+            //none
+        }
 
 
         public void Update()

@@ -5,10 +5,11 @@ using System.Collections.Generic;
 
 namespace Sprint2
 {
-    public class Dragon : IEnemy 
+    public class Dragon : IEnemy
     {
 
         public IEnemyState state;
+        public bool damage { get; set; }
         public ISprite DragonSprite;
         private int updateDelay = 0;
         private int totalDelay = 100;
@@ -23,14 +24,15 @@ namespace Sprint2
         private int seed = 1;
 
         public Rectangle boundingBox { get; set; } = new Rectangle();
+        public int blood { get; set; } = 50;
 
-        private int width =30;
-        private int height =15;
+        private int width = 30;
+        private int height = 15;
         public Dragon(Vector2 vector)
         {
             posX = (int)vector.X;
             posY = (int)vector.Y;
-             
+
             state = new DragonWalkLeftState(this);
             boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
         }
@@ -43,7 +45,7 @@ namespace Sprint2
 
         public void ChangeSprite(ISprite sprite)
         {
-             //no op
+            //no op
         }
         public void ChangeToRight()
         {
@@ -61,7 +63,10 @@ namespace Sprint2
         {
             state.ChangeToDown();
         }
-
+        public void GetDamage()
+        {
+            //none
+        }
 
 
 
@@ -77,7 +82,7 @@ namespace Sprint2
             if (hasFire)
             {
                 fireTimer++;
-                if(fireTimer == 100)
+                if (fireTimer == 100)
                 {
                     hasFire = false;
                 }
@@ -87,7 +92,7 @@ namespace Sprint2
                 fireTimer = 0;
                 fire = null;
             }
-            
+
             //random move dragon
             updateDelay++;
             if (updateDelay == totalDelay)
@@ -102,14 +107,14 @@ namespace Sprint2
                 {
                     case 0:
                         this.ChangeToDown();
-                         width = 15;
-                         height = 30;
+                        width = 15;
+                        height = 30;
 
                         break;
                     case 1:
                         this.ChangeToLeft();
                         width = 30;
-                        height = 15; 
+                        height = 15;
                         break;
                     case 2:
                         this.ChangeToRight();
@@ -134,7 +139,7 @@ namespace Sprint2
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            
+
             DragonSprite.Draw(spriteBatch, new Vector2(posX, posY));
             if (fire != null)
             {

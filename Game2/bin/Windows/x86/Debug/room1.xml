@@ -34,6 +34,12 @@
   </Item>
   <Item>
     <ObjectType>Enemy</ObjectType>
+    <ObjectName>GreenDragon</ObjectName>
+    <posX>65</posX>
+    <posY>22</posY>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
     <ObjectName>WallMaster</ObjectName>
     <posX>50</posX>
     <posY>35</posY>

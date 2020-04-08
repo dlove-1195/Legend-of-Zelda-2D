@@ -74,6 +74,7 @@ namespace Sprint2
         }
             public void HandleLinkEnemyCollsion(string direction)
         {
+            Sound.PlayLinkDemage();
             //link get damaged and being pushed to opposite direction
             link.GetDamaged();
             switch (direction)
@@ -104,19 +105,31 @@ namespace Sprint2
         public void HandleLinkProjectileCollsion()
         {
             //link just damage
+            Sound.PlayLinkDemage();
             link.GetDamaged();
         }
 
-        public void HandleLinkWeaponEnemyCollsion(  int enemyNum)
+        public void HandleLinkWeaponEnemyCollsion(  int enemyNum )
         {
-            //enemy damage, disappear directly 
-             room.setEnemyToNull(enemyNum);
+            //enemy damage 
+            Sound.PlayLinkDemage();
+            room.enemies[enemyNum].blood--;
+            if (room.enemies[enemyNum] is GreenDragon)
+            {
+                room.enemies[enemyNum].GetDamage();
+
+            }
+            if (room.enemies[enemyNum]!=null &&room.enemies[enemyNum].blood <= 0 )
+            {
+                room.setEnemyToNull(enemyNum);
+            }
             //-----FIXME-----------
              //enemy damage, drop blood or disappear 
              //maybe need add a field in enemy class to record the live of the enemy 
         }
         public void HandleLinkNpcCollsion(String direction)
         {
+            Sound.PlayItemCollision();
             switch (direction)
             {
                 case "Left":
@@ -149,6 +162,7 @@ namespace Sprint2
         public void HandleLinkItemCollsion(int itemNum)
         {
             //item disappear 
+            Sound.PlayItemCollision();
             room.setItemToNull(itemNum);
 
             //FIXME

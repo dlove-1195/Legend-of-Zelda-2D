@@ -14,6 +14,8 @@
 * Press "Q" to exit game 
 * Walk to room 13 or room 15 to find stairs, go on stairs and enter next level
 
+this is a test
+
 ### Implementation
 
 * Added camera for room switching in map

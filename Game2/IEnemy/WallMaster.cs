@@ -15,6 +15,7 @@ namespace Sprint2
         public ISprite WallMasterSprite;
         private int updateDelay = 0;
         private int totalDelay = 100;
+        public bool damage { set; get; }
 
 
         //the current position of the dragon
@@ -23,7 +24,7 @@ namespace Sprint2
         public Rectangle boundingBox { get; set; }
         private int width = 14;
         private int height = 15;
-       
+        public int blood { get; set; } = 50;
 
         public WallMaster(Vector2 vector )
         {
@@ -61,7 +62,10 @@ namespace Sprint2
         {
              
         }
-
+        public void GetDamage()
+        {
+            //none
+        }
 
         public void Update()
         {

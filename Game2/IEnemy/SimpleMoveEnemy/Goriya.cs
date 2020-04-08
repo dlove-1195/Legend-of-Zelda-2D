@@ -8,7 +8,8 @@ namespace Sprint2
     public class Goriya : IEnemy
     {
 
-
+        
+        public bool damage { get; set; }
         private IEnemyState state;
         private ISprite GoriyaSprite;
         private int updateDelay = 0;
@@ -24,6 +25,8 @@ namespace Sprint2
         private int height = 16;
         
         public Rectangle boundingBox { get; set; }
+        public int  blood { get; set; } = 1;
+
 
         public Goriya(Vector2 vector)
         {
@@ -57,6 +60,10 @@ namespace Sprint2
         public void ChangeToDown()
         {
             state.ChangeToDown();
+        }
+        public void GetDamage()
+        {
+            //none
         }
 
 
