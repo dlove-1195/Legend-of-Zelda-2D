@@ -50,6 +50,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Game1.cs" />
+    <Compile Include="GameState\InventoryScreen.cs" />
     <Compile Include="GameState\LoseState.cs" />
     <Compile Include="GameState\PauseState.cs" />
     <Compile Include="GameState\PlayState.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="ICollisionDetector\ICollisionDetection.cs" />
     <Compile Include="ICollisionDetector\LinkCollisionDetection.cs" />
     <Compile Include="ICollisionHandler\EnemyCollisonHandler.cs" />
+    <Compile Include="ICollisionHandler\InventoryCollisionHandler.cs" />
     <Compile Include="ICollisionHandler\LinkCollisonHandler.cs" />
     <Compile Include="ICommand\AttackCommand.cs" />
     <Compile Include="ICommand\ChangeToDownCommand.cs" />
@@ -86,6 +88,7 @@
     <Compile Include="ICommand\SwitchToPlayCommand.cs" />
     <Compile Include="ICommand\SwitchToPauseCommand.cs" />
     <Compile Include="IController\IController.cs" />
+    <Compile Include="IController\InventoryStateController.cs" />
     <Compile Include="IController\LoseStateController.cs" />
     <Compile Include="IController\WinStateController.cs" />
     <Compile Include="IController\StartStateController.cs" />
@@ -115,6 +118,8 @@
     <Compile Include="IEnemy\staticEnemy\Trap.cs" />
     <Compile Include="IEnemy\WallMaster.cs" />
     <Compile Include="GameState\IGameState.cs" />
+    <Compile Include="IInventory\IInventory.cs" />
+    <Compile Include="IInventory\Inventory.cs" />
     <Compile Include="IItemState\BombState\BombAppearExplodeState.cs" />
     <Compile Include="IItemState\BombState\BombAppearUnExplodeState.cs" />
     <Compile Include="IItemState\IitemState.cs" />

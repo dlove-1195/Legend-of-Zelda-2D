@@ -17,9 +17,12 @@ namespace Sprint2
        
         public IPlayer player; 
         public ILevel level;
+        
         public ICollisionDetection linkDetection;
         public ICollisionDetection enemyDetection;
-      
+
+
+        private IInventory inventoryBar;
 
         public string name { get; set; }
         private IController playStateController; 
@@ -28,6 +31,9 @@ namespace Sprint2
             name = "play";
             player = new Link(new Vector2(200, 500)); 
             level = new Level1(player);
+            //edit for inventory
+            inventoryBar = new Inventory(this);
+            //edit for inventory
             linkDetection = new LinkCollisionDetection(level, player);
             enemyDetection = new EnemyCollisionDetection(level);
             playStateController = new PlayStateController( game,this);
@@ -42,6 +48,7 @@ namespace Sprint2
             topViewport = new Viewport(destinationRectangle);
            
             spriteBatch.Draw(inventoryTexture, destinationRectangle, sourceRectangle1, Color.White);
+            inventoryBar.Draw(spriteBatch);
 
 
             bottomViewport = new Viewport(new Rectangle(Game1.WindowWidth, Game1.WindowHeight / 4, Game1.WindowWidth, Game1.WindowHeight));
