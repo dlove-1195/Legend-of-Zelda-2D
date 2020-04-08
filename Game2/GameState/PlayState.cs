@@ -67,6 +67,9 @@ namespace Sprint2
             level.Update();
             linkDetection = new LinkCollisionDetection(level, player);
             enemyDetection = new EnemyCollisionDetection(level);
+
+            inventoryBar.Update();
+
         }
 
       

@@ -16,8 +16,8 @@ namespace Sprint2
         Vector2 keyPos { get; set; }
         Vector2 bombPos { get; set; }*/
 
-        IItem itemA { get; set; }
-        IItem itemB { get; set; }
+        string itemA { get; set; }
+        string itemB { get; set; }
 
         void Update();
         void Draw(SpriteBatch spriteBatch);
