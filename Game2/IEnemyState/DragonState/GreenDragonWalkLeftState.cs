@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sprint2 
+namespace Sprint2
 {
-    public class GreenDragonWalkLeftState: IEnemyState
+    public class GreenDragonWalkLeftState : IEnemyState
     {
         private GreenDragon greenDragon;
         private Texture2D texture = Texture2DStorage.GetEnemySpriteSheet();
@@ -19,7 +19,7 @@ namespace Sprint2
             }
             this.greenDragon = dragon;
             greenDragon.GreenDragonSprite = new GreenDragonWalkLeftSprite(texture, greenDragon);
-            greenDragon.fire = new Fire(greenDragon.posX-30, greenDragon.posY, 2);
+            greenDragon.fire = new Fire(greenDragon.posX - 30, greenDragon.posY, 2);
             GreenDragon.hasFire = true;
         }
         public void ChangeToRight()
@@ -41,6 +41,9 @@ namespace Sprint2
         {
             //none
         }
-        
+        public void GetDamaged()
+        {
+            greenDragon.state = new GreenDragonWalkRightDamageState(greenDragon);
+        }
     }
 }

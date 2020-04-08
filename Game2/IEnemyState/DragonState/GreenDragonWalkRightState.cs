@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sprint2 
+namespace Sprint2
 {
     public class GreenDragonWalkRightState : IEnemyState
     {
@@ -39,8 +39,13 @@ namespace Sprint2
 
         public void ChangeToDown()
         {
-           //none
+            //none
         }
-        
+        public void GetDamaged()
+        {
+            greenDragon.state = new GreenDragonWalkLeftDamageState(greenDragon);
+        }
+
     }
 }
+

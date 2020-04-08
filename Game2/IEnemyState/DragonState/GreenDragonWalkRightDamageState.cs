@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sprint2 
+namespace Sprint2
 {
-    public class GreenDragonWalkRightDamageState: IEnemyState
+    public class GreenDragonWalkRightDamageState : IEnemyState
     {
         private GreenDragon greenDragon;
         private Texture2D texture = Texture2DStorage.GetHurtEnemySpriteSheet();
@@ -19,17 +19,26 @@ namespace Sprint2
             }
             this.greenDragon = dragon;
             greenDragon.GreenDragonSprite = new GreenDragonDamageWalkRightSprite(texture, greenDragon);
-            greenDragon.fire = new Fire(greenDragon.posX-30, greenDragon.posY, 2);
+            greenDragon.fire = new Fire(greenDragon.posX - 30, greenDragon.posY, 2);
             GreenDragon.hasFire = true;
+            greenDragon.damage = true;
+
         }
         public void ChangeToRight()
         {
-            greenDragon.state = new GreenDragonWalkRightDamageState(greenDragon);
+            //already right
         }
 
         public void ChangeToLeft()
         {
-            //already left 
+            if (greenDragon.damage)
+            {
+                greenDragon.state = new GreenDragonWalkLeftDamageState(greenDragon);
+            }
+            else
+            {
+                greenDragon.state = new GreenDragonWalkLeftState(greenDragon);
+            }
         }
 
         public void ChangeToUp()
@@ -41,6 +50,10 @@ namespace Sprint2
         {
             //none
         }
-        
+        public void GetDamaged()
+        {
+            //already damaged
+        }
+
     }
 }
