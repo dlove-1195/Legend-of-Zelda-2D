@@ -13,6 +13,7 @@
 * Press "Z" or "N" to swing a sword, you cannot swing a sword when getting damage
 * Press "Q" to exit game 
 * Walk to room 13 or room 15 to find stairs, go on stairs and enter next level
+
 this is a test
 
 ### Implementation
