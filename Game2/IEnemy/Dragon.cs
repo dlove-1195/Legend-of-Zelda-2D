@@ -7,7 +7,7 @@ namespace Sprint2
 {
     public class Dragon : IEnemy
     {
-
+        private int damageTimer = 0;
         public IEnemyState state;
         public bool damage { get; set; }
         public ISprite DragonSprite;
@@ -28,6 +28,8 @@ namespace Sprint2
 
         private int width = 30;
         private int height = 15;
+        private int drawCloud = 30;
+        private int drawSpark = 30;
         public Dragon(Vector2 vector)
         {
             posX = (int)vector.X;
@@ -132,6 +134,21 @@ namespace Sprint2
 #pragma warning restore CA1303 // Do not pass literals as localized parameters
                         break;
                 }
+
+
+                if (damage)
+                {
+                    damageTimer++;
+                    if (damageTimer >= 100)
+                    {
+                        damage = false;
+                    }
+                }
+                else
+                {
+                    damageTimer = 0;
+                }
+
 
             }
 

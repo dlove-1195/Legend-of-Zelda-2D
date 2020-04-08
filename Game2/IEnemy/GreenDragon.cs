@@ -14,8 +14,7 @@ namespace Sprint2
         private int totalDelay = 100;
         public IItem fire;
         public static Boolean hasFire = false;
-        private int fireTimer = 0;
-        private int timer = 0;
+        private int fireTimer = 0; 
         private int damageTimer = 0;
 
         public int blood { get; set; } = 50;

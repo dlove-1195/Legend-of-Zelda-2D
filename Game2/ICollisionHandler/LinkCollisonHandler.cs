@@ -114,7 +114,7 @@ namespace Sprint2
             //enemy damage 
             Sound.PlayLinkDemage();
             room.enemies[enemyNum].blood--;
-            if (room.enemies[enemyNum] is GreenDragon)
+            if (room.enemies[enemyNum] is GreenDragon || room.enemies[enemyNum] is Dragon )
             {
                 room.enemies[enemyNum].GetDamage();
 

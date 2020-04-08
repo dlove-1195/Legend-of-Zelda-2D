@@ -45,7 +45,7 @@ namespace Sprint2
 		//letters and numbers
 		private static Texture2D numberSpriteSheet;
 		private static Texture2D letterSpriteSheet;
-
+		private static Texture2D  cloud;
 		//initialize the Texture2D fields
 		public static void LoadAllTextures(ContentManager content)
 			{
@@ -88,7 +88,8 @@ namespace Sprint2
 			numberSpriteSheet = content.Load<Texture2D>("item-Inventory");
 
 			letterSpriteSheet = content.Load<Texture2D>("Text");
-				}
+			cloud = content.Load<Texture2D>("enemyCloud");
+		}
 
 		   public static void UnloadAllTextures()
 			{
@@ -183,6 +184,10 @@ namespace Sprint2
 		}
 		public static Texture2D GetLetterSpriteSheet() {
 			return letterSpriteSheet;
+		}
+		public static Texture2D GetCloudSpriteSheet()
+		{
+			return cloud;
 		}
 	}
 	
