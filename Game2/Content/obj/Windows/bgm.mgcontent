@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/zz/Desktop/3902/CSE-3902/Game2/Content/bgm.mp3</SourceFile>
-  <SourceTime>2020-04-07T18:46:38.36886-04:00</SourceTime>
-  <DestFile>C:/Users/zz/Desktop/3902/CSE-3902/Game2/Content/bin/Windows/bgm.xnb</DestFile>
-  <DestTime>2020-04-07T18:58:50.7061414-04:00</DestTime>
+  <SourceFile>D:/osu 2020 sp/3902/newest version/CSE-3902/Game2/Content/bgm.mp3</SourceFile>
+  <SourceTime>2020-04-08T02:26:00.5463089-04:00</SourceTime>
+  <DestFile>D:/osu 2020 sp/3902/newest version/CSE-3902/Game2/Content/bin/Windows/bgm.xnb</DestFile>
+  <DestTime>2020-04-08T16:26:41.466519-04:00</DestTime>
   <Importer>Mp3Importer</Importer>
   <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
   <Processor>SongProcessor</Processor>
@@ -15,6 +15,6 @@
   <Dependencies />
   <BuildAsset />
   <BuildOutput>
-    <string>C:/Users/zz/Desktop/3902/CSE-3902/Game2/Content/bin/Windows/bgm.wma</string>
+    <string>D:/osu 2020 sp/3902/newest version/CSE-3902/Game2/Content/bin/Windows/bgm.wma</string>
   </BuildOutput>
 </PipelineBuildEvent>

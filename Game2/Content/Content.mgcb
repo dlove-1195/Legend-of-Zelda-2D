@@ -133,7 +133,7 @@
 /processorParam:TextureFormat=Color
 /build:hurtDragon.png
 
-#begin Inventory.jpg
+#begin Inventory.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -143,7 +143,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Inventory.jpg
+/build:Inventory.png
 
 #begin item.png
 /importer:TextureImporter

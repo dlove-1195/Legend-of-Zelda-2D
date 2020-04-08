@@ -32,6 +32,9 @@ namespace Sprint2
         //size in item list
         private Vector2 itemBox = new Vector2(16, 29);
 
+        private static int width = 800;
+        private static int height = 200;
+
         private Dictionary<string, Vector2> itemMap = new Dictionary<string, Vector2>(){
             {"sword", new Vector2 (64,52)},
             { "bomb", new Vector2 (147,51)}
@@ -41,7 +44,8 @@ namespace Sprint2
 
         public Inventory(IGameState playState)
         {
-            playState = playState;
+            //playState = playState;
+           // linkDetection = playState.linkDetection;
 
         }
 
@@ -50,8 +54,12 @@ namespace Sprint2
         }
         public void Draw(SpriteBatch spriteBatch) {
             Rectangle sourceRectangle1 = new Rectangle(64, 52, 16, 29);
-            Rectangle destinationRectangle = new Rectangle(409, 66, 16, 29);
+            Rectangle destinationRectangle = new Rectangle(width-330, height-101, 36, 58);
             spriteBatch.Draw(inventoryTexture, destinationRectangle, sourceRectangle1, Color.White);
+
+            //draw heart
+            //Rectangle sourceRectangle12 = new Rectangle(64, 52, 16, 29);
+
         }
         /*     Map : heart=>3
                  collision detecter handler heart-1

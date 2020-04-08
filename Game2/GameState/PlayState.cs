@@ -12,8 +12,8 @@ namespace Sprint2
         private Viewport bottomViewport;
 
         private Texture2D inventoryTexture = Texture2DStorage.GetInventorySpriteSheet();
-        private static int width = 601;
-        private static int height = 523;
+        private static int width = 800;
+        private static int height = 871;
        
         public IPlayer player; 
         public ILevel level;
@@ -44,7 +44,7 @@ namespace Sprint2
         {
             
             //draw inventory in the topView 
-            Rectangle sourceRectangle1 = new Rectangle(0, height - 120, width, Game1.WindowHeight / 4);          
+            Rectangle sourceRectangle1 = new Rectangle(0, height - 200, width, Game1.WindowHeight / 4);          
             Rectangle destinationRectangle = new Rectangle(0, 0, Game1.WindowWidth, Game1.WindowHeight/4);
             topViewport = new Viewport(destinationRectangle);
            

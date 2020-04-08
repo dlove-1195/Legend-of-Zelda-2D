@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/zz/Desktop/3902/CSE-3902/Game2/Content/Inventory.jpg</SourceFile>
-  <SourceTime>2020-04-07T18:46:38.3369448-04:00</SourceTime>
-  <DestFile>C:/Users/zz/Desktop/3902/CSE-3902/Game2/Content/bin/Windows/Inventory.xnb</DestFile>
-  <DestTime>2020-04-07T18:58:51.9165725-04:00</DestTime>
+  <SourceFile>D:/osu 2020 sp/3902/newest version/CSE-3902/Game2/Content/Inventory.png</SourceFile>
+  <SourceTime>2020-04-08T16:33:27.1749736-04:00</SourceTime>
+  <DestFile>D:/osu 2020 sp/3902/newest version/CSE-3902/Game2/Content/bin/Windows/Inventory.xnb</DestFile>
+  <DestTime>2020-04-08T16:35:43.3089543-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
