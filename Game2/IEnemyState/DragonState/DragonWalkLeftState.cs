@@ -41,6 +41,10 @@ namespace Sprint2
         {
             dragon.state = new DragonWalkDownState(dragon);
         }
-        
+        public void GetDamaged()
+        {
+            //
+        }
+
     }
 }
