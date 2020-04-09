@@ -133,6 +133,8 @@ namespace Sprint2
                 if (drawCloud <= 20)
                 {
                     cloudSprite.Draw(spriteBatch, initialPos);
+                    posX = (int)initialPos.X;
+                    posY = (int)initialPos.Y;
                 }
                 else
                 {

@@ -17,6 +17,7 @@ namespace Sprint2
         private List<IRoom> existingRooms = new List<IRoom>();
         //new add
         private bool visit = false;
+        private bool undergoundSwitch = false;
         private int index = 0;
         private IPlayer link;
         public Level1(IPlayer player)
@@ -71,15 +72,17 @@ namespace Sprint2
             if (roomNum != 0)
             {
                 load = true;
+                 undergoundSwitch =true;
                 if (roomNum == 13)
                 {
                     Link.posX = 600;
                     Link.posY = 500;
+                    
                     link.ChangeToLeft();
                 }else if (roomNum == 15)
-                {
+                { 
                     Link.posX = 170;
-                    Link.posY =280;
+                    Link.posY = 280;
                     link.ChangeToDown();
                 }
             }
@@ -136,29 +139,33 @@ namespace Sprint2
 
         private void SetLinkPosInNewRoom(String direction)
         {
-            switch (direction)
+            if (!undergoundSwitch)
             {
-                case "Up":
-                    Link.posX = (int)(room.roomPos.X + Game1.WindowWidth * (0.30));
-                    Link.posY = (int)(room.roomPos.Y + 600* (0.5));
-                    break;
+                switch (direction)
+                {
+                    case "Up":
+                        Link.posX = (int)(room.roomPos.X + Game1.WindowWidth * (0.30));
+                        Link.posY = (int)(room.roomPos.Y + 600 * (0.5));
+                        break;
 
-                case "Down":
-                    Link.posX = (int)(room.roomPos.X + Game1.WindowWidth * (0.30));
-                    Link.posY = (int)(room.roomPos.Y);
-                    break;
+                    case "Down":
+                        Link.posX = (int)(room.roomPos.X + Game1.WindowWidth * (0.30));
+                        Link.posY = (int)(room.roomPos.Y);
+                        break;
 
-                case "Left":
-                    Link.posX = (int)(room.roomPos.X + Game1.WindowWidth * (0.6));
-                    Link.posY = (int)(room.roomPos.Y +600* (0.24));
-                    break;
+                    case "Left":
+                        Link.posX = (int)(room.roomPos.X + Game1.WindowWidth * (0.6));
+                        Link.posY = (int)(room.roomPos.Y + 600 * (0.24));
+                        break;
 
-                case "Right":
-                    Link.posX = (int)(room.roomPos.X);
-                    Link.posY = (int)(room.roomPos.Y +  600 * (0.24));
-                    break;
+                    case "Right":
+                        Link.posX = (int)(room.roomPos.X);
+                        Link.posY = (int)(room.roomPos.Y + 600 * (0.24));
+                        break;
 
+                }
             }
+            undergoundSwitch = false;
 
         }
         public void Update()
@@ -177,7 +184,7 @@ namespace Sprint2
                 {
                     load = false;
                     roomLoader = new RoomLoader("room" + roomNum + ".xml");
-                    room = new Room(roomLoader);
+                    room = new Room(roomLoader); 
                     SetLinkPosInNewRoom(direction);
                     existingRooms.Add(room);
 

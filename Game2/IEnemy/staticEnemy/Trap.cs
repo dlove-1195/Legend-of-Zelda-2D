@@ -28,9 +28,10 @@ namespace Sprint2
         private int height =14;
         public Trap(Vector2 vector)
         {
-            initialPos = new Vector2(posX, posY);
+            
             posX = (int)vector.X;
             posY = (int)vector.Y;
+            initialPos = new Vector2(posX, posY);
             trapSprite = new TrapSprite(Texture2DStorage.GetEnemySpriteSheet2(), this);
         }
 
@@ -73,6 +74,10 @@ namespace Sprint2
             drawCloud++;
             boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
             trapSprite.Update();
+            if (blood <= 0)
+            {
+                sparkTimer++;
+            }
 
         }
 

@@ -34,11 +34,12 @@ namespace Sprint2
 
         public Keese(Vector2 vector)
         {
-            initialPos = new Vector2(posX, posY);
+           
             posX = (int)vector.X;
             posY = (int)vector.Y;
             boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
             state = new EnemyWalkLeftState(this, enemyNumber);
+            initialPos = new Vector2(posX, posY);
         }
 
 
@@ -136,6 +137,8 @@ namespace Sprint2
                 if (drawCloud <= 20)
                 {
                     cloudSprite.Draw(spriteBatch, initialPos);
+                    posX = (int)initialPos.X;
+                    posY = (int)initialPos.Y;
                 }
                 else
                 {

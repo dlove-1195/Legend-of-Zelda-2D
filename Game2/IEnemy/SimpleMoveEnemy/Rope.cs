@@ -38,9 +38,10 @@ namespace Sprint2
         public Rope(Vector2 vector)
 
         {
-            initialPos = new Vector2(posX, posY);
+           
             posX = (int)vector.X;
             posY = (int)vector.Y;
+            initialPos = new Vector2(posX, posY);
             state = new EnemyWalkLeftState(this, enemyNumber);
         }
 
@@ -147,6 +148,8 @@ namespace Sprint2
                 if (drawCloud <= 20)
                 {
                     cloudSprite.Draw(spriteBatch, initialPos);
+                    posX =(int) initialPos.X;
+                    posY =(int) initialPos.Y;
                 }
                 else
                 {

@@ -26,9 +26,10 @@ namespace Sprint2
 
         public Flame(Vector2 vector)
         {
-            initialPos = new Vector2(posX, posY);
+           
             posX = (int)vector.X;
             posY = (int)vector.Y;
+            initialPos = new Vector2(posX, posY);
             flameSprite = new FlameSilentBurningSprite(Texture2DStorage.GetEnemySpriteSheet2());
         }
 
@@ -72,6 +73,10 @@ namespace Sprint2
             drawCloud++;
             boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
             flameSprite.Update();
+            if (blood <= 0)
+            {
+                sparkTimer++;
+            }
 
         }
 
