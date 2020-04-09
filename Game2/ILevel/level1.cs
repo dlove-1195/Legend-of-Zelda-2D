@@ -9,6 +9,7 @@ namespace Sprint2
     {
        
         public IRoom room { get; set; }
+        private RoomLoader roomLoader;
         private ICamera camera;
         private bool load = false;
          private int roomNum=0; 
@@ -21,7 +22,8 @@ namespace Sprint2
         public Level1(IPlayer player)
         {
             link = player;
-            room = new Room("room1.xml");
+            roomLoader = new RoomLoader("room1.xml");
+            room = new Room(roomLoader);
             existingRooms.Add(room);
             camera = new Camera
             {
@@ -39,6 +41,7 @@ namespace Sprint2
                 camera.direction = direction;
                 Camera.SwitchRoom = true;
                 load = true;
+
                 room = new Room();
                 Link.posX = 3000;
                 Link.posY = 3000; //cannot be seen when room switching 
@@ -173,7 +176,8 @@ namespace Sprint2
                 else  
                 {
                     load = false;
-                    room = new Room("room" + roomNum + ".xml");
+                    roomLoader = new RoomLoader("room" + roomNum + ".xml");
+                    room = new Room(roomLoader);
                     SetLinkPosInNewRoom(direction);
                     existingRooms.Add(room);
 
@@ -193,3 +197,4 @@ namespace Sprint2
         }
     }
 }
+
