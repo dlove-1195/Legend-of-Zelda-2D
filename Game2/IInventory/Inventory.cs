@@ -15,9 +15,14 @@ namespace Sprint2
         private Texture2D inventoryTexture = Texture2DStorage.GetNumberSpriteSheet();
 
         public int heartNum { get; set; } = 3;
-        public int diamondNum { get; set; } = 0;
+        public int diamondNum { get; set; } =10;
         public int keyNum { get; set; } = 0;
         public int bombNum { get; set; } = 0;
+
+        private Number DiamondNum;
+        private Number KeyNum;
+        private Number BombNum;
+
 
         public string itemA { get; set; } = "sword";
         public string itemB { get; set; } = null;
@@ -45,22 +50,53 @@ namespace Sprint2
         public Inventory(IGameState playState)
         {
             //playState = playState;
-           // linkDetection = playState.linkDetection;
+            // linkDetection = playState.linkDetection;
+            DiamondNum = new Number(diamondNum, new Vector2(width - 483, height - 132));
+            KeyNum = new Number(keyNum, new Vector2(width - 482, height - 80));
+            BombNum = new Number(bombNum, new Vector2(width - 482, height - 48));
 
         }
 
         public void Update() {
-           // playState.Update();
-        }
+            // playState.Update();
+
+            DiamondNum.Update();
+             KeyNum.Update();
+            BombNum.Update();
+
+    }
         public void Draw(SpriteBatch spriteBatch) {
-            Rectangle sourceRectangle1 = new Rectangle(64, 52, 16, 29);
-            Rectangle destinationRectangle = new Rectangle(width-330, height-101, 36, 58);
-            spriteBatch.Draw(inventoryTexture, destinationRectangle, sourceRectangle1, Color.White);
 
+            if (spriteBatch == null)
+            {
+                throw new ArgumentNullException(nameof(spriteBatch));
+            }
+
+            DrawNumber(spriteBatch);
+            DrawItemA(spriteBatch);
+    
+              
             //draw heart
-            //Rectangle sourceRectangle12 = new Rectangle(64, 52, 16, 29);
+
+            
 
         }
+
+        //how many new number objects are layered, and is it updated in playstate, when updating inventoryBar
+        private void DrawNumber(SpriteBatch spriteBatch) {
+            
+            DiamondNum.Draw(spriteBatch);
+            KeyNum.Draw(spriteBatch);
+            BombNum.Draw(spriteBatch);
+    }
+
+        private void DrawItemA(SpriteBatch spriteBatch) {
+            Rectangle sourceRectangle1 = new Rectangle(64, 52, 16, 29);
+            Rectangle destinationRectangle = new Rectangle(width - 330, height - 101, 36, 58);
+            spriteBatch.Draw(inventoryTexture, destinationRectangle, sourceRectangle1, Color.White);
+        }
+
+
         /*     Map : heart=>3
                  collision detecter handler heart-1
                  blue 
