@@ -63,6 +63,10 @@ namespace Sprint2
             int listLength = enemy.Count;
             for (int i = 0; i < listLength; i++)
             {
+                   if (enemy[i] != null && enemy[i].blood <= 0 && enemy[i].sparkTimer >=10)
+                {
+                    room.setEnemyToNull(i);
+                }
                 if (enemy[i] != null)
                 {
                     Rectangle singleEnemyRec = enemy[i].boundingBox;
