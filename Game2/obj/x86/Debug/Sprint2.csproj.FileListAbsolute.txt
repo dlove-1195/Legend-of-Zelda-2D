@@ -236,3 +236,4 @@ D:\osu 2020 sp\3902\new new folder\CSE-3902\Game2\bin\Windows\x86\Debug\SharpDX.
 D:\osu 2020 sp\3902\new new folder\CSE-3902\Game2\obj\x86\Debug\Sprint2.csproj.CopyComplete
 D:\osu 2020 sp\3902\new new folder\CSE-3902\Game2\obj\x86\Debug\Game2.exe
 D:\osu 2020 sp\3902\new new folder\CSE-3902\Game2\obj\x86\Debug\Game2.pdb
+D:\osu 2020 sp\3902\new new folder\CSE-3902\Game2\obj\x86\Debug\Sprint2.csprojAssemblyReference.cache

@@ -66,6 +66,7 @@ namespace Sprint2
             enemyDetection.Update();
             level.Update();
             linkDetection = new LinkCollisionDetection(level, player);
+            //please add inventoryBar.heartNum--; and inventoryBar.itemList.add("item-name"); in link collision handler
             enemyDetection = new EnemyCollisionDetection(level);
 
             inventoryBar.Update();

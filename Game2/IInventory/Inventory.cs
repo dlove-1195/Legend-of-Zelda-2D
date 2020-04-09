@@ -14,7 +14,7 @@ namespace Sprint2
 
         private Texture2D inventoryTexture = Texture2DStorage.GetNumberSpriteSheet();
 
-        public int heartNum { get; set; } = 3;
+        public int heartNum { get; set; } = 12;
         public int diamondNum { get; set; } =10;
         public int keyNum { get; set; } = 0;
         public int bombNum { get; set; } = 0;
@@ -27,29 +27,26 @@ namespace Sprint2
         public string itemA { get; set; } = "sword";
         public string itemB { get; set; } = null;
 
-        private Vector2 heartPos = new Vector2(409, 66);
-        private int heartGapX = 32;
-        private int heartGapY = 35;
-        private Vector2 diamondPos = new Vector2(349, 43);
-        private Vector2 keyPos = new Vector2(349, 72);
-        private Vector2 bombPos = new Vector2(349, 92);
 
         //size in item list
         private Vector2 itemBox = new Vector2(16, 29);
 
         private static int width = 800;
         private static int height = 200;
+        private Vector2 heartPos = new Vector2(width-213, height-94);
+
+
 
         private Dictionary<string, Vector2> itemMap = new Dictionary<string, Vector2>(){
             {"sword", new Vector2 (64,52)},
             { "bomb", new Vector2 (147,51)}
             };
 
-        private IGameState playState;
+        //private IGameState playState;
 
-        public Inventory(IGameState playState)
+        public Inventory(PlayState playState)
         {
-            //playState = playState;
+           // playState = playState;
             // linkDetection = playState.linkDetection;
             DiamondNum = new Number(diamondNum, new Vector2(width - 483, height - 132));
             KeyNum = new Number(keyNum, new Vector2(width - 482, height - 80));
@@ -59,7 +56,7 @@ namespace Sprint2
 
         public void Update() {
             // playState.Update();
-
+            //if(playState.linkDetection)
             DiamondNum.Update();
              KeyNum.Update();
             BombNum.Update();
@@ -74,7 +71,8 @@ namespace Sprint2
 
             DrawNumber(spriteBatch);
             DrawItemA(spriteBatch);
-    
+            //DrawItemB(spriteBatch);
+            DrawHeart(spriteBatch);
               
             //draw heart
 
@@ -94,6 +92,24 @@ namespace Sprint2
             Rectangle sourceRectangle1 = new Rectangle(64, 52, 16, 29);
             Rectangle destinationRectangle = new Rectangle(width - 330, height - 101, 36, 58);
             spriteBatch.Draw(inventoryTexture, destinationRectangle, sourceRectangle1, Color.White);
+        }
+
+        //maximum 12 hearts
+        private void DrawHeart(SpriteBatch spriteBatch)
+        {
+            for (int i = 0; i < heartNum; i++)
+            {
+                Rectangle sourceRectangle1 = new Rectangle(218, 20, 12, 12);
+                if (i < 7)
+                {
+                    Rectangle destinationRectangle = new Rectangle((int)heartPos.X + i * 30, (int)heartPos.Y, 30, 30);
+                    spriteBatch.Draw(inventoryTexture, destinationRectangle, sourceRectangle1, Color.White);
+                }
+                else {
+                    Rectangle destinationRectangle2 = new Rectangle((int)heartPos.X + (i-7) * 30, (int)heartPos.Y+32, 30, 30);
+                    spriteBatch.Draw(inventoryTexture, destinationRectangle2, sourceRectangle1, Color.White);
+                }
+            }
         }
 
 
