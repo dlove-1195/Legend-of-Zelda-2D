@@ -28,6 +28,19 @@ namespace Sprint2
             {
                 candleFire.PosY += 7;
             }
+            else
+            {
+                if (timer % 5 == 0)
+                {
+                    posX = 300;
+                    posY = 0;
+                }
+                else
+                {
+                    posX = 300;
+                    posY = 30;
+                }
+            }
 
 
         }
