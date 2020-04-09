@@ -54,6 +54,8 @@
     <Compile Include="IEnemyState\DragonState\GreenDragonWalkRightDamageState.cs" />
     <Compile Include="IEnemyState\DragonState\GreenDragonWalkRightState.cs" />
     <Compile Include="IEnemy\GreenDragon.cs" />
+    <Compile Include="IRoom\ObjectLoader.cs" />
+    <Compile Include="IRoom\RoomLoader.cs" />
     <Compile Include="ISprite\EnemySprite\DragonSprite\GreenDragonDamageWalkLeftSprite.cs" />
     <Compile Include="ISprite\EnemySprite\DragonSprite\GreenDragonDamageWalkRightSprite.cs" />
     <Compile Include="ISprite\EnemySprite\DragonSprite\GreenDragonWalkLeftSprite.cs" />
