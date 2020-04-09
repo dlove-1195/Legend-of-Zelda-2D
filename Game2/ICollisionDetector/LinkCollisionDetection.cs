@@ -24,7 +24,7 @@ namespace Sprint2
         private IPlayer player;
 
         private List<string> DoorDirection { get; set; }
-        
+         private IRoom room;
 
         public LinkCollisionDetection(ILevel level, IPlayer link)
         {
@@ -32,7 +32,7 @@ namespace Sprint2
             {
                 throw new ArgumentNullException(nameof(level));
             }
-            IRoom room = level.room;
+            this.room = level.room;
             int roomWidth = (int)( 800* 0.68);
             int roomHeight = (int)(  600* 0.55);
             roomLeftCornerPosX = (int)(room.roomPos.X);
