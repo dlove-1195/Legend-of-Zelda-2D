@@ -70,7 +70,7 @@
     <Compile Include="ISprite\EnemySprite\DragonSprite\GreenDragonDamageWalkRightSprite.cs" />
     <Compile Include="ISprite\EnemySprite\DragonSprite\GreenDragonWalkLeftSprite.cs" />
     <Compile Include="ISprite\EnemySprite\DragonSprite\GreenDragonWalkRightSprite.cs" />
-    <Compile Include="Number.cs" />
+    <Compile Include="NumberGenerator\Number.cs" />
     <Compile Include="Sound.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="GameState\InventoryScreen.cs" />
