@@ -7,6 +7,10 @@ namespace Sprint2
 {
     public class Zol : IEnemy
     {
+        private StaticSprite cloudSprite = new StaticSprite(Texture2DStorage.GetCloudSpriteSheet(), 110, 9, 14, 14);
+        private StaticSprite sparkSprite = new StaticSprite(Texture2DStorage.GetLinkSpriteSheet(), 209, 282, 17, 21);
+        private int drawCloud = 0;
+        private Vector2 initialPos;
         public int sparkTimer { get; set; } = 0;
         private IEnemyState state;
         private ISprite GelSprite;
@@ -26,6 +30,7 @@ namespace Sprint2
         public Rectangle boundingBox { get; set; }
         public Zol(Vector2 vector)
         {
+            initialPos = new Vector2(posX, posY);
             posX = (int)vector.X;
             posY = (int)vector.Y;
             state = new EnemyWalkLeftState(this, enemyNumber);
@@ -68,6 +73,7 @@ namespace Sprint2
 
         public void Update()
         {
+            drawCloud++;
             boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
             GelSprite.Update();
 
@@ -110,12 +116,31 @@ namespace Sprint2
                 }
 
             }
+            if (blood <= 0)
+            {
+                sparkTimer++;
+            }
+
 
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            GelSprite.Draw(spriteBatch, new Vector2(posX, posY));
+            if (blood <= 0)
+            {
+                sparkSprite.Draw(spriteBatch, new Vector2(posX, posY));
+            }
+            else
+            {
+                if (drawCloud <= 20)
+                {
+                    cloudSprite.Draw(spriteBatch, initialPos);
+                }
+                else
+                {
+                    GelSprite.Draw(spriteBatch, new Vector2(posX, posY));
+                }
+            }
  
         }
 

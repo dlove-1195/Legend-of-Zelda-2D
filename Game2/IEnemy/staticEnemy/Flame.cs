@@ -6,6 +6,10 @@ namespace Sprint2
 {
     public class Flame : IEnemy
     {
+        private StaticSprite cloudSprite = new StaticSprite(Texture2DStorage.GetCloudSpriteSheet(), 110, 9, 14, 14);
+        private StaticSprite sparkSprite = new StaticSprite(Texture2DStorage.GetLinkSpriteSheet(), 209, 282, 17, 21);
+        private int drawCloud = 0; 
+        private Vector2 initialPos;
         public int sparkTimer { get; set; } = 0;
         public int blood { get; set; } = 1;
         public bool damage { set; get; }
@@ -22,6 +26,7 @@ namespace Sprint2
 
         public Flame(Vector2 vector)
         {
+            initialPos = new Vector2(posX, posY);
             posX = (int)vector.X;
             posY = (int)vector.Y;
             flameSprite = new FlameSilentBurningSprite(Texture2DStorage.GetEnemySpriteSheet2());
@@ -64,6 +69,7 @@ namespace Sprint2
 
         public void Update()
         {
+            drawCloud++;
             boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
             flameSprite.Update();
 
@@ -71,7 +77,21 @@ namespace Sprint2
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            flameSprite.Draw(spriteBatch, new Vector2(posX, posY));
+            if (blood <= 0)
+            {
+                sparkSprite.Draw(spriteBatch, new Vector2(posX, posY));
+            }
+            else
+            {
+                if (drawCloud <= 20)
+                {
+                    cloudSprite.Draw(spriteBatch, initialPos);
+                }
+                else
+                {
+                    flameSprite.Draw(spriteBatch, new Vector2(posX, posY));
+                }
+            }
         }
 
         public List<Rectangle> getProjectileRec()

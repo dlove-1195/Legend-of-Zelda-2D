@@ -10,6 +10,10 @@ namespace Sprint2
 {
     public class WallMaster : IEnemy
     {
+        private StaticSprite cloudSprite = new StaticSprite(Texture2DStorage.GetCloudSpriteSheet(), 110, 9, 14, 14);
+        private StaticSprite sparkSprite = new StaticSprite(Texture2DStorage.GetLinkSpriteSheet(), 209, 282, 17, 21);
+        private int drawCloud = 0;
+        private Vector2 initialPos;
         public int sparkTimer { get; set; } = 0;
         public IEnemyState state;
         public ISprite WallMasterSprite;
@@ -28,6 +32,7 @@ namespace Sprint2
 
         public WallMaster(Vector2 vector )
         {
+            initialPos = new Vector2(posX, posY);
             posX = (int)vector.X;
             posY = (int)vector.Y;
             state = new WallMasterLeftStaticState(this);
@@ -69,6 +74,7 @@ namespace Sprint2
 
         public void Update()
         {
+            drawCloud++;
             boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
             WallMasterSprite.Update();
             updateDelay++;
@@ -89,7 +95,21 @@ namespace Sprint2
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            WallMasterSprite.Draw(spriteBatch, new Vector2(posX, posY));
+            if (blood <= 0)
+            {
+                sparkSprite.Draw(spriteBatch, new Vector2(posX, posY));
+            }
+            else
+            {
+                if (drawCloud <= 20)
+                {
+                    cloudSprite.Draw(spriteBatch, initialPos);
+                }
+                else
+                {
+                    WallMasterSprite.Draw(spriteBatch, new Vector2(posX, posY));
+                }
+            }
         }
 
         public List<Rectangle> getProjectileRec()

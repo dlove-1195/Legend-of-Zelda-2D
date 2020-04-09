@@ -9,8 +9,7 @@ namespace Sprint2
     {
         public IEnemyState state;
         public ISprite GreenDragonSprite;
-        private StaticSprite cloudSprite = new StaticSprite(Texture2DStorage.GetCloudSpriteSheet(), 110, 9, 14, 14);
-        private StaticSprite sparkSprite = new StaticSprite(Texture2DStorage.GetLinkSpriteSheet(), 209, 282, 17, 21);
+         
         public bool damage { get; set; } = false;
         private int updateDelay = 0;
         private int totalDelay = 100;
@@ -18,7 +17,7 @@ namespace Sprint2
         public static Boolean hasFire = false;
         private int fireTimer = 0;
         private int damageTimer = 0;
-        public int sparkTimer { get; set; } = 0;
+        
         public int blood { get; set; } = 3;
 
         //the current position of the dragon
@@ -30,8 +29,11 @@ namespace Sprint2
 
         private int width = 24;
         private int height = 32;
+
+        private StaticSprite cloudSprite = new StaticSprite(Texture2DStorage.GetCloudSpriteSheet(), 110, 9, 14, 14);
+        private StaticSprite sparkSprite = new StaticSprite(Texture2DStorage.GetLinkSpriteSheet(), 209, 282, 17, 21);
         private int drawCloud = 0;
-        
+        public int sparkTimer { get; set; } = 0;
         private Vector2 initialPos;
        
         public GreenDragon(Vector2 vector)
