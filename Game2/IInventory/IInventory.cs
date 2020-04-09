@@ -20,7 +20,7 @@ namespace Sprint2
         string itemB { get; set; }
 
         void Update();
-        void Draw(SpriteBatch spriteBatch);
+        void Draw(SpriteBatch spriteBatch,int y);
 
     }
 }

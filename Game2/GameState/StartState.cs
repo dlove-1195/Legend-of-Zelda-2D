@@ -18,6 +18,7 @@ namespace Sprint2 {
         private Vector2 storyLocation = new Vector2(0, 600);
         private Vector2 buttonLocation = new Vector2(300, 1000);
         public string name { get; set; }
+        public IInventory inventoryBar { get; set; }
         private IController startStateController;
         public StartState(Game1 game)
         {   

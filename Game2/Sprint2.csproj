@@ -49,6 +49,7 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="ICommand\SwitchToInventoryCommand.cs" />
     <Compile Include="IEnemyState\DragonState\GreenDragonWalkLeftDamageState.cs" />
     <Compile Include="IEnemyState\DragonState\GreenDragonWalkLeftState.cs" />
     <Compile Include="IEnemyState\DragonState\GreenDragonWalkRightDamageState.cs" />

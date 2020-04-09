@@ -8,6 +8,7 @@ namespace Sprint2
     public interface IGameState
     {
         string name { get; set; }
+        IInventory inventoryBar { get; set; }
         void Update();
         void Draw(SpriteBatch spriteBatch);
        //add later when we have controller

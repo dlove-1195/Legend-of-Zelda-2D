@@ -7,6 +7,11 @@ using System;
 using System.Collections.Generic;
 using System.Xml;
 
+//set itemB using inventoryBar object by inventoryBar.itemB = "string"
+//please add inventoryBar.heartNum--; 
+//and inventoryBar.itemList.add("item-name"); in link collision handler
+//also in command when using bomb, key, items, inventoryBar.bombNum--; keyNum--; etc. if num<=0 do nothing
+
 namespace Sprint2
 {
     public class Inventory : IInventory
@@ -19,13 +24,13 @@ namespace Sprint2
         public int keyNum { get; set; } = 0;
         public int bombNum { get; set; } = 0;
 
-        private Number DiamondNum;
-        private Number KeyNum;
-        private Number BombNum;
-
 
         public string itemA { get; set; } = "sword";
-        public string itemB { get; set; } = null;
+        public string itemB { get; set; } = "bomb";
+
+
+        public Array itemList { get; set; } = new string[] { "bomb","boomerang","bow","candle" };
+        public string itemSelectBox { get; set; } = "bomb";
 
 
         //size in item list
@@ -36,10 +41,18 @@ namespace Sprint2
         private Vector2 heartPos = new Vector2(width-213, height-94);
 
 
+        private Number DiamondNum;
+        private Number KeyNum;
+        private Number BombNum;
+
+
 
         private Dictionary<string, Vector2> itemMap = new Dictionary<string, Vector2>(){
             {"sword", new Vector2 (64,52)},
-            { "bomb", new Vector2 (147,51)}
+            { "bomb", new Vector2 (148,53)},
+            { "bow",new Vector2(197,54)},
+            { "boomerang",new Vector2(115,54)},
+            { "candle",new Vector2(216,53)}
             };
 
         //private IGameState playState;
@@ -62,51 +75,61 @@ namespace Sprint2
             BombNum.Update();
 
     }
-        public void Draw(SpriteBatch spriteBatch) {
+        public void Draw(SpriteBatch spriteBatch,int y) {
 
             if (spriteBatch == null)
             {
                 throw new ArgumentNullException(nameof(spriteBatch));
             }
 
-            DrawNumber(spriteBatch);
-            DrawItemA(spriteBatch);
-            //DrawItemB(spriteBatch);
-            DrawHeart(spriteBatch);
+            DrawNumber(spriteBatch,y);
+            DrawItemA(spriteBatch,y);
+            DrawItemB(spriteBatch,y);
+            DrawHeart(spriteBatch,y);
               
-            //draw heart
+
 
             
 
         }
 
         //how many new number objects are layered, and is it updated in playstate, when updating inventoryBar
-        private void DrawNumber(SpriteBatch spriteBatch) {
+        private void DrawNumber(SpriteBatch spriteBatch,int y) {
             
-            DiamondNum.Draw(spriteBatch);
-            KeyNum.Draw(spriteBatch);
-            BombNum.Draw(spriteBatch);
+            DiamondNum.Draw(spriteBatch,y);
+            KeyNum.Draw(spriteBatch,y);
+            BombNum.Draw(spriteBatch,y);
     }
 
-        private void DrawItemA(SpriteBatch spriteBatch) {
-            Rectangle sourceRectangle1 = new Rectangle(64, 52, 16, 29);
-            Rectangle destinationRectangle = new Rectangle(width - 330, height - 101, 36, 58);
+        private void DrawItemA(SpriteBatch spriteBatch,int y) {
+            Rectangle sourceRectangle1 = new Rectangle(66, 52, 14, 30);
+            Rectangle destinationRectangle = new Rectangle(width - 330, height - 101+y, 36, 58);
             spriteBatch.Draw(inventoryTexture, destinationRectangle, sourceRectangle1, Color.White);
         }
 
-        //maximum 12 hearts
-        private void DrawHeart(SpriteBatch spriteBatch)
+        private void DrawItemB(SpriteBatch spriteBatch,int y) {
+            if (itemB != null)
+            {
+                Rectangle sourceRectangle1 = new Rectangle((int)itemMap[itemB].X,(int)itemMap[itemB].Y, 14, 25);
+                Rectangle destinationRectangle = new Rectangle(width - 410, height - 101+y, 36, 58);
+                spriteBatch.Draw(inventoryTexture, destinationRectangle, sourceRectangle1, Color.White);
+            }
+            
+        }
+
+        //maximum 14 hearts
+        private void DrawHeart(SpriteBatch spriteBatch,int y)
         {
             for (int i = 0; i < heartNum; i++)
             {
                 Rectangle sourceRectangle1 = new Rectangle(218, 20, 12, 12);
                 if (i < 7)
                 {
-                    Rectangle destinationRectangle = new Rectangle((int)heartPos.X + i * 30, (int)heartPos.Y, 30, 30);
+                    Rectangle destinationRectangle = new Rectangle((int)heartPos.X + i * 30, (int)heartPos.Y+y, 30, 30);
                     spriteBatch.Draw(inventoryTexture, destinationRectangle, sourceRectangle1, Color.White);
                 }
                 else {
-                    Rectangle destinationRectangle2 = new Rectangle((int)heartPos.X + (i-7) * 30, (int)heartPos.Y+32, 30, 30);
+                    Rectangle destinationRectangle2 = new Rectangle((int)heartPos.X + (i-7) * 30, (int)heartPos.Y+32+y, 30, 30);
                     spriteBatch.Draw(inventoryTexture, destinationRectangle2, sourceRectangle1, Color.White);
                 }
             }

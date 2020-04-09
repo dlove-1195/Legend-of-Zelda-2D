@@ -1,8 +1,8 @@
 ﻿using Microsoft.Xna.Framework.Graphics; 
 using Microsoft.Xna.Framework;
 
-
-
+//please add inventoryBar.heartNum--; and inventoryBar.itemList.add("item-name"); in link collision handler
+//set itemB using inventoryBar object by inventoryBar.itemB = "string"
 namespace Sprint2
 {
     public class PlayState : IGameState
@@ -22,7 +22,7 @@ namespace Sprint2
         public ICollisionDetection enemyDetection;
 
 
-        private IInventory inventoryBar;
+        public IInventory inventoryBar { get; set; }
 
         public string name { get; set; }
         private IController playStateController; 
@@ -49,10 +49,10 @@ namespace Sprint2
             topViewport = new Viewport(destinationRectangle);
            
             spriteBatch.Draw(inventoryTexture, destinationRectangle, sourceRectangle1, Color.White);
-            inventoryBar.Draw(spriteBatch);
+            inventoryBar.Draw(spriteBatch,0);
 
 
-            bottomViewport = new Viewport(new Rectangle(Game1.WindowWidth, Game1.WindowHeight / 4, Game1.WindowWidth, Game1.WindowHeight));
+            bottomViewport = new Viewport(new Rectangle(0, Game1.WindowHeight / 4, Game1.WindowWidth, Game1.WindowHeight));
             level.Draw(spriteBatch);
             player.Draw(spriteBatch);
             
@@ -66,7 +66,7 @@ namespace Sprint2
             enemyDetection.Update();
             level.Update();
             linkDetection = new LinkCollisionDetection(level, player);
-            //please add inventoryBar.heartNum--; and inventoryBar.itemList.add("item-name"); in link collision handler
+ 
             enemyDetection = new EnemyCollisionDetection(level);
 
             inventoryBar.Update();

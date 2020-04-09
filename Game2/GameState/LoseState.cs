@@ -14,7 +14,7 @@ namespace Sprint2
         public String name {
             get;set;
         }
-
+        public IInventory inventoryBar { get; set; }
         private Texture2D LoseTexture = Texture2DStorage.GetLoseSpriteSheet();
         private Texture2D cursor = Texture2DStorage.GetItemSpriteSheet();
         private IController loseStateController;

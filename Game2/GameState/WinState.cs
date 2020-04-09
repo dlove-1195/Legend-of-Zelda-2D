@@ -17,6 +17,7 @@ namespace Sprint2
         private Vector2 triLoc = new Vector2(250, -70);
         //add font "you win" later 
         public string name { get; set; }
+        public IInventory inventoryBar { get; set; }
         private IController winStateController;
         public WinState(Game1 game)
         {
