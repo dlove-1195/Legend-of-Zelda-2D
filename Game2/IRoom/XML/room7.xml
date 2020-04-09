@@ -41,6 +41,12 @@
       <ObjectType>Enemy</ObjectType>
       <ObjectName>Dragon</ObjectName>
       <posX>47</posX>
+      <posY>40</posY>
+    </Item>
+    <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>GreenDragon</ObjectName>
+      <posX>80</posX>
       <posY>50</posY>
     </Item>
     <Item>
