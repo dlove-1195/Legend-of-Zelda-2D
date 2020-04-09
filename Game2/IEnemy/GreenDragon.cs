@@ -137,7 +137,7 @@ namespace Sprint2
             if (damage)
             {
                 damageTimer++;
-                if (damageTimer >= 80)
+                if (damageTimer >= 150)
                 {
                     damage = false;
                 }
@@ -163,7 +163,7 @@ namespace Sprint2
             }
             else
             {
-                if (drawCloud <= 100)
+                if (drawCloud <= 20)
                 {
                     cloudSprite.Draw(spriteBatch, initialPos);
                 }
