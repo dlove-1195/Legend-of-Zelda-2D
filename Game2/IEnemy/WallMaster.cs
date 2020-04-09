@@ -28,13 +28,14 @@ namespace Sprint2
         public Rectangle boundingBox { get; set; }
         private int width = 14;
         private int height = 15;
-        public int blood { get; set; } = 50;
+        public int blood { get; set; } = 1;
 
         public WallMaster(Vector2 vector )
         {
-            initialPos = new Vector2(posX, posY);
+            
             posX = (int)vector.X;
             posY = (int)vector.Y;
+            initialPos = new Vector2(posX, posY);
             state = new WallMasterLeftStaticState(this);
             boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
         }
@@ -90,6 +91,11 @@ namespace Sprint2
             }else if (updateDelay > totalDelay)
             {
                 updateDelay = 0;
+            }
+
+            if (blood <= 0)
+            {
+                sparkTimer++;
             }
         }
 

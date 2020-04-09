@@ -29,17 +29,17 @@ namespace Sprint2
         private int seed = 1;
 
         public Rectangle boundingBox { get; set; } = new Rectangle();
-        public int blood { get; set; } = 50;
+        public int blood { get; set; } = 3;
 
         private int width = 30;
         private int height = 15;
          
         public Dragon(Vector2 vector)
         {
-            initialPos = new Vector2(posX, posY);
+            
             posX = (int)vector.X;
             posY = (int)vector.Y;
-
+            initialPos = new Vector2(posX, posY);
             state = new DragonWalkLeftState(this);
             boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
         }
@@ -156,9 +156,11 @@ namespace Sprint2
                 else
                 {
                     damageTimer = 0;
-                }
-
-
+                } 
+            }
+            if (blood <= 0)
+            {
+                sparkTimer++;
             }
 
         }

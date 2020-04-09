@@ -30,10 +30,11 @@ namespace Sprint2
         public Rectangle boundingBox { get; set; }
         public Zol(Vector2 vector)
         {
-            initialPos = new Vector2(posX, posY);
+            
             posX = (int)vector.X;
             posY = (int)vector.Y;
             state = new EnemyWalkLeftState(this, enemyNumber);
+            initialPos = new Vector2(posX, posY);
         }
 
         public void ChangeSprite(ISprite sprite)
@@ -135,6 +136,8 @@ namespace Sprint2
                 if (drawCloud <= 20)
                 {
                     cloudSprite.Draw(spriteBatch, initialPos);
+                    posX = (int)initialPos.X;
+                    posY = (int)initialPos.Y;
                 }
                 else
                 {
