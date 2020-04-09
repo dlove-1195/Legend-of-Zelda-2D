@@ -1,35 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework;
+using System;
+ 
 
 namespace Sprint2
 {
-    public class BlueCandleUpRight : ISprite
+    public class blueCandleFireUp : ISprite
     {
         public Texture2D Texture { get; set; }
-        private int posX = 52;
-        private int posY = 11;
-        private int width = 8;
+        private int posX = 300;
+        private int posY = 0;
+        private int width = 16;
         private int height = 16;
-
-
-        public BlueCandleUpRight(Texture2D texture)
+        private IItem candleFire;
+        private int timer = 0;
+        public blueCandleFireUp(Texture2D texture, IItem candleFire)
         {
             Texture = texture;
-        }
-        public BlueCandleUpRight()
-        {
-            //do nothing
+            this.candleFire = candleFire;
         }
 
         public void Update()
         {
-            //do nothing
-
+           
+            timer++;
+            if (timer <= 20)
+            {
+                candleFire.PosY -= 7;
+            }
 
 
         }
@@ -43,13 +41,13 @@ namespace Sprint2
             if (Texture != null)
             {
                 Rectangle sourceRectangle = new Rectangle(posX, posY, width, height);
-                Rectangle destinationRectangle = new Rectangle((int)vector.X, (int)vector.Y, width * 3, height * 3);    // determine location and demension of the current frame
+                Rectangle destinationRectangle = new Rectangle(candleFire.PosX, candleFire.PosY, width * 3, height * 3);    // determine location and demension of the current frame
 
-                
                 spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-                 
+
             }
         }
 
     }
 }
+

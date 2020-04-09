@@ -72,6 +72,10 @@
     <Compile Include="ISprite\EnemySprite\DragonSprite\GreenDragonDamageWalkRightSprite.cs" />
     <Compile Include="ISprite\EnemySprite\DragonSprite\GreenDragonWalkLeftSprite.cs" />
     <Compile Include="ISprite\EnemySprite\DragonSprite\GreenDragonWalkRightSprite.cs" />
+    <Compile Include="ISprite\ItemSprite\BlueCandleSprite\blueCandleFireRight.cs" />
+    <Compile Include="ISprite\ItemSprite\BlueCandleSprite\blueCandleFireLeft.cs" />
+    <Compile Include="ISprite\ItemSprite\BlueCandleSprite\blueCandleFireUp.cs" />
+    <Compile Include="ISprite\ItemSprite\BlueCandleSprite\blueCandleFireDown.cs" />
     <Compile Include="NumberGenerator\Number.cs" />
     <Compile Include="Sound.cs" />
     <Compile Include="Game1.cs" />
@@ -214,8 +218,6 @@
     <Compile Include="ISprite\ItemSprite\ArrowSprite\ArrowLeft.cs" />
     <Compile Include="ISprite\ItemSprite\ArrowSprite\ArrowRight.cs" />
     <Compile Include="ISprite\ItemSprite\ArrowSprite\ArrowUp.cs" />
-    <Compile Include="ISprite\ItemSprite\BlueCandleSprite\BlueCandleDownLeft.cs" />
-    <Compile Include="ISprite\ItemSprite\BlueCandleSprite\BlueCandleUpRight.cs" />
     <Compile Include="ISprite\ItemSprite\BombSprite\BombExplodeSPrite.cs" />
     <Compile Include="ISprite\ItemSprite\BombSprite\BombInitialSprite.cs" />
     <Compile Include="ISprite\ItemSprite\BoomerSprite\WoodBoomerangDown.cs" />

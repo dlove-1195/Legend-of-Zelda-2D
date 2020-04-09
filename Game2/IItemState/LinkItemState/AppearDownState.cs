@@ -14,7 +14,7 @@ namespace Sprint2
         private Texture2D texture = Texture2DStorage.GetItemSpriteSheet();
         private Texture2D textureBow = Texture2DStorage.GetBowSpriteSheet();
         private Texture2D textureBoomer = Texture2DStorage.GetWoodBoomerangSpriteSheet();
-       private Texture2D textureBlueCandle = Texture2DStorage.GetBlueCandleSpriteSheet();
+     
         private Texture2D textureFire = Texture2DStorage.GetEnemySpriteSheet2();
         private Texture2D texturesword = Texture2DStorage.GetLinkSpriteSheet();
         int num;
@@ -36,7 +36,7 @@ namespace Sprint2
             }
              if(num == 1)
             {
-                linkItem.ChangeSprite(new BlueCandleDownLeft(textureBlueCandle));
+                linkItem.ChangeSprite(new blueCandleFireDown ( textureFire,linkItem));
             }
              if(num == 2)
             {
