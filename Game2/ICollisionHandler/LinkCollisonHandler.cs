@@ -109,24 +109,30 @@ namespace Sprint2
             link.GetDamaged();
         }
 
-        public void HandleLinkWeaponEnemyCollsion(  int enemyNum )
+       public void HandleLinkWeaponEnemyCollsion(int enemyNum)
         {
-            //enemy damage 
-            Sound.PlayLinkDemage();
-            room.enemies[enemyNum].blood--;
-            if (room.enemies[enemyNum] is GreenDragon || room.enemies[enemyNum] is Dragon )
-            {
-                room.enemies[enemyNum].GetDamage();
+            if (room.enemies[enemyNum] != null) { 
+                //enemy damage 
+                Sound.PlayLinkDemage();
+                //FIXME LATER
+                //there is a bug here, continue attack and get null exception
+                
+                
+                if (room.enemies[enemyNum] is GreenDragon || room.enemies[enemyNum] is Dragon)
+                {
+                    room.enemies[enemyNum].GetDamage();
+
+                }
+                else
+                {
+                    room.enemies[enemyNum].blood--;
+                }
+
+            
 
             }
-            if (room.enemies[enemyNum]!=null &&room.enemies[enemyNum].blood <= 0 )
-            {
-                room.setEnemyToNull(enemyNum);
-            }
-            //-----FIXME-----------
-             //enemy damage, drop blood or disappear 
-             //maybe need add a field in enemy class to record the live of the enemy 
-        }
+      
+    } 
         public void HandleLinkNpcCollsion(String direction)
         {
             Sound.PlayItemCollision();
