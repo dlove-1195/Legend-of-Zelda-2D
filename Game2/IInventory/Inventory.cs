@@ -29,12 +29,10 @@ namespace Sprint2
         public string itemB { get; set; } = "bomb";
 
 
-        public Array itemList { get; set; } = new string[] { "bomb","boomerang","bow","candle" };
-        public string itemSelectBox { get; set; } = "bomb";
+        public Array itemList { get; set; } = new string[] { "bomb","boomerang","bow","candle","candle" };
+        public string itemSelect { get; set; } = "bomb";
 
 
-        //size in item list
-        private Vector2 itemBox = new Vector2(16, 29);
 
         private static int width = 800;
         private static int height = 200;
@@ -86,12 +84,48 @@ namespace Sprint2
             DrawItemA(spriteBatch,y);
             DrawItemB(spriteBatch,y);
             DrawHeart(spriteBatch,y);
+
+            if (y == 600) {
+                DrawItem(spriteBatch);
+                DrawSelectBox(spriteBatch);
+
+            }
               
 
 
             
 
         }
+
+
+        private void DrawItem(SpriteBatch spriteBatch)
+        {
+            int i = 0;
+            foreach (string item in itemList)
+            {
+                Rectangle sourceRectangle1 = new Rectangle((int)itemMap[item].X, (int)itemMap[item].Y, 14, 25);
+                if (i < 4)
+                {
+                    Rectangle destinationRectangle = new Rectangle(411 + i * 60, 206, 24, 48);
+                    spriteBatch.Draw(inventoryTexture, destinationRectangle, sourceRectangle1, Color.White);
+                }
+                else {
+                    Rectangle destinationRectangle = new Rectangle(411 + (i-4) * 60, 206+52, 24, 48);
+                    spriteBatch.Draw(inventoryTexture, destinationRectangle, sourceRectangle1, Color.White);
+                }
+                i++;
+            }
+        }
+
+
+        private void DrawSelectBox(SpriteBatch spriteBatch)
+        {
+            Rectangle sourceRectangle1 = new Rectangle((int)itemMap[itemSelect].X, (int)itemMap[itemSelect].Y, 14, 25);
+            Rectangle destinationRectangle = new Rectangle(187,257-71, 36, 58);
+            spriteBatch.Draw(inventoryTexture, destinationRectangle, sourceRectangle1, Color.White);
+        }
+
+
 
         //how many new number objects are layered, and is it updated in playstate, when updating inventoryBar
         private void DrawNumber(SpriteBatch spriteBatch,int y) {

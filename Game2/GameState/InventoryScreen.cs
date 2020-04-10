@@ -16,11 +16,6 @@ namespace Sprint2
         public string name { get; set; }
 
 
-        private static int width = 800;
-        private static int height = 200;
-        private Vector2 heartPos = new Vector2(width - 213, height - 94);
-
-
         public InventoryScreen(Game1 game) {
             name = "inventory";
             inventoryStateController = new InventoryStateController(game);
@@ -44,8 +39,10 @@ namespace Sprint2
 
             barViewport = new Viewport(new Rectangle(0, Game1.WindowHeight *3/ 4, Game1.WindowWidth, 200));
             inventoryBar.Draw(spriteBatch,600);
+            
 
         }
+
 
 
 
