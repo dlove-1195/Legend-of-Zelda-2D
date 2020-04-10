@@ -47,7 +47,59 @@ namespace Sprint2
             { "candle",new Vector2(216,53)}
             };
 
-        
+        //room map on the top position of inventory sprite sheet 
+        //int represents room number
+        //width=height=19
+        private Dictionary<int, Vector2> upRoomMap = new Dictionary<int, Vector2>()
+        {
+            { 1, new Vector2 (478,507)},
+            { 2, new Vector2 (478,480)},
+            { 3,new Vector2(452,480)},
+            { 4,new Vector2(425,533)},
+            { 5,new Vector2(452,533)},
+            { 6, new Vector2 (452,560)},
+            { 7, new Vector2 (532,533)},
+            { 8,new Vector2(478,560)},
+            { 9,new Vector2(505,560)},
+            { 10,new Vector2(425,560)},
+            { 11, new Vector2 (505,533)},
+            { 12, new Vector2 (532,560)},
+            { 13,new Vector2(425,587)},
+            { 14,new Vector2(478,613)},
+            { 15,new Vector2(425,480)},
+            { 16, new Vector2 (532,507)},
+            { 17, new Vector2 (478,533)},
+            { 18,new Vector2(478,587)},
+            { 19,new Vector2(505,613)}
+        };
+
+
+        //room map on the bottom position of inventory sprite sheet 
+        //int represents room number
+        //width=22, height =10
+        private Dictionary<int, Vector2> downRoomMap = new Dictionary<int, Vector2>()
+        {
+            { 1, new Vector2 (102,783)},
+            { 2, new Vector2 (102,770)},
+            { 3,new Vector2(75,770)},
+            { 4,new Vector2(49,796)},
+            { 5,new Vector2(75,796)},
+            { 6, new Vector2 (75,810)},
+            { 7, new Vector2 (155,796)},
+            { 8,new Vector2(102,810)},
+            { 9,new Vector2(129,810)},
+            { 10,new Vector2(49,810)},
+            { 11, new Vector2 (129,796)},
+            { 12, new Vector2 (155,810)},
+            { 13,new Vector2(49,823)},
+            { 14,new Vector2(102,836)},
+            { 15,new Vector2(49,770)},
+            { 16, new Vector2 (155,783)},
+            { 17, new Vector2 (102,796)},
+            { 18,new Vector2(102,823)},
+            { 19,new Vector2(129,836)}
+        };
+
         public Inventory()
         {
 
