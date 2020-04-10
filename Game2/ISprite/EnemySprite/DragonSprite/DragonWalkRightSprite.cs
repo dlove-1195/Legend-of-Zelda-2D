@@ -49,7 +49,7 @@ namespace Sprint2
             if (delay >= 2 * totalDelay / 4 && delay < totalDelay)
             {
                 sourceLocX = 83;
-                sourceLocY = 151;
+                sourceLocY = 175;
                 width = 32;
                 height = 16;
 
