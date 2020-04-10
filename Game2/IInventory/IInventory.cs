@@ -12,7 +12,8 @@ namespace Sprint2
         int diamondNum{ get; set; }
         int keyNum { get; set; }
         int bombNum { get; set; }
- 
+        int triPieceNum { get; set; }
+
         string itemA { get; set; }
         string itemB { get; set; }
          List<String> itemList { get; set; }

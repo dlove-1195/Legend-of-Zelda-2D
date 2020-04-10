@@ -18,7 +18,7 @@ namespace Sprint2
         public InventoryScreen(Game1 game) {
             this.game = game; 
             inventory = game.playState.inventoryBar;
-            inventoryStateController = new InventoryStateController(game, this);
+            inventoryStateController = new InventoryScreenController(game);
         }
         public void Update() {
            // inventoryStateController = new InventoryStateController(game, this);

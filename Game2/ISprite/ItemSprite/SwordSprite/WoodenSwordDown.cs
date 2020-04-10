@@ -16,6 +16,7 @@ namespace Sprint2
         private int width = 7;
         private int height = 16;
         private IItem sword;
+       
         public WoodenSwordDown(Texture2D texture, IItem sword)
         {
             Texture = texture;

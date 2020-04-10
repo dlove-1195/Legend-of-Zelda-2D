@@ -17,7 +17,7 @@ namespace Sprint2
             map = new Dictionary<Keys, ICommand>();
 
             map.Add(Keys.Q, new QuitCommand(myGame));
-            map.Add(Keys.S, new  SwitchToStartCommand(myGame));
+            map.Add(Keys.R, new  SwitchToStartCommand(myGame));
              
         }
         public void Update()

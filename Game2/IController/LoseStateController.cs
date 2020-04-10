@@ -10,34 +10,33 @@ namespace Sprint2
         private Dictionary<Keys, ICommand> map;
 
         private Game1 myGame;
+        
 
-      //  private int pointer { get; set; }
-        private List<int> scrollList = new List<int> { 1, 2 };
+
         public LoseStateController(Game1 game)
         {
 
             myGame = game;
             map = new Dictionary<Keys, ICommand>();
 
-          //  pointer = scrollList[0];
+         
 
-            map.Add(Keys.Down, new QuitCommand(myGame));
-            map.Add(Keys.Up, new SwitchToStartCommand(myGame));
-           // map.Add(Keys.Up, new PreviousInListCommand(myGame));
-           // map.Add(Keys.Space, new SelectInListCommand(myGame));
+            map.Add(Keys.Q, new QuitCommand(myGame));
+            map.Add(Keys.R, new SwitchToStartCommand(myGame));
+          
 
         }
-        public void Update()
-        {
+        public void Update() {
+
             Keys[] pressedKeys = Keyboard.GetState().GetPressedKeys();
             foreach (Keys key in pressedKeys)
-            {
-                if (map.ContainsKey(key))
                 {
-                    map[key].Execute();
+                    if (map.ContainsKey(key))
+                    {
+                        map[key].Execute();
+}
                 }
-            }
-            
+             
         }
     }
 }

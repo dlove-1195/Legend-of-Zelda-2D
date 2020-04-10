@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 
 namespace Sprint2
 {
-    public class BlueDiamond : IItem
+    public class YellowDiamond : IItem
     {
         public int Count { get; set; } = 0;
         public int TotalCount { get; set; } = 100;
@@ -16,7 +16,7 @@ namespace Sprint2
         private int p = 6;
         //Sprite class parameter
         private Texture2D texture = Texture2DStorage.GetItemSpriteSheet();
-        private int sourceLocX = 204;
+        private int sourceLocX = 164;
         private int sourceLocY = 120;
         private int width = 8;
         private int height = 16;
@@ -31,7 +31,7 @@ namespace Sprint2
         public int PosY { get; set; }
 
 
-        public BlueDiamond(Vector2 vector)
+        public YellowDiamond(Vector2 vector)
         {
             PosX = (int)vector.X;
             PosY = (int)vector.Y;

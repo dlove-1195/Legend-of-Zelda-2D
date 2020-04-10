@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework;
 
 namespace Sprint2
 {
-    public class DragonWalkDownSprite : ISprite
+    public class DragonWalkDownDamageSprite : ISprite
     {
         private Texture2D Texture;
         private int width;
@@ -17,7 +17,7 @@ namespace Sprint2
  
         private IEnemy Dragon;
 
-        public DragonWalkDownSprite(Texture2D texture, IEnemy dragon )
+        public DragonWalkDownDamageSprite(Texture2D texture, IEnemy dragon )
         {
             Texture = texture;
             Dragon = dragon;

@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System; 
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 
 namespace Sprint2
 {
-    public class DragonWalkRightSprite : ISprite
+    public class DragonWalkDownSprite : ISprite
     {
         private Texture2D Texture;
         private int width;
@@ -18,50 +14,42 @@ namespace Sprint2
 
         private int delay = 0;
         private int totalDelay = 20;
-    
+ 
         private IEnemy Dragon;
 
-        public DragonWalkRightSprite(Texture2D texture, IEnemy dragon)
+        public DragonWalkDownSprite(Texture2D texture, IEnemy dragon )
         {
             Texture = texture;
             Dragon = dragon;
         }
 
 
+     
         public void Update()
         {
-            width = 28;
-            height = 15;
-            sourceLocX = 85;
+            
+            width = 15;
+            height = 16;
+            sourceLocX = 1;
             sourceLocY = 91;
+            if (delay > totalDelay / 4 && delay < 2*totalDelay /4)
+            {
+                sourceLocY = 121;
+                width = 16;
+            }
+            if (delay >= 2*totalDelay / 4 && delay < totalDelay)
+            {
+                sourceLocY = 151;
+                width = 16;
+            }
+            delay++;
             if (delay == totalDelay)
             {
                 delay = 0;
-                
             }
-           
-            if (delay > totalDelay / 4 && delay < 2 * totalDelay / 4)
-            {
-                sourceLocY = 121;
-                width = 28;
-                height = 16;
-            }
-            if (delay >= 2 * totalDelay / 4 && delay < totalDelay)
-            {
-                sourceLocX = 83;
-                sourceLocY = 175;
-                width = 32;
-                height = 16;
-
-            }
-
-            delay++;
-
-           
-                Dragon.posX++;
-                
-              
-
+             
+                Dragon.posY++;
+          
         }
 
 

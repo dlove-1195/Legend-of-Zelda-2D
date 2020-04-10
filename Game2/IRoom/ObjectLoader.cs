@@ -92,7 +92,7 @@ namespace Sprint2
             {
                 if (name == "BlueDiamond")
                 {
-                    itemList.Add(new BlueDiamond(vector));
+                    itemList.Add(new YellowDiamond(vector));
                 }
                 if (name == "Clock")
                 {
@@ -129,6 +129,18 @@ namespace Sprint2
                 if (name == "StaticBomb")
                 {
                     itemList.Add(new staticBomb(vector));
+                }
+                //"boomerang","bow","candle"
+                if (name == "boomerang") {
+                    itemList.Add(new staticWoodenBoomerang(vector));
+                }
+                if (name == "bow")
+                {
+                    itemList.Add(new staticBow(vector));
+                }
+                if (name == "candle")
+                {
+                    itemList.Add(new staticCandle(vector));
                 }
             }
             else if (type == "NPC")

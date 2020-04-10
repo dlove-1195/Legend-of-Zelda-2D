@@ -26,10 +26,8 @@ namespace Sprint2
             roomLoader = new RoomLoader("room1.xml");
             room = new Room(roomLoader);
             existingRooms.Add(room);
-            camera = new Camera
-            {
-                direction = ""
-            };
+            camera = new Camera();
+             
              
         }
 

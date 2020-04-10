@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Sprint2
 {
-    public class InventoryStateController : IController
+    public class InventoryScreenController : IController
     {
         private Dictionary<Keys, ICommand> map;
 
@@ -11,9 +11,11 @@ namespace Sprint2
         private IInventory inventory;
         private KeyboardState oldState;
         private KeyboardState newState;
-        public InventoryStateController(Game1 game, InventoryScreen inventoryScreen)
+        
+        public InventoryScreenController(Game1 game )
         {
-            this.inventory = inventoryScreen.inventory;
+            this.inventory = game.playState.inventoryBar;
+                 
             myGame = game;
             map = new Dictionary<Keys, ICommand>();
             map.Add(Keys.R, new SwitchToPlayCommand(myGame));
@@ -30,8 +32,11 @@ namespace Sprint2
              
 
         }
+
+        
         public void Update()
         {
+            
             newState = Keyboard.GetState();
             Keys[] newPressedKeys = newState.GetPressedKeys();
             Keys[] oldPressedKeys = { };

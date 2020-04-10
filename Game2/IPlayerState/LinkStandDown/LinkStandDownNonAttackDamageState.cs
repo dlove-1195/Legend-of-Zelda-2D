@@ -103,7 +103,7 @@ namespace Sprint2
 
         public void LinkWithItemUp(int item)
         {
-            link.state = new LinkWithItemUpState(link, item);
+           link.state = new LinkWithItemUpState(link, item);
         }
 
         public void LinkWithItemDown(int item)
@@ -113,12 +113,12 @@ namespace Sprint2
 
         public void LinkWithItemLeft(int item)
         {
-            link.state = new LinkWithItemLeftState(link, item);
+           link.state = new LinkWithItemLeftState(link, item);
         }
 
         public void LinkWithItemRight(int item)
         {
-            link.state = new LinkWithItemRightState(link, item);
+           link.state = new LinkWithItemRightState(link, item);
         }
     }
 }

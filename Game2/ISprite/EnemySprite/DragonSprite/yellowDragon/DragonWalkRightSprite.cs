@@ -5,10 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
- 
+
 namespace Sprint2
-{ 
-    public class DragonWalkUpSprite : ISprite
+{
+    public class DragonWalkRightSprite : ISprite
     {
         private Texture2D Texture;
         private int width;
@@ -18,42 +18,49 @@ namespace Sprint2
 
         private int delay = 0;
         private int totalDelay = 20;
-        
-         
+    
         private IEnemy Dragon;
 
-        public DragonWalkUpSprite(Texture2D texture, IEnemy dragon)
+        public DragonWalkRightSprite(Texture2D texture, IEnemy dragon)
         {
             Texture = texture;
             Dragon = dragon;
         }
 
+
         public void Update()
         {
-            width = 15;
-            height = 16;
-            sourceLocX = 61;
+            width = 28;
+            height = 15;
+            sourceLocX = 85;
             sourceLocY = 91;
-            if (delay > totalDelay / 4 && delay < 2 * totalDelay / 4)
-            {
-                sourceLocY = 121;
-              
-            }
-            if (delay >= 2 * totalDelay / 4 && delay < totalDelay)
-            {
-                sourceLocY = 175;
-                width = 16;
-            }
-
-            delay++;
             if (delay == totalDelay)
             {
                 delay = 0;
+                
+            }
+           
+            if (delay > totalDelay / 4 && delay < 2 * totalDelay / 4)
+            {
+                sourceLocY = 121;
+                width = 28;
+                height = 16;
+            }
+            if (delay >= 2 * totalDelay / 4 && delay < totalDelay)
+            {
+                sourceLocX = 83;
+                sourceLocY = 151;
+                width = 32;
+                height = 16;
+
             }
 
- 
-                Dragon.posY--;
+            delay++;
+
            
+                Dragon.posX++;
+                
+              
 
         }
 
@@ -70,7 +77,7 @@ namespace Sprint2
                 Rectangle sourceRectangle = new Rectangle(sourceLocX, sourceLocY, width, height);
                 Rectangle destinationRectangle = new Rectangle(Dragon.posX, Dragon.posY, width * 3, height * 3);
 
-               
+                
                 spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
                 
             }

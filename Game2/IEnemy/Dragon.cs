@@ -143,20 +143,19 @@ namespace Sprint2
                         Console.WriteLine("error: no such situation");
 #pragma warning restore CA1303 // Do not pass literals as localized parameters
                         break;
-                }
-
-                if (damage)
-                {
-                    damageTimer++;
-                    if (damageTimer >= 100)
-                    {
-                        damage = false;
-                    }
-                }
-                else
-                {
-                    damageTimer = 0;
                 } 
+            }
+            if (damage)
+            {
+                damageTimer++;
+                if (damageTimer >= 100)
+                {
+                    damage = false;
+                }
+            }
+            else
+            {
+                damageTimer = 0;
             }
             if (blood <= 0)
             {

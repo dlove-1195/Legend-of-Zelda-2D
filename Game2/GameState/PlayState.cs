@@ -25,19 +25,22 @@ namespace Sprint2
         public IInventory inventoryBar { get; set; }
 
         
-        private IController playStateController; 
+        private IController playStateController;
+        //responsible for switching between playstate to win/lose state
+        private IController inventoryController;
         public PlayState(Game1 game)
         { 
-            player = new Link(new Vector2(200, 500)); 
+            player = new Link(new Vector2(648, 577)); 
             level = new Level1(player);
             //edit for inventory
             //initialize the inventory here for the first time 
             inventoryBar = new Inventory();
-            //edit for inventory
-            linkDetection = new LinkCollisionDetection(level, player);
-            enemyDetection = new EnemyCollisionDetection(level);
-            playStateController = new PlayStateController( game,this);
+            
+            linkDetection = new LinkCollisionDetection(level, player, inventoryBar);
+            enemyDetection = new EnemyCollisionDetection(level); 
             Sound.PlayRoom();
+            playStateController = new PlayStateController(game, this);
+            inventoryController = new InventoryController(game);
 
         }
         public void Draw(SpriteBatch spriteBatch)
@@ -60,11 +63,12 @@ namespace Sprint2
         public void Update()
         {
             playStateController.Update();
+            inventoryController.Update();
             player.Update();
             linkDetection.Update();
             enemyDetection.Update();
             level.Update();
-            linkDetection = new LinkCollisionDetection(level, player);
+            linkDetection = new LinkCollisionDetection(level, player, inventoryBar);
  
             enemyDetection = new EnemyCollisionDetection(level);
 

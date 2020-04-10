@@ -7,15 +7,16 @@ namespace Sprint2
     class LinkCollisionHandler 
     {
 
-        IPlayer link;
-        IRoom room;
-        ILevel level;
-        
-        public LinkCollisionHandler(IPlayer link, ILevel level)
+        private IPlayer link;
+        private IRoom room;
+        private ILevel level;
+        private IInventory inventory;
+      public LinkCollisionHandler(IPlayer link, ILevel level, IInventory inventory)
         {
             this.link = link;
             this.room = level.room;
             this.level = level;
+            this.inventory = inventory;
             
         }
 
@@ -76,7 +77,11 @@ namespace Sprint2
         {
             Sound.PlayLinkDemage();
             //link get damaged and being pushed to opposite direction
-            link.GetDamaged();
+            if (!Link.ifDamage)
+            {
+                inventory.heartNum--;
+            }
+            link.GetDamaged(); 
             switch (direction)
             {
                 case "Left":
@@ -106,7 +111,12 @@ namespace Sprint2
         {
             //link just damage
             Sound.PlayLinkDemage();
+            if (!Link.ifDamage)
+            {
+                inventory.heartNum--;
+            }
             link.GetDamaged();
+           
         }
 
        public void HandleLinkWeaponEnemyCollsion(int enemyNum)
@@ -169,10 +179,10 @@ namespace Sprint2
         {
             //item disappear 
             Sound.PlayItemCollision();
+            itemManager(itemNum);
             room.setItemToNull(itemNum);
-
-            //FIXME
-            //later add field to show how many items link have 
+            
+            
         }
 
         public void remainPosition(string direction)
@@ -201,6 +211,56 @@ namespace Sprint2
 #pragma warning restore CA1303 // Do not pass literals as localized parameters
                     break;
             }
+        }
+
+        public void itemManager(int itemNum)
+        {
+            if (room.pickUpItems[itemNum] is YellowDiamond)
+            {
+                inventory.diamondNum++;
+                //max life 12
+            }else if(room.pickUpItems[itemNum] is Heart && inventory.heartNum<=11)
+            {
+                inventory.heartNum++;
+            }
+            else if (room.pickUpItems[itemNum] is staticBomb)
+            {
+                if (!inventory.itemList.Contains("bomb"))
+                {
+                    inventory.itemList.Add("bomb");
+                }
+                inventory.bombNum++;
+            }
+            else if (room.pickUpItems[itemNum] is Key)
+            {
+                inventory.keyNum++;
+            }
+            else if (room.pickUpItems[itemNum] is TriforcePiece)
+            {
+                inventory.triPieceNum++;
+            }else if(room.pickUpItems[itemNum] is staticBow)
+            {
+                if (!inventory.itemList.Contains("bow"))
+                {
+                    inventory.itemList.Add("bow");
+                }
+            }else if(room.pickUpItems[itemNum] is staticCandle)
+            {
+                if (!inventory.itemList.Contains("candle"))
+                {
+                    inventory.itemList.Add("candle");
+                }
+            }else if (room.pickUpItems[itemNum] is staticWoodenBoomerang)
+            {
+                if (!inventory.itemList.Contains("boomerang"))
+                {
+                    inventory.itemList.Add("boomerang");
+                }
+            }
+
+            //if items is clock/comapss/map
+            //later
+
         }
 
 

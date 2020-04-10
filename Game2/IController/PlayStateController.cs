@@ -21,7 +21,8 @@ namespace Sprint2
             myPlay = play;
             myGame = game;
             map = new Dictionary<Keys, ICommand>();
-
+           
+            
              
             map.Add(Keys.W, new ChangeToUpCommand(myPlay));
             map.Add(Keys.A, new ChangeToLeftCommand(myPlay));
@@ -37,19 +38,29 @@ namespace Sprint2
             map.Add(Keys.Z, new AttackCommand(myPlay));
             map.Add(Keys.N, new AttackCommand(myPlay)); 
             map.Add(Keys.D1, new Gear1(myPlay));
-            map.Add(Keys.D2, new Gear2(myPlay));
-            map.Add(Keys.D3, new Gear3(myPlay)); 
-            map.Add(Keys.D4, new Gear4(myPlay)); 
-            map.Add(Keys.D5, new Gear5(myPlay)); 
+            //find the correct weapon
+            if (play.inventoryBar.itemSelect != null)
+            {
+                map.Add(Keys.D2, new Gear2(myPlay, play.inventoryBar.itemSelect));
+            }
+           
           
          
             map.Add(Keys.Q, new QuitCommand(myGame));
-            map.Add(Keys.P, new SwitchToPauseCommand(myGame));
-            map.Add(Keys.Escape, new SwitchToLoseCommand(myGame));
+            map.Add(Keys.P, new SwitchToPauseCommand(myGame)); 
             map.Add(Keys.I, new SwitchToInventoryCommand(myGame));
         }
         public void Update()
         {
+            //use the selected weapon
+            if (myPlay.inventoryBar.itemSelect != null)
+            {
+                if (map.ContainsKey(Keys.D2))
+                {
+                    map.Remove(Keys.D2);
+                }
+                map.Add(Keys.D2, new Gear2(myPlay, myPlay.inventoryBar.itemSelect));
+            }
             newState = Keyboard.GetState();
             Keys[] newPressedKeys =  newState.GetPressedKeys();
             Keys[] oldPressedKeys = { };

@@ -77,6 +77,42 @@
     </Item>
     <!--  enemy  -->
     <!--  item  -->
+    <Item>
+      <ObjectType>Item</ObjectType>
+      <ObjectName>StaticBomb</ObjectName>
+      <posX>60</posX>
+      <posY>45</posY>
+    </Item>
+    <Item>
+      <ObjectType>Item</ObjectType>
+      <ObjectName>boomerang</ObjectName>
+      <posX>23</posX>
+      <posY>44</posY>
+    </Item>
+    <Item>
+      <ObjectType>Item</ObjectType>
+      <ObjectName>bow</ObjectName>
+      <posX>55</posX>
+      <posY>44</posY>
+    </Item>
+    <Item>
+      <ObjectType>Item</ObjectType>
+      <ObjectName>candle</ObjectName>
+      <posX>50 </posX>
+      <posY>44</posY>
+    </Item>
+    <Item>
+      <ObjectType>Item</ObjectType>
+      <ObjectName>TriforcePiece</ObjectName>
+      <posX>10</posX>
+      <posY>45</posY>
+    </Item>
+    <Item>
+      <ObjectType>Item</ObjectType>
+      <ObjectName>TriforcePiece</ObjectName>
+      <posX>80</posX>
+      <posY>45</posY>
+    </Item>
     <!--  item  -->
     <!--  NPC  -->
     <!--  NPC  -->

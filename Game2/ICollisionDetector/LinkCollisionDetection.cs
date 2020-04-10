@@ -25,8 +25,8 @@ namespace Sprint2
 
         private List<string> DoorDirection { get; set; }
          private IRoom room;
-
-        public LinkCollisionDetection(ILevel level, IPlayer link)
+        
+        public LinkCollisionDetection(ILevel level, IPlayer link, IInventory inventory )
         {
             if (level == null)
             {
@@ -48,7 +48,7 @@ namespace Sprint2
 
             boundingBox = room.boundingBox;
             player = link;
-            linkHandler = new LinkCollisionHandler(player, level);
+            linkHandler = new LinkCollisionHandler(player, level, inventory);
         }
 
         public void Update()
@@ -65,6 +65,9 @@ namespace Sprint2
             {
                    if (enemy[i] != null && enemy[i].blood <= 0 && enemy[i].sparkTimer >=10)
                 {
+                    //diamond need to be yellow
+                    IItem diamond = new YellowDiamond(new Vector2(enemy[i].posX, enemy[i].posY));
+                    room.pickUpItems.Add(diamond);
                     room.setEnemyToNull(i);
                 }
                 if (enemy[i] != null)

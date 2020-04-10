@@ -112,7 +112,7 @@ namespace Sprint2
 
         public void LinkWithItemLeft(int item)
         {
-            link.state = new LinkWithItemLeftState(link, item);
+           link.state = new LinkWithItemLeftState(link, item);
         }
 
         public void LinkWithItemRight(int item)

@@ -5,11 +5,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
  
 
-//set itemB using inventoryBar object by inventoryBar.itemB = "string"
-//please add inventoryBar.heartNum--; 
-//and inventoryBar.itemList.add("item-name"); in link collision handler
-//also in command when using bomb, key, items, inventoryBar.bombNum--; keyNum--; etc. if num<=0 do nothing
-
+ 
 namespace Sprint2
 {
     public class Inventory : IInventory
@@ -21,13 +17,14 @@ namespace Sprint2
         public int diamondNum { get; set; } =10;
         public int keyNum { get; set; } = 0;
         public int bombNum { get; set; } = 0;
-
+        public int triPieceNum { get; set; } = 0;
 
         public string itemA { get; set; } = "sword";
-        public string itemB { get; set; } = "bomb";
+        public string itemB { get; set; }
 
-        //should be initialized as empty, change later
-        public List<String> itemList { get; set; } = new List<String>{ "bomb","boomerang","bow","candle","candle" };
+        // being initialized as empty 
+        //"bomb","boomerang","bow","candle","candle"
+        public List<String> itemList { get; set; } = new List<String>();
         public int currentIndex { get; set; } = 0;
         public string itemSelect { get; set; }  
 
@@ -126,10 +123,12 @@ namespace Sprint2
 
         //for item selector view box
         private void DrawSelectBox(SpriteBatch spriteBatch)
-        {
-            Rectangle sourceRectangle1 = new Rectangle((int)itemMap[itemB].X, (int)itemMap[itemB].Y, 14, 25);
-            Rectangle destinationRectangle = new Rectangle(187,257-71, 36, 58);
-            spriteBatch.Draw(inventoryTexture, destinationRectangle, sourceRectangle1, Color.White);
+        { if (itemB != null)
+            {
+                Rectangle sourceRectangle1 = new Rectangle((int)itemMap[itemB].X, (int)itemMap[itemB].Y, 14, 25);
+                Rectangle destinationRectangle = new Rectangle(187, 257 - 71, 36, 58);
+                spriteBatch.Draw(inventoryTexture, destinationRectangle, sourceRectangle1, Color.White);
+            }
         }
 
 
@@ -140,8 +139,8 @@ namespace Sprint2
 
 
             generator.DrawSingleNumber(spriteBatch, barOnly, new Vector2(width - 483, height - 132), diamondNum);
-            generator.DrawSingleNumber(spriteBatch, barOnly, new Vector2(width - 482, height - 80), bombNum);
-            generator.DrawSingleNumber(spriteBatch, barOnly, new Vector2(width - 482, height - 48), keyNum);
+            generator.DrawSingleNumber(spriteBatch, barOnly, new Vector2(width - 482, height - 80), keyNum);
+            generator.DrawSingleNumber(spriteBatch, barOnly, new Vector2(width - 482, height - 48), bombNum );
 
         }
 
