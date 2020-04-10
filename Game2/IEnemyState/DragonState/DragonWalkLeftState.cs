@@ -43,7 +43,7 @@ namespace Sprint2
         }
         public void GetDamaged()
         {
-            //
+            dragon.state = new DragonWalkLeftDamageState(dragon);
         }
 
     }
