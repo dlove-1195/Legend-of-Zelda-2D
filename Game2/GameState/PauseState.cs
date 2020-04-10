@@ -11,7 +11,8 @@ namespace Sprint2
 
 
         //private Texture2D LinkTexture = Texture2DStorage.GetLinkSpriteSheet();
-        public string name { get; set; }
+       // public string name { get; set; }
+       
         private Texture2D ButtonTexture = Texture2DStorage.GetButtonSpriteSheet();
         private Vector2 buttonLocation = new Vector2(300, 250);
         //Texture2D whiteRectangle;
@@ -19,7 +20,7 @@ namespace Sprint2
         private IController pauseStateController;
         public PauseState(Game1 game)
         {
-            name = "pause";
+           
             pauseStateController = new PauseStateController(game );
         }
 

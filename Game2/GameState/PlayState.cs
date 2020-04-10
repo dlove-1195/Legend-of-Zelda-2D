@@ -1,15 +1,15 @@
 ﻿using Microsoft.Xna.Framework.Graphics; 
 using Microsoft.Xna.Framework;
 
-
-
+//please add inventoryBar.heartNum--; and inventoryBar.itemList.add("item-name"); in link collision handler
+//set itemB using inventoryBar object by inventoryBar.itemB = "string"
 namespace Sprint2
 {
     public class PlayState : IGameState
     {
         
-        private Viewport topViewport;
-        private Viewport bottomViewport;
+       // private Viewport topViewport;
+        //private Viewport bottomViewport;
 
         private Texture2D inventoryTexture = Texture2DStorage.GetInventorySpriteSheet();
         private static int width = 800;
@@ -22,17 +22,17 @@ namespace Sprint2
         public ICollisionDetection enemyDetection;
 
 
-        private IInventory inventoryBar;
+        public IInventory inventoryBar { get; set; }
 
-        public string name { get; set; }
+        
         private IController playStateController; 
         public PlayState(Game1 game)
-        {
-            name = "play";
+        { 
             player = new Link(new Vector2(200, 500)); 
             level = new Level1(player);
             //edit for inventory
-            inventoryBar = new Inventory(this);
+            //initialize the inventory here for the first time 
+            inventoryBar = new Inventory();
             //edit for inventory
             linkDetection = new LinkCollisionDetection(level, player);
             enemyDetection = new EnemyCollisionDetection(level);
@@ -43,16 +43,15 @@ namespace Sprint2
         public void Draw(SpriteBatch spriteBatch)
         {
             
-            //draw inventory in the topView 
+             
             Rectangle sourceRectangle1 = new Rectangle(0, height - 200, width, Game1.WindowHeight / 4);          
             Rectangle destinationRectangle = new Rectangle(0, 0, Game1.WindowWidth, Game1.WindowHeight/4);
-            topViewport = new Viewport(destinationRectangle);
-           
+          
             spriteBatch.Draw(inventoryTexture, destinationRectangle, sourceRectangle1, Color.White);
-            inventoryBar.Draw(spriteBatch);
 
-
-            bottomViewport = new Viewport(new Rectangle(Game1.WindowWidth, Game1.WindowHeight / 4, Game1.WindowWidth, Game1.WindowHeight));
+            //only draw the bar area
+            inventoryBar.barOnly = true;
+            inventoryBar.Draw(spriteBatch); 
             level.Draw(spriteBatch);
             player.Draw(spriteBatch);
             
@@ -66,7 +65,7 @@ namespace Sprint2
             enemyDetection.Update();
             level.Update();
             linkDetection = new LinkCollisionDetection(level, player);
-            //please add inventoryBar.heartNum--; and inventoryBar.itemList.add("item-name"); in link collision handler
+ 
             enemyDetection = new EnemyCollisionDetection(level);
 
             inventoryBar.Update();

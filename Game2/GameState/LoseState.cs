@@ -11,10 +11,7 @@ namespace Sprint2
     public class LoseState : IGameState
 
     {
-        public String name {
-            get;set;
-        }
-
+       
         private Texture2D LoseTexture = Texture2DStorage.GetLoseSpriteSheet();
         private Texture2D cursor = Texture2DStorage.GetItemSpriteSheet();
         private IController loseStateController;
@@ -25,7 +22,7 @@ namespace Sprint2
 
 
         public LoseState(Game1 game) {
-            name = "lose";
+          
             loseStateController = new LoseStateController(game);
            // pointer = loseStateController.pointer;
 
