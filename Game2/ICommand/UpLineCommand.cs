@@ -6,21 +6,23 @@ using System.Threading.Tasks;
 
 namespace  Sprint2
 {
-    class SelectInListCommand:ICommand
+    class UpLineCommand: ICommand
     {
-        // later: add shining feature to the rectangle
         private IInventory inventory;
-        public SelectInListCommand(IInventory inventory)
+        public UpLineCommand(IInventory inventory)
         {
             this.inventory = inventory;
         }
         public void Execute()
         {
-            int i = inventory.currentIndex ;
-            inventory.itemSelect = inventory.itemList[i];
-
-
+            int i = inventory.currentIndex - 4;
+            int count = inventory.itemList.Count;
+            if (i >=0)
+            {
+                inventory.currentIndex -= 4;
+            }
         }
 
     }
 }
+

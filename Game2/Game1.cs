@@ -12,7 +12,7 @@ namespace Sprint2
         //responsible for start/pause/win/gameOver state
         public IGameState gameState { get; set; }
         //responsible for play state
-        public IGameState playState { get; set; }
+        public  PlayState playState { get; set; }
 
 
 
@@ -76,6 +76,7 @@ namespace Sprint2
         {
             GraphicsDevice.Clear(Color.Black);
             spriteBatch.Begin();
+            //Draw sequence cannot change for drawing the inventory screen  
             if (playState != null)
             {
                 playState.Draw(spriteBatch);

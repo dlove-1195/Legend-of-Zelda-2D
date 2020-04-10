@@ -7,20 +7,24 @@ using System.Threading.Tasks;
 
 namespace Sprint2 
 {
-    public class DragonWalkLeftState: IEnemyState
+    public class DragonWalkDownState: IEnemyState
     {
+
         private Dragon dragon;
         private Texture2D texture = Texture2DStorage.GetEnemySpriteSheet();
-        public DragonWalkLeftState(Dragon dragon)
+        public DragonWalkDownState(Dragon dragon)
         {
             if (dragon == null)
             {
                 throw new ArgumentNullException(nameof(dragon));
             }
+
             this.dragon = dragon;
-            dragon.DragonSprite = new DragonWalkLeftSprite(texture, dragon);
-            dragon.fire = new Fire(dragon.posX-30, dragon.posY, 2);
+            dragon.DragonSprite = new DragonWalkDownSprite(texture, dragon);
+
+            dragon.fire = new Fire(dragon.posX, dragon.posY+60, 1);
             Dragon.hasFire = true;
+            
         }
         public void ChangeToRight()
         {
@@ -29,7 +33,7 @@ namespace Sprint2
 
         public void ChangeToLeft()
         {
-            //already left 
+            dragon.state = new DragonWalkLeftState(dragon);
         }
 
         public void ChangeToUp()
@@ -39,12 +43,11 @@ namespace Sprint2
 
         public void ChangeToDown()
         {
-            dragon.state = new DragonWalkDownState(dragon);
+            // already down 
         }
         public void GetDamaged()
         {
-            dragon.state = new DragonWalkLeftDamageState(dragon);
+            //
         }
-
     }
 }

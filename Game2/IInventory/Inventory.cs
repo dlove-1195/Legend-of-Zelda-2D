@@ -3,9 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Xml;
+ 
 
 //set itemB using inventoryBar object by inventoryBar.itemB = "string"
 //please add inventoryBar.heartNum--; 
@@ -16,7 +14,7 @@ namespace Sprint2
 {
     public class Inventory : IInventory
     {
-
+       
         private Texture2D inventoryTexture = Texture2DStorage.GetNumberSpriteSheet();
 
         public int heartNum { get; set; } = 12;
@@ -28,23 +26,22 @@ namespace Sprint2
         public string itemA { get; set; } = "sword";
         public string itemB { get; set; } = "bomb";
 
+        //should be initialized as empty, change later
+        public List<String> itemList { get; set; } = new List<String>{ "bomb","boomerang","bow","candle","candle" };
+        public int currentIndex { get; set; } = 0;
+        public string itemSelect { get; set; }  
 
-        public Array itemList { get; set; } = new string[] { "bomb","boomerang","bow","candle","candle" };
-        public string itemSelect { get; set; } = "bomb";
 
-
-
+        //the width and height for the bar rectangle 
         private static int width = 800;
         private static int height = 200;
         private Vector2 heartPos = new Vector2(width-213, height-94);
+        public bool barOnly { get; set; } = true;
+        NumberGenerator generator = new NumberGenerator();
+        private int y = 0;
+         
 
-
-        private Number DiamondNum;
-        private Number KeyNum;
-        private Number BombNum;
-
-
-
+        //the coordination for each item in the item selet bar
         private Dictionary<string, Vector2> itemMap = new Dictionary<string, Vector2>(){
             {"sword", new Vector2 (64,52)},
             { "bomb", new Vector2 (148,53)},
@@ -53,39 +50,48 @@ namespace Sprint2
             { "candle",new Vector2(216,53)}
             };
 
-        //private IGameState playState;
-
-        public Inventory(PlayState playState)
+        
+        public Inventory()
         {
-           // playState = playState;
-            // linkDetection = playState.linkDetection;
-            DiamondNum = new Number(diamondNum, new Vector2(width - 483, height - 132));
+
+            //bar area
+           
+           /* DiamondNum = new Number(diamondNum, new Vector2(width - 483, height - 132));
             KeyNum = new Number(keyNum, new Vector2(width - 482, height - 80));
-            BombNum = new Number(bombNum, new Vector2(width - 482, height - 48));
+            BombNum = new Number(bombNum, new Vector2(width - 482, height - 48));*/
 
         }
 
         public void Update() {
-            // playState.Update();
-            //if(playState.linkDetection)
-            DiamondNum.Update();
-             KeyNum.Update();
-            BombNum.Update();
+            //only needed if we want to implement dot blicking in the map
+            if (barOnly)
+            {
+                y = 0;
+            }
+            else
+            {
+                y = 600;
+            }
+            if (itemList.Count > 0)
+            {
+                itemB = itemList[currentIndex];
+            }
 
     }
-        public void Draw(SpriteBatch spriteBatch,int y) {
+        public void Draw(SpriteBatch spriteBatch ) {
 
             if (spriteBatch == null)
             {
                 throw new ArgumentNullException(nameof(spriteBatch));
             }
 
-            DrawNumber(spriteBatch,y);
-            DrawItemA(spriteBatch,y);
-            DrawItemB(spriteBatch,y);
-            DrawHeart(spriteBatch,y);
+            //drawing in the bar area
+            DrawNumber(spriteBatch);
+            DrawItemA(spriteBatch);
+            DrawItemB(spriteBatch);
+            DrawHeart(spriteBatch);
 
-            if (y == 600) {
+            if (!barOnly) {
                 DrawItem(spriteBatch);
                 DrawSelectBox(spriteBatch);
 
@@ -118,33 +124,38 @@ namespace Sprint2
         }
 
 
+        //for item selector view box
         private void DrawSelectBox(SpriteBatch spriteBatch)
         {
-            Rectangle sourceRectangle1 = new Rectangle((int)itemMap[itemSelect].X, (int)itemMap[itemSelect].Y, 14, 25);
+            Rectangle sourceRectangle1 = new Rectangle((int)itemMap[itemB].X, (int)itemMap[itemB].Y, 14, 25);
             Rectangle destinationRectangle = new Rectangle(187,257-71, 36, 58);
             spriteBatch.Draw(inventoryTexture, destinationRectangle, sourceRectangle1, Color.White);
         }
 
 
 
+         
         //how many new number objects are layered, and is it updated in playstate, when updating inventoryBar
-        private void DrawNumber(SpriteBatch spriteBatch,int y) {
-            
-            DiamondNum.Draw(spriteBatch,y);
-            KeyNum.Draw(spriteBatch,y);
-            BombNum.Draw(spriteBatch,y);
-    }
+        private void DrawNumber(SpriteBatch spriteBatch ) {
 
-        private void DrawItemA(SpriteBatch spriteBatch,int y) {
+
+            generator.DrawSingleNumber(spriteBatch, barOnly, new Vector2(width - 483, height - 132), diamondNum);
+            generator.DrawSingleNumber(spriteBatch, barOnly, new Vector2(width - 482, height - 80), bombNum);
+            generator.DrawSingleNumber(spriteBatch, barOnly, new Vector2(width - 482, height - 48), keyNum);
+
+        }
+
+        private void DrawItemA(SpriteBatch spriteBatch ) {
             Rectangle sourceRectangle1 = new Rectangle(66, 52, 14, 30);
             Rectangle destinationRectangle = new Rectangle(width - 330, height - 101+y, 36, 58);
             spriteBatch.Draw(inventoryTexture, destinationRectangle, sourceRectangle1, Color.White);
         }
 
-        private void DrawItemB(SpriteBatch spriteBatch,int y) {
-            if (itemB != null)
+        //for final selected item
+        private void DrawItemB(SpriteBatch spriteBatch ) {
+            if (itemSelect != null)
             {
-                Rectangle sourceRectangle1 = new Rectangle((int)itemMap[itemB].X,(int)itemMap[itemB].Y, 14, 25);
+                Rectangle sourceRectangle1 = new Rectangle((int)itemMap[itemSelect].X,(int)itemMap[itemSelect].Y, 14, 25);
                 Rectangle destinationRectangle = new Rectangle(width - 410, height - 101+y, 36, 58);
                 spriteBatch.Draw(inventoryTexture, destinationRectangle, sourceRectangle1, Color.White);
             }
@@ -152,7 +163,7 @@ namespace Sprint2
         }
 
         //maximum 14 hearts
-        private void DrawHeart(SpriteBatch spriteBatch,int y)
+        private void DrawHeart(SpriteBatch spriteBatch )
         {
             for (int i = 0; i < heartNum; i++)
             {

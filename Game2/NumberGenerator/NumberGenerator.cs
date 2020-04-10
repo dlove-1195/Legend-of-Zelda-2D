@@ -3,14 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Xml;
-
-
+ 
 namespace Sprint2
 {
-    class Number
+    public class NumberGenerator
     {
         private Texture2D numberTexture = Texture2DStorage.GetNumberSpriteSheet();
         private Dictionary<int, Vector2> numMap = new Dictionary<int, Vector2>(){
@@ -29,21 +25,30 @@ namespace Sprint2
         private Vector2 numSize = new Vector2(13, 13);
         private Vector2 drawSize = new Vector2(25,25);
         private int num;
+        private int y;
+        
 
-        public Number(int number, Vector2 vector)
-        {
-            num = number;
-            drawLoc = vector;
+        public NumberGenerator()
+        { 
         }
 
+        //FIX ME later
         public void increment() { num++; }
         public void decrement() { num--; }
 
-        public void Update() { 
         
-        }
         //largest number 99;
-        public void Draw(SpriteBatch spriteBatch,int y) {
+        public void DrawSingleNumber(SpriteBatch spriteBatch,bool isBar, Vector2 vector, int number) {
+            num = number;
+            drawLoc = vector;
+            if (isBar)
+            {
+                y = 0;
+            }
+            else
+            {
+                y = 600;
+            }
             if (num < 10)
             {
                 Rectangle sourceRectangle = new Rectangle((int)numMap[num].X, (int)numMap[num].Y, (int)numSize.X, (int)numSize.Y);
