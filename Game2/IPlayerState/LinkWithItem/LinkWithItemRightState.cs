@@ -95,7 +95,7 @@ namespace Sprint2
         }
         public void GetDamaged()
         {
-            //cannot attack and damage at the same time
+            link.state = new LinkStandRightNonAttackDamageState(link);
         }
         public void Attack()
         {
