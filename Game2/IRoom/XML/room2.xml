@@ -33,38 +33,38 @@
     <Item>
       <ObjectType>Item</ObjectType>
       <ObjectName>boomerang</ObjectName>
-      <posX>45</posX>
-      <posY>35</posY>
+      <posX>40</posX>
+      <posY>52</posY>
     </Item>
     <Item>
       <ObjectType>Item</ObjectType>
       <ObjectName>bow</ObjectName>
-      <posX>60</posX>
-      <posY>35</posY>
+      <posX>50</posX>
+      <posY>50</posY>
     </Item>
     <Item>
       <ObjectType>Item</ObjectType>
       <ObjectName>candle</ObjectName>
-      <posX>75 </posX>
-      <posY>35</posY>
+      <posX>60</posX>
+      <posY>50</posY>
     </Item>
     <Item>
       <ObjectType>Enemy</ObjectType>
       <ObjectName>Flame</ObjectName>
-      <posX>65</posX>
+      <posX>31</posX>
       <posY>40</posY>
     </Item>
     <Item>
       <ObjectType>Enemy</ObjectType>
       <ObjectName>Flame</ObjectName>
-      <posX>35</posX>
+      <posX>69</posX>
       <posY>40</posY>
     </Item>
     <Item>
       <ObjectType>NPC</ObjectType>
       <ObjectName>Merchant</ObjectName>
-      <posX>50</posX>
-      <posY>40</posY>
+      <posX>48</posX>
+      <posY>38</posY>
     </Item>
     <Item>
       <ObjectType>Door</ObjectType>
