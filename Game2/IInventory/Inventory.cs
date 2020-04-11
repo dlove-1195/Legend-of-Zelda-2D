@@ -35,8 +35,7 @@ namespace Sprint2
         private static int width = 800;
         private static int height = 200;
         private Vector2 heartPos = new Vector2(width - 213, height - 94);
-        public bool barOnly { get; set; } = true;
-        NumberGenerator generator = new NumberGenerator();
+        public bool barOnly { get; set; } = true; 
         private int y = 0;
         private ISprite mapSprite = new StaticSprite(Texture2DStorage.GetItemSpriteSheet(), 244,80,8,16);
         private ISprite compassSprite = new StaticSprite(Texture2DStorage.GetItemSpriteSheet(), 82, 42, 11, 12);
@@ -278,9 +277,9 @@ namespace Sprint2
         {
 
 
-            generator.DrawSingleNumber(spriteBatch, barOnly, new Vector2(width - 483, height - 132), diamondNum);
-            generator.DrawSingleNumber(spriteBatch, barOnly, new Vector2(width - 482, height - 80), keyNum);
-            generator.DrawSingleNumber(spriteBatch, barOnly, new Vector2(width - 482, height - 48), bombNum);
+           NumberGenerator.DrawSingleNumber(spriteBatch, barOnly, new Vector2(width - 483, height - 132), diamondNum);
+            NumberGenerator.DrawSingleNumber(spriteBatch, barOnly, new Vector2(width - 482, height - 80), keyNum);
+            NumberGenerator.DrawSingleNumber(spriteBatch, barOnly, new Vector2(width - 482, height - 48), bombNum);
 
         }
 

@@ -13,6 +13,7 @@ namespace Sprint2
         private   int width = 800;
         private  int height = 871;
         public static bool communicate = false;
+        private int communicateTimer = 0;
         public IPlayer player; 
         public ILevel level;
         
@@ -79,6 +80,15 @@ namespace Sprint2
              }
 
             inventoryBar.Update();
+            if (communicate)
+            {
+                communicateTimer++;
+                if (communicateTimer >= 500)
+                {
+                    communicate = false;
+                    communicateTimer = 0;
+                }
+            }
 
         }
 

@@ -6,10 +6,10 @@ using Microsoft.Xna.Framework.Graphics;
  
 namespace Sprint2
 {
-    public   class NumberGenerator
+    public  static class NumberGenerator
     {
-        private Texture2D numberTexture = Texture2DStorage.GetNumberSpriteSheet();
-        private Dictionary<int, Vector2> numMap = new Dictionary<int, Vector2>(){
+        private static Texture2D numberTexture = Texture2DStorage.GetNumberSpriteSheet();
+        private static Dictionary<int, Vector2> numMap = new Dictionary<int, Vector2>(){
             {0, new Vector2 (19,19)},
             {1, new Vector2 (34,19)},
             { 2,new Vector2 (50,19)},
@@ -21,24 +21,15 @@ namespace Sprint2
             { 8,new Vector2 (141,19)},
             { 9,new Vector2 (156,19)}
             };
-        private Vector2 drawLoc;
-        private Vector2 numSize = new Vector2(13, 13);
-        private Vector2 drawSize = new Vector2(25,25);
-        private int num;
-        private int y;
-        
+        private static Vector2 drawLoc;
+        private static Vector2 numSize = new Vector2(13, 13);
+        private static Vector2 drawSize = new Vector2(25,25);
+        private static int num;
+        private static int y;
 
-        public NumberGenerator()
-        { 
-        }
 
-        //FIX ME later
-        public void increment() { num++; }
-        public void decrement() { num--; }
-
-        
         //largest number 99;
-        public void DrawSingleNumber(SpriteBatch spriteBatch,bool isBar, Vector2 vector, int number) {
+        public static void DrawSingleNumber(SpriteBatch spriteBatch,bool isBar, Vector2 vector, int number) {
             num = number;
             drawLoc = vector;
             if (isBar)

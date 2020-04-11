@@ -183,8 +183,10 @@ namespace Sprint2
         {
             //item disappear 
             Sound.PlayItemCollision();
-            itemManager(itemNum);
-            room.setItemToNull(itemNum);
+            if (itemManager(itemNum))
+            {
+                room.setItemToNull(itemNum);
+            }
             
             
         }
@@ -230,15 +232,22 @@ namespace Sprint2
             }
         }
 
-        public void itemManager(int itemNum)
+        public bool itemManager(int itemNum)
         {
+            bool successPickUp = true;
             if (room.pickUpItems[itemNum] is YellowDiamond)
             {
                 inventory.diamondNum++;
                 //max life 12
-            }else if(room.pickUpItems[itemNum] is Heart && inventory.heartNum<=11)
-            {
-                inventory.heartNum++;
+            }else if(room.pickUpItems[itemNum] is Heart)
+            {  if (inventory.heartNum <= 11)
+                {
+                    inventory.heartNum++;
+                }
+                else
+                {
+                    successPickUp = false;
+                }
             }
             else if (room.pickUpItems[itemNum] is staticBomb)
             {
@@ -257,23 +266,40 @@ namespace Sprint2
                 inventory.triPieceNum++;
             }else if(room.pickUpItems[itemNum] is staticBow)
             {
-                if (!inventory.itemList.Contains("bow"))
+                if (!inventory.itemList.Contains("bow") && inventory.diamondNum>=5)
                 {
                     inventory.itemList.Add("bow");
+                    inventory.diamondNum -= 5;
                 }
-            }else if(room.pickUpItems[itemNum] is staticCandle)
+                else
+                {
+                    successPickUp = false;
+                }
+            }
+            else if(room.pickUpItems[itemNum] is staticCandle)
             {
-                if (!inventory.itemList.Contains("candle"))
+                if (!inventory.itemList.Contains("candle")&& inventory.diamondNum >= 10)
                 {
                     inventory.itemList.Add("candle");
+                    inventory.diamondNum -= 10;
                 }
-            }else if (room.pickUpItems[itemNum] is staticWoodenBoomerang)
+                else
+                {
+                    successPickUp = false;
+                }
+            }else if (room.pickUpItems[itemNum] is staticWoodenBoomerang  )
             {
-                if (!inventory.itemList.Contains("boomerang"))
+                if (!inventory.itemList.Contains("boomerang") && inventory.diamondNum >= 5)
                 {
                     inventory.itemList.Add("boomerang");
+                    inventory.diamondNum -= 5;
                 }
-            }else if(room.pickUpItems[itemNum] is Map)
+                else
+                {
+                    successPickUp = false;
+                }
+            }
+            else if(room.pickUpItems[itemNum] is Map)
             {
                 inventory.showMap = true;
             }else if(room.pickUpItems[itemNum] is Compass)
@@ -284,10 +310,9 @@ namespace Sprint2
                 //room need to stop update
                 level.roomUpdate = false;
             }
-
-            //if items  fairy? /heartContainer?
-            //later
-
+ 
+            //if items  fairy? /heartContainer?(delete)
+            return successPickUp;
         }
 
 
