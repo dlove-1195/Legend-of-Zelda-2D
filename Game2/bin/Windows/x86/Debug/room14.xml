@@ -68,6 +68,12 @@
   </Item>
   <Item>
     <ObjectType>Item</ObjectType>
+    <ObjectName>TriforcePiece</ObjectName>
+    <posX>17</posX>
+    <posY>47</posY>
+  </Item>
+  <Item>
+    <ObjectType>Item</ObjectType>
     <ObjectName>Key</ObjectName>
     <posX>65</posX>
     <posY>47</posY>

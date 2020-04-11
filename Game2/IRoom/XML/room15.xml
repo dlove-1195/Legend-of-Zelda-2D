@@ -31,6 +31,12 @@
   <!--  item  -->
   <Item>
     <ObjectType>Item</ObjectType>
+    <ObjectName>TriforcePiece</ObjectName>
+    <posX>17</posX>
+    <posY>47</posY>
+  </Item>
+  <Item>
+    <ObjectType>Item</ObjectType>
     <ObjectName>Heart</ObjectName>
     <posX>54</posX>
     <posY>36</posY>
