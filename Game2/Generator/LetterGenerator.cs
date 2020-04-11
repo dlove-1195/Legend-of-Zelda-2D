@@ -49,8 +49,8 @@ namespace Sprint2
             int i = 0;
             foreach (char c in sentence)
             { 
-                Rectangle sourceRectangle = new Rectangle((int)letterMap[c].X, (int)letterMap[c].Y,width, height );
-                Rectangle destinationRectangle = new Rectangle((int)(startLoc.X+fontSize.X*i), (int)startLoc.Y , (int)fontSize.X, (int)fontSize.Y);
+                Rectangle sourceRectangle = new Rectangle((int)letterMap[c].X, (int)letterMap[c].Y,width, height ); 
+                Rectangle destinationRectangle = new Rectangle((int)(startLoc.X+fontSize.X*i), (int)startLoc.Y , (int)fontSize.X, (int)fontSize.Y); 
                 spriteBatch.Draw(letterTexture, destinationRectangle, sourceRectangle, Color.White);
                 i++;
             }
