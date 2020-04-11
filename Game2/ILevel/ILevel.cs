@@ -6,6 +6,7 @@ namespace Sprint2
 {
     public interface ILevel
     {
+        bool roomUpdate { get; set; }
         IRoom room { get; set; }
         void switchRoom(string direction);
         void switchUnderground(Vector2 destRoomPos, string direction);

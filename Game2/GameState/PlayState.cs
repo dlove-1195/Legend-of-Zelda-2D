@@ -65,11 +65,14 @@ namespace Sprint2
             inventoryController.Update();
             player.Update();
             linkDetection.Update();
+            //stop update when using clock in order to avoid detection with wall and block, result in changing position
             enemyDetection.Update();
             level.Update();
             linkDetection = new LinkCollisionDetection(level, player, inventoryBar);
- 
-            enemyDetection = new EnemyCollisionDetection(level);
+            if (level.roomUpdate)
+            {
+                enemyDetection = new EnemyCollisionDetection(level);
+            }
 
             inventoryBar.Update();
 

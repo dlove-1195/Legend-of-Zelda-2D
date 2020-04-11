@@ -264,9 +264,13 @@ namespace Sprint2
             }else if(room.pickUpItems[itemNum] is Compass)
             {
                 inventory.showCompass = true;
+            }else if(room.pickUpItems[itemNum] is Clock)
+            {
+                //room need to stop update
+                level.roomUpdate = false;
             }
 
-            //if items is clock /fair? /heartContainer?
+            //if items  fairy? /heartContainer?
             //later
 
         }

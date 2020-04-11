@@ -72,7 +72,7 @@
     <Item>
       <ObjectType>Enemy</ObjectType>
       <ObjectName>Dragon</ObjectName>
-      <posX>70</posX>
+      <posX>60</posX>
       <posY>45</posY>
     </Item>
     <!--  enemy  -->

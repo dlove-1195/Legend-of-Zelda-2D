@@ -20,6 +20,8 @@ namespace Sprint2
         private bool undergoundSwitch = false;
         private int index = 0;
         private IPlayer link;
+        public bool roomUpdate { get; set; } = true;
+        private int clockTimer = 0;
         public Level1(IPlayer player)
         {
             link = player;
@@ -191,7 +193,20 @@ namespace Sprint2
            
             camera.Update();
 
-            room.Update();
+            //when using clock, stop update room
+            if (roomUpdate)
+            {
+                room.Update();
+            }
+            else
+            {
+                clockTimer++;
+                if (clockTimer >= 500)
+                {
+                    roomUpdate = true;
+                    
+                }
+            }
         }
 
         public void Draw(SpriteBatch spriteBatch)
