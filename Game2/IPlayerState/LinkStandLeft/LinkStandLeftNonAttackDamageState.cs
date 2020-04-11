@@ -22,7 +22,7 @@ namespace Sprint2
             this.link = link;
             this.link.ChangeDirection(2);
             Link.ifDamage = true;
-            Link.damageTimer = 0;
+            
 
         }
         public void Win()

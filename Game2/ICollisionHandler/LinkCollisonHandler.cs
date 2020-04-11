@@ -76,6 +76,7 @@ namespace Sprint2
             public void HandleLinkEnemyCollsion(string direction)
         {
             Sound.PlayLinkDemage();
+            Link.damageTimer = 0;
             //link get damaged and being pushed to opposite direction
             if (!Link.ifDamage)
             {
@@ -110,6 +111,7 @@ namespace Sprint2
         public void HandleLinkProjectileCollsion()
         {
             //link just damage
+            Link.damageTimer = 0;
             Sound.PlayLinkDemage();
             if (!Link.ifDamage)
             {
