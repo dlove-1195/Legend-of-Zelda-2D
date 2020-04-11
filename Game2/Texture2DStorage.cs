@@ -87,7 +87,7 @@ namespace Sprint2
 			//lose state
 			loseSpriteSheet = content.Load<Texture2D>("LoseScreen");
 
-			numberSpriteSheet = content.Load<Texture2D>("item-Inventory");
+			numberSpriteSheet = content.Load<Texture2D>("item-Inventory1");
 
 			letterSpriteSheet = content.Load<Texture2D>("Text");
 			cloud = content.Load<Texture2D>("enemyCloud");

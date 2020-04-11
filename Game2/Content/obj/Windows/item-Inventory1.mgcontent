@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/zz/Desktop/new/CSE-3902/Game2/Content/hurtDragon.png</SourceFile>
-  <SourceTime>2020-04-10T23:28:29.1779363-04:00</SourceTime>
-  <DestFile>C:/Users/zz/Desktop/new/CSE-3902/Game2/Content/bin/Windows/hurtDragon.xnb</DestFile>
-  <DestTime>2020-04-10T23:30:08.6331009-04:00</DestTime>
+  <SourceFile>C:/Users/zz/Desktop/new/CSE-3902/Game2/Content/../../../../item-Inventory1.png</SourceFile>
+  <SourceTime>2020-04-10T21:56:50.5442581-04:00</SourceTime>
+  <DestFile>C:/Users/zz/Desktop/new/CSE-3902/Game2/Content/bin/Windows/item-Inventory1.xnb</DestFile>
+  <DestTime>2020-04-10T23:30:06.4359184-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
