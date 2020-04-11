@@ -7,7 +7,7 @@ namespace Sprint2
 {
     public class InventoryController : IController
     {
-       // private Dictionary<Keys, ICommand> map;
+        private Dictionary<Keys, ICommand> map;
       
         private Game1 myGame;
        
@@ -15,11 +15,13 @@ namespace Sprint2
         public InventoryController(Game1 game )
         {
             myGame = game;
+            
         }
         public void Update()
         {
             IInventory inventory = myGame.playState.inventoryBar;
             InventoryDetector(inventory);
+           
             if (command != null)
             {
                 command.Execute();

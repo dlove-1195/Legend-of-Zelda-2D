@@ -14,7 +14,7 @@ namespace Sprint2
         private bool load = false;
          private int roomNum=0; 
         private String direction;
-        private List<IRoom> existingRooms = new List<IRoom>();
+        public List<IRoom> existingRooms { get; set; } = new List<IRoom>();
         //new add
         private bool visit = false;
         private bool undergoundSwitch = false;

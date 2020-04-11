@@ -38,12 +38,7 @@ namespace Sprint2
             map.Add(Keys.Z, new AttackCommand(myPlay));
             map.Add(Keys.N, new AttackCommand(myPlay)); 
             map.Add(Keys.D1, new Gear1(myPlay));
-            //find the correct weapon
-            if (play.inventoryBar.itemSelect != null)
-            {
-                map.Add(Keys.D2, new Gear2(myPlay, play.inventoryBar.itemSelect));
-            }
-           
+          
           
          
             map.Add(Keys.Q, new QuitCommand(myGame));
@@ -59,7 +54,7 @@ namespace Sprint2
                 {
                     map.Remove(Keys.D2);
                 }
-                map.Add(Keys.D2, new Gear2(myPlay, myPlay.inventoryBar.itemSelect));
+                map.Add(Keys.D2, new Gear2(myPlay ));
             }
             newState = Keyboard.GetState();
             Keys[] newPressedKeys =  newState.GetPressedKeys();

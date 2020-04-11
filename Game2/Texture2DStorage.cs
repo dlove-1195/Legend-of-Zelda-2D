@@ -46,6 +46,8 @@ namespace Sprint2
 		private static Texture2D numberSpriteSheet;
 		private static Texture2D letterSpriteSheet;
 		private static Texture2D  cloud;
+		private static Texture2D upMap;
+		private static Texture2D downMap;
 		//initialize the Texture2D fields
 		public static void LoadAllTextures(ContentManager content)
 			{
@@ -77,7 +79,7 @@ namespace Sprint2
 
 			triPieceSpriteSheet = content.Load<Texture2D>("TriForce");
 			//play state
-			inventorySpriteSheet = content.Load<Texture2D>("Inventory");
+			inventorySpriteSheet = content.Load<Texture2D>("emptyInventory");
 
 
 			triPieceSpriteSheet = content.Load<Texture2D>("WinLogo");
@@ -89,6 +91,9 @@ namespace Sprint2
 
 			letterSpriteSheet = content.Load<Texture2D>("Text");
 			cloud = content.Load<Texture2D>("enemyCloud");
+			upMap = content.Load<Texture2D>("mapInventory");
+			downMap = content.Load<Texture2D>("mapBar");
+
 		}
 
 		   public static void UnloadAllTextures()
@@ -98,7 +103,16 @@ namespace Sprint2
 		
 			}
 
-			public static Texture2D GetEnemySpriteSheet()
+		public static Texture2D GetUpMapSpriteSheet()
+		{
+			return upMap;
+		}
+
+		public static Texture2D GetDownMapSpriteSheet()
+		{
+			return downMap;
+		}
+		public static Texture2D GetEnemySpriteSheet()
 			{
 				return enemySpriteSheet;
 			}

@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using System.Collections.Generic;
 
 namespace Sprint2
 {
@@ -11,5 +12,6 @@ namespace Sprint2
         void Update();
         void Draw(SpriteBatch spriteBatch);
         int getNextRoomNum(string direction);
+        List<IRoom> existingRooms { get; set; }
     }
 }

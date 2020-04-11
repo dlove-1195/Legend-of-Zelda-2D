@@ -31,16 +31,15 @@ namespace Sprint2
         public PlayState(Game1 game)
         { 
             player = new Link(new Vector2(648, 577)); 
-            level = new Level1(player);
-            //edit for inventory
-            //initialize the inventory here for the first time 
-            inventoryBar = new Inventory();
-            
+            level = new Level1(player); 
             linkDetection = new LinkCollisionDetection(level, player, inventoryBar);
             enemyDetection = new EnemyCollisionDetection(level); 
             Sound.PlayRoom();
             playStateController = new PlayStateController(game, this);
             inventoryController = new InventoryController(game);
+            //initialize the inventory here for the first time 
+
+            inventoryBar = new Inventory(this);
 
         }
         public void Draw(SpriteBatch spriteBatch)

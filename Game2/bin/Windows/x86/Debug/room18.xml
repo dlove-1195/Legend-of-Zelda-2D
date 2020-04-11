@@ -3,6 +3,12 @@
     <!--  player  -->
     <Item>
       <ObjectType>Room</ObjectType>
+      <ObjectName>RoomNum</ObjectName>
+      <num>18</num>
+      <num>18</num>
+    </Item>
+    <Item>
+      <ObjectType>Room</ObjectType>
       <ObjectName>Room</ObjectName>
       <width>13</width>
       <height>19</height>
