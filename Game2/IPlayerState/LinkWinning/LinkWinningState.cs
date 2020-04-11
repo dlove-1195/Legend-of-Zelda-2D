@@ -20,9 +20,6 @@ namespace Sprint2
             }
             this.link = link;
             
-            IItem Triforce = new TriforcePiece(new Vector2(Link.posX, Link.posY - 30));
-            Triforce.Appear = true;
-            link.items.Add(Triforce);
             link.linkSprite = new LinkWinningSprite(texture);
 
         }
@@ -34,36 +31,36 @@ namespace Sprint2
         }
         public void ChangeToRight()
         {
-           //no move
+            //link.state = new LinkStandRightNonAttackNonDamageState(link);
         }
         public void ChangeToLeft()
         {
-            //no move
+            link.state = new LinkStandLeftNonAttackNonDamageState(link);
         }
         public void ChangeToUp()
         {
-            //no move
+            link.state = new LinkStandUpNonAttackNonDamageState(link);
         }
         public void ChangeToDown()
         {
-            //alrady down
+            link.state = new LinkStandDownNonAttackNonDamageState(link);
         }
         public void GetDamaged()
         {
-            //no move
+            //link.state = new LinkStandDownNonAttackDamageState(link);
 
         }
-        public static int getFaceDirection()
+        /*public static int getFaceDirection()
         {
             return 1;
-        }
+        }*/
         public void Attack()
         {
-            //no move
+            //link.state = new LinkStandDownAttackNonDamageState(link);
         }
         public void ChangeToWalk()
         {
-            //no move
+           // link.state = new LinkWalkDownNonAttackNonDamageState(link);
         }
         public void ChangeToStand()
         {
@@ -71,22 +68,22 @@ namespace Sprint2
         }
         public void LinkWithItemUp(int item)
         {
-            //no move
+            //link.state = new LinkWithItemUpState(link, item);
         }
 
         public void LinkWithItemDown(int item)
         {
-            link.state = new LinkWithItemDownState(link, item);
+            //link.state = new LinkWithItemDownState(link, item);
         }
 
         public void LinkWithItemLeft(int item)
         {
-            //no move
+            //link.state = new LinkWithItemLeftState(link, item);
         }
 
         public void LinkWithItemRight(int item)
         {
-            //no move
+            //link.state = new LinkWithItemRightState(link, item);
         }
     }
 }

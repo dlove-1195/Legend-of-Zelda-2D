@@ -183,6 +183,7 @@ namespace Sprint2
         {
             //item disappear 
             Sound.PlayItemCollision();
+            
             if (itemManager(itemNum))
             {
                 room.setItemToNull(itemNum);
@@ -264,6 +265,7 @@ namespace Sprint2
             else if (room.pickUpItems[itemNum] is TriforcePiece)
             {
                 inventory.triPieceNum++;
+                link.Win();
             }else if(room.pickUpItems[itemNum] is staticBow)
             {
                 if (!inventory.itemList.Contains("bow") && inventory.diamondNum>=5)

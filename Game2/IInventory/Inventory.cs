@@ -13,8 +13,8 @@ namespace Sprint2
         private Texture2D inventoryTexture = Texture2DStorage.GetNumberSpriteSheet();
         private Texture2D barMapTexture = Texture2DStorage.GetDownMapSpriteSheet();
         private Texture2D inventoryMapTexture = Texture2DStorage.GetUpMapSpriteSheet();
-        
 
+        private int diff = 0;
         public int heartNum { get; set; } = 12;
         public int diamondNum { get; set; } = 10;
         public int keyNum { get; set; } = 0;
@@ -165,7 +165,8 @@ namespace Sprint2
                 DrawRoomDown(spriteBatch);
             }
             else
-            {  
+            {
+                diff = 2;
                 drawEntireMapDown(spriteBatch);
                 if (showCompass)
                 {
@@ -193,6 +194,7 @@ namespace Sprint2
                 }
                 else
                 {
+                    diff = 2;
                     drawEntireMapUp(spriteBatch);
                     mapSprite.Draw(spriteBatch, new Vector2(120, 400));
                     if (showCompass)
@@ -378,7 +380,7 @@ namespace Sprint2
             {
                 int desX = (int)upRoomMap[currentRoom].X;
                 int desY = (int)upRoomMap[currentRoom].Y;
-                linkPosDotSprite.Draw(spriteBatch, new Vector2((int)(desX + 7), (int)(desY + 5))); //current room
+                linkPosDotSprite.Draw(spriteBatch, new Vector2((int)(desX + 7), (int)(desY + 5 - diff))); //current room
             }
         }
         private void DrawLinkPosDotDownRoom(SpriteBatch spriteBatch)
@@ -387,7 +389,7 @@ namespace Sprint2
             {
                 int desX = (int)downRoomMap[currentRoom].X;
                 int desY = (int)downRoomMap[currentRoom].Y;
-                linkPosDotSprite.Draw(spriteBatch, new Vector2((int)(desX + 10), (int)(desY + 3 + y))); //current room
+                linkPosDotSprite.Draw(spriteBatch, new Vector2((int)(desX + 10), (int)(desY + 3 + y - diff))); //current room
             }
         }
     }
