@@ -10,7 +10,7 @@
 
         public void Execute()
         {
-            myGame.playState = null;
+            //myGame.playState = null;
             myGame.gameState = new WinState(myGame);
         }
     }

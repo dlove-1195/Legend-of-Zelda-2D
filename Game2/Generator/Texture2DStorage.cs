@@ -35,6 +35,7 @@ namespace Sprint2
 
 		//win state
 		private static Texture2D triPieceSpriteSheet;
+		private static Texture2D blackSpriteSheet;
 
 		//play state
 		private static Texture2D inventorySpriteSheet;
@@ -77,8 +78,9 @@ namespace Sprint2
 			ButtonSpriteSheet = content.Load<Texture2D>("Button");
 			ZeldaStorySpriteSheet = content.Load<Texture2D>("Zelda_story");
 
-
+			//win state
 			triPieceSpriteSheet = content.Load<Texture2D>("TriForce");
+			blackSpriteSheet = content.Load<Texture2D>("black");
 			//play state
 			inventorySpriteSheet = content.Load<Texture2D>("emptyInventory");
 
@@ -208,6 +210,10 @@ namespace Sprint2
 		public static Texture2D GetDoorSpriteSheet()
 		{
 			return lockedDoor;
+		}
+		public static Texture2D GetBlackBackgroundSpriteSheet()
+		{
+			return blackSpriteSheet;
 		}
 	}
 	

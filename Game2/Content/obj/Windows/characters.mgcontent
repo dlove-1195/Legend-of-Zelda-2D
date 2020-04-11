@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Mingjie/OneDrive/Documents/gameZelda/Game2/Content/characters.png</SourceFile>
-  <SourceTime>2020-04-11T09:48:14.6556164-04:00</SourceTime>
-  <DestFile>C:/Users/Mingjie/OneDrive/Documents/gameZelda/Game2/Content/bin/Windows/characters.xnb</DestFile>
-  <DestTime>2020-04-11T14:50:38.1665242-04:00</DestTime>
+  <SourceFile>C:/Users/zz/Desktop/newest/CSE-3902/Game2/Content/characters.png</SourceFile>
+  <SourceTime>2020-04-11T16:53:41.3216068-04:00</SourceTime>
+  <DestFile>C:/Users/zz/Desktop/newest/CSE-3902/Game2/Content/bin/Windows/characters.xnb</DestFile>
+  <DestTime>2020-04-11T18:11:09.4401659-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

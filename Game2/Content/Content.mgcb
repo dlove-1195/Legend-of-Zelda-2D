@@ -43,6 +43,18 @@
 /processorParam:Quality=Best
 /build:bgm.mp3
 
+#begin black.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:black.png
+
 #begin bow.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -300,18 +312,6 @@
 /processor:SongProcessor
 /processorParam:Quality=Best
 /build:room.mp3
-
-#begin Text.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Text.png
 
 #begin Text.png
 /importer:TextureImporter
