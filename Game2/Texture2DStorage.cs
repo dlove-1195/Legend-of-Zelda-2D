@@ -27,6 +27,7 @@ namespace Sprint2
         private static Texture2D blueCandleSpriteSheet;
         private static Texture2D bowSpriteSheet;
 		private static Texture2D dungeonSpriteSheet;
+		private static Texture2D lockedDoor;
 		//start state
 		private static Texture2D LogoSpriteSheet;
 		private static Texture2D ButtonSpriteSheet;
@@ -93,6 +94,7 @@ namespace Sprint2
 			cloud = content.Load<Texture2D>("enemyCloud");
 			upMap = content.Load<Texture2D>("mapInventory");
 			downMap = content.Load<Texture2D>("mapBar");
+			lockedDoor = content.Load<Texture2D>("door");
 
 		}
 
@@ -202,6 +204,10 @@ namespace Sprint2
 		public static Texture2D GetCloudSpriteSheet()
 		{
 			return cloud;
+		}
+		public static Texture2D GetDoorSpriteSheet()
+		{
+			return lockedDoor;
 		}
 	}
 	
