@@ -13,7 +13,7 @@
 
 #---------------------------------- Content ---------------------------------#
 
-#begin ../../../../item-Inventory1.png
+#begin ../../../../item-Inventory.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -23,7 +23,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:../../../../item-Inventory1.png;item-Inventory1.png
+/build:../../../../item-Inventory.png;item-Inventory.png
 
 #begin ../../../../桌面/dugeon.png
 /importer:TextureImporter
@@ -222,18 +222,6 @@
 /processor:SoundEffectProcessor
 /processorParam:Quality=Best
 /build:itemCollision.wav
-
-#begin item-Inventory.PNG
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:item-Inventory.PNG
 
 #begin link.png
 /importer:TextureImporter

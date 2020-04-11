@@ -50,10 +50,10 @@ namespace Sprint2
 
         //the coordination for each item in the item selet bar
         private Dictionary<string, Vector2> itemMap = new Dictionary<string, Vector2>(){
-            {"sword", new Vector2 (64,52)},
+            {"sword", new Vector2 (66,53)},  //12 27
             { "bomb", new Vector2 (148,53)},
-            { "bow",new Vector2(197,54)},
-            { "boomerang",new Vector2(115,54)},
+            { "bow",new Vector2(197,53)},
+            { "boomerang",new Vector2(114,54)},
             { "candle",new Vector2(216,53)}
             };
 
@@ -223,7 +223,7 @@ namespace Sprint2
             int i = 0;
             foreach (string item in itemList)
             {
-                Rectangle sourceRectangle1 = new Rectangle((int)itemMap[item].X, (int)itemMap[item].Y, 14, 25);
+                Rectangle sourceRectangle1 = new Rectangle((int)itemMap[item].X, (int)itemMap[item].Y, 13, 27);
                 if (i < 4)
                 {
                     Rectangle destinationRectangle = new Rectangle(411 + i * 60, 206, 24, 48);
@@ -265,7 +265,7 @@ namespace Sprint2
         {
             if (itemB != null)
             {
-                Rectangle sourceRectangle1 = new Rectangle((int)itemMap[itemB].X, (int)itemMap[itemB].Y, 14, 25);
+                Rectangle sourceRectangle1 = new Rectangle((int)itemMap[itemB].X, (int)itemMap[itemB].Y, 13, 27);
                 Rectangle destinationRectangle = new Rectangle(187, 257 - 71, 36, 58);
                 spriteBatch.Draw(inventoryTexture, destinationRectangle, sourceRectangle1, Color.White);
             }
@@ -287,7 +287,7 @@ namespace Sprint2
 
         private void DrawItemA(SpriteBatch spriteBatch)
         {
-            Rectangle sourceRectangle1 = new Rectangle(66, 52, 14, 30);
+            Rectangle sourceRectangle1 = new Rectangle(66, 53, 11, 25);
             Rectangle destinationRectangle = new Rectangle(width - 330, height - 101 + y, 36, 58);
             spriteBatch.Draw(inventoryTexture, destinationRectangle, sourceRectangle1, Color.White);
         }
@@ -297,7 +297,7 @@ namespace Sprint2
         {
             if (itemSelect != null)
             {
-                Rectangle sourceRectangle1 = new Rectangle((int)itemMap[itemSelect].X, (int)itemMap[itemSelect].Y, 14, 25);
+                Rectangle sourceRectangle1 = new Rectangle((int)itemMap[itemSelect].X, (int)itemMap[itemSelect].Y, 13, 27);
                 Rectangle destinationRectangle = new Rectangle(width - 410, height - 101 + y, 36, 58);
                 spriteBatch.Draw(inventoryTexture, destinationRectangle, sourceRectangle1, Color.White);
             }
