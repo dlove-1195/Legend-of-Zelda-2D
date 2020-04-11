@@ -61,6 +61,18 @@
       <posX>192</posX>
       <posY>48</posY>
     </Item>
+    <Item>
+      <ObjectType>LockedDoor</ObjectType>
+      <ObjectName>Left</ObjectName>
+      <posX>47</posX>
+      <posY>82</posY>
+    </Item>
+    <Item>
+      <ObjectType>LockedDoor</ObjectType>
+      <ObjectName>Right</ObjectName>
+      <posX>47</posX>
+      <posY>82</posY>
+    </Item>
     <!--  player  -->
     <Item>
       <ObjectType>Player</ObjectType>
@@ -82,6 +94,18 @@
       <ObjectName>StaticBomb</ObjectName>
       <posX>60</posX>
       <posY>45</posY>
+    </Item>
+    <Item>
+      <ObjectType>Item</ObjectType>
+      <ObjectName>Key</ObjectName>
+      <posX>60</posX>
+      <posY>47</posY>
+    </Item>
+    <Item>
+      <ObjectType>Item</ObjectType>
+      <ObjectName>Key</ObjectName>
+      <posX>23</posX>
+      <posY>47</posY>
     </Item>
     <Item>
       <ObjectType>Item</ObjectType>

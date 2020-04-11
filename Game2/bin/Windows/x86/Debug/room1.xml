@@ -132,6 +132,12 @@
   </Item>
   <Item>
     <ObjectType>Item</ObjectType>
+    <ObjectName>Key</ObjectName>
+    <posX>25</posX>
+    <posY>23</posY>
+  </Item>
+  <Item>
+    <ObjectType>Item</ObjectType>
     <ObjectName>Map</ObjectName>
     <posX>25</posX>
     <posY>20</posY>

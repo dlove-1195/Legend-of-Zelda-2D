@@ -19,10 +19,10 @@ namespace Sprint2
         private int sourceLocY;
         private int width;
         private int height;
-        private int desLocX;
-        private int desLocY;
-        private int desWidth;
-        private int desHeight;
+        public int desLocX;
+        public int desLocY;
+        public int desWidth;
+        public int desHeight;
         public string Direction { get; set; }
 
 
