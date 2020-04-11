@@ -133,6 +133,7 @@
     <Compile Include="ISprite\ItemSprite\BlueCandleSprite\blueCandleFireLeft.cs" />
     <Compile Include="ISprite\ItemSprite\BlueCandleSprite\blueCandleFireUp.cs" />
     <Compile Include="ISprite\ItemSprite\BlueCandleSprite\blueCandleFireDown.cs" />
+    <Compile Include="ISprite\ShingDotSprite.cs" />
     <Compile Include="NumberGenerator\NumberGenerator.cs" />
     <Compile Include="Sound.cs" />
     <Compile Include="GlobalSuppressions.cs" />
@@ -142,7 +143,6 @@
     <Compile Include="ICollisionDetector\ICollisionDetection.cs" />
     <Compile Include="ICollisionDetector\LinkCollisionDetection.cs" />
     <Compile Include="ICollisionHandler\EnemyCollisonHandler.cs" />
-    <Compile Include="ICollisionHandler\InventoryCollisionHandler.cs" />
     <Compile Include="ICollisionHandler\LinkCollisonHandler.cs" />
     <Compile Include="IEnemyState\IEnemyState.cs" />
     <Compile Include="IEnemyState\SimpleMoveEnemyState\EnemyWalkDownState.cs" />

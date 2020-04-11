@@ -256,9 +256,12 @@ namespace Sprint2
                 {
                     inventory.itemList.Add("boomerang");
                 }
+            }else if(room.pickUpItems[itemNum] is Map)
+            {
+                inventory.showMap = true;
             }
 
-            //if items is clock/comapss/map
+            //if items is clock/comapss 
             //later
 
         }

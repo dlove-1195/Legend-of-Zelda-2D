@@ -1,14 +1,10 @@
 ﻿ using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 
 namespace Sprint2
 {
-    public class StaticSprite : ISprite
+    public class ShingDotSprite : ISprite
     {
         private Texture2D Texture;
         private int width;
@@ -16,10 +12,10 @@ namespace Sprint2
 
         private int sourceLocX;
         private int sourceLocY;
+        private int timer;
 
 
-
-        public StaticSprite(Texture2D texture, int posX, int posY, int spriteWidth, int spriteHeight)
+        public ShingDotSprite(Texture2D texture, int posX, int posY, int spriteWidth, int spriteHeight)
         {
             Texture = texture;
             sourceLocX = posX;
@@ -32,7 +28,17 @@ namespace Sprint2
 
         public void Update()
         {
-            //do nothing
+            timer++;
+            if (timer >= 10 && timer<=20)
+            {
+                //dot disappear
+                width = 0;
+                height = 0;
+            }
+            else if(timer>20)
+            {
+                timer = 0;
+            }
 
         }
 

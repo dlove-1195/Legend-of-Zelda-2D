@@ -13,6 +13,7 @@ namespace Sprint2
         private Texture2D inventoryTexture = Texture2DStorage.GetNumberSpriteSheet();
         private Texture2D barMapTexture = Texture2DStorage.GetDownMapSpriteSheet();
         private Texture2D inventoryMapTexture = Texture2DStorage.GetUpMapSpriteSheet();
+        
 
         public int heartNum { get; set; } = 12;
         public int diamondNum { get; set; } = 10;
@@ -37,6 +38,8 @@ namespace Sprint2
         public bool barOnly { get; set; } = true;
         NumberGenerator generator = new NumberGenerator();
         private int y = 0;
+        private ISprite mapSprite = new StaticSprite(Texture2DStorage.GetItemSpriteSheet(), 244,80,8,16);
+        public bool showMap { get; set; } = false;
 
 
         //the coordination for each item in the item selet bar
@@ -141,13 +144,29 @@ namespace Sprint2
             DrawItemA(spriteBatch);
             DrawItemB(spriteBatch);
             DrawHeart(spriteBatch);
-            DrawRoomDown(spriteBatch);
+            if (!showMap)
+            {
+                DrawRoomDown(spriteBatch);
+            }
+            else
+            {  
+                drawEntireMapDown(spriteBatch);
+                 
+            }
 
             if (!barOnly)
             {
                 DrawItem(spriteBatch);
                 DrawSelectBox(spriteBatch);
-                DrawRoomUp(spriteBatch);
+                if (!showMap)
+                {
+                    DrawRoomUp(spriteBatch);
+                }
+                else
+                {
+                    drawEntireMapUp(spriteBatch);
+                    mapSprite.Draw(spriteBatch, new Vector2(120, 400));
+                }
 
             }
 
@@ -278,6 +297,20 @@ namespace Sprint2
                     
                 }
             }
+        }
+
+        private void drawEntireMapUp(SpriteBatch spriteBatch)
+        {
+            Rectangle sourceRectangle = new Rectangle(31, 11, 128, 155);
+            Rectangle destinationRectangle = new Rectangle(425, 380 , 133, 152);
+            spriteBatch.Draw(inventoryMapTexture, destinationRectangle, sourceRectangle, Color.White);
+        }
+
+        private void drawEntireMapDown(SpriteBatch spriteBatch)
+        {
+            Rectangle sourceRectangle = new Rectangle(20, 6, 131, 78);
+            Rectangle destinationRectangle = new Rectangle(49, 110 + y, 120, 66);
+            spriteBatch.Draw(barMapTexture, destinationRectangle, sourceRectangle, Color.White);
         }
     }
     }

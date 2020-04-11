@@ -7,7 +7,8 @@ namespace Sprint2
 {
     public interface IInventory
     {
-        bool barOnly { get; set; }  
+        bool barOnly { get; set; }
+        bool showMap { get; set; }
         int heartNum { get; set; }
         int diamondNum{ get; set; }
         int keyNum { get; set; }
