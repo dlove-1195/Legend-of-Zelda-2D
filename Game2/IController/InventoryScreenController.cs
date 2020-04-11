@@ -18,18 +18,16 @@ namespace Sprint2
                  
             myGame = game;
             map = new Dictionary<Keys, ICommand>();
+            map.Add(Keys.Escape, new QuitCommand(myGame));
             map.Add(Keys.R, new SwitchToPlayCommand(myGame));
-            //command for choosing item
-            //later: need draw rectangle outside the item in inventory class
-          
+           
             map.Add(Keys.Up, new UpLineCommand(inventory));
             map.Add(Keys.Down, new DownLineCommand(inventory));
             map.Add(Keys.Right, new NextItemCommand(inventory));
             map.Add(Keys.Left, new PreviousItemCommand(inventory));
             map.Add(Keys.Enter, new SelectInListCommand(inventory)); 
              
-            //command for map switching 
-             
+          
 
         }
 

@@ -38,10 +38,10 @@ namespace Sprint2
             map.Add(Keys.Z, new AttackCommand(myPlay));
             map.Add(Keys.N, new AttackCommand(myPlay)); 
             map.Add(Keys.D1, new Gear1(myPlay));
-          
-          
-         
-            map.Add(Keys.Q, new QuitCommand(myGame));
+
+            map.Add(Keys.Q, new  SwitchToStartCommand(myGame));
+            map.Add(Keys.Escape, new QuitCommand(myGame));
+           
             map.Add(Keys.P, new SwitchToPauseCommand(myGame)); 
             map.Add(Keys.I, new SwitchToInventoryCommand(myGame));
         }

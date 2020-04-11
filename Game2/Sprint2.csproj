@@ -57,6 +57,7 @@
     <Compile Include="GameState\PlayState.cs" />
     <Compile Include="GameState\StartState.cs" />
     <Compile Include="GameState\WinState.cs" />
+    <Compile Include="Generator\LetterGenerator.cs" />
     <Compile Include="ICollisionDetector\EnemyCollisionDetection.cs" />
     <Compile Include="ICollisionDetector\ICollisionDetection.cs" />
     <Compile Include="ICollisionDetector\LinkCollisionDetection.cs" />
@@ -228,7 +229,7 @@
     <Compile Include="ISprite\LinkSprite\LinkWinningSprite.cs" />
     <Compile Include="ISprite\ShiningDotSprite.cs" />
     <Compile Include="ISprite\StaticSprite.cs" />
-    <Compile Include="NumberGenerator\NumberGenerator.cs" />
+    <Compile Include="Generator\NumberGenerator.cs" />
     <Compile Include="Sound.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="ICamera\camera.cs" />

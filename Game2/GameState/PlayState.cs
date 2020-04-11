@@ -69,10 +69,10 @@ namespace Sprint2
             enemyDetection.Update();
             level.Update();
             linkDetection = new LinkCollisionDetection(level, player, inventoryBar);
-            if (level.roomUpdate)
+             if (level.roomUpdate)
             {
                 enemyDetection = new EnemyCollisionDetection(level);
-            }
+             }
 
             inventoryBar.Update();
 

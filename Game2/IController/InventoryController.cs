@@ -18,13 +18,15 @@ namespace Sprint2
             
         }
         public void Update()
-        {
-            IInventory inventory = myGame.playState.inventoryBar;
-            InventoryDetector(inventory);
-           
-            if (command != null)
+        {    if (myGame.playState != null)
             {
-                command.Execute();
+                IInventory inventory = myGame.playState.inventoryBar;
+                InventoryDetector(inventory);
+
+                if (command != null)
+                {
+                    command.Execute();
+                }
             }
 
         }
