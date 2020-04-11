@@ -1,4 +1,4 @@
-﻿/*using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
@@ -6,71 +6,59 @@ using Microsoft.Xna.Framework.Graphics;
  
 namespace Sprint2
 {
-    public class LetterGenerator
+    public static class LetterGenerator
     {
-        private Texture2D numberTexture = Texture2DStorage.GetNumberSpriteSheet();
-        private Dictionary<String, Vector2> numMap = new Dictionary<String, Vector2>(){
-            {0, new Vector2 (19,19)},
-            {1, new Vector2 (34,19)},
-            { 2,new Vector2 (50,19)},
-            { 3,new Vector2 (66,19)},
-            { 4,new Vector2 (82,19)},
-            { 5,new Vector2 (96,19)},
-            { 6,new Vector2 (110,19)},
-            { 7,new Vector2 (125,19)},
-            { 8,new Vector2 (141,19)},
-            { 9,new Vector2 (156,19)}
+        private static Texture2D letterTexture = Texture2DStorage.GetLetterSpriteSheet();
+        private static int width = 8;
+        private static int height = 9;
+        private static Dictionary<char, Vector2> letterMap = new Dictionary<char, Vector2>(){
+            {'A', new Vector2 (185,24) }, {'B', new Vector2 (201,24)},
+            { 'C',new Vector2 (217,24)},
+            { 'D',new Vector2 (233,24)},
+            { 'E',new Vector2 (249,24)},
+            { 'F',new Vector2 (265,24)},
+            { 'G',new Vector2 (25,40)},
+            { 'H',new Vector2 (41,40)},
+            { 'I',new Vector2 (60,40)},
+            { 'J',new Vector2 (73,40)},
+            { 'K',new Vector2 (89,40)},
+            { 'L',new Vector2 (105,40)},
+            { 'M',new Vector2 (120,40)},
+            { 'N',new Vector2 (137,40)},
+            { 'O',new Vector2 (153,40)},
+            { 'P',new Vector2 (169,40)},
+            { 'Q',new Vector2 (185,40)},
+            { 'R',new Vector2 (201,40)},
+            { 'S',new Vector2 (217,40)},
+            { 'T',new Vector2 (232,40)},
+            { 'U',new Vector2 (249,40)},
+            { 'V',new Vector2 (264,40)},
+            { 'W',new Vector2 (24,56)},
+            { 'X',new Vector2 (40,56)},
+            { 'Y',new Vector2 (57,56)},
+            { 'Z',new Vector2 (73,56)},
+             { ' ',new Vector2 (280,24)}
+
             };
-        private Vector2 drawLoc;
-        private Vector2 numSize = new Vector2(13, 13);
-        private Vector2 drawSize = new Vector2(25,25);
-        private int num;
-        private int y;
-        
+       
+ 
+        //can only draw sentence in one line
+        //fontSize: the size you want it to appear on the screen  (width,height)
+        public static void drawSentence(SpriteBatch spriteBatch,String sentence, Vector2 startLoc, Vector2 fontSize)
+        {
+            int i = 0;
+            foreach (char c in sentence)
+            { 
+                Rectangle sourceRectangle = new Rectangle((int)letterMap[c].X, (int)letterMap[c].Y,width, height );
+                Rectangle destinationRectangle = new Rectangle((int)(startLoc.X+fontSize.X*i), (int)startLoc.Y , (int)fontSize.X, (int)fontSize.Y);
+                spriteBatch.Draw(letterTexture, destinationRectangle, sourceRectangle, Color.White);
+                i++;
+            }
 
-        public NumberGenerator()
-        { 
         }
-
-        //FIX ME later
-        public void increment() { num++; }
-        public void decrement() { num--; }
-
         
-        //largest number 99;
-        public void DrawSingleNumber(SpriteBatch spriteBatch,bool isBar, Vector2 vector, int number) {
-            num = number;
-            drawLoc = vector;
-            if (isBar)
-            {
-                y = 0;
-            }
-            else
-            {
-                y = 600;
-            }
-            if (num < 10)
-            {
-                Rectangle sourceRectangle = new Rectangle((int)numMap[num].X, (int)numMap[num].Y, (int)numSize.X, (int)numSize.Y);
-                Rectangle destinationRectangle = new Rectangle((int)drawLoc.X, (int)drawLoc.Y+y, (int)drawSize.X, (int)drawSize.Y);
-                spriteBatch.Draw(numberTexture, destinationRectangle, sourceRectangle, Color.White);
-            }
-            else {
-                int num2 = num % 10;
-                int num1 = num / 10;
-                Rectangle sourceRectangle1 = new Rectangle((int)numMap[num1].X, (int)numMap[num1].Y, (int)numSize.X, (int)numSize.Y);
-                Rectangle destinationRectangle1 = new Rectangle((int)drawLoc.X, (int)drawLoc.Y+y, (int)drawSize.X, (int)drawSize.Y);
-
-                spriteBatch.Draw(numberTexture, destinationRectangle1, sourceRectangle1, Color.White);
-
-                Rectangle sourceRectangle2 = new Rectangle((int)numMap[num2].X, (int)numMap[num2].Y, (int)numSize.X, (int)numSize.Y);
-                Rectangle destinationRectangle2 = new Rectangle((int)drawLoc.X+ (int)drawSize.X, (int)drawLoc.Y+y, (int)drawSize.X, (int)drawSize.Y);
-
-                spriteBatch.Draw(numberTexture, destinationRectangle2, sourceRectangle2, Color.White);
-
-            }
-        }
+       
+        
 
     }
 }
-*/

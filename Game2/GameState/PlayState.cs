@@ -7,14 +7,12 @@ namespace Sprint2
 {
     public class PlayState : IGameState
     {
-        
-       // private Viewport topViewport;
-        //private Viewport bottomViewport;
+         
 
         private Texture2D inventoryTexture = Texture2DStorage.GetInventorySpriteSheet();
-        private static int width = 800;
-        private static int height = 871;
-       
+        private   int width = 800;
+        private  int height = 871;
+        public static bool communicate = false;
         public IPlayer player; 
         public ILevel level;
         
@@ -56,6 +54,12 @@ namespace Sprint2
             inventoryBar.Draw(spriteBatch); 
             level.Draw(spriteBatch);
             player.Draw(spriteBatch);
+            if (communicate)
+            {
+                LetterGenerator.drawSentence(spriteBatch,"WOULD YOU LIKE TO BUY SOME WEAPONS",new Vector2(100,320), new Vector2(19,19));
+                LetterGenerator.drawSentence(spriteBatch, "BOOMERANG AND BOW   FIVE DIAMONDS", new Vector2(100, 350), new Vector2(19, 19));
+                LetterGenerator.drawSentence(spriteBatch, "CANDLE              TEN DIAMONDS", new Vector2(100, 380), new Vector2(19, 19));
+            }
             
         }
 

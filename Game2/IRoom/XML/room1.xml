@@ -150,7 +150,7 @@
   </Item>
   <!--  item  -->
   <!--  NPC  -->
-  <Item>
+  <!--<Item>
     <ObjectType>NPC</ObjectType>
     <ObjectName>Merchant</ObjectName>
     <posX>32</posX>
@@ -167,7 +167,7 @@
     <ObjectName>Princess</ObjectName>
     <posX>53</posX>
     <posY>21</posY>
-  </Item>
+  </Item> -->
   <!--  NPC  -->
   <!--  Block  -->
   <Item>

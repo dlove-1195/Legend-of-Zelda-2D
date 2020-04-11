@@ -31,6 +31,24 @@
     <!-- player -->
     <!--flame*2-->>
     <Item>
+      <ObjectType>Item</ObjectType>
+      <ObjectName>boomerang</ObjectName>
+      <posX>20</posX>
+      <posY>30</posY>
+    </Item>
+    <Item>
+      <ObjectType>Item</ObjectType>
+      <ObjectName>bow</ObjectName>
+      <posX>40</posX>
+      <posY>30</posY>
+    </Item>
+    <Item>
+      <ObjectType>Item</ObjectType>
+      <ObjectName>candle</ObjectName>
+      <posX>60 </posX>
+      <posY>30</posY>
+    </Item>
+    <Item>
       <ObjectType>Enemy</ObjectType>
       <ObjectName>Flame</ObjectName>
       <posX>65</posX>
@@ -44,7 +62,7 @@
     </Item>
     <Item>
       <ObjectType>NPC</ObjectType>
-      <ObjectName>OldMan</ObjectName>
+      <ObjectName>Merchant</ObjectName>
       <posX>50</posX>
       <posY>40</posY>
     </Item>

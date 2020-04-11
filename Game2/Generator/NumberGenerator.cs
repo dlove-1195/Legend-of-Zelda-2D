@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework.Graphics;
  
 namespace Sprint2
 {
-    public class NumberGenerator
+    public   class NumberGenerator
     {
         private Texture2D numberTexture = Texture2DStorage.GetNumberSpriteSheet();
         private Dictionary<int, Vector2> numMap = new Dictionary<int, Vector2>(){

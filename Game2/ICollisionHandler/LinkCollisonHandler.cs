@@ -148,6 +148,7 @@ namespace Sprint2
         public void HandleLinkNpcCollsion(String direction)
         {
             Sound.PlayItemCollision();
+            PlayState.communicate = true;
             switch (direction)
             {
                 case "Left":
@@ -169,6 +170,7 @@ namespace Sprint2
                     Console.WriteLine("error: no such situation");
 #pragma warning restore CA1303 // Do not pass literals as localized parameters
                     break;
+
             }
             
             
