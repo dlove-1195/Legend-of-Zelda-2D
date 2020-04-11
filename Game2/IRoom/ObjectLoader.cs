@@ -13,6 +13,7 @@ namespace Sprint2
         private List<IEnemy> enemyList;
         private List<IItem> itemList;
         private List<INpc> npcList;
+        private List<LockedDoor> lockedDoorList;
 
         public ObjectLoader()
         {
@@ -42,8 +43,9 @@ namespace Sprint2
             enemyList = room.enemies;
             itemList = room.pickUpItems;
             npcList = room.npcs;
+            lockedDoorList = room.lockedDoor;
 
-           
+
             if (type == "Enemy")
             {
                 if (name == "Dragon")
@@ -131,7 +133,8 @@ namespace Sprint2
                     itemList.Add(new staticBomb(vector));
                 }
                 //"boomerang","bow","candle"
-                if (name == "boomerang") {
+                if (name == "boomerang")
+                {
                     itemList.Add(new staticWoodenBoomerang(vector));
                 }
                 if (name == "bow")
@@ -160,6 +163,10 @@ namespace Sprint2
                 {
                     npcList.Add(new Princess(vector));
                 }
+            }
+            else if (type == "LockedDoor")
+            {
+                lockedDoorList.Add(new LockedDoor(name));
             }
         }
     }

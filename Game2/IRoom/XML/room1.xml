@@ -191,5 +191,21 @@
     <posY>82</posY>
   </Item>
   <!--  Door  -->
+
+  <!--  LockedDoor  -->
+  <Item>
+    <ObjectType>LockedDoor</ObjectType>
+    <ObjectName>Up</ObjectName>
+    <posX>47</posX>
+    <posY>82</posY>
+  </Item>
+<Item>
+    <ObjectType>LockedDoor</ObjectType>
+    <ObjectName>Down</ObjectName>
+    <posX>47</posX>
+    <posY>82</posY>
+  </Item>
+
+  <!--  LockedDoor  -->
 </Asset>
 </XnaContent>

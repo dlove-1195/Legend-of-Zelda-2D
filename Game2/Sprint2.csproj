@@ -118,6 +118,7 @@
     <Compile Include="IEnemy\WallMaster.cs" />
     <Compile Include="IInventory\IInventory.cs" />
     <Compile Include="IInventory\Inventory.cs" />
+    <Compile Include="IItem\LockedDoor.cs" />
     <Compile Include="IItem\StaticItem\staticWoodenBoomerang.cs" />
     <Compile Include="IItem\StaticItem\staticCandle.cs" />
     <Compile Include="IItem\StaticItem\staticBow.cs" />

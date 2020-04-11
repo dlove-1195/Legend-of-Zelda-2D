@@ -33,9 +33,11 @@ namespace Sprint2
 #pragma warning restore CA2227 // Collection properties should be read only
         public List<INpc> npcs { get; set; }
 
-        public List<KeyValuePair<Vector2,Vector2>> stair { get; set; }
+        public List<KeyValuePair<Vector2, Vector2>> stair { get; set; }
         public List<KeyValuePair<int, int>> blockLocation { get; set; }
         public List<string> doorDirection { get; set; } //store door direction Up, Down, Right, Left as string
+        public List<LockedDoor> lockedDoor { get; set; }
+        public List<string> OpenedDoor { get; set; }
 
         public List<Rectangle> boundingBox { get; set; }
 
@@ -47,10 +49,12 @@ namespace Sprint2
             pickUpItems = new List<IItem>();
             blockLocation = new List<KeyValuePair<int, int>>();
             doorDirection = new List<string>();
+            lockedDoor = new List<LockedDoor>();
             stair = new List<KeyValuePair<Vector2, Vector2>>();
             boundingBox = new List<Rectangle>();
             npcs = new List<INpc>();
-            
+            OpenedDoor = new List<string>();
+
 
 
 
@@ -73,9 +77,11 @@ namespace Sprint2
             pickUpItems = new List<IItem>();
             blockLocation = new List<KeyValuePair<int, int>>();
             doorDirection = new List<string>();
+            lockedDoor = new List<LockedDoor>();
             stair = new List<KeyValuePair<Vector2, Vector2>>();
             boundingBox = new List<Rectangle>();
             npcs = new List<INpc>();
+            OpenedDoor = new List<string>();
 
             nodeList = doc.SelectNodes("//Item");
 
@@ -90,11 +96,11 @@ namespace Sprint2
                 y = Int32.Parse(node.ChildNodes[3].InnerText, culture.NumberFormat);
 
                 vector.X = ((float)(x) / 100) * windowWidth;
-                vector.Y = ((float)(y) / 100) * windowHeight+200;
+                vector.Y = ((float)(y) / 100) * windowHeight + 200;
 
                 if (type == "Room")
                 {
-                    if(name == "RoomNum")
+                    if (name == "RoomNum")
                     {
                         roomNumber = x;
                     }
@@ -125,7 +131,7 @@ namespace Sprint2
                 }
                 else if (type == "Enemy" || type == "Item" || type == "NPC")
                 {
-                   objects.loadObject(this, type, name, vector);
+                    objects.loadObject(this, type, name, vector);
                 }
                 else if (type == "Block")
                 {
@@ -134,6 +140,10 @@ namespace Sprint2
                 else if (type == "Door")
                 {
                     doorDirection.Add(name); //door direction stores in name
+                }
+                else if (type == "LockedDoor")
+                {
+                    objects.loadObject(this, type, name, new Vector2(0, 0));
                 }
                 else if (type == "Stair")
                 {
@@ -144,7 +154,7 @@ namespace Sprint2
                     Vector2 stairDestPos = new Vector2(destPosX, destPosY);
 
                     stair.Add(new KeyValuePair<Vector2, Vector2>(stairPos, stairDestPos));
-                
+
 
                 }
                 //for bounding box in room15
@@ -172,6 +182,10 @@ namespace Sprint2
             enemies[enemyNum] = null;
 
         }
+        public void setLockedDoorToNull(int num)
+        {
+            lockedDoor[num] = null;
+        }
         public void Update()
         {
 
@@ -196,7 +210,13 @@ namespace Sprint2
         public void Draw(SpriteBatch spriteBatch)
         {
 
-
+            foreach (LockedDoor doorX in lockedDoor)
+            {
+                if (doorX != null)
+                {
+                    doorX.Draw(spriteBatch);
+                }
+            }
             foreach (IEnemy enemy in enemies)
             {
                 if (enemy != null)

@@ -187,6 +187,21 @@ namespace Sprint2
             
         }
 
+        public bool HandleLinkLockedDoorCollision(int doorNum)
+        {
+            if (inventory.keyNum == 0)
+            {
+                return false;
+            }
+            else
+            {
+                room.setLockedDoorToNull(doorNum);
+                inventory.keyNum--;
+                return true;
+            }
+
+        }
+
         public void remainPosition(string direction)
         {
             
