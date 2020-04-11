@@ -234,9 +234,10 @@ namespace Sprint2
         private void DrawSelector(SpriteBatch spriteBatch)
         {
             Rectangle sourceRectangle = new Rectangle(4, 54, 26, 26);
-            int i = currentIndex;
-            foreach (string item in itemList)
+            
+            if (itemList.Count>0 )
             {
+                int i = currentIndex;
                 if (i < 4)
                 {
                     Rectangle destinationRectangle = new Rectangle(411 + i * 60 - 3, 206 - 3, 30, 54);
@@ -247,8 +248,9 @@ namespace Sprint2
                     Rectangle destinationRectangle = new Rectangle(411 + (i - 4) * 60 - 3, 206 + 52 - 3, 30, 54);
                     spriteBatch.Draw(inventoryTexture, destinationRectangle, sourceRectangle, Color.White);
                 }
-
             }
+
+          
         }
 
         //for item selector view box
