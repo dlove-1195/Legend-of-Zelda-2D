@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework;
 
 namespace Sprint2
 {
-    public class ShingDotSprite : ISprite
+    public class ShiningDotSprite : ISprite
     {
         private Texture2D Texture;
         private int width;
@@ -13,30 +13,35 @@ namespace Sprint2
         private int sourceLocX;
         private int sourceLocY;
         private int timer;
+        private int origWidth  ;
+        private int origHeight  ;
 
-
-        public ShingDotSprite(Texture2D texture, int posX, int posY, int spriteWidth, int spriteHeight)
+        public ShiningDotSprite(Texture2D texture, int posX, int posY, int spriteWidth, int spriteHeight)
         {
             Texture = texture;
             sourceLocX = posX;
             sourceLocY = posY;
             width = spriteWidth;
             height = spriteHeight;
+            origHeight = spriteHeight;
+            origWidth = spriteWidth;
 
         }
        
 
         public void Update()
         {
-            timer++;
-            if (timer >= 10 && timer<=20)
+            timer++; 
+            if (timer >= 20 && timer<=40)
             {
                 //dot disappear
                 width = 0;
                 height = 0;
             }
-            else if(timer>20)
+            else if(timer>60)
             {
+                width = origWidth;
+                height = origHeight;
                 timer = 0;
             }
 
@@ -51,7 +56,7 @@ namespace Sprint2
             if (Texture != null)
             {
                 Rectangle sourceRectangle = new Rectangle(sourceLocX, sourceLocY, width, height);
-                Rectangle destinationRectangle = new Rectangle((int)vector.X, (int)vector.Y, width * 3, height * 3);
+                Rectangle destinationRectangle = new Rectangle((int)vector.X, (int)vector.Y, width , height );
 
                 
                 spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);

@@ -9,6 +9,8 @@ namespace Sprint2
     {
         bool barOnly { get; set; }
         bool showMap { get; set; }
+         bool showCompass { get; set; }  
+
         int heartNum { get; set; }
         int diamondNum{ get; set; }
         int keyNum { get; set; }

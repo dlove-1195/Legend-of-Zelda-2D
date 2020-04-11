@@ -39,7 +39,13 @@ namespace Sprint2
         NumberGenerator generator = new NumberGenerator();
         private int y = 0;
         private ISprite mapSprite = new StaticSprite(Texture2DStorage.GetItemSpriteSheet(), 244,80,8,16);
+        private ISprite compassSprite = new StaticSprite(Texture2DStorage.GetItemSpriteSheet(), 82, 42, 11, 12);
+        //assume triforce are being set in room 14,15,16
+        private ISprite triforceDotSprite1 = new ShiningDotSprite(Texture2DStorage.GetItemSpriteSheet(), 343, 123, 10, 10);
+        private ISprite triforceDotSprite2 = new ShiningDotSprite(Texture2DStorage.GetItemSpriteSheet(), 343, 123, 10, 10);
+        private ISprite triforceDotSprite3 = new ShiningDotSprite(Texture2DStorage.GetItemSpriteSheet(), 343, 123, 10, 10);
         public bool showMap { get; set; } = false;
+        public bool showCompass { get; set; } = false;
 
 
         //the coordination for each item in the item selet bar
@@ -129,6 +135,13 @@ namespace Sprint2
                 itemB = itemList[currentIndex];
             }
             existingRooms = play.level.existingRooms;
+            if (showMap && showCompass)
+            {
+                //need to update compass
+                triforceDotSprite1.Update();
+                triforceDotSprite2.Update();
+                triforceDotSprite3.Update();
+            }
 
         }
         public void Draw(SpriteBatch spriteBatch)
@@ -151,6 +164,13 @@ namespace Sprint2
             else
             {  
                 drawEntireMapDown(spriteBatch);
+                if (showCompass)
+                {
+                    //draw triforce dot
+                    triforceDotSprite1.Draw(spriteBatch,new Vector2(107,170+y));//in room14
+                    triforceDotSprite2.Draw(spriteBatch, new Vector2(54,110+y)); //in room15
+                    triforceDotSprite3.Draw(spriteBatch, new Vector2(157,120+y)); //in room16
+                }
                  
             }
 
@@ -158,6 +178,11 @@ namespace Sprint2
             {
                 DrawItem(spriteBatch);
                 DrawSelectBox(spriteBatch);
+                if (showCompass)
+                {
+                    //draw compass
+                    compassSprite.Draw(spriteBatch, new Vector2(120, 520));
+                }
                 if (!showMap)
                 {
                     DrawRoomUp(spriteBatch);
@@ -166,6 +191,14 @@ namespace Sprint2
                 {
                     drawEntireMapUp(spriteBatch);
                     mapSprite.Draw(spriteBatch, new Vector2(120, 400));
+                    if (showCompass)
+                    { 
+                        //draw triforce dot
+                        triforceDotSprite1.Draw(spriteBatch, new Vector2(483,518));//in room14
+                        triforceDotSprite2.Draw(spriteBatch, new Vector2(430, 385)); //in room15
+                        triforceDotSprite3.Draw(spriteBatch, new Vector2(537, 412)); //in room16
+                         
+    }
                 }
 
             }

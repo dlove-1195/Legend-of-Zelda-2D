@@ -259,9 +259,12 @@ namespace Sprint2
             }else if(room.pickUpItems[itemNum] is Map)
             {
                 inventory.showMap = true;
+            }else if(room.pickUpItems[itemNum] is Compass)
+            {
+                inventory.showCompass = true;
             }
 
-            //if items is clock/comapss 
+            //if items is clock /fair? /heartContainer?
             //later
 
         }
