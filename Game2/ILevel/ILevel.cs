@@ -14,5 +14,7 @@ namespace Sprint2
         void Draw(SpriteBatch spriteBatch);
         int getNextRoomNum(string direction);
         List<IRoom> existingRooms { get; set; }
+        int currentRoomNum { get; set; }
+
     }
 }

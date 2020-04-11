@@ -44,6 +44,7 @@ namespace Sprint2
         private ISprite triforceDotSprite1 = new ShiningDotSprite(Texture2DStorage.GetItemSpriteSheet(), 343, 123, 10, 10);
         private ISprite triforceDotSprite2 = new ShiningDotSprite(Texture2DStorage.GetItemSpriteSheet(), 343, 123, 10, 10);
         private ISprite triforceDotSprite3 = new ShiningDotSprite(Texture2DStorage.GetItemSpriteSheet(), 343, 123, 10, 10);
+        private ISprite linkPosDotSprite = new ShiningDotSprite(Texture2DStorage.GetNumberSpriteSheet(), 34, 35, 7, 5);
         public bool showMap { get; set; } = false;
         public bool showCompass { get; set; } = false;
 
@@ -113,6 +114,7 @@ namespace Sprint2
 
         private List<IRoom> existingRooms;
         private PlayState play;
+        private int currentRoom;
         public Inventory(PlayState play)
         {
             this.play = play;
@@ -135,6 +137,7 @@ namespace Sprint2
                 itemB = itemList[currentIndex];
             }
             existingRooms = play.level.existingRooms;
+            currentRoom = play.level.currentRoomNum;
             if (showMap && showCompass)
             {
                 //need to update compass
@@ -142,6 +145,7 @@ namespace Sprint2
                 triforceDotSprite2.Update();
                 triforceDotSprite3.Update();
             }
+            linkPosDotSprite.Update();
 
         }
         public void Draw(SpriteBatch spriteBatch)
@@ -199,11 +203,13 @@ namespace Sprint2
                         triforceDotSprite2.Draw(spriteBatch, new Vector2(430, 385)); //in room15
                         triforceDotSprite3.Draw(spriteBatch, new Vector2(537, 412)); //in room16
                          
-    }
+                    }
                 }
 
             }
 
+            DrawLinkPosDotDownRoom(spriteBatch);
+            DrawLinkPosDotUpRoom(spriteBatch);
 
 
 
@@ -366,6 +372,24 @@ namespace Sprint2
             Rectangle sourceRectangle = new Rectangle(20, 6, 131, 78);
             Rectangle destinationRectangle = new Rectangle(49, 110 + y, 120, 66);
             spriteBatch.Draw(barMapTexture, destinationRectangle, sourceRectangle, Color.White);
+        }
+        private void DrawLinkPosDotUpRoom(SpriteBatch spriteBatch)
+        {
+            if (existingRooms != null)
+            {
+                int desX = (int)upRoomMap[currentRoom].X;
+                int desY = (int)upRoomMap[currentRoom].Y;
+                linkPosDotSprite.Draw(spriteBatch, new Vector2((int)(desX + 7), (int)(desY + 5))); //current room
+            }
+        }
+        private void DrawLinkPosDotDownRoom(SpriteBatch spriteBatch)
+        {
+            if (existingRooms != null)
+            {
+                int desX = (int)downRoomMap[currentRoom].X;
+                int desY = (int)downRoomMap[currentRoom].Y;
+                linkPosDotSprite.Draw(spriteBatch, new Vector2((int)(desX + 10), (int)(desY + 3 + y))); //current room
+            }
         }
     }
     }

@@ -12,8 +12,10 @@ namespace Sprint2
         private RoomLoader roomLoader;
         private ICamera camera;
         private bool load = false;
-         private int roomNum=0; 
+         private int roomNum; 
         private String direction;
+        public int currentRoomNum { get; set; }
+
         public List<IRoom> existingRooms { get; set; } = new List<IRoom>();
         //new add
         private bool visit = false;
@@ -29,8 +31,9 @@ namespace Sprint2
             room = new Room(roomLoader);
             existingRooms.Add(room);
             camera = new Camera();
-             
-             
+            currentRoomNum = room.roomNumber;
+
+
         }
 
         //switch room and camera 
@@ -177,6 +180,7 @@ namespace Sprint2
                     //already exist, no need to create a new room 
                     load = false;
                     room = existingRooms[index];
+                    currentRoomNum = existingRooms[index].roomNumber;
                     SetLinkPosInNewRoom(direction);
                     visit = false;
                 }
@@ -184,7 +188,8 @@ namespace Sprint2
                 {
                     load = false;
                     roomLoader = new RoomLoader("room" + roomNum + ".xml");
-                    room = new Room(roomLoader); 
+                    room = new Room(roomLoader);
+                    currentRoomNum = roomNum;
                     SetLinkPosInNewRoom(direction);
                     existingRooms.Add(room);
 
