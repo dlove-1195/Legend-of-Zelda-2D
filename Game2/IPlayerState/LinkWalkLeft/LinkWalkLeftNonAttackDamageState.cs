@@ -19,6 +19,7 @@ namespace Sprint2
             linkPlayer.linkSprite = new LinkDamageWalkLeftSprite(texture);
             link.ChangeDirection(2);
             Link.ifDamage = true;
+            Link.damageTimer = 0;
 
         }
       

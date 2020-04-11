@@ -22,7 +22,7 @@ namespace Sprint2
         public static int posX ;
         public static Boolean ifDamage = false;
       
-        private int damageTimer = 0; 
+        public static int damageTimer = 0; 
        
         //----for detection class --- start
         private int linkWidth = 14 ;

@@ -22,6 +22,7 @@ namespace Sprint2
             this.link = link;
             this.link.ChangeDirection(0);
             Link.ifDamage = true;
+            Link.damageTimer = 0;
 
         }
        
@@ -30,6 +31,7 @@ namespace Sprint2
             if (Link.ifDamage)
             {
                 link.state = new LinkStandRightNonAttackDamageState(link);
+               
             }
             else
             {

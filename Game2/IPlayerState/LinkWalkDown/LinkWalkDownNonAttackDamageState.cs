@@ -19,6 +19,7 @@ namespace Sprint2
             //change link's current direction 
             link.ChangeDirection(1);
             Link.ifDamage = true;
+            Link.damageTimer = 0;
 
         }
         public void Win()
