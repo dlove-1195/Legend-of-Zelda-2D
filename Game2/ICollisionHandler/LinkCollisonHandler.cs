@@ -147,8 +147,7 @@ namespace Sprint2
     } 
         public void HandleLinkNpcCollsion(String direction)
         {
-            Sound.PlayItemCollision();
-            PlayState.communicate = true;
+            Sound.PlayItemCollision(); 
             switch (direction)
             {
                 case "Left":

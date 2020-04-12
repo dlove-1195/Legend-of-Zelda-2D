@@ -219,6 +219,12 @@ namespace Sprint2
           
             camera.Draw(spriteBatch);
             room.Draw(spriteBatch);
+            if (room.roomNumber == 2)
+            {
+                LetterGenerator.drawSentence(spriteBatch, "WOULD YOU LIKE TO BUY SOME WEAPONS", new Vector2(100, 320), new Vector2(19, 19));
+                LetterGenerator.drawSentence(spriteBatch, "BOOMERANG AND BOW   FIVE DIAMONDS", new Vector2(100, 350), new Vector2(19, 19));
+                LetterGenerator.drawSentence(spriteBatch, "CANDLE              TEN DIAMONDS", new Vector2(100, 380), new Vector2(19, 19));
+            }
         }
     }
 }
