@@ -21,8 +21,8 @@ namespace Sprint2 {
         public IInventory inventoryBar { get; set; }
         private IController startStateController;
         public StartState(Game1 game)
-        {   
-            
+        {
+            Sound.PlayMainSong();
             startStateController = new StartStateController(game);
             
             

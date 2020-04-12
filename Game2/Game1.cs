@@ -49,7 +49,6 @@ namespace Sprint2
             Sound.LoadBGM(Content);
             Sound.PlayMainSong();
 
-
         }
 
         protected override void UnloadContent()
