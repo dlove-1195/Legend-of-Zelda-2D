@@ -138,14 +138,21 @@ namespace Sprint2
             {
                 if (item[i] != null)
                 {
-                    Rectangle singleItemRec = item[i].BoundingBox;
-
+                    Rectangle singleItemRec = item[i].BoundingBox; 
 
                     overlapRec = Rectangle.Intersect(linkRectangle, singleItemRec);
                     if (!overlapRec.IsEmpty)
                     {
-
-                        linkHandler.HandleLinkItemCollsion(i);
+                        if (item[i] is LockedDoor)
+                        {
+                            String direction = detectCollisionDirection(overlapRec, linkRectangle, singleItemRec);
+                            linkHandler.HandleLinkLockedDoorCollision(i, direction);
+                        }
+                        else
+                        {
+                            linkHandler.HandleLinkItemCollsion(i);
+                        }
+                            
                     }
                 }
 
@@ -214,65 +221,7 @@ namespace Sprint2
                     }
                 }
             }
-
-            // loop for locked door collision
-            //check boundingbox is a better choice, if collide, key--, locked door removed 
-            listLength = room.lockedDoor.Count;
-
-            for (int i = 0; i < listLength; i++)
-            { 
-                LockedDoor singleLockedDoor = room.lockedDoor[i];
-                if (singleLockedDoor != null)
-                {
-                    String direction = singleLockedDoor.Direction;
-                    if ( direction.Equals("Up"))
-                    {
-                        Rectangle doorBoundingBox = new Rectangle(singleLockedDoor.desLocX, singleLockedDoor.desLocY - 5, singleLockedDoor.desWidth, singleLockedDoor.desHeight + 5);
-                        
-                        overlapRec = Rectangle.Intersect(linkRectangle, doorBoundingBox);
-                        if (!overlapRec.IsEmpty)
-                        {
-                            linkHandler.HandleLinkLockedDoorCollision(i,direction);
-                        }
-                        
-                    }
-                    else if ( direction.Equals("Down"))
-                    {
-
-                        Rectangle doorBoundingBox = new Rectangle(singleLockedDoor.desLocX, singleLockedDoor.desLocY, singleLockedDoor.desWidth, singleLockedDoor.desHeight + 5);
-                        overlapRec = Rectangle.Intersect(linkRectangle, doorBoundingBox);
-                        if (!overlapRec.IsEmpty)
-                        {
-                            linkHandler.HandleLinkLockedDoorCollision(i,direction);
-                        }
-
-                    }
-                    else if ( direction.Equals("Right"))
-                    {
-
-                        Rectangle doorBoundingBox = new Rectangle(singleLockedDoor.desLocX, singleLockedDoor.desLocY, singleLockedDoor.desWidth + 5, singleLockedDoor.desHeight + 5);
-                        overlapRec = Rectangle.Intersect(linkRectangle, doorBoundingBox);
-                        if (!overlapRec.IsEmpty)
-                        {
-                            linkHandler.HandleLinkLockedDoorCollision(i, direction);
-                        }
-                    }
-                    else if (direction.Equals("Left"))
-                    {
-                        Rectangle doorBoundingBox = new Rectangle(singleLockedDoor.desLocX - 5, singleLockedDoor.desLocY, singleLockedDoor.desWidth + 5, singleLockedDoor.desHeight);
-                        
-                        overlapRec = Rectangle.Intersect(linkRectangle, doorBoundingBox);
-                        if (!overlapRec.IsEmpty)
-                        {
-                            linkHandler.HandleLinkLockedDoorCollision(i,direction);
-                        }
-
-                    }
-                     
-                }
-
-            }
-
+             
 
             //link edge collision if no boundingBox in room
             //room15 no Link edge collision

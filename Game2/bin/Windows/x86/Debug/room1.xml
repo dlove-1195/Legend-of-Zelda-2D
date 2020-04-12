@@ -200,15 +200,15 @@
 
   <!--  LockedDoor  -->
   <Item>
-    <ObjectType>LockedDoor</ObjectType>
+    <ObjectType>Item</ObjectType>
     <ObjectName>Up</ObjectName>
-    <posX>47</posX>
-    <posY>82</posY>
+    <posX>44</posX>
+    <posY>8</posY>
   </Item>
 <Item>
-    <ObjectType>LockedDoor</ObjectType>
+    <ObjectType>Item</ObjectType>
     <ObjectName>Down</ObjectName>
-    <posX>47</posX>
+    <posX>44</posX>
     <posY>82</posY>
   </Item>
 

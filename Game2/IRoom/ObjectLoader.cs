@@ -13,8 +13,7 @@ namespace Sprint2
         private List<IEnemy> enemyList;
         private List<IItem> itemList;
         private List<INpc> npcList;
-        private List<LockedDoor> lockedDoorList;
-
+        
         public ObjectLoader()
         {
 
@@ -43,8 +42,7 @@ namespace Sprint2
             enemyList = room.enemies;
             itemList = room.pickUpItems;
             npcList = room.npcs;
-            lockedDoorList = room.lockedDoor;
-
+           
 
             if (type == "Enemy")
             {
@@ -145,6 +143,10 @@ namespace Sprint2
                 {
                     itemList.Add(new staticCandle(vector));
                 }
+                if(name=="Up"||name=="Down"||name=="Right"|| name == "Left")//LockedDoor item
+                {
+                    itemList.Add(new LockedDoor(name,vector));
+                }
             }
             else if (type == "NPC")
             {
@@ -164,10 +166,7 @@ namespace Sprint2
                     npcList.Add(new Princess(vector));
                 }
             }
-            else if (type == "LockedDoor")
-            {
-                lockedDoorList.Add(new LockedDoor(name));
-            }
+           
         }
     }
 }

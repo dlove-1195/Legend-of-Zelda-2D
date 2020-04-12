@@ -65,17 +65,7 @@ namespace Sprint2
 
 
         }
-
-        public void NextItem(Game1 myGame)
-        {
-
-        }
-
-        public void PreItem(Game1 myGame)
-        {
-
-        }
-
+ 
         public void changeState(IItemState state)
         {
             this.state = state;

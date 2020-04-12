@@ -83,7 +83,7 @@ namespace Sprint2
             if (communicate)
             {
                 communicateTimer++;
-                if (communicateTimer >= 500)
+                if (communicateTimer >= 200)
                 {
                     communicate = false;
                     communicateTimer = 0;
