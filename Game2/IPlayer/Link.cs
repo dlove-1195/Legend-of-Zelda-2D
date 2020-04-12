@@ -8,7 +8,7 @@ namespace Sprint2
 { 
   public class Link : IPlayer 
     {
-        public IPlayerstate state;
+        public IPlayerstate state { get; set; }
         public ISprite linkSprite;
      
         public List<IItem> items = new List<IItem>();

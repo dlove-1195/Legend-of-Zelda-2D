@@ -78,7 +78,7 @@ namespace Sprint2
             Sound.PlayLinkDemage();
             Link.damageTimer = 0;
             //link get damaged and being pushed to opposite direction
-            if (!Link.ifDamage)
+            if (!Link.ifDamage && !(link.state is LinkWinningState))
             {
                 inventory.heartNum--;
             }
@@ -113,7 +113,7 @@ namespace Sprint2
             //link just damage
             Link.damageTimer = 0;
             Sound.PlayLinkDemage();
-            if (!Link.ifDamage)
+            if (!Link.ifDamage && !(link.state is LinkWinningState))
             {
                 inventory.heartNum--;
             }
@@ -147,8 +147,7 @@ namespace Sprint2
     } 
         public void HandleLinkNpcCollsion(String direction)
         {
-            Sound.PlayItemCollision();
-            PlayState.communicate = true;
+            Sound.PlayItemCollision(); 
             switch (direction)
             {
                 case "Left":
