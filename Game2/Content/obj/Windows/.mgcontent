@@ -4,6 +4,7 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
+    <File>D:/3902/CSE-3902/Game2/Content/font.png</File>
     <File>C:/Users/zz/Desktop/new/CSE-3902/Game2/Content/../../../../item-Inventory.png</File>
     <File>C:/Users/zz/Desktop/new/CSE-3902/Game2/Content/bgm.mp3</File>
     <File>C:/Users/zz/Desktop/new/CSE-3902/Game2/Content/black.png</File>
@@ -35,34 +36,7 @@
     <File>C:/Users/zz/Desktop/new/CSE-3902/Game2/Content/Zelda_story.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File>item-Inventory.png</File>
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
   </DestFiles>
 </SourceFileCollection>

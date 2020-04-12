@@ -8,21 +8,21 @@ namespace Sprint2
 {
     public  static class NumberGenerator
     {
-        private static Texture2D numberTexture = Texture2DStorage.GetNumberSpriteSheet();
+        private static Texture2D numberTexture = Texture2DStorage.GetLetterSpriteSheet();
         private static Dictionary<int, Vector2> numMap = new Dictionary<int, Vector2>(){
-            {0, new Vector2 (19,19)},
-            {1, new Vector2 (34,19)},
-            { 2,new Vector2 (50,19)},
-            { 3,new Vector2 (66,19)},
-            { 4,new Vector2 (82,19)},
-            { 5,new Vector2 (96,19)},
-            { 6,new Vector2 (110,19)},
-            { 7,new Vector2 (125,19)},
-            { 8,new Vector2 (141,19)},
-            { 9,new Vector2 (156,19)}
+            {0, new Vector2 (51,27)},
+            {1, new Vector2 (170,27)},
+            { 2,new Vector2 (275,170)},
+            { 3,new Vector2 (387,170)},
+            { 4,new Vector2 (499,170)},
+            { 5,new Vector2 (611,170)},
+            { 6,new Vector2 (723,170)},
+            { 7,new Vector2 (835,170)},
+            { 8,new Vector2 (947,170)},
+            { 9,new Vector2 (1059,170)}
             };
         private static Vector2 drawLoc;
-        private static Vector2 numSize = new Vector2(13, 13);
+        private static Vector2 numSize = new Vector2(49, 49);
         private static Vector2 drawSize = new Vector2(25,25);
         private static int num;
         private static int y;

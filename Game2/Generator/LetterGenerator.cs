@@ -9,35 +9,35 @@ namespace Sprint2
     public static class LetterGenerator
     {
         private static Texture2D letterTexture = Texture2DStorage.GetLetterSpriteSheet();
-        private static int width = 8;
-        private static int height = 9;
+        private static int width = 49;
+        private static int height = 49;
         private static Dictionary<char, Vector2> letterMap = new Dictionary<char, Vector2>(){
-            {'A', new Vector2 (185,24) }, {'B', new Vector2 (201,24)},
-            { 'C',new Vector2 (217,24)},
-            { 'D',new Vector2 (233,24)},
-            { 'E',new Vector2 (249,24)},
-            { 'F',new Vector2 (265,24)},
-            { 'G',new Vector2 (25,40)},
-            { 'H',new Vector2 (41,40)},
-            { 'I',new Vector2 (60,40)},
-            { 'J',new Vector2 (73,40)},
-            { 'K',new Vector2 (89,40)},
-            { 'L',new Vector2 (105,40)},
-            { 'M',new Vector2 (120,40)},
-            { 'N',new Vector2 (137,40)},
-            { 'O',new Vector2 (153,40)},
-            { 'P',new Vector2 (169,40)},
-            { 'Q',new Vector2 (185,40)},
-            { 'R',new Vector2 (201,40)},
-            { 'S',new Vector2 (217,40)},
-            { 'T',new Vector2 (232,40)},
-            { 'U',new Vector2 (249,40)},
-            { 'V',new Vector2 (264,40)},
-            { 'W',new Vector2 (24,56)},
-            { 'X',new Vector2 (40,56)},
-            { 'Y',new Vector2 (57,56)},
-            { 'Z',new Vector2 (73,56)},
-             { ' ',new Vector2 (280,24)}
+            {'A', new Vector2 (1171,27) }, {'B', new Vector2 (1283,27)},
+            { 'C',new Vector2 (1395,27)},
+            { 'D',new Vector2 (1507,27)},
+            { 'E',new Vector2 (1619,27)},
+            { 'F',new Vector2 (1731,27)},
+            { 'G',new Vector2 (51,139)},
+            { 'H',new Vector2 (163,139)},
+            { 'I',new Vector2 (289,139)},
+            { 'J',new Vector2 (387,139)},
+            { 'K',new Vector2 (499,139)},
+            { 'L',new Vector2 (618,139)},
+            { 'M',new Vector2 (723,139)},
+            { 'N',new Vector2 (835,139)},
+            { 'O',new Vector2 (947,139)},
+            { 'P',new Vector2 (1059,139)},
+            { 'Q',new Vector2 (1171,139)},
+            { 'R',new Vector2 (1283,139)},
+            { 'S',new Vector2 (1395,139)},
+            { 'T',new Vector2 (1514,139)},
+            { 'U',new Vector2 (1619,139)},
+            { 'V',new Vector2 (1731,139)},
+            { 'W',new Vector2 (51,251)},
+            { 'X',new Vector2 (163,251)},
+            { 'Y',new Vector2 (282,251)},
+            { 'Z',new Vector2 (387,251)},
+             { ' ',new Vector2 (1395,251)}
 
             };
        

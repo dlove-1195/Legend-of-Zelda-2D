@@ -28,3 +28,4 @@ Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Siz
 "C:/Users/zz/Desktop/new/CSE-3902/Game2/Content/winLogo.png","C:/Users/zz/Desktop/new/CSE-3902/Game2/Content/bin/Windows/winLogo.xnb","TextureProcessor","Texture2DContent",61179,1988405,0.2453428
 "C:/Users/zz/Desktop/new/CSE-3902/Game2/Content/woodenboomerang.png","C:/Users/zz/Desktop/new/CSE-3902/Game2/Content/bin/Windows/woodenboomerang.xnb","TextureProcessor","Texture2DContent",1211,10965,0.0249346
 "C:/Users/zz/Desktop/new/CSE-3902/Game2/Content/Zelda_story.png","C:/Users/zz/Desktop/new/CSE-3902/Game2/Content/bin/Windows/Zelda_story.xnb","TextureProcessor","Texture2DContent",4978,245845,0.0349075
+"D:/3902/CSE-3902/Game2/Content/font.png","D:/3902/CSE-3902/Game2/Content/bin/Windows/font.xnb","TextureProcessor","Texture2DContent",14505,2756173,0.3720737

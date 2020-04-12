@@ -92,7 +92,7 @@ namespace Sprint2
 
 			numberSpriteSheet = content.Load<Texture2D>("item-Inventory");
 
-			letterSpriteSheet = content.Load<Texture2D>("Text");
+			letterSpriteSheet = content.Load<Texture2D>("font");
 			cloud = content.Load<Texture2D>("enemyCloud");
 			upMap = content.Load<Texture2D>("mapInventory");
 			downMap = content.Load<Texture2D>("mapBar");
