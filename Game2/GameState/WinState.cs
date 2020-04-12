@@ -11,7 +11,7 @@ namespace Sprint2
         //private Texture2D ButtonTexture = Texture2DStorage.GetButtonSpriteSheet();
         private Texture2D WinTriTexture = Texture2DStorage.GetTriForceSpriteSheet();
         private Texture2D BackgroundTexture = Texture2DStorage.GetBlackBackgroundSpriteSheet();
-        private string sentence1 = "PRESS S TO RESTART GAME";
+        private string sentence1 = "PRESS R TO RESTART GAME";
         private string sentence2 = "PRESS ESCAPE TO QUIT GAME";
         private string win = "YOU WIN";
 
