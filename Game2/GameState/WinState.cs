@@ -25,7 +25,7 @@ namespace Sprint2
         private IController winStateController;
         public WinState(Game1 game)
         {
-            
+            Sound.PlayWin();
             winStateController = new WinStateController(game);
             myGame = game;
         }

@@ -17,6 +17,8 @@ namespace Sprint2
 		private static ContentManager contentManager;
 		private static SoundEffect linkDemage;
 		private static SoundEffect itemCollision;
+		private static Song lose;
+		private static Song win;
 
 		public static void LoadBGM(ContentManager content)
 		{
@@ -25,6 +27,9 @@ namespace Sprint2
 			room = contentManager.Load<Song>("room");
 			linkDemage = contentManager.Load<SoundEffect>("collision");
 			itemCollision = contentManager.Load<SoundEffect>("itemCollision");
+			lose = contentManager.Load<Song>("lose");
+			win = contentManager.Load<Song>("win");
+
 			
 
 		}
@@ -34,10 +39,20 @@ namespace Sprint2
 			MediaPlayer.Play(mainBgm);
 			MediaPlayer.MediaStateChanged += MediaPlayer_MediaStateChangedMainBGM;
 		}
+		public static void PlayLoseSong()
+		{
+			MediaPlayer.Play(lose);
+			MediaPlayer.MediaStateChanged += MediaPlayer_MediaStateLose;
+		}
 		public static void PlayRoom()
 		{
 			MediaPlayer.Play(room);
 			MediaPlayer.MediaStateChanged += MediaPlayer_MediaStateChangedRoom;
+		}
+		public static void PlayWin()
+		{
+			MediaPlayer.Play(win);
+			MediaPlayer.MediaStateChanged += MediaPlayer_MediaStateWin;
 		}
 		public static void PlayLinkDemage()
 		{
@@ -57,6 +72,16 @@ namespace Sprint2
 										   EventArgs e)
 		{
 			MediaPlayer.Play(room);
+		}
+		static void MediaPlayer_MediaStateLose(object sender, System.
+										   EventArgs e)
+		{
+			MediaPlayer.Play(lose);
+		}
+		static void MediaPlayer_MediaStateWin(object sender, System.
+										   EventArgs e)
+		{
+			MediaPlayer.Play(win);
 		}
 
 	}

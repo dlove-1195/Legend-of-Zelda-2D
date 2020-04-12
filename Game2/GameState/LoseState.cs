@@ -21,6 +21,7 @@ namespace Sprint2
         public LoseState(Game1 game) {
           
             loseStateController = new LoseStateController(game);
+            Sound.PlayLoseSong();
            
 
         }
