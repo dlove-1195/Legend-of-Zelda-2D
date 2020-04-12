@@ -13,6 +13,7 @@ namespace Sprint2
     {
          Rectangle boundingBox { get; set; }
           Rectangle simpleAttackBox { get; set; }
+        IPlayerstate state { get; set; }
         void ChangeToRight();
         void ChangeToLeft();
         void ChangeToUp();
