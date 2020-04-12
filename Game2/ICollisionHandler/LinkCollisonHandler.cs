@@ -200,6 +200,15 @@ namespace Sprint2
             }
             else
             {
+               if (direction == "Left")
+                {
+                    direction = "Right";
+                    
+                }
+                else if(direction=="Right")
+                {
+                    direction = "Left";
+                }
                 remainPosition(direction);
             }
 
