@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework;
 
 namespace Sprint2
     {
-        class staticCandle : IItem
+       public class staticCandle : IItem
         {
             public int Count { get; set; } = 0;
             public int TotalCount { get; set; } = 100;
@@ -17,11 +17,13 @@ namespace Sprint2
             private int width = 8;
             private int height = 16;
             public Rectangle BoundingBox { get; set; }
-            //Sprite Object
-            public ISprite Sprite;
+        //Sprite Object
+#pragma warning disable CA1051 // Do not declare visible instance fields
+        public ISprite Sprite;
+#pragma warning restore CA1051 // Do not declare visible instance fields
 
-            //initial position in the center
-            public int PosX { get; set; }
+        //initial position in the center
+        public int PosX { get; set; }
             public int PosY { get; set; }
 
             public staticCandle(Vector2 vector)
@@ -46,7 +48,7 @@ namespace Sprint2
             {
                 return p;
             }
-            public void changeState()
+            public static void changeState()
             {
                 //do nothing
             }
@@ -55,18 +57,18 @@ namespace Sprint2
             {
                 //do nothing
             }
-            public void PreItem(Game1 myGame)
-            {
+      //      public void PreItem(Game1 myGame)
+        //    {
 
                  
 
-            }
-            public void NextItem(Game1 myGame)
-            {
+          //  }
+        //    public void NextItem(Game1 myGame)
+          //  {
 
                 
 
-            }
+          //  }
         }
     }
  

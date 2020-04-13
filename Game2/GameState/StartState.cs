@@ -21,8 +21,8 @@ namespace Sprint2 {
         public IInventory inventoryBar { get; set; }
         private IController startStateController;
         public StartState(Game1 game)
-        {   
-            
+        {
+            Sound.PlayMainSong();
             startStateController = new StartStateController(game);
             
             
@@ -49,12 +49,13 @@ namespace Sprint2 {
         }
         public void Draw(SpriteBatch spriteBatch)
         {
-            
+
             //story
-            Rectangle sourceStoryRectangle = new Rectangle(0, 0, 256, 240);
             Rectangle destinationStoryRectangle = new Rectangle((int)storyLocation.X, (int)storyLocation.Y, 800,600);
-            spriteBatch.Draw(StoryTexture, destinationStoryRectangle, sourceStoryRectangle, Color.White);
-            //logo
+#pragma warning disable CA1062 // Validate arguments of public methods
+            spriteBatch.Draw(StoryTexture, destinationStoryRectangle, new Rectangle(0, 0, 256, 240), Color.White);
+#pragma warning restore CA1062 // Validate arguments of public methods
+                              //logo
             Rectangle sourceLogoRectangle = new Rectangle(50, 22, 1092, 1130);
             Rectangle destinationLogoRectangle = new Rectangle(300, 50, 200, 150);
             spriteBatch.Draw(LogoTexture, destinationLogoRectangle, sourceLogoRectangle, Color.White);

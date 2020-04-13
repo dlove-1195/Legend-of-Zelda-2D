@@ -45,7 +45,9 @@ namespace Sprint2
 
         public void Draw(SpriteBatch spriteBatch)
         {
+#pragma warning disable CA1307 // Specify StringComparison
             if (Direction.Equals("Up"))
+#pragma warning restore CA1307 // Specify StringComparison
             {
                 sourceLocX = 1217;
                 sourceLocY = 459;
@@ -58,7 +60,9 @@ namespace Sprint2
                 BoundingBox = new Rectangle(  PosX, PosY - 5,  desWidth,  desHeight + 5);
 
             }
+#pragma warning disable CA1307 // Specify StringComparison
             else if (Direction.Equals("Down"))
+#pragma warning restore CA1307 // Specify StringComparison
             {
                 sourceLocX = 1398;
                 sourceLocY = 451;
@@ -70,7 +74,9 @@ namespace Sprint2
                 desHeight = 63;
                 BoundingBox = new Rectangle(PosX, PosY, desWidth, desHeight + 5);
             }
+#pragma warning disable CA1307 // Specify StringComparison
             else if (Direction.Equals("Left"))
+#pragma warning restore CA1307 // Specify StringComparison
             {
                 sourceLocX = 1692;
                 sourceLocY = 396;
@@ -82,7 +88,9 @@ namespace Sprint2
                 desHeight = 105;
                  BoundingBox = new Rectangle(  PosX-5, PosY ,  desWidth+5,  desHeight  );
             }
+#pragma warning disable CA1307 // Specify StringComparison
             else if (Direction.Equals("Right"))
+#pragma warning restore CA1307 // Specify StringComparison
             {
                 sourceLocX = 1573;
                 sourceLocY = 396;
@@ -96,7 +104,9 @@ namespace Sprint2
             }
             Rectangle sourceRectangle = new Rectangle(sourceLocX, sourceLocY, width, height);
             Rectangle destinationRectangle = new Rectangle( PosX, PosY, desWidth, desHeight);
+#pragma warning disable CA1062 // Validate arguments of public methods
             spriteBatch.Draw(texture, destinationRectangle, sourceRectangle, Color.White);
+#pragma warning restore CA1062 // Validate arguments of public methods
         }
 
         //method needed for non static item

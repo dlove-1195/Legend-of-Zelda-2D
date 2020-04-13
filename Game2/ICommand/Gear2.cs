@@ -10,7 +10,9 @@ namespace Sprint2
         public Gear2(PlayState play )
         {
             this.play = play;
+#pragma warning disable CA1062 // Validate arguments of public methods
             this.inventory = play.inventoryBar;
+#pragma warning restore CA1062 // Validate arguments of public methods
             itemNum =getItemNum(play.inventoryBar.itemSelect);
         }
         public void Execute()
@@ -59,7 +61,7 @@ namespace Sprint2
                 case "bomb":
                     i = 2; 
                     break;
-                case "arrow":
+                case "bow":
                     i = 0;
                     break;
                 case "candle":

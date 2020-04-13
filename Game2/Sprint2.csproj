@@ -323,6 +323,9 @@
     <Content Include="IRoom\XML\room9.xml" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="app.manifest" />
     <None Include="Content\bin\Windows\bow.xnb" />
     <None Include="Content\bin\Windows\candle.xnb" />

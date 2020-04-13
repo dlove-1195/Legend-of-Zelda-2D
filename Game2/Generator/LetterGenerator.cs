@@ -47,11 +47,15 @@ namespace Sprint2
         public static void drawSentence(SpriteBatch spriteBatch,String sentence, Vector2 startLoc, Vector2 fontSize)
         {
             int i = 0;
+#pragma warning disable CA1062 // Validate arguments of public methods
             foreach (char c in sentence)
+#pragma warning restore CA1062 // Validate arguments of public methods
             { 
                 Rectangle sourceRectangle = new Rectangle((int)letterMap[c].X, (int)letterMap[c].Y,width, height ); 
-                Rectangle destinationRectangle = new Rectangle((int)(startLoc.X+fontSize.X*i), (int)startLoc.Y , (int)fontSize.X, (int)fontSize.Y); 
+                Rectangle destinationRectangle = new Rectangle((int)(startLoc.X+fontSize.X*i), (int)startLoc.Y , (int)fontSize.X, (int)fontSize.Y);
+#pragma warning disable CA1062 // Validate arguments of public methods
                 spriteBatch.Draw(letterTexture, destinationRectangle, sourceRectangle, Color.White);
+#pragma warning restore CA1062 // Validate arguments of public methods
                 i++;
             }
 

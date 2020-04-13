@@ -21,9 +21,11 @@ namespace Sprint2
         public static int posY ;
         public static int posX ;
         public static Boolean ifDamage = false;
-      
-        public static int damageTimer = 0; 
-       
+
+#pragma warning disable CA2211 // Non-constant fields should not be visible
+        public static int damageTimer = 0;
+#pragma warning restore CA2211 // Non-constant fields should not be visible
+
         //----for detection class --- start
         private int linkWidth = 14 ;
         private int linkHeight = 14;

@@ -14,20 +14,24 @@ namespace Sprint2
         
         public InventoryScreenController(Game1 game )
         {
+#pragma warning disable CA1062 // Validate arguments of public methods
             this.inventory = game.playState.inventoryBar;
-                 
+#pragma warning restore CA1062 // Validate arguments of public methods
+
             myGame = game;
-            map = new Dictionary<Keys, ICommand>();
-            map.Add(Keys.Escape, new QuitCommand(myGame));
-            map.Add(Keys.R, new SwitchToPlayCommand(myGame));
-           
-            map.Add(Keys.Up, new UpLineCommand(inventory));
-            map.Add(Keys.Down, new DownLineCommand(inventory));
-            map.Add(Keys.Right, new NextItemCommand(inventory));
-            map.Add(Keys.Left, new PreviousItemCommand(inventory));
-            map.Add(Keys.Enter, new SelectInListCommand(inventory)); 
-             
-          
+            map = new Dictionary<Keys, ICommand>
+            {
+                { Keys.Escape, new QuitCommand(myGame) },
+                { Keys.R, new SwitchToPlayCommand(myGame) },
+
+                { Keys.Up, new UpLineCommand(inventory) },
+                { Keys.Down, new DownLineCommand(inventory) },
+                { Keys.Right, new NextItemCommand(inventory) },
+                { Keys.Left, new PreviousItemCommand(inventory) },
+                { Keys.Enter, new SelectInListCommand(inventory) }
+            };
+
+
 
         }
 
@@ -37,10 +41,14 @@ namespace Sprint2
             
             newState = Keyboard.GetState();
             Keys[] newPressedKeys = newState.GetPressedKeys();
+#pragma warning disable IDE0059 // Unnecessary assignment of a value
             Keys[] oldPressedKeys = { };
+#pragma warning restore IDE0059 // Unnecessary assignment of a value
             if (oldState != null)
             {
+#pragma warning disable IDE0059 // Unnecessary assignment of a value
                 oldPressedKeys = oldState.GetPressedKeys();
+#pragma warning restore IDE0059 // Unnecessary assignment of a value
             }
             if (newState != oldState)
             {

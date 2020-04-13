@@ -16,8 +16,10 @@ namespace Sprint2
         private String direction;
         public int currentRoomNum { get; set; }
 
+#pragma warning disable CA2227 // Collection properties should be read only
         public List<IRoom> existingRooms { get; set; } = new List<IRoom>();
-        //new add
+#pragma warning restore CA2227 // Collection properties should be read only
+                              //new add
         private bool visit = false;
         private bool undergoundSwitch = false;
         private int index = 0;

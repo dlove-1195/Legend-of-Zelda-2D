@@ -7,14 +7,22 @@ namespace Sprint2
 {
     public class GreenDragon : IEnemy
     {
+#pragma warning disable CA1051 // Do not declare visible instance fields
         public IEnemyState state;
+#pragma warning restore CA1051 // Do not declare visible instance fields
+#pragma warning disable CA1051 // Do not declare visible instance fields
         public ISprite GreenDragonSprite;
-         
+#pragma warning restore CA1051 // Do not declare visible instance fields
+
         public bool damage { get; set; } = false;
         private int updateDelay = 0;
         private int totalDelay = 100;
+#pragma warning disable CA1051 // Do not declare visible instance fields
         public IItem fire;
+#pragma warning restore CA1051 // Do not declare visible instance fields
+#pragma warning disable CA2211 // Non-constant fields should not be visible
         public static Boolean hasFire = false;
+#pragma warning restore CA2211 // Non-constant fields should not be visible
         private int fireTimer = 0;
         private int damageTimer = 0;
         
@@ -131,7 +139,9 @@ namespace Sprint2
                         break;
 
                     default:
+#pragma warning disable CA1303 // Do not pass literals as localized parameters
                         Console.WriteLine("error: no such situation");
+#pragma warning restore CA1303 // Do not pass literals as localized parameters
                         break;
                 }
                 

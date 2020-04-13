@@ -1,48 +1,52 @@
-# CSE-3902 Zelda Game Sprint 3
-### How to play
+# CSE-3902 Zelda Game Sprint 4
+## Current future
 
-* Game's window size is (800,600) pixels
-* See all enemies, npcs, and items in the first room
-* Touch items to pick up
-* Avoid enemies to avoid damage
-* Press "1" to blow up enemies with bomb
-* Press "2" to shoot a sword
-* Press "3" to shoot a bow
-* Press "4" to throw a boomerang
-* Press "5" to use a candle, which does nothing right now
-* Press "Z" or "N" to swing a sword, you cannot swing a sword when getting damage
-* Press "Q" to exit game 
-* Walk to room 13 or room 15 to find stairs, go on stairs and enter next level
+#### There are five Game States includs Start State, Play State, Pause State, Lose State and Win State. The state will be alternated among all five based on Link's behavior. In the Play State, Link has initial 12 blood drops once the game is began. Each room has been designed differenly with various enemies which cause Link to drop his blood variously. Link's position is shown on both the inventory bar and the inventory room through the game. And the whole map and TriForce Piece's location will appear only by picking up the corrsponding item. Link can pick up items where each of them has its unique functionality as listed below: 
+* Heart: Link gains one drop of blood. Link can only pick up "Heart" when his blood is less than 12
+* Key: Link can use it to open the door
+* Clock: freeze all moving objects in all the rooms
+* Map: Show the level map both on the game bar and inventory screen
+* Compass: Show the location of TriForce Pieces on the map only when item Map is collected
+* Yellow Diamond: Dead enemy will turn into a diamond for Link to collect. Link can use it as money
+* Weapon: Boomerang, Bow, and Candle can be purchased in Merchandise room with corrsponding price which is the number of yellow Diamonds. There is no need to purchase a bow, it can be picked up in any room.
 
-this is a test
 
-### Implementation
+## How to play
 
-* Added camera for room switching in map
-* Added collision detection
-* Added xmls for rooms
+#### Start State
+* Press "S" to start a game, switch to the Play State
+* Press "Esc" to quit the game
+#### Play State
+* All enemies and items appear in the first room. Link can pick up items by touching them. To unlock the door, he has to pick up the key first. At the same time, Link needs to avoid enemies to avoid damage or attack enemies to destory them. Link needs to collect three triforce piece in order to switch to the win state.
+* Press "1" to use the wooden sword as the defalut weapon
+* Press "I" to switch to Inventory room and "R" to switch back
+* In the Inventory room, the weapons that being purchased will appear in the rectangle box on the top. Use "Up Arrow", "Down Arrow", "Left Arrow", or "Right Arrow" to traverse the weapons. Press "Enter" to select the weapon. Link can only select one per time, the selected weapon will appear in "item B" box. 
+* Press "R" to switch back to Play room from Inventory room, press "2" to use the selected weapon from Inventory room
+* Press "Q" to switch back to the Start State
+* Press "P" to pause the game from Play State
+* Switch to Win State once Link collects three TriForce Pieces
+* Switch to Lose State once Link drop all his blood
+* Press "Esc" to quit the game
 
-### BUGS
+#### Pause State
+* Press "R" to switch back from Pause State to Play State 
+* Press "Esc" to quit the game
 
-#### Game play:  
+#### Win State
+* Press "R" to restart a game
+* Press "Esc" to quit the game 
+#### Lose State
+* Press "R" to restart a game
+* Press "Esc" to quit the game
 
-currently empty itemstate interface  
-
-rooms always refresh to initial state when entering  
-
-partial funtionalities  
+ 
+#### Future Improvement and Implantation:
+* Triforce pieces are being placed in room 1&17 (they are connected) so that you can switch to win state easily. They will be placed in the room 14,15,16 later
+* Link attack in damaged mode
+* Door detection need to be revised (Link may be pushed by the enemies to another room near the wall)
+* Fairy functionality need to be added
+* WallMaster comes out from the wall and take Link to the beginning of the level
+* Add more items and enemies
+* Redesign rooms to complete the game
 
 #### Unresolved warnings:  
-
-Warning CA1303: Do not pass literals as localized parameters. These warnings happen when we use strings as parameter without defined or localized before.   
-
-Warning CA1051: Do not declare visible instance fields. These warnings happen when we use public identifier instead of using private. Some of them were modified, others were suppressed in the file or in the source because these fields need to be accessed by other codes.  
-
-Warning CA2211: Non-constant fields should not be visible.  
-
-Warning CA2227: Collection properties should be read only  
-
-Message IDE0044: Add readonly modifier. These three warnings are safe to be added to suppression file   
-
-Message IDE0059: Unnecessary assignment of a value. The system said the it is unnecessary for some assignments. But the variables were used in the afterward code. They need to be investigated further.  
-
