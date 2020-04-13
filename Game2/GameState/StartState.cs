@@ -12,7 +12,7 @@ namespace Sprint2 {
         //private Texture2D LinkTexture = Texture2DStorage.GetLinkSpriteSheet();
         
         private Texture2D LogoTexture = Texture2DStorage.GetLogoSpriteSheet();
-        private Texture2D ButtonTexture = Texture2DStorage.GetButtonSpriteSheet();
+        //private Texture2D ButtonTexture = Texture2DStorage.GetButtonSpriteSheet();
         private Texture2D StoryTexture = Texture2DStorage.GetZeldaStorySpriteSheet();
         private int timer = 0;
         private Vector2 storyLocation = new Vector2(0, 600);

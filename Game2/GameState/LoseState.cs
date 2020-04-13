@@ -12,7 +12,7 @@ namespace Sprint2
 
     {
        
-        private Texture2D LoseTexture = Texture2DStorage.GetLoseSpriteSheet();
+        //private Texture2D LoseTexture = Texture2DStorage.GetLoseSpriteSheet();
         //private Texture2D cursor = Texture2DStorage.GetItemSpriteSheet();
         private IController loseStateController;
        
