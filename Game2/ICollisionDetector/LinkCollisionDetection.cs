@@ -231,21 +231,21 @@ namespace Sprint2
                 {
                     if (Link.posX > roomRightCornerPosX && (Link.posY < 900 * 0.45 || Link.posY > 900 * (0.45 + 0.1)))
                     {
-                        linkHandler.remainPosition("Right");
+                        linkHandler.stayPosition("Right");
                     }
                 }
                 else
                 {
                     if (Link.posX > roomRightCornerPosX)
                     {
-                        linkHandler.remainPosition("Right");
+                        linkHandler.stayPosition("Right");
                     }
                 }
                 if (DoorDirection.Contains("Left"))
                 {
                     if (Link.posX < roomLeftCornerPosX && (Link.posY < 900 * 0.45 || Link.posY > 900 * (0.45 + 0.1)))
                     {
-                        linkHandler.remainPosition("Left");
+                        linkHandler.stayPosition("Left");
                     }
                 }
                 else
@@ -253,35 +253,35 @@ namespace Sprint2
                     if (Link.posX < roomLeftCornerPosX)
                     {
 
-                        linkHandler.remainPosition("Left");
+                        linkHandler.stayPosition("Left");
                     }
                 }
                 if (DoorDirection.Contains("Down"))
                 {
                     if (Link.posY > roomRightCornerPosY && (Link.posX < Game1.WindowWidth * 0.465 || Link.posX > Game1.WindowWidth * (0.465 + 0.07)))
                     {
-                        linkHandler.remainPosition("Down");
+                        linkHandler.stayPosition("Down");
                     }
                 }
                 else
                 {
                     if (Link.posY > roomRightCornerPosY)
                     {
-                        linkHandler.remainPosition("Down");
+                        linkHandler.stayPosition("Down");
                     }
                 }
                 if (DoorDirection.Contains("Up"))
                 {
                     if (Link.posY < roomLeftCornerPosY && (Link.posX < Game1.WindowWidth * 0.465 || Link.posX > Game1.WindowWidth * (0.465 + 0.07)))
                     {
-                        linkHandler.remainPosition("Up");
+                        linkHandler.stayPosition("Up");
                     }
                 }
                 else
                 {
                     if (Link.posY < roomLeftCornerPosY)
                     {
-                        linkHandler.remainPosition("Up");
+                        linkHandler.stayPosition("Up");
                     }
                 }
             
