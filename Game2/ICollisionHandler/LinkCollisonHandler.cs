@@ -209,12 +209,12 @@ namespace Sprint2
                 {
                     direction = "Left";
                 }
-                stayPosition(direction);
+                StayPosition(direction);
             }
 
         }
 
-        public void stayPosition(string direction)
+        public void StayPosition(string direction)
         {
             
             switch(direction)

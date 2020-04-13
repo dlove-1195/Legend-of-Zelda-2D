@@ -26,7 +26,9 @@ namespace Sprint2
 
         // being initialized as empty 
         //"bomb","boomerang","bow","candle","candle"
+#pragma warning disable CA2227 // Collection properties should be read only
         public List<String> itemList { get; set; } = new List<String>();
+#pragma warning restore CA2227 // Collection properties should be read only
         public int currentIndex { get; set; } = 0;
         public string itemSelect { get; set; }
 

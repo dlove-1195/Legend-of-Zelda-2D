@@ -21,7 +21,6 @@ C:\Users\Yilai\CSE-3902\Game2\bin\Windows\x86\Debug\SharpDX.XInput.xml
 C:\Users\Yilai\CSE-3902\Game2\obj\x86\Debug\Sprint2.csproj.CopyComplete
 C:\Users\Yilai\CSE-3902\Game2\obj\x86\Debug\Game2.exe
 C:\Users\Yilai\CSE-3902\Game2\obj\x86\Debug\Game2.pdb
-C:\Users\Yilai\CSE-3902\Game2\obj\x86\Debug\Sprint2.csprojAssemblyReference.cache
 D:\3902n\CSE-3902\Game2\bin\Windows\x86\Debug\Game2.exe
 D:\3902n\CSE-3902\Game2\bin\Windows\x86\Debug\Game2.pdb
 D:\3902n\CSE-3902\Game2\bin\Windows\x86\Debug\Game2.exe.CodeAnalysisLog.xml

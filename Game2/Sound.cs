@@ -23,7 +23,9 @@ namespace Sprint2
 		public static void LoadBGM(ContentManager content)
 		{
 			contentManager = content;
+#pragma warning disable CA1062 // Validate arguments of public methods
 			mainBgm = contentManager.Load<Song>("bgm");
+#pragma warning restore CA1062 // Validate arguments of public methods
 			room = contentManager.Load<Song>("room");
 			linkDemage = contentManager.Load<SoundEffect>("collision");
 			itemCollision = contentManager.Load<SoundEffect>("itemCollision");

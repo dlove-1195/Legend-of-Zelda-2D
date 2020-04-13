@@ -54,25 +54,25 @@ namespace Sprint2
             blueDiamondSprite.Update();
         }
 
-        public void NextItem(Game1 myGame)
-        {
+     //   public void NextItem(Game1 myGame)
+       // {
 
 
           //  myGame.item = new Clock();
 
 
-        }
+     //   }
 
-        public void PreItem(Game1 myGame)
-        {
+     //   public void PreItem(Game1 myGame)
+     //   {
 
            // myGame.item = new TriforcePiece();
-        }
+     //   }
 
-        public static void changeState()
-        {
+     //   public static void changeState()
+     //   {
             //do nothing
-        }
+     //   }
 
         public void ChangeSprite(ISprite sprite)
         {

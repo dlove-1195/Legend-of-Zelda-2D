@@ -55,18 +55,18 @@ namespace Sprint2
             {
                 //do nothing
             }
-            public void PreItem(Game1 myGame)
-            {
+         //   public void PreItem(Game1 myGame)
+           // {
 
                  
 
-            }
-            public void NextItem(Game1 myGame)
-            {
+            //}
+         //   public void NextItem(Game1 myGame)
+           // {
 
                 
 
-            }
+          //  }
         }
     }
  

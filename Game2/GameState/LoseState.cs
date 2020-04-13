@@ -32,7 +32,9 @@ namespace Sprint2
         public void Draw(SpriteBatch spriteBatch) {
             Rectangle sourceRectangle = new Rectangle(23, 0, 600, 300);
             Rectangle destinationRectangle = new Rectangle(0, 200, 800, 400);
+#pragma warning disable CA1062 // Validate arguments of public methods
             spriteBatch.Draw(LoseTexture, destinationRectangle, sourceRectangle,Color.White);
+#pragma warning restore CA1062 // Validate arguments of public methods
         }
 
     }

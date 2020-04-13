@@ -65,7 +65,9 @@ namespace Sprint2
             //background
             Rectangle destinationBackRectangle1 = new Rectangle(-400 + change, (int)triLoc.Y, 400, 1000);
             Rectangle destinationBackRectangle2 = new Rectangle(800 - change, (int)triLoc.Y, 400, 1000);
+#pragma warning disable CA1062 // Validate arguments of public methods
             spriteBatch.Draw(BackgroundTexture, destinationBackRectangle1, Color.Black);
+#pragma warning restore CA1062 // Validate arguments of public methods
             spriteBatch.Draw(BackgroundTexture, destinationBackRectangle2, Color.Black);
 
 

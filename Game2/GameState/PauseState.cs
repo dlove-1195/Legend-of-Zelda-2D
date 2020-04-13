@@ -5,11 +5,13 @@ using Microsoft.Xna.Framework.Graphics;
 namespace Sprint2
 {
 
+#pragma warning disable CA1001 // Types that own disposable fields should be disposable
     public class PauseState : IGameState
+#pragma warning restore CA1001 // Types that own disposable fields should be disposable
     {
      
-        private Texture2D ButtonTexture = Texture2DStorage.GetButtonSpriteSheet();
-        private Vector2 buttonLocation = new Vector2(300, 250);
+      //  private Texture2D ButtonTexture = Texture2DStorage.GetButtonSpriteSheet();
+      //  private Vector2 buttonLocation = new Vector2(300, 250);
         private string sentence1 = "PAUSED";
         private string sentence2 = "PRESS R TO RESUME THE GAME";
         private Vector2 sentence1Location = new Vector2(330, 390);
@@ -32,7 +34,9 @@ namespace Sprint2
         public void Draw(SpriteBatch spriteBatch)
         {
             // draw black rectangle
+#pragma warning disable CA1062 // Validate arguments of public methods
             whiteRectangle = new Texture2D(spriteBatch.GraphicsDevice, 1, 1);
+#pragma warning restore CA1062 // Validate arguments of public methods
             whiteRectangle.SetData(new[] { Color.White });
             spriteBatch.Draw(whiteRectangle, new Rectangle(100, 350, 600, 150),
             Color.Black);

@@ -44,7 +44,9 @@ namespace Sprint2
             {
                 Rectangle sourceRectangle = new Rectangle((int)numMap[num].X, (int)numMap[num].Y, (int)numSize.X, (int)numSize.Y);
                 Rectangle destinationRectangle = new Rectangle((int)drawLoc.X, (int)drawLoc.Y+y, (int)drawSize.X, (int)drawSize.Y);
+#pragma warning disable CA1062 // Validate arguments of public methods
                 spriteBatch.Draw(numberTexture, destinationRectangle, sourceRectangle, Color.White);
+#pragma warning restore CA1062 // Validate arguments of public methods
             }
             else {
                 int num2 = num % 10;

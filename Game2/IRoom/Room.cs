@@ -36,15 +36,23 @@ namespace Sprint2
         public List<KeyValuePair<Vector2, Vector2>> stair { get; set; }
         public List<KeyValuePair<int, int>> blockLocation { get; set; }
         public List<string> doorDirection { get; set; } //store door direction Up, Down, Right, Left as string
+#pragma warning disable CA2227 // Collection properties should be read only
         public List<LockedDoor> lockedDoor { get; set; }
+#pragma warning restore CA2227 // Collection properties should be read only
+#pragma warning disable CA2227 // Collection properties should be read only
         public List<string> OpenedDoor { get; set; }
+#pragma warning restore CA2227 // Collection properties should be read only
 
         public List<Rectangle> boundingBox { get; set; }
 
         public Room()
         {
+#pragma warning disable IDE0059 // Unnecessary assignment of a value
             int windowWidth = Game1.WindowWidth;
+#pragma warning restore IDE0059 // Unnecessary assignment of a value
+#pragma warning disable IDE0059 // Unnecessary assignment of a value
             int windowHeight = Game1.WindowHeight;
+#pragma warning restore IDE0059 // Unnecessary assignment of a value
             enemies = new List<IEnemy>();
             pickUpItems = new List<IItem>();
             blockLocation = new List<KeyValuePair<int, int>>();
