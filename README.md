@@ -40,7 +40,7 @@
 * Press "Esc" to quit the game
 
  
-#### Future Improvement and Implantation:
+### Future Improvement and Implantation:
 * Triforce pieces are being placed in room 1&17 (they are connected) so that you can switch to win state easily. They will be placed in the room 14,15,16 later
 * Link attacks in damaged mode
 * Door detection need to be revised (Link may be pushed by the enemies to another room near the wall)
@@ -50,6 +50,6 @@
 * Redesign rooms to complete the game
 * Add mouse controller 
 
-#### Unresolved warnings:  
+### Unresolved warnings:  
 * CA1822 (Member StayPosition doesn't access instance data and can be marked as static at LinkCollisionHandler.cs)
 * CA1040 (empty interface at IitemState)
