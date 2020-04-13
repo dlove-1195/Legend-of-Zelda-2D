@@ -59,7 +59,7 @@ namespace Sprint2
                 case "bomb":
                     i = 2; 
                     break;
-                case "arrow":
+                case "bow":
                     i = 0;
                     break;
                 case "candle":
