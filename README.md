@@ -1,7 +1,7 @@
-# CSE-3902 Zelda Game Sprint 3
+# CSE-3902 Zelda Game Sprint 4
 ## Current future
 
-##### Link has initial blood of 12 lives once the game is began. The various enemies will cause Link to drop his blood differenly. Link can pick up many items where each of them has functionality.
+##### Link has initial 12 blood drops once the game is began. The various enemies cause Link to drop his blood differenly. Link can pick up items where each of them has functionality.
 * Heart: Link gains one drop of blood
 * Key: Link can use it to open the door
 * Clock: freeze all moving objects in all the rooms
@@ -21,6 +21,7 @@
 * After purchasing other weapon, press "I" to switch to Inventory room 
 * In the Inventory room, the weapons that being purchased will appear in the rectangle box on the top. Use "Up Arrow", "Down Arrow", "Left Arrow", or "Right Arrow" to traverse the weapon. Press "Enter" to select the weapon. Link can only select on per time, the selected item will appear in "item B" box. 
 * Press "R" to switch back to Play room from Inventory room, press "2" to use the selected weapon from Inventory room
+* Press "Q" to switch back to the Start State
 * Press "P" to pause the game from Play State
 * Switch to Win State once Link collects three TriForce Pieces
 * Switch to Lose State once Link drop all his blood
@@ -36,6 +37,8 @@
 
 #### Future Improvement and Implantation:
 * Link attack in damaged mode
+* Heart Container functionality need to be added
+* 
 * WallMaster comes out from the wall and take Link to the beginning of the level
 * Add more items and enemies
 * Redesign rooms to complete the game
