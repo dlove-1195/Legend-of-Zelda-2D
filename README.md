@@ -26,8 +26,12 @@
 * Press "P" to pause the game from Play State
 * Switch to Win State once Link collects three TriForce Pieces
 * Switch to Lose State once Link drop all his blood
+* Press "Esc" to quit the game
+
 #### Pause State
 * Press "R" to switch back from Pause State to Play State 
+* Press "Esc" to quit the game
+
 #### Win State
 * Press "R" to restart a game
 * Press "Esc" to quit the game 
