@@ -15,6 +15,7 @@
 
 #### Start State
 * Press "S" to start a game, switch to the Play State
+* Press "Esc" to quit the game
 #### Play State
 * All enemies, npcs, and items appear in the first room. Link can pick up items by touching them. To unlock the door, he has to pick up the key first. At the same time, Link need to avoid enemies to avoid damage or attack enemies to destory them
 * Press "1" to use the wooden sword as defalut weapon
