@@ -15,9 +15,9 @@ namespace Sprint2
         private string sentence2 = "PRESS ESCAPE TO QUIT";
         private string win = "YOU WIN";
 
-        private Vector2 winLocation = new Vector2(300,350);
-        private Vector2 sentence1Location = new Vector2(150, 390);
-        private Vector2 sentence2Location = new Vector2(150, 430);
+        private Vector2 winLocation = new Vector2(310,350);
+        private Vector2 sentence1Location = new Vector2(180, 390);
+        private Vector2 sentence2Location = new Vector2(180, 430);
         private Vector2 fontSize = new Vector2(20,20);
         private int width = 140;
         private int height = 70;
