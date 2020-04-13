@@ -41,7 +41,7 @@
 
  
 #### Future Improvement and Implantation:
-* Triforce pieces are being placed in room 1&17 (they are connected) so that you can switch to win state easily. They will be * placed in the room 14,15,16 later
+* Triforce pieces are being placed in room 1&17 (they are connected) so that you can switch to win state easily. They will be placed in the room 14,15,16 later
 * Link attack in damaged mode
 * Door detection need to be revised (Link may be pushed by the enemies to another room near the wall)
 * Fairy functionality need to be added
