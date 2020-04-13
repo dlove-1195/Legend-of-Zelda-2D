@@ -48,6 +48,7 @@
 * WallMaster comes out from the wall and take Link to the beginning of the level
 * Add more items and enemies
 * Redesign rooms to complete the game
+* Add mouse controller 
 
 #### Unresolved warnings:  
 * CA1822 (Member StayPosition doesn't access instance data and can be marked as static at LinkCollisionHandler.cs)
