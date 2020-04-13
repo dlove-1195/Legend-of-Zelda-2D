@@ -1,8 +1,8 @@
 # CSE-3902 Zelda Game Sprint 4
 ## Current future
 
-##### Link has initial 12 blood drops once the game is began. The various enemies cause Link to drop his blood differenly. Link can pick up items where each of them has functionality.
-* Heart: Link gains one drop of blood
+##### There are five Game States includs Start State, Play State, Pause State, Lose State and Win State. The state will be alternated among all five based on Link's behavior. In the Play State, Link has initial 12 blood drops once the game is began. Each room has been designed differenly with various enemies which cause Link to drop his blood variously. Link's position is shown on both the inventory bar and the inventory room through the game. And the whole map and TriForce Piece's location will appear only by picking up the corrsponding item. Link can pick up items where each of them has functionality.
+* Heart: Link gains one drop of blood. Link can only pick up "Heart" when his blood is less than 12
 * Key: Link can use it to open the door
 * Clock: freeze all moving objects in all the rooms
 * Map: Show the level map both on the game bar and inventory screen
@@ -37,8 +37,8 @@
 
 #### Future Improvement and Implantation:
 * Link attack in damaged mode
+* Door detection need to be revised (Link can be pushed to another room when he collides with enemies near the wall)
 * Heart Container functionality need to be added
-* 
 * WallMaster comes out from the wall and take Link to the beginning of the level
 * Add more items and enemies
 * Redesign rooms to complete the game
