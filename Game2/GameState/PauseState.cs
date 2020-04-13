@@ -7,9 +7,7 @@ namespace Sprint2
 
     public class PauseState : IGameState
     {
-        //private Texture2D LinkTexture = Texture2DStorage.GetLinkSpriteSheet();
-       // public string name { get; set; }
-       
+     
         private Texture2D ButtonTexture = Texture2DStorage.GetButtonSpriteSheet();
         private Vector2 buttonLocation = new Vector2(300, 250);
         private string sentence1 = "PAUSED";
