@@ -59,9 +59,7 @@ namespace Sprint2 {
             Rectangle destinationLogoRectangle = new Rectangle(300, 50, 200, 150);
             spriteBatch.Draw(LogoTexture, destinationLogoRectangle, sourceLogoRectangle, Color.White);
             //BUTTON 
-            Rectangle sourceButtonRectangle = new Rectangle(20,42, 90, 35);
-            Rectangle destinationButtonRectangle = new Rectangle((int)buttonLocation.X, (int)buttonLocation.Y, 200, 100);
-            spriteBatch.Draw(ButtonTexture, destinationButtonRectangle, sourceButtonRectangle, Color.White);
+            LetterGenerator.drawSentence(spriteBatch, "PRESS S TO START",new Vector2(250,200),new Vector2(18,18));
         }
     }
 }

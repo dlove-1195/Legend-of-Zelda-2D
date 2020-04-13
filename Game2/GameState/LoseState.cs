@@ -30,9 +30,9 @@ namespace Sprint2
          
         }
         public void Draw(SpriteBatch spriteBatch) {
-            Rectangle sourceRectangle = new Rectangle(23, 0, 600, 300);
-            Rectangle destinationRectangle = new Rectangle(0, 200, 800, 400);
-            spriteBatch.Draw(LoseTexture, destinationRectangle, sourceRectangle,Color.White);
+            LetterGenerator.drawSentence(spriteBatch, "YOU DIE", new Vector2(300, 200), new Vector2(25, 25));
+            LetterGenerator.drawSentence(spriteBatch, "PRESS R TO RESTART", new Vector2(250, 500), new Vector2(18, 18));
+            LetterGenerator.drawSentence(spriteBatch, "PRESS ESC TO QUIT", new Vector2(250, 550), new Vector2(18, 18));
         }
 
     }

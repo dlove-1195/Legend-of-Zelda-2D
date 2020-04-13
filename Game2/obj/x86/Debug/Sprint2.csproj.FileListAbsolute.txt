@@ -381,3 +381,27 @@ D:\3902\CSE-3902\Game2\obj\x86\Debug\Sprint2.csprojAssemblyReference.cache
 D:\3902\CSE-3902\Game2\obj\x86\Debug\Sprint2.csproj.CopyComplete
 D:\3902\CSE-3902\Game2\obj\x86\Debug\Game2.exe
 D:\3902\CSE-3902\Game2\obj\x86\Debug\Game2.pdb
+D:\osu 2020 sp\3902\hi\CSE-3902\Game2\bin\Windows\x86\Debug\Game2.exe
+D:\osu 2020 sp\3902\hi\CSE-3902\Game2\bin\Windows\x86\Debug\Game2.pdb
+D:\osu 2020 sp\3902\hi\CSE-3902\Game2\bin\Windows\x86\Debug\Game2.exe.CodeAnalysisLog.xml
+D:\osu 2020 sp\3902\hi\CSE-3902\Game2\bin\Windows\x86\Debug\Game2.exe.lastcodeanalysissucceeded
+D:\osu 2020 sp\3902\hi\CSE-3902\Game2\bin\Windows\x86\Debug\MonoGame.Framework.dll
+D:\osu 2020 sp\3902\hi\CSE-3902\Game2\bin\Windows\x86\Debug\SharpDX.MediaFoundation.dll
+D:\osu 2020 sp\3902\hi\CSE-3902\Game2\bin\Windows\x86\Debug\SharpDX.dll
+D:\osu 2020 sp\3902\hi\CSE-3902\Game2\bin\Windows\x86\Debug\SharpDX.XAudio2.dll
+D:\osu 2020 sp\3902\hi\CSE-3902\Game2\bin\Windows\x86\Debug\SharpDX.DXGI.dll
+D:\osu 2020 sp\3902\hi\CSE-3902\Game2\bin\Windows\x86\Debug\SharpDX.Direct3D11.dll
+D:\osu 2020 sp\3902\hi\CSE-3902\Game2\bin\Windows\x86\Debug\SharpDX.Direct2D1.dll
+D:\osu 2020 sp\3902\hi\CSE-3902\Game2\bin\Windows\x86\Debug\SharpDX.XInput.dll
+D:\osu 2020 sp\3902\hi\CSE-3902\Game2\bin\Windows\x86\Debug\MonoGame.Framework.xml
+D:\osu 2020 sp\3902\hi\CSE-3902\Game2\bin\Windows\x86\Debug\SharpDX.MediaFoundation.xml
+D:\osu 2020 sp\3902\hi\CSE-3902\Game2\bin\Windows\x86\Debug\SharpDX.xml
+D:\osu 2020 sp\3902\hi\CSE-3902\Game2\bin\Windows\x86\Debug\SharpDX.XAudio2.xml
+D:\osu 2020 sp\3902\hi\CSE-3902\Game2\bin\Windows\x86\Debug\SharpDX.DXGI.xml
+D:\osu 2020 sp\3902\hi\CSE-3902\Game2\bin\Windows\x86\Debug\SharpDX.Direct3D11.xml
+D:\osu 2020 sp\3902\hi\CSE-3902\Game2\bin\Windows\x86\Debug\SharpDX.Direct2D1.xml
+D:\osu 2020 sp\3902\hi\CSE-3902\Game2\bin\Windows\x86\Debug\SharpDX.XInput.xml
+D:\osu 2020 sp\3902\hi\CSE-3902\Game2\obj\x86\Debug\Sprint2.csprojAssemblyReference.cache
+D:\osu 2020 sp\3902\hi\CSE-3902\Game2\obj\x86\Debug\Sprint2.csproj.CopyComplete
+D:\osu 2020 sp\3902\hi\CSE-3902\Game2\obj\x86\Debug\Game2.exe
+D:\osu 2020 sp\3902\hi\CSE-3902\Game2\obj\x86\Debug\Game2.pdb
