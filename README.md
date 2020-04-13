@@ -1,15 +1,15 @@
 # CSE-3902 Zelda Game Sprint 3
 ## Current future
 
-### Game's window size is (800,800) pixels 
-### Link has initial blood of 12 lives once the game is began. The various enemies will cause Link to drop his blood differenly. Link can pick up many items where each of them has functionality.
-#### Heart: Link gains one drop of blood
-#### Key: Link can use it to open the door
-#### Clock: freeze all moving objects in all the rooms
-#### Map: Show the level map both on the game bar and inventory screen
-#### Compass: Show the location of TriForce Pieces on the map only item Map is collected
-#### Diamond: Dead enemy will turn into a diamond for Link to collect. Link can use it as money
-#### Weapon: Such as Bomb, Boomerang, Bow, and Candle. All can be purchased in Merchandise room with corrsponding price which is the number of Diamonds
+* Game's window size is (800,800) pixels 
+* Link has initial blood of 12 lives once the game is began. The various enemies will cause Link to drop his blood differenly. Link can pick up many items where each of them has functionality.
+** Heart: Link gains one drop of blood
+** Key: Link can use it to open the door
+** Clock: freeze all moving objects in all the rooms
+** Map: Show the level map both on the game bar and inventory screen
+** Compass: Show the location of TriForce Pieces on the map only item Map is collected
+**Diamond: Dead enemy will turn into a diamond for Link to collect. Link can use it as money
+**Weapon: Such as Bomb, Boomerang, Bow, and Candle. All can be purchased in Merchandise room with corrsponding price which is the number of Diamonds
 
 
 ## How to play
