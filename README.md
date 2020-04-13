@@ -1,7 +1,7 @@
 # CSE-3902 Zelda Game Sprint 4
 ## Current future
 
-### There are five Game States includs Start State, Play State, Pause State, Lose State and Win State. The state will be alternated among all five based on Link's behavior. In the Play State, Link has initial 12 blood drops once the game is began. Each room has been designed differenly with various enemies which cause Link to drop his blood variously. Link's position is shown on both the inventory bar and the inventory room through the game. And the whole map and TriForce Piece's location will appear only by picking up the corrsponding item. Link can pick up items where each of them has functionality.
+#### There are five Game States includs Start State, Play State, Pause State, Lose State and Win State. The state will be alternated among all five based on Link's behavior. In the Play State, Link has initial 12 blood drops once the game is began. Each room has been designed differenly with various enemies which cause Link to drop his blood variously. Link's position is shown on both the inventory bar and the inventory room through the game. And the whole map and TriForce Piece's location will appear only by picking up the corrsponding item. Link can pick up items where each of them has functionality.
 * Heart: Link gains one drop of blood. Link can only pick up "Heart" when his blood is less than 12
 * Key: Link can use it to open the door
 * Clock: freeze all moving objects in all the rooms
@@ -13,9 +13,9 @@
 
 ## How to play
 
-### Start State
+#### Start State
 * Press "S" to start a game, switch to the Play State
-### Play State
+#### Play State
 * All enemies, npcs, and items appear in the first room. Link can pick up items by touching them. To unlock the door, he has to pick up the key first. At the same time, Link need to avoid enemies to avoid damage or attack enemies to destory them
 * Press "1" to use the wooden sword as defalut weapon
 * After purchasing other weapon, press "I" to switch to Inventory room 
@@ -25,12 +25,12 @@
 * Press "P" to pause the game from Play State
 * Switch to Win State once Link collects three TriForce Pieces
 * Switch to Lose State once Link drop all his blood
-### Pause State
+#### Pause State
 * Press "R" to switch back from Pause State to Play State 
-### Win State
+#### Win State
 * Press "R" to restart a game
 * Press "Esc" to quit the game 
-### Lose State
+#### Lose State
 * Press "R" to restart a game
 * Press "Esc" to quit the game
 
