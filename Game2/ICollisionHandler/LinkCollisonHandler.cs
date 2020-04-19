@@ -73,7 +73,7 @@ namespace Sprint2
                  
             
         }
-            public void HandleLinkEnemyCollsion(string direction)
+            public void HandleLinkEnemyCollsion(string direction, int i)
         {
             Link.damageTimer = 0; 
             //link get damaged and being pushed to opposite direction
@@ -83,6 +83,10 @@ namespace Sprint2
                 inventory.heartNum--;
                 link.GetDamaged();
                 Link.ifDamage = true;
+                if(room.enemies[i] is GreenDragon || room.enemies[i] is Dragon)
+                {
+                    inventory.heartContainerNum--;
+                }
             } 
             switch (direction)
             {
@@ -251,7 +255,7 @@ namespace Sprint2
                 inventory.diamondNum++;
                 //max life 12
             }else if(room.pickUpItems[itemNum] is Heart)
-            {  if (inventory.heartNum <= 11)
+            {  if (inventory.heartNum < inventory.heartContainerNum)
                 {
                     inventory.heartNum++;
                 }

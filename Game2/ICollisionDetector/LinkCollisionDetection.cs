@@ -92,7 +92,7 @@ namespace Sprint2
                         String direction = detectCollisionDirection(overlapRec, linkRectangle, singleEnemyRec);
                         if (!Link.ifDamage)
                         {
-                            linkHandler.HandleLinkEnemyCollsion(direction);
+                            linkHandler.HandleLinkEnemyCollsion(direction, i);
                         }
 
                     }
