@@ -65,9 +65,20 @@ namespace Sprint2
             {
                 if (enemy[i] != null && enemy[i].blood <= 0 && enemy[i].sparkTimer >= 10)
                 {
-                    //diamond need to be yellow
-                    IItem diamond = new YellowDiamond(new Vector2(enemy[i].posX, enemy[i].posY));
-                    room.pickUpItems.Add(diamond);
+                    IItem enemyLeft;
+                    if (enemy[i] is GreenDragon)
+                    {
+                        enemyLeft = new Heart(new Vector2(enemy[i].posX, enemy[i].posY));
+                    }
+                    else if (enemy[i] is Dragon)
+                    {
+                        enemyLeft = new Key(new Vector2(enemy[i].posX, enemy[i].posY));
+                    }
+                    else
+                    {
+                        enemyLeft = new YellowDiamond(new Vector2(enemy[i].posX, enemy[i].posY));
+                    }
+                    room.pickUpItems.Add(enemyLeft);
                     room.setEnemyToNull(i);
                 }
                 if (enemy[i] != null)

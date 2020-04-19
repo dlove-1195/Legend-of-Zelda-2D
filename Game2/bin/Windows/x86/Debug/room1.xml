@@ -100,24 +100,21 @@
     <posX>75</posX>
     <posY>28</posY>
   </Item>
+  <!--
   <Item>
     <ObjectType>Item</ObjectType>
     <ObjectName>Fairy</ObjectName>
     <posX>57</posX>
     <posY>63</posY>
   </Item>
+  -->
   <Item>
     <ObjectType>Item</ObjectType>
     <ObjectName>Heart</ObjectName>
     <posX>75</posX>
     <posY>63</posY>
   </Item>
-  <Item>
-    <ObjectType>Item</ObjectType>
-    <ObjectName>HeartContainer</ObjectName>
-    <posX>48</posX>
-    <posY>49</posY>
-  </Item>
+
   <Item>
     <ObjectType>Item</ObjectType>
     <ObjectName>StaticBomb</ObjectName>

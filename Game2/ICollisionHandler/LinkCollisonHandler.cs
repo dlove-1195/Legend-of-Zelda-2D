@@ -74,12 +74,12 @@ namespace Sprint2
             
         }
             public void HandleLinkEnemyCollsion(string direction)
-        {
-            Sound.PlayLinkDemage();
+        { 
             Link.damageTimer = 0;
             //link get damaged and being pushed to opposite direction
             if (!Link.ifDamage && !(link.state is LinkWinningState))
             {
+                Sound.PlayLinkDemage();
                 inventory.heartNum--;
             }
             link.GetDamaged(); 
@@ -111,10 +111,10 @@ namespace Sprint2
         public void HandleLinkProjectileCollsion()
         {
             //link just damage
-            Link.damageTimer = 0;
-            Sound.PlayLinkDemage();
+            Link.damageTimer = 0; 
             if (!Link.ifDamage && !(link.state is LinkWinningState))
             {
+                Sound.PlayLinkDemage();
                 inventory.heartNum--;
             }
             link.GetDamaged();
@@ -179,12 +179,10 @@ namespace Sprint2
         }
 
         public void HandleLinkItemCollsion(int itemNum)
-        {
-            //item disappear 
-            Sound.PlayItemCollision();
-            
+        { 
             if (itemManager(itemNum))
             {
+                Sound.PlayItemCollision();
                 room.setItemToNull(itemNum);
             }
             

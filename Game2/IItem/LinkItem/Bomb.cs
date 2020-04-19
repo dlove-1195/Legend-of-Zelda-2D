@@ -58,7 +58,7 @@ namespace Sprint2
                 bombHeight = 21;
                 //state.ChangeToExplode();
                 state = new BombAppearExplodeState(this);
-                BoundingBox = new Rectangle(PosX, PosY, bombWidth * 3, bombHeight * 3);
+                BoundingBox = new Rectangle(PosX, PosY, bombWidth * 5, bombHeight * 5);
 
             }
            
