@@ -74,29 +74,30 @@ namespace Sprint2
             
         }
             public void HandleLinkEnemyCollsion(string direction)
-        { 
-            Link.damageTimer = 0;
+        {
+            Link.damageTimer = 0; 
             //link get damaged and being pushed to opposite direction
-            if (!Link.ifDamage && !(link.state is LinkWinningState))
+            if ( !(link.state is LinkWinningState))
             {
                 Sound.PlayLinkDemage();
                 inventory.heartNum--;
-            }
-            link.GetDamaged(); 
+                link.GetDamaged();
+                Link.ifDamage = true;
+            } 
             switch (direction)
             {
                 case "Left":
-                    Link.posX = Link.posX -3;
+                    Link.posX = Link.posX -30;
                     break;
                 case "Right":
-                    Link.posX= Link.posX + 3;
+                    Link.posX= Link.posX + 30;
                     break;
                 case "Up":
-                    Link.posY =Link.posY+3;
+                    Link.posY =Link.posY+30;
 
                     break;
                 case "Down":
-                    Link.posY = Link.posY - 3;
+                    Link.posY = Link.posY - 30;
                     break;
 
                 default:
@@ -112,12 +113,14 @@ namespace Sprint2
         {
             //link just damage
             Link.damageTimer = 0; 
-            if (!Link.ifDamage && !(link.state is LinkWinningState))
+            if ( !(link.state is LinkWinningState))
             {
                 Sound.PlayLinkDemage();
                 inventory.heartNum--;
+                link.GetDamaged();
+                Link.ifDamage = true;
             }
-            link.GetDamaged();
+          
            
         }
 

@@ -90,7 +90,10 @@ namespace Sprint2
                     {
                         //link damage and being pushed in opposite direction
                         String direction = detectCollisionDirection(overlapRec, linkRectangle, singleEnemyRec);
-                        linkHandler.HandleLinkEnemyCollsion(direction);
+                        if (!Link.ifDamage)
+                        {
+                            linkHandler.HandleLinkEnemyCollsion(direction);
+                        }
 
                     }
 
@@ -104,8 +107,10 @@ namespace Sprint2
                         if (!overlapRec.IsEmpty)
                         {
                             //link damage by projectile, will not be pushed
-
-                            linkHandler.HandleLinkProjectileCollsion();
+                            if ( !Link.ifDamage )
+                            {
+                                linkHandler.HandleLinkProjectileCollsion();
+                            }
 
                         }
 
