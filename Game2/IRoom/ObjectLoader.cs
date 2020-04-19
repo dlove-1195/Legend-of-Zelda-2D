@@ -110,10 +110,7 @@ namespace Sprint2
                 {
                     itemList.Add(new Heart(vector));
                 }
-                if (name == "HeartContainer")
-                {
-                    itemList.Add(new HeartContainer(vector));
-                }
+               
                 if (name == "Key")
                 {
                     itemList.Add(new Key(vector));

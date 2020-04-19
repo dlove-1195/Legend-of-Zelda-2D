@@ -12,6 +12,7 @@ namespace Sprint2
          bool showCompass { get; set; }  
 
         int heartNum { get; set; }
+        int heartContainerNum { get; set; }
         int diamondNum{ get; set; }
         int keyNum { get; set; }
         int bombNum { get; set; }

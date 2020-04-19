@@ -13,9 +13,11 @@ namespace Sprint2
         private Texture2D inventoryTexture = Texture2DStorage.GetNumberSpriteSheet();
         private Texture2D barMapTexture = Texture2DStorage.GetDownMapSpriteSheet();
         private Texture2D inventoryMapTexture = Texture2DStorage.GetUpMapSpriteSheet();
+        private Texture2D containerTexture = Texture2DStorage.GeHeartContainerSpriteSheet();
 
         private int diff = 0;
         public int heartNum { get; set; } = 12;
+        public int heartContainerNum { get; set; } = 12;
         public int diamondNum { get; set; } = 10;
         public int keyNum { get; set; } = 0;
         public int bombNum { get; set; } = 0;
@@ -309,6 +311,22 @@ namespace Sprint2
         //maximum 14 hearts
         private void DrawHeart(SpriteBatch spriteBatch)
         {
+            //heart container
+            for (int i = 0; i < heartContainerNum; i++)
+            {
+                Rectangle sourceRectangle1 = new Rectangle(0, 0, 320, 320);
+                if (i < 7)
+                {
+                    Rectangle destinationRectangle = new Rectangle((int)heartPos.X + i * 30-10, (int)heartPos.Y + y-10, 45, 45);
+                    spriteBatch.Draw(containerTexture, destinationRectangle, sourceRectangle1, Color.White);
+                }
+                else
+                {
+                    Rectangle destinationRectangle2 = new Rectangle((int)heartPos.X + (i - 7) * 30-10, (int)heartPos.Y + 32 + y-10, 45, 45);
+                    spriteBatch.Draw(containerTexture, destinationRectangle2, sourceRectangle1, Color.White);
+                }
+            }
+            //heart
             for (int i = 0; i < heartNum; i++)
             {
                 Rectangle sourceRectangle1 = new Rectangle(218, 20, 12, 12);
@@ -323,6 +341,8 @@ namespace Sprint2
                     spriteBatch.Draw(inventoryTexture, destinationRectangle2, sourceRectangle1, Color.White);
                 }
             }
+
+            
         }
 
         //width=height=19

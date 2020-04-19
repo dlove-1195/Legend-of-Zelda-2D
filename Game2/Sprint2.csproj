@@ -131,7 +131,6 @@
     <Compile Include="IItem\StaticItem\Compass.cs" />
     <Compile Include="IItem\StaticItem\Fairy.cs" />
     <Compile Include="IItem\StaticItem\Heart.cs" />
-    <Compile Include="IItem\StaticItem\HeartContainer.cs" />
     <Compile Include="IItem\StaticItem\Key.cs" />
     <Compile Include="IItem\StaticItem\LockedDoor.cs" />
     <Compile Include="IItem\StaticItem\Map.cs" />
