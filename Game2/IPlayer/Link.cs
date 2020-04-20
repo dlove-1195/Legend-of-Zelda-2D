@@ -10,9 +10,9 @@ namespace Sprint2
     {
         public IPlayerstate state { get; set; }
         public ISprite linkSprite;
+        public bool damage { get; set; } = false;
      
         public List<IItem> items = new List<IItem>();
-
         private int direction ;
          
         /* public int positionX { get; set; } = 200 ;
@@ -20,7 +20,7 @@ namespace Sprint2
           can be used in sprite class, change later -------- */
         public static int posY ;
         public static int posX ;
-        public static Boolean ifDamage = false;
+        public static Boolean ifDamage= false;
 
 #pragma warning disable CA2211 // Non-constant fields should not be visible
         public static int damageTimer = 0;
@@ -41,7 +41,6 @@ namespace Sprint2
          
             state = new LinkStandRightNonAttackNonDamageState(this);
             
-
 
 
         }
@@ -128,6 +127,7 @@ namespace Sprint2
             }
             if (ifDamage)
             {
+                damage = true;
                 damageTimer++;
                 if(damageTimer >= 100)
                 {
@@ -136,6 +136,7 @@ namespace Sprint2
             }
             else
             {
+                damage = false;
                 damageTimer = 0;
             }
 

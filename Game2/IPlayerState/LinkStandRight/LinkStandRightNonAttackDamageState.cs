@@ -80,8 +80,10 @@ namespace Sprint2
         }
         public void Attack()
         {
-
-            link.state = new LinkStandRightAttackDamageState(link);
+            if (Link.ifDamage)
+            {
+                link.state = new LinkStandRightAttackDamageState(link);
+            }
         }
         public void ChangeToWalk()
         {

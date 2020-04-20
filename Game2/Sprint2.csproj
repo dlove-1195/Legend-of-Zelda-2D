@@ -224,9 +224,13 @@
     <Compile Include="ISprite\ItemSprite\ItemBlueDiamondSprite.cs" />
     <Compile Include="ISprite\ItemSprite\ItemClockSprite.cs" />
     <Compile Include="ISprite\ItemSprite\ItemHeartSprite.cs" />
+    <Compile Include="ISprite\ItemSprite\SwordSprite\DamageWoodenSwordDown.cs" />
     <Compile Include="ISprite\ItemSprite\SwordSprite\WoodenSwordDown.cs" />
+    <Compile Include="ISprite\ItemSprite\SwordSprite\DamageWoodenSwordLeft.cs" />
     <Compile Include="ISprite\ItemSprite\SwordSprite\WoodenSwordLeft.cs" />
+    <Compile Include="ISprite\ItemSprite\SwordSprite\DamageWoodenSwordRight.cs" />
     <Compile Include="ISprite\ItemSprite\SwordSprite\WoodenSwordRight.cs" />
+    <Compile Include="ISprite\ItemSprite\SwordSprite\DamageWoodenSwordUp.cs" />
     <Compile Include="ISprite\ItemSprite\SwordSprite\WoodenSwordUp.cs" />
     <Compile Include="ISprite\LinkSprite\LinkDamageAttackLeftSprite.cs" />
     <Compile Include="ISprite\LinkSprite\LinkDamageAttackRightSprite.cs" />
