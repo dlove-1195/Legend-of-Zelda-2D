@@ -1,27 +1,31 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
  
+
 namespace Sprint2 
 {
-    public class LinkStandDownNonAttackDamageState: IPlayerstate
+    public class LinkStandLeftAttackDamageState:IPlayerstate
     {
         private Link link;
         private Texture2D texture = Texture2DStorage.GetLinkSpriteSheet2();
-        public LinkStandDownNonAttackDamageState(Link link)
+        public LinkStandLeftAttackDamageState(Link link)
         {
             if (link == null)
             {
                 throw new ArgumentNullException(nameof(link));
             }
-            link.linkSprite = new LinkDamageStandDownSprite(texture);
+            link.linkSprite = new LinkDamageAttackLeftSprite(texture);
             this.link = link;
+            this.link.ChangeDirection(2);
             Link.ifDamage = true;
-             
-            this.link.ChangeDirection(1);
+
+            link.simpleAttackBox = new Rectangle(Link.posX - 45, Link.posY + 10, 45, 25);
+
 
         }
         public void Win()
@@ -73,39 +77,37 @@ namespace Sprint2
                 link.state = new LinkStandDownNonAttackNonDamageState(link);
             }
         }
-     
         public void GetDamaged()
         {
-            link.state = new LinkStandDownNonAttackDamageState(link);
-        }
-        public void Attack()
-        {
+            link.state = new LinkStandLeftNonAttackDamageState(link);
 
-            link.state = new LinkStandDownAttackDamageState(link);
+        }
+            public void Attack()
+        {
+            link.state = new LinkStandLeftAttackDamageState(link);
         }
         public void ChangeToWalk()
         {
-            link.state = new LinkWalkDownNonAttackDamageState(link);
-            /*if (Link.ifDamage)
+
+            if (Link.ifDamage)
             {
-                link.state = new LinkWalkDownNonAttackDamageState(link);
+                link.state = new LinkWalkLeftNonAttackDamageState(link);
             }
             else
             {
-                link.state = new LinkWalkDownNonAttackNonDamageState(link);
-            }*/
+                link.state = new LinkWalkLeftNonAttackNonDamageState(link);
+            }
         }
         public void ChangeToStand()
         {
-            if(!Link.ifDamage)
+            if (!Link.ifDamage)
             {
-                link.state = new LinkStandDownNonAttackNonDamageState(link);
+                link.state = new LinkStandLeftNonAttackNonDamageState(link);
             }
         }
-
         public void LinkWithItemUp(int item)
         {
-           link.state = new LinkWithItemUpState(link, item);
+            link.state = new LinkWithItemUpState(link, item);
         }
 
         public void LinkWithItemDown(int item)
@@ -115,13 +117,12 @@ namespace Sprint2
 
         public void LinkWithItemLeft(int item)
         {
-           link.state = new LinkWithItemLeftState(link, item);
+            link.state = new LinkWithItemLeftState(link, item);
         }
 
         public void LinkWithItemRight(int item)
         {
-           link.state = new LinkWithItemRightState(link, item);
+            link.state = new LinkWithItemRightState(link, item);
         }
     }
 }
-

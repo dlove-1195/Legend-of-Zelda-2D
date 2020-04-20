@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,21 +8,23 @@ using System.Threading.Tasks;
  
 namespace Sprint2 
 {
-    public class LinkStandDownNonAttackDamageState: IPlayerstate
+    public class LinkStandDownAttackDamageState: IPlayerstate
     {
         private Link link;
         private Texture2D texture = Texture2DStorage.GetLinkSpriteSheet2();
-        public LinkStandDownNonAttackDamageState(Link link)
+        public LinkStandDownAttackDamageState(Link link)
         {
             if (link == null)
             {
                 throw new ArgumentNullException(nameof(link));
             }
-            link.linkSprite = new LinkDamageStandDownSprite(texture);
+            link.linkSprite = new LinkDamageAttackDownSprite(texture);
             this.link = link;
             Link.ifDamage = true;
              
             this.link.ChangeDirection(1);
+
+            link.simpleAttackBox = new Rectangle(Link.posX + 10, Link.posY + 45, 25, 45);
 
         }
         public void Win()
@@ -80,7 +83,6 @@ namespace Sprint2
         }
         public void Attack()
         {
-
             link.state = new LinkStandDownAttackDamageState(link);
         }
         public void ChangeToWalk()

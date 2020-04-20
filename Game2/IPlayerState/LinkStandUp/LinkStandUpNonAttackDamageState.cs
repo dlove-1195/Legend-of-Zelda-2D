@@ -81,7 +81,7 @@ namespace Sprint2
         }
         public void Attack()
         {
-            
+            link.state = new LinkStandUpAttackDamageState(link);
         }
         public void ChangeToWalk()
         {
