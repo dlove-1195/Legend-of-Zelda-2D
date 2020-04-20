@@ -118,7 +118,10 @@ namespace Sprint2
         }
         public void ChangeToStand()
         {
-            //already stand
+            if (!Link.ifDamage)
+            {
+                link.state = new LinkStandLeftNonAttackNonDamageState(link);
+            }
         }
 
         /*public void LinkWithBomb()

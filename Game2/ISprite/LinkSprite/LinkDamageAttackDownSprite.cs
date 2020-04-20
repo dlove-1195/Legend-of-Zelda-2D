@@ -15,7 +15,7 @@ namespace Sprint2
         private int sourceLocY = 1;
         private int width=16;
         private int height=15;
-        private int totalBlink = 11;
+        private int totalBlink = 6;
         private int blinkTimes=0;
         private int delay = 0;
         private int totalDelay = 60;
@@ -35,7 +35,7 @@ namespace Sprint2
         public void Update()
         {
 
-            if (delay < totalDelay / 2)
+            if (delay < totalDelay )
             {
                 width = 16;
                 height = 15;
@@ -70,7 +70,7 @@ namespace Sprint2
                 }
 
             }
-
+            /*
             else if (delay < totalDelay*2)
             {
                 width = 15;
@@ -105,13 +105,17 @@ namespace Sprint2
                     sourceLocX = 77;
                     sourceLocY = 1;
                 }
-            }
+            }*/
             delay++;
             blinkTimes++;
            
             if (blinkTimes == totalBlink)
             {
                 blinkTimes = 0;
+            }
+            if (delay == totalDelay)
+            {
+                delay = 0;
             }
 
 
