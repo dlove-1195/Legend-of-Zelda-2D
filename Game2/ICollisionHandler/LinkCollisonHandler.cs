@@ -324,7 +324,7 @@ namespace Sprint2
             }else if(room.pickUpItems[itemNum] is Clock)
             {
                 //room need to stop update
-                level.roomUpdate = false;
+               Level1.roomUpdate = false;
             }
  
             //if items  fairy? /heartContainer?(delete)

@@ -75,47 +75,50 @@ namespace Sprint2
         public void Update()
         {
             drawCloud++;
-            boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
-            GelSprite.Update();
-
-            //random move dragon
-            updateDelay++;
-            if (updateDelay == totalDelay)
+            if (Level1.roomUpdate)
             {
-                updateDelay = 0;
-                seed++;
-                var rnd = new Random(seed);
-                int randomNumber = rnd.Next(0, 4);
+                boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
+                GelSprite.Update();
 
-
-                switch (randomNumber)
+                //random move dragon
+                updateDelay++;
+                if (updateDelay == totalDelay)
                 {
-                    case 0:
-                        this.ChangeToDown();
+                    updateDelay = 0;
+                    seed++;
+                    var rnd = new Random(seed);
+                    int randomNumber = rnd.Next(0, 4);
 
 
-                        break;
-                    case 1:
-                        this.ChangeToLeft();
+                    switch (randomNumber)
+                    {
+                        case 0:
+                            this.ChangeToDown();
+
+
+                            break;
+                        case 1:
+                            this.ChangeToLeft();
 
 
 
-                        break;
-                    case 2:
-                        this.ChangeToRight();
+                            break;
+                        case 2:
+                            this.ChangeToRight();
 
-                        break;
-                    case 3:
-                        this.ChangeToUp();
+                            break;
+                        case 3:
+                            this.ChangeToUp();
 
-                        break;
-                    default:
+                            break;
+                        default:
 #pragma warning disable CA1303 // Do not pass literals as localized parameters
-                        Console.WriteLine("error: no such situation");
+                            Console.WriteLine("error: no such situation");
 #pragma warning restore CA1303 // Do not pass literals as localized parameters
-                        break;
-                }
+                            break;
+                    }
 
+                }
             }
             if (blood <= 0)
             {

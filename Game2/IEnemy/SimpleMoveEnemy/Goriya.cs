@@ -78,42 +78,45 @@ namespace Sprint2
         public void Update()
         {
             drawCloud++;
-            boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
-            GoriyaSprite.Update();
-
-         
-            updateDelay++;
-            if (updateDelay == totalDelay)
+            if (Level1.roomUpdate)
             {
-                updateDelay = 0;
-                
-                var rnd = new Random(Game1.seed);
-                int randomNumber = rnd.Next(0, 4);
+                boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
+                GoriyaSprite.Update();
 
 
-                switch (randomNumber)
+                updateDelay++;
+                if (updateDelay == totalDelay)
                 {
-                    case 0:
-                        this.ChangeToDown();
- 
-                        break;
-                    case 1:
-                        this.ChangeToLeft();
- 
-                        break;
-                    case 2:
-                        this.ChangeToRight();
+                    updateDelay = 0;
 
-                        break;
-                    case 3:
-                        this.ChangeToUp();
+                    var rnd = new Random(Game1.seed);
+                    int randomNumber = rnd.Next(0, 4);
 
-                        break;
-                    default:
-                        Console.WriteLine("error: no such situation");
-                        break;
+
+                    switch (randomNumber)
+                    {
+                        case 0:
+                            this.ChangeToDown();
+
+                            break;
+                        case 1:
+                            this.ChangeToLeft();
+
+                            break;
+                        case 2:
+                            this.ChangeToRight();
+
+                            break;
+                        case 3:
+                            this.ChangeToUp();
+
+                            break;
+                        default:
+                            Console.WriteLine("error: no such situation");
+                            break;
+                    }
+
                 }
-
             }
             if (blood <= 0)
             {

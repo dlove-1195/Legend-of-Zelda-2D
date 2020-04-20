@@ -24,7 +24,7 @@ namespace Sprint2
         private bool undergoundSwitch = false;
         private int index = 0;
         private IPlayer link;
-        public bool roomUpdate { get; set; } = true;
+        public static bool roomUpdate = true;
         private int clockTimer = 0;
         public Level1(IPlayer player)
         {
@@ -199,21 +199,19 @@ namespace Sprint2
             }
            
             camera.Update();
+            room.Update();
 
-            //when using clock, stop update room
-            if (roomUpdate)
-            {
-                room.Update();
-            }
-            else
+            //when using clock, update frozen time
+            if (!roomUpdate)
             {
                 clockTimer++;
                 if (clockTimer >= 500)
                 {
                     roomUpdate = true;
-                    
+
                 }
             }
+            
         }
 
         public void Draw(SpriteBatch spriteBatch)
@@ -221,12 +219,7 @@ namespace Sprint2
           
             camera.Draw(spriteBatch);
             room.Draw(spriteBatch);
-            if (room.roomNumber == 2)
-            {
-                LetterGenerator.drawSentence(spriteBatch, "WOULD YOU LIKE TO BUY SOME WEAPONS", new Vector2(100, 320), new Vector2(19, 19));
-                LetterGenerator.drawSentence(spriteBatch, "BOOMERANG AND BOW   FIVE DIAMONDS", new Vector2(100, 350), new Vector2(19, 19));
-                LetterGenerator.drawSentence(spriteBatch, "CANDLE              TEN DIAMONDS", new Vector2(100, 380), new Vector2(19, 19));
-            }
+             
         }
     }
 }

@@ -6,7 +6,7 @@ namespace Sprint2
 {
     public interface ILevel
     {
-        bool roomUpdate { get; set; }
+        
         IRoom room { get; set; }
 #pragma warning disable IDE1006 // Naming Styles
         void switchRoom(string direction);

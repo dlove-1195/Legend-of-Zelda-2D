@@ -96,57 +96,61 @@ namespace Sprint2
         public void Update()
         {
             drawCloud++;
-
-            boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
-            GreenDragonSprite.Update();
-            if (fire != null)
+            if (Level1.roomUpdate)
             {
-                fire.Update();
-            }
-
-            if (hasFire)
-            {
-                fireTimer++;
-                if (fireTimer == 100)
+                boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
+                GreenDragonSprite.Update();
+                if (fire != null)
                 {
-                    hasFire = false;
+                    fire.Update();
                 }
-            }
-            else
-            {
-                fireTimer = 0;
-                fire = null;
-            }
 
-            //random move dragon
-            updateDelay++;
-            if (updateDelay == totalDelay)
-            {
-                updateDelay = 0;
-                seed++;
-                var rnd = new Random(seed);
-                int randomNumber = rnd.Next(0, 1);
-
-
-                switch (randomNumber)
+                if (hasFire)
                 {
+                    fireTimer++;
+                    if (fireTimer == 100)
+                    {
+                        hasFire = false;
+                    }
+                }
+                else
+                {
+                    fireTimer = 0;
+                    fire = null;
+                }
 
-                    case 0:
-                        this.ChangeToLeft();
-                        break;
-                    case 1:
-                        this.ChangeToRight();
-                        break;
+                //random move dragon
+                updateDelay++;
+                if (updateDelay == totalDelay)
+                {
+                    updateDelay = 0;
+                    seed++;
+                    var rnd = new Random(seed);
+                    int randomNumber = rnd.Next(0, 1);
 
-                    default:
+
+                    switch (randomNumber)
+                    {
+
+                        case 0:
+                            this.ChangeToLeft();
+                            break;
+                        case 1:
+                            this.ChangeToRight();
+                            break;
+
+                        default:
 #pragma warning disable CA1303 // Do not pass literals as localized parameters
-                        Console.WriteLine("error: no such situation");
+                            Console.WriteLine("error: no such situation");
 #pragma warning restore CA1303 // Do not pass literals as localized parameters
-                        break;
+                            break;
+                    }
+
                 }
-                
             }
-            if (damage)
+
+                drawCloud++;
+                if (damage)
             {
                 damageTimer++;
                 if (damageTimer >= 150)

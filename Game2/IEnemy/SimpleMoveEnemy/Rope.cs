@@ -82,52 +82,55 @@ namespace Sprint2
         public void Update()
         {
             drawCloud++;
-            boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
-            RopeSprite.Update();
-
-            //random move dragon
-            updateDelay++;
-            if (updateDelay == totalDelay)
+            if (Level1.roomUpdate)
             {
-                updateDelay = 0;
-                seed++;
-                var rnd = new Random(seed);
-                int randomNumber = rnd.Next(0, 4);
+                boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
+                RopeSprite.Update();
 
-
-                switch (randomNumber)
+                //random move dragon
+                updateDelay++;
+                if (updateDelay == totalDelay)
                 {
-                    case 0:
-                        this.ChangeToDown();
+                    updateDelay = 0;
+                    seed++;
+                    var rnd = new Random(seed);
+                    int randomNumber = rnd.Next(0, 4);
+
+
+                    switch (randomNumber)
+                    {
+                        case 0:
+                            this.ChangeToDown();
 #pragma warning disable CA1303 // Do not pass literals as localized parameters
 #pragma warning restore CA1303 // Do not pass literals as localized parameters
 
-                        break;
-                    case 1:
-                        this.ChangeToLeft();
-#pragma warning disable CA1303 // Do not pass literals as localized parameters
-#pragma warning restore CA1303 // Do not pass literals as localized parameters
-
-
-                        break;
-                    case 2:
-                        this.ChangeToRight();
-#pragma warning disable CA1303 // Do not pass literals as localized parameters
-#pragma warning restore CA1303 // Do not pass literals as localized parameters
-                        break;
-                    case 3:
-                        this.ChangeToUp();
+                            break;
+                        case 1:
+                            this.ChangeToLeft();
 #pragma warning disable CA1303 // Do not pass literals as localized parameters
 #pragma warning restore CA1303 // Do not pass literals as localized parameters
 
 
-                        break;
-                    default:
+                            break;
+                        case 2:
+                            this.ChangeToRight();
 #pragma warning disable CA1303 // Do not pass literals as localized parameters
 #pragma warning restore CA1303 // Do not pass literals as localized parameters
-                        break;
+                            break;
+                        case 3:
+                            this.ChangeToUp();
+#pragma warning disable CA1303 // Do not pass literals as localized parameters
+#pragma warning restore CA1303 // Do not pass literals as localized parameters
+
+
+                            break;
+                        default:
+#pragma warning disable CA1303 // Do not pass literals as localized parameters
+#pragma warning restore CA1303 // Do not pass literals as localized parameters
+                            break;
+                    }
+
                 }
-
             }
             if (blood <= 0)
             {

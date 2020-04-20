@@ -76,21 +76,31 @@ namespace Sprint2
         public void Update()
         {
             drawCloud++;
-            boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
-            WallMasterSprite.Update();
-            updateDelay++;
-            if (updateDelay == 10)
+            if (!Level1.roomUpdate)
             {
-
-                 this.ChangeToLeft(); 
-            }else if(updateDelay == 40)
-            {
-                 
                 state = new WallMasterLeftStaticState(this);
-
-            }else if (updateDelay > totalDelay)
+                WallMasterSprite.Update();
+            }
+            else
             {
-                updateDelay = 0;
+                boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
+                WallMasterSprite.Update();
+                updateDelay++;
+                if (updateDelay == 10)
+                {
+
+                    this.ChangeToLeft();
+                }
+                else if (updateDelay == 40)
+                {
+
+                    state = new WallMasterLeftStaticState(this);
+
+                }
+                else if (updateDelay > totalDelay)
+                {
+                    updateDelay = 0;
+                }
             }
 
             if (blood <= 0)
