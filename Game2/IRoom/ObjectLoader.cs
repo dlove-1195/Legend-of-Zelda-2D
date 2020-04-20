@@ -163,7 +163,11 @@ namespace Sprint2
                     npcList.Add(new Princess(vector));
                 }
             }
-           
+            else if (type == "Wall")
+            {
+                itemList.Add(new Wall("Right", vector));
+            }
+
         }
     }
 }

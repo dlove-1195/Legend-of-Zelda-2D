@@ -139,6 +139,7 @@
     <Compile Include="IItem\StaticItem\staticCandle.cs" />
     <Compile Include="IItem\StaticItem\staticWoodenBoomerang.cs" />
     <Compile Include="IItem\StaticItem\TriforcePiece.cs" />
+    <Compile Include="IItem\StaticItem\Wall.cs" />
     <Compile Include="IItem\StaticItem\YellowDiamond.cs" />
     <Compile Include="ILevel\ILevel.cs" />
     <Compile Include="ILevel\level1.cs" />

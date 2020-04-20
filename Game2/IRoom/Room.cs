@@ -149,9 +149,9 @@ namespace Sprint2
                 {
                     doorDirection.Add(name); //door direction stores in name
                 }
-                else if (type == "LockedDoor")
+                else if (type == "Wall")
                 {
-                    objects.loadObject(this, type, name, new Vector2(0, 0));
+                    objects.loadObject(this, type, name, vector);
                 }
                 else if (type == "Stair")
                 {

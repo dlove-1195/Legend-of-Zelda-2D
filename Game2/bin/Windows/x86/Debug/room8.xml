@@ -94,5 +94,13 @@
     <!--  NPC  -->
     <!--  Block  -->
     <!--  Block  -->
+    <!--  Wall   -->
+    <Item>
+      <ObjectType>Wall</ObjectType>
+      <ObjectName>Right</ObjectName>
+      <posX>87</posX>
+      <posY>30</posY>
+    </Item>
+    <!--  Wall   -->
   </Asset>
 </XnaContent>
