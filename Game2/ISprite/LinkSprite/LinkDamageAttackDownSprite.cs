@@ -100,6 +100,11 @@ namespace Sprint2
                     sourceLocX = 77;
                     sourceLocY = 145;
                 }
+                else if ((blinkTimes == 11) || (blinkTimes == 5))
+                {
+                    sourceLocX = 77;
+                    sourceLocY = 1;
+                }
             }
             delay++;
             blinkTimes++;

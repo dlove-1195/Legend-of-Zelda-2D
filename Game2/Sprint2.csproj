@@ -125,6 +125,7 @@
     <Compile Include="IItem\LinkItem\Bomb.cs" />
     <Compile Include="IItem\LinkItem\Bow.cs" />
     <Compile Include="IItem\LinkItem\Fire.cs" />
+    <Compile Include="IItem\LinkItem\DamageSword.cs" />
     <Compile Include="IItem\LinkItem\Sword.cs" />
     <Compile Include="IItem\LinkItem\WoodenBoomerang.cs" />
     <Compile Include="IItem\StaticItem\Clock.cs" />

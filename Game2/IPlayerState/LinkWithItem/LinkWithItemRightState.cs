@@ -11,7 +11,8 @@ namespace Sprint2
     {
         private Link link;
         private Texture2D textureLink = Texture2DStorage.GetLinkSpriteSheet();
-       // private Texture2D textureItem;
+        private Texture2D textureLink2 = Texture2DStorage.GetLinkSpriteSheet2();
+        // private Texture2D textureItem;
         public LinkWithItemRightState(Link link, int itemNum)
         {
             if (link == null)
@@ -64,6 +65,13 @@ namespace Sprint2
                     IItem item5 = new WoodenBoomerang((Link.posX + 20), Link.posY, 3);
                     link.items.Add(item5);
                     item5.Appear = true;
+                    break;
+                case 6:
+                    //damage sword
+                    IItem damageSword = new DamageSword(Link.posX + 20, (Link.posY + 15), 3);
+                    damageSword.Appear = true;
+                    link.linkSprite = new LinkDamageAttackRightSprite(textureLink2);
+                    link.items.Add(damageSword);
                     break;
                 default:
                     break;
