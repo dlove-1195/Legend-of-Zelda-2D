@@ -86,7 +86,7 @@ namespace Sprint2
             if (Level1.roomUpdate)
             {
                 boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
-                DragonSprite.Update();
+                
                 if (fire != null)
                 {
                     fire.Update();
@@ -147,7 +147,7 @@ namespace Sprint2
                     }
                 }
             }
-            
+            DragonSprite.Update();
             drawCloud++;
             if (damage)
             {

@@ -96,10 +96,11 @@ namespace Sprint2
         public void Update()
         {
             drawCloud++;
+            GreenDragonSprite.Update();
             if (Level1.roomUpdate)
             {
                 boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
-                GreenDragonSprite.Update();
+              
                 if (fire != null)
                 {
                     fire.Update();
@@ -126,12 +127,9 @@ namespace Sprint2
                     updateDelay = 0;
                     seed++;
                     var rnd = new Random(seed);
-                    int randomNumber = rnd.Next(0, 1);
-
-
+                    int randomNumber = rnd.Next(0, 1); 
                     switch (randomNumber)
-                    {
-
+                    { 
                         case 0:
                             this.ChangeToLeft();
                             break;
@@ -148,6 +146,7 @@ namespace Sprint2
 
                 }
             }
+           
 
                 drawCloud++;
                 if (damage)

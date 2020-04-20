@@ -29,8 +29,9 @@ namespace Sprint2
         }
        
         public void Update() {
-
-            width = 24;
+            if (Level1.roomUpdate)
+            {
+                width = 24;
             height = 32;
 
             if (delay == totalDelay)
@@ -63,7 +64,9 @@ namespace Sprint2
             }
 
             delay++;
-            GreenDragon.posX--;
+          
+                GreenDragon.posX--;
+            }
             
 
         }

@@ -57,8 +57,10 @@ namespace Sprint2
 
             delay++;
 
-           
+            if (Level1.roomUpdate)
+            {
                 Dragon.posX++;
+            }
                 
               
 

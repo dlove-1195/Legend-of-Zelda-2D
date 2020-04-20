@@ -62,7 +62,10 @@ namespace Sprint2
             }
 
             delay++;
-            GreenDragon.posX--;
+            if (Level1.roomUpdate)
+            {
+                GreenDragon.posX--;
+            }
 
         }
 

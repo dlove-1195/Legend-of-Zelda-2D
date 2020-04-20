@@ -47,8 +47,10 @@ namespace Sprint2
             {
                 delay = 0;
             }
-             
+            if (Level1.roomUpdate)
+            {
                 Dragon.posY++;
+            }
           
         }
 

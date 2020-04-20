@@ -30,35 +30,38 @@ namespace Sprint2
 
         public void Update()
         {
-            width = 28;
-            height = 15;
-            sourceLocX = 85;
-            sourceLocY = 91;
-            if (delay == totalDelay)
+            if (Level1.roomUpdate)
             {
-                delay = 0;
-                
-            }
-           
-            if (delay > totalDelay / 4 && delay < 2 * totalDelay / 4)
-            {
-                sourceLocY = 121;
                 width = 28;
-                height = 16;
-            }
-            if (delay >= 2 * totalDelay / 4 && delay < totalDelay)
-            {
-                sourceLocX = 83;
-                sourceLocY = 151;
-                width = 32;
-                height = 16;
+                height = 15;
+                sourceLocX = 85;
+                sourceLocY = 91;
+                if (delay == totalDelay)
+                {
+                    delay = 0;
 
-            }
+                }
 
-            delay++;
+                if (delay > totalDelay / 4 && delay < 2 * totalDelay / 4)
+                {
+                    sourceLocY = 121;
+                    width = 28;
+                    height = 16;
+                }
+                if (delay >= 2 * totalDelay / 4 && delay < totalDelay)
+                {
+                    sourceLocX = 83;
+                    sourceLocY = 151;
+                    width = 32;
+                    height = 16;
 
-           
+                }
+
+                delay++;
+
+
                 Dragon.posX++;
+            }
                 
               
 
