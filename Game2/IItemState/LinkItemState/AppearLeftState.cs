@@ -17,7 +17,7 @@ namespace Sprint2
         private Texture2D texturesword = Texture2DStorage.GetLinkSpriteSheet();
         private Texture2D textureFire = Texture2DStorage.GetEnemySpriteSheet2();
 
-        private Texture2D texutreHurtWeapon = Texture2DStorage.GetHurtWeaponSpriteSheet();
+        private Texture2D texutreHurtWeapon = Texture2DStorage.GetLinkSpriteSheet2();
         private int num;
 
 

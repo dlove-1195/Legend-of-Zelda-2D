@@ -11,11 +11,11 @@ namespace Sprint2
     public class LinkDamageAttackRightSprite : ISprite
     {
         public Texture2D Texture { get; set; }
-        private int sourceLocX = 203;
+        private int sourceLocX = 131;
         private int sourceLocY = 254;
-        private int width=15;
+        private int width=14;
         private int height=15;
-        private int totalBlink = 11;
+        private int totalBlink = 5;
         private int blinkTimes=0;
         private int delay = 0;
         private int totalDelay = 60;
@@ -35,71 +35,40 @@ namespace Sprint2
         public void Update()
         {
 
-            if (delay < totalDelay / 2)
+            if (delay < totalDelay)
             {
-                width = 15;
+                width = 14;
                 height = 15;
                 if (blinkTimes == 0)
                 {
-                    sourceLocX = 203;
+                    sourceLocX = 131;
                     sourceLocY = 254;
                 }
                 else if (blinkTimes == 1)
                 {
-                    sourceLocX = 203;
+                    sourceLocX = 131;
                     sourceLocY = 38;
                 }
                 else if (blinkTimes == 2)
                 {
-                    sourceLocX = 203;
+                    sourceLocX = 131;
                     sourceLocY = 128;
                 }else if(blinkTimes == 3)
                 {
-                    sourceLocX = 203;
+                    sourceLocX = 131;
                     sourceLocY = 146;
                 }
                 else if (blinkTimes == 4)
                 {
-                    sourceLocX = 203;
+                    sourceLocX = 131;
                     sourceLocY = 182;
                 }
                 else if (blinkTimes == 5)
                 {
-                    sourceLocX = 203;
+                    sourceLocX = 131;
                     sourceLocY = 272;
                 }
 
-            }
-
-            else if (delay < totalDelay*2)
-            {
-                width = 16;
-                height = 16;
-                if ((blinkTimes == 6)|| (blinkTimes == 0))
-                {
-                    sourceLocX = 221;
-                    sourceLocY = 254;
-                }
-                else if ((blinkTimes == 7) || (blinkTimes ==1))
-                {
-                    sourceLocX = 221;
-                    sourceLocY = 38;
-                }
-                if ((blinkTimes == 8) || (blinkTimes == 2))
-                {
-                    sourceLocX = 221;
-                    sourceLocY = 128;
-                }
-                else if ((blinkTimes == 9) || (blinkTimes == 3))
-                {
-                    sourceLocX = 221;
-                    sourceLocY = 146;
-                }
-                else if ((blinkTimes == 10) || (blinkTimes == 4))
-                {
-                    sourceLocX = 221;
-                    sourceLocY = 182;
-                }
             }
             delay++;
             blinkTimes++;
