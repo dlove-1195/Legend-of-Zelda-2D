@@ -149,6 +149,7 @@ namespace Sprint2
 
             }
 
+
             //loop for detecting bomb collide with door hole
             listLength = player.items.Count;
             for(int i=0; i< listLength; i++)
@@ -168,7 +169,20 @@ namespace Sprint2
                         }
                     }
 
+                }else if(player.items[i] is BlueCandle)
+                {
+                   for (int j = 0; j< item.Count; j++)
+                    {
+                        if(item[j] is Cloud)
+                        {
+                            overlapRec = Rectangle.Intersect(player.items[i].BoundingBox, item[j].BoundingBox);
+                            if (!overlapRec.IsEmpty)
+                            {
+                                linkHandler.LinkCloudHandler(j);
+                            }
+                        } 
                     }
+                }
             }
 
             //loop for link/item collsion 

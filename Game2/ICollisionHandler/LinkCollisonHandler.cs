@@ -277,15 +277,26 @@ namespace Sprint2
             }
         }
 
+        public void LinkCloudHandler(int itemNum)
+        {
+            room.setItemToNull(itemNum);
+        }
         public bool itemManager(int itemNum)
         {
             bool successPickUp = true;
+
             if (room.pickUpItems[itemNum] is YellowDiamond)
             {
                 inventory.diamondNum++;
                 //max life 12
-            }else if(room.pickUpItems[itemNum] is Heart)
-            {  if (inventory.heartNum < inventory.heartContainerNum)
+            }
+            else if (room.pickUpItems[itemNum] is Cloud)
+            {
+                successPickUp = false;
+            }
+            else if (room.pickUpItems[itemNum] is Heart)
+            {
+                if (inventory.heartNum < inventory.heartContainerNum)
                 {
                     inventory.heartNum++;
                 }
@@ -310,9 +321,10 @@ namespace Sprint2
             {
                 inventory.triPieceNum++;
                 link.Win();
-            }else if(room.pickUpItems[itemNum] is staticBow)
+            }
+            else if (room.pickUpItems[itemNum] is staticBow)
             {
-                if (!inventory.itemList.Contains("bow") && inventory.diamondNum>=5)
+                if (!inventory.itemList.Contains("bow") && inventory.diamondNum >= 5)
                 {
                     inventory.itemList.Add("bow");
                     inventory.diamondNum -= 5;
@@ -322,9 +334,9 @@ namespace Sprint2
                     successPickUp = false;
                 }
             }
-            else if(room.pickUpItems[itemNum] is staticCandle)
+            else if (room.pickUpItems[itemNum] is staticCandle)
             {
-                if (!inventory.itemList.Contains("candle")&& inventory.diamondNum >= 10)
+                if (!inventory.itemList.Contains("candle") && inventory.diamondNum >= 10)
                 {
                     inventory.itemList.Add("candle");
                     inventory.diamondNum -= 10;
@@ -333,7 +345,8 @@ namespace Sprint2
                 {
                     successPickUp = false;
                 }
-            }else if (room.pickUpItems[itemNum] is staticWoodenBoomerang  )
+            }
+            else if (room.pickUpItems[itemNum] is staticWoodenBoomerang)
             {
                 if (!inventory.itemList.Contains("boomerang") && inventory.diamondNum >= 5)
                 {
@@ -345,16 +358,18 @@ namespace Sprint2
                     successPickUp = false;
                 }
             }
-            else if(room.pickUpItems[itemNum] is Map)
+            else if (room.pickUpItems[itemNum] is Map)
             {
                 inventory.showMap = true;
-            }else if(room.pickUpItems[itemNum] is Compass)
+            }
+            else if (room.pickUpItems[itemNum] is Compass)
             {
                 inventory.showCompass = true;
-            }else if(room.pickUpItems[itemNum] is Clock)
+            }
+            else if (room.pickUpItems[itemNum] is Clock)
             {
                 //room need to stop update
-               Level1.roomUpdate = false;
+                Level1.roomUpdate = false;
             }
  
             //if items  fairy? /heartContainer?(delete)
