@@ -164,6 +164,11 @@ namespace Sprint2
                             String direction = detectCollisionDirection(overlapRec, linkRectangle, singleItemRec);
                             linkHandler.HandleLinkLockedDoorCollision(i, direction);
                         }
+                        else if(item[i] is Wall)
+                        {
+                            String direction = detectCollisionDirection(overlapRec, linkRectangle, singleItemRec);
+                            linkHandler.HandleLinkLockedDoorCollision(i, direction);
+                        }
                         else
                         {
                             linkHandler.HandleLinkItemCollsion(i);

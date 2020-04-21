@@ -196,6 +196,23 @@ namespace Sprint2
             
         }
 
+        public void HandleLinkWallHoleCollision(int itemNum, String direction)
+        {
+            
+                if (direction == "Left")
+                {
+                    direction = "Right";
+
+                }
+                else if (direction == "Right")
+                {
+                    direction = "Left";
+                }
+                StayPosition(direction);
+          
+
+        }
+
         public void HandleLinkLockedDoorCollision(int itemNum, String direction)
         {
             if (inventory.keyNum > 0)

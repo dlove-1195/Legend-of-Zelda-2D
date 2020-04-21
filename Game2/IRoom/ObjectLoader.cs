@@ -140,8 +140,9 @@ namespace Sprint2
                 {
                     itemList.Add(new staticCandle(vector));
                 }
-                if(name=="Up"||name=="Down"||name=="Right"|| name == "Left")//LockedDoor item
+                if(name=="Up"||name=="Down"||name=="Right"|| name == "Left")//LockedDoor  
                 {
+                    
                     itemList.Add(new LockedDoor(name,vector));
                 }
             }
@@ -165,7 +166,7 @@ namespace Sprint2
             }
             else if (type == "Wall")
             {
-                itemList.Add(new Wall("Right", vector));
+                itemList.Add(new Wall(name, vector));
             }
 
         }
