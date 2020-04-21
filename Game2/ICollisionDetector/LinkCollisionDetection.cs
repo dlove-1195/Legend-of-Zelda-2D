@@ -149,6 +149,24 @@ namespace Sprint2
 
             }
 
+            for (int j = 0; j < item.Count; j++)
+            {
+                if (item[j] is Cloud)
+                {
+                    overlapRec = Rectangle.Intersect(linkRectangle, item[j].BoundingBox);
+                    if (!overlapRec.IsEmpty)
+                    {
+                        //link being pushed in opposite direction
+                        String direction = detectCollisionDirection(overlapRec, linkRectangle, item[j].BoundingBox);
+                        linkHandler.HandleLinkCloudCollision(direction,j);
+                    }
+                }
+            }
+               
+            
+                
+
+            
 
             //loop for detecting bomb collide with door hole
             listLength = player.items.Count;
@@ -169,7 +187,9 @@ namespace Sprint2
                         }
                     }
 
-                }else if(player.items[i] is BlueCandle)
+                }
+                //detect blueCandle weapon and cloud collision
+                else if(player.items[i] is BlueCandle)
                 {
                    for (int j = 0; j< item.Count; j++)
                     {
@@ -178,7 +198,7 @@ namespace Sprint2
                             overlapRec = Rectangle.Intersect(player.items[i].BoundingBox, item[j].BoundingBox);
                             if (!overlapRec.IsEmpty)
                             {
-                                linkHandler.LinkCloudHandler(j);
+                                linkHandler.LinkBlueCandleCloudHandler(j);
                             }
                         } 
                     }

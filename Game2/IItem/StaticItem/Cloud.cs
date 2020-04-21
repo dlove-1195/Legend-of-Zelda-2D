@@ -53,6 +53,7 @@ namespace Sprint2
         public void Update()
         {
             BoundingBox = new Rectangle(PosX, PosY, width * 3, height * 3);
+            
             cloudSprite.Update();
         }
 

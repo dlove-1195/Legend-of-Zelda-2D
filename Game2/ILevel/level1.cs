@@ -197,7 +197,7 @@ namespace Sprint2
 
                 }
             }
-           
+            
             camera.Update();
             room.Update();
 

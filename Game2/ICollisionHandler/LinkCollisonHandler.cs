@@ -73,6 +73,29 @@ namespace Sprint2
                  
             
         }
+        public void HandleLinkCloudCollision(string direction, int j)
+        {
+            switch (direction)
+            {
+                case "Left":
+                    Link.posX = Link.posX - 30;
+                    break;
+                case "Right":
+                    Link.posX = Link.posX + 30;
+                    break;
+                case "Up":
+                    Link.posY = Link.posY + 30;
+
+                    break;
+                case "Down":
+                    Link.posY = Link.posY - 30;
+                    break;
+
+                default:
+                    Console.WriteLine("error: no such situation");
+                    break;
+            }
+        }
             public void HandleLinkEnemyCollsion(string direction, int i)
         {
             Link.damageTimer = 0; 
@@ -277,7 +300,7 @@ namespace Sprint2
             }
         }
 
-        public void LinkCloudHandler(int itemNum)
+        public void LinkBlueCandleCloudHandler(int itemNum)
         {
             room.setItemToNull(itemNum);
         }
