@@ -53,6 +53,66 @@
     </Item>
     <!--  enemy  -->
     <!--  item  -->
+    <Item>
+      <ObjectType>Item</ObjectType>
+      <ObjectName>Cloud</ObjectName>
+      <posX>13</posX>
+      <posY>30</posY>
+    </Item>
+    <Item>
+      <ObjectType>Item</ObjectType>
+      <ObjectName>Cloud</ObjectName>
+      <posX>70</posX>
+      <posY>10</posY>
+    </Item>
+    <Item>
+      <ObjectType>Item</ObjectType>
+      <ObjectName>Cloud</ObjectName>
+      <posX>82</posX>
+      <posY>37</posY>
+    </Item>
+    <Item>
+      <ObjectType>Item</ObjectType>
+      <ObjectName>Cloud</ObjectName>
+      <posX>20</posX>
+      <posY>30</posY>
+    </Item>
+    <Item>
+      <ObjectType>Item</ObjectType>
+      <ObjectName>Cloud</ObjectName>
+      <posX>10</posX>
+      <posY>50</posY>
+    </Item>
+    <Item>
+      <ObjectType>Item</ObjectType>
+      <ObjectName>Cloud</ObjectName>
+      <posX>10</posX>
+      <posY>10</posY>
+    </Item>
+    <Item>
+      <ObjectType>Item</ObjectType>
+      <ObjectName>Cloud</ObjectName>
+      <posX>40</posX>
+      <posY>10</posY>
+    </Item>
+    <Item>
+      <ObjectType>Item</ObjectType>
+      <ObjectName>Cloud</ObjectName>
+      <posX>30</posX>
+      <posY>60</posY>
+    </Item>
+    <Item>
+      <ObjectType>Item</ObjectType>
+      <ObjectName>Cloud</ObjectName>
+      <posX>50</posX>
+      <posY>50</posY>
+    </Item>
+    <Item>
+      <ObjectType>Item</ObjectType>
+      <ObjectName>Cloud</ObjectName>
+      <posX>20</posX>
+      <posY>30</posY>
+    </Item>
     <!--  item  -->
     <!--  NPC  -->
     <!--  NPC  -->

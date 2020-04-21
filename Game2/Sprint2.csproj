@@ -128,6 +128,7 @@
     <Compile Include="IItem\LinkItem\DamageSword.cs" />
     <Compile Include="IItem\LinkItem\Sword.cs" />
     <Compile Include="IItem\LinkItem\WoodenBoomerang.cs" />
+    <Compile Include="IItem\StaticItem\Cloud.cs" />
     <Compile Include="IItem\StaticItem\Clock.cs" />
     <Compile Include="IItem\StaticItem\Compass.cs" />
     <Compile Include="IItem\StaticItem\Fairy.cs" />

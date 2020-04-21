@@ -91,6 +91,10 @@ namespace Sprint2
             }
             if (type == "Item")
             {
+                if(name == "Cloud")
+                {
+                    itemList.Add(new Cloud(vector));
+                }
                 if (name == "BlueDiamond")
                 {
                     itemList.Add(new YellowDiamond(vector));
