@@ -45,7 +45,7 @@ namespace Sprint2
 #pragma warning restore CA2227 // Collection properties should be read only
 
         public List<Rectangle> boundingBox { get; set; }
-        public List<int> doorOpen { get; set; }
+        public static List<int> doorOpen { get; set; }= new List<int>();
 
         public Room()
         {
@@ -60,7 +60,7 @@ namespace Sprint2
             blockLocation = new List<KeyValuePair<int, int>>();
             doorDirection = new List<string>();
             lockedDoor = new List<LockedDoor>();
-            doorOpen = new List<int>();
+             
 
             stair = new List<KeyValuePair<Vector2, Vector2>>();
             boundingBox = new List<Rectangle>();
@@ -88,7 +88,7 @@ namespace Sprint2
             blockLocation = new List<KeyValuePair<int, int>>();
             doorDirection = new List<string>();
             lockedDoor = new List<LockedDoor>();
-            doorOpen = new List<int>();
+            
         stair = new List<KeyValuePair<Vector2, Vector2>>();
             boundingBox = new List<Rectangle>();
             npcs = new List<INpc>();

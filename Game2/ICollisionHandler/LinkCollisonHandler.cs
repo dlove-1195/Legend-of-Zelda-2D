@@ -195,14 +195,14 @@ namespace Sprint2
         {
               if(room.roomNumber==8 || room.roomNumber == 9)
             {
-                room.doorOpen.Add(8);
-                room.doorOpen.Add(9);
+                Room.doorOpen.Add(8);
+                Room.doorOpen.Add(9);
 
             }
             else if(room.roomNumber == 7 || room.roomNumber == 11)
             {
-                room.doorOpen.Add(7);
-                room.doorOpen.Add(11);
+                Room.doorOpen.Add(7);
+                Room.doorOpen.Add(11);
 
             }
             room.setItemToNull(itemNum);

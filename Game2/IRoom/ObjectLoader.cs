@@ -167,12 +167,12 @@ namespace Sprint2
             }
             else if (type == "Wall")
             {
-                if((room.roomNumber ==8 || room.roomNumber == 9) && !room.doorOpen.Contains(8))
+                if((room.roomNumber ==8 || room.roomNumber == 9) && !Room.doorOpen.Contains(8))
                 {
                     itemList.Add(new Wall(name, vector));
                 }
 
-                if ((room.roomNumber == 7 || room.roomNumber == 11) && !room.doorOpen.Contains(7))
+                if ((room.roomNumber == 7 || room.roomNumber == 11) && !Room.doorOpen.Contains(7))
                 {
                     itemList.Add(new Wall(name, vector));
                 }

@@ -14,7 +14,7 @@ namespace Sprint2
         int upRoomNum { get; set; }
         int downRoomNum { get; set; }
         Vector2 roomPos { get; set; }
-        List<int> doorOpen { get; set; }
+         
         List<IEnemy> enemies { get; set; }
         List<IItem> pickUpItems { get; set; }
         List<INpc> npcs { get; set; }

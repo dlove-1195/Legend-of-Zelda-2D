@@ -7,7 +7,7 @@ namespace Sprint2
 {
     public class Level1: ILevel
     {
-       
+        
         public IRoom room { get; set; }
         private RoomLoader roomLoader;
         private ICamera camera;
