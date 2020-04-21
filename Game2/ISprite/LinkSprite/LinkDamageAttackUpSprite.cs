@@ -36,7 +36,7 @@ namespace Sprint2
         public void Update()
         {
 
-            if (delay < totalDelay)
+            if (delay <= totalDelay/2)
             {
                 width = 16;
                 height = 16;
@@ -72,8 +72,8 @@ namespace Sprint2
                 }
 
             }
-            /*
-            else if (delay < totalDelay*2)
+            
+            else if (delay > totalDelay/2)
             {
                 width = 12;
                 height = 16;
@@ -102,18 +102,18 @@ namespace Sprint2
                     sourceLocX = 115;
                     sourceLocY = 145;
                 }
-            }*/
+            }
             delay++;
             blinkTimes++;
 
             if (blinkTimes == totalBlink)
             {
                 blinkTimes = 0;
-            }
+            }/*
             if (delay == totalDelay)
             {
                 delay = 0;
-            }
+            }*/
 
 
         }
@@ -132,8 +132,10 @@ namespace Sprint2
                 Rectangle swordsourceRectangle = new Rectangle(152, 64, 7, 16);     // determine which frame
                 Rectangle sworddestinationRectangle = new Rectangle((int)vector.X + 10, (int)vector.Y - 35, 7 * 3, 16 * 3);    // determine location and demension of the current frame
 
-
-                spriteBatch.Draw(sword, sworddestinationRectangle, swordsourceRectangle, Color.White);
+                if (delay <= totalDelay / 2)
+                {
+                    spriteBatch.Draw(sword, sworddestinationRectangle, swordsourceRectangle, Color.White);
+                }
                 spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
 
             }

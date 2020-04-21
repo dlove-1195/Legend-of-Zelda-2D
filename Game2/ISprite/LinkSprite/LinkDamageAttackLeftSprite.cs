@@ -36,7 +36,7 @@ namespace Sprint2
         public void Update()
         {
 
-            if (delay < totalDelay)
+            if (delay <= totalDelay/2)
             {
                 width = 14;
                 height = 15;
@@ -72,17 +72,47 @@ namespace Sprint2
                 }
 
             }
+            else if (delay > totalDelay / 2)
+            {
+                width = 15;
+                height = 16;
+                if ((blinkTimes == 6) || (blinkTimes == 0))
+                {
+                    sourceLocX = 570;
+                    sourceLocY = 37;
+                }
+                else if ((blinkTimes == 7) || (blinkTimes == 1))
+                {
+                    sourceLocX = 570;
+                    sourceLocY = 109;
+                }
+                if ((blinkTimes == 8) || (blinkTimes == 2))
+                {
+                    sourceLocX = 570;
+                    sourceLocY = 145;
+                }
+                else if ((blinkTimes == 9) || (blinkTimes == 3))
+                {
+                    sourceLocX = 570;
+                    sourceLocY = 271;
+                }
+                else if ((blinkTimes == 10) || (blinkTimes == 4))
+                {
+                    sourceLocX = 570;
+                    sourceLocY = 181;
+                }
+            }
             delay++;
             blinkTimes++;
 
             if (blinkTimes == totalBlink)
             {
                 blinkTimes = 0;
-            }
+            }/*
             if (delay == totalDelay)
             {
                 delay = 0;
-            }
+            }*/
 
 
         }
@@ -102,7 +132,10 @@ namespace Sprint2
 
 
                 spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-                spriteBatch.Draw(Texture, sworddestinationRectangle, swordsourceRectangle, Color.White);
+                if (delay <= totalDelay / 2)
+                {
+                    spriteBatch.Draw(Texture, sworddestinationRectangle, swordsourceRectangle, Color.White);
+                }
 
             }
         }
