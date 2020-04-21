@@ -13,7 +13,7 @@ namespace Sprint2
         {
             //itemNum 4: sword; itemNum 6: hurtSword
             int itemNum;
-            if (play.player.damage)
+            if (Link.ifDamage)
             {
                 itemNum = 6;
             }

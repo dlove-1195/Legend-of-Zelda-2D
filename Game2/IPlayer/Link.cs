@@ -10,7 +10,6 @@ namespace Sprint2
     {
         public IPlayerstate state { get; set; }
         public ISprite linkSprite;
-        public bool damage { get; set; } = false;
 
         public List<IItem> items { get; set; } = new List<IItem>() ;
         private int direction ;
@@ -127,7 +126,6 @@ namespace Sprint2
             }
             if (ifDamage)
             {
-                damage = true;
                 damageTimer++;
                 if(damageTimer >= 100)
                 {
@@ -136,7 +134,6 @@ namespace Sprint2
             }
             else
             {
-                damage = false;
                 damageTimer = 0;
             }
 

@@ -10,7 +10,6 @@ namespace Sprint2
 
     public class Room : IRoom
     {
-        //private string locale;
         private CultureInfo culture;
         private String type;
         private String name;
@@ -89,7 +88,7 @@ namespace Sprint2
             doorDirection = new List<string>();
             lockedDoor = new List<LockedDoor>();
             
-        stair = new List<KeyValuePair<Vector2, Vector2>>();
+            stair = new List<KeyValuePair<Vector2, Vector2>>();
             boundingBox = new List<Rectangle>();
             npcs = new List<INpc>();
             
