@@ -67,8 +67,7 @@ namespace Sprint2
                 desWidth = 73;
                 desHeight = 112;
                 BoundingBox = new Rectangle(desLocX, desLocY, desWidth + 5, desHeight);
-            }
-            /*
+            } 
             else if (Direction.Equals("Down"))
             {
                 sourceLocX = 517;
@@ -79,8 +78,8 @@ namespace Sprint2
                 desLocY = 691;
                 desWidth = 103;
                 desHeight = 81;
-                BoundingBox = new Rectangle(PosX, PosY, desWidth, desHeight + 5);
-            }*/
+                BoundingBox = new Rectangle(desLocX, desLocY, desWidth, desHeight + 5);
+            } 
             Rectangle sourceRectangle = new Rectangle(sourceLocX, sourceLocY, width, height);
             Rectangle destinationRectangle = new Rectangle(desLocX, desLocY, desWidth, desHeight);
             spriteBatch.Draw(texture, destinationRectangle, sourceRectangle, Color.White);
