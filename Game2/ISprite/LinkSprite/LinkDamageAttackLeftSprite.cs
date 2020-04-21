@@ -13,17 +13,18 @@ namespace Sprint2
         public Texture2D Texture { get; set; }
         private int sourceLocX = 589;
         private int sourceLocY = 254;
-        private int width=14;
-        private int height=15;
+        private int width = 14;
+        private int height = 15;
         private int totalBlink = 5;
-        private int blinkTimes=0;
+        private int blinkTimes = 0;
         private int delay = 0;
         private int totalDelay = 60;
+
 
         public LinkDamageAttackLeftSprite(Texture2D texture)
         {
             Texture = texture;
-       
+
 
         }
         public LinkDamageAttackLeftSprite()
@@ -35,7 +36,7 @@ namespace Sprint2
         public void Update()
         {
 
-            if (delay < totalDelay )
+            if (delay < totalDelay)
             {
                 width = 14;
                 height = 15;
@@ -53,7 +54,8 @@ namespace Sprint2
                 {
                     sourceLocX = 589;
                     sourceLocY = 128;
-                }else if(blinkTimes == 3)
+                }
+                else if (blinkTimes == 3)
                 {
                     sourceLocX = 589;
                     sourceLocY = 146;
@@ -72,12 +74,12 @@ namespace Sprint2
             }
             delay++;
             blinkTimes++;
-           
+
             if (blinkTimes == totalBlink)
             {
                 blinkTimes = 0;
             }
-            if(delay == totalDelay)
+            if (delay == totalDelay)
             {
                 delay = 0;
             }
@@ -95,12 +97,15 @@ namespace Sprint2
             {
                 Rectangle sourceRectangle = new Rectangle(sourceLocX, sourceLocY, width, height);     // determine which frame
                 Rectangle destinationRectangle = new Rectangle((int)vector.X, (int)vector.Y, width * 3, height * 3);    // determine location and demension of the current frame
+                Rectangle swordsourceRectangle = new Rectangle(389, 132, 16, 7);     // determine which frame
+                Rectangle sworddestinationRectangle = new Rectangle((int)vector.X - 43, (int)vector.Y + 16, 16 * 3, 7 * 3);    // determine location and demension of the current frame
 
-                
+
                 spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-                 
+                spriteBatch.Draw(Texture, sworddestinationRectangle, swordsourceRectangle, Color.White);
+
             }
         }
 
     }
-} 
+}

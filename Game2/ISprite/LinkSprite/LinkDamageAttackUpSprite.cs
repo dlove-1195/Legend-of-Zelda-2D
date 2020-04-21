@@ -13,17 +13,18 @@ namespace Sprint2
         public Texture2D Texture { get; set; }
         private int sourceLocX = 257;
         private int sourceLocY = 1;
-        private int width=16;
-        private int height=16;
+        private int width = 16;
+        private int height = 16;
         private int totalBlink = 6;
-        private int blinkTimes=0;
+        private int blinkTimes = 0;
         private int delay = 0;
         private int totalDelay = 60;
+        private Texture2D sword = Texture2DStorage.GetHurtWeaponSpriteSheet();
 
         public LinkDamageAttackUpSprite(Texture2D texture)
         {
             Texture = texture;
-       
+
 
         }
         public LinkDamageAttackUpSprite()
@@ -53,7 +54,8 @@ namespace Sprint2
                 {
                     sourceLocX = 257;
                     sourceLocY = 127;
-                }else if(blinkTimes == 3)
+                }
+                else if (blinkTimes == 3)
                 {
                     sourceLocX = 257;
                     sourceLocY = 253;
@@ -103,7 +105,7 @@ namespace Sprint2
             }*/
             delay++;
             blinkTimes++;
-           
+
             if (blinkTimes == totalBlink)
             {
                 blinkTimes = 0;
@@ -127,11 +129,15 @@ namespace Sprint2
                 Rectangle sourceRectangle = new Rectangle(sourceLocX, sourceLocY, width, height);     // determine which frame
                 Rectangle destinationRectangle = new Rectangle((int)vector.X, (int)vector.Y, width * 3, height * 3);    // determine location and demension of the current frame
 
-                
+                Rectangle swordsourceRectangle = new Rectangle(152, 64, 7, 16);     // determine which frame
+                Rectangle sworddestinationRectangle = new Rectangle((int)vector.X + 10, (int)vector.Y - 35, 7 * 3, 16 * 3);    // determine location and demension of the current frame
+
+
+                spriteBatch.Draw(sword, sworddestinationRectangle, swordsourceRectangle, Color.White);
                 spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-                 
+
             }
         }
 
     }
-} 
+}
