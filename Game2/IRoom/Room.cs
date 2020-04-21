@@ -38,12 +38,14 @@ namespace Sprint2
         public List<string> doorDirection { get; set; } //store door direction Up, Down, Right, Left as string
 #pragma warning disable CA2227 // Collection properties should be read only
         public List<LockedDoor> lockedDoor { get; set; }
+        
 #pragma warning restore CA2227 // Collection properties should be read only
 #pragma warning disable CA2227 // Collection properties should be read only
-        public List<string> OpenedDoor { get; set; }
+        // public List<string> OpenedDoor { get; set; }
 #pragma warning restore CA2227 // Collection properties should be read only
 
         public List<Rectangle> boundingBox { get; set; }
+        public List<int> doorOpen { get; set; }
 
         public Room()
         {
@@ -58,12 +60,12 @@ namespace Sprint2
             blockLocation = new List<KeyValuePair<int, int>>();
             doorDirection = new List<string>();
             lockedDoor = new List<LockedDoor>();
+            doorOpen = new List<int>();
+
             stair = new List<KeyValuePair<Vector2, Vector2>>();
             boundingBox = new List<Rectangle>();
             npcs = new List<INpc>();
-            OpenedDoor = new List<string>();
-
-
+            
 
 
 
@@ -86,10 +88,11 @@ namespace Sprint2
             blockLocation = new List<KeyValuePair<int, int>>();
             doorDirection = new List<string>();
             lockedDoor = new List<LockedDoor>();
-            stair = new List<KeyValuePair<Vector2, Vector2>>();
+            doorOpen = new List<int>();
+        stair = new List<KeyValuePair<Vector2, Vector2>>();
             boundingBox = new List<Rectangle>();
             npcs = new List<INpc>();
-            OpenedDoor = new List<string>();
+            
 
             nodeList = doc.SelectNodes("//Item");
 
@@ -224,6 +227,7 @@ namespace Sprint2
                 LetterGenerator.drawSentence(spriteBatch, "CANDLE              TEN DIAMONDS", new Vector2(100, 380), new Vector2(19, 19));
             }
 
+          
             foreach (LockedDoor doorX in lockedDoor)
             {
                 if (doorX != null)

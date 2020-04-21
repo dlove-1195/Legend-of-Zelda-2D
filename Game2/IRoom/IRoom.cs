@@ -14,7 +14,7 @@ namespace Sprint2
         int upRoomNum { get; set; }
         int downRoomNum { get; set; }
         Vector2 roomPos { get; set; }
-
+        List<int> doorOpen { get; set; }
         List<IEnemy> enemies { get; set; }
         List<IItem> pickUpItems { get; set; }
         List<INpc> npcs { get; set; }
@@ -24,10 +24,11 @@ namespace Sprint2
         List<LockedDoor> lockedDoor { get; set; }
 #pragma warning restore CA2227 // Collection properties should be read only
 #pragma warning disable CA2227 // Collection properties should be read only
-        List<string> OpenedDoor { get; set; }
+        
 #pragma warning restore CA2227 // Collection properties should be read only
 #pragma warning disable IDE1006 // Naming Styles
         List<KeyValuePair<Vector2, Vector2>> stair { get; set; }
+         
 #pragma warning restore IDE1006 // Naming Styles
 
         List<Rectangle> boundingBox { get; set; }

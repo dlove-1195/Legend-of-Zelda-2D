@@ -13,7 +13,7 @@ namespace Sprint2
         private List<IEnemy> enemyList;
         private List<IItem> itemList;
         private List<INpc> npcList;
-        
+         
         public ObjectLoader()
         {
 
@@ -42,6 +42,7 @@ namespace Sprint2
             enemyList = room.enemies;
             itemList = room.pickUpItems;
             npcList = room.npcs;
+             
            
 
             if (type == "Enemy")
@@ -166,7 +167,16 @@ namespace Sprint2
             }
             else if (type == "Wall")
             {
-                itemList.Add(new Wall(name, vector));
+                if((room.roomNumber ==8 || room.roomNumber == 9) && !room.doorOpen.Contains(8))
+                {
+                    itemList.Add(new Wall(name, vector));
+                }
+
+                if ((room.roomNumber == 7 || room.roomNumber == 11) && !room.doorOpen.Contains(7))
+                {
+                    itemList.Add(new Wall(name, vector));
+                }
+
             }
 
         }

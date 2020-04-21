@@ -177,12 +177,7 @@ namespace Sprint2
 #pragma warning restore CA1303 // Do not pass literals as localized parameters
                     break;
 
-            }
-            
-            
-            //----FIXME---------
-            //may need to draw something on the screen
-            //to show the communication with npc
+            } 
         }
 
         public void HandleLinkItemCollsion(int itemNum)
@@ -194,6 +189,24 @@ namespace Sprint2
             }
             
             
+        }
+
+        public void HandleBombWallCollsion(int itemNum)
+        {
+              if(room.roomNumber==8 || room.roomNumber == 9)
+            {
+                room.doorOpen.Add(8);
+                room.doorOpen.Add(9);
+
+            }
+            else if(room.roomNumber == 7 || room.roomNumber == 11)
+            {
+                room.doorOpen.Add(7);
+                room.doorOpen.Add(11);
+
+            }
+            room.setItemToNull(itemNum);
+
         }
 
         public void HandleLinkWallHoleCollision(int itemNum, String direction)

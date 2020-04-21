@@ -19,8 +19,8 @@ namespace Sprint2
         public int heartNum { get; set; } = 12;
         public int heartContainerNum { get; set; } = 12;
         public int diamondNum { get; set; } = 10;
-        public int keyNum { get; set; } = 0;
-        public int bombNum { get; set; } = 0;
+        public int keyNum { get; set; } = 10;
+        public int bombNum { get; set; } = 20;
         public int triPieceNum { get; set; } = 0;
 
         public string itemA { get; set; } = "sword";
