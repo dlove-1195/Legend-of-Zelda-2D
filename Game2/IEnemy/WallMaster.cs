@@ -21,6 +21,8 @@ namespace Sprint2
         private int totalDelay = 100;
         public bool damage { set; get; }
         private int damageTimer = 0;
+        //for random event
+        private bool show = false;
 
 
         //the current position of the dragon
@@ -146,7 +148,16 @@ namespace Sprint2
                 }
                 else
                 {
-                    WallMasterSprite.Draw(spriteBatch, new Vector2(posX, posY));
+                    int distanceX = Link.posX - posX;
+                    int distanceY = Link.posY - posY;
+                    if (distanceX < 50 && distanceY < 50)
+                    {
+                        show = true;
+                    }
+                    if (show)
+                    {
+                        WallMasterSprite.Draw(spriteBatch, new Vector2(posX, posY));
+                    }
                 }
             }
         }
