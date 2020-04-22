@@ -20,7 +20,7 @@ namespace Sprint2
         public int PosX { get; set; }
         public int PosY { get; set; }
 
-        private int fireWidth = 8;//sprite width
+        private int fireWidth = 16;//sprite width
         private int fireHeight = 10;//sprite height
         public Rectangle BoundingBox { get; set; }
 
