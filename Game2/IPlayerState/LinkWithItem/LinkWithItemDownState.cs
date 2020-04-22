@@ -77,7 +77,18 @@ namespace Sprint2
                     link.linkSprite = new LinkDamageAttackDownSprite(textureLink2);
                     link.items.Add(damageSword);
                     break;
-
+                case 7:
+                    //damge arrow
+                    break;
+                case 8:
+                    //damage candle fire
+                    break;
+                case 9:
+                    //damage bomb
+                    break;
+                case 10:
+                    //damage boomrang
+                    break;
                 default:
                     break;
 
