@@ -11,7 +11,7 @@ namespace Sprint2
         private int drawCloud = 0; 
         private Vector2 initialPos;
         public int sparkTimer { get; set; } = 0;
-        public int blood { get; set; } = 1;
+        public int blood { get; set; } = 2;
         public bool damage { set; get; }
         private ISprite flameSprite;
 
@@ -23,6 +23,7 @@ namespace Sprint2
         private int width =16;
         private int height =16;
         public Rectangle boundingBox { get; set; }
+        private int damageTimer = 0;
 
         public Flame(Vector2 vector)
         {
@@ -64,12 +65,34 @@ namespace Sprint2
         }
         public void GetDamage()
         {
-            //none
+            
+            if (Link.ifDamage && !damage)
+            {
+                damage = true;
+                blood--;
+            }
+            else if (!damage)
+            {
+                blood -= 2;
+                damage = true;
+            }
         }
 
 
         public void Update()
         {
+            if (damage)
+            {
+                damageTimer++;
+                if (damageTimer >= 50)
+                {
+                    damage = false;
+                }
+            }
+            else
+            {
+                damageTimer = 0;
+            }
             drawCloud++;
             boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
             flameSprite.Update();

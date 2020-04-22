@@ -17,7 +17,7 @@ namespace Sprint2
         private ISprite RopeSprite;
         private int updateDelay = 0;
         private int totalDelay = 30;
-        public int blood { get; set; } = 1;
+        public int blood { get; set; } = 2;
         public bool damage { set; get; }
 
 
@@ -33,6 +33,7 @@ namespace Sprint2
         public Rectangle boundingBox { get; set; }
 
         private int enemyNumber = 4;
+        private int damageTimer = 0;
 
 
         public Rope(Vector2 vector)
@@ -74,13 +75,34 @@ namespace Sprint2
         }
         public void GetDamage()
         {
-            //none
+            if (Link.ifDamage && !damage)
+            {
+                blood--;
+                damage = true;
+            }
+            else if (!damage)
+            {
+                blood -= 2;
+                damage = true;
+            }
         }
 
 
 
         public void Update()
         {
+            if (damage)
+            {
+                damageTimer++;
+                if (damageTimer >= 50)
+                {
+                    damage = false;
+                }
+            }
+            else
+            {
+                damageTimer = 0;
+            }
             drawCloud++;
             if (Level1.roomUpdate)
             {

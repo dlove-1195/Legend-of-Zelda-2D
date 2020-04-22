@@ -17,7 +17,7 @@ namespace Sprint2
         public int sparkTimer { get; set; } = 0;
         private ISprite trapSprite;
         public bool damage { set; get; }
-        public int blood { get; set; } = 1;
+        public int blood { get; set; } = 2;
 
         //the current position of the trap
         public int posX { get; set; }
@@ -26,6 +26,7 @@ namespace Sprint2
         public Rectangle boundingBox { get; set; }
         private int width =8;
         private int height =14;
+        private int damageTimer = 0;
         public Trap(Vector2 vector)
         {
             
@@ -63,7 +64,17 @@ namespace Sprint2
 
         public void GetDamage()
         {
-            //none
+            
+            if (Link.ifDamage && !damage)
+            {
+                blood--;
+                damage = true;
+            }
+            else if (!damage)
+            {
+                blood -= 2;
+                damage = true;
+            }
         }
 
 
@@ -71,6 +82,18 @@ namespace Sprint2
 
         public void Update()
         {
+            if (damage)
+            {
+                damageTimer++;
+                if (damageTimer >= 50)
+                {
+                    damage = false;
+                }
+            }
+            else
+            {
+                damageTimer = 0;
+            }
             drawCloud++;
             boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
             trapSprite.Update();

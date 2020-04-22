@@ -29,7 +29,7 @@ namespace Sprint2
         private int seed = 1;
 
         public Rectangle boundingBox { get; set; } = new Rectangle();
-        public int blood { get; set; } = 3;
+        public int blood { get; set; } = 6;
 
         private int width = 30;
         private int height = 15;
@@ -72,10 +72,16 @@ namespace Sprint2
         }
         public void GetDamage()
         {
-            if (!damage)
+            if (!damage && Link.ifDamage)
             {
                 blood--;
                 state.GetDamaged();
+            }
+            else if (!damage)
+            {
+                blood -= 2;
+                state.GetDamaged();
+
             }
         }
 

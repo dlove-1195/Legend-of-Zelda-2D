@@ -16,8 +16,9 @@ namespace Sprint2
         private ISprite GelSprite;
         private int updateDelay = 0;
         private int totalDelay = 30;
-        public int blood { get; set; } = 1;
+        public int blood { get; set; } = 2;
         public bool damage { set; get; }
+        private int damageTimer = 0;
 
         //the current position of the Keese
         public int posX { get; set; }
@@ -68,12 +69,33 @@ namespace Sprint2
 
         public void GetDamage()
         {
-            //none
+            if (Link.ifDamage && !damage)
+            {
+                blood--;
+                damage = true;
+            }
+            else if (!damage)
+            {
+                blood -= 2;
+                damage = true;
+            }
         }
 
 
         public void Update()
         {
+            if (damage)
+            {
+                damageTimer++;
+                if (damageTimer >= 50)
+                {
+                    damage = false;
+                }
+            }
+            else
+            {
+                damageTimer = 0;
+            }
             drawCloud++;
             if (Level1.roomUpdate)
             {

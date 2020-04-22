@@ -26,7 +26,7 @@ namespace Sprint2
         private int fireTimer = 0;
         private int damageTimer = 0;
         
-        public int blood { get; set; } = 3;
+        public int blood { get; set; } = 6;
 
         //the current position of the dragon
         public int posX { get; set; }
@@ -82,10 +82,16 @@ namespace Sprint2
         }
         public void GetDamage()
         {
-            if (!damage)
+            if (!damage && Link.ifDamage)
             {
                 blood--;
                 state.GetDamaged();
+            }
+            else if(!damage)
+            {
+                blood -= 2;
+                state.GetDamaged();
+
             }
              
         }

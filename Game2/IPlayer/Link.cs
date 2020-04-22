@@ -128,7 +128,7 @@ namespace Sprint2
             if (ifDamage)
             {
                 damageTimer++;
-                if(damageTimer >= 100)
+                if(damageTimer >= 150)
                 {
                     ifDamage = false;
                 }

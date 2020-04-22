@@ -145,23 +145,8 @@ namespace Sprint2
         {
             if (room.enemies[enemyNum] != null) { 
                 //enemy damage 
-                Sound.PlayLinkDemage();
-                //FIXME LATER
-                //there is a bug here, continue attack and get null exception
-                
-                
-                if (room.enemies[enemyNum] is GreenDragon || room.enemies[enemyNum] is Dragon)
-                {
-                    room.enemies[enemyNum].GetDamage();
-
-                }
-                else
-                {
-                    room.enemies[enemyNum].blood--;
-                }
-
-            
-
+                Sound.PlayLinkDemage(); 
+               room.enemies[enemyNum].GetDamage(); 
             }
       
     } 
