@@ -158,7 +158,7 @@ namespace Sprint2
                     {
                         //link being pushed in opposite direction
                         String direction = detectCollisionDirection(overlapRec, linkRectangle, item[j].BoundingBox);
-                        linkHandler.HandleLinkCloudCollision(direction,j);
+                        linkHandler.HandleLinkCloudCollision(direction);
                     }
                 }
             }

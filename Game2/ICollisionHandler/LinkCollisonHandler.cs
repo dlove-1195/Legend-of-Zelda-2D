@@ -73,28 +73,18 @@ namespace Sprint2
                  
             
         }
-        public void HandleLinkCloudCollision(string direction, int j)
+        public void HandleLinkCloudCollision(string direction)
         {
-            switch (direction)
+            if (direction == "Left")
             {
-                case "Left":
-                    Link.posX = Link.posX - 30;
-                    break;
-                case "Right":
-                    Link.posX = Link.posX + 30;
-                    break;
-                case "Up":
-                    Link.posY = Link.posY + 30;
+                direction = "Right";
 
-                    break;
-                case "Down":
-                    Link.posY = Link.posY - 30;
-                    break;
-
-                default:
-                    Console.WriteLine("error: no such situation");
-                    break;
             }
+            else if (direction == "Right")
+            {
+                direction = "Left";
+            }
+            StayPosition(direction);
         }
             public void HandleLinkEnemyCollsion(string direction, int i)
         {

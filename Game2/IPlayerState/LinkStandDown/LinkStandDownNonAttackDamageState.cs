@@ -20,7 +20,7 @@ namespace Sprint2
             link.linkSprite = new LinkDamageStandDownSprite(texture);
             this.link = link;
             Link.ifDamage = true;
-            
+          
             this.link.ChangeDirection(1);
 
         }

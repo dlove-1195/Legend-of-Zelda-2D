@@ -23,6 +23,7 @@ namespace Sprint2
             this.link = link;
             this.link.ChangeDirection(2);
             Link.ifDamage = true;
+            
 
             link.simpleAttackBox = new Rectangle(Link.posX - 45, Link.posY + 10, 45, 25);
 

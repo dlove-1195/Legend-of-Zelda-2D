@@ -20,6 +20,7 @@ namespace Sprint2
         public static int posY ;
         public static int posX ;
         public static Boolean ifDamage= false;
+        public static bool oldDamageState = false;
 
 #pragma warning disable CA2211 // Non-constant fields should not be visible
         public static int damageTimer = 0;

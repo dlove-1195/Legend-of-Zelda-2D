@@ -71,6 +71,7 @@ namespace Sprint2
                     //damage sword
                     IItem damageSword = new DamageSword(Link.posX + 7, (Link.posY - 20), 0);
                     damageSword.Appear = true;
+                    Link.oldDamageState = true;
                     link.linkSprite = new LinkDamageAttackUpSprite(textureLink2);
                     link.items.Add(damageSword);
                     break;
@@ -116,7 +117,13 @@ namespace Sprint2
         }
         public void ChangeToStand()
         {
+            if (!Link.ifDamage && Link.oldDamageState)
+            {
+               link.state = new LinkStandUpNonAttackNonDamageState(link);
+                Link.oldDamageState = false;
+            }
             
+
         }
 
         

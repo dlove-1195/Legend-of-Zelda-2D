@@ -25,7 +25,7 @@ namespace Sprint2
             Link.ifDamage = true;
 
             link.simpleAttackBox = new Rectangle(Link.posX + 10, Link.posY - 45, 25, 45);
-
+            
         }
        
         public void ChangeToRight()

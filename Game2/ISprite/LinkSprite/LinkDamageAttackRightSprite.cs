@@ -108,11 +108,7 @@ namespace Sprint2
             {
                 blinkTimes = 0;
             }
-            if (delay == totalDelay)
-            {
-                delay = 0;
-            }
-
+             
 
         }
 
