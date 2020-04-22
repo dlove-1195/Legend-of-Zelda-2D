@@ -46,6 +46,12 @@ namespace Sprint2
                 if (itemNum == 2) //bomb, need to calculate its number 
                 {
                     inventory.bombNum--;
+                    if(inventory.bombNum == 0)
+                    {
+                        inventory.itemList.Remove("bomb");
+                        inventory.itemSelect = null;
+                        inventory.itemB = null;
+                    }
                 }
             }
              
