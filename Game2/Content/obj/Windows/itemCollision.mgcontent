@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/zz/Desktop/new/CSE-3902/Game2/Content/itemCollision.wav</SourceFile>
-  <SourceTime>2020-04-21T02:46:26.0349169-04:00</SourceTime>
-  <DestFile>C:/Users/zz/Desktop/new/CSE-3902/Game2/Content/bin/Windows/itemCollision.xnb</DestFile>
-  <DestTime>2020-04-21T03:04:21.48441-04:00</DestTime>
+  <SourceFile>C:/Users/zz/Desktop/CSE-3902/Game2/Content/itemCollision.wav</SourceFile>
+  <SourceTime>2020-04-21T12:27:23.1961571-04:00</SourceTime>
+  <DestFile>C:/Users/zz/Desktop/CSE-3902/Game2/Content/bin/Windows/itemCollision.xnb</DestFile>
+  <DestTime>2020-04-21T19:04:46.2009091-04:00</DestTime>
   <Importer>WavImporter</Importer>
   <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>

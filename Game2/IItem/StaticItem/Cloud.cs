@@ -11,10 +11,10 @@ namespace Sprint2
         private int p = 7;
         //Sprite parameters
         private Texture2D texture = Texture2DStorage.GetDarkCloudSpriteSheet();
-        private int sourceLocX = 7;
-        private int sourceLocY = 10;
-        private int width = 110;
-        private int height = 60;
+        private int sourceLocX = 1;
+        private int sourceLocY = 2;
+        private int width = 29;
+        private int height = 22;
 
         public Rectangle BoundingBox { get; set; }
 
@@ -52,7 +52,7 @@ namespace Sprint2
 
         public void Update()
         {
-            BoundingBox = new Rectangle(PosX+40, PosY+30, width*2, height*2);
+            BoundingBox = new Rectangle(PosX+10, PosY+10, width*2, height*2);
             
             cloudSprite.Update();
         }
