@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/zz/Desktop/CSE-3902/Game2/Content/UDweapon.png</SourceFile>
-  <SourceTime>2020-04-22T16:48:43.0485587-04:00</SourceTime>
-  <DestFile>C:/Users/zz/Desktop/CSE-3902/Game2/Content/bin/Windows/UDweapon.xnb</DestFile>
-  <DestTime>2020-04-22T17:13:16.3464934-04:00</DestTime>
+  <SourceFile>C:/Users/zz/Desktop/CSE-3902/Game2/Content/HurtBoomg.png</SourceFile>
+  <SourceTime>2020-04-22T16:59:45.6627044-04:00</SourceTime>
+  <DestFile>C:/Users/zz/Desktop/CSE-3902/Game2/Content/bin/Windows/HurtBoomg.xnb</DestFile>
+  <DestTime>2020-04-22T17:13:10.834197-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>C:/Users/zz/Desktop/CSE-3902/Game2/Content/enemy3.png</SourceFile>
-  <SourceTime>2020-04-21T12:27:23.1891757-04:00</SourceTime>
+  <SourceTime>2020-04-22T16:48:43.5286302-04:00</SourceTime>
   <DestFile>C:/Users/zz/Desktop/CSE-3902/Game2/Content/bin/Windows/enemy3.xnb</DestFile>
-  <DestTime>2020-04-21T19:04:45.519732-04:00</DestTime>
+  <DestTime>2020-04-22T17:13:10.6177749-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

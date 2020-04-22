@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>C:/Users/zz/Desktop/CSE-3902/Game2/Content/door.PNG</SourceFile>
-  <SourceTime>2020-04-21T12:27:23.1821931-04:00</SourceTime>
+  <SourceTime>2020-04-22T16:48:43.5196502-04:00</SourceTime>
   <DestFile>C:/Users/zz/Desktop/CSE-3902/Game2/Content/bin/Windows/door.xnb</DestFile>
-  <DestTime>2020-04-21T19:04:45.0347219-04:00</DestTime>
+  <DestTime>2020-04-22T17:13:10.2936748-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
