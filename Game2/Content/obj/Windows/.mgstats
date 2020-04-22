@@ -1,4 +1,5 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/zz/Desktop/CSE-3902/Game2/Content/../../../HurtBoom.png","C:/Users/zz/Desktop/CSE-3902/Game2/Content/bin/Windows/HurtBoom.xnb","TextureProcessor","Texture2DContent",7547,523669,0.5603372
 "C:/Users/zz/Desktop/CSE-3902/Game2/Content/bgm.mp3","C:/Users/zz/Desktop/CSE-3902/Game2/Content/bin/Windows/bgm.xnb","SongProcessor","SongContent",1793113,121,1.329675
 "C:/Users/zz/Desktop/CSE-3902/Game2/Content/black.png","C:/Users/zz/Desktop/CSE-3902/Game2/Content/bin/Windows/black.xnb","TextureProcessor","Texture2DContent",4520,1920085,0.9759385
 "C:/Users/zz/Desktop/CSE-3902/Game2/Content/bow.png","C:/Users/zz/Desktop/CSE-3902/Game2/Content/bin/Windows/bow.xnb","TextureProcessor","Texture2DContent",465,14245,0.0269277
@@ -15,7 +16,6 @@ Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Siz
 "C:/Users/zz/Desktop/CSE-3902/Game2/Content/enemy3.png","C:/Users/zz/Desktop/CSE-3902/Game2/Content/bin/Windows/enemy3.xnb","TextureProcessor","Texture2DContent",212843,1088085,0.0578406
 "C:/Users/zz/Desktop/CSE-3902/Game2/Content/enemyCloud.png","C:/Users/zz/Desktop/CSE-3902/Game2/Content/bin/Windows/enemyCloud.xnb","TextureProcessor","Texture2DContent",742,23381,0.0259306
 "C:/Users/zz/Desktop/CSE-3902/Game2/Content/font.png","C:/Users/zz/Desktop/CSE-3902/Game2/Content/bin/Windows/font.xnb","TextureProcessor","Texture2DContent",14505,2756173,0.1226714
-"C:/Users/zz/Desktop/CSE-3902/Game2/Content/HurtBoom.png","C:/Users/zz/Desktop/CSE-3902/Game2/Content/bin/Windows/HurtBoom.xnb","TextureProcessor","Texture2DContent",2099,202997,0.0279258
 "C:/Users/zz/Desktop/CSE-3902/Game2/Content/HurtBoomg.png","C:/Users/zz/Desktop/CSE-3902/Game2/Content/bin/Windows/HurtBoomg.xnb","TextureProcessor","Texture2DContent",817,10965,0.0349062
 "C:/Users/zz/Desktop/CSE-3902/Game2/Content/HurtBow.png","C:/Users/zz/Desktop/CSE-3902/Game2/Content/bin/Windows/HurtBow.xnb","TextureProcessor","Texture2DContent",379,14245,0.0428865
 "C:/Users/zz/Desktop/CSE-3902/Game2/Content/hurtDragon.png","C:/Users/zz/Desktop/CSE-3902/Game2/Content/bin/Windows/hurtDragon.xnb","TextureProcessor","Texture2DContent",11825,584981,0.0668215

@@ -4,6 +4,7 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
+    <File>C:/Users/zz/Desktop/CSE-3902/Game2/Content/../../../HurtBoom.png</File>
     <File>C:/Users/zz/Desktop/CSE-3902/Game2/Content/bgm.mp3</File>
     <File>C:/Users/zz/Desktop/CSE-3902/Game2/Content/black.png</File>
     <File>C:/Users/zz/Desktop/CSE-3902/Game2/Content/bow.png</File>
@@ -20,7 +21,6 @@
     <File>C:/Users/zz/Desktop/CSE-3902/Game2/Content/enemy3.png</File>
     <File>C:/Users/zz/Desktop/CSE-3902/Game2/Content/enemyCloud.png</File>
     <File>C:/Users/zz/Desktop/CSE-3902/Game2/Content/font.png</File>
-    <File>C:/Users/zz/Desktop/CSE-3902/Game2/Content/HurtBoom.png</File>
     <File>C:/Users/zz/Desktop/CSE-3902/Game2/Content/HurtBoomg.png</File>
     <File>C:/Users/zz/Desktop/CSE-3902/Game2/Content/HurtBow.png</File>
     <File>C:/Users/zz/Desktop/CSE-3902/Game2/Content/hurtDragon.png</File>
@@ -44,7 +44,7 @@
     <File>C:/Users/zz/Desktop/CSE-3902/Game2/Content/Zelda_story.png</File>
   </SourceFiles>
   <DestFiles>
-    <File xsi:nil="true" />
+    <File>HurtBoom.png</File>
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

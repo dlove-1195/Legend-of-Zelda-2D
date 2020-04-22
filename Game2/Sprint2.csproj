@@ -201,6 +201,10 @@
     <Compile Include="ISprite\EnemySprite\WallMasterSprite\WallMasterRightStatic.cs" />
     <Compile Include="ISprite\EnemySprite\ZolSprite.cs" />
     <Compile Include="ISprite\ISprite.cs" />
+    <Compile Include="ISprite\ItemSprite\ArrowSprite\DamageArrowRight.cs" />
+    <Compile Include="ISprite\ItemSprite\ArrowSprite\DamageArrowLeft.cs" />
+    <Compile Include="ISprite\ItemSprite\ArrowSprite\DamageArrowUp.cs" />
+    <Compile Include="ISprite\ItemSprite\ArrowSprite\DamageArrowDown.cs" />
     <Compile Include="ISprite\ItemSprite\ArrowSprite\ArrowDown.cs" />
     <Compile Include="ISprite\ItemSprite\ArrowSprite\ArrowLeft.cs" />
     <Compile Include="ISprite\ItemSprite\ArrowSprite\ArrowRight.cs" />
