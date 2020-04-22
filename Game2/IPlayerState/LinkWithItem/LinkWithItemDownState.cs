@@ -79,15 +79,35 @@ namespace Sprint2
                     break;
                 case 7:
                     //damge arrow
+                    IItem Damagearrow = new DamageArrow(Link.posX + 15, (Link.posY + 20), 1);
+                    IItem Damagebow = new DamageBow(Link.posX, (Link.posY + 40), 1);
+                    Damagearrow.Appear = true;
+                    Damagebow.Appear = true;
+                    link.items.Add(Damagearrow);
+                    link.items.Add(Damagebow);
+                    link.linkSprite = new LinkDamageStandDownSprite(textureLink2);
                     break;
                 case 8:
                     //damage candle fire
+                    IItem Damagecandle = new BlueCandle(Link.posX, (Link.posY + 20), 1);
+                    Damagecandle.Appear = true;
+                    link.items.Add(Damagecandle);
+                    link.linkSprite = new LinkDamageStandDownSprite(textureLink2);
                     break;
                 case 9:
                     //damage bomb
+                    IItem Damagebomb = new DamageBomb(Link.posX, (Link.posY + 20));
+                    Damagebomb.Appear = true;
+                    link.linkSprite = new LinkDamageStandDownSprite(textureLink2);
+
+                    link.items.Add(Damagebomb);
                     break;
                 case 10:
                     //damage boomrang
+                    IItem Damageboomerang = new DamageWoodenBoomerang(Link.posX, (Link.posY + 20), 1);
+                    Damageboomerang.Appear = true;
+                    link.linkSprite = new LinkDamageStandDownSprite(textureLink2);
+                    link.items.Add(Damageboomerang);
                     break;
                 default:
                     break;
