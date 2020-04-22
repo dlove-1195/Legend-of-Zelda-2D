@@ -23,6 +23,10 @@ namespace Sprint2
 		private static Texture2D enemySpriteSheet2;
 		   private static Texture2D enemySpriteSheet3;
 		private static Texture2D hurtWeaponSpriteSheet;
+		private static Texture2D hurtBoomerangSpriteSheet;
+		private static Texture2D hurtFireSpriteSheet;
+		private static Texture2D hurtBowSpriteSheet;
+		private static Texture2D hurtBoomSpriteSheet;
 		private static Texture2D woodenBoomerangSpriteSheet;
         private static Texture2D blueCandleSpriteSheet;
         private static Texture2D bowSpriteSheet;
@@ -73,6 +77,10 @@ namespace Sprint2
             woodenBoomerangSpriteSheet = content.Load<Texture2D>("woodenboomerang");
             blueCandleSpriteSheet = content.Load<Texture2D>("candle");
 			hurtWeaponSpriteSheet = content.Load<Texture2D>("UDweapon");
+			hurtBoomerangSpriteSheet = content.Load<Texture2D>("HurtBoomg");
+			hurtBoomSpriteSheet = content.Load<Texture2D>("HurtBoom");
+			hurtBowSpriteSheet = content.Load<Texture2D>("HurtBow");
+			hurtFireSpriteSheet = content.Load<Texture2D>("HurtFire");
 			dungeonSpriteSheet = content.Load<Texture2D>("dugeon");
 
 			//start state
@@ -167,7 +175,24 @@ namespace Sprint2
 		{
 			return hurtWeaponSpriteSheet;
 		}
-        public static Texture2D GetItemSpriteSheet()
+		public static Texture2D GetHurtBoomSpriteSheet()
+		{
+			return hurtBoomSpriteSheet;
+		}
+		public static Texture2D GetHurtBoomerangSpriteSheet()
+		{
+			return hurtBoomerangSpriteSheet;
+		}
+		public static Texture2D GetHurtBowSpriteSheet()
+		{
+			return hurtBowSpriteSheet;
+		}
+		public static Texture2D GetHurtFireSpriteSheet()
+		{
+			return hurtFireSpriteSheet;
+		}
+
+		public static Texture2D GetItemSpriteSheet()
 			{
 				return itemSpriteSheet;
 			}

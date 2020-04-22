@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/zz/Desktop/CSE-3902/Game2/Content/bow.png</SourceFile>
-  <SourceTime>2020-04-21T12:27:23.1752129-04:00</SourceTime>
-  <DestFile>C:/Users/zz/Desktop/CSE-3902/Game2/Content/bin/Windows/bow.xnb</DestFile>
-  <DestTime>2020-04-21T19:04:44.1381166-04:00</DestTime>
+  <SourceFile>C:/Users/zz/Desktop/new/CSE-3902/Game2/Content/bow.png</SourceFile>
+  <SourceTime>2020-04-22T18:39:25.7038272-04:00</SourceTime>
+  <DestFile>C:/Users/zz/Desktop/new/CSE-3902/Game2/Content/bin/Windows/bow.xnb</DestFile>
+  <DestTime>2020-04-22T18:41:43.4271053-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
