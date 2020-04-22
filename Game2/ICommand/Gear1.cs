@@ -11,10 +11,18 @@ namespace Sprint2
         }
         public void Execute()
         {
-
-
-            //itemNum 4: sword
-            int itemNum = 4;
+            //itemNum 4: sword; itemNum 6: hurtSword
+            int itemNum;
+            if (Link.ifDamage)
+            {
+                itemNum = 6;
+            }
+            else
+            {
+                itemNum = 4;
+            }
+            
+           
             /* direction should have value 0,1,2,3 corresponding to up, down, left, right*/
             int direction = play.player.GetDirection();
             switch (direction)

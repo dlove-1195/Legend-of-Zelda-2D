@@ -12,14 +12,14 @@ namespace Sprint2
         private static Dictionary<int, Vector2> numMap = new Dictionary<int, Vector2>(){
             {0, new Vector2 (51,27)},
             {1, new Vector2 (170,27)},
-            { 2,new Vector2 (275,170)},
-            { 3,new Vector2 (387,170)},
-            { 4,new Vector2 (499,170)},
-            { 5,new Vector2 (611,170)},
-            { 6,new Vector2 (723,170)},
-            { 7,new Vector2 (835,170)},
-            { 8,new Vector2 (947,170)},
-            { 9,new Vector2 (1059,170)}
+            { 2,new Vector2 (275,27)},
+            { 3,new Vector2 (387,27)},
+            { 4,new Vector2 (499,27)},
+            { 5,new Vector2 (611,27)},
+            { 6,new Vector2 (723,27)},
+            { 7,new Vector2 (835,27)},
+            { 8,new Vector2 (947,27)},
+            { 9,new Vector2 (1059,27)}
             };
         private static Vector2 drawLoc;
         private static Vector2 numSize = new Vector2(49, 49);
@@ -44,7 +44,9 @@ namespace Sprint2
             {
                 Rectangle sourceRectangle = new Rectangle((int)numMap[num].X, (int)numMap[num].Y, (int)numSize.X, (int)numSize.Y);
                 Rectangle destinationRectangle = new Rectangle((int)drawLoc.X, (int)drawLoc.Y+y, (int)drawSize.X, (int)drawSize.Y);
+#pragma warning disable CA1062 // Validate arguments of public methods
                 spriteBatch.Draw(numberTexture, destinationRectangle, sourceRectangle, Color.White);
+#pragma warning restore CA1062 // Validate arguments of public methods
             }
             else {
                 int num2 = num % 10;

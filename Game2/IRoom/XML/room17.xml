@@ -98,7 +98,7 @@
     <Item>
       <ObjectType>Item</ObjectType>
       <ObjectName>Key</ObjectName>
-      <posX>60</posX>
+      <posX>68</posX>
       <posY>47</posY>
     </Item>
     <Item>
@@ -111,13 +111,13 @@
     <Item>
       <ObjectType>Item</ObjectType>
       <ObjectName>TriforcePiece</ObjectName>
-      <posX>10</posX>
+      <posX>14</posX>
       <posY>45</posY>
     </Item>
     <Item>
       <ObjectType>Item</ObjectType>
       <ObjectName>TriforcePiece</ObjectName>
-      <posX>80</posX>
+      <posX>83</posX>
       <posY>45</posY>
     </Item>
     <!--  item  -->

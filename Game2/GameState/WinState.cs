@@ -8,18 +8,22 @@ namespace Sprint2
     public class WinState : IGameState
     {
 
-        private Texture2D ButtonTexture = Texture2DStorage.GetButtonSpriteSheet();
+        //private Texture2D ButtonTexture = Texture2DStorage.GetButtonSpriteSheet();
         private Texture2D WinTriTexture = Texture2DStorage.GetTriForceSpriteSheet();
         private Texture2D BackgroundTexture = Texture2DStorage.GetBlackBackgroundSpriteSheet();
+        private string sentence1 = "PRESS R TO RESTART";
+        private string sentence2 = "PRESS ESCAPE TO QUIT";
+        private string win = "YOU WIN";
 
-        private Vector2 button1Location = new Vector2(200, 260);
-        private Vector2 button2Location = new Vector2(500, 260);
+        private Vector2 winLocation = new Vector2(310,350);
+        private Vector2 sentence1Location = new Vector2(180, 390);
+        private Vector2 sentence2Location = new Vector2(180, 430);
+        private Vector2 fontSize = new Vector2(20,20);
         private int width = 140;
         private int height = 70;
         private int change = 0;
         private Vector2 triLoc = new Vector2(250, -70);
         private Game1 myGame;
-        //add font "you win" later 
 
         public IInventory inventoryBar { get; set; }
         private IController winStateController;
@@ -61,13 +65,15 @@ namespace Sprint2
             //background
             Rectangle destinationBackRectangle1 = new Rectangle(-400 + change, (int)triLoc.Y, 400, 1000);
             Rectangle destinationBackRectangle2 = new Rectangle(800 - change, (int)triLoc.Y, 400, 1000);
+#pragma warning disable CA1062 // Validate arguments of public methods
             spriteBatch.Draw(BackgroundTexture, destinationBackRectangle1, Color.Black);
+#pragma warning restore CA1062 // Validate arguments of public methods
             spriteBatch.Draw(BackgroundTexture, destinationBackRectangle2, Color.Black);
 
 
             if (change >= 400)
             {
-
+                /*
                 //Restart button
                 Rectangle sourceButtonRectangle1 = new Rectangle(478, 42, 92, 34);
                 Rectangle destinationButtonRectangle1 = new Rectangle((int)button1Location.X, (int)button1Location.Y, 100, 55);
@@ -77,7 +83,11 @@ namespace Sprint2
                 Rectangle sourceButtonRectangle2 = new Rectangle(477, 263, 92, 34);
                 Rectangle destinationButtonRectangle2 = new Rectangle((int)button2Location.X, (int)button2Location.Y, 100, 55);
                 spriteBatch.Draw(ButtonTexture, destinationButtonRectangle2, sourceButtonRectangle2, Color.White);
+                */
 
+                LetterGenerator.drawSentence(spriteBatch, win, winLocation, fontSize);
+                LetterGenerator.drawSentence(spriteBatch, sentence1, sentence1Location, fontSize);
+                LetterGenerator.drawSentence(spriteBatch, sentence2, sentence2Location, fontSize);
 
 
                 //tri logo 

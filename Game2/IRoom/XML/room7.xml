@@ -68,5 +68,12 @@
       <posX>47</posX>
       <posY>82</posY>
     </Item>
+
+    <Item>
+      <ObjectType>Wall</ObjectType>
+      <ObjectName>Left</ObjectName>
+      <posX>10</posX>
+      <posY>46</posY>
+    </Item>
   </Asset>
 </XnaContent>

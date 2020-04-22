@@ -7,10 +7,12 @@ namespace Sprint2
 {
     public class InventoryController : IController
     {
-        private Dictionary<Keys, ICommand> map;
-      
+#pragma warning disable IDE0044 // Add readonly modifier
+      //  private Dictionary<Keys, ICommand> map;
+#pragma warning restore IDE0044 // Add readonly modifier
+
         private Game1 myGame;
-       
+
         private ICommand command;
         public InventoryController(Game1 game )
         {
@@ -33,8 +35,10 @@ namespace Sprint2
 
         public void InventoryDetector(IInventory inventory)
         {
-             
+
+#pragma warning disable CA1062 // Validate arguments of public methods
             if (inventory.heartNum <= 0)
+#pragma warning restore CA1062 // Validate arguments of public methods
             {
                 command = new SwitchToLoseCommand(myGame);
             }

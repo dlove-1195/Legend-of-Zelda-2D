@@ -13,7 +13,7 @@ namespace Sprint2
         private List<IEnemy> enemyList;
         private List<IItem> itemList;
         private List<INpc> npcList;
-        
+         
         public ObjectLoader()
         {
 
@@ -42,6 +42,7 @@ namespace Sprint2
             enemyList = room.enemies;
             itemList = room.pickUpItems;
             npcList = room.npcs;
+             
            
 
             if (type == "Enemy")
@@ -90,6 +91,10 @@ namespace Sprint2
             }
             if (type == "Item")
             {
+                if(name == "Cloud")
+                {
+                    itemList.Add(new Cloud(vector));
+                }
                 if (name == "BlueDiamond")
                 {
                     itemList.Add(new YellowDiamond(vector));
@@ -110,10 +115,7 @@ namespace Sprint2
                 {
                     itemList.Add(new Heart(vector));
                 }
-                if (name == "HeartContainer")
-                {
-                    itemList.Add(new HeartContainer(vector));
-                }
+               
                 if (name == "Key")
                 {
                     itemList.Add(new Key(vector));
@@ -143,8 +145,9 @@ namespace Sprint2
                 {
                     itemList.Add(new staticCandle(vector));
                 }
-                if(name=="Up"||name=="Down"||name=="Right"|| name == "Left")//LockedDoor item
+                if(name=="Up"||name=="Down"||name=="Right"|| name == "Left")//LockedDoor  
                 {
+                    
                     itemList.Add(new LockedDoor(name,vector));
                 }
             }
@@ -166,7 +169,23 @@ namespace Sprint2
                     npcList.Add(new Princess(vector));
                 }
             }
-           
+            else if (type == "Wall")
+            {
+                if ((room.roomNumber == 8 || room.roomNumber == 9) && !Room.doorOpen.Contains(8))
+                {
+                    itemList.Add(new Wall(name, vector));
+                }
+                else if ((room.roomNumber == 7 || room.roomNumber == 11) && !Room.doorOpen.Contains(7))
+                {
+                    itemList.Add(new Wall(name, vector));
+                }
+                else
+                {
+                    itemList.Add(new Wall(name, vector));
+                }
+
+            }
+
         }
     }
 }

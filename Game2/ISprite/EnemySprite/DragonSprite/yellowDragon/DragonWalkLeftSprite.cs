@@ -29,34 +29,36 @@ namespace Sprint2
         }
        
         public void Update() {
-
-            width = 25;
-            height = 15;
-            sourceLocX = 25;
-            sourceLocY = 91;
-            if (delay == totalDelay)
+            if (Level1.roomUpdate)
             {
-                delay = 0;
+                width = 25;
+                height = 15;
+                sourceLocX = 25;
+                sourceLocY = 91;
+                if (delay == totalDelay)
+                {
+                    delay = 0;
 
-            }
+                }
 
-            if (delay > totalDelay / 4 && delay < 2 * totalDelay / 4)
-            {
-                sourceLocY = 121;
-                height = 16;
-            }
-            if (delay >= 2 * totalDelay / 4 && delay < totalDelay)
-            {
-                sourceLocX = 23;
-                sourceLocY = 151;
-                width = 32;
-                height = 16;
+                if (delay > totalDelay / 4 && delay < 2 * totalDelay / 4)
+                {
+                    sourceLocY = 121;
+                    height = 16;
+                }
+                if (delay >= 2 * totalDelay / 4 && delay < totalDelay)
+                {
+                    sourceLocX = 23;
+                    sourceLocY = 151;
+                    width = 32;
+                    height = 16;
 
-            }
+                }
 
-            delay++;
- 
+                delay++;
+
                 Dragon.posX--;
+            }
             
 
         }

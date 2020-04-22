@@ -13,12 +13,14 @@ namespace Sprint2
         private Texture2D inventoryTexture = Texture2DStorage.GetNumberSpriteSheet();
         private Texture2D barMapTexture = Texture2DStorage.GetDownMapSpriteSheet();
         private Texture2D inventoryMapTexture = Texture2DStorage.GetUpMapSpriteSheet();
+        private Texture2D containerTexture = Texture2DStorage.GeHeartContainerSpriteSheet();
 
         private int diff = 0;
         public int heartNum { get; set; } = 12;
+        public int heartContainerNum { get; set; } = 12;
         public int diamondNum { get; set; } = 10;
-        public int keyNum { get; set; } = 0;
-        public int bombNum { get; set; } = 0;
+        public int keyNum { get; set; } = 10;
+        public int bombNum { get; set; } = 20;
         public int triPieceNum { get; set; } = 0;
 
         public string itemA { get; set; } = "sword";
@@ -26,7 +28,9 @@ namespace Sprint2
 
         // being initialized as empty 
         //"bomb","boomerang","bow","candle","candle"
+#pragma warning disable CA2227 // Collection properties should be read only
         public List<String> itemList { get; set; } = new List<String>();
+#pragma warning restore CA2227 // Collection properties should be read only
         public int currentIndex { get; set; } = 0;
         public string itemSelect { get; set; }
 
@@ -34,7 +38,7 @@ namespace Sprint2
         //the width and height for the bar rectangle 
         private static int width = 800;
         private static int height = 200;
-        private Vector2 heartPos = new Vector2(width - 213, height - 94);
+        private Vector2 heartPos = new Vector2(width - 240, height - 94);
         public bool barOnly { get; set; } = true; 
         private int y = 0;
         private ISprite mapSprite = new StaticSprite(Texture2DStorage.GetItemSpriteSheet(), 244,80,8,16);
@@ -307,20 +311,38 @@ namespace Sprint2
         //maximum 14 hearts
         private void DrawHeart(SpriteBatch spriteBatch)
         {
+            //heart container
+            for (int i = 0; i < heartContainerNum; i++)
+            {
+                Rectangle sourceRectangle1 = new Rectangle(0, 0, 320, 320);
+                if (i < 7)
+                {
+                    Rectangle destinationRectangle = new Rectangle((int)heartPos.X + i * 35-10, (int)heartPos.Y + y-10, 35, 35);
+                    spriteBatch.Draw(containerTexture, destinationRectangle, sourceRectangle1, Color.White);
+                }
+                else
+                {
+                    Rectangle destinationRectangle2 = new Rectangle((int)heartPos.X + (i - 7) * 35-10, (int)heartPos.Y + 32 + y-10, 35, 35);
+                    spriteBatch.Draw(containerTexture, destinationRectangle2, sourceRectangle1, Color.White);
+                }
+            }
+            //heart
             for (int i = 0; i < heartNum; i++)
             {
                 Rectangle sourceRectangle1 = new Rectangle(218, 20, 12, 12);
                 if (i < 7)
                 {
-                    Rectangle destinationRectangle = new Rectangle((int)heartPos.X + i * 30, (int)heartPos.Y + y, 30, 30);
+                    Rectangle destinationRectangle = new Rectangle((int)heartPos.X + i * 35, (int)heartPos.Y + y, 30, 30);
                     spriteBatch.Draw(inventoryTexture, destinationRectangle, sourceRectangle1, Color.White);
                 }
                 else
                 {
-                    Rectangle destinationRectangle2 = new Rectangle((int)heartPos.X + (i - 7) * 30, (int)heartPos.Y + 32 + y, 30, 30);
+                    Rectangle destinationRectangle2 = new Rectangle((int)heartPos.X + (i - 7) * 35, (int)heartPos.Y + 32 + y, 30, 30);
                     spriteBatch.Draw(inventoryTexture, destinationRectangle2, sourceRectangle1, Color.White);
                 }
             }
+
+            
         }
 
         //width=height=19

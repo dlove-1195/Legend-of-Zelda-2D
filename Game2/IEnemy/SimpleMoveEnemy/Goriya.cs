@@ -30,8 +30,8 @@ namespace Sprint2
         private int height = 16;
         
         public Rectangle boundingBox { get; set; }
-        public int  blood { get; set; } = 1;
-
+        public int  blood { get; set; } = 2;
+        private int damageTimer = 0;
 
         public Goriya(Vector2 vector)
         {
@@ -69,7 +69,16 @@ namespace Sprint2
         }
         public void GetDamage()
         {
-            //none
+            if (Link.ifDamage && !damage)
+            {
+                blood--;
+                damage = true;
+            }
+            else if (!damage)
+            {
+                blood -= 2;
+                damage = true;
+            }
         }
 
 
@@ -77,43 +86,58 @@ namespace Sprint2
 
         public void Update()
         {
-            drawCloud++;
-            boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
-            GoriyaSprite.Update();
-
-         
-            updateDelay++;
-            if (updateDelay == totalDelay)
+            if (damage)
             {
-                updateDelay = 0;
-                
-                var rnd = new Random(Game1.seed);
-                int randomNumber = rnd.Next(0, 4);
-
-
-                switch (randomNumber)
+                damageTimer++;
+                if (damageTimer >= 50)
                 {
-                    case 0:
-                        this.ChangeToDown();
- 
-                        break;
-                    case 1:
-                        this.ChangeToLeft();
- 
-                        break;
-                    case 2:
-                        this.ChangeToRight();
-
-                        break;
-                    case 3:
-                        this.ChangeToUp();
-
-                        break;
-                    default:
-                        Console.WriteLine("error: no such situation");
-                        break;
+                    damage = false;
                 }
+            }
+            else
+            {
+                damageTimer = 0;
+            }
+            drawCloud++;
+            if (Level1.roomUpdate)
+            {
+                boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
+                GoriyaSprite.Update();
 
+
+                updateDelay++;
+                if (updateDelay == totalDelay)
+                {
+                    updateDelay = 0;
+
+                    var rnd = new Random(Game1.seed);
+                    int randomNumber = rnd.Next(0, 4);
+
+
+                    switch (randomNumber)
+                    {
+                        case 0:
+                            this.ChangeToDown();
+
+                            break;
+                        case 1:
+                            this.ChangeToLeft();
+
+                            break;
+                        case 2:
+                            this.ChangeToRight();
+
+                            break;
+                        case 3:
+                            this.ChangeToUp();
+
+                            break;
+                        default:
+                            Console.WriteLine("error: no such situation");
+                            break;
+                    }
+
+                }
             }
             if (blood <= 0)
             {

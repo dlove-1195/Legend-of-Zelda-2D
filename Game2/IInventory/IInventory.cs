@@ -12,6 +12,7 @@ namespace Sprint2
          bool showCompass { get; set; }  
 
         int heartNum { get; set; }
+        int heartContainerNum { get; set; }
         int diamondNum{ get; set; }
         int keyNum { get; set; }
         int bombNum { get; set; }
@@ -19,7 +20,9 @@ namespace Sprint2
 
         string itemA { get; set; }
         string itemB { get; set; }
-         List<String> itemList { get; set; }
+#pragma warning disable CA2227 // Collection properties should be read only
+        List<String> itemList { get; set; }
+#pragma warning restore CA2227 // Collection properties should be read only
         int currentIndex { get; set; }
         string itemSelect { get; set; }
         void Update();

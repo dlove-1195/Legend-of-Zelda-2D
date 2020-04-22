@@ -12,6 +12,8 @@ namespace Sprint2
        
         private Link link;
         private Texture2D textureLink = Texture2DStorage.GetLinkSpriteSheet();
+
+        private Texture2D textureLink2 = Texture2DStorage.GetLinkSpriteSheet2();
         public LinkWithItemLeftState(Link link, int itemNum)
         {
             if (link == null)
@@ -68,6 +70,14 @@ namespace Sprint2
                     item5.Appear = true;
                     link.items.Add(item5);
                     break;
+                case 6:
+                    //damage sword
+                    IItem damageSword = new DamageSword(Link.posX - 20, (Link.posY + 17), 2);
+                    damageSword.Appear = true;
+                    Link.oldDamageState = true;
+                    link.linkSprite = new LinkDamageAttackLeftSprite(textureLink2);
+                    link.items.Add(damageSword);
+                    break;
                 default:
                     break;
 
@@ -109,7 +119,11 @@ namespace Sprint2
         }
         public void ChangeToStand()
         {
-            //already stand
+            if (!Link.ifDamage && Link.oldDamageState)
+            {
+                link.state = new LinkStandLeftNonAttackNonDamageState(link);
+                Link.oldDamageState = false;
+            }
         }
 
         /*public void LinkWithBomb()

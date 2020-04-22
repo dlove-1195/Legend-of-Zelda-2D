@@ -11,12 +11,20 @@ namespace Sprint2
 
         private Texture2D inventoryTexture = Texture2DStorage.GetInventorySpriteSheet();
         private   int width = 800;
-        private  int height = 871; 
-        public IPlayer player; 
+        private  int height = 871;
+#pragma warning disable CA1051 // Do not declare visible instance fields
+        public IPlayer player;
+#pragma warning restore CA1051 // Do not declare visible instance fields
+#pragma warning disable CA1051 // Do not declare visible instance fields
         public ILevel level;
-        
+#pragma warning restore CA1051 // Do not declare visible instance fields
+
+#pragma warning disable CA1051 // Do not declare visible instance fields
         public ICollisionDetection linkDetection;
+#pragma warning restore CA1051 // Do not declare visible instance fields
+#pragma warning disable CA1051 // Do not declare visible instance fields
         public ICollisionDetection enemyDetection;
+#pragma warning restore CA1051 // Do not declare visible instance fields
 
 
         public IInventory inventoryBar { get; set; }
@@ -45,8 +53,10 @@ namespace Sprint2
              
             Rectangle sourceRectangle1 = new Rectangle(0, height - 200, width, Game1.WindowHeight / 4);          
             Rectangle destinationRectangle = new Rectangle(0, 0, Game1.WindowWidth, Game1.WindowHeight/4);
-          
+
+#pragma warning disable CA1062 // Validate arguments of public methods
             spriteBatch.Draw(inventoryTexture, destinationRectangle, sourceRectangle1, Color.White);
+#pragma warning restore CA1062 // Validate arguments of public methods
 
             //only draw the bar area
             inventoryBar.barOnly = true;
@@ -69,8 +79,8 @@ namespace Sprint2
             enemyDetection.Update();
             level.Update();
             linkDetection = new LinkCollisionDetection(level, player, inventoryBar);
-             if (level.roomUpdate)
-            {
+             if (Level1.roomUpdate)
+             {
                 enemyDetection = new EnemyCollisionDetection(level);
              }
 

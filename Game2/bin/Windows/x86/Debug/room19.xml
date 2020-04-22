@@ -124,5 +124,11 @@
     <!--  NPC  -->
     <!--  Block  -->
     <!--  Block  -->
+    <Item>
+      <ObjectType>Wall</ObjectType>
+      <ObjectName>Down</ObjectName>
+      <posX>87</posX>
+      <posY>30</posY>
+    </Item>
   </Asset>
 </XnaContent>

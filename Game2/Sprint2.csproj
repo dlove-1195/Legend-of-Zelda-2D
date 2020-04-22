@@ -125,13 +125,14 @@
     <Compile Include="IItem\LinkItem\Bomb.cs" />
     <Compile Include="IItem\LinkItem\Bow.cs" />
     <Compile Include="IItem\LinkItem\Fire.cs" />
+    <Compile Include="IItem\LinkItem\DamageSword.cs" />
     <Compile Include="IItem\LinkItem\Sword.cs" />
     <Compile Include="IItem\LinkItem\WoodenBoomerang.cs" />
+    <Compile Include="IItem\StaticItem\Cloud.cs" />
     <Compile Include="IItem\StaticItem\Clock.cs" />
     <Compile Include="IItem\StaticItem\Compass.cs" />
     <Compile Include="IItem\StaticItem\Fairy.cs" />
     <Compile Include="IItem\StaticItem\Heart.cs" />
-    <Compile Include="IItem\StaticItem\HeartContainer.cs" />
     <Compile Include="IItem\StaticItem\Key.cs" />
     <Compile Include="IItem\StaticItem\LockedDoor.cs" />
     <Compile Include="IItem\StaticItem\Map.cs" />
@@ -140,20 +141,25 @@
     <Compile Include="IItem\StaticItem\staticCandle.cs" />
     <Compile Include="IItem\StaticItem\staticWoodenBoomerang.cs" />
     <Compile Include="IItem\StaticItem\TriforcePiece.cs" />
+    <Compile Include="IItem\StaticItem\Wall.cs" />
     <Compile Include="IItem\StaticItem\YellowDiamond.cs" />
     <Compile Include="ILevel\ILevel.cs" />
     <Compile Include="ILevel\level1.cs" />
     <Compile Include="IPlayerState\Iplayerstate.cs" />
     <Compile Include="IPlayerState\LinkStandDown\LinkStandDownAttackNonDamageState.cs" />
+    <Compile Include="IPlayerState\LinkStandDown\LinkStandDownAttackDamageState.cs" />
     <Compile Include="IPlayerState\LinkStandDown\LinkStandDownNonAttackDamageState.cs" />
     <Compile Include="IPlayerState\LinkStandDown\LinkStandDownNonAttackNonDamageState.cs" />
     <Compile Include="IPlayerState\LinkStandLeft\LinkStandLeftAttackNonDamageState.cs" />
+    <Compile Include="IPlayerState\LinkStandLeft\LinkStandLeftAttackDamageState.cs" />
     <Compile Include="IPlayerState\LinkStandLeft\LinkStandLeftNonAttackDamageState.cs" />
     <Compile Include="IPlayerState\LinkStandLeft\LinkStandLeftNonAttackNonDamageState.cs" />
+    <Compile Include="IPlayerState\LinkStandRight\LinkStandRightAttackDamageState.cs" />
     <Compile Include="IPlayerState\LinkStandRight\LinkStandRightAttackNonDamageState.cs" />
     <Compile Include="IPlayerState\LinkStandRight\LinkStandRightNonAttackDamageState.cs" />
     <Compile Include="IPlayerState\LinkStandRight\LinkStandRightNonAttackNonDamageState.cs" />
     <Compile Include="IPlayerState\LinkStandUp\LinkStandUpAttackNonDamageState.cs" />
+    <Compile Include="IPlayerState\LinkStandUp\LinkStandUpAttackDamageState.cs" />
     <Compile Include="IPlayerState\LinkStandUp\LinkStandUpNonAttackDamageState.cs" />
     <Compile Include="IPlayerState\LinkStandUp\LinkStandUpNonAttackNonDamageState.cs" />
     <Compile Include="IPlayerState\LinkWalkDown\LinkWalkDownNonAttackDamageState.cs" />
@@ -220,10 +226,18 @@
     <Compile Include="ISprite\ItemSprite\ItemBlueDiamondSprite.cs" />
     <Compile Include="ISprite\ItemSprite\ItemClockSprite.cs" />
     <Compile Include="ISprite\ItemSprite\ItemHeartSprite.cs" />
+    <Compile Include="ISprite\ItemSprite\SwordSprite\DamageWoodenSwordDown.cs" />
     <Compile Include="ISprite\ItemSprite\SwordSprite\WoodenSwordDown.cs" />
+    <Compile Include="ISprite\ItemSprite\SwordSprite\DamageWoodenSwordLeft.cs" />
     <Compile Include="ISprite\ItemSprite\SwordSprite\WoodenSwordLeft.cs" />
+    <Compile Include="ISprite\ItemSprite\SwordSprite\DamageWoodenSwordRight.cs" />
     <Compile Include="ISprite\ItemSprite\SwordSprite\WoodenSwordRight.cs" />
+    <Compile Include="ISprite\ItemSprite\SwordSprite\DamageWoodenSwordUp.cs" />
     <Compile Include="ISprite\ItemSprite\SwordSprite\WoodenSwordUp.cs" />
+    <Compile Include="ISprite\LinkSprite\LinkDamageAttackLeftSprite.cs" />
+    <Compile Include="ISprite\LinkSprite\LinkDamageAttackRightSprite.cs" />
+    <Compile Include="ISprite\LinkSprite\LinkDamageAttackUpSprite.cs" />
+    <Compile Include="ISprite\LinkSprite\LinkDamageAttackDownSprite.cs" />
     <Compile Include="ISprite\LinkSprite\LinkAttackDownSprite.cs" />
     <Compile Include="ISprite\LinkSprite\LinkAttackLeftSprite.cs" />
     <Compile Include="ISprite\LinkSprite\LinkAttackRightSprite.cs" />
@@ -323,6 +337,9 @@
     <Content Include="IRoom\XML\room9.xml" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="app.manifest" />
     <None Include="Content\bin\Windows\bow.xnb" />
     <None Include="Content\bin\Windows\candle.xnb" />

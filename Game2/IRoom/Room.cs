@@ -10,7 +10,6 @@ namespace Sprint2
 
     public class Room : IRoom
     {
-        //private string locale;
         private CultureInfo culture;
         private String type;
         private String name;
@@ -36,26 +35,36 @@ namespace Sprint2
         public List<KeyValuePair<Vector2, Vector2>> stair { get; set; }
         public List<KeyValuePair<int, int>> blockLocation { get; set; }
         public List<string> doorDirection { get; set; } //store door direction Up, Down, Right, Left as string
+#pragma warning disable CA2227 // Collection properties should be read only
         public List<LockedDoor> lockedDoor { get; set; }
-        public List<string> OpenedDoor { get; set; }
+        
+#pragma warning restore CA2227 // Collection properties should be read only
+#pragma warning disable CA2227 // Collection properties should be read only
+        // public List<string> OpenedDoor { get; set; }
+#pragma warning restore CA2227 // Collection properties should be read only
 
         public List<Rectangle> boundingBox { get; set; }
+        public static List<int> doorOpen { get; set; }= new List<int>();
 
         public Room()
         {
+#pragma warning disable IDE0059 // Unnecessary assignment of a value
             int windowWidth = Game1.WindowWidth;
+#pragma warning restore IDE0059 // Unnecessary assignment of a value
+#pragma warning disable IDE0059 // Unnecessary assignment of a value
             int windowHeight = Game1.WindowHeight;
+#pragma warning restore IDE0059 // Unnecessary assignment of a value
             enemies = new List<IEnemy>();
             pickUpItems = new List<IItem>();
             blockLocation = new List<KeyValuePair<int, int>>();
             doorDirection = new List<string>();
             lockedDoor = new List<LockedDoor>();
+             
+
             stair = new List<KeyValuePair<Vector2, Vector2>>();
             boundingBox = new List<Rectangle>();
             npcs = new List<INpc>();
-            OpenedDoor = new List<string>();
-
-
+            
 
 
 
@@ -78,10 +87,11 @@ namespace Sprint2
             blockLocation = new List<KeyValuePair<int, int>>();
             doorDirection = new List<string>();
             lockedDoor = new List<LockedDoor>();
+            
             stair = new List<KeyValuePair<Vector2, Vector2>>();
             boundingBox = new List<Rectangle>();
             npcs = new List<INpc>();
-            OpenedDoor = new List<string>();
+            
 
             nodeList = doc.SelectNodes("//Item");
 
@@ -141,9 +151,9 @@ namespace Sprint2
                 {
                     doorDirection.Add(name); //door direction stores in name
                 }
-                else if (type == "LockedDoor")
+                else if (type == "Wall")
                 {
-                    objects.loadObject(this, type, name, new Vector2(0, 0));
+                    objects.loadObject(this, type, name, vector);
                 }
                 else if (type == "Stair")
                 {
@@ -209,7 +219,14 @@ namespace Sprint2
         }
         public void Draw(SpriteBatch spriteBatch)
         {
+            if (roomNumber == 2)
+            {
+                LetterGenerator.drawSentence(spriteBatch, "WOULD YOU LIKE TO BUY SOME WEAPONS", new Vector2(100, 320), new Vector2(19, 19));
+                LetterGenerator.drawSentence(spriteBatch, "BOOMERANG AND BOW   FIVE DIAMONDS", new Vector2(100, 350), new Vector2(19, 19));
+                LetterGenerator.drawSentence(spriteBatch, "CANDLE              TEN DIAMONDS", new Vector2(100, 380), new Vector2(19, 19));
+            }
 
+          
             foreach (LockedDoor doorX in lockedDoor)
             {
                 if (doorX != null)

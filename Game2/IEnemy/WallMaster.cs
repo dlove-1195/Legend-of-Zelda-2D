@@ -20,6 +20,7 @@ namespace Sprint2
         private int updateDelay = 0;
         private int totalDelay = 100;
         public bool damage { set; get; }
+        private int damageTimer = 0;
 
 
         //the current position of the dragon
@@ -28,7 +29,7 @@ namespace Sprint2
         public Rectangle boundingBox { get; set; }
         private int width = 14;
         private int height = 15;
-        public int blood { get; set; } = 1;
+        public int blood { get; set; } = 2;
 
         public WallMaster(Vector2 vector )
         {
@@ -70,27 +71,59 @@ namespace Sprint2
         }
         public void GetDamage()
         {
-            //none
+            
+            if (Link.ifDamage && !damage)
+            {
+                blood--;
+                damage = true;
+            }
+            else if (!damage)
+            {
+                blood -= 2;
+                damage = true; 
+            }
         }
 
         public void Update()
         {
+            if (damage)
+            {
+                damageTimer++;
+                if (damageTimer >= 50)
+                {
+                    damage = false;
+                }
+            }
+            else
+            {
+                damageTimer = 0;
+            }
             drawCloud++;
-            boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
-            WallMasterSprite.Update();
-            updateDelay++;
-            if (updateDelay == 10)
+            if (!Level1.roomUpdate)
             {
-
-                 this.ChangeToLeft(); 
-            }else if(updateDelay == 40)
-            {
-                 
                 state = new WallMasterLeftStaticState(this);
-
-            }else if (updateDelay > totalDelay)
+                WallMasterSprite.Update();
+            }
+            else
             {
-                updateDelay = 0;
+                boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
+                WallMasterSprite.Update();
+                updateDelay++;
+                if (updateDelay == 10)
+                {
+
+                    this.ChangeToLeft();
+                }
+                else if (updateDelay == 40)
+                {
+
+                    state = new WallMasterLeftStaticState(this);
+
+                }
+                else if (updateDelay > totalDelay)
+                {
+                    updateDelay = 0;
+                }
             }
 
             if (blood <= 0)

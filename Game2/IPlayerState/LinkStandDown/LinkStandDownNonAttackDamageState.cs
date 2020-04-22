@@ -20,7 +20,7 @@ namespace Sprint2
             link.linkSprite = new LinkDamageStandDownSprite(texture);
             this.link = link;
             Link.ifDamage = true;
-             
+          
             this.link.ChangeDirection(1);
 
         }
@@ -80,7 +80,11 @@ namespace Sprint2
         }
         public void Attack()
         {
-            //cannot attack and damage at the same time
+            if (Link.ifDamage)
+            {
+
+                link.state = new LinkStandDownAttackDamageState(link);
+            }
         }
         public void ChangeToWalk()
         {

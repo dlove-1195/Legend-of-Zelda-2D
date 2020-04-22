@@ -73,30 +73,48 @@ namespace Sprint2
                  
             
         }
-            public void HandleLinkEnemyCollsion(string direction)
+        public void HandleLinkCloudCollision(string direction)
         {
-            Sound.PlayLinkDemage();
-            Link.damageTimer = 0;
-            //link get damaged and being pushed to opposite direction
-            if (!Link.ifDamage && !(link.state is LinkWinningState))
+            if (direction == "Left")
             {
-                inventory.heartNum--;
+                direction = "Right";
+
             }
-            link.GetDamaged(); 
+            else if (direction == "Right")
+            {
+                direction = "Left";
+            }
+            StayPosition(direction);
+        }
+            public void HandleLinkEnemyCollsion(string direction, int i)
+        {
+            Link.damageTimer = 0; 
+            //link get damaged and being pushed to opposite direction
+            if ( !(link.state is LinkWinningState))
+            {
+                Sound.PlayLinkDemage();
+                inventory.heartNum--;
+                link.GetDamaged();
+                Link.ifDamage = true;
+                if(room.enemies[i] is GreenDragon || room.enemies[i] is Dragon)
+                {
+                    inventory.heartContainerNum--;
+                }
+            } 
             switch (direction)
             {
                 case "Left":
-                    Link.posX = Link.posX -3;
+                    Link.posX = Link.posX -30;
                     break;
                 case "Right":
-                    Link.posX= Link.posX + 3;
+                    Link.posX= Link.posX + 30;
                     break;
                 case "Up":
-                    Link.posY =Link.posY+3;
+                    Link.posY =Link.posY+30;
 
                     break;
                 case "Down":
-                    Link.posY = Link.posY - 3;
+                    Link.posY = Link.posY - 30;
                     break;
 
                 default:
@@ -111,13 +129,15 @@ namespace Sprint2
         public void HandleLinkProjectileCollsion()
         {
             //link just damage
-            Link.damageTimer = 0;
-            Sound.PlayLinkDemage();
-            if (!Link.ifDamage && !(link.state is LinkWinningState))
+            Link.damageTimer = 0; 
+            if ( !(link.state is LinkWinningState))
             {
+                Sound.PlayLinkDemage();
                 inventory.heartNum--;
+                link.GetDamaged();
+                Link.ifDamage = true;
             }
-            link.GetDamaged();
+          
            
         }
 
@@ -125,23 +145,8 @@ namespace Sprint2
         {
             if (room.enemies[enemyNum] != null) { 
                 //enemy damage 
-                Sound.PlayLinkDemage();
-                //FIXME LATER
-                //there is a bug here, continue attack and get null exception
-                
-                
-                if (room.enemies[enemyNum] is GreenDragon || room.enemies[enemyNum] is Dragon)
-                {
-                    room.enemies[enemyNum].GetDamage();
-
-                }
-                else
-                {
-                    room.enemies[enemyNum].blood--;
-                }
-
-            
-
+                Sound.PlayLinkDemage(); 
+               room.enemies[enemyNum].GetDamage(); 
             }
       
     } 
@@ -170,25 +175,53 @@ namespace Sprint2
 #pragma warning restore CA1303 // Do not pass literals as localized parameters
                     break;
 
-            }
-            
-            
-            //----FIXME---------
-            //may need to draw something on the screen
-            //to show the communication with npc
+            } 
         }
 
         public void HandleLinkItemCollsion(int itemNum)
-        {
-            //item disappear 
-            Sound.PlayItemCollision();
-            
+        { 
             if (itemManager(itemNum))
             {
+                Sound.PlayItemCollision();
                 room.setItemToNull(itemNum);
             }
             
             
+        }
+
+        public void HandleBombWallCollsion(int itemNum)
+        {
+              if(room.roomNumber==8 || room.roomNumber == 9)
+            {
+                Room.doorOpen.Add(8);
+                Room.doorOpen.Add(9);
+
+            }
+            else if(room.roomNumber == 7 || room.roomNumber == 11)
+            {
+                Room.doorOpen.Add(7);
+                Room.doorOpen.Add(11);
+
+            }
+            room.setItemToNull(itemNum);
+
+        }
+
+        public void HandleLinkWallHoleCollision(int itemNum, String direction)
+        {
+            
+                if (direction == "Left")
+                {
+                    direction = "Right";
+
+                }
+                else if (direction == "Right")
+                {
+                    direction = "Left";
+                }
+                StayPosition(direction);
+          
+
         }
 
         public void HandleLinkLockedDoorCollision(int itemNum, String direction)
@@ -209,12 +242,12 @@ namespace Sprint2
                 {
                     direction = "Left";
                 }
-                remainPosition(direction);
+                StayPosition(direction);
             }
 
         }
 
-        public void remainPosition(string direction)
+        public void StayPosition(string direction)
         {
             
             switch(direction)
@@ -242,15 +275,26 @@ namespace Sprint2
             }
         }
 
+        public void LinkBlueCandleCloudHandler(int itemNum)
+        {
+            room.setItemToNull(itemNum);
+        }
         public bool itemManager(int itemNum)
         {
             bool successPickUp = true;
+
             if (room.pickUpItems[itemNum] is YellowDiamond)
             {
                 inventory.diamondNum++;
                 //max life 12
-            }else if(room.pickUpItems[itemNum] is Heart)
-            {  if (inventory.heartNum <= 11)
+            }
+            else if (room.pickUpItems[itemNum] is Cloud)
+            {
+                successPickUp = false;
+            }
+            else if (room.pickUpItems[itemNum] is Heart)
+            {
+                if (inventory.heartNum < inventory.heartContainerNum)
                 {
                     inventory.heartNum++;
                 }
@@ -275,9 +319,10 @@ namespace Sprint2
             {
                 inventory.triPieceNum++;
                 link.Win();
-            }else if(room.pickUpItems[itemNum] is staticBow)
+            }
+            else if (room.pickUpItems[itemNum] is staticBow)
             {
-                if (!inventory.itemList.Contains("bow") && inventory.diamondNum>=5)
+                if (!inventory.itemList.Contains("bow") && inventory.diamondNum >= 5)
                 {
                     inventory.itemList.Add("bow");
                     inventory.diamondNum -= 5;
@@ -287,9 +332,9 @@ namespace Sprint2
                     successPickUp = false;
                 }
             }
-            else if(room.pickUpItems[itemNum] is staticCandle)
+            else if (room.pickUpItems[itemNum] is staticCandle)
             {
-                if (!inventory.itemList.Contains("candle")&& inventory.diamondNum >= 10)
+                if (!inventory.itemList.Contains("candle") && inventory.diamondNum >= 10)
                 {
                     inventory.itemList.Add("candle");
                     inventory.diamondNum -= 10;
@@ -298,7 +343,8 @@ namespace Sprint2
                 {
                     successPickUp = false;
                 }
-            }else if (room.pickUpItems[itemNum] is staticWoodenBoomerang  )
+            }
+            else if (room.pickUpItems[itemNum] is staticWoodenBoomerang)
             {
                 if (!inventory.itemList.Contains("boomerang") && inventory.diamondNum >= 5)
                 {
@@ -310,16 +356,18 @@ namespace Sprint2
                     successPickUp = false;
                 }
             }
-            else if(room.pickUpItems[itemNum] is Map)
+            else if (room.pickUpItems[itemNum] is Map)
             {
                 inventory.showMap = true;
-            }else if(room.pickUpItems[itemNum] is Compass)
+            }
+            else if (room.pickUpItems[itemNum] is Compass)
             {
                 inventory.showCompass = true;
-            }else if(room.pickUpItems[itemNum] is Clock)
+            }
+            else if (room.pickUpItems[itemNum] is Clock)
             {
                 //room need to stop update
-                level.roomUpdate = false;
+                Level1.roomUpdate = false;
             }
  
             //if items  fairy? /heartContainer?(delete)

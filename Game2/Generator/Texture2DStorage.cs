@@ -18,11 +18,11 @@ namespace Sprint2
 		    private static Texture2D linkSpriteSheet;
 			private static Texture2D linkSpriteSheet2;
 		private static Texture2D npcSpriteSheet;
-
+		private static Texture2D cloudSpriteSheet;
 		private static Texture2D hurtEnemySpriteSheet;
 		private static Texture2D enemySpriteSheet2;
 		   private static Texture2D enemySpriteSheet3;
-
+		private static Texture2D hurtWeaponSpriteSheet;
 		private static Texture2D woodenBoomerangSpriteSheet;
         private static Texture2D blueCandleSpriteSheet;
         private static Texture2D bowSpriteSheet;
@@ -50,6 +50,7 @@ namespace Sprint2
 		private static Texture2D  cloud;
 		private static Texture2D upMap;
 		private static Texture2D downMap;
+		private static Texture2D container;
 		//initialize the Texture2D fields
 		public static void LoadAllTextures(ContentManager content)
 			{
@@ -64,13 +65,14 @@ namespace Sprint2
 			npcSpriteSheet = content.Load<Texture2D>("characters");
 
 			linkSpriteSheet2 = content.Load<Texture2D>("link--final");
-
+			cloudSpriteSheet = content.Load<Texture2D>("cloud");
 			hurtEnemySpriteSheet = content.Load<Texture2D>("hurtDragon");
 			enemySpriteSheet2 = content.Load<Texture2D>("enemy2");
 			enemySpriteSheet3 = content.Load<Texture2D>("enemy3");
 			bowSpriteSheet = content.Load<Texture2D>("bow");
             woodenBoomerangSpriteSheet = content.Load<Texture2D>("woodenboomerang");
             blueCandleSpriteSheet = content.Load<Texture2D>("candle");
+			hurtWeaponSpriteSheet = content.Load<Texture2D>("UDweapon");
 			dungeonSpriteSheet = content.Load<Texture2D>("dugeon");
 
 			//start state
@@ -98,6 +100,8 @@ namespace Sprint2
 			downMap = content.Load<Texture2D>("mapBar");
 			lockedDoor = content.Load<Texture2D>("door");
 
+			container = content.Load<Texture2D>("container");
+
 		}
 
 		   public static void UnloadAllTextures()
@@ -106,6 +110,11 @@ namespace Sprint2
 			// 12
 		
 			}
+
+		public static Texture2D GeHeartContainerSpriteSheet()
+		{
+			return container;
+		}
 
 		public static Texture2D GetUpMapSpriteSheet()
 		{
@@ -150,8 +159,14 @@ namespace Sprint2
         {
             return blueCandleSpriteSheet;
         }
-
-
+		public static Texture2D GetCloudSpriteSheet()
+		{
+			return cloudSpriteSheet;
+		}
+		public static Texture2D GetHurtWeaponSpriteSheet()
+		{
+			return hurtWeaponSpriteSheet;
+		}
         public static Texture2D GetItemSpriteSheet()
 			{
 				return itemSpriteSheet;
@@ -203,9 +218,9 @@ namespace Sprint2
 		public static Texture2D GetLetterSpriteSheet() {
 			return letterSpriteSheet;
 		}
-		public static Texture2D GetCloudSpriteSheet()
+		public static Texture2D GetDarkCloudSpriteSheet()
 		{
-			return cloud;
+			return cloudSpriteSheet;
 		}
 		public static Texture2D GetDoorSpriteSheet()
 		{

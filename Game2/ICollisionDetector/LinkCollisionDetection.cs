@@ -65,9 +65,20 @@ namespace Sprint2
             {
                 if (enemy[i] != null && enemy[i].blood <= 0 && enemy[i].sparkTimer >= 10)
                 {
-                    //diamond need to be yellow
-                    IItem diamond = new YellowDiamond(new Vector2(enemy[i].posX, enemy[i].posY));
-                    room.pickUpItems.Add(diamond);
+                    IItem enemyLeft;
+                    if (enemy[i] is GreenDragon)
+                    {
+                        enemyLeft = new Heart(new Vector2(enemy[i].posX, enemy[i].posY));
+                    }
+                    else if (enemy[i] is Dragon)
+                    {
+                        enemyLeft = new Key(new Vector2(enemy[i].posX, enemy[i].posY));
+                    }
+                    else
+                    {
+                        enemyLeft = new YellowDiamond(new Vector2(enemy[i].posX, enemy[i].posY));
+                    }
+                    room.pickUpItems.Add(enemyLeft);
                     room.setEnemyToNull(i);
                 }
                 if (enemy[i] != null)
@@ -79,7 +90,10 @@ namespace Sprint2
                     {
                         //link damage and being pushed in opposite direction
                         String direction = detectCollisionDirection(overlapRec, linkRectangle, singleEnemyRec);
-                        linkHandler.HandleLinkEnemyCollsion(direction);
+                        if (!Link.ifDamage)
+                        {
+                            linkHandler.HandleLinkEnemyCollsion(direction, i);
+                        }
 
                     }
 
@@ -93,8 +107,10 @@ namespace Sprint2
                         if (!overlapRec.IsEmpty)
                         {
                             //link damage by projectile, will not be pushed
-
-                            linkHandler.HandleLinkProjectileCollsion();
+                            if ( !Link.ifDamage )
+                            {
+                                linkHandler.HandleLinkProjectileCollsion();
+                            }
 
                         }
 
@@ -125,10 +141,68 @@ namespace Sprint2
 
                         }
 
+                        
+
 
                     }
                 }
 
+            }
+
+            for (int j = 0; j < item.Count; j++)
+            {
+                if (item[j] is Cloud)
+                {
+                    overlapRec = Rectangle.Intersect(linkRectangle, item[j].BoundingBox);
+                    if (!overlapRec.IsEmpty)
+                    {
+                        //link being pushed in opposite direction
+                        String direction = detectCollisionDirection(overlapRec, linkRectangle, item[j].BoundingBox);
+                        linkHandler.HandleLinkCloudCollision(direction);
+                    }
+                }
+            }
+               
+            
+                
+
+            
+
+            //loop for detecting bomb collide with door hole
+            listLength = player.items.Count;
+            for(int i=0; i< listLength; i++)
+            {
+                if(player.items[i] is Bomb)
+                {
+                    for (int j = 0; j< item.Count; j++)
+                    {
+                        if(item[j] is Wall)
+                        {
+                            overlapRec = Rectangle.Intersect(player.items[i].BoundingBox, 
+                                item[j].BoundingBox);
+                            if (!overlapRec.IsEmpty)
+                            {
+                                linkHandler.HandleBombWallCollsion(j);
+                            }
+                        }
+                    }
+
+                }
+                //detect blueCandle weapon and cloud collision
+                else if(player.items[i] is BlueCandle)
+                {
+                   for (int j = 0; j< item.Count; j++)
+                    {
+                        if(item[j] is Cloud)
+                        {
+                            overlapRec = Rectangle.Intersect(player.items[i].BoundingBox, item[j].BoundingBox);
+                            if (!overlapRec.IsEmpty)
+                            {
+                                linkHandler.LinkBlueCandleCloudHandler(j);
+                            }
+                        } 
+                    }
+                }
             }
 
             //loop for link/item collsion 
@@ -147,6 +221,11 @@ namespace Sprint2
                         {
                             String direction = detectCollisionDirection(overlapRec, linkRectangle, singleItemRec);
                             linkHandler.HandleLinkLockedDoorCollision(i, direction);
+                        }
+                        else if(item[i] is Wall)
+                        {
+                            String direction = detectCollisionDirection(overlapRec, linkRectangle, singleItemRec);
+                            linkHandler.HandleLinkWallHoleCollision(i, direction);
                         }
                         else
                         {
@@ -231,21 +310,21 @@ namespace Sprint2
                 {
                     if (Link.posX > roomRightCornerPosX && (Link.posY < 900 * 0.45 || Link.posY > 900 * (0.45 + 0.1)))
                     {
-                        linkHandler.remainPosition("Right");
+                        linkHandler.StayPosition("Right");
                     }
                 }
                 else
                 {
                     if (Link.posX > roomRightCornerPosX)
                     {
-                        linkHandler.remainPosition("Right");
+                        linkHandler.StayPosition("Right");
                     }
                 }
                 if (DoorDirection.Contains("Left"))
                 {
                     if (Link.posX < roomLeftCornerPosX && (Link.posY < 900 * 0.45 || Link.posY > 900 * (0.45 + 0.1)))
                     {
-                        linkHandler.remainPosition("Left");
+                        linkHandler.StayPosition("Left");
                     }
                 }
                 else
@@ -253,35 +332,35 @@ namespace Sprint2
                     if (Link.posX < roomLeftCornerPosX)
                     {
 
-                        linkHandler.remainPosition("Left");
+                        linkHandler.StayPosition("Left");
                     }
                 }
                 if (DoorDirection.Contains("Down"))
                 {
                     if (Link.posY > roomRightCornerPosY && (Link.posX < Game1.WindowWidth * 0.465 || Link.posX > Game1.WindowWidth * (0.465 + 0.07)))
                     {
-                        linkHandler.remainPosition("Down");
+                        linkHandler.StayPosition("Down");
                     }
                 }
                 else
                 {
                     if (Link.posY > roomRightCornerPosY)
                     {
-                        linkHandler.remainPosition("Down");
+                        linkHandler.StayPosition("Down");
                     }
                 }
                 if (DoorDirection.Contains("Up"))
                 {
                     if (Link.posY < roomLeftCornerPosY && (Link.posX < Game1.WindowWidth * 0.465 || Link.posX > Game1.WindowWidth * (0.465 + 0.07)))
                     {
-                        linkHandler.remainPosition("Up");
+                        linkHandler.StayPosition("Up");
                     }
                 }
                 else
                 {
                     if (Link.posY < roomLeftCornerPosY)
                     {
-                        linkHandler.remainPosition("Up");
+                        linkHandler.StayPosition("Up");
                     }
                 }
             

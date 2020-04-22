@@ -136,5 +136,12 @@
       <posY>63</posY>
     </Item>
     <!--  Block  -->
+
+    <Item>
+      <ObjectType>Wall</ObjectType>
+      <ObjectName>Left</ObjectName>
+      <posX>10</posX>
+      <posY>46</posY>
+    </Item>
   </Asset>
 </XnaContent>

@@ -11,7 +11,8 @@ namespace Sprint2
     
      public interface IPlayer
     {
-         Rectangle boundingBox { get; set; }
+          List<IItem> items { get; set; }  
+        Rectangle boundingBox { get; set; }
           Rectangle simpleAttackBox { get; set; }
         IPlayerstate state { get; set; }
         void ChangeToRight();

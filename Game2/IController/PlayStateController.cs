@@ -35,6 +35,7 @@ namespace Sprint2
             map.Add(Keys.Down, new ChangeToDownCommand(myPlay));
 
             map.Add(Keys.E, new GetDamagedCommand(myPlay));
+
             map.Add(Keys.Z, new AttackCommand(myPlay));
             map.Add(Keys.N, new AttackCommand(myPlay)); 
             map.Add(Keys.D1, new Gear1(myPlay));

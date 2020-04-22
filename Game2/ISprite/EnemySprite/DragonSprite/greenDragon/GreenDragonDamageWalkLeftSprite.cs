@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +12,9 @@ namespace Sprint2
     {
         private Texture2D Texture;
         private int sourceLocX;
-        private int sourceLocY = 227;
-        private int width = 24;
-        private int height= 32;
+        private int sourceLocY;
+        private int width;
+        private int height;
 
         private int delay = 0;
         private int totalDelay = 10;
@@ -30,8 +30,8 @@ namespace Sprint2
 
         public void Update()
         {
-           
-
+            width = 24;
+            height = 32;
             if (delay == totalDelay)
             {
                 delay = 0;
@@ -40,25 +40,32 @@ namespace Sprint2
 
             if (delay <= totalDelay / 4)
             {
-                sourceLocX = 262;
+                sourceLocX = 262; 
+                sourceLocY = 227;
             }
 
 
             if (delay > totalDelay / 4 && delay < 2 * totalDelay / 4)
             {
                 sourceLocX = 293;
+                sourceLocY = 227;
             }
             if (delay >= 2 * totalDelay / 4 && delay < 3 * totalDelay / 4)
             {
                 sourceLocX = 324;
+                sourceLocY = 227;
             }
             if (delay >= 3 * totalDelay / 4 && delay <= totalDelay)
             {
                 sourceLocX = 355;
+                sourceLocY = 227;
             }
 
             delay++;
-            GreenDragon.posX--;
+            if (Level1.roomUpdate)
+            {
+                GreenDragon.posX--;
+            }
 
         }
 

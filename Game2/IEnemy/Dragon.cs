@@ -29,7 +29,7 @@ namespace Sprint2
         private int seed = 1;
 
         public Rectangle boundingBox { get; set; } = new Rectangle();
-        public int blood { get; set; } = 3;
+        public int blood { get; set; } = 6;
 
         private int width = 30;
         private int height = 15;
@@ -72,10 +72,16 @@ namespace Sprint2
         }
         public void GetDamage()
         {
-            if (!damage)
+            if (!damage && Link.ifDamage)
             {
                 blood--;
                 state.GetDamaged();
+            }
+            else if (!damage)
+            {
+                blood -= 2;
+                state.GetDamaged();
+
             }
         }
 
@@ -83,68 +89,72 @@ namespace Sprint2
 
         public void Update()
         {
-            drawCloud++;
-            boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
-            DragonSprite.Update();
-            if (fire != null)
+            if (Level1.roomUpdate)
             {
-                fire.Update();
-            }
-
-            if (hasFire)
-            {
-                fireTimer++;
-                if (fireTimer == 100)
+                boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
+                
+                if (fire != null)
                 {
-                    hasFire = false;
+                    fire.Update();
+                }
+
+                if (hasFire)
+                {
+                    fireTimer++;
+                    if (fireTimer == 100)
+                    {
+                        hasFire = false;
+                    }
+                }
+                else
+                {
+                    fireTimer = 0;
+                    fire = null;
+                }
+
+                //random move dragon
+                updateDelay++;
+                if (updateDelay == totalDelay)
+                {
+                    updateDelay = 0;
+                    seed++;
+                    var rnd = new Random(seed);
+                    int randomNumber = rnd.Next(0, 4);
+
+
+                    switch (randomNumber)
+                    {
+                        case 0:
+                            this.ChangeToDown();
+                            width = 15;
+                            height = 30;
+
+                            break;
+                        case 1:
+                            this.ChangeToLeft();
+                            width = 30;
+                            height = 15;
+                            break;
+                        case 2:
+                            this.ChangeToRight();
+                            width = 30;
+                            height = 15;
+                            break;
+                        case 3:
+                            this.ChangeToUp();
+                            width = 15;
+                            height = 30;
+                            break;
+                        default:
+#pragma warning disable CA1303 // Do not pass literals as localized parameters
+                            Console.WriteLine("error: no such situation");
+#pragma warning restore CA1303 // Do not pass literals as localized parameters
+                            break;
+                    }
                 }
             }
-            else
-            {
-                fireTimer = 0;
-                fire = null;
-            }
-
-            //random move dragon
-            updateDelay++;
-            if (updateDelay == totalDelay)
-            {
-                updateDelay = 0;
-                seed++;
-                var rnd = new Random(seed);
-                int randomNumber = rnd.Next(0, 4);
-
-
-                switch (randomNumber)
-                {
-                    case 0:
-                        this.ChangeToDown();
-                        width = 15;
-                        height = 30;
-
-                        break;
-                    case 1:
-                        this.ChangeToLeft();
-                        width = 30;
-                        height = 15;
-                        break;
-                    case 2:
-                        this.ChangeToRight();
-                        width = 30;
-                        height = 15;
-                        break;
-                    case 3:
-                        this.ChangeToUp();
-                        width = 15;
-                        height = 30;
-                        break;
-                    default:
-#pragma warning disable CA1303 // Do not pass literals as localized parameters
-                        Console.WriteLine("error: no such situation");
-#pragma warning restore CA1303 // Do not pass literals as localized parameters
-                        break;
-                } 
-            }
+            DragonSprite.Update();
+            drawCloud++;
             if (damage)
             {
                 damageTimer++;

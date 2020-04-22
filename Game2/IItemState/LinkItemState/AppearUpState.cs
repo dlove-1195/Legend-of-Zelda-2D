@@ -18,6 +18,8 @@ namespace Sprint2
          
         private Texture2D texturesword = Texture2DStorage.GetLinkSpriteSheet();
         private Texture2D textureFire = Texture2DStorage.GetEnemySpriteSheet2();
+
+        private Texture2D texutreHurtWeapon = Texture2DStorage.GetHurtWeaponSpriteSheet();
         int num;
 
 
@@ -55,7 +57,11 @@ namespace Sprint2
             {
                 linkItem.ChangeSprite(new WoodBoomerangUp(textureBoomer, linkItem));
             }
-              if (num == 15)
+            if (num == 6)
+            {
+                linkItem.ChangeSprite(new DamageWoodenSwordUp(texutreHurtWeapon, linkItem));
+            }
+            if (num == 15)
             {
                 linkItem.ChangeSprite(new ItemFireballMoveUpSprite(textureFire, linkItem));
             }
