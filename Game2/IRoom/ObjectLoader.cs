@@ -60,6 +60,7 @@ namespace Sprint2
 
                     enemyList.Add(new WallMaster(vector));
                 }
+               
                 if (name == "Flame")
                 {
                     enemyList.Add(new Flame(vector));
@@ -98,6 +99,14 @@ namespace Sprint2
                 if (name == "BlueDiamond")
                 {
                     itemList.Add(new YellowDiamond(vector));
+                }
+                if (name == "BluePotion")
+                {
+                    itemList.Add(new BluePotion(vector));
+                }
+                if (name == "BlueRing")
+                {
+                    itemList.Add(new BlueRing(vector));
                 }
                 if (name == "Clock")
                 {

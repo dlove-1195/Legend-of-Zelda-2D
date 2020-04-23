@@ -33,13 +33,15 @@ namespace Sprint2
         private int height = 15;
         public int blood { get; set; } = 2;
 
-        public WallMaster(Vector2 vector )
+        public WallMaster(Vector2 vector)
         {
             
             posX = (int)vector.X;
             posY = (int)vector.Y;
             initialPos = new Vector2(posX, posY);
-            state = new WallMasterLeftStaticState(this);
+            
+                state = new WallMasterRightStaticState(this);          
+           
             boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
         }
 
@@ -103,7 +105,7 @@ namespace Sprint2
             drawCloud++;
             if (!Level1.roomUpdate)
             {
-                state = new WallMasterLeftStaticState(this);
+                state = new WallMasterRightStaticState(this);
                 WallMasterSprite.Update();
             }
             else
@@ -114,12 +116,12 @@ namespace Sprint2
                 if (updateDelay == 10)
                 {
 
-                    this.ChangeToLeft();
+                    this.ChangeToRight();
                 }
                 else if (updateDelay == 40)
                 {
 
-                    state = new WallMasterLeftStaticState(this);
+                    state = new WallMasterRightStaticState(this);
 
                 }
                 else if (updateDelay > totalDelay)
@@ -148,9 +150,9 @@ namespace Sprint2
                 }
                 else
                 {
-                    int distanceX = Link.posX - posX;
-                    int distanceY = Link.posY - posY;
-                    if (distanceX < 50 && distanceY < 50)
+                    int distanceX = Math.Abs(Link.posX - posX);
+                    int distanceY = Math.Abs(Link.posY - posY);
+                    if (distanceX < 100 && distanceY < 100)
                     {
                         show = true;
                     }

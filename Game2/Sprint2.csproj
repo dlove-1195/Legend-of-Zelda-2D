@@ -135,6 +135,8 @@
     <Compile Include="IItem\LinkItem\DamageSword.cs" />
     <Compile Include="IItem\LinkItem\Sword.cs" />
     <Compile Include="IItem\LinkItem\WoodenBoomerang.cs" />
+    <Compile Include="IItem\StaticItem\BluePotion.cs" />
+    <Compile Include="IItem\StaticItem\BlueRing.cs" />
     <Compile Include="IItem\StaticItem\Cloud.cs" />
     <Compile Include="IItem\StaticItem\Clock.cs" />
     <Compile Include="IItem\StaticItem\Compass.cs" />
@@ -354,7 +356,9 @@
     <Content Include="IRoom\XML\room19.xml" />
     <Content Include="IRoom\XML\room2.xml" />
     <Content Include="IRoom\XML\room3.xml" />
-    <Content Include="IRoom\XML\room4.xml" />
+    <Content Include="IRoom\XML\room4.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="IRoom\XML\room5.xml" />
     <Content Include="IRoom\XML\room6.xml" />
     <Content Include="IRoom\XML\room7.xml" />
