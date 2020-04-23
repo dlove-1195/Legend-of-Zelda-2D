@@ -9,7 +9,7 @@ namespace Sprint2
         public int Count { get; set; } = 0;
         public int TotalCount { get; set; } = 30;
         public bool Appear { get; set; } = false;
-        private int itemNum = 3;
+        private int itemNum =11;
         private IItemState state;
         private ISprite bowSprite;
         //initial position which closed to Link

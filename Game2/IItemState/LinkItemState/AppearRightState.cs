@@ -82,6 +82,10 @@ namespace Sprint2
             {
                 linkItem.ChangeSprite(new DamageWoodBoomerangRight(textureDamageBoomer, linkItem));
             }
+            if (num == 11)
+            {
+                linkItem.ChangeSprite(new DamageBowRight(textureDamageBow));
+            }
             if (num == 15)
             {
                 linkItem.ChangeSprite(new ItemFireballMoveRightSprite(textureFire, linkItem));
