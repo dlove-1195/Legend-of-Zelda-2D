@@ -119,6 +119,7 @@
     <Compile Include="IEnemy\WallMaster.cs" />
     <Compile Include="IInventory\IInventory.cs" />
     <Compile Include="IInventory\Inventory.cs" />
+    <Compile Include="IInventory\InventoryDraw.cs" />
     <Compile Include="IItemState\BombState\DamageBombAppearExplodeState.cs" />
     <Compile Include="IItemState\BombState\DamageBombAppearUnExplodeState.cs" />
     <Compile Include="IItem\Iitem.cs" />
@@ -325,6 +326,27 @@
     <Content Include="Content\Text.png" />
     <Content Include="Content\woodenboomerang.png" />
     <Content Include="Icon.ico" />
+    <Content Include="IRoom\XML-fixing\room1.xml" />
+    <Content Include="IRoom\XML-fixing\room10.xml" />
+    <Content Include="IRoom\XML-fixing\room11.xml" />
+    <Content Include="IRoom\XML-fixing\room12.xml" />
+    <Content Include="IRoom\XML-fixing\room13.xml" />
+    <Content Include="IRoom\XML-fixing\room14.xml" />
+    <Content Include="IRoom\XML-fixing\room15.xml" />
+    <Content Include="IRoom\XML-fixing\room16.xml" />
+    <Content Include="IRoom\XML-fixing\room17.xml" />
+    <Content Include="IRoom\XML-fixing\room18.xml" />
+    <Content Include="IRoom\XML-fixing\room19.xml" />
+    <Content Include="IRoom\XML-fixing\room2.xml" />
+    <Content Include="IRoom\XML-fixing\room3.xml" />
+    <Content Include="IRoom\XML-fixing\room4.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="IRoom\XML-fixing\room5.xml" />
+    <Content Include="IRoom\XML-fixing\room6.xml" />
+    <Content Include="IRoom\XML-fixing\room7.xml" />
+    <Content Include="IRoom\XML-fixing\room8.xml" />
+    <Content Include="IRoom\XML-fixing\room9.xml" />
     <Content Include="IRoom\XML\room1.xml" />
     <Content Include="IRoom\XML\room10.xml" />
     <Content Include="IRoom\XML\room11.xml" />

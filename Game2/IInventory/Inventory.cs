@@ -10,13 +10,14 @@ namespace Sprint2
     public class Inventory : IInventory
     {
 
-        private Texture2D inventoryTexture = Texture2DStorage.GetNumberSpriteSheet();
-        private Texture2D barMapTexture = Texture2DStorage.GetDownMapSpriteSheet();
-        private Texture2D inventoryMapTexture = Texture2DStorage.GetUpMapSpriteSheet();
-        private Texture2D containerTexture = Texture2DStorage.GeHeartContainerSpriteSheet();
-        private Texture2D heartTexture = Texture2DStorage.GetLinkSpriteSheet();
+        protected Texture2D inventoryTexture = Texture2DStorage.GetNumberSpriteSheet();
+        protected Texture2D barMapTexture = Texture2DStorage.GetDownMapSpriteSheet();
+        protected Texture2D inventoryMapTexture = Texture2DStorage.GetUpMapSpriteSheet();
+        protected Texture2D containerTexture = Texture2DStorage.GeHeartContainerSpriteSheet();
+        protected Texture2D heartTexture = Texture2DStorage.GetLinkSpriteSheet();
+        protected InventoryDraw inventoryDraw = new InventoryDraw();
 
-        private int diff = 0;
+        protected int diff = 0;
         public int heartNum { get; set; } = 12;
         public int heartContainerNum { get; set; } = 12;
         public int diamondNum { get; set; } = 10;
@@ -37,24 +38,24 @@ namespace Sprint2
 
 
         //the width and height for the bar rectangle 
-        private static int width = 800;
-        private static int height = 200;
-        private Vector2 heartPos = new Vector2(width - 240, height - 94);
+        protected static int width = 800;
+        protected static int height = 200;
+        protected Vector2 heartPos = new Vector2(width - 240, height - 94);
         public bool barOnly { get; set; } = true; 
-        private int y = 0;
-        private ISprite mapSprite = new StaticSprite(Texture2DStorage.GetItemSpriteSheet(), 244,80,8,16);
-        private ISprite compassSprite = new StaticSprite(Texture2DStorage.GetItemSpriteSheet(), 82, 42, 11, 12);
+        protected int y = 0;
+        protected ISprite mapSprite = new StaticSprite(Texture2DStorage.GetItemSpriteSheet(), 244,80,8,16);
+        protected ISprite compassSprite = new StaticSprite(Texture2DStorage.GetItemSpriteSheet(), 82, 42, 11, 12);
         //assume triforce are being set in room 14,15,16
-        private ISprite triforceDotSprite1 = new ShiningDotSprite(Texture2DStorage.GetItemSpriteSheet(), 343, 123, 10, 10);
-        private ISprite triforceDotSprite2 = new ShiningDotSprite(Texture2DStorage.GetItemSpriteSheet(), 343, 123, 10, 10);
-        private ISprite triforceDotSprite3 = new ShiningDotSprite(Texture2DStorage.GetItemSpriteSheet(), 343, 123, 10, 10);
-        private ISprite linkPosDotSprite = new ShiningDotSprite(Texture2DStorage.GetNumberSpriteSheet(), 34, 35, 7, 5);
+        protected ISprite triforceDotSprite1 = new ShiningDotSprite(Texture2DStorage.GetItemSpriteSheet(), 343, 123, 10, 10);
+        protected ISprite triforceDotSprite2 = new ShiningDotSprite(Texture2DStorage.GetItemSpriteSheet(), 343, 123, 10, 10);
+        protected ISprite triforceDotSprite3 = new ShiningDotSprite(Texture2DStorage.GetItemSpriteSheet(), 343, 123, 10, 10);
+        protected ISprite linkPosDotSprite = new ShiningDotSprite(Texture2DStorage.GetNumberSpriteSheet(), 34, 35, 7, 5);
         public bool showMap { get; set; } = false;
         public bool showCompass { get; set; } = false;
 
 
         //the coordination for each item in the item selet bar
-        private Dictionary<string, Vector2> itemMap = new Dictionary<string, Vector2>(){
+        protected Dictionary<string, Vector2> itemMap = new Dictionary<string, Vector2>(){
             {"sword", new Vector2 (66,53)},  //12 27
             { "bomb", new Vector2 (148,53)},
             { "bow",new Vector2(197,53)},
@@ -65,7 +66,7 @@ namespace Sprint2
         //room map on the top position of inventory sprite sheet 
         //int represents room number
         //width=height=19
-        private Dictionary<int, Vector2> upRoomMap = new Dictionary<int, Vector2>()
+        protected Dictionary<int, Vector2> upRoomMap = new Dictionary<int, Vector2>()
         {
             { 1, new Vector2 (478,407)},
             { 2, new Vector2 (478,380)},
@@ -93,7 +94,7 @@ namespace Sprint2
         //room map on the bottom position of inventory sprite sheet 
         //int represents room number
         //width=22, height =10
-        private Dictionary<int, Vector2> downRoomMap = new Dictionary<int, Vector2>()
+        protected Dictionary<int, Vector2> downRoomMap = new Dictionary<int, Vector2>()
         {
             { 1, new Vector2 (102,123)},
             { 2, new Vector2 (102,110)},
@@ -116,13 +117,17 @@ namespace Sprint2
             { 19,new Vector2(129,176)}
         };
 
-        private List<IRoom> existingRooms;
-        private PlayState play;
-        private int currentRoom;
+        protected List<IRoom> existingRooms;
+        protected PlayState play;
+        protected int currentRoom;
+
+        public Inventory() { 
+        
+        }
         public Inventory(PlayState play)
         {
             this.play = play;
-               
+
         }
 
         public void Update()
@@ -150,7 +155,6 @@ namespace Sprint2
                 triforceDotSprite3.Update();
             }
             linkPosDotSprite.Update();
-
         }
         public void Draw(SpriteBatch spriteBatch)
         {
@@ -161,33 +165,33 @@ namespace Sprint2
             }
 
             //drawing in the bar area
-            DrawNumber(spriteBatch);
-            DrawItemA(spriteBatch);
-            DrawItemB(spriteBatch);
-            DrawHeart(spriteBatch);
+            inventoryDraw.DrawNumber(spriteBatch,  barOnly, width,  height,  diamondNum,  keyNum,  bombNum);
+            inventoryDraw.DrawItemA(spriteBatch, inventoryTexture, width,  height,  y);
+            inventoryDraw.DrawItemB(spriteBatch, itemSelect, itemMap, width, height,inventoryTexture,  y);
+            inventoryDraw.DrawHeart(spriteBatch,  heartContainerNum,  heartPos, containerTexture,  heartNum,  y, heartTexture);
             if (!showMap)
             {
-                DrawRoomDown(spriteBatch);
+                inventoryDraw.DrawRoomDown(spriteBatch,existingRooms,downRoomMap, barMapTexture, y);
             }
             else
             {
                 diff = 2;
-                drawEntireMapDown(spriteBatch);
+                inventoryDraw.drawEntireMapDown(spriteBatch, barMapTexture,  y);
                 if (showCompass)
                 {
                     //draw triforce dot
-                    triforceDotSprite1.Draw(spriteBatch,new Vector2(107,170+y));//in room14
-                    triforceDotSprite2.Draw(spriteBatch, new Vector2(54,110+y)); //in room15
-                    triforceDotSprite3.Draw(spriteBatch, new Vector2(157,120+y)); //in room16
+                    triforceDotSprite1.Draw(spriteBatch, new Vector2(107, 170 + y));//in room14
+                    triforceDotSprite2.Draw(spriteBatch, new Vector2(54, 110 + y)); //in room15
+                    triforceDotSprite3.Draw(spriteBatch, new Vector2(157, 120 + y)); //in room16
                 }
-                 
+
             }
 
             if (!barOnly)
             {
-                DrawItem(spriteBatch);
-                DrawSelectBox(spriteBatch);
-                DrawSelector(spriteBatch);
+                inventoryDraw.DrawItem(spriteBatch, itemList, itemMap, inventoryTexture);
+                inventoryDraw.DrawSelectBox(spriteBatch,  itemB,  itemMap,  inventoryTexture);
+                inventoryDraw.DrawSelector(spriteBatch,  itemList,  itemMap, inventoryTexture,  currentIndex);
                 if (showCompass)
                 {
                     //draw compass
@@ -195,27 +199,27 @@ namespace Sprint2
                 }
                 if (!showMap)
                 {
-                    DrawRoomUp(spriteBatch);
+                    inventoryDraw.DrawRoomUp(spriteBatch,  existingRooms, upRoomMap, inventoryMapTexture);
                 }
                 else
                 {
                     diff = 2;
-                    drawEntireMapUp(spriteBatch);
+                    inventoryDraw.drawEntireMapUp(spriteBatch, inventoryMapTexture);
                     mapSprite.Draw(spriteBatch, new Vector2(120, 400));
                     if (showCompass)
-                    { 
+                    {
                         //draw triforce dot
-                        triforceDotSprite1.Draw(spriteBatch, new Vector2(483,518));//in room14
+                        triforceDotSprite1.Draw(spriteBatch, new Vector2(483, 518));//in room14
                         triforceDotSprite2.Draw(spriteBatch, new Vector2(430, 385)); //in room15
                         triforceDotSprite3.Draw(spriteBatch, new Vector2(537, 412)); //in room16
-                         
+
                     }
                 }
 
             }
 
-            DrawLinkPosDotDownRoom(spriteBatch);
-            DrawLinkPosDotUpRoom(spriteBatch);
+            inventoryDraw.DrawLinkPosDotDownRoom(spriteBatch, existingRooms,  downRoomMap,currentRoom,  linkPosDotSprite, diff,  y);
+            inventoryDraw.DrawLinkPosDotUpRoom(spriteBatch, existingRooms,  upRoomMap, currentRoom,  linkPosDotSprite,  diff);
 
 
 
@@ -223,198 +227,198 @@ namespace Sprint2
         }
 
 
-        private void DrawItem(SpriteBatch spriteBatch)
-        {
-            int i = 0;
-            foreach (string item in itemList)
-            {
-                Rectangle sourceRectangle1 = new Rectangle((int)itemMap[item].X, (int)itemMap[item].Y, 13, 27);
-                if (i < 4)
-                {
-                    Rectangle destinationRectangle = new Rectangle(411 + i * 60, 206, 24, 48);
-                    spriteBatch.Draw(inventoryTexture, destinationRectangle, sourceRectangle1, Color.White);
-                }
-                else
-                {
-                    Rectangle destinationRectangle = new Rectangle(411 + (i - 4) * 60, 206 + 52, 24, 48);
-                    spriteBatch.Draw(inventoryTexture, destinationRectangle, sourceRectangle1, Color.White);
-                }
-                i++;
-            }
-        }
+        /* private void DrawItem(SpriteBatch spriteBatch)
+         {
+             int i = 0;
+             foreach (string item in itemList)
+             {
+                 Rectangle sourceRectangle1 = new Rectangle((int)itemMap[item].X, (int)itemMap[item].Y, 13, 27);
+                 if (i < 4)
+                 {
+                     Rectangle destinationRectangle = new Rectangle(411 + i * 60, 206, 24, 48);
+                     spriteBatch.Draw(inventoryTexture, destinationRectangle, sourceRectangle1, Color.White);
+                 }
+                 else
+                 {
+                     Rectangle destinationRectangle = new Rectangle(411 + (i - 4) * 60, 206 + 52, 24, 48);
+                     spriteBatch.Draw(inventoryTexture, destinationRectangle, sourceRectangle1, Color.White);
+                 }
+                 i++;
+             }
+         }
 
-        private void DrawSelector(SpriteBatch spriteBatch)
-        {
-            Rectangle sourceRectangle = new Rectangle(4, 54, 26, 26);
-            
-            if (itemList.Count>0 )
-            {
-                int i = currentIndex;
-                if (i < 4)
-                {
-                    Rectangle destinationRectangle = new Rectangle(411 + i * 60 - 3, 206 - 3, 30, 54);
-                    spriteBatch.Draw(inventoryTexture, destinationRectangle, sourceRectangle, Color.White);
-                }
-                else
-                {
-                    Rectangle destinationRectangle = new Rectangle(411 + (i - 4) * 60 - 3, 206 + 52 - 3, 30, 54);
-                    spriteBatch.Draw(inventoryTexture, destinationRectangle, sourceRectangle, Color.White);
-                }
-            }
+         private void DrawSelector(SpriteBatch spriteBatch)
+         {
+             Rectangle sourceRectangle = new Rectangle(4, 54, 26, 26);
 
-          
-        }
-
-        //for item selector view box
-        private void DrawSelectBox(SpriteBatch spriteBatch)
-        {
-            if (itemB != null)
-            {
-                Rectangle sourceRectangle1 = new Rectangle((int)itemMap[itemB].X, (int)itemMap[itemB].Y, 13, 27);
-                Rectangle destinationRectangle = new Rectangle(187, 257 - 71, 36, 58);
-                spriteBatch.Draw(inventoryTexture, destinationRectangle, sourceRectangle1, Color.White);
-            }
-        }
+             if (itemList.Count>0 )
+             {
+                 int i = currentIndex;
+                 if (i < 4)
+                 {
+                     Rectangle destinationRectangle = new Rectangle(411 + i * 60 - 3, 206 - 3, 30, 54);
+                     spriteBatch.Draw(inventoryTexture, destinationRectangle, sourceRectangle, Color.White);
+                 }
+                 else
+                 {
+                     Rectangle destinationRectangle = new Rectangle(411 + (i - 4) * 60 - 3, 206 + 52 - 3, 30, 54);
+                     spriteBatch.Draw(inventoryTexture, destinationRectangle, sourceRectangle, Color.White);
+                 }
+             }
 
 
+         }
+
+         //for item selector view box
+         private void DrawSelectBox(SpriteBatch spriteBatch)
+         {
+             if (itemB != null)
+             {
+                 Rectangle sourceRectangle1 = new Rectangle((int)itemMap[itemB].X, (int)itemMap[itemB].Y, 13, 27);
+                 Rectangle destinationRectangle = new Rectangle(187, 257 - 71, 36, 58);
+                 spriteBatch.Draw(inventoryTexture, destinationRectangle, sourceRectangle1, Color.White);
+             }
+         }
 
 
-        //how many new number objects are layered, and is it updated in playstate, when updating inventoryBar
-        private void DrawNumber(SpriteBatch spriteBatch)
-        {
 
 
-           NumberGenerator.DrawSingleNumber(spriteBatch, barOnly, new Vector2(width - 483, height - 132), diamondNum);
-            NumberGenerator.DrawSingleNumber(spriteBatch, barOnly, new Vector2(width - 482, height - 80), keyNum);
-            NumberGenerator.DrawSingleNumber(spriteBatch, barOnly, new Vector2(width - 482, height - 48), bombNum);
+         //how many new number objects are layered, and is it updated in playstate, when updating inventoryBar
+         private void DrawNumber(SpriteBatch spriteBatch)
+         {
 
-        }
 
-        private void DrawItemA(SpriteBatch spriteBatch)
-        {
-            Rectangle sourceRectangle1 = new Rectangle(66, 53, 11, 25);
-            Rectangle destinationRectangle = new Rectangle(width - 330, height - 101 + y, 36, 58);
-            spriteBatch.Draw(inventoryTexture, destinationRectangle, sourceRectangle1, Color.White);
-        }
+            NumberGenerator.DrawSingleNumber(spriteBatch, barOnly, new Vector2(width - 483, height - 132), diamondNum);
+             NumberGenerator.DrawSingleNumber(spriteBatch, barOnly, new Vector2(width - 482, height - 80), keyNum);
+             NumberGenerator.DrawSingleNumber(spriteBatch, barOnly, new Vector2(width - 482, height - 48), bombNum);
 
-        //for final selected item
-        private void DrawItemB(SpriteBatch spriteBatch)
-        {
-            if (itemSelect != null)
-            {
-                Rectangle sourceRectangle1 = new Rectangle((int)itemMap[itemSelect].X, (int)itemMap[itemSelect].Y, 13, 27);
-                Rectangle destinationRectangle = new Rectangle(width - 410, height - 101 + y, 36, 58);
-                spriteBatch.Draw(inventoryTexture, destinationRectangle, sourceRectangle1, Color.White);
-            }
+         }
 
-        }
+         private void DrawItemA(SpriteBatch spriteBatch)
+         {
+             Rectangle sourceRectangle1 = new Rectangle(66, 53, 11, 25);
+             Rectangle destinationRectangle = new Rectangle(width - 330, height - 101 + y, 36, 58);
+             spriteBatch.Draw(inventoryTexture, destinationRectangle, sourceRectangle1, Color.White);
+         }
 
-        //maximum 14 hearts
-        private void DrawHeart(SpriteBatch spriteBatch)
-        {
-            //heart container
-            for (int i = 0; i < heartContainerNum; i++)
-            {
-                Rectangle sourceRectangle1 = new Rectangle(0, 0, 320, 320);
-                if (i < 7)
-                {
-                    Rectangle destinationRectangle = new Rectangle((int)heartPos.X + i * 35-10, (int)heartPos.Y + y-10, 40, 40);
-                    spriteBatch.Draw(containerTexture, destinationRectangle, sourceRectangle1, Color.White);
-                }
-                else
-                {
-                    Rectangle destinationRectangle2 = new Rectangle((int)heartPos.X + (i - 7) * 35-10, (int)heartPos.Y + 32 + y-10, 40, 40);
-                    spriteBatch.Draw(containerTexture, destinationRectangle2, sourceRectangle1, Color.White);
-                }
-            }
-            //heart
-            for (int i = 0; i < heartNum; i++)
-            {
-                Rectangle sourceRectangle1 = new Rectangle(244, 199, 7, 8);
-                if (i < 7)
-                {
-                    Rectangle destinationRectangle = new Rectangle((int)heartPos.X + i * 35 -4, (int)heartPos.Y + y -2, 27, 23);
-                    spriteBatch.Draw(heartTexture, destinationRectangle, sourceRectangle1, Color.White);
-                }
-                else
-                {
-                    Rectangle destinationRectangle2 = new Rectangle((int)heartPos.X + (i - 7) * 35 -4, (int)heartPos.Y + 30 + y, 27, 23);
-                    spriteBatch.Draw(heartTexture, destinationRectangle2, sourceRectangle1, Color.White);
-                }
-            }
+         //for final selected item
+         private void DrawItemB(SpriteBatch spriteBatch)
+         {
+             if (itemSelect != null)
+             {
+                 Rectangle sourceRectangle1 = new Rectangle((int)itemMap[itemSelect].X, (int)itemMap[itemSelect].Y, 13, 27);
+                 Rectangle destinationRectangle = new Rectangle(width - 410, height - 101 + y, 36, 58);
+                 spriteBatch.Draw(inventoryTexture, destinationRectangle, sourceRectangle1, Color.White);
+             }
 
-            
-        }
+         }
 
-        //width=height=19
-        private void DrawRoomUp(SpriteBatch spriteBatch )
-        {
-            if (existingRooms != null)
-            {  
-                Rectangle sourceRectangle = new Rectangle(31, 11, 19, 19);
-                for (int i = 0; i < existingRooms.Count; i++)
-                {
-                  
-                        int desX = (int)upRoomMap[existingRooms[i].roomNumber].X;
-                        int desY = (int)upRoomMap[existingRooms[i].roomNumber].Y;
-                        Rectangle destinationRectangle = new Rectangle(desX, desY, 19, 19);
-                        spriteBatch.Draw(inventoryMapTexture, destinationRectangle, sourceRectangle, Color.White);
-                     
-                }
-            }
-        }
+         //maximum 14 hearts
+         private void DrawHeart(SpriteBatch spriteBatch)
+         {
+             //heart container
+             for (int i = 0; i < heartContainerNum; i++)
+             {
+                 Rectangle sourceRectangle1 = new Rectangle(0, 0, 320, 320);
+                 if (i < 7)
+                 {
+                     Rectangle destinationRectangle = new Rectangle((int)heartPos.X + i * 35-10, (int)heartPos.Y + y-10, 40, 40);
+                     spriteBatch.Draw(containerTexture, destinationRectangle, sourceRectangle1, Color.White);
+                 }
+                 else
+                 {
+                     Rectangle destinationRectangle2 = new Rectangle((int)heartPos.X + (i - 7) * 35-10, (int)heartPos.Y + 32 + y-10, 40, 40);
+                     spriteBatch.Draw(containerTexture, destinationRectangle2, sourceRectangle1, Color.White);
+                 }
+             }
+             //heart
+             for (int i = 0; i < heartNum; i++)
+             {
+                 Rectangle sourceRectangle1 = new Rectangle(244, 199, 7, 8);
+                 if (i < 7)
+                 {
+                     Rectangle destinationRectangle = new Rectangle((int)heartPos.X + i * 35 -4, (int)heartPos.Y + y -2, 27, 23);
+                     spriteBatch.Draw(heartTexture, destinationRectangle, sourceRectangle1, Color.White);
+                 }
+                 else
+                 {
+                     Rectangle destinationRectangle2 = new Rectangle((int)heartPos.X + (i - 7) * 35 -4, (int)heartPos.Y + 30 + y, 27, 23);
+                     spriteBatch.Draw(heartTexture, destinationRectangle2, sourceRectangle1, Color.White);
+                 }
+             }
 
-        
-         
-        //width=24, height =11
-        private void DrawRoomDown(SpriteBatch spriteBatch )
-        {
-            if (existingRooms != null)
-            {
-                Rectangle sourceRectangle = new Rectangle(20, 6, 24, 11);
-                for (int i = 0; i < existingRooms.Count; i++)
-                {
-                    
-                        int desX = (int)downRoomMap[existingRooms[i].roomNumber].X;
-                        int desY = (int)downRoomMap[existingRooms[i].roomNumber].Y;
-                        Rectangle destinationRectangle = new Rectangle(desX, desY + y, 24, 11);
-                        spriteBatch.Draw(barMapTexture, destinationRectangle, sourceRectangle, Color.White);
-                    
-                }
-            }
-        }
 
-        private void drawEntireMapUp(SpriteBatch spriteBatch)
-        {
-            Rectangle sourceRectangle = new Rectangle(31, 11, 128, 155);
-            Rectangle destinationRectangle = new Rectangle(425, 380 , 133, 152);
-            spriteBatch.Draw(inventoryMapTexture, destinationRectangle, sourceRectangle, Color.White);
-        }
+         }
 
-        private void drawEntireMapDown(SpriteBatch spriteBatch)
-        {
-            Rectangle sourceRectangle = new Rectangle(20, 6, 131, 78);
-            Rectangle destinationRectangle = new Rectangle(49, 110 + y, 120, 66);
-            spriteBatch.Draw(barMapTexture, destinationRectangle, sourceRectangle, Color.White);
-        }
-        private void DrawLinkPosDotUpRoom(SpriteBatch spriteBatch)
-        {
-            if (existingRooms != null)
-            {
-                int desX = (int)upRoomMap[currentRoom].X;
-                int desY = (int)upRoomMap[currentRoom].Y;
-                linkPosDotSprite.Draw(spriteBatch, new Vector2((int)(desX + 7), (int)(desY + 5 - diff))); //current room
-            }
-        }
-        private void DrawLinkPosDotDownRoom(SpriteBatch spriteBatch)
-        {
-            if (existingRooms != null)
-            {
-                int desX = (int)downRoomMap[currentRoom].X;
-                int desY = (int)downRoomMap[currentRoom].Y;
-                linkPosDotSprite.Draw(spriteBatch, new Vector2((int)(desX + 10), (int)(desY + 3 + y - diff))); //current room
-            }
-        }
+         //width=height=19
+         private void DrawRoomUp(SpriteBatch spriteBatch )
+         {
+             if (existingRooms != null)
+             {  
+                 Rectangle sourceRectangle = new Rectangle(31, 11, 19, 19);
+                 for (int i = 0; i < existingRooms.Count; i++)
+                 {
+
+                         int desX = (int)upRoomMap[existingRooms[i].roomNumber].X;
+                         int desY = (int)upRoomMap[existingRooms[i].roomNumber].Y;
+                         Rectangle destinationRectangle = new Rectangle(desX, desY, 19, 19);
+                         spriteBatch.Draw(inventoryMapTexture, destinationRectangle, sourceRectangle, Color.White);
+
+                 }
+             }
+         }
+
+
+
+         //width=24, height =11
+         private void DrawRoomDown(SpriteBatch spriteBatch )
+         {
+             if (existingRooms != null)
+             {
+                 Rectangle sourceRectangle = new Rectangle(20, 6, 24, 11);
+                 for (int i = 0; i < existingRooms.Count; i++)
+                 {
+
+                         int desX = (int)downRoomMap[existingRooms[i].roomNumber].X;
+                         int desY = (int)downRoomMap[existingRooms[i].roomNumber].Y;
+                         Rectangle destinationRectangle = new Rectangle(desX, desY + y, 24, 11);
+                         spriteBatch.Draw(barMapTexture, destinationRectangle, sourceRectangle, Color.White);
+
+                 }
+             }
+         }
+
+         private void drawEntireMapUp(SpriteBatch spriteBatch)
+         {
+             Rectangle sourceRectangle = new Rectangle(31, 11, 128, 155);
+             Rectangle destinationRectangle = new Rectangle(425, 380 , 133, 152);
+             spriteBatch.Draw(inventoryMapTexture, destinationRectangle, sourceRectangle, Color.White);
+         }
+
+         private void drawEntireMapDown(SpriteBatch spriteBatch)
+         {
+             Rectangle sourceRectangle = new Rectangle(20, 6, 131, 78);
+             Rectangle destinationRectangle = new Rectangle(49, 110 + y, 120, 66);
+             spriteBatch.Draw(barMapTexture, destinationRectangle, sourceRectangle, Color.White);
+         }
+         private void DrawLinkPosDotUpRoom(SpriteBatch spriteBatch)
+         {
+             if (existingRooms != null)
+             {
+                 int desX = (int)upRoomMap[currentRoom].X;
+                 int desY = (int)upRoomMap[currentRoom].Y;
+                 linkPosDotSprite.Draw(spriteBatch, new Vector2((int)(desX + 7), (int)(desY + 5 - diff))); //current room
+             }
+         }
+         private void DrawLinkPosDotDownRoom(SpriteBatch spriteBatch)
+         {
+             if (existingRooms != null)
+             {
+                 int desX = (int)downRoomMap[currentRoom].X;
+                 int desY = (int)downRoomMap[currentRoom].Y;
+                 linkPosDotSprite.Draw(spriteBatch, new Vector2((int)(desX + 10), (int)(desY + 3 + y - diff))); //current room
+             }
+         }*/
     }
     }
  
