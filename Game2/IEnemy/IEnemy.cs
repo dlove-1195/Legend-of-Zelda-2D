@@ -10,6 +10,7 @@ namespace Sprint2
         Rectangle boundingBox { get; set; }
          int posX { get; set; }
         int posY { get; set; }
+         int sparkTimer { get; set; }  
         void ChangeToLeft();
         void ChangeToRight();
         void ChangeToUp();
@@ -25,8 +26,9 @@ namespace Sprint2
 
         void ChangeSprite(ISprite sprite);
         List<Rectangle> getProjectileRec();
-         
+        void GetDamage();
 
+        bool damage { get; set; }
 
 
     }

@@ -17,8 +17,7 @@ namespace Sprint2
         bool Appear { get; set; }
 
         void ChangeSprite(ISprite sprite);
-        void NextItem(Game1 myGame);
-        void PreItem(Game1 myGame);
+      
         int GetItem();
         void Update();
         void Draw(SpriteBatch spriteBatch);

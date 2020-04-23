@@ -20,6 +20,8 @@ namespace Sprint2
 
         public Camera()
         {
+            sourceLocX = 515;
+            sourceLocY = 177;
             direction = "";
         }
 

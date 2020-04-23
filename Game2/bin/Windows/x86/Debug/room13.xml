@@ -45,14 +45,20 @@
   <Item>
     <ObjectType>Enemy</ObjectType>
     <ObjectName>Zol</ObjectName>
-    <posX>50</posX>
-    <posY>28</posY>
+    <posX>15</posX>
+    <posY>38</posY>
   </Item>
   <Item>
     <ObjectType>Enemy</ObjectType>
     <ObjectName>Zol</ObjectName>
     <posX>26</posX>
     <posY>65</posY>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>GreenDragon</ObjectName>
+    <posX>55</posX>
+    <posY>40</posY>
   </Item>
   <!--  enemy  -->
   <!--  item  -->

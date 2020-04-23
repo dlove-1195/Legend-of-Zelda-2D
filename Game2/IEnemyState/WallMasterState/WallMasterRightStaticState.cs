@@ -38,5 +38,9 @@ namespace Sprint2
         public void ChangeToDown()
         {
         }
+        public void GetDamaged()
+        {
+            //
+        }
     }
 }
