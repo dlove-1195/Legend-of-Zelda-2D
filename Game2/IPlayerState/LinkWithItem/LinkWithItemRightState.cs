@@ -130,10 +130,10 @@ namespace Sprint2
         }
         public void ChangeToRight()
         {
-            if (!Link.ifDamage && Link.oldDamageState)
+            if (!Link.ifDamage )
             {
                 link.state = new LinkStandRightNonAttackNonDamageState(link);
-                Link.oldDamageState = false;
+        
             }
             else
             {
@@ -142,10 +142,10 @@ namespace Sprint2
         }
         public void ChangeToLeft()
         {
-            if (!Link.ifDamage && Link.oldDamageState)
+            if (!Link.ifDamage )
             {
                 link.state = new LinkStandLeftNonAttackNonDamageState(link);
-                Link.oldDamageState = false;
+              
             }
             else
             {
@@ -154,10 +154,10 @@ namespace Sprint2
         }
         public void ChangeToUp()
         {
-            if (!Link.ifDamage && Link.oldDamageState)
+            if (!Link.ifDamage)
             {
                 link.state = new LinkStandUpNonAttackNonDamageState(link);
-                Link.oldDamageState = false;
+               
             }
             else
             {
@@ -166,10 +166,10 @@ namespace Sprint2
         }
         public void ChangeToDown()
         {
-            if (!Link.ifDamage && Link.oldDamageState)
+            if (!Link.ifDamage )
             {
                 link.state = new LinkStandDownNonAttackNonDamageState(link);
-                Link.oldDamageState = false;
+        
             }
             else
             {
