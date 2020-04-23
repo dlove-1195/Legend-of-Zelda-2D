@@ -84,6 +84,7 @@ namespace Sprint2
                     IItem Damagebow = new DamageBow((Link.posX-20), (Link.posY), 2);
                     Damagearrow.Appear = true;
                     Damagebow.Appear = true;
+                    Link.oldDamageState = true;
                     link.items.Add(Damagearrow);
                     link.items.Add(Damagebow);
                     link.linkSprite = new LinkDamageStandLeftSprite(textureLink2);
@@ -92,6 +93,7 @@ namespace Sprint2
                     //damage candle fire
                     IItem Damagecandle = new BlueCandle((Link.posX-20), (Link.posY), 2);
                     Damagecandle.Appear = true;
+                    Link.oldDamageState = true;
                     link.items.Add(Damagecandle);
                     link.linkSprite = new LinkDamageStandLeftSprite(textureLink2);
                     break;
@@ -99,6 +101,7 @@ namespace Sprint2
                     //damage bomb
                     IItem Damagebomb = new DamageBomb((Link.posX-20), (Link.posY));
                     Damagebomb.Appear = true;
+                    Link.oldDamageState = true;
                     link.linkSprite = new LinkDamageStandLeftSprite(textureLink2);
 
                     link.items.Add(Damagebomb);
@@ -107,6 +110,7 @@ namespace Sprint2
                     //damage boomrang
                     IItem Damageboomerang = new DamageWoodenBoomerang((Link.posX-20), (Link.posY), 2);
                     Damageboomerang.Appear = true;
+                    Link.oldDamageState = true;
                     link.linkSprite = new LinkDamageStandLeftSprite(textureLink2);
                     link.items.Add(Damageboomerang);
                     break;

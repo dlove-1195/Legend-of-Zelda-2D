@@ -65,20 +65,46 @@ namespace Sprint2
             switch (selectItem)
             {
                 case "bomb":
-                    i = 2; 
+                    if (Link.ifDamage)
+                    {
+                        i = 9;
+                    }
+                    else
+                    {
+                        i = 2;
+                    }
                     break;
                 case "bow":
-                    i = 0;
+                    if (Link.ifDamage)
+                    {
+                        i = 7;
+                    }
+                    else
+                    {
+                        i = 0;
+                    }
                     break;
                 case "candle":
-                    i = 1;
+                    if (Link.ifDamage)
+                    {
+                        i = 8;
+                    }
+                    else
+                    {
+                        i = 1;
+                    }
                     break;
                 case "boomerang":
-                    i = 5;
+                    if (Link.ifDamage)
+                    {
+                        i = 10;
+                    }
+                    else
+                    {
+                        i = 5;
+                    }
                     break;
-                default:
-                    Console.WriteLine("not gonna happen ");
-                    break;
+
 
 
             }

@@ -83,6 +83,7 @@ namespace Sprint2
                     Damagebow.Appear = true;
                     link.items.Add(Damagearrow);
                     link.items.Add(Damagebow);
+                    Link.oldDamageState = true;
                     link.linkSprite = new LinkDamageStandUpSprite(textureLink2);
                     break;
                 case 8:
@@ -90,12 +91,14 @@ namespace Sprint2
                     IItem Damagecandle = new BlueCandle(Link.posX, (Link.posY - 20), 0);
                     Damagecandle.Appear = true;
                     link.items.Add(Damagecandle);
+                    Link.oldDamageState = true;
                     link.linkSprite = new LinkDamageStandUpSprite(textureLink2);
                     break;
                 case 9:
                     //damage bomb
                     IItem Damagebomb = new DamageBomb(Link.posX, (Link.posY - 20));
                     Damagebomb.Appear = true;
+                    Link.oldDamageState = true;
                     link.linkSprite = new LinkDamageStandUpSprite(textureLink2);
 
                     link.items.Add(Damagebomb);
@@ -106,6 +109,7 @@ namespace Sprint2
                     Damageboomerang.Appear = true;
                     link.linkSprite = new LinkDamageStandUpSprite(textureLink2);
                     link.items.Add(Damageboomerang);
+                    Link.oldDamageState = true;
                     break;
                 default:
                     break;
