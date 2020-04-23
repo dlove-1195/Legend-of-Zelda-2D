@@ -14,6 +14,7 @@ namespace Sprint2
         private Texture2D barMapTexture = Texture2DStorage.GetDownMapSpriteSheet();
         private Texture2D inventoryMapTexture = Texture2DStorage.GetUpMapSpriteSheet();
         private Texture2D containerTexture = Texture2DStorage.GeHeartContainerSpriteSheet();
+        private Texture2D heartTexture = Texture2DStorage.GetLinkSpriteSheet();
 
         private int diff = 0;
         public int heartNum { get; set; } = 12;
@@ -317,28 +318,28 @@ namespace Sprint2
                 Rectangle sourceRectangle1 = new Rectangle(0, 0, 320, 320);
                 if (i < 7)
                 {
-                    Rectangle destinationRectangle = new Rectangle((int)heartPos.X + i * 35-10, (int)heartPos.Y + y-10, 35, 35);
+                    Rectangle destinationRectangle = new Rectangle((int)heartPos.X + i * 35-10, (int)heartPos.Y + y-10, 40, 40);
                     spriteBatch.Draw(containerTexture, destinationRectangle, sourceRectangle1, Color.White);
                 }
                 else
                 {
-                    Rectangle destinationRectangle2 = new Rectangle((int)heartPos.X + (i - 7) * 35-10, (int)heartPos.Y + 32 + y-10, 35, 35);
+                    Rectangle destinationRectangle2 = new Rectangle((int)heartPos.X + (i - 7) * 35-10, (int)heartPos.Y + 32 + y-10, 40, 40);
                     spriteBatch.Draw(containerTexture, destinationRectangle2, sourceRectangle1, Color.White);
                 }
             }
             //heart
             for (int i = 0; i < heartNum; i++)
             {
-                Rectangle sourceRectangle1 = new Rectangle(218, 20, 12, 12);
+                Rectangle sourceRectangle1 = new Rectangle(244, 199, 7, 8);
                 if (i < 7)
                 {
-                    Rectangle destinationRectangle = new Rectangle((int)heartPos.X + i * 35, (int)heartPos.Y + y, 30, 30);
-                    spriteBatch.Draw(inventoryTexture, destinationRectangle, sourceRectangle1, Color.White);
+                    Rectangle destinationRectangle = new Rectangle((int)heartPos.X + i * 35 -4, (int)heartPos.Y + y -2, 27, 23);
+                    spriteBatch.Draw(heartTexture, destinationRectangle, sourceRectangle1, Color.White);
                 }
                 else
                 {
-                    Rectangle destinationRectangle2 = new Rectangle((int)heartPos.X + (i - 7) * 35, (int)heartPos.Y + 32 + y, 30, 30);
-                    spriteBatch.Draw(inventoryTexture, destinationRectangle2, sourceRectangle1, Color.White);
+                    Rectangle destinationRectangle2 = new Rectangle((int)heartPos.X + (i - 7) * 35 -4, (int)heartPos.Y + 30 + y, 27, 23);
+                    spriteBatch.Draw(heartTexture, destinationRectangle2, sourceRectangle1, Color.White);
                 }
             }
 

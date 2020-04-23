@@ -17,7 +17,9 @@ namespace Sprint2
         }
         public void Execute()
         {
-            if(itemNum!=2 || !(itemNum ==2 && inventory.bombNum <= 0)) { 
+
+            if( (itemNum!=2 && itemNum!=9)||( inventory.bombNum > 0)) { 
+
             /* direction should have value 0,1,2,3 corresponding to up, down, left, right*/
             int direction = play.player.GetDirection();
                 switch (direction)
@@ -43,9 +45,10 @@ namespace Sprint2
                         break;
 
                 }
-                if (itemNum == 2) //bomb, need to calculate its number 
+                if (itemNum == 2 || itemNum ==9) //bomb, need to calculate its number 
                 {
                     inventory.bombNum--;
+                    
                     if(inventory.bombNum == 0)
                     {
                         inventory.itemList.Remove("bomb");
@@ -65,20 +68,46 @@ namespace Sprint2
             switch (selectItem)
             {
                 case "bomb":
-                    i = 2; 
+                    if (Link.ifDamage)
+                    {
+                        i = 9;
+                    }
+                    else
+                    {
+                        i = 2;
+                    }
                     break;
                 case "bow":
-                    i = 0;
+                    if (Link.ifDamage)
+                    {
+                        i = 7;
+                    }
+                    else
+                    {
+                        i = 0;
+                    }
                     break;
                 case "candle":
-                    i = 1;
+                    if (Link.ifDamage)
+                    {
+                        i = 8;
+                    }
+                    else
+                    {
+                        i = 1;
+                    }
                     break;
                 case "boomerang":
-                    i = 5;
+                    if (Link.ifDamage)
+                    {
+                        i = 10;
+                    }
+                    else
+                    {
+                        i = 5;
+                    }
                     break;
-                default:
-                    Console.WriteLine("not gonna happen ");
-                    break;
+
 
 
             }

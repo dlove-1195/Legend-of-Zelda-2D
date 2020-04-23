@@ -80,14 +80,16 @@ namespace Sprint2
                     IItem Damagebow = new DamageBow((Link.posX+40), (Link.posY), 3);
                     Damagearrow.Appear = true;
                     Damagebow.Appear = true;
+                    Link.oldDamageState = true;
                     link.items.Add(Damagearrow);
                     link.items.Add(Damagebow);
                     link.linkSprite = new LinkDamageStand(textureLink2, "Right");
                     break;
                 case 8:
                     //damage candle fire
-                    IItem Damagecandle = new BlueCandle((Link.posX+20), (Link.posY), 3);
+                    IItem Damagecandle = new DamageFire((Link.posX+20), (Link.posY), 3);
                     Damagecandle.Appear = true;
+                    Link.oldDamageState = true;
                     link.items.Add(Damagecandle);
                     link.linkSprite = new LinkDamageStand(textureLink2, "Right");
                     break;
@@ -95,7 +97,12 @@ namespace Sprint2
                     //damage bomb
                     IItem Damagebomb = new DamageBomb((Link.posX+20), (Link.posY));
                     Damagebomb.Appear = true;
+<<<<<<< HEAD
                     link.linkSprite = new LinkDamageStand(textureLink2, "Right");
+=======
+                    Link.oldDamageState = true;
+                    link.linkSprite = new LinkDamageStandRightSprite(textureLink2);
+>>>>>>> 4a09fe5dc504b09f6ef8e68dca13a018cf576f1b
 
                     link.items.Add(Damagebomb);
                     break;
@@ -103,7 +110,12 @@ namespace Sprint2
                     //damage boomrang
                     IItem Damageboomerang = new DamageWoodenBoomerang((Link.posX+20), (Link.posY), 3);
                     Damageboomerang.Appear = true;
+<<<<<<< HEAD
                     link.linkSprite = new LinkDamageStand(textureLink2, "Right");
+=======
+                    Link.oldDamageState = true;
+                    link.linkSprite = new LinkDamageStandRightSprite(textureLink2);
+>>>>>>> 4a09fe5dc504b09f6ef8e68dca13a018cf576f1b
                     link.items.Add(Damageboomerang);
                     break;
                 default:
@@ -120,19 +132,51 @@ namespace Sprint2
         }
         public void ChangeToRight()
         {
-            link.state = new LinkStandRightNonAttackNonDamageState(link);
+            if (!Link.ifDamage && Link.oldDamageState)
+            {
+                link.state = new LinkStandRightNonAttackNonDamageState(link);
+                Link.oldDamageState = false;
+            }
+            else
+            {
+                link.state = new LinkStandRightNonAttackDamageState(link);
+            }
         }
         public void ChangeToLeft()
         {
-            link.state = new LinkStandLeftNonAttackNonDamageState(link);
+            if (!Link.ifDamage && Link.oldDamageState)
+            {
+                link.state = new LinkStandLeftNonAttackNonDamageState(link);
+                Link.oldDamageState = false;
+            }
+            else
+            {
+                link.state = new LinkStandLeftNonAttackDamageState(link);
+            }
         }
         public void ChangeToUp()
         {
-            link.state = new LinkStandUpNonAttackNonDamageState(link);
+            if (!Link.ifDamage && Link.oldDamageState)
+            {
+                link.state = new LinkStandUpNonAttackNonDamageState(link);
+                Link.oldDamageState = false;
+            }
+            else
+            {
+                link.state = new LinkStandUpNonAttackDamageState(link);
+            }
         }
         public void ChangeToDown()
         {
-            link.state = new LinkStandDownNonAttackNonDamageState(link);
+            if (!Link.ifDamage && Link.oldDamageState)
+            {
+                link.state = new LinkStandDownNonAttackNonDamageState(link);
+                Link.oldDamageState = false;
+            }
+            else
+            {
+                link.state = new LinkStandDownNonAttackDamageState(link);
+            }
         }
         public void GetDamaged()
         {

@@ -83,20 +83,35 @@ namespace Sprint2
                     Damagebow.Appear = true;
                     link.items.Add(Damagearrow);
                     link.items.Add(Damagebow);
+<<<<<<< HEAD
                     link.linkSprite = new LinkDamageStand(textureLink2, "Up");
+=======
+                    Link.oldDamageState = true;
+                    link.linkSprite = new LinkDamageStandUpSprite(textureLink2);
+>>>>>>> 4a09fe5dc504b09f6ef8e68dca13a018cf576f1b
                     break;
                 case 8:
                     //damage candle fire
-                    IItem Damagecandle = new BlueCandle(Link.posX, (Link.posY - 20), 0);
+                    IItem Damagecandle = new DamageFire(Link.posX, (Link.posY - 20), 0);
                     Damagecandle.Appear = true;
                     link.items.Add(Damagecandle);
+<<<<<<< HEAD
                     link.linkSprite = new LinkDamageStand(textureLink2, "Up");
+=======
+                    Link.oldDamageState = true;
+                    link.linkSprite = new LinkDamageStandUpSprite(textureLink2);
+>>>>>>> 4a09fe5dc504b09f6ef8e68dca13a018cf576f1b
                     break;
                 case 9:
                     //damage bomb
                     IItem Damagebomb = new DamageBomb(Link.posX, (Link.posY - 20));
                     Damagebomb.Appear = true;
+<<<<<<< HEAD
                     link.linkSprite = new LinkDamageStand(textureLink2, "Up");
+=======
+                    Link.oldDamageState = true;
+                    link.linkSprite = new LinkDamageStandUpSprite(textureLink2);
+>>>>>>> 4a09fe5dc504b09f6ef8e68dca13a018cf576f1b
 
                     link.items.Add(Damagebomb);
                     break;
@@ -106,6 +121,7 @@ namespace Sprint2
                     Damageboomerang.Appear = true;
                     link.linkSprite = new LinkDamageStand(textureLink2, "Up");
                     link.items.Add(Damageboomerang);
+                    Link.oldDamageState = true;
                     break;
                 default:
                     break;
@@ -121,19 +137,51 @@ namespace Sprint2
         }
         public void ChangeToRight()
         {
-            link.state = new LinkStandRightNonAttackNonDamageState(link);
+            if (!Link.ifDamage && Link.oldDamageState)
+            {
+                link.state = new LinkStandRightNonAttackNonDamageState(link);
+                Link.oldDamageState = false;
+            }
+            else
+            {
+                link.state = new LinkStandRightNonAttackDamageState(link);
+            }
         }
         public void ChangeToLeft()
         {
-            link.state = new LinkStandLeftNonAttackNonDamageState(link);
+            if (!Link.ifDamage && Link.oldDamageState)
+            {
+                link.state = new LinkStandLeftNonAttackNonDamageState(link);
+                Link.oldDamageState = false;
+            }
+            else
+            {
+                link.state = new LinkStandLeftNonAttackDamageState(link);
+            }
         }
         public void ChangeToUp()
         {
-            link.state = new LinkStandUpNonAttackNonDamageState(link);
+            if (!Link.ifDamage && Link.oldDamageState)
+            {
+                link.state = new LinkStandUpNonAttackNonDamageState(link);
+                Link.oldDamageState = false;
+            }
+            else
+            {
+                link.state = new LinkStandUpNonAttackDamageState(link);
+            }
         }
         public void ChangeToDown()
         {
-            link.state = new LinkStandDownNonAttackNonDamageState(link);
+            if (!Link.ifDamage && Link.oldDamageState)
+            {
+                link.state = new LinkStandDownNonAttackNonDamageState(link);
+                Link.oldDamageState = false;
+            }
+            else
+            {
+                link.state = new LinkStandDownNonAttackDamageState(link);
+            }
         }
         public void GetDamaged()
         {
