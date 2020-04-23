@@ -127,19 +127,51 @@ namespace Sprint2
         }
         public void ChangeToRight()
         {
-            link.state = new LinkStandRightNonAttackNonDamageState(link);
+            if (!Link.ifDamage && Link.oldDamageState)
+            {
+                link.state = new LinkStandRightNonAttackNonDamageState(link);
+                Link.oldDamageState = false;
+            }
+            else
+            {
+                link.state = new LinkStandRightNonAttackDamageState(link);
+            }
         }
         public void ChangeToLeft()
         {
-            link.state = new LinkStandLeftNonAttackNonDamageState(link);
+            if (!Link.ifDamage && Link.oldDamageState)
+            {
+                link.state = new LinkStandLeftNonAttackNonDamageState(link);
+                Link.oldDamageState = false;
+            }
+            else
+            {
+                link.state = new LinkStandLeftNonAttackDamageState(link);
+            }
         }
         public void ChangeToUp()
         {
-            link.state = new LinkStandUpNonAttackNonDamageState(link);
+            if (!Link.ifDamage && Link.oldDamageState)
+            {
+                link.state = new LinkStandUpNonAttackNonDamageState(link);
+                Link.oldDamageState = false;
+            }
+            else
+            {
+                link.state = new LinkStandUpNonAttackDamageState(link);
+            }
         }
         public void ChangeToDown()
         {
-            link.state = new LinkStandDownNonAttackNonDamageState(link);
+            if (!Link.ifDamage && Link.oldDamageState)
+            {
+                link.state = new LinkStandDownNonAttackNonDamageState(link);
+                Link.oldDamageState = false;
+            }
+            else
+            {
+                link.state = new LinkStandDownNonAttackDamageState(link);
+            }
         }
         public void GetDamaged()
         {
