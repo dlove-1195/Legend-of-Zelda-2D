@@ -23,18 +23,18 @@ namespace Sprint2
 
         private IPlayer player;
 
-        private List<string> DoorDirection { get; set; }
-        
+        private List<string> DoorDirection { get; set; } 
+        private IRoom room;
 
-        public LinkCollisionDetection(ILevel level, IPlayer link)
+        public LinkCollisionDetection(ILevel level, IPlayer link, IInventory inventory)
         {
             if (level == null)
             {
                 throw new ArgumentNullException(nameof(level));
             }
-            IRoom room = level.room;
-            int roomWidth = (int)( 800* 0.68);
-            int roomHeight = (int)(  600* 0.55);
+            this.room = level.room;
+            int roomWidth = (int)(800 * 0.68);
+            int roomHeight = (int)(600 * 0.55);
             roomLeftCornerPosX = (int)(room.roomPos.X);
             roomLeftCornerPosY = (int)(room.roomPos.Y);
             roomRightCornerPosX = roomWidth + (int)(room.roomPos.X);
@@ -48,7 +48,7 @@ namespace Sprint2
 
             boundingBox = room.boundingBox;
             player = link;
-            linkHandler = new LinkCollisionHandler(player, level);
+            linkHandler = new LinkCollisionHandler(player, level, inventory);
         }
 
         public void Update()
@@ -63,6 +63,24 @@ namespace Sprint2
             int listLength = enemy.Count;
             for (int i = 0; i < listLength; i++)
             {
+                if (enemy[i] != null && enemy[i].blood <= 0 && enemy[i].sparkTimer >= 10)
+                {
+                    IItem enemyLeft;
+                    if (enemy[i] is GreenDragon)
+                    {
+                        enemyLeft = new Heart(new Vector2(enemy[i].posX, enemy[i].posY));
+                    }
+                    else if (enemy[i] is Dragon)
+                    {
+                        enemyLeft = new Key(new Vector2(enemy[i].posX, enemy[i].posY));
+                    }
+                    else
+                    {
+                        enemyLeft = new YellowDiamond(new Vector2(enemy[i].posX, enemy[i].posY));
+                    }
+                    room.pickUpItems.Add(enemyLeft);
+                    room.setEnemyToNull(i);
+                }
                 if (enemy[i] != null)
                 {
                     Rectangle singleEnemyRec = enemy[i].boundingBox;
@@ -72,7 +90,11 @@ namespace Sprint2
                     {
                         //link damage and being pushed in opposite direction
                         String direction = detectCollisionDirection(overlapRec, linkRectangle, singleEnemyRec);
-                        linkHandler.HandleLinkEnemyCollsion(direction);
+                        if (!Link.ifDamage)
+                        {
+                            linkHandler.HandleLinkEnemyCollsion(direction, i);
+                        }
+
                     }
 
 
@@ -85,8 +107,10 @@ namespace Sprint2
                         if (!overlapRec.IsEmpty)
                         {
                             //link damage by projectile, will not be pushed
-
-                            linkHandler.HandleLinkProjectileCollsion();
+                            if ( !Link.ifDamage )
+                            {
+                                linkHandler.HandleLinkProjectileCollsion();
+                            }
 
                         }
 
@@ -98,9 +122,9 @@ namespace Sprint2
                     if (!overlapRec.IsEmpty)
                     {
                         //enemy damage
-                      
-                        linkHandler.HandleLinkWeaponEnemyCollsion(i );
-                       
+
+                        linkHandler.HandleLinkWeaponEnemyCollsion(i);
+
                     }
 
 
@@ -112,15 +136,73 @@ namespace Sprint2
                         if (!overlapRec.IsEmpty)
                         {
                             //enemy damage 
-                            
-                            linkHandler.HandleLinkWeaponEnemyCollsion(i );
-                            
+
+                            linkHandler.HandleLinkWeaponEnemyCollsion(i);
+
                         }
+
+                        
 
 
                     }
                 }
 
+            }
+
+            for (int j = 0; j < item.Count; j++)
+            {
+                if (item[j] is Cloud)
+                {
+                    overlapRec = Rectangle.Intersect(linkRectangle, item[j].BoundingBox);
+                    if (!overlapRec.IsEmpty)
+                    {
+                        //link being pushed in opposite direction
+                        String direction = detectCollisionDirection(overlapRec, linkRectangle, item[j].BoundingBox);
+                        linkHandler.HandleLinkCloudCollision(direction);
+                    }
+                }
+            }
+               
+            
+                
+
+            
+
+            //loop for detecting bomb collide with door hole
+            listLength = player.items.Count;
+            for(int i=0; i< listLength; i++)
+            {
+                if(player.items[i] is Bomb)
+                {
+                    for (int j = 0; j< item.Count; j++)
+                    {
+                        if(item[j] is Wall)
+                        {
+                            overlapRec = Rectangle.Intersect(player.items[i].BoundingBox, 
+                                item[j].BoundingBox);
+                            if (!overlapRec.IsEmpty)
+                            {
+                                linkHandler.HandleBombWallCollsion(j);
+                            }
+                        }
+                    }
+
+                }
+                //detect blueCandle weapon and cloud collision
+                else if(player.items[i] is BlueCandle)
+                {
+                   for (int j = 0; j< item.Count; j++)
+                    {
+                        if(item[j] is Cloud)
+                        {
+                            overlapRec = Rectangle.Intersect(player.items[i].BoundingBox, item[j].BoundingBox);
+                            if (!overlapRec.IsEmpty)
+                            {
+                                linkHandler.LinkBlueCandleCloudHandler(j);
+                            }
+                        } 
+                    }
+                }
             }
 
             //loop for link/item collsion 
@@ -130,14 +212,26 @@ namespace Sprint2
             {
                 if (item[i] != null)
                 {
-                    Rectangle singleItemRec = item[i].BoundingBox;
-
+                    Rectangle singleItemRec = item[i].BoundingBox; 
 
                     overlapRec = Rectangle.Intersect(linkRectangle, singleItemRec);
                     if (!overlapRec.IsEmpty)
                     {
-
-                        linkHandler.HandleLinkItemCollsion(i);
+                        if (item[i] is LockedDoor)
+                        {
+                            String direction = detectCollisionDirection(overlapRec, linkRectangle, singleItemRec);
+                            linkHandler.HandleLinkLockedDoorCollision(i, direction);
+                        }
+                        else if(item[i] is Wall)
+                        {
+                            String direction = detectCollisionDirection(overlapRec, linkRectangle, singleItemRec);
+                            linkHandler.HandleLinkWallHoleCollision(i, direction);
+                        }
+                        else
+                        {
+                            linkHandler.HandleLinkItemCollsion(i);
+                        }
+                            
                     }
                 }
 
@@ -206,11 +300,76 @@ namespace Sprint2
                     }
                 }
             }
+             
+
+            //link edge collision if no boundingBox in room
+            //room15 no Link edge collision
+            if (boundingBox.Count == 0)
+            {
+                if (DoorDirection.Contains("Right"))
+                {
+                    if (Link.posX > roomRightCornerPosX && (Link.posY < 900 * 0.45 || Link.posY > 900 * (0.45 + 0.1)))
+                    {
+                        linkHandler.StayPosition("Right");
+                    }
+                }
+                else
+                {
+                    if (Link.posX > roomRightCornerPosX)
+                    {
+                        linkHandler.StayPosition("Right");
+                    }
+                }
+                if (DoorDirection.Contains("Left"))
+                {
+                    if (Link.posX < roomLeftCornerPosX && (Link.posY < 900 * 0.45 || Link.posY > 900 * (0.45 + 0.1)))
+                    {
+                        linkHandler.StayPosition("Left");
+                    }
+                }
+                else
+                {
+                    if (Link.posX < roomLeftCornerPosX)
+                    {
+
+                        linkHandler.StayPosition("Left");
+                    }
+                }
+                if (DoorDirection.Contains("Down"))
+                {
+                    if (Link.posY > roomRightCornerPosY && (Link.posX < Game1.WindowWidth * 0.465 || Link.posX > Game1.WindowWidth * (0.465 + 0.07)))
+                    {
+                        linkHandler.StayPosition("Down");
+                    }
+                }
+                else
+                {
+                    if (Link.posY > roomRightCornerPosY)
+                    {
+                        linkHandler.StayPosition("Down");
+                    }
+                }
+                if (DoorDirection.Contains("Up"))
+                {
+                    if (Link.posY < roomLeftCornerPosY && (Link.posX < Game1.WindowWidth * 0.465 || Link.posX > Game1.WindowWidth * (0.465 + 0.07)))
+                    {
+                        linkHandler.StayPosition("Up");
+                    }
+                }
+                else
+                {
+                    if (Link.posY < roomLeftCornerPosY)
+                    {
+                        linkHandler.StayPosition("Up");
+                    }
+                }
+            
+        
+        }
 
 
-            //loop for door collision (for each door in each room)
-
-            listLength = DoorDirection.Count;
+        //loop for door collision (for each door in each room) 
+        listLength = DoorDirection.Count;
             for (int i = 0; i < listLength; i++)
             {
                 String singleDoorDirection = DoorDirection[i];
@@ -244,9 +403,6 @@ namespace Sprint2
                         linkHandler.HandleLinkDoorCollsion(singleDoorDirection);
                     }
                 }
-
-
-
             }
 
             //loop for stair collision
@@ -269,73 +425,6 @@ namespace Sprint2
 
                 }
             }
-
-
-
-            //link edge collision if no boundingBox in room
-            //room15 no Link edge collision
-            if (boundingBox.Count == 0)
-            {
-                if (DoorDirection.Contains("Right"))
-                {
-                    if (Link.posX > roomRightCornerPosX && (Link.posY < 900 * 0.45 || Link.posY > 900* (0.45 + 0.1)))
-                    {
-                        linkHandler.remainPosition("Right");
-                    }
-                }
-                else
-                {
-                    if (Link.posX > roomRightCornerPosX)
-                    {
-                        linkHandler.remainPosition("Right");
-                    }
-                }
-                if (DoorDirection.Contains("Left"))
-                {
-                    if (Link.posX < roomLeftCornerPosX && (Link.posY <900 * 0.45 || Link.posY > 900 * (0.45 + 0.1)))
-                    {
-                        linkHandler.remainPosition("Left");
-                    }
-                }
-                else
-                {
-                    if (Link.posX < roomLeftCornerPosX)
-                    {
-
-                        linkHandler.remainPosition("Left");
-                    }
-                }
-                if (DoorDirection.Contains("Down"))
-                {
-                    if (Link.posY > roomRightCornerPosY && (Link.posX < Game1.WindowWidth * 0.465 || Link.posX > Game1.WindowWidth * (0.465 + 0.07)))
-                    {
-                        linkHandler.remainPosition("Down");
-                    }
-                }
-                else
-                {
-                    if (Link.posY > roomRightCornerPosY)
-                    {
-                        linkHandler.remainPosition("Down");
-                    }
-                }
-                if (DoorDirection.Contains("Up"))
-                {
-                    if (Link.posY < roomLeftCornerPosY && (Link.posX < Game1.WindowWidth * 0.465 || Link.posX > Game1.WindowWidth * (0.465 + 0.07)))
-                    {
-                        linkHandler.remainPosition("Up");
-                    }
-                }
-                else
-                {
-                    if (Link.posY < roomLeftCornerPosY)
-                    {
-                        linkHandler.remainPosition("Up");
-                    }
-                }
-            }
-
-
         }
 
 

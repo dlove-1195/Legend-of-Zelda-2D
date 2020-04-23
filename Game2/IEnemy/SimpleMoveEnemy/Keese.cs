@@ -7,12 +7,18 @@ namespace Sprint2
 {
     public class Keese : IEnemy
     {
-
+        private StaticSprite cloudSprite = new StaticSprite(Texture2DStorage.GetCloudSpriteSheet(), 110, 9, 14, 14);
+        private StaticSprite sparkSprite = new StaticSprite(Texture2DStorage.GetLinkSpriteSheet(), 209, 282, 17, 21);
+        private int drawCloud = 0;
+        private Vector2 initialPos;
+        public int sparkTimer { get; set; } = 0;
         private IEnemyState state;
         private ISprite KeeseSprite;
         private int updateDelay = 0;
         private int totalDelay = 30;
-        public int blood { get; set; } = 1;
+        public int blood { get; set; } = 2;
+        public bool damage { set; get; }
+        private int damageTimer = 0;
 
 
 
@@ -29,10 +35,12 @@ namespace Sprint2
 
         public Keese(Vector2 vector)
         {
+           
             posX = (int)vector.X;
             posY = (int)vector.Y;
             boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
             state = new EnemyWalkLeftState(this, enemyNumber);
+            initialPos = new Vector2(posX, posY);
         }
 
 
@@ -64,56 +72,104 @@ namespace Sprint2
         }
 
 
-
+        public void GetDamage()
+        {
+            if (Link.ifDamage && !damage)
+            {
+                blood--;
+                damage = true;
+            }
+            else if (!damage)
+            {
+                blood -= 2;
+                damage = true;
+            }
+        }
 
         public void Update()
         {
-            boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
-            KeeseSprite.Update();
-
-            //random move dragon
-            updateDelay++;
-            if (updateDelay == totalDelay)
+            if (damage)
             {
-                updateDelay = 0;
-                
-                var rnd = new Random(Game1.seed);
-                int randomNumber = rnd.Next(0, 4);
-
-
-                switch (randomNumber)
+                damageTimer++;
+                if (damageTimer >= 50)
                 {
-                    case 0:
-                        this.ChangeToDown(); 
-                        break;
-                    case 1:
-                        this.ChangeToLeft();
- 
-                        break;
-                    case 2:
-                        this.ChangeToRight();
-
-                        break;
-                    case 3:
-                        this.ChangeToUp();
-
-                        break;
-                    default:
-#pragma warning disable CA1303 // Do not pass literals as localized parameters
-                        Console.WriteLine("error: no such situation");
-#pragma warning restore CA1303 // Do not pass literals as localized parameters
-                        break;
+                    damage = false;
                 }
+            }
+            else
+            {
+                damageTimer = 0;
+            }
+            drawCloud++;
+            if (Level1.roomUpdate)
+            {
+                boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
+                KeeseSprite.Update();
 
+                //random move dragon
+                updateDelay++;
+                if (updateDelay == totalDelay)
+                {
+                    updateDelay = 0;
+
+                    var rnd = new Random(Game1.seed);
+                    int randomNumber = rnd.Next(0, 4);
+
+
+                    switch (randomNumber)
+                    {
+                        case 0:
+                            this.ChangeToDown();
+                            break;
+                        case 1:
+                            this.ChangeToLeft();
+
+                            break;
+                        case 2:
+                            this.ChangeToRight();
+
+                            break;
+                        case 3:
+                            this.ChangeToUp();
+
+                            break;
+                        default:
+#pragma warning disable CA1303 // Do not pass literals as localized parameters
+                            Console.WriteLine("error: no such situation");
+#pragma warning restore CA1303 // Do not pass literals as localized parameters
+                            break;
+                    }
+
+                }
             }
 
+            if (blood <= 0)
+            {
+                sparkTimer++;
+            }
+
+
         }
- 
+
         public void Draw(SpriteBatch spriteBatch)
         {
-           
-            KeeseSprite.Draw(spriteBatch, new Vector2(posX, posY));
- 
+            if (blood <= 0)
+            {
+                sparkSprite.Draw(spriteBatch, new Vector2(posX, posY));
+            }
+            else
+            {
+                if (drawCloud <= 20)
+                {
+                    cloudSprite.Draw(spriteBatch, initialPos);
+                    posX = (int)initialPos.X;
+                    posY = (int)initialPos.Y;
+                }
+                else
+                {
+                    KeeseSprite.Draw(spriteBatch, new Vector2(posX, posY));
+                }
+            }
         }
         public List<Rectangle> getProjectileRec()
         {

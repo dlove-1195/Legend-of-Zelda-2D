@@ -7,13 +7,18 @@ namespace Sprint2
 {
     public class Rope : IEnemy
     {
-
+       
+        private StaticSprite cloudSprite = new StaticSprite(Texture2DStorage.GetCloudSpriteSheet(), 110, 9, 14, 14);
+        private StaticSprite sparkSprite = new StaticSprite(Texture2DStorage.GetLinkSpriteSheet(), 209, 282, 17, 21);
+        private int drawCloud = 0;
+        private Vector2 initialPos;
+        public int sparkTimer { get; set; } = 0;
         private IEnemyState state;
         private ISprite RopeSprite;
         private int updateDelay = 0;
         private int totalDelay = 30;
-        public int blood { get; set; } = 1;
-
+        public int blood { get; set; } = 2;
+        public bool damage { set; get; }
 
 
         //the current position of the Keese
@@ -28,13 +33,16 @@ namespace Sprint2
         public Rectangle boundingBox { get; set; }
 
         private int enemyNumber = 4;
+        private int damageTimer = 0;
 
 
         public Rope(Vector2 vector)
 
         {
+           
             posX = (int)vector.X;
             posY = (int)vector.Y;
+            initialPos = new Vector2(posX, posY);
             state = new EnemyWalkLeftState(this, enemyNumber);
         }
 
@@ -65,65 +73,114 @@ namespace Sprint2
         {
             state.ChangeToDown();
         }
-
+        public void GetDamage()
+        {
+            if (Link.ifDamage && !damage)
+            {
+                blood--;
+                damage = true;
+            }
+            else if (!damage)
+            {
+                blood -= 2;
+                damage = true;
+            }
+        }
 
 
 
         public void Update()
         {
-            boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
-            RopeSprite.Update();
-
-            //random move dragon
-            updateDelay++;
-            if (updateDelay == totalDelay)
+            if (damage)
             {
-                updateDelay = 0;
-                seed++;
-                var rnd = new Random(seed);
-                int randomNumber = rnd.Next(0, 4);
-
-
-                switch (randomNumber)
+                damageTimer++;
+                if (damageTimer >= 50)
                 {
-                    case 0:
-                        this.ChangeToDown();
-#pragma warning disable CA1303 // Do not pass literals as localized parameters
-#pragma warning restore CA1303 // Do not pass literals as localized parameters
-
-                        break;
-                    case 1:
-                        this.ChangeToLeft();
-#pragma warning disable CA1303 // Do not pass literals as localized parameters
-#pragma warning restore CA1303 // Do not pass literals as localized parameters
-
-
-                        break;
-                    case 2:
-                        this.ChangeToRight();
-#pragma warning disable CA1303 // Do not pass literals as localized parameters
-#pragma warning restore CA1303 // Do not pass literals as localized parameters
-                        break;
-                    case 3:
-                        this.ChangeToUp();
-#pragma warning disable CA1303 // Do not pass literals as localized parameters
-#pragma warning restore CA1303 // Do not pass literals as localized parameters
-
-
-                        break;
-                    default:
-#pragma warning disable CA1303 // Do not pass literals as localized parameters
-#pragma warning restore CA1303 // Do not pass literals as localized parameters
-                        break;
+                    damage = false;
                 }
-
             }
+            else
+            {
+                damageTimer = 0;
+            }
+            drawCloud++;
+            if (Level1.roomUpdate)
+            {
+                boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
+                RopeSprite.Update();
+
+                //random move dragon
+                updateDelay++;
+                if (updateDelay == totalDelay)
+                {
+                    updateDelay = 0;
+                    seed++;
+                    var rnd = new Random(seed);
+                    int randomNumber = rnd.Next(0, 4);
+
+
+                    switch (randomNumber)
+                    {
+                        case 0:
+                            this.ChangeToDown();
+#pragma warning disable CA1303 // Do not pass literals as localized parameters
+#pragma warning restore CA1303 // Do not pass literals as localized parameters
+
+                            break;
+                        case 1:
+                            this.ChangeToLeft();
+#pragma warning disable CA1303 // Do not pass literals as localized parameters
+#pragma warning restore CA1303 // Do not pass literals as localized parameters
+
+
+                            break;
+                        case 2:
+                            this.ChangeToRight();
+#pragma warning disable CA1303 // Do not pass literals as localized parameters
+#pragma warning restore CA1303 // Do not pass literals as localized parameters
+                            break;
+                        case 3:
+                            this.ChangeToUp();
+#pragma warning disable CA1303 // Do not pass literals as localized parameters
+#pragma warning restore CA1303 // Do not pass literals as localized parameters
+
+
+                            break;
+                        default:
+#pragma warning disable CA1303 // Do not pass literals as localized parameters
+#pragma warning restore CA1303 // Do not pass literals as localized parameters
+                            break;
+                    }
+
+                }
+            }
+            if (blood <= 0)
+            {
+                sparkTimer++;
+            }
+
 
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            RopeSprite.Draw(spriteBatch, new Vector2(posX, posY));
+            if (blood <= 0)
+            {
+                sparkSprite.Draw(spriteBatch, new Vector2(posX, posY));
+            }
+            else
+            {
+                if (drawCloud <= 20)
+                {
+                    cloudSprite.Draw(spriteBatch, initialPos);
+                    posX =(int) initialPos.X;
+                    posY =(int) initialPos.Y;
+                }
+                else
+                {
+                    RopeSprite.Draw(spriteBatch, new Vector2(posX, posY));
+                }
+            }
  
         }
         public List<Rectangle> getProjectileRec()

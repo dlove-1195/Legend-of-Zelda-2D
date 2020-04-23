@@ -20,6 +20,7 @@ namespace Sprint2
             link.linkSprite = new LinkDamageStandDownSprite(texture);
             this.link = link;
             Link.ifDamage = true;
+          
             this.link.ChangeDirection(1);
 
         }
@@ -79,7 +80,11 @@ namespace Sprint2
         }
         public void Attack()
         {
-            //cannot attack and damage at the same time
+            if (Link.ifDamage)
+            {
+
+                link.state = new LinkStandDownAttackDamageState(link);
+            }
         }
         public void ChangeToWalk()
         {
@@ -103,7 +108,7 @@ namespace Sprint2
 
         public void LinkWithItemUp(int item)
         {
-            link.state = new LinkWithItemUpState(link, item);
+           link.state = new LinkWithItemUpState(link, item);
         }
 
         public void LinkWithItemDown(int item)
@@ -113,12 +118,12 @@ namespace Sprint2
 
         public void LinkWithItemLeft(int item)
         {
-            link.state = new LinkWithItemLeftState(link, item);
+           link.state = new LinkWithItemLeftState(link, item);
         }
 
         public void LinkWithItemRight(int item)
         {
-            link.state = new LinkWithItemRightState(link, item);
+           link.state = new LinkWithItemRightState(link, item);
         }
     }
 }

@@ -16,9 +16,15 @@ namespace Sprint2
         private Texture2D texture = Texture2DStorage.GetItemSpriteSheet();
         private Texture2D textureBow = Texture2DStorage.GetBowSpriteSheet();
         private Texture2D textureBoomer = Texture2DStorage.GetWoodBoomerangSpriteSheet();
-        private Texture2D textureBlueCandle = Texture2DStorage.GetBlueCandleSpriteSheet();
+       
         private Texture2D textureFire = Texture2DStorage.GetEnemySpriteSheet2();
         private Texture2D texturesword = Texture2DStorage.GetLinkSpriteSheet();
+        private Texture2D textureDamageBoomer = Texture2DStorage.GetHurtBoomerangSpriteSheet();
+        private Texture2D textureDamageBow = Texture2DStorage.GetHurtBowSpriteSheet();
+        private Texture2D textureDamageFire = Texture2DStorage.GetHurtFireSpriteSheet();
+        private Texture2D textureDamageBomb = Texture2DStorage.GetHurtBoomSpriteSheet();
+
+        private Texture2D texutreHurtWeapon = Texture2DStorage.GetLinkSpriteSheet2();
         private int num;
 
 
@@ -38,7 +44,7 @@ namespace Sprint2
                 }
                if (num == 1)
                 {
-                linkItem.ChangeSprite(new BlueCandleUpRight(textureBlueCandle));
+                linkItem.ChangeSprite(new blueCandleFireRight(textureFire, linkItem));
                 }
                   if (num == 2)
                 {
@@ -56,7 +62,31 @@ namespace Sprint2
                 {
                 linkItem.ChangeSprite(new WoodBoomerangRight(textureBoomer, linkItem));
                 }
-           if (num == 15)
+            if (num == 6)
+            {
+                linkItem.ChangeSprite(new DamageWoodenSwordRight(texutreHurtWeapon, linkItem));
+            }
+            if (num == 7)
+            {
+                linkItem.ChangeSprite(new DamageArrowRight(texutreHurtWeapon, linkItem));
+            }
+            if (num == 8)
+            {
+                linkItem.ChangeSprite(new DamageblueCandleFireRight(textureDamageFire, linkItem));
+            }
+            if (num == 9)
+            {
+                linkItem.ChangeSprite(new DamageBombInitialSprite(textureDamageBomb));
+            }
+            if (num == 10)
+            {
+                linkItem.ChangeSprite(new DamageWoodBoomerangRight(textureDamageBoomer, linkItem));
+            }
+            if (num == 11)
+            {
+                linkItem.ChangeSprite(new DamageBowRight(textureDamageBow));
+            }
+            if (num == 15)
             {
                 linkItem.ChangeSprite(new ItemFireballMoveRightSprite(textureFire, linkItem));
             }

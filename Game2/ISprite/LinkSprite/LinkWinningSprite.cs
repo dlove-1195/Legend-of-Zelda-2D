@@ -33,11 +33,14 @@ namespace Sprint2
             {
                 throw new ArgumentNullException(nameof(spriteBatch));
             }
-            Rectangle sourceRectangle = new Rectangle(sourceLocX, sourceLocY, width, height);
-            Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width * 3, height * 3);
-            
-            spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-            
+            Rectangle sourceRectangle1 = new Rectangle(sourceLocX, sourceLocY, width, height);
+            Rectangle destinationRectangle1 = new Rectangle((int)location.X, (int)location.Y, width * 3, height * 3);
+            Rectangle sourceRectangle2 = new Rectangle(333,288,10,10);
+            Rectangle destinationRectangle2 = new Rectangle((int)location.X+3, (int)location.Y-width*2 - 10, 10 * 4 - 5, 10 * 4-5);
+
+            spriteBatch.Draw(Texture, destinationRectangle1, sourceRectangle1, Color.White);
+            spriteBatch.Draw(Texture, destinationRectangle2, sourceRectangle2, Color.White);
+
         }
     }
 }

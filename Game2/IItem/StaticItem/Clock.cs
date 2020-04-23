@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 
 namespace Sprint2
@@ -62,15 +57,6 @@ namespace Sprint2
         }
 
 
-        public void PreItem(Game1 myGame)
-        {
-            //state.ChangeToDisappear();
-           // myGame.item = new BlueDiamond();
-        }
-        public void NextItem(Game1 myGame)
-        {
-            //state.ChangeToDisappear();
-           // myGame.item = new Compass();
-        }
+      
     }
 }
