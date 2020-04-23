@@ -83,35 +83,31 @@ namespace Sprint2
                     Damagebow.Appear = true;
                     link.items.Add(Damagearrow);
                     link.items.Add(Damagebow);
-<<<<<<< HEAD
+
                     link.linkSprite = new LinkDamageStand(textureLink2, "Up");
-=======
+
                     Link.oldDamageState = true;
-                    link.linkSprite = new LinkDamageStandUpSprite(textureLink2);
->>>>>>> 4a09fe5dc504b09f6ef8e68dca13a018cf576f1b
+
                     break;
                 case 8:
                     //damage candle fire
                     IItem Damagecandle = new DamageFire(Link.posX, (Link.posY - 20), 0);
                     Damagecandle.Appear = true;
                     link.items.Add(Damagecandle);
-<<<<<<< HEAD
+
                     link.linkSprite = new LinkDamageStand(textureLink2, "Up");
-=======
+
                     Link.oldDamageState = true;
-                    link.linkSprite = new LinkDamageStandUpSprite(textureLink2);
->>>>>>> 4a09fe5dc504b09f6ef8e68dca13a018cf576f1b
+
                     break;
                 case 9:
                     //damage bomb
                     IItem Damagebomb = new DamageBomb(Link.posX, (Link.posY - 20));
                     Damagebomb.Appear = true;
-<<<<<<< HEAD
                     link.linkSprite = new LinkDamageStand(textureLink2, "Up");
-=======
+
                     Link.oldDamageState = true;
-                    link.linkSprite = new LinkDamageStandUpSprite(textureLink2);
->>>>>>> 4a09fe5dc504b09f6ef8e68dca13a018cf576f1b
+
 
                     link.items.Add(Damagebomb);
                     break;
