@@ -11,6 +11,9 @@ namespace Sprint2
         private IRoom room;
         private ILevel level;
         private IInventory inventory;
+
+        
+        
       public LinkCollisionHandler(IPlayer link, ILevel level, IInventory inventory)
         {
             this.link = link;
@@ -86,20 +89,24 @@ namespace Sprint2
             }
             StayPosition(direction);
         }
-            public void HandleLinkEnemyCollsion(string direction, int i)
+        public void HandleLinkEnemyCollsion(string direction, int i)
         {
             Link.damageTimer = 0; 
             //link get damaged and being pushed to opposite direction
             if ( !(link.state is LinkWinningState))
             {
                 Sound.PlayLinkDemage();
-                inventory.heartNum--;
-                link.GetDamaged();
-                Link.ifDamage = true;
-                if(room.enemies[i] is GreenDragon || room.enemies[i] is Dragon)
-                {
-                    inventory.heartContainerNum--;
-                }
+                
+                    inventory.heartNum--;
+                    link.GetDamaged();
+                    Link.ifDamage = true;
+
+
+                    if (room.enemies[i] is GreenDragon || room.enemies[i] is Dragon)
+                    {
+                        inventory.heartContainerNum--;
+                    }
+                
             } 
             switch (direction)
             {
@@ -378,6 +385,9 @@ namespace Sprint2
             {
                 //room need to stop update
                 Level1.roomUpdate = false;
+            }else if(room.pickUpItems[itemNum] is BlueRing)
+            {
+                LinkCollisionDetection.blueRing = true;
             }
  
             //if items  fairy? /heartContainer?(delete)

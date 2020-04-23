@@ -26,6 +26,9 @@ namespace Sprint2
         private List<string> DoorDirection { get; set; } 
         private IRoom room;
 
+        public static bool blueRing = false;
+        public static int blueRingTimer = 0;
+
         public LinkCollisionDetection(ILevel level, IPlayer link, IInventory inventory)
         {
             if (level == null)
@@ -89,10 +92,13 @@ namespace Sprint2
                     if (!overlapRec.IsEmpty)
                     {
                         //link damage and being pushed in opposite direction
-                        String direction = detectCollisionDirection(overlapRec, linkRectangle, singleEnemyRec);
+                        string direction = detectCollisionDirection(overlapRec, linkRectangle, singleEnemyRec);
                         if (!Link.ifDamage)
                         {
-                            linkHandler.HandleLinkEnemyCollsion(direction, i);
+                            if (!blueRing)
+                            {
+                                linkHandler.HandleLinkEnemyCollsion(direction, i);
+                            }
                         }
 
                     }
@@ -149,6 +155,14 @@ namespace Sprint2
 
             }
 
+            if (LinkCollisionDetection.blueRing)
+            {
+                LinkCollisionDetection.blueRingTimer++;
+                if (LinkCollisionDetection.blueRingTimer >= 500)
+                {
+                    LinkCollisionDetection.blueRing = false;
+                }
+            }
             for (int j = 0; j < item.Count; j++)
             {
                 if (item[j] is Cloud)
@@ -157,17 +171,11 @@ namespace Sprint2
                     if (!overlapRec.IsEmpty)
                     {
                         //link being pushed in opposite direction
-                        String direction = detectCollisionDirection(overlapRec, linkRectangle, item[j].BoundingBox);
+                        string direction = detectCollisionDirection(overlapRec, linkRectangle, item[j].BoundingBox);
                         linkHandler.HandleLinkCloudCollision(direction);
                     }
                 }
             }
-               
-            
-                
-
-            
-
             //loop for detecting bomb collide with door hole
             listLength = player.items.Count;
             for(int i=0; i< listLength; i++)
@@ -204,9 +212,7 @@ namespace Sprint2
                     }
                 }
             }
-
             //loop for link/item collsion 
-
             listLength = item.Count;
             for (int i = 0; i < listLength; i++)
             {
@@ -219,12 +225,12 @@ namespace Sprint2
                     {
                         if (item[i] is LockedDoor)
                         {
-                            String direction = detectCollisionDirection(overlapRec, linkRectangle, singleItemRec);
+                            string direction = detectCollisionDirection(overlapRec, linkRectangle, singleItemRec);
                             linkHandler.HandleLinkLockedDoorCollision(i, direction);
                         }
                         else if(item[i] is Wall)
                         {
-                            String direction = detectCollisionDirection(overlapRec, linkRectangle, singleItemRec);
+                            string direction = detectCollisionDirection(overlapRec, linkRectangle, singleItemRec);
                             linkHandler.HandleLinkWallHoleCollision(i, direction);
                         }
                         else
@@ -236,12 +242,8 @@ namespace Sprint2
                 }
 
             }
-
-
             //loop for link/NPC collsion 
-
             listLength = npc.Count;
-
             for (int i = 0; i < listLength; i++)
             {
 
@@ -258,8 +260,6 @@ namespace Sprint2
 
 
             }
-
-
             //loop for link/Block collsion when no boundingBox
             if (boundingBox.Count == 0)
             {
@@ -300,8 +300,6 @@ namespace Sprint2
                     }
                 }
             }
-             
-
             //link edge collision if no boundingBox in room
             //room15 no Link edge collision
             if (boundingBox.Count == 0)
@@ -367,9 +365,8 @@ namespace Sprint2
         
         }
 
-
-        //loop for door collision (for each door in each room) 
-        listLength = DoorDirection.Count;
+           //loop for door collision (for each door in each room) 
+           listLength = DoorDirection.Count;
             for (int i = 0; i < listLength; i++)
             {
                 String singleDoorDirection = DoorDirection[i];
