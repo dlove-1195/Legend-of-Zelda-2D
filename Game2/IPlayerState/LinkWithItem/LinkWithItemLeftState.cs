@@ -91,7 +91,7 @@ namespace Sprint2
                     break;
                 case 8:
                     //damage candle fire
-                    IItem Damagecandle = new BlueCandle((Link.posX-20), (Link.posY), 2);
+                    IItem Damagecandle = new DamageFire((Link.posX-20), (Link.posY), 2);
                     Damagecandle.Appear = true;
                     Link.oldDamageState = true;
                     link.items.Add(Damagecandle);
