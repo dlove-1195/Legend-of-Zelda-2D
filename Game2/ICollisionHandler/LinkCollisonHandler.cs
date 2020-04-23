@@ -288,6 +288,16 @@ namespace Sprint2
                 inventory.diamondNum++;
                 //max life 12
             }
+            else if (room.pickUpItems[itemNum] is BluePotion)
+            {
+                if (inventory.heartContainerNum == 12)
+                {
+                    successPickUp = false;
+                }
+                else{ 
+                inventory.heartContainerNum++;
+                }
+            }
             else if (room.pickUpItems[itemNum] is Cloud)
             {
                 successPickUp = false;
