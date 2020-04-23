@@ -59,7 +59,7 @@ namespace Sprint2
                     //sword
                     IItem sword = new Sword(Link.posX + 16, (Link.posY + 20), 1);
                     sword.Appear = true;
-                    link.linkSprite = new LinkStand(textureLink, "Down");
+                    link.linkSprite = new LinkAttack(textureLink, "Down");
                     link.items.Add(sword);
                     break;
                 case 5:
