@@ -6,13 +6,8 @@ namespace Sprint2
 {
     public class Flame : IEnemy
     {
-        private StaticSprite cloudSprite = new StaticSprite(Texture2DStorage.GetCloudSpriteSheet(), 110, 9, 14, 14);
-        private StaticSprite sparkSprite = new StaticSprite(Texture2DStorage.GetLinkSpriteSheet(), 209, 282, 17, 21);
-        private int drawCloud = 0; 
-        private Vector2 initialPos;
-        public int sparkTimer { get; set; } = 0;
-        public int blood { get; set; } = 2;
-        public bool damage { set; get; }
+        public int blood { get; set; } = 1;
+
         private ISprite flameSprite;
 
 
@@ -23,14 +18,11 @@ namespace Sprint2
         private int width =16;
         private int height =16;
         public Rectangle boundingBox { get; set; }
-        private int damageTimer = 0;
 
         public Flame(Vector2 vector)
         {
-           
             posX = (int)vector.X;
             posY = (int)vector.Y;
-            initialPos = new Vector2(posX, posY);
             flameSprite = new FlameSilentBurningSprite(Texture2DStorage.GetEnemySpriteSheet2());
         }
 
@@ -63,63 +55,19 @@ namespace Sprint2
             //only one sprite
             
         }
-        public void GetDamage()
-        {
-            
-            if (Link.ifDamage && !damage)
-            {
-                damage = true;
-                blood--;
-            }
-            else if (!damage)
-            {
-                blood -= 2;
-                damage = true;
-            }
-        }
+
 
 
         public void Update()
         {
-            if (damage)
-            {
-                damageTimer++;
-                if (damageTimer >= 50)
-                {
-                    damage = false;
-                }
-            }
-            else
-            {
-                damageTimer = 0;
-            }
-            drawCloud++;
             boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
             flameSprite.Update();
-            if (blood <= 0)
-            {
-                sparkTimer++;
-            }
 
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            if (blood <= 0)
-            {
-                sparkSprite.Draw(spriteBatch, new Vector2(posX, posY));
-            }
-            else
-            {
-                if (drawCloud <= 20)
-                {
-                    cloudSprite.Draw(spriteBatch, initialPos);
-                }
-                else
-                {
-                    flameSprite.Draw(spriteBatch, new Vector2(posX, posY));
-                }
-            }
+            flameSprite.Draw(spriteBatch, new Vector2(posX, posY));
         }
 
         public List<Rectangle> getProjectileRec()

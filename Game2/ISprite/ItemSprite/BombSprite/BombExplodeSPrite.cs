@@ -36,7 +36,7 @@ namespace Sprint2
             if (Texture != null)
             {
                 Rectangle sourceRectangle = new Rectangle(sourceLocX, sourceLocY, width, height);
-                Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width * 4, height * 4);
+                Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width * 3, height * 3);
                 
 
                 spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);

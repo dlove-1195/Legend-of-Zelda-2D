@@ -12,9 +12,8 @@ namespace Sprint2
         void ChangeToRight();
         void ChangeToUp();
         void ChangeToDown();
-        void GetDamaged();
 
-        // void ChangeToAppear();
-        // void ChangeToDisappear();
+       // void ChangeToAppear();
+       // void ChangeToDisappear();
     }
 }

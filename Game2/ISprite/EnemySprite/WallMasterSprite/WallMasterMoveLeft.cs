@@ -20,7 +20,6 @@ namespace Sprint2
         
         private IEnemy WallMaster;
         
-        
         public WallMaterMoveLeftSprite(Texture2D texture, IEnemy WallMaster)
         {
             Texture = texture;

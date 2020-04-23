@@ -18,7 +18,7 @@ namespace Sprint2
             private int height = 14;
             public Rectangle BoundingBox { get; set; }
             //Sprite Object
-            public ISprite Sprite;
+            public ISprite mapSprite;
 
             //initial position in the center
             public int PosX { get; set; }
@@ -28,19 +28,19 @@ namespace Sprint2
             {
                 PosX = (int)vector.X;
                 PosY = (int)vector.Y;
-                 Sprite = new StaticSprite(texture, sourceLocX, sourceLocY, width, height);
+                mapSprite = new StaticSprite(texture, sourceLocX, sourceLocY, width, height);
 
             }
 
             public void Draw(SpriteBatch spriteBatch)
             {
-                 Sprite.Draw(spriteBatch, new Vector2(PosX, PosY));
+                mapSprite.Draw(spriteBatch, new Vector2(PosX, PosY));
             }
 
             public void Update()
             {
                 BoundingBox = new Rectangle(PosX, PosY, width * 3, height * 3);
-                 Sprite.Update();
+                mapSprite.Update();
             }
             public int GetItem()
             {
@@ -55,18 +55,18 @@ namespace Sprint2
             {
                 //do nothing
             }
-          //  public void PreItem(Game1 myGame)
-         //   {
+            public void PreItem(Game1 myGame)
+            {
 
                  
 
-        //    }
-        //    public void NextItem(Game1 myGame)
-         //   {
+            }
+            public void NextItem(Game1 myGame)
+            {
 
                 
 
-         //   }
+            }
         }
     }
  

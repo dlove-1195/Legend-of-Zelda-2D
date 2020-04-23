@@ -48,7 +48,7 @@ namespace Sprint2
             {
                  
                 IEnemy testEnemy = enemy[i];
-                if (testEnemy != null  )
+                if (testEnemy != null)
                 {
                     enemyHandler = new EnemyCollisionHandler(testEnemy);
 
@@ -71,7 +71,7 @@ namespace Sprint2
                                 48, 54);
 
                             overlapRec = Rectangle.Intersect(testEnemyRectangle, singleBlockRec);
-                            if ( !(testEnemy is Keese) && !overlapRec.IsEmpty)
+                            if (!overlapRec.IsEmpty)
                             {
                                 direction = detectCollisionDirection(overlapRec, testEnemyRectangle, singleBlockRec);
                                 enemyHandler.HandleEnemyBlockCollsion(direction);
@@ -86,7 +86,7 @@ namespace Sprint2
                             Rectangle singleBoxRec = boundingBox[j];
                             overlapRec = Rectangle.Intersect(testEnemyRectangle, singleBoxRec);
 
-                            if (!(testEnemy is Keese) && !overlapRec.IsEmpty)
+                            if (!overlapRec.IsEmpty)
                             {
                                 direction = detectCollisionDirection(overlapRec, testEnemyRectangle, singleBoxRec);
 

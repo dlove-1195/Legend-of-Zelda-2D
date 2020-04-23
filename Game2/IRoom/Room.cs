@@ -2,7 +2,6 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Xml;
 
 namespace Sprint2
@@ -10,11 +9,10 @@ namespace Sprint2
 
     public class Room : IRoom
     {
-        private CultureInfo culture;
+        XmlDocument doc;
+        XmlNodeList nodeList;
         private String type;
         private String name;
-        private XmlNodeList nodeList;
-        private XmlDocument doc;
         private int x;
         private int y;
         private int boxWidth;
@@ -32,66 +30,47 @@ namespace Sprint2
 #pragma warning restore CA2227 // Collection properties should be read only
         public List<INpc> npcs { get; set; }
 
-        public List<KeyValuePair<Vector2, Vector2>> stair { get; set; }
+        public List<KeyValuePair<Vector2,Vector2>> stair { get; set; }
         public List<KeyValuePair<int, int>> blockLocation { get; set; }
         public List<string> doorDirection { get; set; } //store door direction Up, Down, Right, Left as string
-#pragma warning disable CA2227 // Collection properties should be read only
-        public List<LockedDoor> lockedDoor { get; set; }
-        
-#pragma warning restore CA2227 // Collection properties should be read only
-#pragma warning disable CA2227 // Collection properties should be read only
-        // public List<string> OpenedDoor { get; set; }
-#pragma warning restore CA2227 // Collection properties should be read only
 
         public List<Rectangle> boundingBox { get; set; }
-        public static List<int> doorOpen { get; set; }= new List<int>();
 
         public Room()
         {
-#pragma warning disable IDE0059 // Unnecessary assignment of a value
             int windowWidth = Game1.WindowWidth;
-#pragma warning restore IDE0059 // Unnecessary assignment of a value
-#pragma warning disable IDE0059 // Unnecessary assignment of a value
             int windowHeight = Game1.WindowHeight;
-#pragma warning restore IDE0059 // Unnecessary assignment of a value
             enemies = new List<IEnemy>();
             pickUpItems = new List<IItem>();
             blockLocation = new List<KeyValuePair<int, int>>();
             doorDirection = new List<string>();
-            lockedDoor = new List<LockedDoor>();
-             
-
             stair = new List<KeyValuePair<Vector2, Vector2>>();
             boundingBox = new List<Rectangle>();
-            npcs = new List<INpc>();
-            
-
+            npcs = new List<INpc>(); 
+          
 
 
         }
-        public Room(RoomLoader load)
+        public Room(String fileName)
         {
-            if (load == null)
-            {
-                throw new ArgumentNullException(nameof(load));
-            }
-            doc = load.doc;
-            nodeList = load.nodeList;
-
-
-            ObjectLoader objects = new ObjectLoader();
             int windowWidth = 800;// Game1.WindowWidth;
             int windowHeight = 600;// Game1.WindowHeight;
             enemies = new List<IEnemy>();
             pickUpItems = new List<IItem>();
             blockLocation = new List<KeyValuePair<int, int>>();
             doorDirection = new List<string>();
-            lockedDoor = new List<LockedDoor>();
-            
             stair = new List<KeyValuePair<Vector2, Vector2>>();
             boundingBox = new List<Rectangle>();
             npcs = new List<INpc>();
-            
+
+            XmlReader reader;
+            XmlReaderSettings settings = new XmlReaderSettings();
+            XmlUrlResolver resolver = new XmlUrlResolver();
+            reader = XmlReader.Create(fileName, settings);
+            doc = new XmlDocument();
+            doc.XmlResolver = resolver;
+            doc.Load(reader);
+            reader.Close();
 
             nodeList = doc.SelectNodes("//Item");
 
@@ -99,18 +78,16 @@ namespace Sprint2
             {
                 type = node.ChildNodes[0].InnerText;
                 name = node.ChildNodes[1].InnerText;
-
-                //culture = new CultureInfo(locale);
-                culture = CultureInfo.CurrentCulture;
-                x = Int32.Parse(node.ChildNodes[2].InnerText, culture.NumberFormat);
-                y = Int32.Parse(node.ChildNodes[3].InnerText, culture.NumberFormat);
+                x = Int32.Parse(node.ChildNodes[2].InnerText);
+                y = Int32.Parse(node.ChildNodes[3].InnerText);
 
                 vector.X = ((float)(x) / 100) * windowWidth;
-                vector.Y = ((float)(y) / 100) * windowHeight + 200;
+                vector.Y = ((float)(y) / 100) * windowHeight+200;
+
 
                 if (type == "Room")
                 {
-                    if (name == "RoomNum")
+                    if(name == "RoomNum")
                     {
                         roomNumber = x;
                     }
@@ -138,10 +115,109 @@ namespace Sprint2
                     {
                         rightRoomNum = x;
                     }
+
+
                 }
-                else if (type == "Enemy" || type == "Item" || type == "NPC")
+                else if (type == "Enemy")
                 {
-                    objects.loadObject(this, type, name, vector);
+                    if (name == "Dragon")
+                    {
+                        enemies.Add(new Dragon(vector));
+                    }
+                    if (name == "WallMaster")
+                    {
+
+                        enemies.Add(new WallMaster(vector));
+                    }
+                    if (name == "Flame")
+                    {
+                        enemies.Add(new Flame(vector));
+                    }
+                    if (name == "Trap")
+                    {
+                        enemies.Add(new Trap(vector));
+                    }
+                    if (name == "Goriya")
+                    {
+                        enemies.Add(new Goriya(vector));
+                    }
+                    if (name == "Keese")
+                    {
+                        enemies.Add(new Keese(vector));
+                    }
+                    if (name == "Rope")
+                    {
+                        enemies.Add(new Rope(vector));
+                    }
+                    if (name == "Stalfos")
+                    {
+                        enemies.Add(new Stalfos(vector));
+                    }
+                    if (name == "Zol")
+                    {
+                        enemies.Add(new Zol(vector));
+                    }
+                }
+                else if (type == "Item")
+                {
+                    if (name == "BlueDiamond")
+                    {
+                        pickUpItems.Add(new BlueDiamond(vector));
+                    }
+                    if (name == "Clock")
+                    {
+                        pickUpItems.Add(new Clock(vector));
+                    }
+                    if (name == "Compass")
+                    {
+                        pickUpItems.Add(new Compass(vector));
+                    }
+                    if (name == "Fairy")
+                    {
+                        pickUpItems.Add(new Fairy(vector));
+                    }
+                    if (name == "Heart")
+                    {
+                        pickUpItems.Add(new Heart(vector));
+                    }
+                    if (name == "HeartContainer")
+                    {
+                        pickUpItems.Add(new HeartContainer(vector));
+                    }
+                    if (name == "Key")
+                    {
+                        pickUpItems.Add(new Key(vector));
+                    }
+                    if (name == "Map")
+                    {
+                        pickUpItems.Add(new Map(vector));
+                    }
+                    if (name == "TriforcePiece")
+                    {
+                        pickUpItems.Add(new TriforcePiece(vector));
+                    }
+                    if (name == "StaticBomb")
+                    {
+                        pickUpItems.Add(new staticBomb(vector));
+                    }
+                }
+                else if (type == "NPC")
+                {
+                    if (name == "Merchant")
+                    {
+
+                        npcs.Add(new Merchant(vector));
+
+                    }
+                    if (name == "OldMan")
+                    {
+
+                        npcs.Add(new OldMan(vector));
+                    }
+                    if (name == "Princess")
+                    {
+                        npcs.Add(new Princess(vector));
+                    }
                 }
                 else if (type == "Block")
                 {
@@ -151,27 +227,23 @@ namespace Sprint2
                 {
                     doorDirection.Add(name); //door direction stores in name
                 }
-                else if (type == "Wall")
-                {
-                    objects.loadObject(this, type, name, vector);
-                }
                 else if (type == "Stair")
                 {
-                    int destPosX = Int32.Parse(node.ChildNodes[4].InnerText, culture.NumberFormat);
-                    int destPosY = Int32.Parse(node.ChildNodes[5].InnerText, culture.NumberFormat);
+                    int destPosX = int.Parse(node.ChildNodes[4].InnerText);
+                    int destPosY = int.Parse(node.ChildNodes[5].InnerText);
 
                     Vector2 stairPos = vector;
                     Vector2 stairDestPos = new Vector2(destPosX, destPosY);
 
                     stair.Add(new KeyValuePair<Vector2, Vector2>(stairPos, stairDestPos));
-
+                
 
                 }
                 //for bounding box in room15
                 else if (type == "Box")
                 {
-                    int width = Int32.Parse(node.ChildNodes[4].InnerText, culture.NumberFormat);
-                    int height = Int32.Parse(node.ChildNodes[5].InnerText, culture.NumberFormat);
+                    int width = Int32.Parse(node.ChildNodes[4].InnerText);
+                    int height = Int32.Parse(node.ChildNodes[5].InnerText);
                     float widthFloat = ((float)width / 100) * windowWidth;
                     float heightFloat = ((float)height / 100) * windowHeight;
                     boxWidth = (int)widthFloat;
@@ -191,10 +263,6 @@ namespace Sprint2
         {
             enemies[enemyNum] = null;
 
-        }
-        public void setLockedDoorToNull(int num)
-        {
-            lockedDoor[num] = null;
         }
         public void Update()
         {
@@ -219,21 +287,8 @@ namespace Sprint2
         }
         public void Draw(SpriteBatch spriteBatch)
         {
-            if (roomNumber == 2)
-            {
-                LetterGenerator.drawSentence(spriteBatch, "WOULD YOU LIKE TO BUY SOME WEAPONS", new Vector2(100, 320), new Vector2(19, 19));
-                LetterGenerator.drawSentence(spriteBatch, "BOOMERANG AND BOW   FIVE DIAMONDS", new Vector2(100, 350), new Vector2(19, 19));
-                LetterGenerator.drawSentence(spriteBatch, "CANDLE              TEN DIAMONDS", new Vector2(100, 380), new Vector2(19, 19));
-            }
 
-          
-            foreach (LockedDoor doorX in lockedDoor)
-            {
-                if (doorX != null)
-                {
-                    doorX.Draw(spriteBatch);
-                }
-            }
+
             foreach (IEnemy enemy in enemies)
             {
                 if (enemy != null)

@@ -64,9 +64,6 @@ namespace Sprint2
         {
             // already down 
         }
-        public void GetDamaged()
-        {
-            //
-        }
+     
     }
 }

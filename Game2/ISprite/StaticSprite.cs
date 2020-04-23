@@ -28,7 +28,10 @@ namespace Sprint2
             height = spriteHeight;
 
         }
-       
+        public StaticSprite()
+        {
+            //do nothing
+        }
 
         public void Update()
         {

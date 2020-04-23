@@ -11,7 +11,6 @@ namespace Sprint2
     {
         private Link link;
         private Texture2D textureLink = Texture2DStorage.GetLinkSpriteSheet();
-        private Texture2D textureLink2 = Texture2DStorage.GetLinkSpriteSheet2();
         public LinkWithItemUpState(Link link, int itemNum)
         {
             if (link == null)
@@ -67,50 +66,6 @@ namespace Sprint2
                     item5.Appear = true;
                     link.items.Add(item5);
                     break;
-                case 6:
-                    //damage sword
-                    IItem damageSword = new DamageSword(Link.posX + 7, (Link.posY - 20), 0);
-                    damageSword.Appear = true;
-                    Link.oldDamageState = true;
-                    link.linkSprite = new LinkDamageAttackUpSprite(textureLink2);
-                    link.items.Add(damageSword);
-                    break;
-                case 7:
-                    //damge arrow
-                    IItem Damagearrow = new DamageArrow(Link.posX + 12, (Link.posY - 20), 0);
-                    IItem Damagebow = new DamageBow(Link.posX-4, (Link.posY - 25), 0);
-                    Damagearrow.Appear = true;
-                    Damagebow.Appear = true;
-                    link.items.Add(Damagearrow);
-                    link.items.Add(Damagebow);
-                    Link.oldDamageState = true;
-                    link.linkSprite = new LinkDamageStandUpSprite(textureLink2);
-                    break;
-                case 8:
-                    //damage candle fire
-                    IItem Damagecandle = new DamageFire(Link.posX, (Link.posY - 20), 0);
-                    Damagecandle.Appear = true;
-                    link.items.Add(Damagecandle);
-                    Link.oldDamageState = true;
-                    link.linkSprite = new LinkDamageStandUpSprite(textureLink2);
-                    break;
-                case 9:
-                    //damage bomb
-                    IItem Damagebomb = new DamageBomb(Link.posX, (Link.posY - 20));
-                    Damagebomb.Appear = true;
-                    Link.oldDamageState = true;
-                    link.linkSprite = new LinkDamageStandUpSprite(textureLink2);
-
-                    link.items.Add(Damagebomb);
-                    break;
-                case 10:
-                    //damage boomrang
-                    IItem Damageboomerang = new DamageWoodenBoomerang(Link.posX+7, (Link.posY -20), 0);
-                    Damageboomerang.Appear = true;
-                    link.linkSprite = new LinkDamageStandUpSprite(textureLink2);
-                    link.items.Add(Damageboomerang);
-                    Link.oldDamageState = true;
-                    break;
                 default:
                     break;
 
@@ -125,55 +80,23 @@ namespace Sprint2
         }
         public void ChangeToRight()
         {
-            if (!Link.ifDamage && Link.oldDamageState)
-            {
-                link.state = new LinkStandRightNonAttackNonDamageState(link);
-                Link.oldDamageState = false;
-            }
-            else
-            {
-                link.state = new LinkStandRightNonAttackDamageState(link);
-            }
+            link.state = new LinkStandRightNonAttackNonDamageState(link);
         }
         public void ChangeToLeft()
         {
-            if (!Link.ifDamage && Link.oldDamageState)
-            {
-                link.state = new LinkStandLeftNonAttackNonDamageState(link);
-                Link.oldDamageState = false;
-            }
-            else
-            {
-                link.state = new LinkStandLeftNonAttackDamageState(link);
-            }
+            link.state = new LinkStandLeftNonAttackNonDamageState(link);
         }
         public void ChangeToUp()
         {
-            if (!Link.ifDamage && Link.oldDamageState)
-            {
-                link.state = new LinkStandUpNonAttackNonDamageState(link);
-                Link.oldDamageState = false;
-            }
-            else
-            {
-                link.state = new LinkStandUpNonAttackDamageState(link);
-            }
+            link.state = new LinkStandUpNonAttackNonDamageState(link);
         }
         public void ChangeToDown()
         {
-            if (!Link.ifDamage && Link.oldDamageState)
-            {
-                link.state = new LinkStandDownNonAttackNonDamageState(link);
-                Link.oldDamageState = false;
-            }
-            else
-            {
-                link.state = new LinkStandDownNonAttackDamageState(link);
-            }
+            link.state = new LinkStandDownNonAttackNonDamageState(link);
         }
         public void GetDamaged()
         {
-            link.state = new LinkStandUpNonAttackDamageState(link);
+            //cannot attack and damage at the same time
         }
         public void Attack()
         {
@@ -185,13 +108,7 @@ namespace Sprint2
         }
         public void ChangeToStand()
         {
-            if (!Link.ifDamage && Link.oldDamageState)
-            {
-               link.state = new LinkStandUpNonAttackNonDamageState(link);
-                Link.oldDamageState = false;
-            }
-            
-
+            //already stand
         }
 
         

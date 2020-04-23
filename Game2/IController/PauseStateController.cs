@@ -16,7 +16,7 @@ namespace Sprint2
             myGame = game;
             map = new Dictionary<Keys, ICommand>();
 
-            map.Add(Keys.Escape, new QuitCommand(myGame));
+            map.Add(Keys.Q, new QuitCommand(myGame));
             map.Add(Keys.R, new  SwitchToPlayCommand(myGame));
              
         }
@@ -30,7 +30,38 @@ namespace Sprint2
                     map[key].Execute();
                 }
             }
-         
+            /*newState = Keyboard.GetState();
+            Keys[] newPressedKeys =  newState.GetPressedKeys();
+            Keys[] oldPressedKeys = { };
+            Keys[] pressedKeys = newState.GetPressedKeys();
+
+            if (oldState != null)
+            {
+                oldPressedKeys = oldState.GetPressedKeys();
+            }
+
+          
+            if (newPressedKeys.Length > oldPressedKeys.Length)
+            {
+                pressedKeys=newPressedKeys.Where(x => ! oldPressedKeys.Contains(x)).ToArray();
+              
+            }
+
+            if (newState != oldState)
+            {
+                foreach (Keys key in pressedKeys)
+                {
+                    if (map.ContainsKey(key))
+                    { 
+                        map[key].Execute();
+                    }
+                }
+            }
+             
+            oldState = newState;
+
+ 
+    */
         }
     }
 }

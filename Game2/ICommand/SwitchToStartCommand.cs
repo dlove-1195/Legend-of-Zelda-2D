@@ -12,7 +12,6 @@ namespace Sprint2
 
         public void Execute()
         {
-            myGame.playState = null;
             myGame.gameState = new StartState(myGame);
         }
     }

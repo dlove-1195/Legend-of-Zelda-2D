@@ -22,7 +22,6 @@ namespace Sprint2
             this.link = link;
             this.link.ChangeDirection(3);
             Link.ifDamage = true;
-            
         }
 
         public void Win()
@@ -80,10 +79,7 @@ namespace Sprint2
         }
         public void Attack()
         {
-            if (Link.ifDamage)
-            {
-                link.state = new LinkStandRightAttackDamageState(link);
-            }
+            //cannot attack when damage
         }
         public void ChangeToWalk()
         {

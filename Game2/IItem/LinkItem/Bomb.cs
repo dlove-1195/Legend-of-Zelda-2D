@@ -7,7 +7,6 @@ namespace Sprint2
 {
     public class Bomb : IItem
     {
-        
         public int Count { get; set; } = 0;
         public int TotalCount { get; set; } = 100;
         public bool Appear { get; set; } = false;
@@ -59,15 +58,24 @@ namespace Sprint2
                 bombHeight = 21;
                 //state.ChangeToExplode();
                 state = new BombAppearExplodeState(this);
-                BoundingBox = new Rectangle(PosX, PosY, bombWidth * 5, bombHeight * 5);
-                
+                BoundingBox = new Rectangle(PosX, PosY, bombWidth * 3, bombHeight * 3);
 
             }
            
 
 
         }
- 
+
+        public void NextItem(Game1 myGame)
+        {
+
+        }
+
+        public void PreItem(Game1 myGame)
+        {
+
+        }
+
         public void changeState(IItemState state)
         {
             this.state = state;

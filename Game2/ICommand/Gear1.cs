@@ -1,8 +1,8 @@
 using System;
-
-namespace Sprint2
+ 
+namespace Sprint2 
 {
-    public class Gear1 : ICommand
+    public class Gear1: ICommand
     {
         private PlayState play;
         public Gear1(PlayState play)
@@ -11,18 +11,10 @@ namespace Sprint2
         }
         public void Execute()
         {
-            //itemNum 4: sword; itemNum 6: hurtSword
-            int itemNum;
-            if (Link.ifDamage)
-            {
-                itemNum = 6;
-            }
-            else
-            {
-                itemNum = 4;
-            }
-            
-           
+
+
+            //itemNum 2: bomb
+            int itemNum = 2;
             /* direction should have value 0,1,2,3 corresponding to up, down, left, right*/
             int direction = play.player.GetDirection();
             switch (direction)
@@ -49,6 +41,8 @@ namespace Sprint2
 
 
             }
+
+
 
 
 

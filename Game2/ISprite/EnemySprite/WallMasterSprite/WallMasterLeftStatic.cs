@@ -13,7 +13,6 @@ namespace Sprint2
         private int sourceLocX;
         private int sourceLocY;
         private IEnemy WallMaster;
-        
 
         public WallMasterLeftStatic(Texture2D texture, IEnemy WallMaster)
         {
@@ -37,21 +36,19 @@ namespace Sprint2
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            
-                if (spriteBatch == null)
-                {
-                    throw new System.ArgumentNullException(nameof(spriteBatch));
-                }
-                if (Texture != null)
-                {
-                    Rectangle sourceRectangle = new Rectangle(sourceLocX, sourceLocY, width, height);
-                    Rectangle destinationRectangle = new Rectangle(WallMaster.posX, WallMaster.posY, width * 3, height * 3);
+            if (spriteBatch == null)
+            {
+                throw new System.ArgumentNullException(nameof(spriteBatch));
+            }
+            if (Texture != null)
+            {
+                Rectangle sourceRectangle = new Rectangle(sourceLocX, sourceLocY, width, height);
+               Rectangle destinationRectangle = new Rectangle(WallMaster.posX, WallMaster.posY, width * 3, height * 3);
 
-
-                    spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-
-                }
-            
+               
+               spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
+                 
+            }
         }
     }
 }

@@ -5,16 +5,10 @@ using System.Collections.Generic;
 
 namespace Sprint2
 {
-    public class Dragon : IEnemy
+    public class Dragon : IEnemy 
     {
-        private StaticSprite cloudSprite = new StaticSprite(Texture2DStorage.GetCloudSpriteSheet(), 110, 9, 14, 14);
-        private StaticSprite sparkSprite = new StaticSprite(Texture2DStorage.GetLinkSpriteSheet(), 209, 282, 17, 21);
-        private int drawCloud = 0;
-        private Vector2 initialPos;
-        public int sparkTimer { get; set; } = 0;
-        private int damageTimer = 0;
+
         public IEnemyState state;
-        public bool damage { get; set; }
         public ISprite DragonSprite;
         private int updateDelay = 0;
         private int totalDelay = 100;
@@ -29,17 +23,15 @@ namespace Sprint2
         private int seed = 1;
 
         public Rectangle boundingBox { get; set; } = new Rectangle();
-        public int blood { get; set; } = 6;
+        public int blood { get; set; } = 50;
 
-        private int width = 30;
-        private int height = 15;
-         
+        private int width =30;
+        private int height =15;
         public Dragon(Vector2 vector)
         {
-            
             posX = (int)vector.X;
             posY = (int)vector.Y;
-            initialPos = new Vector2(posX, posY);
+             
             state = new DragonWalkLeftState(this);
             boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
         }
@@ -52,7 +44,7 @@ namespace Sprint2
 
         public void ChangeSprite(ISprite sprite)
         {
-            //no op
+             //no op
         }
         public void ChangeToRight()
         {
@@ -70,130 +62,84 @@ namespace Sprint2
         {
             state.ChangeToDown();
         }
-        public void GetDamage()
-        {
-            if (!damage && Link.ifDamage)
-            {
-                blood--;
-                state.GetDamaged();
-            }
-            else if (!damage)
-            {
-                blood -= 2;
-                state.GetDamaged();
 
-            }
-        }
 
 
 
         public void Update()
         {
-            if (Level1.roomUpdate)
-            {
-                boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
-                
-                if (fire != null)
-                {
-                    fire.Update();
-                }
-
-                if (hasFire)
-                {
-                    fireTimer++;
-                    if (fireTimer == 100)
-                    {
-                        hasFire = false;
-                    }
-                }
-                else
-                {
-                    fireTimer = 0;
-                    fire = null;
-                }
-
-                //random move dragon
-                updateDelay++;
-                if (updateDelay == totalDelay)
-                {
-                    updateDelay = 0;
-                    seed++;
-                    var rnd = new Random(seed);
-                    int randomNumber = rnd.Next(0, 4);
-
-
-                    switch (randomNumber)
-                    {
-                        case 0:
-                            this.ChangeToDown();
-                            width = 15;
-                            height = 30;
-
-                            break;
-                        case 1:
-                            this.ChangeToLeft();
-                            width = 30;
-                            height = 15;
-                            break;
-                        case 2:
-                            this.ChangeToRight();
-                            width = 30;
-                            height = 15;
-                            break;
-                        case 3:
-                            this.ChangeToUp();
-                            width = 15;
-                            height = 30;
-                            break;
-                        default:
-#pragma warning disable CA1303 // Do not pass literals as localized parameters
-                            Console.WriteLine("error: no such situation");
-#pragma warning restore CA1303 // Do not pass literals as localized parameters
-                            break;
-                    }
-                }
-            }
+            boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
             DragonSprite.Update();
-            drawCloud++;
-            if (damage)
+            if (fire != null)
             {
-                damageTimer++;
-                if (damageTimer >= 100)
+                fire.Update();
+            }
+
+            if (hasFire)
+            {
+                fireTimer++;
+                if(fireTimer == 100)
                 {
-                    damage = false;
+                    hasFire = false;
                 }
             }
             else
             {
-                damageTimer = 0;
+                fireTimer = 0;
+                fire = null;
             }
-            if (blood <= 0)
+            
+            //random move dragon
+            updateDelay++;
+            if (updateDelay == totalDelay)
             {
-                sparkTimer++;
+                updateDelay = 0;
+                seed++;
+                var rnd = new Random(seed);
+                int randomNumber = rnd.Next(0, 4);
+
+
+                switch (randomNumber)
+                {
+                    case 0:
+                        this.ChangeToDown();
+                         width = 15;
+                         height = 30;
+
+                        break;
+                    case 1:
+                        this.ChangeToLeft();
+                        width = 30;
+                        height = 15; 
+                        break;
+                    case 2:
+                        this.ChangeToRight();
+                        width = 30;
+                        height = 15;
+                        break;
+                    case 3:
+                        this.ChangeToUp();
+                        width = 15;
+                        height = 30;
+                        break;
+                    default:
+#pragma warning disable CA1303 // Do not pass literals as localized parameters
+                        Console.WriteLine("error: no such situation");
+#pragma warning restore CA1303 // Do not pass literals as localized parameters
+                        break;
+                }
+
             }
 
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            if (blood <= 0)
+            
+            DragonSprite.Draw(spriteBatch, new Vector2(posX, posY));
+            if (fire != null)
             {
-                sparkSprite.Draw(spriteBatch, new Vector2(posX, posY));
-            }
-            else
-            {
-                if (drawCloud <= 20)
-                {
-                    cloudSprite.Draw(spriteBatch, initialPos);
-                }
-                else
-                {
-                    DragonSprite.Draw(spriteBatch, new Vector2(posX, posY));
-                    if (fire != null)
-                    {
-                        fire.Draw(spriteBatch);
-                    }
-                }
+                fire.Draw(spriteBatch);
             }
         }
 

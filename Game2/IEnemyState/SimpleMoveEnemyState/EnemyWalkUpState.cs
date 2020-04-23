@@ -66,9 +66,6 @@ namespace Sprint2
         {
             enemy.ChangeState(new EnemyWalkDownState(enemy, number));
         }
-        public void GetDamaged()
-        {
-            //
-        }
+     
     }
 }

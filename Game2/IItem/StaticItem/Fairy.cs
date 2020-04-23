@@ -64,21 +64,17 @@ namespace Sprint2
         {
             //do nothing
         }
-#pragma warning disable CA1822 // Mark members as static
-      //  public void NextItem(Game1 myGame)
-#pragma warning restore CA1822 // Mark members as static
-      //  {
+        public void NextItem(Game1 myGame)
+        {
 
 
           //  myGame.item = new Heart();
-      //  }
+        }
 
-#pragma warning disable CA1822 // Mark members as static
-      //  public void PreItem(Game1 myGame)
-#pragma warning restore CA1822 // Mark members as static
-      //  {
+        public void PreItem(Game1 myGame)
+        {
 
             //myGame.item = new Compass();
-      //  }
+        }
     }
 }
