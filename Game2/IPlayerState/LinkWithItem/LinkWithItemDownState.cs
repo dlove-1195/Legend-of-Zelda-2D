@@ -59,7 +59,7 @@ namespace Sprint2
                     //sword
                     IItem sword = new Sword(Link.posX + 16, (Link.posY + 20), 1);
                     sword.Appear = true;
-                    link.linkSprite = new LinkStand(textureLink, "Down");
+                    link.linkSprite = new LinkAttack(textureLink, "Down");
                     link.items.Add(sword);
                     break;
                 case 5:
@@ -131,10 +131,10 @@ namespace Sprint2
         }
         public void ChangeToRight()
         {
-            if (!Link.ifDamage && Link.oldDamageState)
+            if (!Link.ifDamage )
             {
                 link.state = new LinkStandRightNonAttackNonDamageState(link);
-                Link.oldDamageState = false;
+            
             }
             else
             {
@@ -143,10 +143,10 @@ namespace Sprint2
         }
         public void ChangeToLeft()
         {
-            if (!Link.ifDamage && Link.oldDamageState)
+            if (!Link.ifDamage )
             {
                 link.state = new LinkStandLeftNonAttackNonDamageState(link);
-                Link.oldDamageState = false;
+            
             }
             else
             {
@@ -155,10 +155,10 @@ namespace Sprint2
         }
         public void ChangeToUp()
         {
-            if (!Link.ifDamage && Link.oldDamageState)
+            if (!Link.ifDamage)
             {
                 link.state = new LinkStandUpNonAttackNonDamageState(link);
-                Link.oldDamageState = false;
+         
             }
             else
             {
@@ -167,10 +167,10 @@ namespace Sprint2
         }
         public void ChangeToDown()
         {
-            if (!Link.ifDamage && Link.oldDamageState)
+            if (!Link.ifDamage )
             {
                 link.state = new LinkStandDownNonAttackNonDamageState(link);
-                Link.oldDamageState = false;
+            
             }
             else
             {
