@@ -25,8 +25,8 @@ namespace Sprint2
             {
                 case 0:
                     //arrow
-                    link.linkSprite = new LinkStandUpSprite(textureLink);
-                     IItem item0= new Arrow(Link.posX+12, (Link.posY - 20),0);
+                    link.linkSprite = new LinkStand(textureLink, "Up");
+                    IItem item0= new Arrow(Link.posX+12, (Link.posY - 20),0);
                      IItem bow = new Bow(Link.posX-4, (Link.posY - 25), 0);
                     item0.Appear = true;
                     bow.Appear = true;
@@ -36,7 +36,7 @@ namespace Sprint2
                     break;
                 case 1:
                     //blue candle
-                    link.linkSprite = new LinkStandUpSprite(textureLink);
+                    link.linkSprite = new LinkStand(textureLink, "Up");
                     IItem item1 = new BlueCandle(Link.posX, (Link.posY - 20),0);
                     item1.Appear = true;
                     link.items.Add(item1);
@@ -44,7 +44,7 @@ namespace Sprint2
                     break;
                 case 2:
                     //bomb
-                    link.linkSprite = new LinkStandUpSprite(textureLink);
+                    link.linkSprite = new LinkStand(textureLink, "Up");
                     IItem item2 = new Bomb(Link.posX, (Link.posY - 20));
                     item2.Appear = true;
                     link.items.Add(item2);
@@ -55,14 +55,14 @@ namespace Sprint2
                     break;
                 case 4:
                     //sword
-                    link.linkSprite = new LinkAttackUpSprite(textureLink);
+                    link.linkSprite = new LinkAttack(textureLink,"Up");
                     IItem item4 = new Sword(Link.posX+7, (Link.posY - 20), 0);
                     item4.Appear = true;
                     link.items.Add(item4);
                     break;
                 case 5:
                     //Boomerang
-                    link.linkSprite = new LinkStandUpSprite(textureLink);
+                    link.linkSprite = new LinkStand(textureLink, "Up");
                     IItem item5 = new WoodenBoomerang(Link.posX, (Link.posY - 20), 0);
                     item5.Appear = true;
                     link.items.Add(item5);
@@ -72,7 +72,7 @@ namespace Sprint2
                     IItem damageSword = new DamageSword(Link.posX + 7, (Link.posY - 20), 0);
                     damageSword.Appear = true;
                     Link.oldDamageState = true;
-                    link.linkSprite = new LinkDamageAttackUpSprite(textureLink2);
+                    link.linkSprite = new LinkDamageAttack(textureLink2,"Up");
                     link.items.Add(damageSword);
                     break;
                 case 7:
@@ -83,20 +83,20 @@ namespace Sprint2
                     Damagebow.Appear = true;
                     link.items.Add(Damagearrow);
                     link.items.Add(Damagebow);
-                    link.linkSprite = new LinkDamageStandUpSprite(textureLink2);
+                    link.linkSprite = new LinkDamageStand(textureLink2, "Up");
                     break;
                 case 8:
                     //damage candle fire
                     IItem Damagecandle = new BlueCandle(Link.posX, (Link.posY - 20), 0);
                     Damagecandle.Appear = true;
                     link.items.Add(Damagecandle);
-                    link.linkSprite = new LinkDamageStandUpSprite(textureLink2);
+                    link.linkSprite = new LinkDamageStand(textureLink2, "Up");
                     break;
                 case 9:
                     //damage bomb
                     IItem Damagebomb = new DamageBomb(Link.posX, (Link.posY - 20));
                     Damagebomb.Appear = true;
-                    link.linkSprite = new LinkDamageStandUpSprite(textureLink2);
+                    link.linkSprite = new LinkDamageStand(textureLink2, "Up");
 
                     link.items.Add(Damagebomb);
                     break;
@@ -104,7 +104,7 @@ namespace Sprint2
                     //damage boomrang
                     IItem Damageboomerang = new DamageWoodenBoomerang(Link.posX+7, (Link.posY -20), 0);
                     Damageboomerang.Appear = true;
-                    link.linkSprite = new LinkDamageStandUpSprite(textureLink2);
+                    link.linkSprite = new LinkDamageStand(textureLink2, "Up");
                     link.items.Add(Damageboomerang);
                     break;
                 default:

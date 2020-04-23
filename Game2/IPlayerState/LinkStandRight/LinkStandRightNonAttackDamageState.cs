@@ -18,7 +18,7 @@ namespace Sprint2
             {
                 throw new ArgumentNullException(nameof(link));
             }
-            link.linkSprite = new LinkDamageStandRightSprite(texture);
+            link.linkSprite = new LinkDamageStand(texture,"Right");
             this.link = link;
             this.link.ChangeDirection(3);
             Link.ifDamage = true;

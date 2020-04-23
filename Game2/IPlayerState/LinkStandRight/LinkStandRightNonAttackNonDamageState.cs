@@ -19,7 +19,7 @@ namespace Sprint2
                 throw new ArgumentNullException(nameof(link));
             }
             this.link = link;
-            link.linkSprite = new LinkStandRightSprite(texture);
+            link.linkSprite = new LinkStand(texture, "Right");
             this.link.ChangeDirection(3);
 
         }

@@ -19,7 +19,7 @@ namespace Sprint2
             {
                 throw new ArgumentNullException(nameof(link));
             }
-            link.linkSprite = new LinkAttackLeftSprite(texture);
+            link.linkSprite = new LinkAttack(texture, "Left");
             this.link = link;
             this.link.ChangeDirection(2);
             link.simpleAttackBox = new Rectangle(Link.posX - 45, Link.posY+10, 45,25);

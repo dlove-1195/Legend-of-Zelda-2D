@@ -15,8 +15,8 @@ namespace Sprint2
         public LinkWalkLeftNonAttackDamageState(Link link)
         {
             linkPlayer = link;
-           
-            linkPlayer.linkSprite = new LinkDamageWalkLeftSprite(texture);
+
+            linkPlayer.linkSprite = new LinkDamageWalk(texture, "Left");
             link.ChangeDirection(2);
             Link.ifDamage = true;
             

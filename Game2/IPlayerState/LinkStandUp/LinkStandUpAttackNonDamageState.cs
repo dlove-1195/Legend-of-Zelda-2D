@@ -15,7 +15,7 @@ namespace Sprint2
             {
                 throw new System.ArgumentNullException(nameof(link));
             }
-            link.linkSprite = new LinkAttackUpSprite(texture);
+            link.linkSprite = new LinkAttack(texture, "Up");
             this.link = link;
             this.link.ChangeDirection(0);
             link.simpleAttackBox = new Rectangle(Link.posX+10, Link.posY - 45, 25,45);

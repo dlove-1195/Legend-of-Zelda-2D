@@ -15,7 +15,7 @@ namespace  Sprint2
         public LinkWalkDownNonAttackNonDamageState(Link link )
         {
             linkPlayer = link;
-            link.linkSprite = new LinkWalkDownSprite(texture);
+            link.linkSprite = new LinkWalk(texture,"Down");
             link.ChangeDirection(1);
 
         }

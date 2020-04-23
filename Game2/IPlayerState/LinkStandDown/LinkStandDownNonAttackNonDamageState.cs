@@ -18,7 +18,7 @@ namespace Sprint2
                 throw new System.ArgumentNullException(nameof(link));
             }
             this.link = link;
-            link.linkSprite = new LinkStandDownSprite(texture);
+            link.linkSprite = new LinkStand(texture,"Down");
             this.link.ChangeDirection(1);
 
 
