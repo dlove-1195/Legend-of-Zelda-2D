@@ -19,7 +19,9 @@ namespace Sprint2
             }
             this.greenDragon = dragon;
             greenDragon.GreenDragonSprite = new GreenDragonWalkRightSprite(texture, greenDragon);
-            greenDragon.fire = new Fire(greenDragon.posX - 30, greenDragon.posY, 2);
+            greenDragon.fire = new FireSpreadMiddle(greenDragon.posX - 30, greenDragon.posY + 30, 2);
+            greenDragon.fireSpreadDown = new FireSpreadDown(greenDragon.posX - 30, greenDragon.posY + 40, 2);
+            greenDragon.fireSpreadUp = new FireSpreadUp(greenDragon.posX - 30, greenDragon.posY + 10, 2);
             GreenDragon.hasFire = true;
         }
         public void ChangeToRight()
