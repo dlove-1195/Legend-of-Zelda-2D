@@ -10,16 +10,9 @@ namespace Sprint2
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch; 
 
-        //responsible for start/pause/win/gameOver state
+        
         public IGameState gameState { get; set; }
-        //responsible for play state
-       // public  PlayState playState { get; set; }
-
-
-
-
-        //IController keyboardController;
-
+        
         public static int WindowWidth = 800;
         public static int WindowHeight = 800; 
         public Game1()
