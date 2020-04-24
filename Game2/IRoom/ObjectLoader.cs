@@ -195,7 +195,7 @@ namespace Sprint2
 
             }else if (type == "SmallBox")
             {
-                itemList.Add(new Box(name, vector));
+                itemList.Add(new Box( vector));
             }
 
         }

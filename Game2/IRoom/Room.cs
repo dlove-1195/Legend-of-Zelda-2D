@@ -227,6 +227,13 @@ namespace Sprint2
                 LetterGenerator.drawSentence(spriteBatch, "CANDLE              TEN DIAMONDS", new Vector2(100, 380), new Vector2(19, 19));
             }
 
+            if(roomNumber == 5)
+            {
+                Rectangle sourceRectangle = new Rectangle(1163,734, 80, 80);
+                Rectangle destinationRectangle = new Rectangle(168, 496, 48, 48);
+                spriteBatch.Draw(Texture2DStorage.GetDoorSpriteSheet(), destinationRectangle, sourceRectangle, Color.White);
+            }
+
             foreach (LockedDoor doorX in lockedDoor)
             {
                 if (doorX != null)

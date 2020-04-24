@@ -50,12 +50,7 @@
       <posY>20</posY>
     </Item>
 
-    <Item>
-      <ObjectType>Block</ObjectType>
-      <ObjectName>Block1</ObjectName>
-      <posX>21</posX>
-      <posY>37</posY>
-    </Item>
+    
     <Item>
       <ObjectType>Block</ObjectType>
       <ObjectName>Block2</ObjectName>
