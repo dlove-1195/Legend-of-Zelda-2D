@@ -141,7 +141,10 @@ namespace Sprint2
                         overlapRec = Rectangle.Intersect(singleEnemyRec, linkWeaponRec[j]);
                         if (!overlapRec.IsEmpty)
                         {
-                             player.items[j].Count = 150;
+                             if (player.items[j] is Sword || player.items[j] is Arrow)
+                            {
+                                player.items[j].Count = 150;
+                            }
                             //enemy damage 
                             linkHandler.HandleLinkWeaponEnemyCollsion(i);
 
