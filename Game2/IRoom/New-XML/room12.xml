@@ -32,13 +32,13 @@
     <ObjectType>Enemy</ObjectType>
     <ObjectName>WallMaster</ObjectName>
     <posX>19</posX>
-    <posY>37</posY>
+    <posY>27</posY>
   </Item>
   <Item>
     <ObjectType>Enemy</ObjectType>
     <ObjectName>WallMaster</ObjectName>
     <posX>69</posX>
-    <posY>28</posY>
+    <posY>63</posY>
   </Item>
   
   <Item>

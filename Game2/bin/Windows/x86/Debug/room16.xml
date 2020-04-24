@@ -33,12 +33,7 @@
     </Item>
     <!--  player  -->
     <!--  enemy  -->
-    <Item>
-      <ObjectType>Enemy</ObjectType>
-      <ObjectName>Rope</ObjectName>
-      <posX>44</posX>
-      <posY>48</posY>
-    </Item>
+  
     <Item>
       <ObjectType>Block</ObjectType>
       <ObjectName>Block25</ObjectName>
@@ -64,11 +59,41 @@
       <posY>47</posY>
     </Item>
     <!--  enemy  -->
+    <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>Keese</ObjectName>
+      <posX>28</posX>
+      <posY>37</posY>
+    </Item>
+    <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>Keese</ObjectName>
+      <posX>32</posX>
+      <posY>41</posY>
+    </Item>
+    <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>Keese</ObjectName>
+      <posX>69</posX>
+      <posY>57</posY>
+    </Item>
+    <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>Keese</ObjectName>
+      <posX>46</posX>
+      <posY>65</posY>
+    </Item>
+    <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>Keese</ObjectName>
+      <posX>38</posX>
+      <posY>45</posY>
+    </Item>
     <!--  item  -->
     <Item>
       <ObjectType>Item</ObjectType>
       <ObjectName>TriforcePiece</ObjectName>
-      <posX>17</posX>
+      <posX>46</posX>
       <posY>47</posY>
     </Item>
     <!--  item  -->

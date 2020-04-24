@@ -60,15 +60,15 @@
   </Item>
   <!--  enemy  -->
   <!--  item  -->
- 
+  <Item>
+    <ObjectType>Item</ObjectType>
+    <ObjectName>Heart</ObjectName>
+    <posX>35</posX>
+    <posY>46</posY>
+  </Item>
   <!--  item  -->
   <!--  NPC  -->
-  <Item>
-    <ObjectType>NPC</ObjectType>
-    <ObjectName>OldMan</ObjectName>
-    <posX>52</posX>
-    <posY>67</posY>
-  </Item>
+
   <!--  NPC  -->
   <!--  Block  -->
   <Item>

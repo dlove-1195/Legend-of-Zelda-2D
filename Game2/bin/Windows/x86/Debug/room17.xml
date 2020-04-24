@@ -61,18 +61,7 @@
       <posX>192</posX>
       <posY>48</posY>
     </Item>
-    <Item>
-      <ObjectType>Item</ObjectType>
-      <ObjectName>Left</ObjectName>
-      <posX>5</posX>
-      <posY>42</posY>
-    </Item>
-    <Item>
-      <ObjectType>Item</ObjectType>
-      <ObjectName>Right</ObjectName>
-      <posX>87</posX>
-      <posY>42</posY>
-    </Item>
+    
     <!--  player  -->
     <Item>
       <ObjectType>Player</ObjectType>
@@ -83,43 +72,37 @@
     <!--  enemy  -->
     <Item>
       <ObjectType>Enemy</ObjectType>
-      <ObjectName>Dragon</ObjectName>
+      <ObjectName>Stalfos</ObjectName>
       <posX>60</posX>
-      <posY>45</posY>
+      <posY>42</posY>
+    </Item>
+    <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>Stalfos</ObjectName>
+      <posX>60</posX>
+      <posY>48</posY>
+    </Item>
+    <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>Stalfos</ObjectName>
+      <posX>40</posX>
+      <posY>42</posY>
+    </Item>
+    <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>Stalfos</ObjectName>
+      <posX>40</posX>
+      <posY>48</posY>
     </Item>
     <!--  enemy  -->
     <!--  item  -->
     <Item>
       <ObjectType>Item</ObjectType>
-      <ObjectName>StaticBomb</ObjectName>
-      <posX>60</posX>
+      <ObjectName>Heart</ObjectName>
+      <posX>70</posX>
       <posY>45</posY>
-    </Item>
-    <Item>
-      <ObjectType>Item</ObjectType>
-      <ObjectName>Key</ObjectName>
-      <posX>68</posX>
-      <posY>47</posY>
-    </Item>
-    <Item>
-      <ObjectType>Item</ObjectType>
-      <ObjectName>Key</ObjectName>
-      <posX>23</posX>
-      <posY>47</posY>
     </Item>
 
-    <Item>
-      <ObjectType>Item</ObjectType>
-      <ObjectName>TriforcePiece</ObjectName>
-      <posX>14</posX>
-      <posY>45</posY>
-    </Item>
-    <Item>
-      <ObjectType>Item</ObjectType>
-      <ObjectName>TriforcePiece</ObjectName>
-      <posX>83</posX>
-      <posY>45</posY>
-    </Item>
     <!--  item  -->
     <!--  NPC  -->
     <!--  NPC  -->

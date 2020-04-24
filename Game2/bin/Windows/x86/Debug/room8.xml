@@ -75,6 +75,54 @@
       <posX>64</posX>
       <posY>37</posY>
     </Item>
+    <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>WallMaster</ObjectName>
+      <posX>13</posX>
+      <posY>35</posY>
+    </Item>
+    <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>WallMaster</ObjectName>
+      <posX>13</posX>
+      <posY>45</posY>
+    </Item>
+    <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>WallMaster</ObjectName>
+      <posX>13</posX>
+      <posY>55</posY>
+    </Item>
+    <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>WallMaster</ObjectName>
+      <posX>13</posX>
+      <posY>65</posY>
+    </Item>
+    <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>Keese</ObjectName>
+      <posX>65</posX>
+      <posY>27</posY>
+    </Item>
+    <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>Keese</ObjectName>
+      <posX>65</posX>
+      <posY>42</posY>
+    </Item>
+    <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>Keese</ObjectName>
+      <posX>65</posX>
+      <posY>52</posY>
+    </Item>
+    <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>Keese</ObjectName>
+      <posX>65</posX>
+      <posY>67</posY>
+    </Item>
     <!--  enemy  -->
     <!--  item  -->
     <Item>
@@ -84,14 +132,7 @@
       <posY>47</posY>
     </Item>
     <!--  item  -->
-    <!--  NPC  -->
-    <Item>
-      <ObjectType>NPC</ObjectType>
-      <ObjectName>Merchant</ObjectName>
-      <posX>69</posX>
-      <posY>72</posY>
-    </Item>
-    <!--  NPC  -->
+
     <!--  Block  -->
     <!--  Block  -->
     <!--  Wall   -->

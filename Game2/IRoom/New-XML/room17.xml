@@ -61,18 +61,7 @@
       <posX>192</posX>
       <posY>48</posY>
     </Item>
-    <Item>
-      <ObjectType>Item</ObjectType>
-      <ObjectName>Left</ObjectName>
-      <posX>5</posX>
-      <posY>42</posY>
-    </Item>
-    <Item>
-      <ObjectType>Item</ObjectType>
-      <ObjectName>Right</ObjectName>
-      <posX>87</posX>
-      <posY>42</posY>
-    </Item>
+    
     <!--  player  -->
     <Item>
       <ObjectType>Player</ObjectType>
@@ -83,25 +72,25 @@
     <!--  enemy  -->
     <Item>
       <ObjectType>Enemy</ObjectType>
-      <ObjectName>Rope</ObjectName>
+      <ObjectName>Stalfos</ObjectName>
       <posX>60</posX>
       <posY>42</posY>
     </Item>
     <Item>
       <ObjectType>Enemy</ObjectType>
-      <ObjectName>Rope</ObjectName>
+      <ObjectName>Stalfos</ObjectName>
       <posX>60</posX>
       <posY>48</posY>
     </Item>
     <Item>
       <ObjectType>Enemy</ObjectType>
-      <ObjectName>Rope</ObjectName>
+      <ObjectName>Stalfos</ObjectName>
       <posX>40</posX>
       <posY>42</posY>
     </Item>
     <Item>
       <ObjectType>Enemy</ObjectType>
-      <ObjectName>Rope</ObjectName>
+      <ObjectName>Stalfos</ObjectName>
       <posX>40</posX>
       <posY>48</posY>
     </Item>

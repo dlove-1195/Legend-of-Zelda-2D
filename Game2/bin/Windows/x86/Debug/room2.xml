@@ -66,6 +66,7 @@
       <posX>48</posX>
       <posY>38</posY>
     </Item>
+
     <Item>
       <ObjectType>Door</ObjectType>
       <ObjectName>Left</ObjectName>

@@ -355,27 +355,6 @@
     <Content Include="IRoom\New-XML\room7.xml" />
     <Content Include="IRoom\New-XML\room8.xml" />
     <Content Include="IRoom\New-XML\room9.xml" />
-    <Content Include="IRoom\XML\room1.xml" />
-    <Content Include="IRoom\XML\room10.xml" />
-    <Content Include="IRoom\XML\room11.xml" />
-    <Content Include="IRoom\XML\room12.xml" />
-    <Content Include="IRoom\XML\room13.xml" />
-    <Content Include="IRoom\XML\room14.xml" />
-    <Content Include="IRoom\XML\room15.xml" />
-    <Content Include="IRoom\XML\room16.xml" />
-    <Content Include="IRoom\XML\room17.xml" />
-    <Content Include="IRoom\XML\room18.xml" />
-    <Content Include="IRoom\XML\room19.xml" />
-    <Content Include="IRoom\XML\room2.xml" />
-    <Content Include="IRoom\XML\room3.xml" />
-    <Content Include="IRoom\XML\room4.xml">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="IRoom\XML\room5.xml" />
-    <Content Include="IRoom\XML\room6.xml" />
-    <Content Include="IRoom\XML\room7.xml" />
-    <Content Include="IRoom\XML\room8.xml" />
-    <Content Include="IRoom\XML\room9.xml" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\.editorconfig">

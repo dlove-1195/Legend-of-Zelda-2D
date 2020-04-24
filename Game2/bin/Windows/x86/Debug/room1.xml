@@ -1,106 +1,36 @@
 <XnaContent>
-<!-- contain all items, enemies, and npc at designed position-->
-<Asset Type="MyDataTypes.LevelObjectData[]">
-  <Item>
-    <ObjectType>Room</ObjectType>
-    <ObjectName>RoomNum</ObjectName>
-    <num>1</num>
-    <num>1</num>
-  </Item>
-  <Item>
-    <ObjectType>Room</ObjectType>
-    <ObjectName>Room</ObjectName>
-    <width>13</width>
-    <height>19</height>
-  </Item>
-  <Item>
-    <ObjectType>Room</ObjectType>
-    <ObjectName>Up</ObjectName>
-    <UpRoom>2</UpRoom>
-    <UpRoom>2</UpRoom>
-  </Item>
-  <Item>
-    <ObjectType>Room</ObjectType>
-    <ObjectName>Down</ObjectName>
-    <DownRoom>17</DownRoom>
-    <DownRoom>17</DownRoom>
-  </Item>
-  <!--  enemy  -->
-  <Item>
-    <ObjectType>Enemy</ObjectType>
-    <ObjectName>Dragon</ObjectName>
-    <posX>15</posX>
-    <posY>22</posY>
-  </Item>
-  <Item>
-    <ObjectType>Enemy</ObjectType>
-    <ObjectName>GreenDragon</ObjectName>
-    <posX>65</posX>
-    <posY>22</posY>
-  </Item>
-  <Item>
-    <ObjectType>Enemy</ObjectType>
-    <ObjectName>WallMaster</ObjectName>
-    <posX>50</posX>
-    <posY>35</posY>
-  </Item>
-  <Item>
-    <ObjectType>Enemy</ObjectType>
-    <ObjectName>Flame</ObjectName>
-    <posX>69</posX>
-    <posY>54</posY>
-  </Item>
-  <Item>
-    <ObjectType>Enemy</ObjectType>
-    <ObjectName>Trap</ObjectName>
-    <posX>27</posX>
-    <posY>58</posY>
-  </Item>
-  <Item>
-    <ObjectType>Enemy</ObjectType>
-    <ObjectName>Goriya</ObjectName>
-    <posX>44</posX>
-    <posY>63</posY>
-  </Item>
-  <Item>
-    <ObjectType>Enemy</ObjectType>
-    <ObjectName>Keese</ObjectName>
-    <posX>38</posX>
-    <posY>27</posY>
-  </Item>
-  <Item>
-    <ObjectType>Enemy</ObjectType>
-    <ObjectName>Rope</ObjectName>
-    <posX>75</posX>
-    <posY>46</posY>
-  </Item>
-  <Item>
-    <ObjectType>Enemy</ObjectType>
-    <ObjectName>Stalfos</ObjectName>
-    <posX>50</posX>
-    <posY>36</posY>
-  </Item>
-  <Item>
-    <ObjectType>Enemy</ObjectType>
-    <ObjectName>Zol</ObjectName>
-    <posX>25</posX>
-    <posY>36</posY>
-  </Item>
-  <!--  enemy  -->
-  <!--  item  -->
-  <Item>
-    <ObjectType>Item</ObjectType>
-    <ObjectName>Clock</ObjectName>
-    <posX>16</posX>
-    <posY>69</posY>
-  </Item>
-  <Item>
-    <ObjectType>Item</ObjectType>
-    <ObjectName>Compass</ObjectName>
-    <posX>75</posX>
-    <posY>28</posY>
-  </Item>
-  <!--
+  <!-- contain all items, enemies, and npc at designed position-->
+  <Asset Type="MyDataTypes.LevelObjectData[]">
+    <Item>
+      <ObjectType>Room</ObjectType>
+      <ObjectName>RoomNum</ObjectName>
+      <num>1</num>
+      <num>1</num>
+    </Item>
+    <Item>
+      <ObjectType>Room</ObjectType>
+      <ObjectName>Room</ObjectName>
+      <width>13</width>
+      <height>19</height>
+    </Item>
+    <Item>
+      <ObjectType>Room</ObjectType>
+      <ObjectName>Up</ObjectName>
+      <UpRoom>2</UpRoom>
+      <UpRoom>2</UpRoom>
+    </Item>
+    <Item>
+      <ObjectType>Room</ObjectType>
+      <ObjectName>Down</ObjectName>
+      <DownRoom>17</DownRoom>
+      <DownRoom>17</DownRoom>
+    </Item>
+    <!--  enemy  -->
+    
+    <!--  enemy  -->
+    <!--  item  -->
+
+    <!--
   <Item>
     <ObjectType>Item</ObjectType>
     <ObjectName>Fairy</ObjectName>
@@ -108,107 +38,73 @@
     <posY>63</posY>
   </Item>
   -->
-  <Item>
-    <ObjectType>Item</ObjectType>
-    <ObjectName>Heart</ObjectName>
-    <posX>75</posX>
-    <posY>63</posY>
-  </Item>
 
-  <Item>
-    <ObjectType>Item</ObjectType>
-    <ObjectName>StaticBomb</ObjectName>
-    <posX>55</posX>
-    <posY>55</posY>
-  </Item> 
-  <Item>
-    <ObjectType>Item</ObjectType>
-    <ObjectName>Key</ObjectName>
-    <posX>28</posX>
-    <posY>46</posY>
-  </Item>
-  <Item>
-    <ObjectType>Item</ObjectType>
-    <ObjectName>Key</ObjectName>
-    <posX>27</posX>
-    <posY>25</posY>
-  </Item>
-  <Item>
-    <ObjectType>Item</ObjectType>
-    <ObjectName>Map</ObjectName>
-    <posX>25</posX>
-    <posY>20</posY>
-  </Item>
-  <Item>
-    <ObjectType>Item</ObjectType>
-    <ObjectName>TriforcePiece</ObjectName>
-    <posX>17</posX>
-    <posY>47</posY>
-  </Item>
-  <!--  item  -->
-  <!--  NPC  -->
-  <!--<Item>
-    <ObjectType>NPC</ObjectType>
-    <ObjectName>Merchant</ObjectName>
-    <posX>32</posX>
-    <posY>63</posY>
-  </Item>
-  <Item>
-    <ObjectType>NPC</ObjectType>
-    <ObjectName>OldMan</ObjectName>
-    <posX>76</posX>
-    <posY>70</posY>
-  </Item>
-  <Item>
-    <ObjectType>NPC</ObjectType>
-    <ObjectName>Princess</ObjectName>
-    <posX>53</posX>
-    <posY>21</posY>
-  </Item> -->
-  <!--  NPC  -->
-  <!--  Block  -->
-  <Item>
-    <ObjectType>Block</ObjectType>
-    <ObjectName>Block1</ObjectName>
-    <posX>38</posX>
-    <posY>46</posY>
-  </Item>
-  <Item>
-    <ObjectType>Block</ObjectType>
-    <ObjectName>Block2</ObjectName>
-    <posX>57</posX>
-    <posY>46</posY>
-  </Item>
-  <!--  Block  -->
-  <!--  Door  -->
-  <Item>
-    <ObjectType>Door</ObjectType>
-    <ObjectName>Up</ObjectName>
-    <posX>47</posX>
-    <posY>19</posY>
-  </Item>
-  <Item>
-    <ObjectType>Door</ObjectType>
-    <ObjectName>Down</ObjectName>
-    <posX>47</posX>
-    <posY>82</posY>
-  </Item>
-  <!--  Door  -->
+    <Item>
+      <ObjectType>Item</ObjectType>
+      <ObjectName>StaticBomb</ObjectName>
+      <posX>72</posX>
+      <posY>46</posY>
+    </Item>
+    <Item>
+      <ObjectType>Item</ObjectType>
+      <ObjectName>Key</ObjectName>
+      <posX>28</posX>
+      <posY>46</posY>
+    </Item>
 
-  <!--  LockedDoor  -->
-  <Item>
-    <ObjectType>Item</ObjectType>
-    <ObjectName>Up</ObjectName>
-    <posX>44</posX>
-    <posY>8</posY>
-  </Item>
-<Item>
-    <ObjectType>Item</ObjectType>
-    <ObjectName>Down</ObjectName>
-    <posX>44</posX>
-    <posY>82</posY>
-  </Item>
+  
 
-  <!--  LockedDoor  -->
-</Asset>
+    <Item>
+      <ObjectType>NPC</ObjectType>
+      <ObjectName>OldMan</ObjectName>
+      <posX>46</posX>
+      <posY>70</posY>
+    </Item>
+    <Item>
+      <ObjectType>NPC</ObjectType>
+      <ObjectName>GonePrincess</ObjectName>
+      <posX>53</posX>
+      <posY>40</posY>
+    </Item>
+
+    <Item>
+      <ObjectType>Block</ObjectType>
+      <ObjectName>Block1</ObjectName>
+      <posX>38</posX>
+      <posY>46</posY>
+    </Item>
+    <Item>
+      <ObjectType>Block</ObjectType>
+      <ObjectName>Block2</ObjectName>
+      <posX>57</posX>
+      <posY>46</posY>
+    </Item>
+    <!--  Block  -->
+    <!--  Door  -->
+    <Item>
+      <ObjectType>Door</ObjectType>
+      <ObjectName>Up</ObjectName>
+      <posX>47</posX>
+      <posY>19</posY>
+    </Item>
+    <Item>
+      <ObjectType>Door</ObjectType>
+      <ObjectName>Down</ObjectName>
+      <posX>47</posX>
+      <posY>82</posY>
+    </Item>
+    <!--  Door  -->
+
+    <!--  LockedDoor  -->
+    <Item>
+      <ObjectType>Item</ObjectType>
+      <ObjectName>Up</ObjectName>
+      <posX>44</posX>
+      <posY>8</posY>
+    </Item>
+  
+
+    <!--  LockedDoor  -->
+    
+  </Asset>
 </XnaContent>

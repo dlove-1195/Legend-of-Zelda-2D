@@ -32,8 +32,20 @@
     </Item>
     <Item>
       <ObjectType>Enemy</ObjectType>
+      <ObjectName>Goriya</ObjectName>
+      <posX>76</posX>
+      <posY>25</posY>
+    </Item>
+    <Item>
+      <ObjectType>Enemy</ObjectType>
       <ObjectName>Rope</ObjectName>
       <posX>47</posX>
+      <posY>46</posY>
+    </Item>
+    <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>Goriya</ObjectName>
+      <posX>74</posX>
       <posY>46</posY>
     </Item>
     <Item>
@@ -43,12 +55,29 @@
       <posY>75</posY>
     </Item>
     <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>Goriya</ObjectName>
+      <posX>76</posX>
+      <posY>75</posY>
+    </Item>
+    <Item>
       <ObjectType>Item</ObjectType>
       <ObjectName>Heart</ObjectName>
       <posX>84</posX>
       <posY>46</posY>
     </Item>
-
+    <Item>
+      <ObjectType>Item</ObjectType>
+      <ObjectName>Compass</ObjectName>
+      <posX>19</posX>
+      <posY>37</posY>
+    </Item>
+    <Item>
+      <ObjectType>Item</ObjectType>
+      <ObjectName>Map</ObjectName>
+      <posX>19</posX>
+      <posY>54</posY>
+    </Item>
     <!--blocks block location on current frame or entire sprite sheet??-->>
     <Item>
     <ObjectType>Block</ObjectType>

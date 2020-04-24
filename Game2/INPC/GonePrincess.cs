@@ -31,7 +31,7 @@ namespace Sprint2
         public void Update()
         {
             boundingBox = new Rectangle(posX, posY, princessWidth * 3, princessHeight * 3);
-            posX-=3;
+            posY-=3;
 
             PrincessSprite.Update();
 
@@ -40,6 +40,7 @@ namespace Sprint2
 
         public void Draw(SpriteBatch spriteBatch)
         {
+            if (posY>200)
             PrincessSprite.Draw(spriteBatch, new Vector2(posX, posY));
         }
 

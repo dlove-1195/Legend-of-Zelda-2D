@@ -32,26 +32,15 @@
     <ObjectType>Enemy</ObjectType>
     <ObjectName>WallMaster</ObjectName>
     <posX>19</posX>
-    <posY>37</posY>
+    <posY>27</posY>
   </Item>
   <Item>
     <ObjectType>Enemy</ObjectType>
     <ObjectName>WallMaster</ObjectName>
     <posX>69</posX>
-    <posY>28</posY>
+    <posY>63</posY>
   </Item>
-  <Item>
-    <ObjectType>Enemy</ObjectType>
-    <ObjectName>Flame</ObjectName>
-    <posX>62</posX>
-    <posY>54</posY>
-  </Item>
-  <Item>
-    <ObjectType>Enemy</ObjectType>
-    <ObjectName>Flame</ObjectName>
-    <posX>19</posX>
-    <posY>60</posY>
-  </Item>
+  
   <Item>
     <ObjectType>Enemy</ObjectType>
     <ObjectName>Keese</ObjectName>
@@ -65,25 +54,110 @@
     <posY>60</posY>
   </Item>
   <!--  enemy  -->
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Zol</ObjectName>
+    <posX>25</posX>
+    <posY>36</posY>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Zol</ObjectName>
+    <posX>25</posX>
+    <posY>46</posY>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Zol</ObjectName>
+    <posX>25</posX>
+    <posY>56</posY>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Zol</ObjectName>
+    <posX>25</posX>
+    <posY>66</posY>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Zol</ObjectName>
+    <posX>75</posX>
+    <posY>36</posY>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Zol</ObjectName>
+    <posX>75</posX>
+    <posY>56</posY>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Zol</ObjectName>
+    <posX>75</posX>
+    <posY>66</posY>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Zol</ObjectName>
+    <posX>75</posX>
+    <posY>46</posY>
+  </Item>
+
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Trap</ObjectName>
+    <posX>36</posX>
+    <posY>71</posY>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Trap</ObjectName>
+    <posX>46</posX>
+    <posY>71</posY>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Trap</ObjectName>
+    <posX>56</posX>
+    <posY>71</posY>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Trap</ObjectName>
+    <posX>36</posX>
+    <posY>29</posY>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Trap</ObjectName>
+    <posX>46</posX>
+    <posY>29</posY>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Trap</ObjectName>
+    <posX>56</posX>
+    <posY>29</posY>
+  </Item>
   <!--  item  -->
   <Item>
     <ObjectType>Item</ObjectType>
-    <ObjectName>Clock</ObjectName>
-    <posX>79</posX>
-    <posY>22</posY>
-  </Item>
-  <Item>
-    <ObjectType>Item</ObjectType>
     <ObjectName>Compass</ObjectName>
-    <posX>31</posX>
+    <posX>33</posX>
     <posY>59</posY>
   </Item>
   <Item>
     <ObjectType>Item</ObjectType>
     <ObjectName>Heart</ObjectName>
-    <posX>53</posX>
-    <posY>24</posY>
+    <posX>58</posX>
+    <posY>35</posY>
   </Item>
+    <Item>
+    <ObjectType>Item</ObjectType>
+    <ObjectName>StaticBomb</ObjectName>
+    <posX>59</posX>
+    <posY>55</posY>
+  </Item> 
   <!--  item  -->
   <!--  Block  -->
   <Item>

@@ -160,10 +160,16 @@ namespace Sprint2
                room.enemies[enemyNum].GetDamage(); 
             }
       
-    } 
+    }
+        
+        private int callTime=1;
         public void HandleLinkNpcCollsion(String direction,int npcNum)
         {
-            Sound.PlayItemCollision();
+            if (callTime == 1)
+            {
+                Sound.PlayItemCollision();
+                callTime++;
+            }
             room.npcs[npcNum].Talk();
             
         }

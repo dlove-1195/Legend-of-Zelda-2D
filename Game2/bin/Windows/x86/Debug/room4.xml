@@ -18,8 +18,8 @@
       <ObjectName>Right</ObjectName>
       <RightRoom>5</RightRoom>
       <RightRoom>5</RightRoom>
-    
-  </Item>
+
+    </Item>
     <Item>
       <ObjectType>Room</ObjectType>
       <ObjectName>Down</ObjectName>
@@ -37,7 +37,7 @@
       <posX>26</posX>
       <posY>30</posY>
     </Item>
-    
+
     <Item>
       <ObjectType>Enemy</ObjectType>
       <ObjectName>WallMaster</ObjectName>
@@ -50,8 +50,8 @@
       <posX>40</posX>
       <posY>75</posY>
     </Item>
-    
-      <Item>
+
+    <Item>
       <ObjectType>Enemy</ObjectType>
       <ObjectName>WallMaster</ObjectName>
       <posX>45</posX>

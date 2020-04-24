@@ -59,17 +59,41 @@
     <!--  enemy  -->
     <Item>
       <ObjectType>Enemy</ObjectType>
-      <ObjectName>Rope</ObjectName>
-      <posX>20</posX>
-      <posY>44</posY>
+      <ObjectName>Stalfos</ObjectName>
+      <posX>46</posX>
+      <posY>28</posY>
+    </Item>
+    <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>Stalfos</ObjectName>
+      <posX>46</posX>
+      <posY>63</posY>
+    </Item>
+    <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>Stalfos</ObjectName>
+      <posX>27</posX>
+      <posY>46</posY>
+    </Item>
+    <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>Stalfos</ObjectName>
+      <posX>72</posX>
+      <posY>46</posY>
     </Item>
     <!--  enemy  -->
     <!--  item  -->
     <Item>
       <ObjectType>Item</ObjectType>
-      <ObjectName>Compass</ObjectName>
-      <posX>45</posX>
-      <posY>65</posY>
+      <ObjectName>StaticBomb</ObjectName>
+      <posX>55</posX>
+      <posY>55</posY>
+    </Item>
+    <Item>
+      <ObjectType>Item</ObjectType>
+      <ObjectName>Key</ObjectName>
+      <posX>30</posX>
+      <posY>46</posY>
     </Item>
     <!--  item  -->
     <!--  NPC  -->

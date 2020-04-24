@@ -48,8 +48,8 @@ namespace Sprint2
             }
             else {
                 OldManSprite.Draw(spriteBatch, new Vector2(posX, posY));
-                LetterGenerator.drawSentence(spriteBatch, "GO SAVE THE PRINCESS", new Vector2(posX - 180, posY - 100), new Vector2(19, 19));
-                LetterGenerator.drawSentence(spriteBatch, "YOUR JOURNEY BEGIN", new Vector2(posX - 150, posY - 78), new Vector2(19, 19));
+                LetterGenerator.drawSentence(spriteBatch, "GO SAVE THE PRINCESS", new Vector2(posX - 250, posY - 94), new Vector2(19, 19));
+                LetterGenerator.drawSentence(spriteBatch, "YOUR JOURNEY BEGIN", new Vector2(posX - 200, posY - 72), new Vector2(19, 19));
             }
         }
         public void Talk() {

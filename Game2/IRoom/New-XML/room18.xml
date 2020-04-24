@@ -45,12 +45,7 @@
     </Item>
     <!--  player  -->
     <!--  enemy  -->
-    <Item>
-      <ObjectType>Enemy</ObjectType>
-      <ObjectName>Dragon</ObjectName>
-      <posX>82</posX>
-      <posY>37</posY>
-    </Item>
+    
     <!--  enemy  -->
     <!--  item  -->
     <Item>
@@ -1106,7 +1101,13 @@
       <posX>58</posX>
       <posY>70</posY>
     </Item>
-   
+
+    <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>Dragon</ObjectName>
+      <posX>82</posX>
+      <posY>37</posY>
+    </Item>
     <!--  item  -->
     <!--  NPC  -->
     <!--  NPC  -->
