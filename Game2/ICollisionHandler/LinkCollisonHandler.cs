@@ -395,7 +395,7 @@ namespace Sprint2
                 Level1.roomUpdate = false;
             }else if(room.pickUpItems[itemNum] is BlueRing)
             {
-                LinkCollisionDetection.blueRing = true;
+                LinkCollisionDetection.BlueRing = true;
             }
  
             //if items  fairy? /heartContainer?(delete)

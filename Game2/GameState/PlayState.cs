@@ -88,7 +88,7 @@ namespace Sprint2
 
             inventoryBar.Update();
            
-            if (!LinkCollisionDetection.blueRing)
+            if (!LinkCollisionDetection.BlueRing)
             {
                 linkDetection = new LinkCollisionDetection(level, player, inventoryBar);
             }

@@ -21,7 +21,7 @@ namespace Sprint2
         {
             direction = d;
             Texture = texture;
-            if (direction.Equals("Down"))
+            if (direction.Equals("Down", StringComparison.Ordinal))
             {
 
                 sourceLocX = 0;
@@ -29,21 +29,21 @@ namespace Sprint2
                 width = 15;
                 height = 16;
             }
-            else if (direction.Equals("Left"))
+            else if (direction.Equals("Left", StringComparison.Ordinal))
             {
                 sourceLocX = 30;
                 sourceLocY = 0;
                 width = 15;
                 height = 16;
             }
-            else if (direction.Equals("Right"))
+            else if (direction.Equals("Right", StringComparison.Ordinal))
             {
                 sourceLocX = 90;
                 sourceLocY = 30;
                 width = 15;
                 height = 16;
             }
-            else if (direction.Equals("Up")) {
+            else if (direction.Equals("Up", StringComparison.Ordinal)) {
                 sourceLocX = 62;
                 sourceLocY = 0;
                 width = 15;

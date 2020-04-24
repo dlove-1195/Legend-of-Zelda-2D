@@ -23,7 +23,9 @@ namespace Sprint2
 
         private IPlayer player;
 
-        private List<string> DoorDirection { get; set; } 
+        private List<string> DoorDirection { get; set; }
+        public static bool BlueRing { get => blueRing; set => blueRing = value; }
+
         private IRoom room;
 
         public static bool blueRing = false;
@@ -95,7 +97,7 @@ namespace Sprint2
                         string direction = detectCollisionDirection(overlapRec, linkRectangle, singleEnemyRec);
                         if (!Link.ifDamage)
                         {
-                            if (!blueRing)
+                            if (!BlueRing)
                             {
                                 linkHandler.HandleLinkEnemyCollsion(direction, i);
                             }
@@ -159,12 +161,12 @@ namespace Sprint2
 
             }
 
-            if (blueRing)
+            if (BlueRing)
             {
                 blueRingTimer++;
                 if (blueRingTimer >= 700)
                 {
-                   blueRing = false;
+                   BlueRing = false;
                 }
             }
             for (int j = 0; j < item.Count; j++)

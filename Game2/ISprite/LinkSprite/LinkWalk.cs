@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
+using System;
 
 namespace Sprint2
 {
@@ -21,7 +22,8 @@ namespace Sprint2
         {
             direction = d;
             Texture = texture;
-            if (direction.Equals("Down"))
+
+            if (direction.Equals("Down", StringComparison.Ordinal))
             {
                 width = 15;
                 height = 16;
@@ -30,7 +32,7 @@ namespace Sprint2
                 delay = 0;
                 totalDelay = 10;
             }
-            else if (direction.Equals("Left"))
+            else if (direction.Equals("Left", StringComparison.Ordinal))
             {
                 width = 15;
                 height = 16;
@@ -39,7 +41,7 @@ namespace Sprint2
                 delay = 0;
                 totalDelay = 10;
             }
-            else if (direction.Equals("Right"))
+            else if (direction.Equals("Right", StringComparison.Ordinal))
             {
                 width = 15;
                 height = 16;
@@ -48,7 +50,7 @@ namespace Sprint2
                 delay = 0;
                 totalDelay = 10;
             }
-            else if (direction.Equals("Up")) {
+            else if (direction.Equals("Up", StringComparison.Ordinal)) {
                 width = 15;
                 height = 16;
                 sourceLocX = 60;

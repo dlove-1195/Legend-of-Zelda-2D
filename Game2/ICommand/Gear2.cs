@@ -4,6 +4,7 @@ namespace Sprint2
 {
     public class Gear2: ICommand
     {
+        
         private PlayState play;
         private int itemNum;
         private IInventory inventory;
