@@ -11,9 +11,7 @@ namespace Sprint2
     {
        
         private Link link;
-        private Texture2D textureLink = Texture2DStorage.GetLinkSpriteSheet();
 
-        private Texture2D textureLink2 = Texture2DStorage.GetLinkSpriteSheet2();
         public LinkWithItemLeftState(Link link, int itemNum)
         {
             if (link == null)
@@ -27,7 +25,7 @@ namespace Sprint2
             {
                 case 0:
                     //arrow
-                    link.linkSprite = new LinkStand(textureLink, "Left");
+                    link.linkSprite = LinkSpriteFactory.Instance.CreateLinkStandSprite("Left", false);
                     IItem item0 = new Arrow((Link.posX - 20), Link.posY+15, 2);
                     IItem bow = new Bow((Link.posX - 20), Link.posY, 2);
                     item0.Appear = true;
@@ -37,14 +35,14 @@ namespace Sprint2
                     break;
                 case 1:
                     //blue candle
-                    link.linkSprite = new LinkStand(textureLink, "Left");
+                    link.linkSprite = LinkSpriteFactory.Instance.CreateLinkStandSprite("Left", false);
                     IItem item1 = new BlueCandle((Link.posX - 20), Link.posY, 2);
                     item1.Appear = true;
                     link.items.Add(item1);
                     break;
                 case 2:
                     //bomb
-                    link.linkSprite = new LinkStand(textureLink, "Left");
+                    link.linkSprite = LinkSpriteFactory.Instance.CreateLinkStandSprite("Left", false);
                     IItem item2 = new Bomb((Link.posX - 20), Link.posY);
                    
                     item2.Appear = true;
@@ -56,7 +54,7 @@ namespace Sprint2
                     break;
                 case 4:
                     //sword
-                    link.linkSprite = new LinkAttack(textureLink, "Left");
+                    link.linkSprite = LinkSpriteFactory.Instance.CreateLinkAttackSprite("Left", false);
                     IItem item4 = new Sword((Link.posX - 20), Link.posY +17, 2);
                    
                     item4.Appear = true;
@@ -64,7 +62,7 @@ namespace Sprint2
                     break;
                 case 5:
                     //Boomerang
-                    link.linkSprite = new LinkStand(textureLink, "Left");
+                    link.linkSprite = LinkSpriteFactory.Instance.CreateLinkStandSprite("Left", false);
                     IItem item5 = new WoodenBoomerang((Link.posX - 20), Link.posY, 2);
                      
                     item5.Appear = true;
@@ -75,7 +73,7 @@ namespace Sprint2
                     IItem damageSword = new DamageSword(Link.posX - 20, (Link.posY + 17), 2);
                     damageSword.Appear = true;
                     Link.oldDamageState = true;
-                    link.linkSprite = new LinkDamageAttack(textureLink2,"Left");
+                    link.linkSprite = LinkSpriteFactory.Instance.CreateLinkAttackSprite("Left", true);
                     link.items.Add(damageSword);
                     break;
                 case 7:
@@ -87,7 +85,7 @@ namespace Sprint2
                     Link.oldDamageState = true;
                     link.items.Add(Damagearrow);
                     link.items.Add(Damagebow);
-                    link.linkSprite = new LinkDamageStand(textureLink2, "Left");
+                    link.linkSprite = LinkSpriteFactory.Instance.CreateLinkStandSprite("Left", true);
                     break;
                 case 8:
                     //damage candle fire
@@ -95,14 +93,14 @@ namespace Sprint2
                     Damagecandle.Appear = true;
                     Link.oldDamageState = true;
                     link.items.Add(Damagecandle);
-                    link.linkSprite = new LinkDamageStand(textureLink2, "Left");
+                    link.linkSprite = LinkSpriteFactory.Instance.CreateLinkStandSprite("Left", true);
                     break;
                 case 9:
                     //damage bomb
                     IItem Damagebomb = new DamageBomb((Link.posX-20), (Link.posY));
                     Damagebomb.Appear = true;
                     Link.oldDamageState = true;
-                    link.linkSprite = new LinkDamageStand(textureLink2, "Left");
+                    link.linkSprite = LinkSpriteFactory.Instance.CreateLinkStandSprite("Left", true);
 
 
                     link.items.Add(Damagebomb);
@@ -112,7 +110,7 @@ namespace Sprint2
                     IItem Damageboomerang = new DamageWoodenBoomerang((Link.posX-20), (Link.posY), 2);
                     Damageboomerang.Appear = true;
                     Link.oldDamageState = true;
-                    link.linkSprite = new LinkDamageStand(textureLink2, "Left");
+                    link.linkSprite = LinkSpriteFactory.Instance.CreateLinkStandSprite("Left", true);
                     link.items.Add(Damageboomerang);
                     break;
                 default:

@@ -11,7 +11,6 @@ namespace Sprint2
    public class LinkStandRightNonAttackNonDamageState: IPlayerstate
     {
         private Link link;
-        private Texture2D texture = Texture2DStorage.GetLinkSpriteSheet();
         public LinkStandRightNonAttackNonDamageState(Link link)
         {
             if (link == null)
@@ -19,7 +18,7 @@ namespace Sprint2
                 throw new ArgumentNullException(nameof(link));
             }
             this.link = link;
-            link.linkSprite = new LinkStand(texture, "Right");
+            link.linkSprite = LinkSpriteFactory.Instance.CreateLinkStandSprite("Right", false);
             this.link.ChangeDirection(3);
 
         }

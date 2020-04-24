@@ -8,14 +8,13 @@ namespace Sprint2
     public class LinkStandUpAttackNonDamageState:IPlayerstate
     {
         private Link link;
-        private Texture2D texture = Texture2DStorage.GetLinkSpriteSheet();
         public LinkStandUpAttackNonDamageState(Link link)
         {
             if (link == null)
             {
                 throw new System.ArgumentNullException(nameof(link));
             }
-            link.linkSprite = new LinkAttack(texture, "Up");
+            link.linkSprite = LinkSpriteFactory.Instance.CreateLinkAttackSprite("Up", false);
             this.link = link;
             this.link.ChangeDirection(0);
             link.simpleAttackBox = new Rectangle(Link.posX+10, Link.posY - 45, 25,45);

@@ -10,12 +10,11 @@ namespace Sprint2
     class LinkWalkRightNonAttackDamageState : IPlayerstate
     {
         private Link linkPlayer;
-    private Texture2D texture = Texture2DStorage.GetLinkSpriteSheet2();
         
         public LinkWalkRightNonAttackDamageState(Link link)
         {
             linkPlayer = link;
-            linkPlayer.linkSprite = new LinkDamageWalk(texture, "Right");
+            linkPlayer.linkSprite = LinkSpriteFactory.Instance.CreateLinkWalkSprite("Right", true);
             link.ChangeDirection(3);
             Link.ifDamage = true;
            

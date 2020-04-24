@@ -10,8 +10,6 @@ namespace Sprint2
     public class LinkWithItemUpState : IPlayerstate
     {
         private Link link;
-        private Texture2D textureLink = Texture2DStorage.GetLinkSpriteSheet();
-        private Texture2D textureLink2 = Texture2DStorage.GetLinkSpriteSheet2();
         public LinkWithItemUpState(Link link, int itemNum)
         {
             if (link == null)
@@ -25,7 +23,7 @@ namespace Sprint2
             {
                 case 0:
                     //arrow
-                    link.linkSprite = new LinkStand(textureLink, "Up");
+                    link.linkSprite = LinkSpriteFactory.Instance.CreateLinkStandSprite("Up", false);
                     IItem item0= new Arrow(Link.posX+12, (Link.posY - 20),0);
                      IItem bow = new Bow(Link.posX-4, (Link.posY - 25), 0);
                     item0.Appear = true;
@@ -36,7 +34,7 @@ namespace Sprint2
                     break;
                 case 1:
                     //blue candle
-                    link.linkSprite = new LinkStand(textureLink, "Up");
+                    link.linkSprite = LinkSpriteFactory.Instance.CreateLinkStandSprite("Up", false);
                     IItem item1 = new BlueCandle(Link.posX, (Link.posY - 20),0);
                     item1.Appear = true;
                     link.items.Add(item1);
@@ -44,7 +42,7 @@ namespace Sprint2
                     break;
                 case 2:
                     //bomb
-                    link.linkSprite = new LinkStand(textureLink, "Up");
+                    link.linkSprite = LinkSpriteFactory.Instance.CreateLinkStandSprite("Up", false);
                     IItem item2 = new Bomb(Link.posX, (Link.posY - 20));
                     item2.Appear = true;
                     link.items.Add(item2);
@@ -55,14 +53,14 @@ namespace Sprint2
                     break;
                 case 4:
                     //sword
-                    link.linkSprite = new LinkAttack(textureLink,"Up");
+                    link.linkSprite = LinkSpriteFactory.Instance.CreateLinkAttackSprite("Up", false);
                     IItem item4 = new Sword(Link.posX+7, (Link.posY - 20), 0);
                     item4.Appear = true;
                     link.items.Add(item4);
                     break;
                 case 5:
                     //Boomerang
-                    link.linkSprite = new LinkStand(textureLink, "Up");
+                    link.linkSprite = LinkSpriteFactory.Instance.CreateLinkStandSprite("Up", false);
                     IItem item5 = new WoodenBoomerang(Link.posX, (Link.posY - 20), 0);
                     item5.Appear = true;
                     link.items.Add(item5);
@@ -72,7 +70,7 @@ namespace Sprint2
                     IItem damageSword = new DamageSword(Link.posX + 7, (Link.posY - 20), 0);
                     damageSword.Appear = true;
                     Link.oldDamageState = true;
-                    link.linkSprite = new LinkDamageAttack(textureLink2,"Up");
+                    link.linkSprite = LinkSpriteFactory.Instance.CreateLinkAttackSprite("Up", true);
                     link.items.Add(damageSword);
                     break;
                 case 7:
@@ -84,7 +82,7 @@ namespace Sprint2
                     link.items.Add(Damagearrow);
                     link.items.Add(Damagebow);
 
-                    link.linkSprite = new LinkDamageStand(textureLink2, "Up");
+                    link.linkSprite = LinkSpriteFactory.Instance.CreateLinkStandSprite("Up", true);
 
                     Link.oldDamageState = true;
 
@@ -95,7 +93,7 @@ namespace Sprint2
                     Damagecandle.Appear = true;
                     link.items.Add(Damagecandle);
 
-                    link.linkSprite = new LinkDamageStand(textureLink2, "Up");
+                    link.linkSprite = LinkSpriteFactory.Instance.CreateLinkStandSprite("Right", true);
 
                     Link.oldDamageState = true;
 
@@ -104,7 +102,7 @@ namespace Sprint2
                     //damage bomb
                     IItem Damagebomb = new DamageBomb(Link.posX, (Link.posY - 20));
                     Damagebomb.Appear = true;
-                    link.linkSprite = new LinkDamageStand(textureLink2, "Up");
+                    link.linkSprite = LinkSpriteFactory.Instance.CreateLinkStandSprite("Right", true);
 
                     Link.oldDamageState = true;
 
@@ -115,7 +113,7 @@ namespace Sprint2
                     //damage boomrang
                     IItem Damageboomerang = new DamageWoodenBoomerang(Link.posX+7, (Link.posY -20), 0);
                     Damageboomerang.Appear = true;
-                    link.linkSprite = new LinkDamageStand(textureLink2, "Up");
+                    link.linkSprite = LinkSpriteFactory.Instance.CreateLinkStandSprite("Right", true);
                     link.items.Add(Damageboomerang);
                     Link.oldDamageState = true;
                     break;

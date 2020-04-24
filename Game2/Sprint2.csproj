@@ -269,6 +269,7 @@
     <Compile Include="ISprite\ItemSprite\SwordSprite\WoodenSwordRight.cs" />
     <Compile Include="ISprite\ItemSprite\SwordSprite\DamageWoodenSwordUp.cs" />
     <Compile Include="ISprite\ItemSprite\SwordSprite\WoodenSwordUp.cs" />
+    <Compile Include="ISprite\LinkSpriteFactory.cs" />
     <Compile Include="ISprite\LinkSprite\LinkWalk.cs" />
     <Compile Include="ISprite\LinkSprite\LinkDamageWalk.cs" />
     <Compile Include="ISprite\LinkSprite\LinkStand.cs" />

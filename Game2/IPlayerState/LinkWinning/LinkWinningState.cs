@@ -11,7 +11,6 @@ namespace Sprint2
     public class LinkWinningState:IPlayerstate
     {
         private Link link;
-        private Texture2D texture = Texture2DStorage.GetLinkSpriteSheet();
         public LinkWinningState(Link link)
         {
             if (link == null)
@@ -20,7 +19,7 @@ namespace Sprint2
             }
             this.link = link;
             
-            link.linkSprite = new LinkWinningSprite(texture);
+            link.linkSprite = LinkSpriteFactory.Instance.CreateLinkWinningSprite();
 
         }
 
