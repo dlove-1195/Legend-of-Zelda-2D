@@ -106,6 +106,10 @@ namespace Sprint2
                     {
                         inventory.heartContainerNum--;
                     }
+                    if(room.enemies[i] is WallMaster)
+                    {
+                    level.switchRoom("1");
+                     }
                 
             } 
             switch (direction)

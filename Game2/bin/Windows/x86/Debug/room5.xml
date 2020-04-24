@@ -36,7 +36,7 @@
     <!--the position would be 125 145-->
     <!-- player -->
     <!--Insert all wanted items here-->>
-    
+
     <Item>
       <ObjectType>Enemy</ObjectType>
       <ObjectName>Rope</ObjectName>
@@ -44,18 +44,48 @@
       <posY>47</posY>
     </Item>
     <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>Rope</ObjectName>
+      <posX>30</posX>
+      <posY>65</posY>
+    </Item>
+    <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>Rope</ObjectName>
+      <posX>70</posX>
+      <posY>71</posY>
+    </Item>
+    <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>Rope</ObjectName>
+      <posX>26</posX>
+      <posY>26</posY>
+    </Item>
+    <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>Rope</ObjectName>
+      <posX>50</posX>
+      <posY>30</posY>
+    </Item>
+    <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>Rope</ObjectName>
+      <posX>70</posX>
+      <posY>28</posY>
+    </Item>
+    <Item>
       <ObjectType>Item</ObjectType>
-      <ObjectName>Heart</ObjectName>
+      <ObjectName>Key</ObjectName>
       <posX>77</posX>
       <posY>20</posY>
     </Item>
 
-    <Item>
+    <!--<Item>
       <ObjectType>Block</ObjectType>
       <ObjectName>Block1</ObjectName>
       <posX>21</posX>
       <posY>37</posY>
-    </Item>
+    </Item>-->
     <Item>
       <ObjectType>Block</ObjectType>
       <ObjectName>Block2</ObjectName>
@@ -194,7 +224,12 @@
       <posX>14</posX>
       <posY>55</posY>
     </Item>
-
+    <Item>
+      <ObjectType>Item</ObjectType>
+      <ObjectName>Heart</ObjectName>
+      <posX>69</posX>
+      <posY>70</posY>
+    </Item>
     <Item>
       <ObjectType>Door</ObjectType>
       <ObjectName>Down</ObjectName>
@@ -208,19 +243,16 @@
       <posY>46</posY>
     </Item>
     <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>WallMaster</ObjectName>
+      <posX>15</posX>
+      <posY>46</posY>
+    </Item>
+    <Item>
       <ObjectType>Door</ObjectType>
       <ObjectName>Right</ObjectName>
       <posX>88</posX>
       <posY>64</posY>
     </Item>
-
-    <Item>
-      <ObjectType>SmallBox</ObjectType>
-      <ObjectName>Up</ObjectName>
-      <posX>20</posX>
-      <posY>37</posY>
-    </Item>
-    
-    
   </Asset>
 </XnaContent>

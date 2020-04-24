@@ -40,8 +40,30 @@ namespace Sprint2
 
         //switch room and camera 
         public void switchRoom(string direction)
-        { 
-            int roomNum= getNextRoomNum(direction);
+        {
+            if (direction == "1")
+            {
+                int roomNum = 1;
+                if (roomNum != 0)
+                {
+                    camera = new Camera();
+                    load = true;
+                    room = new Room();
+                    Link.posX = 648;
+                    Link.posY = 577; 
+                }  
+                this.roomNum = 1;            
+                for (int i = 0; i < existingRooms.Count; i++)
+                {
+                    if (existingRooms[i].roomNumber == roomNum)
+                    {
+                        visit = true;
+                        index = i;
+                    }
+                }
+            }
+            else { ////////////////////////////////////////////////////
+            int roomNum = getNextRoomNum(direction);
             if (roomNum != 0)
             {
                 camera.direction = direction;
@@ -57,12 +79,13 @@ namespace Sprint2
             //add
             for (int i = 0; i < existingRooms.Count; i++)
             {
-                if(existingRooms[i].roomNumber == roomNum)
+                if (existingRooms[i].roomNumber == roomNum)
                 {
                     visit = true;
                     index = i;
                 }
-            }  
+            }
+           }////////////////////////////////////////////////////////////////////
 
         }
 
