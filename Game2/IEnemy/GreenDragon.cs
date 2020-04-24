@@ -18,6 +18,8 @@ namespace Sprint2
         public bool damage { get; set; } = false;
         private int updateDelay = 0;
         private int totalDelay = 100;
+        private int step = 0;
+        private int totalStep = 300;
 #pragma warning disable CA1051 // Do not declare visible instance fields
         public IItem fire;
         public IItem fireSpreadUp;
@@ -135,32 +137,21 @@ namespace Sprint2
 
                 //random move dragon
                 updateDelay++;
+                step++;
+                if(step == totalStep)
+                {
+                    step = 0;
+                }
                 if (updateDelay == totalDelay)
                 {
                     updateDelay = 0;
-                 
-                    var rnd = new Random((int)Stopwatch.GetTimestamp());
-                    int randomNumber = rnd.Next(0, 3); 
-                    switch (randomNumber)
-                    { 
-                        case 0:
-                            this.ChangeToRight();
-                            break;
-                        case 1:
-                            this.ChangeToRight();
-                            break;
-                        case 2:
-                            this.ChangeToLeft();
-                            break;
-                        case 3:
-                            this.ChangeToRight();
-                            break;
-
-                        default:
-#pragma warning disable CA1303 // Do not pass literals as localized parameters
-                            Console.WriteLine("error: no such situation");
-#pragma warning restore CA1303 // Do not pass literals as localized parameters
-                            break;
+                    if(step < 2*totalStep/3)
+                    {
+                        this.ChangeToRight();
+                    }
+                    else
+                    {
+                        this.ChangeToLeft();
                     }
 
                 }
