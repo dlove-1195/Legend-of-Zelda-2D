@@ -70,7 +70,6 @@
  
 ### Future Improvement and Implantation:
 * Seperate link collision handler into multiple classes
-* Using only one gameState object inside the Game1 class
   
 
 ### Unresolved warnings:  
