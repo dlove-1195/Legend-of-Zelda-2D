@@ -27,7 +27,7 @@ namespace Sprint2
 
         public IInventory inventoryBar { get; set; }
         private IController winStateController;
-        public WinState(Game1 game, PlayState paly)
+        public WinState(Game1 game, PlayState play)
         {
             Sound.PlayWin();
             winStateController = new WinStateController(game);
