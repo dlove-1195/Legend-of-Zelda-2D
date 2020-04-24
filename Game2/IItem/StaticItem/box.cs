@@ -20,17 +20,17 @@ namespace Sprint2
 
         private int desWidth=48;
         private int desHeight=48;
-        private string Direction { get; set; }
+      
         public int PosX { get; set; }
         public int PosY { get; set; }
         private int originX;
         private int originY;
-        public Rectangle BoundingBox { get; set; }  
+        public Rectangle BoundingBox { get; set; }
         
 
-        public Box(string direction, Vector2 desLoc)
+        public Box(  Vector2 desLoc)
         {
-            this.Direction = direction;
+            
             PosX = (int)desLoc.X;
             PosY = (int)desLoc.Y;
             originX = (int)desLoc.X;
@@ -48,7 +48,7 @@ namespace Sprint2
 
         public void Draw(SpriteBatch spriteBatch)
         {
-             
+            
             Rectangle sourceRectangle = new Rectangle(sourceLocX, sourceLocY, width, height);
             Rectangle destinationRectangle = new Rectangle(PosX, PosY, desWidth, desHeight);
             spriteBatch.Draw(texture, destinationRectangle, sourceRectangle, Color.White);

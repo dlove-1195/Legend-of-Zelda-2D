@@ -152,7 +152,7 @@ namespace Sprint2
                 {
                     doorDirection.Add(name); //door direction stores in name
                 }
-                else if (type == "Wall")
+                else if (type == "Wall" || type =="SmallBox")
                 {
                     objects.loadObject(this, type, name, vector);
                 }
@@ -225,6 +225,13 @@ namespace Sprint2
                 LetterGenerator.drawSentence(spriteBatch, "WOULD YOU LIKE TO BUY SOME WEAPONS", new Vector2(100, 320), new Vector2(19, 19));
                 LetterGenerator.drawSentence(spriteBatch, "BOOMERANG AND BOW   FIVE DIAMONDS", new Vector2(100, 350), new Vector2(19, 19));
                 LetterGenerator.drawSentence(spriteBatch, "CANDLE              TEN DIAMONDS", new Vector2(100, 380), new Vector2(19, 19));
+            }
+
+            if(roomNumber == 5)
+            {
+                Rectangle sourceRectangle = new Rectangle(1163,734, 80, 80);
+                Rectangle destinationRectangle = new Rectangle(168, 496, 48, 48);
+                spriteBatch.Draw(Texture2DStorage.GetDoorSpriteSheet(), destinationRectangle, sourceRectangle, Color.White);
             }
 
             foreach (LockedDoor doorX in lockedDoor)
