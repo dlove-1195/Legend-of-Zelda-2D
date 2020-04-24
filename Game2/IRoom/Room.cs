@@ -44,7 +44,7 @@ namespace Sprint2
 #pragma warning restore CA2227 // Collection properties should be read only
 
         public List<Rectangle> boundingBox { get; set; }
-        public static List<int> doorOpen { get; set; }= new List<int>();
+        public static List<int> DoorOpen { get; set; }= new List<int>();
 
         public Room()
         {
@@ -220,11 +220,14 @@ namespace Sprint2
         }
         public void Draw(SpriteBatch spriteBatch)
         {
-
+            if(spriteBatch == null)
+            {
+                throw new ArgumentNullException(nameof(spriteBatch));
+            }
             if(roomNumber == 5)
             {
                 Rectangle sourceRectangle = new Rectangle(1163,734, 80, 80);
-                Rectangle destinationRectangle = new Rectangle(150, 425, 48, 48);
+                Rectangle destinationRectangle = new Rectangle(149, 419, 51, 55);
                 spriteBatch.Draw(Texture2DStorage.GetBlockSpriteSheet(), destinationRectangle, sourceRectangle, Color.White);
             }
 
@@ -243,13 +246,13 @@ namespace Sprint2
 
 
             }
+ 
             foreach (IItem item in pickUpItems)
             {
                 if (item != null)
                     item.Draw(spriteBatch);
 
-            }
-
+            } 
             foreach (INpc npc in npcs)
             {
                 npc.Draw(spriteBatch);

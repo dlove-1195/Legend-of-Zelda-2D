@@ -20,6 +20,7 @@ namespace Sprint2
 		private Texture2D textureBow = Texture2DStorage.GetBowSpriteSheet();
 		private Texture2D textureDamageBow = Texture2DStorage.GetHurtBowSpriteSheet();
 		private Texture2D textureSword = Texture2DStorage.GetLinkSpriteSheet();
+		private Texture2D itemHurtLeftRightArrowSword = Texture2DStorage.GetLinkSpriteSheet2();
 		private static ItemSpriteFactory instance = new ItemSpriteFactory();
 
 		public static ItemSpriteFactory Instance
@@ -38,7 +39,14 @@ namespace Sprint2
 		{
 			if (ifDamage)
 			{
-				return new ArrowDamageSprite(textureHurtWeapon, arrow, direction);
+				if (direction.Equals("Up") || direction.Equals("Down"))
+				{
+					return new ArrowDamageSprite(textureHurtWeapon, arrow, direction);
+				}
+				else
+				{
+					return new ArrowDamageSprite(itemHurtLeftRightArrowSword, arrow, direction);
+				}
 			}
 			else
 			{
@@ -105,7 +113,14 @@ namespace Sprint2
 		{
 			if (ifDamage)
 			{
-				return new WoodSwordDamageSprite(textureHurtWeapon, sword, direction);
+				if (direction.Equals("Up") || direction.Equals("Down"))
+				{
+					return new WoodSwordDamageSprite(textureHurtWeapon, sword, direction);
+				}
+				else
+				{
+					return new WoodSwordDamageSprite(itemHurtLeftRightArrowSword, sword, direction);
+				}
 			}
 			else
 			{

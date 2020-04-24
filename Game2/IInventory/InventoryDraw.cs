@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System;
-using System.Collections.Generic;
+
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 namespace Sprint2
@@ -13,11 +12,20 @@ namespace Sprint2
 
 
     {
-        public InventoryDraw() { 
-        }
-
         public void DrawItem(SpriteBatch spriteBatch, List<String> itemList, Dictionary<string, Vector2> itemMap, Texture2D inventoryTexture)
         {
+            if (itemList == null)
+            {
+                throw new ArgumentNullException(nameof(itemList));
+            }
+            if (spriteBatch == null)
+            {
+                throw new ArgumentNullException(nameof(spriteBatch));
+            }
+            if (itemMap == null)
+            {
+                throw new ArgumentNullException(nameof(itemMap));
+            }
             int i = 0;
             foreach (string item in itemList)
             {
@@ -39,6 +47,14 @@ namespace Sprint2
         public void DrawSelector(SpriteBatch spriteBatch,List<String> itemList, Dictionary<string, Vector2> itemMap, Texture2D inventoryTexture, int currentIndex)
         {
             Rectangle sourceRectangle = new Rectangle(4, 54, 26, 26);
+            if(itemList == null)
+            {
+                throw new ArgumentNullException(nameof(itemList));
+            }
+            if (spriteBatch == null)
+            {
+                throw new ArgumentNullException(nameof(spriteBatch));
+            }
 
             if (itemList.Count > 0)
             {
@@ -61,6 +77,14 @@ namespace Sprint2
         //for item selector view box
         public void DrawSelectBox(SpriteBatch spriteBatch, string itemB, Dictionary<string, Vector2> itemMap, Texture2D inventoryTexture)
         {
+            if (itemMap == null)
+            {
+                throw new ArgumentNullException(nameof(itemMap));
+            }
+            if (spriteBatch == null)
+            {
+                throw new ArgumentNullException(nameof(spriteBatch));
+            }
             if (itemB != null)
             {
                 Rectangle sourceRectangle1 = new Rectangle((int)itemMap[itemB].X, (int)itemMap[itemB].Y, 13, 27);
@@ -85,6 +109,10 @@ namespace Sprint2
 
         public void DrawItemA(SpriteBatch spriteBatch, Texture2D inventoryTexture, int width, int height,int y)
         {
+            if(spriteBatch == null)
+            {
+                throw new ArgumentNullException(nameof(spriteBatch));
+            }
             Rectangle sourceRectangle1 = new Rectangle(66, 53, 11, 25);
             Rectangle destinationRectangle = new Rectangle(width - 330, height - 101 + y, 36, 58);
             spriteBatch.Draw(inventoryTexture, destinationRectangle, sourceRectangle1, Color.White);
@@ -93,6 +121,14 @@ namespace Sprint2
         //for final selected item
         public void DrawItemB(SpriteBatch spriteBatch, string itemSelect, Dictionary<string, Vector2> itemMap,int width, int height, Texture2D inventoryTexture,int y)
         {
+            if (spriteBatch == null)
+            {
+                throw new ArgumentNullException(nameof(spriteBatch));
+            }
+            if (itemMap == null)
+            {
+                throw new ArgumentNullException(nameof(itemMap));
+            }
             if (itemSelect != null)
             {
                 Rectangle sourceRectangle1 = new Rectangle((int)itemMap[itemSelect].X, (int)itemMap[itemSelect].Y, 13, 27);
@@ -105,6 +141,11 @@ namespace Sprint2
         //maximum 14 hearts
         public void DrawHeart(SpriteBatch spriteBatch, int heartContainerNum, Vector2 heartPos, Texture2D containerTexture,int heartNum,int y, Texture2D heartTexture)
         {
+            if (spriteBatch == null)
+            {
+                throw new ArgumentNullException(nameof(spriteBatch));
+            }
+           
             //heart container
             for (int i = 0; i < heartContainerNum; i++)
             {
@@ -142,6 +183,14 @@ namespace Sprint2
         //width=height=19
         public void DrawRoomUp(SpriteBatch spriteBatch, List<IRoom> existingRooms, Dictionary<int, Vector2> upRoomMap, Texture2D inventoryMapTexture)
         {
+            if (spriteBatch == null)
+            {
+                throw new ArgumentNullException(nameof(spriteBatch));
+            }
+            if (upRoomMap == null)
+            {
+                throw new ArgumentNullException(nameof(upRoomMap));
+            }
             if (existingRooms != null)
             {
                 Rectangle sourceRectangle = new Rectangle(31, 11, 19, 19);
@@ -162,6 +211,14 @@ namespace Sprint2
         //width=24, height =11
         public void DrawRoomDown(SpriteBatch spriteBatch, List<IRoom> existingRooms, Dictionary<int, Vector2> downRoomMap, Texture2D barMapTexture,int y)
         {
+            if (spriteBatch == null)
+            {
+                throw new ArgumentNullException(nameof(spriteBatch));
+            }
+            if (downRoomMap == null)
+            {
+                throw new ArgumentNullException(nameof(downRoomMap));
+            }
             if (existingRooms != null)
             {
                 Rectangle sourceRectangle = new Rectangle(20, 6, 24, 11);
@@ -179,19 +236,37 @@ namespace Sprint2
 
         public void drawEntireMapUp(SpriteBatch spriteBatch, Texture2D inventoryMapTexture)
         {
+            if (spriteBatch == null)
+            {
+                throw new ArgumentNullException(nameof(spriteBatch));
+            }
+           
             Rectangle sourceRectangle = new Rectangle(31, 11, 128, 155);
             Rectangle destinationRectangle = new Rectangle(425, 380, 133, 152);
             spriteBatch.Draw(inventoryMapTexture, destinationRectangle, sourceRectangle, Color.White);
         }
 
-        public void drawEntireMapDown(SpriteBatch spriteBatch, Texture2D barMapTexture,int y)
+        public void DrawEntireMapDown(SpriteBatch spriteBatch, Texture2D barMapTexture,int y)
         {
+            if (spriteBatch == null)
+            {
+                throw new ArgumentNullException(nameof(spriteBatch));
+            }
+           
             Rectangle sourceRectangle = new Rectangle(20, 6, 131, 78);
             Rectangle destinationRectangle = new Rectangle(49, 110 + y, 120, 66);
             spriteBatch.Draw(barMapTexture, destinationRectangle, sourceRectangle, Color.White);
         }
         public void DrawLinkPosDotUpRoom(SpriteBatch spriteBatch, List<IRoom> existingRooms, Dictionary<int, Vector2> upRoomMap, int currentRoom, ISprite linkPosDotSprite,int diff)
         {
+            if (linkPosDotSprite == null)
+            {
+                throw new ArgumentNullException(nameof(linkPosDotSprite));
+            }
+            if (upRoomMap == null)
+            {
+                throw new ArgumentNullException(nameof(upRoomMap));
+            }
             if (existingRooms != null)
             {
                 int desX = (int)upRoomMap[currentRoom].X;
@@ -201,6 +276,14 @@ namespace Sprint2
         }
         public void DrawLinkPosDotDownRoom(SpriteBatch spriteBatch, List<IRoom> existingRooms, Dictionary<int, Vector2> downRoomMap, int currentRoom, ISprite linkPosDotSprite, int diff,int y)
         {
+            if (linkPosDotSprite == null)
+            {
+                throw new ArgumentNullException(nameof(linkPosDotSprite));
+            }
+            if (downRoomMap == null)
+            {
+                throw new ArgumentNullException(nameof(downRoomMap));
+            }
             if (existingRooms != null)
             {
                 int desX = (int)downRoomMap[currentRoom].X;

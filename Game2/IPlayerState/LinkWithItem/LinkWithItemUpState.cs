@@ -28,8 +28,8 @@ namespace Sprint2
                      IItem bow = new Bow(Link.posX-4, (Link.posY - 25), 0);
                     item0.Appear = true;
                     bow.Appear = true;
-                    link.items.Add(item0);
-                    link.items.Add(bow);
+                    link.Items.Add(item0);
+                    link.Items.Add(bow);
 
                     break;
                 case 1:
@@ -37,7 +37,7 @@ namespace Sprint2
                     link.linkSprite = LinkSpriteFactory.Instance.CreateLinkStandSprite("Up", false);
                     IItem item1 = new BlueCandle(Link.posX, (Link.posY - 20),0);
                     item1.Appear = true;
-                    link.items.Add(item1);
+                    link.Items.Add(item1);
 
                     break;
                 case 2:
@@ -45,7 +45,7 @@ namespace Sprint2
                     link.linkSprite = LinkSpriteFactory.Instance.CreateLinkStandSprite("Up", false);
                     IItem item2 = new Bomb(Link.posX, (Link.posY - 20));
                     item2.Appear = true;
-                    link.items.Add(item2);
+                    link.Items.Add(item2);
                     break;
 
                 case 3:
@@ -56,14 +56,14 @@ namespace Sprint2
                     link.linkSprite = LinkSpriteFactory.Instance.CreateLinkAttackSprite("Up", false);
                     IItem item4 = new Sword(Link.posX+7, (Link.posY - 20), 0);
                     item4.Appear = true;
-                    link.items.Add(item4);
+                    link.Items.Add(item4);
                     break;
                 case 5:
                     //Boomerang
                     link.linkSprite = LinkSpriteFactory.Instance.CreateLinkStandSprite("Up", false);
                     IItem item5 = new WoodenBoomerang(Link.posX, (Link.posY - 20), 0);
                     item5.Appear = true;
-                    link.items.Add(item5);
+                    link.Items.Add(item5);
                     break;
                 case 6:
                     //damage sword
@@ -71,7 +71,7 @@ namespace Sprint2
                     damageSword.Appear = true;
                     Link.oldDamageState = true;
                     link.linkSprite = LinkSpriteFactory.Instance.CreateLinkAttackSprite("Up", true);
-                    link.items.Add(damageSword);
+                    link.Items.Add(damageSword);
                     break;
                 case 7:
                     //damge arrow
@@ -79,8 +79,8 @@ namespace Sprint2
                     IItem Damagebow = new DamageBow(Link.posX-4, (Link.posY - 25), 0);
                     Damagearrow.Appear = true;
                     Damagebow.Appear = true;
-                    link.items.Add(Damagearrow);
-                    link.items.Add(Damagebow);
+                    link.Items.Add(Damagearrow);
+                    link.Items.Add(Damagebow);
 
                     link.linkSprite = LinkSpriteFactory.Instance.CreateLinkStandSprite("Up", true);
 
@@ -91,7 +91,7 @@ namespace Sprint2
                     //damage candle fire
                     IItem Damagecandle = new DamageFire(Link.posX, (Link.posY - 20), 0);
                     Damagecandle.Appear = true;
-                    link.items.Add(Damagecandle);
+                    link.Items.Add(Damagecandle);
 
                     link.linkSprite = LinkSpriteFactory.Instance.CreateLinkStandSprite("Right", true);
 
@@ -107,14 +107,14 @@ namespace Sprint2
                     Link.oldDamageState = true;
 
 
-                    link.items.Add(Damagebomb);
+                    link.Items.Add(Damagebomb);
                     break;
                 case 10:
                     //damage boomrang
                     IItem Damageboomerang = new DamageWoodenBoomerang(Link.posX+7, (Link.posY -20), 0);
                     Damageboomerang.Appear = true;
                     link.linkSprite = LinkSpriteFactory.Instance.CreateLinkStandSprite("Right", true);
-                    link.items.Add(Damageboomerang);
+                    link.Items.Add(Damageboomerang);
                     Link.oldDamageState = true;
                     break;
                 default:

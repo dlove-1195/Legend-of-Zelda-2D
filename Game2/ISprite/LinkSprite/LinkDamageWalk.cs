@@ -24,7 +24,7 @@ namespace Sprint2
         {
             direction = d;
             Texture = texture;
-            if (direction.Equals("Down"))
+            if (direction.Equals("Down", StringComparison.Ordinal))
             {
                 sourceLocX = 77;
                 sourceLocY = 1;
@@ -35,7 +35,7 @@ namespace Sprint2
                 delay = 0;
                 totalDelay = 30;
             }
-            else if (direction.Equals("Left")) {
+            else if (direction.Equals("Left", StringComparison.Ordinal)) {
                 sourceLocX = 589;
                 sourceLocY = 2;
                 width = 14;
@@ -45,7 +45,7 @@ namespace Sprint2
                 delay = 0;
                 totalDelay = 30;
             }
-            else if (direction.Equals("Right"))
+            else if (direction.Equals("Right", StringComparison.Ordinal))
             {
                 sourceLocX = 131;
                 sourceLocY = 2;
@@ -56,7 +56,7 @@ namespace Sprint2
                 delay = 0;
                 totalDelay = 30;
             }
-            else if (direction.Equals("Up"))
+            else if (direction.Equals("Up", StringComparison.Ordinal))
             {
                 sourceLocX = 115;
                 sourceLocY = 2;
@@ -72,7 +72,7 @@ namespace Sprint2
 
         public void Update()
         {
-            if (direction.Equals("Down"))
+            if (direction.Equals("Down", StringComparison.Ordinal))
             {
                 if (delay < totalDelay / 2)
                 {
@@ -149,7 +149,7 @@ namespace Sprint2
 
                 Link.posY++;
             }
-            else if (direction.Equals("Left"))
+            else if (direction.Equals("Left", StringComparison.Ordinal))
             {
                 if (delay <= totalDelay / 2)
                 {
@@ -230,7 +230,7 @@ namespace Sprint2
 
                 Link.posX--;
             }
-            else if (direction.Equals("Right"))
+            else if (direction.Equals("Right", StringComparison.Ordinal))
             {
                 if (delay <= totalDelay / 2)
                 {
@@ -313,7 +313,7 @@ namespace Sprint2
                 Link.posX++;
 
             }
-            else if (direction.Equals("Up")) {
+            else if (direction.Equals("Up", StringComparison.Ordinal)) {
                 if (delay <= totalDelay / 2)
                 {
                     width = 12;

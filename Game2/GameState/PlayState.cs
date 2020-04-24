@@ -41,7 +41,7 @@ namespace Sprint2
             level = new Level1(player); 
             linkDetection = new LinkCollisionDetection(level, player, inventoryBar);
             enemyDetection = new EnemyCollisionDetection(level); 
-            Sound.PlayRoom();
+            //Sound.PlayRoom();
             playStateController = new PlayStateController(game, this);
             inventoryController = new InventoryController(game);
             //initialize the inventory here for the first time 
@@ -88,7 +88,7 @@ namespace Sprint2
 
             inventoryBar.Update();
            
-            if (!LinkCollisionDetection.blueRing)
+            if (!LinkCollisionDetection.BlueRing)
             {
                 linkDetection = new LinkCollisionDetection(level, player, inventoryBar);
             }

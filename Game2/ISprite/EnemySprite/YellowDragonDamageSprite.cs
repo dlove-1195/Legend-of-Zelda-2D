@@ -32,7 +32,7 @@ namespace Sprint2
 
         public void Update()
         {
-            if (direction.Equals("Down"))
+            if (direction.Equals("Down", StringComparison.Ordinal))
             {
                 width = 15;
                 height = 16;
@@ -58,7 +58,7 @@ namespace Sprint2
                     Dragon.posY++;
                 }
             }
-            else if (direction.Equals("Up"))
+            else if (direction.Equals("Up", StringComparison.Ordinal))
             {
                 width = 15;
                 height = 16;
@@ -86,7 +86,7 @@ namespace Sprint2
                     Dragon.posY--;
                 }
             }
-            else if (direction.Equals("Right"))
+            else if (direction.Equals("Right", StringComparison.Ordinal))
             {
                 width = 28;
                 height = 15;
@@ -120,7 +120,7 @@ namespace Sprint2
                     Dragon.posX++;
                 }
             }
-            else if (direction.Equals("Left"))
+            else if (direction.Equals("Left", StringComparison.Ordinal))
             {
                 width = 25;
                 height = 15;

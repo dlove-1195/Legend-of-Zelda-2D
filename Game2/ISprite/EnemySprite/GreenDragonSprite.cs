@@ -42,7 +42,7 @@ namespace Sprint2
                     delay = 0;
 
                 }
-                if (direction.Equals("Right"))
+                if (direction.Equals("Right", StringComparison.Ordinal))
                 {
                     if (delay <= totalDelay / 4)
                     {
@@ -68,7 +68,7 @@ namespace Sprint2
                     }
                     GreenDragon.posX++;
                 }
-                else if (direction.Equals("Left"))
+                else if (direction.Equals("Left", StringComparison.Ordinal))
                 {
                     if (delay <= totalDelay / 4)
                     {

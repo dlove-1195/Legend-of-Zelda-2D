@@ -140,13 +140,19 @@ namespace Sprint2
                     updateDelay = 0;
                  
                     var rnd = new Random((int)Stopwatch.GetTimestamp());
-                    int randomNumber = rnd.Next(0, 1); 
+                    int randomNumber = rnd.Next(0, 3); 
                     switch (randomNumber)
                     { 
                         case 0:
-                            this.ChangeToLeft();
+                            this.ChangeToRight();
                             break;
                         case 1:
+                            this.ChangeToRight();
+                            break;
+                        case 2:
+                            this.ChangeToLeft();
+                            break;
+                        case 3:
                             this.ChangeToRight();
                             break;
 

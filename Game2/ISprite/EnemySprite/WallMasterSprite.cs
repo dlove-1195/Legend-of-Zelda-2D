@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
+using System;
 
 namespace Sprint2
 {
@@ -29,7 +30,7 @@ namespace Sprint2
 
         public void Update()
         {
-            if (direction.Equals("Left"))
+            if (direction.Equals("Left", StringComparison.Ordinal))
             {
                 delay++;
                 width = 14;
@@ -73,7 +74,7 @@ namespace Sprint2
                     delay = 0;
                 }
             }
-            else if (direction.Equals("Right"))
+            else if (direction.Equals("Right", StringComparison.Ordinal))
             {
                 delay++;
                 width = 14;

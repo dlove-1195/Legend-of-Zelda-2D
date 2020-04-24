@@ -28,19 +28,19 @@ namespace Sprint2
             timer++;
             if (timer <= 20)
             {
-                if (direction.Equals("Down"))
+                if (direction.Equals("Down", StringComparison.Ordinal))
                 {
                     candleFire.PosY += 7;
                 }
-                else if (direction.Equals("Up"))
+                else if (direction.Equals("Up", StringComparison.Ordinal))
                 {
                     candleFire.PosY -= 7;
                 }
-                else if (direction.Equals("Right"))
+                else if (direction.Equals("Right", StringComparison.Ordinal))
                 {
                     candleFire.PosX += 7;
                 }
-                else if (direction.Equals("Left"))
+                else if (direction.Equals("Left", StringComparison.Ordinal))
                 {
                     candleFire.PosX -= 7;
                 }

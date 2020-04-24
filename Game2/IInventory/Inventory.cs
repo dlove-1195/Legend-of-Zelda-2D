@@ -176,7 +176,7 @@ namespace Sprint2
             else
             {
                 diff = 2;
-                inventoryDraw.drawEntireMapDown(spriteBatch, barMapTexture,  y);
+                inventoryDraw.DrawEntireMapDown(spriteBatch, barMapTexture,  y);
                 if (showCompass)
                 {
                     //draw triforce dot

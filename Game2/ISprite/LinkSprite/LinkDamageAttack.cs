@@ -24,9 +24,9 @@ namespace Sprint2
 
         public LinkDamageAttack(Texture2D texture, String d)
         {
-            direction = d;
+            direction = d ?? throw new ArgumentNullException(nameof(d));
             Texture = texture;
-            if (direction.Equals("Down"))
+            if (direction.Equals("Down", StringComparison.Ordinal))
             {
 
                 sourceLocX = 239;
@@ -39,7 +39,7 @@ namespace Sprint2
                 totalDelay = 30;
                 sword = Texture2DStorage.GetHurtWeaponSpriteSheet();
             }
-            else if (direction.Equals("Left")) {
+            else if (direction.Equals("Left", StringComparison.Ordinal)) {
 
                 sourceLocX = 589;
                 sourceLocY = 254;
@@ -50,7 +50,7 @@ namespace Sprint2
                 delay = 0;
                 totalDelay = 30;
             }
-            else if (direction.Equals("Right"))
+            else if (direction.Equals("Right", StringComparison.Ordinal))
             {
 
                 sourceLocX = 131;
@@ -62,7 +62,7 @@ namespace Sprint2
                 delay = 0;
                 totalDelay = 30;
             }
-            else if (direction.Equals("Up"))
+            else if (direction.Equals("Up", StringComparison.Ordinal))
             {
 
                 sourceLocX = 257;
@@ -80,7 +80,7 @@ namespace Sprint2
         }
         public void Update()
         {
-            if (direction.Equals("Down"))
+            if (direction.Equals("Down", StringComparison.Ordinal))
             {
                 if (delay <= totalDelay / 2)
                 {
@@ -167,7 +167,7 @@ namespace Sprint2
                     delay = 0;
                 }*/
             }
-            else if (direction.Equals("Left"))
+            else if (direction.Equals("Left", StringComparison.Ordinal))
             {
                 if (delay <= totalDelay / 2)
                 {
@@ -247,7 +247,7 @@ namespace Sprint2
                 delay = 0;
             }*/
             }
-            else if (direction.Equals("Right"))
+            else if (direction.Equals("Right", StringComparison.Ordinal))
             {
                 if (delay <= totalDelay / 2)
                 {
@@ -324,7 +324,7 @@ namespace Sprint2
                 }
 
             }
-            else if (direction.Equals("Up")) {
+            else if (direction.Equals("Up", StringComparison.Ordinal)) {
                 if (delay <= totalDelay / 2)
                 {
                     width = 16;
@@ -411,7 +411,7 @@ namespace Sprint2
 
         public void Draw(SpriteBatch spriteBatch, Vector2 vector)
         {
-            if (direction.Equals("Down"))
+            if (direction.Equals("Down", StringComparison.Ordinal))
             {
                 if (spriteBatch == null)
                 {
@@ -433,7 +433,7 @@ namespace Sprint2
 
                 }
             }
-            else if (direction.Equals("Left"))
+            else if (direction.Equals("Left", StringComparison.Ordinal))
             {
                 if (spriteBatch == null)
                 {
@@ -455,7 +455,7 @@ namespace Sprint2
 
                 }
             }
-            else if (direction.Equals("Right"))
+            else if (direction.Equals("Right", StringComparison.Ordinal))
             {
                 if (spriteBatch == null)
                 {
@@ -477,7 +477,7 @@ namespace Sprint2
 
                 }
             }
-            else if (direction.Equals("Up")) {
+            else if (direction.Equals("Up", StringComparison.Ordinal)) {
                 if (spriteBatch == null)
                 {
                     throw new ArgumentNullException(nameof(spriteBatch));

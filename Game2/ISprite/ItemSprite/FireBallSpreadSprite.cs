@@ -23,20 +23,19 @@ namespace Sprint2
         {
             Texture = texture;
             this.fire = fire;
-            this.direction = d;
+            this.direction = d ?? throw new ArgumentNullException(nameof(d));
         }
 
 
         public void Update()
         {
-            if (direction.Equals("Up"))
+            fire.PosX -= 3;
+            if (direction.Equals("Up", StringComparison.Ordinal))
             {
-                fire.PosX -= 3;
                 fire.PosY -= 1;
             }
-            else if (direction.Equals("Down"))
+            else if (direction.Equals("Down", StringComparison.Ordinal))
             {
-                fire.PosX -= 3;
                 fire.PosY += 1;
             }
         }

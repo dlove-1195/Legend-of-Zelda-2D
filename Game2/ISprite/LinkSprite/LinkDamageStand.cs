@@ -23,7 +23,7 @@ namespace Sprint2
         {
             direction = d;
             Texture = texture;
-            if (direction.Equals("Down"))
+            if (direction.Equals("Down", StringComparison.Ordinal))
             {
                 sourceLocX = 77;
                 sourceLocY = 1;
@@ -33,7 +33,7 @@ namespace Sprint2
                 totalBlink = 5;
 
             }
-            else if (direction.Equals("Left"))
+            else if (direction.Equals("Left", StringComparison.Ordinal))
             {
                 sourceLocX = 570;
                 sourceLocY = 1;
@@ -42,7 +42,7 @@ namespace Sprint2
                 blinkTimes = 0;
                 totalBlink = 5;
             }
-            else if (direction.Equals("Right"))
+            else if (direction.Equals("Right", StringComparison.Ordinal))
             {
                 sourceLocX = 149;
                 sourceLocY = 1;
@@ -51,7 +51,7 @@ namespace Sprint2
                 blinkTimes = 0;
                 totalBlink = 5;
             }
-            else if (direction.Equals("Up")) {
+            else if (direction.Equals("Up", StringComparison.Ordinal)) {
                 sourceLocX = 607;
                 sourceLocY = 1;
                 width = 12;
@@ -64,7 +64,7 @@ namespace Sprint2
 
         public void Update()
         {
-            if (direction.Equals("Down"))
+            if (direction.Equals("Down", StringComparison.Ordinal))
             {
                 if (blinkTimes == 0)
                 {
@@ -100,7 +100,7 @@ namespace Sprint2
                     blinkTimes = 0;
                 }
             }
-            else if (direction.Equals("Left"))
+            else if (direction.Equals("Left", StringComparison.Ordinal))
             {
                 if (blinkTimes == 0)
                 {
@@ -135,7 +135,7 @@ namespace Sprint2
                     blinkTimes = 0;
                 }
             }
-            else if (direction.Equals("Right"))
+            else if (direction.Equals("Right", StringComparison.Ordinal))
             {
                 if (blinkTimes == 0)
                 {
@@ -170,7 +170,7 @@ namespace Sprint2
                     blinkTimes = 0;
                 }
             }
-            else if (direction.Equals("Up")) {
+            else if (direction.Equals("Up", StringComparison.Ordinal)) {
                 if (blinkTimes == 0)
                 {
 

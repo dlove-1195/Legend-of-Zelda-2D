@@ -1,6 +1,7 @@
 ﻿
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
+using System;
 
 namespace Sprint2
 {
@@ -18,29 +19,29 @@ namespace Sprint2
         {
             Texture = texture;
             this.arrow = arrow;
-            this.direction = d;
-            if (direction.Equals("Down"))
+            this.direction = d ?? throw new ArgumentNullException(nameof(d));
+            if (direction.Equals("Down", StringComparison.Ordinal))
             {
                 posX = 5;
                 posY = 0;
                 width = 5;
                 height = 16;
     }
-            else if (direction.Equals("Up"))
+            else if (direction.Equals("Up", StringComparison.Ordinal))
             {
                 posX = 45;
                 posY = 40;
                 width = 5;
                 height = 16;
             }
-            else if (direction.Equals("Right"))
+            else if (direction.Equals("Right", StringComparison.Ordinal))
             {
                 posX = 0;
                 posY = 45;
                 width = 16;
                 height = 5;
             }
-            else if (direction.Equals("Left"))
+            else if (direction.Equals("Left", StringComparison.Ordinal))
             {
                 posX = 40;
                 posY = 5;
@@ -52,19 +53,19 @@ namespace Sprint2
 
         public void Update()
         {
-            if (direction.Equals("Down"))
+            if (direction.Equals("Down", StringComparison.Ordinal))
             {
                 arrow.PosY += 4;
             }
-            else if (direction.Equals("Up"))
+            else if (direction.Equals("Up", StringComparison.Ordinal))
             {
                 arrow.PosY -= 4;
             }
-            else if (direction.Equals("Right"))
+            else if (direction.Equals("Right", StringComparison.Ordinal))
             {
                 arrow.PosX += 4;
             }
-            else if (direction.Equals("Left"))
+            else if (direction.Equals("Left", StringComparison.Ordinal))
             {
                 arrow.PosX -= 4;
             }

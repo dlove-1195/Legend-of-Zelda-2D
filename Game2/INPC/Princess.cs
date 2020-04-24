@@ -15,7 +15,7 @@ namespace Sprint2
         private int posX;
         private int princessWidth = 14;//sprite width
         private int princessHeight = 26;//sprite height
-
+        private bool ifTalk=false;
         public Rectangle boundingBox { get; set; }
         public Princess(Vector2 vector)
         {
@@ -38,11 +38,20 @@ namespace Sprint2
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            PrincessSprite.Draw(spriteBatch, new Vector2(posX, posY));
+            if (ifTalk == true)
+            {
+                PrincessSprite.Draw(spriteBatch, new Vector2(posX, posY));
+            }
+            else
+            {
+                PrincessSprite.Draw(spriteBatch, new Vector2(posX, posY));
+                LetterGenerator.drawSentence(spriteBatch, "GO DOWN TO PICK TRIFORCE PIECE", new Vector2(posX - 300, posY - 94), new Vector2(19, 19));
+             LetterGenerator.drawSentence(spriteBatch, "COLLECT THREE TO SAVE ME", new Vector2(posX - 270, posY - 72), new Vector2(19, 19));
+            }
+           
         }
-
-        public void Talk() { 
-            
+        public void Talk() {
+            ifTalk = true;
         }
 
       

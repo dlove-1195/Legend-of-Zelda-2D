@@ -22,29 +22,29 @@ namespace Sprint2
         {
             Texture = texture;
             this.sword = sword;
-            this.direction = d;
-            if (direction.Equals("Down"))
+            this.direction = d ?? throw new ArgumentNullException(nameof(d));
+            if (direction.Equals("Down", StringComparison.Ordinal))
             {
                 posX = 152;
                 posY = 4;
                 width = 7;
                 height = 16;
             }
-            else if (direction.Equals("Up"))
+            else if (direction.Equals("Up", StringComparison.Ordinal))
             {
                 posX = 152;
                 posY = 64;
                 width = 7;
                 height = 16;
             }
-            else if (direction.Equals("Right"))
+            else if (direction.Equals("Right", StringComparison.Ordinal))
             {
                 posX = 329;
                 posY = 132;
                 width = 16;
                 height = 7;
             }
-            else if (direction.Equals("Left"))
+            else if (direction.Equals("Left", StringComparison.Ordinal))
             {
                 posX = 389;
                 posY = 132;
@@ -55,19 +55,19 @@ namespace Sprint2
 
         public void Update()
         {
-            if (direction.Equals("Down"))
+            if (direction.Equals("Down", StringComparison.Ordinal))
             {
                 sword.PosY += 7;
             }
-            else if (direction.Equals("Up"))
+            else if (direction.Equals("Up", StringComparison.Ordinal))
             {
                 sword.PosY -= 7;
             }
-            else if (direction.Equals("Right"))
+            else if (direction.Equals("Right", StringComparison.Ordinal))
             {
                 sword.PosX += 7;
             }
-            else if (direction.Equals("Left"))
+            else if (direction.Equals("Left", StringComparison.Ordinal))
             {
                 sword.PosX -= 7;
             }

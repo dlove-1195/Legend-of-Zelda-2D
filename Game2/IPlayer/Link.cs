@@ -11,7 +11,7 @@ namespace Sprint2
         public IPlayerstate state { get; set; }
         public ISprite linkSprite;
 
-        public List<IItem> items { get; set; } = new List<IItem>() ;
+        public List<IItem> Items { get; set; } = new List<IItem>() ;
         private int direction ;
          
         /* public int positionX { get; set; } = 200 ;
@@ -121,7 +121,7 @@ namespace Sprint2
         {
             boundingBox = new Rectangle(posX, posY, linkWidth * 3, linkHeight * 3);
             linkSprite.Update();
-            foreach (IItem item in items)
+            foreach (IItem item in Items)
             {
                 item.Update();
             }
@@ -145,7 +145,7 @@ namespace Sprint2
         {
              
             linkSprite.Draw(spriteBatch, new Vector2(posX, posY));
-            foreach (IItem item in items)
+            foreach (IItem item in Items)
             {
                 item.Draw(spriteBatch);
             }
@@ -173,7 +173,7 @@ namespace Sprint2
             //add those items' current rectangle in a list and use in the collision detection class
             List<Rectangle> weaponRec = new List<Rectangle>();
 
-            foreach (IItem item in items)
+            foreach (IItem item in Items)
             {
                 weaponRec.Add(item.BoundingBox);
             }
@@ -183,7 +183,7 @@ namespace Sprint2
 
         public void manageLinkItem()
         {
-            foreach (IItem item in items)
+            foreach (IItem item in Items)
             {
                 item.Count++;
                 if(item.Count >= item.TotalCount)
@@ -193,11 +193,11 @@ namespace Sprint2
                     
                 }
             }
-            for(int i=0; i<items.Count; i++)
+            for(int i=0; i<Items.Count; i++)
             {
-                if (!items[i].Appear)
+                if (!Items[i].Appear)
                 {
-                    items.RemoveAt(i);
+                    Items.RemoveAt(i);
                 }
             }
             

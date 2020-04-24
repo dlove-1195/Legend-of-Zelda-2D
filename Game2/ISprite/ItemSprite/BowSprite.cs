@@ -21,29 +21,29 @@ namespace Sprint2
         public BowSprite(Texture2D texture, string d)
         {
             Texture = texture;
-            this.direction = d;
-            if (direction.Equals("Down"))
+            this.direction = d ?? throw new ArgumentNullException(nameof(d));
+            if (direction.Equals("Down", StringComparison.Ordinal))
             {
                 posX = 12;
                 posY = 12;
                 width = 16;
                 height = 8;
     }
-            else if (direction.Equals("Up"))
+            else if (direction.Equals("Up", StringComparison.Ordinal))
             {
                 posX = 90;
                 posY = 9;
                 width = 16;
                 height = 8;
             }
-            else if (direction.Equals("Right"))
+            else if (direction.Equals("Right", StringComparison.Ordinal))
             {
                 posX = 71;
                 posY = 2;
                 width = 8;
                 height = 16;
             }
-            else if (direction.Equals("Left"))
+            else if (direction.Equals("Left", StringComparison.Ordinal))
             {
                 posX = 39;
                 posY = 12;

@@ -162,11 +162,11 @@ namespace Sprint2
       
     }
         
-        
+ 
         public void HandleLinkNpcCollsion(string direction,int npcNum)
         {
             
-             if(direction == "Right")
+             if(direction == "Right") 
             {
                 direction = "Left";
             }else if(direction == "Left"){
@@ -184,16 +184,28 @@ namespace Sprint2
              
             if(direction == "Up")
             {
-                room.pickUpItems[itemNum].PosY--;
+                if (room.pickUpItems[itemNum].PosY > room.roomPos.Y)
+                {
+                    room.pickUpItems[itemNum].PosY--;
+                }
             }else if(direction == "Down")
             {
-                room.pickUpItems[itemNum].PosY++;
+                if (room.pickUpItems[itemNum].PosY < room.roomPos.Y + (int)(600 * 0.55))
+                {
+                    room.pickUpItems[itemNum].PosY++;
+                }
             }else if (direction =="Left")
             {
-                room.pickUpItems[itemNum].PosX++;
+                if (room.pickUpItems[itemNum].PosX < room.roomPos.X + (int)(800 * 0.68))
+                {
+                    room.pickUpItems[itemNum].PosX++;
+                }
             }else if (direction == "Right")
             {
-                room.pickUpItems[itemNum].PosX--;
+                if (room.pickUpItems[itemNum].PosX > room.roomPos.X )
+                {
+                    room.pickUpItems[itemNum].PosX--;
+                }
             }
 
         }
@@ -213,24 +225,28 @@ namespace Sprint2
         {
               if(room.roomNumber==8 || room.roomNumber == 9)
             {
-                Room.doorOpen.Add(8);
-                Room.doorOpen.Add(9);
+                Room.DoorOpen.Add(8);
+                Room.DoorOpen.Add(9);
 
             }
             else if(room.roomNumber == 7 || room.roomNumber == 11)
             {
-                Room.doorOpen.Add(7);
-                Room.doorOpen.Add(11);
+                Room.DoorOpen.Add(7);
+                Room.DoorOpen.Add(11);
 
             }
             room.setItemToNull(itemNum);
 
         }
 
-        public void HandleLinkWallHoleCollision(int itemNum, String direction)
+        public void HandleLinkWallHoleCollision(int itemNum, string direction)
         {
-            
-                if (direction == "Left")
+            if (direction == null)
+            {
+                throw new ArgumentNullException(nameof(direction));
+            }
+           
+            if (direction == "Left")
                 {
                     direction = "Right";
 
@@ -400,7 +416,7 @@ namespace Sprint2
                 Level1.roomUpdate = false;
             }else if(room.pickUpItems[itemNum] is BlueRing)
             {
-                LinkCollisionDetection.blueRing = true;
+                LinkCollisionDetection.BlueRing = true;
             }
  
             //if items  fairy? /heartContainer?(delete)
