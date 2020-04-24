@@ -70,7 +70,7 @@
 
  
 ### Future Improvement and Implantation:
-* Seperate link collision handler into multiple classes
+* Encapsulate LinkCollisionHandler class
   
 
 ### Unresolved warnings:  
