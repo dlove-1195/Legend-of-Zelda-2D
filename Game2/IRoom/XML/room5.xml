@@ -80,12 +80,12 @@
       <posY>20</posY>
     </Item>
 
-    <Item>
+    <!--<Item>
       <ObjectType>Block</ObjectType>
       <ObjectName>Block1</ObjectName>
       <posX>21</posX>
       <posY>37</posY>
-    </Item>
+    </Item>-->
     <Item>
       <ObjectType>Block</ObjectType>
       <ObjectName>Block2</ObjectName>
@@ -116,12 +116,12 @@
       <posX>33</posX>
       <posY>55</posY>
     </Item>
-    <!-- <Item>
+    <Item>
       <ObjectType>Block</ObjectType>
       <ObjectName>Block7</ObjectName>
       <posX>39</posX>
       <posY>37</posY>
-    </Item>-->
+    </Item>
     <Item>
       <ObjectType>Block</ObjectType>
       <ObjectName>Block8</ObjectName>

@@ -35,18 +35,102 @@
     <!--no need-->
     <!--the position would be 125 145-->
     <!-- player -->
-    <!--Insert all wanted items here-->>
+    <!--Insert all wanted items here-->
     <Item>
-      <ObjectType>Enemy</ObjectType>
-      <ObjectName>Dragon</ObjectName>
-      <posX>38</posX>
-      <posY>28</posY>
+      <ObjectType>Item</ObjectType>
+      <ObjectName>Heart</ObjectName>
+      <posX>80</posX>
+      <posY>20</posY>
     </Item>
     <Item>
       <ObjectType>Enemy</ObjectType>
       <ObjectName>Keese</ObjectName>
-      <posX>32</posX>
+      <posX>20</posX>
       <posY>60</posY>
+    </Item>
+    <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>Keese</ObjectName>
+      <posX>30</posX>
+      <posY>70</posY>
+    </Item>
+    <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>Keese</ObjectName>
+      <posX>40</posX>
+      <posY>60</posY>
+    </Item>
+    <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>Keese</ObjectName>
+      <posX>50</posX>
+      <posY>70</posY>
+    </Item>
+    <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>Keese</ObjectName>
+      <posX>60</posX>
+      <posY>60</posY>
+    </Item>
+    <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>Keese</ObjectName>
+      <posX>70</posX>
+      <posY>70</posY>
+    </Item>
+    <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>Dragon</ObjectName>
+      <posX>50</posX>
+      <posY>50</posY>
+    </Item>
+    <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>Keese</ObjectName>
+      <posX>30</posX>
+      <posY>55</posY>
+    </Item>
+    <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>Keese</ObjectName>
+      <posX>65</posX>
+      <posY>50</posY>
+    </Item>
+    <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>Keese</ObjectName>
+      <posX>30</posX>
+      <posY>30</posY>
+    </Item>
+    <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>Keese</ObjectName>
+      <posX>20</posX>
+      <posY>40</posY>
+    </Item>
+    <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>Keese</ObjectName>
+      <posX>40</posX>
+      <posY>30</posY>
+    </Item>
+    <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>Keese</ObjectName>
+      <posX>50</posX>
+      <posY>40</posY>
+    </Item>
+    <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>Keese</ObjectName>
+      <posX>60</posX>
+      <posY>30</posY>
+    </Item>
+    <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>Keese</ObjectName>
+      <posX>70</posX>
+      <posY>40</posY>
     </Item>
     <Item>
       <ObjectType>Door</ObjectType>

@@ -158,7 +158,7 @@ namespace Sprint2
             if (LinkCollisionDetection.blueRing)
             {
                 LinkCollisionDetection.blueRingTimer++;
-                if (LinkCollisionDetection.blueRingTimer >= 500)
+                if (LinkCollisionDetection.blueRingTimer >= 900)
                 {
                     LinkCollisionDetection.blueRing = false;
                 }
