@@ -59,7 +59,7 @@ namespace Sprint2
         {
             return p;
         }
-        public static void changeState()
+        public static void ChangeState()
         {
             //do nothing
         }

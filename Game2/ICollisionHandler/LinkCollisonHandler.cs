@@ -212,7 +212,7 @@ namespace Sprint2
 
         public void HandleLinkItemCollsion(int itemNum)
         { 
-            if (itemManager(itemNum))
+            if (ItemManager(itemNum))
             {
                 Sound.PlayItemCollision();
                 room.setItemToNull(itemNum);
@@ -315,7 +315,7 @@ namespace Sprint2
         {
             room.setItemToNull(itemNum);
         }
-        public bool itemManager(int itemNum)
+        public bool ItemManager(int itemNum)
         {
             bool successPickUp = true;
 
