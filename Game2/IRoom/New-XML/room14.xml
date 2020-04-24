@@ -116,6 +116,11 @@
     <posY>46</posY>
   </Item>
   <!--  Door  -->
-  
+  <Item>
+    <ObjectType>Item</ObjectType>
+    <ObjectName>Right</ObjectName>
+    <posX>44</posX>
+    <posY>8</posY>
+  </Item>
 </Asset>
 </XnaContent>

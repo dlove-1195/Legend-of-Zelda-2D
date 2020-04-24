@@ -180,7 +180,7 @@ namespace Sprint2
                 if (showCompass)
                 {
                     //draw triforce dot
-                    triforceDotSprite1.Draw(spriteBatch, new Vector2(107, 170 + y));//in room14
+                    triforceDotSprite1.Draw(spriteBatch, new Vector2(134, 170 + y));//in room14
                     triforceDotSprite2.Draw(spriteBatch, new Vector2(54, 110 + y)); //in room15
                     triforceDotSprite3.Draw(spriteBatch, new Vector2(157, 120 + y)); //in room16
                 }
