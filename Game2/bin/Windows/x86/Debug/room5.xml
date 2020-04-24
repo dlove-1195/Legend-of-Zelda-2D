@@ -254,11 +254,14 @@
       <posX>88</posX>
       <posY>64</posY>
     </Item>
+<<<<<<< HEAD
+=======
     <Item>
       <ObjectType>SmallBox</ObjectType>
       <ObjectName>Up</ObjectName>
       <posX>20</posX>
       <posY>37</posY>
     </Item>
+>>>>>>> e513da7bd16a39027abdcdf965d585cb6dd71a8c
   </Asset>
 </XnaContent>
