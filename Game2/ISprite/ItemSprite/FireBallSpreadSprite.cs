@@ -29,14 +29,13 @@ namespace Sprint2
 
         public void Update()
         {
+            fire.PosX -= 3;
             if (direction.Equals("Up"))
             {
-                fire.PosX -= 3;
                 fire.PosY -= 1;
             }
             else if (direction.Equals("Down"))
             {
-                fire.PosX -= 3;
                 fire.PosY += 1;
             }
         }

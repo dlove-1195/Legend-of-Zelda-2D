@@ -83,7 +83,7 @@ namespace Sprint2
             }
             if (num == 17)
             {
-                linkItem.ChangeSprite(ItemSpriteFactory.Instance.CreateFireballSprite("Down", linkItem, false));
+                linkItem.ChangeSprite(ItemSpriteFactory.Instance.CreateFireballSprite("Down", linkItem, true));
             }
 
         }
