@@ -1,5 +1,26 @@
 # CSE-3902 Zelda Game Sprint 4
-## Current future
+## New feature
+* Use bomb to open a door on the wall
+* Limit player vision. Clouds cover the room, need to use candle fire to clean it. 
+* Random events. WallMaster appears when link comes close.
+* Puzzle elements. Link can push blocks to enter the closed zone in the room.
+* The number of heart container is the upper limit of blood that link can have. Heart container number decreases when link collides with yellow/green dragon directly.
+* Add items blue portion and blue ring. Blue portion restore the number of heart container by one and blue ring can protect link from getting harm by enemies for about 10 seconds. Link will also get damaged if colliding with dragon's fire even with blue ring.
+* NPC communicates with link.
+* Green dragon will leave a Heart and Yellow dragon will leave a Key when they die. 
+* Green dragon's fire can spread into three directions.
+* Link attacks in damaged mode.
+* Wall Master wiil throw link back to the first room. 
+* Link will cause reduced damage to enemies when get hurt.
+* Add princess animation in the first room.
+
+
+## Major changes to the structure
+* Create sprite factories. 
+* Condense sprite classes.
+* Seperate all the draw methods from inventory class into a separate class.
+
+## How to play 
 
 #### There are five Game States includs Start State, Play State, Pause State, Lose State and Win State. The state will be alternated among all five based on Link's behavior. In the Play State, Link has initial 12 blood drops once the game is began. Each room has been designed differenly with various enemies which cause Link to drop his blood variously. Link's position is shown on both the inventory bar and the inventory room through the game. And the whole map and TriForce Piece's location will appear only by picking up the corrsponding item. Link can pick up items where each of them has its unique functionality as listed below: 
 * Heart: Link gains one drop of blood. Link can only pick up "Heart" when his blood is less than 12
@@ -9,10 +30,7 @@
 * Compass: Show the location of TriForce Pieces on the map only when item Map is collected
 * Yellow Diamond: Dead enemy will turn into a diamond for Link to collect. Link can use it as money
 * Weapon: Boomerang, Bow, and Candle can be purchased in Merchandise room with corrsponding price which is the number of yellow Diamonds. There is no need to purchase a bow, it can be picked up in any room.
-
-
-## How to play
-
+ 
 #### Start State
 * Press "S" to start a game, switch to the Play State
 * Press "Esc" to quit the game
@@ -38,17 +56,19 @@
 #### Lose State
 * Press "R" to restart a game
 * Press "Esc" to quit the game
+#### Game Walkthrough 
+* Kill the yellwo dragon in room17 to get the key. Use key to open the door in room1, then buy candle in room2 and grab map in room3. 
+* The compass is in the room12. Once you get the compass and the map, you will know where to go to collect triforces.
+* Candle will be used to clean the cloud in room18. 
+* One block can be pushed away to enter the closed zone in room5.
+* You can use bomb to open a door on the wall in room 7,8,9,11.
+* Be careful with the suddenly appearing wall masters, they will throw you back to room1
 
  
 ### Future Improvement and Implantation:
-* Triforce pieces are being placed in room 1&17 (they are connected) so that you can switch to win state easily. They will be placed in the room 14,15,16 later
-* Link attacks in damaged mode
-* Door detection need to be revised (Link may be pushed by the enemies to another room near the wall)
-* Fairy functionality need to be added
-* WallMaster comes out from the wall and take Link to the beginning of the level
-* Add more items and enemies
-* Redesign rooms to complete the game
-* Add mouse controller 
+* Seperate link collision handler into multiple classes
+* Using only one gameState object inside the Game1 class.
+  
 
 ### Unresolved warnings:  
 * CA1822 (Member StayPosition doesn't access instance data and can be marked as static at LinkCollisionHandler.cs)
