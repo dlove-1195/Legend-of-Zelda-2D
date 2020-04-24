@@ -159,7 +159,7 @@ namespace Sprint2
                         break;
 
                     case "Left":
-                        Link.posX = (int)(room.roomPos.X + Game1.WindowWidth * (0.6));
+                        Link.posX = (int)(room.roomPos.X + Game1.WindowWidth * (0.70));
                         Link.posY = (int)(room.roomPos.Y + 600 * (0.24));
                         break;
 
