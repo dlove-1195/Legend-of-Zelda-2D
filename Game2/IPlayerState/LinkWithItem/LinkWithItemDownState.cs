@@ -184,7 +184,7 @@ namespace Sprint2
         }
         public void Attack()
         {
-            //already attack
+            
         }
         public void ChangeToWalk()
         {

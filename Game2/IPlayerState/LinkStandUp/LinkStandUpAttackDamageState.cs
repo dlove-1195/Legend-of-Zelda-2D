@@ -99,14 +99,10 @@ namespace Sprint2
         }
         public void ChangeToStand()
         {
-            if(Link.ifDamage)
-            {
-                link.state = new LinkStandUpNonAttackDamageState(link);
-            }
-            else
+            if(!Link.ifDamage)
             {
                 link.state = new LinkStandUpNonAttackNonDamageState(link);
-            }
+            } 
         }
 
         public void LinkWithItemUp(int item)
