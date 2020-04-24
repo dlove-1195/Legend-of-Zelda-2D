@@ -10,21 +10,6 @@ namespace Sprint2
    public class AppearDownState: IItemState
     {
         private IItem linkItem;
-
-        private Texture2D texture = Texture2DStorage.GetItemSpriteSheet();
-        private Texture2D textureBow = Texture2DStorage.GetBowSpriteSheet();
-        private Texture2D textureBoomer = Texture2DStorage.GetWoodBoomerangSpriteSheet();
-
-        private Texture2D textureDamageBoomer = Texture2DStorage.GetHurtBoomerangSpriteSheet();
-        private Texture2D textureDamageBow = Texture2DStorage.GetHurtBowSpriteSheet();
-        private Texture2D textureDamageFire = Texture2DStorage.GetHurtFireSpriteSheet();
-        private Texture2D textureDamageBomb = Texture2DStorage.GetHurtBoomSpriteSheet();
-
-
-        private Texture2D textureFire = Texture2DStorage.GetEnemySpriteSheet2();
-        private Texture2D texturesword = Texture2DStorage.GetLinkSpriteSheet();
-        //damageSword & damage arrow
-        private Texture2D texutreHurtWeapon = Texture2DStorage.GetHurtWeaponSpriteSheet(); 
         int num;
 
       
@@ -40,55 +25,56 @@ namespace Sprint2
            
             if(num == 0)
             {
-                linkItem.ChangeSprite(new ArrowDown(texture, linkItem));
+                linkItem.ChangeSprite(ItemSpriteFactory.Instance.CreateArrowSprite("Down", linkItem, false));
             }
              if(num == 1)
             {
-                linkItem.ChangeSprite(new blueCandleFireDown ( textureFire,linkItem));
+                linkItem.ChangeSprite(ItemSpriteFactory.Instance.CreateBlueCandleSprite("Down", linkItem, false));
             }
              if(num == 2)
             {
-                linkItem.ChangeSprite(new BombInitialSprite(texture));
+                linkItem.ChangeSprite(ItemSpriteFactory.Instance.CreateBombSprite(false, false));
             }
             if(num == 3)
             {
-                linkItem.ChangeSprite(new BowDown(textureBow));
+                linkItem.ChangeSprite(ItemSpriteFactory.Instance.CreateBowSprite("Down", false));
             }
             if(num == 4)
             {
-                linkItem.ChangeSprite(new WoodenSwordDown(texturesword, linkItem));
+                linkItem.ChangeSprite(ItemSpriteFactory.Instance.CreateWoodSwordSprite("Down", linkItem, false));
             }
              if(num == 5)
             {
-                linkItem.ChangeSprite(new WoodBoomerangDown(textureBoomer,linkItem));
+                linkItem.ChangeSprite(ItemSpriteFactory.Instance.CreateWoodBoomerangSprite("Down", linkItem, false));
             }
             if(num == 6)
             {
-                linkItem.ChangeSprite(new DamageWoodenSwordDown(texutreHurtWeapon, linkItem));
+                linkItem.ChangeSprite(ItemSpriteFactory.Instance.CreateWoodSwordSprite("Down", linkItem, true));
             }
             if(num == 7)
             {
-                linkItem.ChangeSprite(new DamageArrowDown(texutreHurtWeapon, linkItem));
+                linkItem.ChangeSprite(ItemSpriteFactory.Instance.CreateArrowSprite("Down", linkItem, true));
             }
             if (num == 8)
             {
-                linkItem.ChangeSprite(new DamageblueCandleFireDown(textureDamageFire, linkItem));
+                linkItem.ChangeSprite(ItemSpriteFactory.Instance.CreateBlueCandleSprite("Down", linkItem, true));
             }
             if (num == 9)
             {
-                linkItem.ChangeSprite(new DamageBombInitialSprite(textureDamageBomb));
+                linkItem.ChangeSprite(ItemSpriteFactory.Instance.CreateBombSprite(false, true));
             }
             if(num == 10)
             {
-                linkItem.ChangeSprite(new DamageWoodBoomerangDown(textureDamageBoomer, linkItem));
-            }if(num == 11)
+                linkItem.ChangeSprite(ItemSpriteFactory.Instance.CreateWoodBoomerangSprite("Down", linkItem, true));
+            }
+            if(num == 11)
             {
-                linkItem.ChangeSprite(new DamageBowDown(textureDamageBow));
+                linkItem.ChangeSprite(ItemSpriteFactory.Instance.CreateBowSprite("Down", true));
             }
             if (num == 15)
             {
                 
-                linkItem.ChangeSprite(new ItemFireballMoveDownSprite(textureFire, linkItem));
+                linkItem.ChangeSprite(ItemSpriteFactory.Instance.CreateFireballSprite("Down", linkItem, false));
             }
         }
       

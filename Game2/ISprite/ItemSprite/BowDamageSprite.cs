@@ -8,22 +8,48 @@ using Microsoft.Xna.Framework;
 
 namespace Sprint2
 {
-    public class DamageBowLeft : ISprite
+    public class BowDamageSprite : ISprite
     {
         private Texture2D Texture;
-        private int posX = 39;
-        private int posY = 12;
-        private int width = 8;
-        private int height = 16;
+        private int posX;
+        private int posY;
+        private int width;
+        private int height;
+        private string direction;
 
 
-        public DamageBowLeft(Texture2D texture)
+        public BowDamageSprite(Texture2D texture, string d)
         {
             Texture = texture;
-        }
-        public DamageBowLeft()
-        {
-            //do nothing
+            this.direction = d;
+            if (direction.Equals("Down"))
+            {
+                posX = 12;
+                posY = 12;
+                width = 16;
+                height = 8;
+            }
+            else if (direction.Equals("Up"))
+            {
+                posX = 90;
+                posY = 9;
+                width = 16;
+                height = 8;
+            }
+            else if (direction.Equals("Right"))
+            {
+                posX = 71;
+                posY = 2;
+                width = 8;
+                height = 16;
+            }
+            else if (direction.Equals("Left"))
+            {
+                posX = 39;
+                posY = 12;
+                width = 8;
+                height = 16;
+            }
         }
 
         public void Update()
@@ -45,9 +71,9 @@ namespace Sprint2
                 Rectangle sourceRectangle = new Rectangle(posX, posY, width, height);
                 Rectangle destinationRectangle = new Rectangle((int)vector.X, (int)vector.Y, width * 3, height * 3);    // determine location and demension of the current frame
 
-                
+
                 spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-                
+
             }
         }
 

@@ -19,8 +19,8 @@ namespace Sprint2
                 throw new ArgumentNullException(nameof(bomb));
             }
             this.bomb = bomb;
-             
-            bomb.bombSprite = new DamageBombInitialSprite(texture);
+
+            bomb.bombSprite = ItemSpriteFactory.Instance.CreateBombSprite(false, true);
         }
      
 

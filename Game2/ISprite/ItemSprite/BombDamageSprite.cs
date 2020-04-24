@@ -8,24 +8,39 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Sprint2
 {
-    class BombInitialSprite : ISprite
+    class BombDamageSprite : ISprite
     {
         public Texture2D Texture;
-        private int sourceLocX = 364;
-        private int sourceLocY = 226;
-        private int width = 8;
-        private int height = 14;
+        private int sourceLocX;
+        private int sourceLocY;
+        private int width;
+        private int height;
+        private bool explode;
+        private int i;
 
 
-        public BombInitialSprite(Texture2D texture)
+        public BombDamageSprite(Texture2D texture, bool ifExplode)
         {
             Texture = texture;
+            this.explode = ifExplode;
+            if (explode)
+            {
+                sourceLocX = 179;
+                sourceLocY = 282;
+                width = 17;
+                height = 21;
+                i = 4;
+            }
+            else
+            {
+                sourceLocX = 364;
+                sourceLocY = 226;
+                width = 8;
+                height = 14;
+                i = 3;
+            }
         }
 
-        public BombInitialSprite()
-        {
-            //another constructor, show nothing
-        }
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
@@ -36,11 +51,11 @@ namespace Sprint2
             if (Texture != null)
             {
                 Rectangle sourceRectangle = new Rectangle(sourceLocX, sourceLocY, width, height);
-                Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width * 3, height * 3);
-                
-                
+                Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width * i, height * i);
+
+
                 spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-                 
+
             }
         }
 

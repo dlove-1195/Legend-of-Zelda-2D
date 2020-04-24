@@ -1,11 +1,11 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
- 
+
 
 namespace Sprint2
 {
-    public class blueCandleFireLeft : ISprite
+    public class BlueCandleDamageSprite : ISprite
     {
         public Texture2D Texture { get; set; }
         private int posX = 300;
@@ -14,19 +14,36 @@ namespace Sprint2
         private int height = 16;
         private IItem candleFire;
         private int timer = 0;
-        public blueCandleFireLeft(Texture2D texture, IItem candleFire)
+        private string direction;
+        public BlueCandleDamageSprite(Texture2D texture, IItem candleFire, string d)
         {
             Texture = texture;
             this.candleFire = candleFire;
+            this.direction = d;
         }
 
         public void Update()
         {
-            
+
             timer++;
             if (timer <= 20)
             {
-                candleFire.PosX -= 7;
+                if (direction.Equals("Down"))
+                {
+                    candleFire.PosY += 7;
+                }
+                else if (direction.Equals("Up"))
+                {
+                    candleFire.PosY -= 7;
+                }
+                else if (direction.Equals("Right"))
+                {
+                    candleFire.PosX += 7;
+                }
+                else if (direction.Equals("Left"))
+                {
+                    candleFire.PosX -= 7;
+                }
             }
             else
             {
