@@ -132,6 +132,9 @@
     <Compile Include="IItem\LinkItem\DamageBow.cs" />
     <Compile Include="IItem\LinkItem\DamageFire.cs" />
     <Compile Include="IItem\LinkItem\DamageWoodenBoomerang.cs" />
+    <Compile Include="IItem\LinkItem\FireSpreadMiddle.cs" />
+    <Compile Include="IItem\LinkItem\FireSpreadDown.cs" />
+    <Compile Include="IItem\LinkItem\FireSpreadUp.cs" />
     <Compile Include="IItem\LinkItem\Fire.cs" />
     <Compile Include="IItem\LinkItem\DamageSword.cs" />
     <Compile Include="IItem\LinkItem\Sword.cs" />
@@ -151,6 +154,7 @@
     <Compile Include="IItem\StaticItem\staticCandle.cs" />
     <Compile Include="IItem\StaticItem\staticWoodenBoomerang.cs" />
     <Compile Include="IItem\StaticItem\TriforcePiece.cs" />
+    <Compile Include="IItem\StaticItem\box.cs" />
     <Compile Include="IItem\StaticItem\Wall.cs" />
     <Compile Include="IItem\StaticItem\YellowDiamond.cs" />
     <Compile Include="ILevel\ILevel.cs" />
@@ -249,6 +253,8 @@
     <Compile Include="ISprite\ItemSprite\BowSprite\DamageBowRight.cs" />
     <Compile Include="ISprite\ItemSprite\BowSprite\DamageBowUp.cs" />
     <Compile Include="ISprite\ItemSprite\FireBallSprite\ItemFireballMoveDownSprite.cs" />
+    <Compile Include="ISprite\ItemSprite\FireBallSprite\ItemSpreadDownFireballMoveLeftSprite.cs" />
+    <Compile Include="ISprite\ItemSprite\FireBallSprite\ItemSpreadUpFireballMoveLeftSprite.cs" />
     <Compile Include="ISprite\ItemSprite\FireBallSprite\ItemFireballMoveLeftSprite.cs" />
     <Compile Include="ISprite\ItemSprite\FireBallSprite\ItemFireballMoveRightSprite.cs" />
     <Compile Include="ISprite\ItemSprite\FireBallSprite\ItemFireballMoveUpSprite.cs" />

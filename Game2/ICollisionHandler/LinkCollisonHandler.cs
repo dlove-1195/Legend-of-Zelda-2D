@@ -11,6 +11,9 @@ namespace Sprint2
         private IRoom room;
         private ILevel level;
         private IInventory inventory;
+
+        
+        
       public LinkCollisionHandler(IPlayer link, ILevel level, IInventory inventory)
         {
             this.link = link;
@@ -86,20 +89,28 @@ namespace Sprint2
             }
             StayPosition(direction);
         }
-            public void HandleLinkEnemyCollsion(string direction, int i)
+        public void HandleLinkEnemyCollsion(string direction, int i)
         {
             Link.damageTimer = 0; 
             //link get damaged and being pushed to opposite direction
             if ( !(link.state is LinkWinningState))
             {
                 Sound.PlayLinkDemage();
-                inventory.heartNum--;
-                link.GetDamaged();
-                Link.ifDamage = true;
-                if(room.enemies[i] is GreenDragon || room.enemies[i] is Dragon)
-                {
-                    inventory.heartContainerNum--;
-                }
+                
+                    inventory.heartNum--;
+                    link.GetDamaged();
+                    Link.ifDamage = true;
+
+
+                    if (room.enemies[i] is GreenDragon || room.enemies[i] is Dragon)
+                    {
+                        inventory.heartContainerNum--;
+                    }
+                    if(room.enemies[i] is WallMaster)
+                    {
+                    level.switchRoom("1");
+                     }
+                
             } 
             switch (direction)
             {
@@ -155,6 +166,25 @@ namespace Sprint2
             Sound.PlayItemCollision();
             room.npcs[npcNum].Talk();
             
+        }
+
+       public void HandleLinkBoxCollision(int itemNum, string direction)
+        {
+             
+            if(direction == "Up")
+            {
+                room.pickUpItems[itemNum].PosY--;
+            }else if(direction == "Down")
+            {
+                room.pickUpItems[itemNum].PosY++;
+            }else if (direction =="Left")
+            {
+                room.pickUpItems[itemNum].PosX++;
+            }else if (direction == "Right")
+            {
+                room.pickUpItems[itemNum].PosX--;
+            }
+
         }
 
         public void HandleLinkItemCollsion(int itemNum)
@@ -267,6 +297,16 @@ namespace Sprint2
                 inventory.diamondNum++;
                 //max life 12
             }
+            else if (room.pickUpItems[itemNum] is BluePotion)
+            {
+                if (inventory.heartContainerNum == 12)
+                {
+                    successPickUp = false;
+                }
+                else{ 
+                inventory.heartContainerNum++;
+                }
+            }
             else if (room.pickUpItems[itemNum] is Cloud)
             {
                 successPickUp = false;
@@ -347,6 +387,9 @@ namespace Sprint2
             {
                 //room need to stop update
                 Level1.roomUpdate = false;
+            }else if(room.pickUpItems[itemNum] is BlueRing)
+            {
+                LinkCollisionDetection.blueRing = true;
             }
  
             //if items  fairy? /heartContainer?(delete)

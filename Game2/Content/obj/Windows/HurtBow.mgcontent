@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/zz/Desktop/new/CSE-3902/Game2/Content/HurtBow.png</SourceFile>
-  <SourceTime>2020-04-22T18:39:25.1911974-04:00</SourceTime>
-  <DestFile>C:/Users/zz/Desktop/new/CSE-3902/Game2/Content/bin/Windows/HurtBow.xnb</DestFile>
-  <DestTime>2020-04-22T18:41:44.8443172-04:00</DestTime>
+  <SourceFile>C:/Users/Mingjie/OneDrive/Documents/zelda/Game2/Content/HurtBow.png</SourceFile>
+  <SourceTime>2020-04-24T00:14:27.085866-04:00</SourceTime>
+  <DestFile>C:/Users/Mingjie/OneDrive/Documents/zelda/Game2/Content/bin/Windows/HurtBow.xnb</DestFile>
+  <DestTime>2020-04-24T02:09:51.2164505-04:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T11:35:54-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

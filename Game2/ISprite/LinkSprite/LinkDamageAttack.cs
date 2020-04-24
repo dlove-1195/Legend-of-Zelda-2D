@@ -36,7 +36,7 @@ namespace Sprint2
                 totalBlink = 6;
                 blinkTimes = 0;
                 delay = 0;
-                totalDelay = 60;
+                totalDelay = 30;
                 sword = Texture2DStorage.GetHurtWeaponSpriteSheet();
             }
             else if (direction.Equals("Left")) {
@@ -48,7 +48,7 @@ namespace Sprint2
                 totalBlink = 5;
                 blinkTimes = 0;
                 delay = 0;
-                totalDelay = 60;
+                totalDelay = 30;
             }
             else if (direction.Equals("Right"))
             {
@@ -60,7 +60,7 @@ namespace Sprint2
                 totalBlink = 5;
                 blinkTimes = 0;
                 delay = 0;
-                totalDelay = 60;
+                totalDelay = 30;
             }
             else if (direction.Equals("Up"))
             {
@@ -72,7 +72,7 @@ namespace Sprint2
                 totalBlink = 6;
                 blinkTimes = 0;
                 delay = 0;
-                totalDelay = 60;
+                totalDelay = 30;
                 sword = Texture2DStorage.GetHurtWeaponSpriteSheet();
             }
 

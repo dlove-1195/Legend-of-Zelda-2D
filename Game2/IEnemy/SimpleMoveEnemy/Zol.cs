@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace Sprint2
 {
@@ -26,8 +27,7 @@ namespace Sprint2
         private int width = 11;
         private int height = 15;
         private int enemyNumber = 3;
-        private int seed = 1;
-
+        
         public Rectangle boundingBox { get; set; }
         public Zol(Vector2 vector)
         {
@@ -106,9 +106,8 @@ namespace Sprint2
                 updateDelay++;
                 if (updateDelay == totalDelay)
                 {
-                    updateDelay = 0;
-                    seed++;
-                    var rnd = new Random(seed);
+                    updateDelay = 0; 
+                    var rnd = new Random((int)Stopwatch.GetTimestamp());
                     int randomNumber = rnd.Next(0, 4);
 
 

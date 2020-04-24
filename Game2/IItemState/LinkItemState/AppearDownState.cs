@@ -89,8 +89,6 @@ namespace Sprint2
             {
                 
                 linkItem.ChangeSprite(new ItemFireballMoveDownSprite(textureFire, linkItem));
-              
-
             }
         }
       

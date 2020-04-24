@@ -192,11 +192,14 @@ namespace Sprint2
                 {
                     itemList.Add(new Wall(name, vector));
                 }
-                else
+                else if(room.roomNumber==19)
                 {
                     itemList.Add(new Wall(name, vector));
                 }
 
+            }else if (type == "SmallBox")
+            {
+                itemList.Add(new Box( vector));
             }
 
         }

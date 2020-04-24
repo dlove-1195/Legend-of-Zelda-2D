@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace Sprint2
 {
@@ -112,7 +113,7 @@ namespace Sprint2
                 {
                     updateDelay = 0;
 
-                    var rnd = new Random(Game1.seed);
+                    var rnd = new Random((int)Stopwatch.GetTimestamp());
                     int randomNumber = rnd.Next(0, 4);
 
 

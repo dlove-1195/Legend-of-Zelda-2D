@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace Sprint2
 {
@@ -19,6 +20,8 @@ namespace Sprint2
         private int totalDelay = 100;
 #pragma warning disable CA1051 // Do not declare visible instance fields
         public IItem fire;
+        public IItem fireSpreadUp;
+        public IItem fireSpreadDown;
 #pragma warning restore CA1051 // Do not declare visible instance fields
 #pragma warning disable CA2211 // Non-constant fields should not be visible
         public static Boolean hasFire = false;
@@ -31,7 +34,7 @@ namespace Sprint2
         //the current position of the dragon
         public int posX { get; set; }
         public int posY { get; set; }
-        private int seed = 1;
+        
 
         public Rectangle boundingBox { get; set; } = new Rectangle();
 
@@ -107,9 +110,11 @@ namespace Sprint2
             {
                 boundingBox = new Rectangle(posX, posY, width * 3, height * 3);
               
-                if (fire != null)
+                if (fire != null && fireSpreadDown !=null && fireSpreadUp!=null)
                 {
                     fire.Update();
+                    fireSpreadDown.Update();
+                    fireSpreadUp.Update();
                 }
 
                 if (hasFire)
@@ -124,6 +129,8 @@ namespace Sprint2
                 {
                     fireTimer = 0;
                     fire = null;
+                    fireSpreadDown = null;
+                    fireSpreadUp = null;
                 }
 
                 //random move dragon
@@ -131,8 +138,8 @@ namespace Sprint2
                 if (updateDelay == totalDelay)
                 {
                     updateDelay = 0;
-                    seed++;
-                    var rnd = new Random(seed);
+                 
+                    var rnd = new Random((int)Stopwatch.GetTimestamp());
                     int randomNumber = rnd.Next(0, 1); 
                     switch (randomNumber)
                     { 
@@ -193,9 +200,11 @@ namespace Sprint2
                 else
                 {
                     GreenDragonSprite.Draw(spriteBatch, new Vector2(posX, posY));
-                    if (fire != null)
+                    if (fire != null && fireSpreadDown != null && fireSpreadUp != null)
                     {
                         fire.Draw(spriteBatch);
+                        fireSpreadUp.Draw(spriteBatch);
+                        fireSpreadDown.Draw(spriteBatch);
                     }
                 }
             }
@@ -204,10 +213,12 @@ namespace Sprint2
         public List<Rectangle> getProjectileRec()
         {
             List<Rectangle> projectileRec = new List<Rectangle>();
-            if (fire != null)
+            if (fire != null && fireSpreadDown != null && fireSpreadUp != null)
             {
 
                 projectileRec.Add(fire.BoundingBox);
+                projectileRec.Add(fireSpreadDown.BoundingBox);
+                projectileRec.Add(fireSpreadUp.BoundingBox);
 
             }
 

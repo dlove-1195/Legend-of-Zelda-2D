@@ -33,6 +33,8 @@ namespace Sprint2
         private IController playStateController;
         //responsible for switching between playstate to win/lose state
         private IController inventoryController;
+
+       
         public PlayState(Game1 game)
         { 
             player = new Link(new Vector2(648, 577)); 
@@ -85,8 +87,11 @@ namespace Sprint2
              }
 
             inventoryBar.Update();
-            
-
+           
+            if (!LinkCollisionDetection.blueRing)
+            {
+                linkDetection = new LinkCollisionDetection(level, player, inventoryBar);
+            }
         }
 
       

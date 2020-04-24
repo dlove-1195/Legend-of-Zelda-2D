@@ -42,8 +42,8 @@ namespace Sprint2
             }
             else if (direction.Equals("Right"))
             {
-                posX = 91;
-                posY = 0;
+                posX = 90;
+                posY = 30;
                 width = 15;
                 height = 16;
                 delay = 0;
@@ -158,18 +158,18 @@ namespace Sprint2
             {
                 if (delay <= totalDelay / 5)
                 {
-                    posX = 91;
-                    posY = 0;
-                    width = 14;
-                    height = 15;
-
-                }
-                if (delay > totalDelay / 5 && delay < 2 * totalDelay / 5)
-                {
                     posX = 90;
                     posY = 30;
                     width = 15;
                     height = 16;
+
+                }
+                if (delay > totalDelay / 5 && delay < 2 * totalDelay / 5)
+                {
+                    posX = 91;
+                    posY = 0;
+                    width = 14;
+                    height = 15;
 
                 }
                 if (delay >= 2 * totalDelay / 5 && delay < 3 * totalDelay / 5)
@@ -192,10 +192,10 @@ namespace Sprint2
                 delay++;
                 if (delay == totalDelay)
                 {
-                    posX = 91;
-                    posY = 0;
-                    width = 14;
-                    height = 15;
+                    posX = 90;
+                    posY = 30;
+                    width = 15;
+                    height = 16;
                 }
             }
             else if (direction.Equals("Up")) {

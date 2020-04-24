@@ -11,8 +11,8 @@ namespace Sprint2
     public class Room : IRoom
     {
         private CultureInfo culture;
-        private String type;
-        private String name;
+        private string type;
+        private string name;
         private XmlNodeList nodeList;
         private XmlDocument doc;
         private int x;
@@ -146,12 +146,13 @@ namespace Sprint2
                 else if (type == "Block")
                 {
                     blockLocation.Add(new KeyValuePair<int, int>((int)vector.X, (int)vector.Y));
+                    
                 }
                 else if (type == "Door")
                 {
                     doorDirection.Add(name); //door direction stores in name
                 }
-                else if (type == "Wall")
+                else if (type == "Wall" || type =="SmallBox")
                 {
                     objects.loadObject(this, type, name, vector);
                 }
@@ -219,8 +220,25 @@ namespace Sprint2
         }
         public void Draw(SpriteBatch spriteBatch)
         {
+<<<<<<< HEAD
      
           
+=======
+            if (roomNumber == 2)
+            {
+                LetterGenerator.drawSentence(spriteBatch, "WOULD YOU LIKE TO BUY SOME WEAPONS", new Vector2(100, 320), new Vector2(19, 19));
+                LetterGenerator.drawSentence(spriteBatch, "BOOMERANG AND BOW   FIVE DIAMONDS", new Vector2(100, 350), new Vector2(19, 19));
+                LetterGenerator.drawSentence(spriteBatch, "CANDLE              TEN DIAMONDS", new Vector2(100, 380), new Vector2(19, 19));
+            }
+
+            if(roomNumber == 5)
+            {
+                Rectangle sourceRectangle = new Rectangle(1163,734, 80, 80);
+                Rectangle destinationRectangle = new Rectangle(150, 425, 48, 48);
+                spriteBatch.Draw(Texture2DStorage.GetBlockSpriteSheet(), destinationRectangle, sourceRectangle, Color.White);
+            }
+
+>>>>>>> d06dbd5f4bab71ced9c76eb9d21f199894a2439a
             foreach (LockedDoor doorX in lockedDoor)
             {
                 if (doorX != null)
@@ -228,19 +246,21 @@ namespace Sprint2
                     doorX.Draw(spriteBatch);
                 }
             }
-            foreach (IEnemy enemy in enemies)
-            {
-                if (enemy != null)
-                    enemy.Draw(spriteBatch);
-
-
-            }
             foreach (IItem item in pickUpItems)
             {
                 if (item != null)
                     item.Draw(spriteBatch);
 
             }
+
+            foreach (IEnemy enemy in enemies)
+            {
+                if (enemy != null)
+                    enemy.Draw(spriteBatch);
+
+
+            } 
+           
             foreach (INpc npc in npcs)
             {
                 npc.Draw(spriteBatch);
