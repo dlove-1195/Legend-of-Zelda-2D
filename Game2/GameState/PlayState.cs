@@ -87,14 +87,7 @@ namespace Sprint2
              }
 
             inventoryBar.Update();
-           // if (LinkCollisionDetection.blueRing)
-            //{
-              //  LinkCollisionDetection.blueRingTimer++;
-                //if (LinkCollisionDetection.blueRingTimer >= 300)
-               // {
-                 //   LinkCollisionDetection.blueRing = false;
-                //}
-            //}
+           
             if (!LinkCollisionDetection.blueRing)
             {
                 linkDetection = new LinkCollisionDetection(level, player, inventoryBar);
