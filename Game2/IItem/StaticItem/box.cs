@@ -22,9 +22,7 @@ namespace Sprint2
         private int desHeight=48;
       
         public int PosX { get; set; }
-        public int PosY { get; set; }
-        private int originX;
-        private int originY;
+        public int PosY { get; set; } 
         public Rectangle BoundingBox { get; set; }
         
 
@@ -32,9 +30,7 @@ namespace Sprint2
         {
             
             PosX = (int)desLoc.X;
-            PosY = (int)desLoc.Y;
-            originX = (int)desLoc.X;
-            originY = (int)desLoc.Y;
+            PosY = (int)desLoc.Y; 
             BoundingBox = new Rectangle(PosX, PosY, desWidth, desHeight);
 
 

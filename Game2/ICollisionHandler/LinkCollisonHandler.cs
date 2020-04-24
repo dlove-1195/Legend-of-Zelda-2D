@@ -191,6 +191,15 @@ namespace Sprint2
             if(direction == "Up")
             {
                 room.pickUpItems[itemNum].PosY--;
+            }else if(direction == "Down")
+            {
+                room.pickUpItems[itemNum].PosY++;
+            }else if (direction =="Left")
+            {
+                room.pickUpItems[itemNum].PosX++;
+            }else if (direction == "Right")
+            {
+                room.pickUpItems[itemNum].PosX--;
             }
 
         }
