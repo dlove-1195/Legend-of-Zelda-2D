@@ -236,13 +236,6 @@ namespace Sprint2
                     doorX.Draw(spriteBatch);
                 }
             }
-            foreach (IItem item in pickUpItems)
-            {
-                if (item != null)
-                    item.Draw(spriteBatch);
-
-            }
-
             foreach (IEnemy enemy in enemies)
             {
                 if (enemy != null)
@@ -250,6 +243,13 @@ namespace Sprint2
 
 
             } 
+            foreach (IItem item in pickUpItems)
+            {
+                if (item != null)
+                    item.Draw(spriteBatch);
+
+            }
+
            
             foreach (INpc npc in npcs)
             {
