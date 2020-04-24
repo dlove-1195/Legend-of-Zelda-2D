@@ -31,7 +31,8 @@ namespace Sprint2
         public void Update()
         {
             boundingBox = new Rectangle(posX, posY, princessWidth * 3, princessHeight * 3);
-     
+            posX-=3;
+
             PrincessSprite.Update();
 
 

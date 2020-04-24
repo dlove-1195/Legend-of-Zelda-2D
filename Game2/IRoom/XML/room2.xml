@@ -66,10 +66,11 @@
       <posX>48</posX>
       <posY>38</posY>
     </Item>
+
     <Item>
       <ObjectType>NPC</ObjectType>
       <ObjectName>GonePrincess</ObjectName>
-      <posX>80</posX>
+      <posX>70</posX>
       <posY>38</posY>
     </Item>
     <Item>

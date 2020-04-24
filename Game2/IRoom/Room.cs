@@ -220,16 +220,6 @@ namespace Sprint2
         }
         public void Draw(SpriteBatch spriteBatch)
         {
-<<<<<<< HEAD
-     
-          
-=======
-            if (roomNumber == 2)
-            {
-                LetterGenerator.drawSentence(spriteBatch, "WOULD YOU LIKE TO BUY SOME WEAPONS", new Vector2(100, 320), new Vector2(19, 19));
-                LetterGenerator.drawSentence(spriteBatch, "BOOMERANG AND BOW   FIVE DIAMONDS", new Vector2(100, 350), new Vector2(19, 19));
-                LetterGenerator.drawSentence(spriteBatch, "CANDLE              TEN DIAMONDS", new Vector2(100, 380), new Vector2(19, 19));
-            }
 
             if(roomNumber == 5)
             {
@@ -238,7 +228,7 @@ namespace Sprint2
                 spriteBatch.Draw(Texture2DStorage.GetBlockSpriteSheet(), destinationRectangle, sourceRectangle, Color.White);
             }
 
->>>>>>> d06dbd5f4bab71ced9c76eb9d21f199894a2439a
+
             foreach (LockedDoor doorX in lockedDoor)
             {
                 if (doorX != null)

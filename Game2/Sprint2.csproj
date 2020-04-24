@@ -333,6 +333,27 @@
     <Content Include="Content\Text.png" />
     <Content Include="Content\woodenboomerang.png" />
     <Content Include="Icon.ico" />
+    <Content Include="IRoom\New-XML\room1.xml" />
+    <Content Include="IRoom\New-XML\room10.xml" />
+    <Content Include="IRoom\New-XML\room11.xml" />
+    <Content Include="IRoom\New-XML\room12.xml" />
+    <Content Include="IRoom\New-XML\room13.xml" />
+    <Content Include="IRoom\New-XML\room14.xml" />
+    <Content Include="IRoom\New-XML\room15.xml" />
+    <Content Include="IRoom\New-XML\room16.xml" />
+    <Content Include="IRoom\New-XML\room17.xml" />
+    <Content Include="IRoom\New-XML\room18.xml" />
+    <Content Include="IRoom\New-XML\room19.xml" />
+    <Content Include="IRoom\New-XML\room2.xml" />
+    <Content Include="IRoom\New-XML\room3.xml" />
+    <Content Include="IRoom\New-XML\room4.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="IRoom\New-XML\room5.xml" />
+    <Content Include="IRoom\New-XML\room6.xml" />
+    <Content Include="IRoom\New-XML\room7.xml" />
+    <Content Include="IRoom\New-XML\room8.xml" />
+    <Content Include="IRoom\New-XML\room9.xml" />
     <Content Include="IRoom\XML\room1.xml" />
     <Content Include="IRoom\XML\room10.xml" />
     <Content Include="IRoom\XML\room11.xml" />
