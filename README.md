@@ -1,19 +1,17 @@
 # CSE-3902 Zelda Game Sprint 4
 ## New feature
 * Use bomb to open a door on the wall
-* Limit player vision. Clouds cover the room, need to use candle fire to clean it. 
-* Random events. WallMaster appears when link comes close.
-* Puzzle elements. Link can push blocks to enter the closed zone in the room.
-* The number of heart container is the upper limit of blood that link can have. Heart container number decreases when link collides with yellow/green dragon directly.
-* Add items blue portion and blue ring. Blue portion restore the number of heart container by one and blue ring can protect link from getting harm by enemies for about 10 seconds. Link will also get damaged if colliding with dragon's fire even with blue ring.
-* NPC communicates with link.
-* Green dragon will leave a Heart and Yellow dragon will leave a Key when they die. 
-* Green dragon's fire can spread into three directions.
-* Link attacks in damaged mode.
-* Wall Master wiil throw link back to the first room. 
-* Link will cause reduced damage to enemies when get hurt.
-* Add princess animation in the first room.
-
+* Limit player vision. Clouds cover the room, need to use candle fire to clean it
+* Random events. WallMaster appears when link comes close
+* Puzzle elements. Link can push blocks to enter the closed zone in the room
+* The number of heart container is the upper limit of blood that link can have. Heart container number decreases when link collides with yellow/green dragon directly
+* Add items blue portion and blue ring. Blue portion restore the number of heart container by one and blue ring can protect link from getting harm by enemies for about 10 seconds. Link will also get damaged if colliding with dragon's fire even with blue ring
+* NPC communicates with link
+* Green dragon will leave a Heart and Yellow dragon will leave a Key when they die
+* Green dragon's fire can spread into three directions
+* Link attacks in damaged mode
+* Wall Master wiil throw link back to the first room
+* Link will cause reduced damage to enemies when he gets damaged
 
 ## Major changes to the structure
 * Sprite Factories
@@ -24,8 +22,8 @@
 ## How to play 
 
 #### There are five Game States includs Start State, Play State, Pause State, Lose State and Win State. The state will be alternated among all five based on Link's behavior. In the Play State, Link has initial 12 blood drops once the game is began. Each room has been designed differenly with various enemies which cause Link to drop his blood variously. Link's position is shown on both the inventory bar and the inventory room through the game. And the whole map and TriForce Piece's location will appear only by picking up the corrsponding item. Link can pick up items where each of them has its unique functionality as listed below: 
-* Heart: Link gains one drop of blood. Link can only pick up "Heart" when his blood is less than 12. A dead Green Dragon can turn into a Heart.
-* Key: Link can use it to open the door. A Yellow Dragon can turn into a Key.
+* Heart: Link gains one drop of blood. Link can only pick up "Heart" when his blood is less than 12.
+* Key: Link can use it to open the door. 
 * Clock: freeze all moving objects in all the rooms
 * Map: Show the level map both on the game bar and inventory screen
 * Compass: Show the location of TriForce Pieces on the map only when item Map is collected
