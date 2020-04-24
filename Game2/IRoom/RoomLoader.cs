@@ -32,7 +32,9 @@ namespace Sprint2
 #pragma warning disable CA3075 // Insecure DTD processing in XML
             doc.XmlResolver = resolver;
 #pragma warning restore CA3075 // Insecure DTD processing in XML
-            doc.Load(reader);
+             
+                doc.Load(reader);
+             
             reader.Close();
 
         }

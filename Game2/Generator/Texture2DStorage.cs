@@ -55,6 +55,7 @@ namespace Sprint2
 		private static Texture2D upMap;
 		private static Texture2D downMap;
 		private static Texture2D container;
+		private static Texture2D block;
 		//initialize the Texture2D fields
 		public static void LoadAllTextures(ContentManager content)
 			{
@@ -109,6 +110,7 @@ namespace Sprint2
 			lockedDoor = content.Load<Texture2D>("door");
 
 			container = content.Load<Texture2D>("container");
+			block = content.Load<Texture2D>("block");
 
 		}
 
@@ -119,6 +121,10 @@ namespace Sprint2
 		
 			}
 
+		public static Texture2D GetBlockSpriteSheet()
+		{
+			return  block;
+		}
 		public static Texture2D GeHeartContainerSpriteSheet()
 		{
 			return container;

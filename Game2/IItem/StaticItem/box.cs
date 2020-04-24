@@ -12,14 +12,14 @@ namespace Sprint2
         public bool Appear { get; set; } = true;
         private int p = 100;
         //Sprite parameters
-        private Texture2D texture = Texture2DStorage.GetDoorSpriteSheet();
+        private Texture2D texture = Texture2DStorage.GetBlockSpriteSheet();
         private int sourceLocX =1254;
         private int sourceLocY=643;
         private int width=80 ;
         private int height=80;
 
-        private int desWidth=48;
-        private int desHeight=48;
+        private int desWidth=52;
+        private int desHeight=52;
       
         public int PosX { get; set; }
         public int PosY { get; set; } 

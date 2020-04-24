@@ -231,7 +231,7 @@ namespace Sprint2
             {
                 Rectangle sourceRectangle = new Rectangle(1163,734, 80, 80);
                 Rectangle destinationRectangle = new Rectangle(150, 425, 48, 48);
-                spriteBatch.Draw(Texture2DStorage.GetDoorSpriteSheet(), destinationRectangle, sourceRectangle, Color.White);
+                spriteBatch.Draw(Texture2DStorage.GetBlockSpriteSheet(), destinationRectangle, sourceRectangle, Color.White);
             }
 
             foreach (LockedDoor doorX in lockedDoor)

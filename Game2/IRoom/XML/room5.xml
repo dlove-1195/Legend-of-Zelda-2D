@@ -257,7 +257,7 @@
     <Item>
       <ObjectType>SmallBox</ObjectType>
       <ObjectName>Up</ObjectName>
-      <posX>20</posX>
+      <posX>19</posX>
       <posY>37</posY>
     </Item>
   </Asset>
