@@ -27,7 +27,7 @@ namespace Sprint2
         private IRoom room;
 
         public static bool blueRing = false;
-        private int blueRingTimer = 0;
+        private static int blueRingTimer = 0;
 
         public LinkCollisionDetection(ILevel level, IPlayer link, IInventory inventory)
         {
@@ -162,7 +162,7 @@ namespace Sprint2
             if (blueRing)
             {
                 blueRingTimer++;
-                if (blueRingTimer >= 900)
+                if (blueRingTimer >= 700)
                 {
                    blueRing = false;
                 }
