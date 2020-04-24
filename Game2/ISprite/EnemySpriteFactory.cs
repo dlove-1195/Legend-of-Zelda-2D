@@ -49,7 +49,7 @@ namespace Sprint2
 			}
 			else
 			{
-				return new GreenDragonSprite(enemysheet, dragon, direction);
+				return new YellowDragonSprite(enemysheet, dragon, direction);
 			}
 		}
 		public ISprite CreateWallMasterSprite(string direction, IEnemy wall, bool ifStatic)
