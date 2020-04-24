@@ -185,6 +185,12 @@ namespace Sprint2
             } 
         }
 
+       public void HandleLinkBoxCollision(int itemNum, string direction)
+        {
+            StayPosition(direction);
+
+        }
+
         public void HandleLinkItemCollsion(int itemNum)
         { 
             if (itemManager(itemNum))

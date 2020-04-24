@@ -13,10 +13,10 @@ namespace Sprint2
         private int p = 100;
         //Sprite parameters
         private Texture2D texture = Texture2DStorage.GetDoorSpriteSheet();
-        private int sourceLocX;
-        private int sourceLocY;
-        private int width ;
-        private int height;
+        private int sourceLocX =1254;
+        private int sourceLocY=643;
+        private int width=80 ;
+        private int height=80;
 
         private int desWidth=48;
         private int desHeight=48;

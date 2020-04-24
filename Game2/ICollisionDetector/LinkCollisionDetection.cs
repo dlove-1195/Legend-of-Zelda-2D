@@ -180,11 +180,11 @@ namespace Sprint2
                     }
                 }
             }
-            //loop for detecting bomb collide with door hole
+            
             listLength = player.items.Count;
             for(int i=0; i< listLength; i++)
-            {
-                if(player.items[i] is Bomb)
+            {//loop for detecting bomb collide with door hole
+                if (player.items[i] is Bomb)
                 {
                     for (int j = 0; j< item.Count; j++)
                     {
@@ -227,15 +227,20 @@ namespace Sprint2
                     overlapRec = Rectangle.Intersect(linkRectangle, singleItemRec);
                     if (!overlapRec.IsEmpty)
                     {
+                        string direction = detectCollisionDirection(overlapRec, linkRectangle, singleItemRec);
                         if (item[i] is LockedDoor)
                         {
-                            string direction = detectCollisionDirection(overlapRec, linkRectangle, singleItemRec);
+                            
                             linkHandler.HandleLinkLockedDoorCollision(i, direction);
                         }
                         else if(item[i] is Wall)
                         {
-                            string direction = detectCollisionDirection(overlapRec, linkRectangle, singleItemRec);
+                             
                             linkHandler.HandleLinkWallHoleCollision(i, direction);
+                        }else if (item[i] is Box)
+                        {
+                             
+                            linkHandler.HandleLinkBoxCollision(i,direction);
                         }
                         else
                         {

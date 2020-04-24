@@ -215,7 +215,7 @@
     </Item>
 
     <Item>
-      <ObjectType>Box</ObjectType>
+      <ObjectType>SmallBox</ObjectType>
       <ObjectName>Up</ObjectName>
       <posX>20</posX>
       <posY>37</posY>
