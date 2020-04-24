@@ -19,6 +19,7 @@
 * Sprite Factories
 * Sprite classes condensation
 * Inventory class encapsulation
+* Use one IGameState object to keep track of the state
 
 ## How to play 
 
