@@ -135,7 +135,6 @@
     <Compile Include="IItem\LinkItem\FireSpreadMiddle.cs" />
     <Compile Include="IItem\LinkItem\FireSpreadDown.cs" />
     <Compile Include="IItem\LinkItem\FireSpreadUp.cs" />
-    <Compile Include="IItem\LinkItem\SpreadUpFire.cs" />
     <Compile Include="IItem\LinkItem\Fire.cs" />
     <Compile Include="IItem\LinkItem\DamageSword.cs" />
     <Compile Include="IItem\LinkItem\Sword.cs" />

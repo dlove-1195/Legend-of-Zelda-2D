@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
- 
+using System.Diagnostics;
+
 namespace Sprint2
 {
 
@@ -20,8 +21,7 @@ namespace Sprint2
         //IController keyboardController;
 
         public static int WindowWidth = 800;
-        public static int WindowHeight = 800;
-        public static int seed = 0;
+        public static int WindowHeight = 800; 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -31,7 +31,7 @@ namespace Sprint2
             graphics.PreferredBackBufferWidth = WindowWidth;
             graphics.PreferredBackBufferHeight = WindowHeight;
             graphics.ApplyChanges();
- 
+            
         }
 
         protected override void Initialize()
@@ -66,8 +66,7 @@ namespace Sprint2
             {
                 playState.Update();
             }
-
-            seed++;
+             
             base.Update(gameTime);
         }
 

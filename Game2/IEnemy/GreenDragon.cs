@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace Sprint2
 {
@@ -33,7 +34,7 @@ namespace Sprint2
         //the current position of the dragon
         public int posX { get; set; }
         public int posY { get; set; }
-        private int seed = 1;
+        
 
         public Rectangle boundingBox { get; set; } = new Rectangle();
 
@@ -137,8 +138,8 @@ namespace Sprint2
                 if (updateDelay == totalDelay)
                 {
                     updateDelay = 0;
-                    seed++;
-                    var rnd = new Random(seed);
+                 
+                    var rnd = new Random((int)Stopwatch.GetTimestamp());
                     int randomNumber = rnd.Next(0, 1); 
                     switch (randomNumber)
                     { 
