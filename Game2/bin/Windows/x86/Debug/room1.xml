@@ -60,12 +60,6 @@
       <posX>46</posX>
       <posY>50</posY>
     </Item>
-    <Item>
-      <ObjectType>NPC</ObjectType>
-      <ObjectName>GonePrincess</ObjectName>
-      <posX>53</posX>
-      <posY>40</posY>
-    </Item>
 
     <Item>
       <ObjectType>Block</ObjectType>

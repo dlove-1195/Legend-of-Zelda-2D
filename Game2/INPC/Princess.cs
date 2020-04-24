@@ -45,8 +45,7 @@ namespace Sprint2
             else
             {
                 PrincessSprite.Draw(spriteBatch, new Vector2(posX, posY));
-                LetterGenerator.drawSentence(spriteBatch, "GO DOWN TO PICK TRIFORCE PIECE", new Vector2(posX - 300, posY - 94), new Vector2(19, 19));
-             LetterGenerator.drawSentence(spriteBatch, "COLLECT THREE TO SAVE ME", new Vector2(posX - 270, posY - 72), new Vector2(19, 19));
+                LetterGenerator.drawSentence(spriteBatch, "GO DOWN TO GET TRIFORCE PIECE", new Vector2(posX - 250, posY - 94), new Vector2(19, 19));
             }
            
         }

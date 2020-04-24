@@ -177,10 +177,6 @@ namespace Sprint2
                 {
                     npcList.Add(new Princess(vector));
                 }
-                if (name == "GonePrincess") 
-                {
-                    npcList.Add(new GonePrincess(vector));
-                }
             }
             else if (type == "Wall")
             {

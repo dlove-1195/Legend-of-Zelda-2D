@@ -166,7 +166,6 @@
     <Compile Include="IItem\StaticItem\YellowDiamond.cs" />
     <Compile Include="ILevel\ILevel.cs" />
     <Compile Include="ILevel\level1.cs" />
-    <Compile Include="INPC\GonePrincess.cs" />
     <Compile Include="IPlayerState\Iplayerstate.cs" />
     <Compile Include="IPlayerState\LinkStandDown\LinkStandDownAttackNonDamageState.cs" />
     <Compile Include="IPlayerState\LinkStandDown\LinkStandDownAttackDamageState.cs" />
