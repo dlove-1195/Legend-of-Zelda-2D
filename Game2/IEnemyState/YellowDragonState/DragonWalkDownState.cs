@@ -11,7 +11,6 @@ namespace Sprint2
     {
 
         private Dragon dragon;
-        private Texture2D texture = Texture2DStorage.GetEnemySpriteSheet();
         public DragonWalkDownState(Dragon dragon)
         {
             if (dragon == null)
@@ -20,7 +19,7 @@ namespace Sprint2
             }
 
             this.dragon = dragon;
-            dragon.DragonSprite = new DragonWalkDownSprite(texture, dragon);
+            dragon.DragonSprite = EnemySpriteFactory.Instance.CreateYellowDragonSprite("Down", this.dragon, false);
 
             dragon.fire = new Fire(dragon.posX, dragon.posY+60, 1);
             Dragon.hasFire = true;

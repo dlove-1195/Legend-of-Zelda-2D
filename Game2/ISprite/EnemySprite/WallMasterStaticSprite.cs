@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
 
 namespace Sprint2
 {
-    public class WallMasterRightStatic : ISprite
+    public class WallMasterStaticSprite : ISprite
     {
         private Texture2D Texture;
         private int width;
@@ -16,20 +13,34 @@ namespace Sprint2
         private int sourceLocX;
         private int sourceLocY;
         private IEnemy WallMaster;
+        private string direction;
 
-        public WallMasterRightStatic(Texture2D texture, IEnemy WallMaster)
+
+        public WallMasterStaticSprite(Texture2D texture, IEnemy WallMaster, string direction)
         {
             Texture = texture;
             this.WallMaster = WallMaster;
+            this.direction = direction;
+            if (direction.Equals("Left"))
+            {
+                width = 14;
+                height = 15;
+                sourceLocX = 241;
+                sourceLocY = 0;
+            }
+            else if (direction.Equals("Right"))
+            {
+                width = 14;
+                height = 15;
+                sourceLocX = 271;
+                sourceLocY = 0;
+            }
         }
+
+
 
         public void Update()
         {
-
-            width = 14;
-            height = 15;
-            sourceLocX = 271;
-            sourceLocY = 0;
 
         }
 
@@ -37,19 +48,21 @@ namespace Sprint2
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
+
             if (spriteBatch == null)
             {
-                throw new ArgumentNullException(nameof(spriteBatch));
+                throw new System.ArgumentNullException(nameof(spriteBatch));
             }
             if (Texture != null)
             {
                 Rectangle sourceRectangle = new Rectangle(sourceLocX, sourceLocY, width, height);
                 Rectangle destinationRectangle = new Rectangle(WallMaster.posX, WallMaster.posY, width * 3, height * 3);
 
-                 
-                 spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-                 
+
+                spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
+
             }
+
         }
     }
 }

@@ -6,7 +6,6 @@ namespace Sprint2
     public class WallMasterLeftDynamicState : IEnemyState
     {
         private WallMaster wallMaster;
-        private Texture2D texture = Texture2DStorage.GetEnemySpriteSheet2();
         public WallMasterLeftDynamicState(WallMaster w)
         {
             if (w == null)
@@ -14,7 +13,7 @@ namespace Sprint2
                 throw new System.ArgumentNullException(nameof(w));
             }
             this.wallMaster = w;
-            wallMaster.WallMasterSprite = new WallMaterMoveLeftSprite(texture,wallMaster);
+            wallMaster.WallMasterSprite = EnemySpriteFactory.Instance.CreateWallMasterSprite("Left", wallMaster, false);
         }
         public void ChangeToRight ()
         {
