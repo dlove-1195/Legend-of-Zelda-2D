@@ -92,18 +92,8 @@
       <posX>50</posX>
       <posY>64</posY>
     </Item>
-    <Item>
-      <ObjectType>Item</ObjectType>
-      <ObjectName>Heart</ObjectName>
-      <posX>57</posX>
-      <posY>47</posY>
-    </Item>
-    <Item>
-      <ObjectType>Item</ObjectType>
-      <ObjectName>BluePotion</ObjectName>
-      <posX>16</posX>
-      <posY>69</posY>
-    </Item>
+     
+     
     <!--  item  -->
 
     <!--  Block  -->

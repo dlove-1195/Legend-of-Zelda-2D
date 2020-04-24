@@ -50,6 +50,18 @@
     <!--  item  -->
     <Item>
       <ObjectType>Item</ObjectType>
+      <ObjectName>Heart</ObjectName>
+      <posX>12</posX>
+      <posY>63</posY>
+    </Item>
+    <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>Dragon</ObjectName>
+      <posX>82</posX>
+      <posY>37</posY>
+    </Item>
+    <Item>
+      <ObjectType>Item</ObjectType>
       <ObjectName>Cloud</ObjectName>
       <posX>13</posX>
       <posY>12</posY>
@@ -1102,12 +1114,7 @@
       <posY>70</posY>
     </Item>
 
-    <Item>
-      <ObjectType>Enemy</ObjectType>
-      <ObjectName>Dragon</ObjectName>
-      <posX>82</posX>
-      <posY>37</posY>
-    </Item>
+   
     <!--  item  -->
     <!--  NPC  -->
     <!--  NPC  -->

@@ -28,18 +28,7 @@
   </Item>
   <!--  room  -->
   <!--  enemy  -->
-  <Item>
-    <ObjectType>Enemy</ObjectType>
-    <ObjectName>WallMaster</ObjectName>
-    <posX>19</posX>
-    <posY>27</posY>
-  </Item>
-  <Item>
-    <ObjectType>Enemy</ObjectType>
-    <ObjectName>WallMaster</ObjectName>
-    <posX>69</posX>
-    <posY>63</posY>
-  </Item>
+   
   
   <Item>
     <ObjectType>Enemy</ObjectType>
@@ -151,6 +140,12 @@
     <ObjectName>Heart</ObjectName>
     <posX>58</posX>
     <posY>35</posY>
+  </Item>
+  <Item>
+    <ObjectType>Item</ObjectType>
+    <ObjectName>BluePotion</ObjectName>
+    <posX>50</posX>
+    <posY>59</posY>
   </Item>
     <Item>
     <ObjectType>Item</ObjectType>

@@ -162,20 +162,20 @@ namespace Sprint2
       
     }
         
-        private int callTime=1;
+ 
         public void HandleLinkNpcCollsion(string direction,int npcNum)
         {
-            if (direction == null)
+            
+             if(direction == "Right") 
             {
-                throw new ArgumentNullException(nameof(direction));
+                direction = "Left";
+            }else if(direction == "Left"){
+                direction = "Right";
             }
-
-            if (callTime == 1)
-            {
-                Sound.PlayItemCollision();
-                callTime++;
-            }
+            StayPosition(direction);
+            Sound.PlayItemCollision(); 
             room.npcs[npcNum].Talk();
+           
             
         }
 

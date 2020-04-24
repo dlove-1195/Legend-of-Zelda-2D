@@ -238,22 +238,21 @@ namespace Sprint2
                 {
                     doorX.Draw(spriteBatch);
                 }
-            }
+            } 
             foreach (IEnemy enemy in enemies)
             {
                 if (enemy != null)
                     enemy.Draw(spriteBatch);
 
 
-            } 
+            }
+ 
             foreach (IItem item in pickUpItems)
             {
                 if (item != null)
                     item.Draw(spriteBatch);
 
-            }
-
-           
+            } 
             foreach (INpc npc in npcs)
             {
                 npc.Draw(spriteBatch);
