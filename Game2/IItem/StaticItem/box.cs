@@ -1,6 +1,6 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
-
+using System;
 
 namespace Sprint2
 {
@@ -44,7 +44,10 @@ namespace Sprint2
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            
+            if(spriteBatch == null)
+            {
+                throw new ArgumentNullException(nameof(spriteBatch));
+            }
             Rectangle sourceRectangle = new Rectangle(sourceLocX, sourceLocY, width, height);
             Rectangle destinationRectangle = new Rectangle(PosX, PosY, desWidth, desHeight);
             spriteBatch.Draw(texture, destinationRectangle, sourceRectangle, Color.White);

@@ -165,18 +165,18 @@ namespace Sprint2
             }
 
             //drawing in the bar area
-            InventoryDraw.DrawNumber(spriteBatch,  barOnly, width,  height,  diamondNum,  keyNum,  bombNum);
-            InventoryDraw.DrawItemA(spriteBatch, inventoryTexture, width,  height,  y);
+            inventoryDraw.DrawNumber(spriteBatch,  barOnly, width,  height,  diamondNum,  keyNum,  bombNum);
+            inventoryDraw.DrawItemA(spriteBatch, inventoryTexture, width,  height,  y);
             inventoryDraw.DrawItemB(spriteBatch, itemSelect, itemMap, width, height,inventoryTexture,  y);
             inventoryDraw.DrawHeart(spriteBatch,  heartContainerNum,  heartPos, containerTexture,  heartNum,  y, heartTexture);
             if (!showMap)
             {
-                InventoryDraw.DrawRoomDown(spriteBatch,existingRooms,downRoomMap, barMapTexture, y);
+                inventoryDraw.DrawRoomDown(spriteBatch,existingRooms,downRoomMap, barMapTexture, y);
             }
             else
             {
                 diff = 2;
-                inventoryDraw.drawEntireMapDown(spriteBatch, barMapTexture,  y);
+                inventoryDraw.DrawEntireMapDown(spriteBatch, barMapTexture,  y);
                 if (showCompass)
                 {
                     //draw triforce dot
@@ -189,9 +189,9 @@ namespace Sprint2
 
             if (!barOnly)
             {
-                InventoryDraw.DrawItem(spriteBatch, itemList, itemMap, inventoryTexture);
-                InventoryDraw.DrawSelectBox(spriteBatch,  itemB,  itemMap,  inventoryTexture);
-                InventoryDraw.DrawSelector(spriteBatch,  itemList,  itemMap, inventoryTexture,  currentIndex);
+                inventoryDraw.DrawItem(spriteBatch, itemList, itemMap, inventoryTexture);
+                inventoryDraw.DrawSelectBox(spriteBatch,  itemB,  itemMap,  inventoryTexture);
+                inventoryDraw.DrawSelector(spriteBatch,  itemList,  itemMap, inventoryTexture,  currentIndex);
                 if (showCompass)
                 {
                     //draw compass
@@ -199,7 +199,7 @@ namespace Sprint2
                 }
                 if (!showMap)
                 {
-                    InventoryDraw.DrawRoomUp(spriteBatch,  existingRooms, upRoomMap, inventoryMapTexture);
+                    inventoryDraw.DrawRoomUp(spriteBatch,  existingRooms, upRoomMap, inventoryMapTexture);
                 }
                 else
                 {

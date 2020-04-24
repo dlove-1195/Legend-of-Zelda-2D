@@ -8,11 +8,11 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 namespace Sprint2
 {
-    public static class InventoryDraw
+    public class InventoryDraw
 
 
     {
-        public static void DrawItem(SpriteBatch spriteBatch, List<String> itemList, Dictionary<string, Vector2> itemMap, Texture2D inventoryTexture)
+        public void DrawItem(SpriteBatch spriteBatch, List<String> itemList, Dictionary<string, Vector2> itemMap, Texture2D inventoryTexture)
         {
             if (itemList == null)
             {
@@ -44,7 +44,7 @@ namespace Sprint2
             }
         }
 
-        public static void DrawSelector(SpriteBatch spriteBatch,List<String> itemList, Dictionary<string, Vector2> itemMap, Texture2D inventoryTexture, int currentIndex)
+        public void DrawSelector(SpriteBatch spriteBatch,List<String> itemList, Dictionary<string, Vector2> itemMap, Texture2D inventoryTexture, int currentIndex)
         {
             Rectangle sourceRectangle = new Rectangle(4, 54, 26, 26);
             if(itemList == null)
@@ -75,7 +75,7 @@ namespace Sprint2
         }
 
         //for item selector view box
-        public static void DrawSelectBox(SpriteBatch spriteBatch, string itemB, Dictionary<string, Vector2> itemMap, Texture2D inventoryTexture)
+        public void DrawSelectBox(SpriteBatch spriteBatch, string itemB, Dictionary<string, Vector2> itemMap, Texture2D inventoryTexture)
         {
             if (itemMap == null)
             {
@@ -97,7 +97,7 @@ namespace Sprint2
 
 
         //how many new number objects are layered, and is it updated in playstate, when updating inventoryBar
-        public static void DrawNumber(SpriteBatch spriteBatch, bool barOnly,int width,int height,int diamondNum,int keyNum,int bombNum)
+        public void DrawNumber(SpriteBatch spriteBatch, bool barOnly,int width,int height,int diamondNum,int keyNum,int bombNum)
         {
 
 
@@ -107,7 +107,7 @@ namespace Sprint2
 
         }
 
-        public static void DrawItemA(SpriteBatch spriteBatch, Texture2D inventoryTexture, int width, int height,int y)
+        public void DrawItemA(SpriteBatch spriteBatch, Texture2D inventoryTexture, int width, int height,int y)
         {
             if(spriteBatch == null)
             {
@@ -119,7 +119,7 @@ namespace Sprint2
         }
 
         //for final selected item
-        public static void DrawItemB(SpriteBatch spriteBatch, string itemSelect, Dictionary<string, Vector2> itemMap,int width, int height, Texture2D inventoryTexture,int y)
+        public void DrawItemB(SpriteBatch spriteBatch, string itemSelect, Dictionary<string, Vector2> itemMap,int width, int height, Texture2D inventoryTexture,int y)
         {
             if (spriteBatch == null)
             {
@@ -139,7 +139,7 @@ namespace Sprint2
         }
 
         //maximum 14 hearts
-        public static void DrawHeart(SpriteBatch spriteBatch, int heartContainerNum, Vector2 heartPos, Texture2D containerTexture,int heartNum,int y, Texture2D heartTexture)
+        public void DrawHeart(SpriteBatch spriteBatch, int heartContainerNum, Vector2 heartPos, Texture2D containerTexture,int heartNum,int y, Texture2D heartTexture)
         {
             if (spriteBatch == null)
             {
@@ -181,7 +181,7 @@ namespace Sprint2
         }
 
         //width=height=19
-        public static void DrawRoomUp(SpriteBatch spriteBatch, List<IRoom> existingRooms, Dictionary<int, Vector2> upRoomMap, Texture2D inventoryMapTexture)
+        public void DrawRoomUp(SpriteBatch spriteBatch, List<IRoom> existingRooms, Dictionary<int, Vector2> upRoomMap, Texture2D inventoryMapTexture)
         {
             if (spriteBatch == null)
             {
@@ -209,7 +209,7 @@ namespace Sprint2
 
 
         //width=24, height =11
-        public static void DrawRoomDown(SpriteBatch spriteBatch, List<IRoom> existingRooms, Dictionary<int, Vector2> downRoomMap, Texture2D barMapTexture,int y)
+        public void DrawRoomDown(SpriteBatch spriteBatch, List<IRoom> existingRooms, Dictionary<int, Vector2> downRoomMap, Texture2D barMapTexture,int y)
         {
             if (spriteBatch == null)
             {
@@ -234,7 +234,7 @@ namespace Sprint2
             }
         }
 
-        public static void drawEntireMapUp(SpriteBatch spriteBatch, Texture2D inventoryMapTexture)
+        public void drawEntireMapUp(SpriteBatch spriteBatch, Texture2D inventoryMapTexture)
         {
             if (spriteBatch == null)
             {
@@ -246,7 +246,7 @@ namespace Sprint2
             spriteBatch.Draw(inventoryMapTexture, destinationRectangle, sourceRectangle, Color.White);
         }
 
-        public static void drawEntireMapDown(SpriteBatch spriteBatch, Texture2D barMapTexture,int y)
+        public void DrawEntireMapDown(SpriteBatch spriteBatch, Texture2D barMapTexture,int y)
         {
             if (spriteBatch == null)
             {
@@ -257,7 +257,7 @@ namespace Sprint2
             Rectangle destinationRectangle = new Rectangle(49, 110 + y, 120, 66);
             spriteBatch.Draw(barMapTexture, destinationRectangle, sourceRectangle, Color.White);
         }
-        public static void DrawLinkPosDotUpRoom(SpriteBatch spriteBatch, List<IRoom> existingRooms, Dictionary<int, Vector2> upRoomMap, int currentRoom, ISprite linkPosDotSprite,int diff)
+        public void DrawLinkPosDotUpRoom(SpriteBatch spriteBatch, List<IRoom> existingRooms, Dictionary<int, Vector2> upRoomMap, int currentRoom, ISprite linkPosDotSprite,int diff)
         {
             if (linkPosDotSprite == null)
             {
@@ -274,7 +274,7 @@ namespace Sprint2
                 linkPosDotSprite.Draw(spriteBatch, new Vector2((int)(desX + 7), (int)(desY + 5 - diff))); //current room
             }
         }
-        public static void DrawLinkPosDotDownRoom(SpriteBatch spriteBatch, List<IRoom> existingRooms, Dictionary<int, Vector2> downRoomMap, int currentRoom, ISprite linkPosDotSprite, int diff,int y)
+        public void DrawLinkPosDotDownRoom(SpriteBatch spriteBatch, List<IRoom> existingRooms, Dictionary<int, Vector2> downRoomMap, int currentRoom, ISprite linkPosDotSprite, int diff,int y)
         {
             if (linkPosDotSprite == null)
             {
