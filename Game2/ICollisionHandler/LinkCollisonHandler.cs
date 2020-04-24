@@ -163,8 +163,13 @@ namespace Sprint2
     }
         
         private int callTime=1;
-        public void HandleLinkNpcCollsion(String direction,int npcNum)
+        public void HandleLinkNpcCollsion(string direction,int npcNum)
         {
+            if (direction == null)
+            {
+                throw new ArgumentNullException(nameof(direction));
+            }
+
             if (callTime == 1)
             {
                 Sound.PlayItemCollision();
@@ -208,24 +213,28 @@ namespace Sprint2
         {
               if(room.roomNumber==8 || room.roomNumber == 9)
             {
-                Room.doorOpen.Add(8);
-                Room.doorOpen.Add(9);
+                Room.DoorOpen.Add(8);
+                Room.DoorOpen.Add(9);
 
             }
             else if(room.roomNumber == 7 || room.roomNumber == 11)
             {
-                Room.doorOpen.Add(7);
-                Room.doorOpen.Add(11);
+                Room.DoorOpen.Add(7);
+                Room.DoorOpen.Add(11);
 
             }
             room.setItemToNull(itemNum);
 
         }
 
-        public void HandleLinkWallHoleCollision(int itemNum, String direction)
+        public void HandleLinkWallHoleCollision(int itemNum, string direction)
         {
-            
-                if (direction == "Left")
+            if (direction == null)
+            {
+                throw new ArgumentNullException(nameof(direction));
+            }
+           
+            if (direction == "Left")
                 {
                     direction = "Right";
 

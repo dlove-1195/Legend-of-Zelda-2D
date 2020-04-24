@@ -7,13 +7,17 @@ using System.Threading.Tasks;
 
 namespace Sprint2
 {
-    class LinkWalkUpNonAttackNonDamageState: IPlayerstate
+    public class LinkWalkUpNonAttackNonDamageState: IPlayerstate
     {
         private Link linkPlayer; 
-private Texture2D texture = Texture2DStorage.GetLinkSpriteSheet();
+//private Texture2D texture = Texture2DStorage.GetLinkSpriteSheet();
         //non damaged, non attack
         public LinkWalkUpNonAttackNonDamageState(Link link )
         {
+            if(link == null)
+            {
+                throw new ArgumentNullException(nameof(link));
+            }
             linkPlayer = link;
             link.linkSprite = LinkSpriteFactory.Instance.CreateLinkWalkSprite("Up", false);
             linkPlayer.ChangeDirection(0);

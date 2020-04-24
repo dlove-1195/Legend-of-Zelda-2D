@@ -165,13 +165,13 @@ namespace Sprint2
             }
 
             //drawing in the bar area
-            inventoryDraw.DrawNumber(spriteBatch,  barOnly, width,  height,  diamondNum,  keyNum,  bombNum);
-            inventoryDraw.DrawItemA(spriteBatch, inventoryTexture, width,  height,  y);
+            InventoryDraw.DrawNumber(spriteBatch,  barOnly, width,  height,  diamondNum,  keyNum,  bombNum);
+            InventoryDraw.DrawItemA(spriteBatch, inventoryTexture, width,  height,  y);
             inventoryDraw.DrawItemB(spriteBatch, itemSelect, itemMap, width, height,inventoryTexture,  y);
             inventoryDraw.DrawHeart(spriteBatch,  heartContainerNum,  heartPos, containerTexture,  heartNum,  y, heartTexture);
             if (!showMap)
             {
-                inventoryDraw.DrawRoomDown(spriteBatch,existingRooms,downRoomMap, barMapTexture, y);
+                InventoryDraw.DrawRoomDown(spriteBatch,existingRooms,downRoomMap, barMapTexture, y);
             }
             else
             {
@@ -189,9 +189,9 @@ namespace Sprint2
 
             if (!barOnly)
             {
-                inventoryDraw.DrawItem(spriteBatch, itemList, itemMap, inventoryTexture);
-                inventoryDraw.DrawSelectBox(spriteBatch,  itemB,  itemMap,  inventoryTexture);
-                inventoryDraw.DrawSelector(spriteBatch,  itemList,  itemMap, inventoryTexture,  currentIndex);
+                InventoryDraw.DrawItem(spriteBatch, itemList, itemMap, inventoryTexture);
+                InventoryDraw.DrawSelectBox(spriteBatch,  itemB,  itemMap,  inventoryTexture);
+                InventoryDraw.DrawSelector(spriteBatch,  itemList,  itemMap, inventoryTexture,  currentIndex);
                 if (showCompass)
                 {
                     //draw compass
@@ -199,7 +199,7 @@ namespace Sprint2
                 }
                 if (!showMap)
                 {
-                    inventoryDraw.DrawRoomUp(spriteBatch,  existingRooms, upRoomMap, inventoryMapTexture);
+                    InventoryDraw.DrawRoomUp(spriteBatch,  existingRooms, upRoomMap, inventoryMapTexture);
                 }
                 else
                 {

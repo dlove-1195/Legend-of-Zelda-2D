@@ -11,7 +11,7 @@ namespace Sprint2
     {
         private Link linkPlayer;
 
-        private Texture2D texture = Texture2DStorage.GetLinkSpriteSheet2();
+        //private Texture2D texture = Texture2DStorage.GetLinkSpriteSheet2();
         public LinkWalkLeftNonAttackDamageState(Link link)
         {
             linkPlayer = link;

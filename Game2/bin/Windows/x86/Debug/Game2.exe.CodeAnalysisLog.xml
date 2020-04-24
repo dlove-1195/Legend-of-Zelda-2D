@@ -1,11 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
 <?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio\2017\enterprise\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
 <FxCopReport Version="15.0">
-=======
-<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio\2019\community\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
-<FxCopReport Version="16.0">
->>>>>>> dbc5217990d101cd4e4e07ffd7c2f54164f7dd48
  <Localized>
   <String Key="Category">Category</String>
   <String Key="Certainty">Certainty</String>

@@ -11,7 +11,7 @@ namespace Sprint2
     
      public interface IPlayer
     {
-          List<IItem> items { get; set; }  
+          List<IItem> Items { get; set; }  
         Rectangle boundingBox { get; set; }
           Rectangle simpleAttackBox { get; set; }
         IPlayerstate state { get; set; }

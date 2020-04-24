@@ -13,6 +13,8 @@ namespace Sprint2
         public int Count { get; set; } = 0;
         public int TotalCount { get; set; } = 48;
         public bool Appear { get; set; } = false;
+
+        private const string Value = "error: no such situation";
         private int itemNum = 10;
         private IItemState state;
         private ISprite woodenBoomerangSprite;
@@ -73,7 +75,7 @@ namespace Sprint2
                         state = new AppearRightState(this);
                         break;
                     default:
-                        Console.WriteLine("error: no such situation");
+                        Console.WriteLine(Value);
                         break;
                 }
 

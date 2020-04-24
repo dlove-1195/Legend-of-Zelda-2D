@@ -24,7 +24,7 @@ namespace Sprint2
 
         public LinkDamageAttack(Texture2D texture, String d)
         {
-            direction = d;
+            direction = d ?? throw new ArgumentNullException(nameof(d));
             Texture = texture;
             if (direction.Equals("Down", StringComparison.Ordinal))
             {
@@ -62,7 +62,7 @@ namespace Sprint2
                 delay = 0;
                 totalDelay = 30;
             }
-            else if (direction.Equals("Up"))
+            else if (direction.Equals("Up", StringComparison.Ordinal))
             {
 
                 sourceLocX = 257;

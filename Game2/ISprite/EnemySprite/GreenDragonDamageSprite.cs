@@ -30,7 +30,7 @@ namespace Sprint2
 
         public void Update()
         {
-            if (direction.Equals("Left"))
+            if (direction.Equals("Left", StringComparison.Ordinal))
             {
                 width = 24;
                 height = 32;
@@ -69,7 +69,7 @@ namespace Sprint2
                     GreenDragon.posX--;
                 }
             }
-            else if (direction.Equals("Right"))
+            else if (direction.Equals("Right", StringComparison.Ordinal))
             {
                 width = 24;
                 height = 32;

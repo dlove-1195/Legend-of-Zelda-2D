@@ -10,7 +10,7 @@ namespace Sprint2
     public class BombAppearUnExplodeState  : IItemState
     {
         private Bomb bomb;
-        private Texture2D texture = Texture2DStorage.GetLinkSpriteSheet();
+       // private Texture2D texture = Texture2DStorage.GetLinkSpriteSheet();
 
         public BombAppearUnExplodeState(Bomb bomb)
         {

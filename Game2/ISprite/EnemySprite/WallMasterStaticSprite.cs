@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
+using System;
 
 namespace Sprint2
 {
@@ -20,15 +21,15 @@ namespace Sprint2
         {
             Texture = texture;
             this.WallMaster = WallMaster;
-            this.direction = direction;
-            if (direction.Equals("Left"))
+            this.direction = direction ?? throw new ArgumentNullException(nameof(direction));
+            if (direction.Equals("Left", StringComparison.Ordinal))
             {
                 width = 14;
                 height = 15;
                 sourceLocX = 241;
                 sourceLocY = 0;
             }
-            else if (direction.Equals("Right"))
+            else if (direction.Equals("Right", StringComparison.Ordinal))
             {
                 width = 14;
                 height = 15;

@@ -29,8 +29,8 @@ namespace Sprint2
                     IItem bow = new Bow(Link.posX, (Link.posY + 40), 1);
                     arrow.Appear = true;
                     bow.Appear = true;
-                    link.items.Add(arrow);
-                    link.items.Add(bow);
+                    link.Items.Add(arrow);
+                    link.Items.Add(bow);
                     link.linkSprite = LinkSpriteFactory.Instance.CreateLinkStandSprite("Down", false);
 
 
@@ -39,7 +39,7 @@ namespace Sprint2
                     //blue candle
                     IItem candle = new BlueCandle(Link.posX, (Link.posY + 20), 1);
                     candle.Appear = true;
-                    link.items.Add(candle);
+                    link.Items.Add(candle);
                     link.linkSprite = LinkSpriteFactory.Instance.CreateLinkStandSprite("Down", false);
 
                     break;
@@ -49,7 +49,7 @@ namespace Sprint2
                     bomb.Appear = true;
                     link.linkSprite = LinkSpriteFactory.Instance.CreateLinkStandSprite("Down", false);
 
-                    link.items.Add(bomb);
+                    link.Items.Add(bomb);
 
                     break;
 
@@ -58,14 +58,14 @@ namespace Sprint2
                     IItem sword = new Sword(Link.posX + 16, (Link.posY + 20), 1);
                     sword.Appear = true;
                     link.linkSprite = LinkSpriteFactory.Instance.CreateLinkAttackSprite("Down", false);
-                    link.items.Add(sword);
+                    link.Items.Add(sword);
                     break;
                 case 5:
                     //Boomerang
                     IItem boomerang = new WoodenBoomerang(Link.posX, (Link.posY + 20), 1);
                     boomerang.Appear = true;
                     link.linkSprite = LinkSpriteFactory.Instance.CreateLinkStandSprite("Down", false);
-                    link.items.Add(boomerang);
+                    link.Items.Add(boomerang);
                     break;
                 case 6:
                     //damage sword
@@ -73,7 +73,7 @@ namespace Sprint2
                     damageSword.Appear = true;
                     Link.oldDamageState = true;
                     link.linkSprite = LinkSpriteFactory.Instance.CreateLinkAttackSprite("Down", true);
-                    link.items.Add(damageSword);
+                    link.Items.Add(damageSword);
                     break;
                 case 7:
                     //damge arrow
@@ -82,8 +82,8 @@ namespace Sprint2
                     Damagearrow.Appear = true;
                     Damagebow.Appear = true;
                     Link.oldDamageState = true;
-                    link.items.Add(Damagearrow);
-                    link.items.Add(Damagebow);
+                    link.Items.Add(Damagearrow);
+                    link.Items.Add(Damagebow);
                     link.linkSprite = LinkSpriteFactory.Instance.CreateLinkStandSprite("Down", true);
                     break;
                 case 8:
@@ -91,7 +91,7 @@ namespace Sprint2
                     IItem Damagecandle = new DamageFire(Link.posX, (Link.posY + 20), 1);
                     Damagecandle.Appear = true;
                     Link.oldDamageState = true;
-                    link.items.Add(Damagecandle);
+                    link.Items.Add(Damagecandle);
                     link.linkSprite = LinkSpriteFactory.Instance.CreateLinkStandSprite("Down", true);
                     break;
                 case 9:
@@ -103,7 +103,7 @@ namespace Sprint2
                     link.linkSprite = LinkSpriteFactory.Instance.CreateLinkStandSprite("Down", true);
 
 
-                    link.items.Add(Damagebomb);
+                    link.Items.Add(Damagebomb);
                     break;
                 case 10:
                     //damage boomrang
@@ -113,7 +113,7 @@ namespace Sprint2
 
                     link.linkSprite = LinkSpriteFactory.Instance.CreateLinkStandSprite("Down", true);
 
-                    link.items.Add(Damageboomerang);
+                    link.Items.Add(Damageboomerang);
                     break;
                 default:
                     break;

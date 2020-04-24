@@ -143,10 +143,10 @@ namespace Sprint2
                         overlapRec = Rectangle.Intersect(singleEnemyRec, linkWeaponRec[j]);
                         if (!overlapRec.IsEmpty)
                         {
-                           if (player.items[j] is Sword || player.items[j] is Arrow
-                                || player.items[j] is DamageSword ||  player.items[j] is DamageArrow)
+                           if (player.Items[j] is Sword || player.Items[j] is Arrow
+                                || player.Items[j] is DamageSword ||  player.Items[j] is DamageArrow)
                             {
-                                player.items[j].Count = 150;
+                                player.Items[j].Count = 150;
                             }
                             //enemy damage 
                             linkHandler.HandleLinkWeaponEnemyCollsion(i);
@@ -183,16 +183,16 @@ namespace Sprint2
                 }
             }
             
-            listLength = player.items.Count;
+            listLength = player.Items.Count;
             for(int i=0; i< listLength; i++)
             {//loop for detecting bomb collide with door hole
-                if (player.items[i] is Bomb)
+                if (player.Items[i] is Bomb)
                 {
                     for (int j = 0; j< item.Count; j++)
                     {
                         if(item[j] is Wall)
                         {
-                            overlapRec = Rectangle.Intersect(player.items[i].BoundingBox, 
+                            overlapRec = Rectangle.Intersect(player.Items[i].BoundingBox, 
                                 item[j].BoundingBox);
                             if (!overlapRec.IsEmpty)
                             {
@@ -203,13 +203,13 @@ namespace Sprint2
 
                 }
                 //detect blueCandle weapon and cloud collision
-                else if(player.items[i] is BlueCandle)
+                else if(player.Items[i] is BlueCandle)
                 {
                    for (int j = 0; j< item.Count; j++)
                     {
                         if(item[j] is Cloud)
                         {
-                            overlapRec = Rectangle.Intersect(player.items[i].BoundingBox, item[j].BoundingBox);
+                            overlapRec = Rectangle.Intersect(player.Items[i].BoundingBox, item[j].BoundingBox);
                             if (!overlapRec.IsEmpty)
                             {
                                 linkHandler.LinkBlueCandleCloudHandler(j);

@@ -19,7 +19,7 @@ namespace Sprint2
 
         public LinkStand(Texture2D texture, string d)
         {
-            direction = d;
+            direction = d??throw new ArgumentNullException(nameof(d));
             Texture = texture;
             if (direction.Equals("Down", StringComparison.Ordinal))
             {

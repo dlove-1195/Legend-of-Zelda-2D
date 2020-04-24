@@ -44,7 +44,7 @@ namespace Sprint2
 #pragma warning restore CA2227 // Collection properties should be read only
 
         public List<Rectangle> boundingBox { get; set; }
-        public static List<int> doorOpen { get; set; }= new List<int>();
+        public static List<int> DoorOpen { get; set; }= new List<int>();
 
         public Room()
         {
@@ -220,7 +220,10 @@ namespace Sprint2
         }
         public void Draw(SpriteBatch spriteBatch)
         {
-
+            if(spriteBatch == null)
+            {
+                throw new ArgumentNullException(nameof(spriteBatch));
+            }
             if(roomNumber == 5)
             {
                 Rectangle sourceRectangle = new Rectangle(1163,734, 80, 80);

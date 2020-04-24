@@ -10,7 +10,7 @@ namespace Sprint2
     public class DamageBombAppearUnExplodeState  : IItemState
     {
         private DamageBomb bomb;
-        private Texture2D texture = Texture2DStorage.GetHurtBoomSpriteSheet();
+       // private Texture2D texture = Texture2DStorage.GetHurtBoomSpriteSheet();
 
         public DamageBombAppearUnExplodeState(DamageBomb bomb)
         {

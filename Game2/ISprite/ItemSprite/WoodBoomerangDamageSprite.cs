@@ -21,13 +21,13 @@ namespace Sprint2
         {
             Texture = texture;
             this.boomerang = boomerang;
-            this.direction = d;
+            this.direction = d ?? throw new ArgumentNullException(nameof(d));
         }
 
         public void Update()
         {
 
-            if (direction.Equals("Down"))
+            if (direction.Equals("Down", StringComparison.Ordinal))
             {
                 if (boom == 0)
                 {
@@ -141,7 +141,7 @@ namespace Sprint2
 
                 }
             }
-            else if (direction.Equals("Up"))
+            else if (direction.Equals("Up", StringComparison.Ordinal))
             {
                 if (boom == 0)
                 {
@@ -250,7 +250,7 @@ namespace Sprint2
 
                 }
             }
-            else if (direction.Equals("Right"))
+            else if (direction.Equals("Right", StringComparison.Ordinal))
             {
                 if (boom == 0) //5
                 {
@@ -359,7 +359,7 @@ namespace Sprint2
 
                 }
             }
-            else if (direction.Equals("Left"))
+            else if (direction.Equals("Left", StringComparison.Ordinal))
             {
                 if (boom == 0)
                 {
