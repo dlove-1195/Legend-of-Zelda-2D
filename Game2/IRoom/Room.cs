@@ -225,8 +225,6 @@ namespace Sprint2
                 LetterGenerator.drawSentence(spriteBatch, "BOOMERANG AND BOW   FIVE DIAMONDS", new Vector2(100, 350), new Vector2(19, 19));
                 LetterGenerator.drawSentence(spriteBatch, "CANDLE              TEN DIAMONDS", new Vector2(100, 380), new Vector2(19, 19));
             }
-
-          
             foreach (LockedDoor doorX in lockedDoor)
             {
                 if (doorX != null)
@@ -234,19 +232,21 @@ namespace Sprint2
                     doorX.Draw(spriteBatch);
                 }
             }
-            foreach (IEnemy enemy in enemies)
-            {
-                if (enemy != null)
-                    enemy.Draw(spriteBatch);
-
-
-            }
             foreach (IItem item in pickUpItems)
             {
                 if (item != null)
                     item.Draw(spriteBatch);
 
             }
+
+            foreach (IEnemy enemy in enemies)
+            {
+                if (enemy != null)
+                    enemy.Draw(spriteBatch);
+
+
+            } 
+           
             foreach (INpc npc in npcs)
             {
                 npc.Draw(spriteBatch);
