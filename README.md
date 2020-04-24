@@ -20,6 +20,8 @@
 * Condense sprite classes.
 * Seperate all the draw methods from inventory class into a separate class.
 
+## How to play 
+
 #### There are five Game States includs Start State, Play State, Pause State, Lose State and Win State. The state will be alternated among all five based on Link's behavior. In the Play State, Link has initial 12 blood drops once the game is began. Each room has been designed differenly with various enemies which cause Link to drop his blood variously. Link's position is shown on both the inventory bar and the inventory room through the game. And the whole map and TriForce Piece's location will appear only by picking up the corrsponding item. Link can pick up items where each of them has its unique functionality as listed below: 
 * Heart: Link gains one drop of blood. Link can only pick up "Heart" when his blood is less than 12
 * Key: Link can use it to open the door
@@ -28,10 +30,7 @@
 * Compass: Show the location of TriForce Pieces on the map only when item Map is collected
 * Yellow Diamond: Dead enemy will turn into a diamond for Link to collect. Link can use it as money
 * Weapon: Boomerang, Bow, and Candle can be purchased in Merchandise room with corrsponding price which is the number of yellow Diamonds. There is no need to purchase a bow, it can be picked up in any room.
-
-
-## How to play
-
+ 
 #### Start State
 * Press "S" to start a game, switch to the Play State
 * Press "Esc" to quit the game
