@@ -36,14 +36,20 @@
   <Item>
     <ObjectType>Enemy</ObjectType>
     <ObjectName>Rope</ObjectName>
+    <posX>20</posX>
+    <posY>45</posY>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Rope</ObjectName>
     <posX>44</posX>
     <posY>28</posY>
   </Item>
   <Item>
     <ObjectType>Enemy</ObjectType>
     <ObjectName>Rope</ObjectName>
-    <posX>50</posX>
-    <posY>63</posY>
+    <posX>60</posX>
+    <posY>45</posY>
   </Item>
   <Item>
     <ObjectType>Enemy</ObjectType>
@@ -53,27 +59,52 @@
   </Item>
   <Item>
     <ObjectType>Enemy</ObjectType>
+    <ObjectName>Rope</ObjectName>
+    <posX>35</posX>
+    <posY>30</posY>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
     <ObjectName>Stalfos</ObjectName>
-    <posX>75</posX>
+    <posX>56</posX>
+    <posY>23</posY>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Stalfos</ObjectName>
+    <posX>78</posX>
+    <posY>63</posY>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Stalfos</ObjectName>
+    <posX>30</posX>
+    <posY>70</posY>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Rope</ObjectName>
+    <posX>40</posX>
     <posY>63</posY>
   </Item>
   <!--  enemy  -->
   <!--  item  -->
   <Item>
     <ObjectType>Item</ObjectType>
-    <ObjectName>Compass</ObjectName>
+    <ObjectName>BluePotion</ObjectName>
     <posX>16</posX>
     <posY>69</posY>
   </Item>
   <Item>
     <ObjectType>Item</ObjectType>
-    <ObjectName>Map</ObjectName>
+    <ObjectName>Heart</ObjectName>
     <posX>77</posX>
     <posY>22</posY>
   </Item>
+  <!--NPC-->
   <Item>
-    <ObjectType>Item</ObjectType>
-    <ObjectName>TriforcePiece</ObjectName>
+    <ObjectType>NPC</ObjectType>
+    <ObjectName>Princess</ObjectName>
     <posX>48</posX>
     <posY>46</posY>
   </Item>
