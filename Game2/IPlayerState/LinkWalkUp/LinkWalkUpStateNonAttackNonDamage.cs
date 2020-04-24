@@ -15,7 +15,7 @@ private Texture2D texture = Texture2DStorage.GetLinkSpriteSheet();
         public LinkWalkUpNonAttackNonDamageState(Link link )
         {
             linkPlayer = link;
-            link.linkSprite = new LinkWalk(texture, "Up");
+            link.linkSprite = LinkSpriteFactory.Instance.CreateLinkWalkSprite("Up", false);
             linkPlayer.ChangeDirection(0);
         }
     

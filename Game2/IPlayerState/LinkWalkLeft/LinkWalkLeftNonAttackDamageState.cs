@@ -16,7 +16,7 @@ namespace Sprint2
         {
             linkPlayer = link;
 
-            linkPlayer.linkSprite = new LinkDamageWalk(texture, "Left");
+            linkPlayer.linkSprite = LinkSpriteFactory.Instance.CreateLinkWalkSprite("Left", true);
             link.ChangeDirection(2);
             Link.ifDamage = true;
             

@@ -251,8 +251,7 @@ namespace Sprint2
 
         public void Draw(SpriteBatch spriteBatch, Vector2 vector)
         {
-            if (direction.Equals("Down"))
-            {
+   
                 if (spriteBatch == null)
                 {
                     throw new ArgumentNullException(nameof(spriteBatch));
@@ -266,43 +265,7 @@ namespace Sprint2
                     spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
 
                 }
-            }
-            else if (direction.Equals("Left"))
-            {
-                if (spriteBatch == null)
-                {
-                    throw new ArgumentNullException(nameof(spriteBatch));
-                }
-                Rectangle sourceRectangle = new Rectangle(posX, posY, width, height);     // determine which frame
-                Rectangle destinationRectangle = new Rectangle((int)vector.X, (int)vector.Y, width * 3, height * 3);    // determine location and demension of the current frame
-
-
-                spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-            }
-            else if (direction.Equals("Right"))
-            {
-                if (spriteBatch == null)
-                {
-                    throw new ArgumentNullException(nameof(spriteBatch));
-                }
-                Rectangle sourceRectangle = new Rectangle(posX, posY, width, height);     // determine which frame
-                Rectangle destinationRectangle = new Rectangle((int)vector.X, (int)vector.Y, width * 3, height * 3);    // determine location and demension of the current frame
-
-
-                spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-            }
-            else if (direction.Equals("Up")) {
-                if (spriteBatch == null)
-                {
-                    throw new ArgumentNullException(nameof(spriteBatch));
-                }
-                Rectangle sourceRectangle = new Rectangle(posX, posY, width, height);     // determine which frame
-                Rectangle destinationRectangle = new Rectangle((int)vector.X, (int)vector.Y, width * 3, height * 3);    // determine location and demension of the current frame
-
-
-                spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-            }
-            
+          
         }
 
     }

@@ -12,7 +12,6 @@ namespace Sprint2
     {
         private Link link;
          
-        private Texture2D texture = Texture2DStorage.GetLinkSpriteSheet() ; 
         public LinkStandLeftNonAttackNonDamageState(Link link)
         {
             if (link == null)
@@ -20,7 +19,7 @@ namespace Sprint2
                 throw new ArgumentNullException(nameof(link));
             }
             this.link = link;
-            link.linkSprite = new LinkStand(texture,"Left");
+            link.linkSprite = LinkSpriteFactory.Instance.CreateLinkStandSprite("Left", false);
             this.link.ChangeDirection(2);
 
         }

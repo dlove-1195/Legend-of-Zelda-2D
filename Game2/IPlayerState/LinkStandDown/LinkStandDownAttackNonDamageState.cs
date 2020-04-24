@@ -11,14 +11,13 @@ namespace Sprint2 {
    public  class LinkStandDownAttackNonDamageState: IPlayerstate
     {
         private Link link;
-        private Texture2D texture = Texture2DStorage.GetLinkSpriteSheet();
         public LinkStandDownAttackNonDamageState(Link link)
         {
             if (link == null)
             {
                 throw new ArgumentNullException(nameof(link));
             }
-            link.linkSprite = new LinkAttack(texture,"Down");
+            link.linkSprite = LinkSpriteFactory.Instance.CreateLinkAttackSprite("Down", false);
             this.link = link;
             this.link.ChangeDirection(1);
             link.simpleAttackBox = new Rectangle(Link.posX+10, Link.posY + 45, 25,  45);

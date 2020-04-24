@@ -211,8 +211,7 @@ namespace Sprint2
 
         public void Draw(SpriteBatch spriteBatch, Vector2 location)
         {
-            if (direction.Equals("Down"))
-            {
+            
                 if (spriteBatch == null)
                 {
                     throw new ArgumentNullException(nameof(spriteBatch));
@@ -221,39 +220,6 @@ namespace Sprint2
                 Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width * 3, height * 3);
 
                 spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-            }
-            else if (direction.Equals("Left"))
-            {
-                if (spriteBatch == null)
-                {
-                    throw new ArgumentNullException(nameof(spriteBatch));
-                }
-                Rectangle sourceRectangle = new Rectangle(sourceLocX, sourceLocY, width, height);
-                Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width * 3, height * 3);
-
-                spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-            }
-            else if (direction.Equals("Right"))
-            {
-                if (spriteBatch == null)
-                {
-                    throw new ArgumentNullException(nameof(spriteBatch));
-                }
-                Rectangle sourceRectangle = new Rectangle(sourceLocX, sourceLocY, width, height);
-                Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width * 3, height * 3);
-
-                spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-            }
-            else if (direction.Equals("Up")) {
-                if (spriteBatch == null)
-                {
-                    throw new ArgumentNullException(nameof(spriteBatch));
-                }
-                Rectangle sourceRectangle = new Rectangle(sourceLocX, sourceLocY, width, height);
-                Rectangle destinationRectangle = new Rectangle((int)location.X, (int)location.Y, width * 3, height * 3);
-
-                spriteBatch.Draw(Texture, destinationRectangle, sourceRectangle, Color.White);
-            }
 
         }
     }

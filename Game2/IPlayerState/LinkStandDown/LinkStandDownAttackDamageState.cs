@@ -18,7 +18,7 @@ namespace Sprint2
             {
                 throw new ArgumentNullException(nameof(link));
             }
-            link.linkSprite = new LinkDamageAttack(texture, "Down");
+            link.linkSprite = LinkSpriteFactory.Instance.CreateLinkAttackSprite("Down", true);
             this.link = link;
             Link.ifDamage = true;
              
