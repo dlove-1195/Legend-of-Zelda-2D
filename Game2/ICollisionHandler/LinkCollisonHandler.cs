@@ -184,16 +184,28 @@ namespace Sprint2
              
             if(direction == "Up")
             {
-                room.pickUpItems[itemNum].PosY--;
+                if (room.pickUpItems[itemNum].PosY > room.roomPos.Y)
+                {
+                    room.pickUpItems[itemNum].PosY--;
+                }
             }else if(direction == "Down")
             {
-                room.pickUpItems[itemNum].PosY++;
+                if (room.pickUpItems[itemNum].PosY < room.roomPos.Y + (int)(600 * 0.55))
+                {
+                    room.pickUpItems[itemNum].PosY++;
+                }
             }else if (direction =="Left")
             {
-                room.pickUpItems[itemNum].PosX++;
+                if (room.pickUpItems[itemNum].PosX < room.roomPos.X + (int)(800 * 0.68))
+                {
+                    room.pickUpItems[itemNum].PosX++;
+                }
             }else if (direction == "Right")
             {
-                room.pickUpItems[itemNum].PosX--;
+                if (room.pickUpItems[itemNum].PosX > room.roomPos.X )
+                {
+                    room.pickUpItems[itemNum].PosX--;
+                }
             }
 
         }

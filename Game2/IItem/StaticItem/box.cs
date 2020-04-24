@@ -19,7 +19,7 @@ namespace Sprint2
         private int height=80;
 
         private int desWidth=52;
-        private int desHeight=52;
+        private int desHeight=53;
       
         public int PosX { get; set; }
         public int PosY { get; set; } 

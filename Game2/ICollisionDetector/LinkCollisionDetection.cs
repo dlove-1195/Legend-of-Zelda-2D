@@ -241,8 +241,8 @@ namespace Sprint2
                             linkHandler.HandleLinkWallHoleCollision(i, direction);
                         }else if (item[i] is Box)
                         {
-                             
-                            linkHandler.HandleLinkBoxCollision(i,direction);
+                            linkHandler.HandleLinkBoxCollision(i, direction);
+                            
                         }
                         else
                         {
