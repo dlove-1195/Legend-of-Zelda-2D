@@ -1,4 +1,6 @@
-﻿ 
+﻿
+
+using System.Collections.Generic;
 
 namespace Sprint2
 {
@@ -12,6 +14,7 @@ namespace Sprint2
 
         public void Execute()
         {
+            Room.DoorOpen= new List<int>();
             myGame.playState = null;
             myGame.gameState = new StartState(myGame);
         }
