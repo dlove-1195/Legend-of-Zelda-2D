@@ -224,7 +224,7 @@ namespace Sprint2
             if(roomNumber == 5)
             {
                 Rectangle sourceRectangle = new Rectangle(1163,734, 80, 80);
-                Rectangle destinationRectangle = new Rectangle(150, 425, 48, 48);
+                Rectangle destinationRectangle = new Rectangle(149, 419, 51, 55);
                 spriteBatch.Draw(Texture2DStorage.GetBlockSpriteSheet(), destinationRectangle, sourceRectangle, Color.White);
             }
 
