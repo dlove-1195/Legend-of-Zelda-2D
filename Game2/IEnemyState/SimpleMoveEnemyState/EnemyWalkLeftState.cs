@@ -7,9 +7,6 @@ namespace Sprint2
     {
         private int number; 
         private IEnemy  enemy;
-       //private Texture2D texture1 = Texture2DStorage.GetEnemySpriteSheet();
-        private Texture2D texture2 = Texture2DStorage.GetEnemySpriteSheet2();
-        private Texture2D texture3 = Texture2DStorage.GetEnemySpriteSheet3();
         public EnemyWalkLeftState(IEnemy enemy, int number)
         {
             if (enemy == null)
@@ -22,20 +19,20 @@ namespace Sprint2
             {
                 case 0:
 
-                    enemy.ChangeSprite(new BatSprite(texture3, "Left",enemy));
+                    enemy.ChangeSprite(EnemySpriteFactory.Instance.CreateBatSprite("Left", enemy));
                     break;
                 case 1:
-                    enemy.ChangeSprite(new StalfoSprite(texture3, "Left",enemy));
+                    enemy.ChangeSprite(EnemySpriteFactory.Instance.CreateStalfoSprite("Left", enemy));
                     break;
                 case 2:
 
-                    enemy.ChangeSprite(new RedGoriyaSprite(texture3, "Left",enemy));
+                    enemy.ChangeSprite(EnemySpriteFactory.Instance.CreateRedGoriyaSprite("Left", enemy));
                     break;
                 case 3:
-                    enemy.ChangeSprite(new ZolSprite(texture3, "Left",enemy));
+                    enemy.ChangeSprite(EnemySpriteFactory.Instance.CreateZolSprite("Left", enemy));
                     break;
                 case 4:
-                    enemy.ChangeSprite(new RopeSprite(texture2, "Left",enemy));
+                    enemy.ChangeSprite(EnemySpriteFactory.Instance.CreateRopeSprite("Left", enemy));
 
                     break;
                 default:

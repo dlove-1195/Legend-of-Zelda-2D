@@ -31,7 +31,7 @@ namespace Sprint2
             posX = (int)vector.X;
             posY = (int)vector.Y;
             initialPos = new Vector2(posX, posY);
-            flameSprite = new FlameSilentBurningSprite(Texture2DStorage.GetEnemySpriteSheet2());
+            flameSprite = EnemySpriteFactory.Instance.CreateFlameSprite();
         }
 
 

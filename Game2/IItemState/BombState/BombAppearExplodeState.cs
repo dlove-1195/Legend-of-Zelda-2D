@@ -10,7 +10,6 @@ namespace Sprint2
     public class BombAppearExplodeState:IItemState
     {
         private Bomb bomb;
-        private Texture2D texture = Texture2DStorage.GetLinkSpriteSheet();
 
         public BombAppearExplodeState(Bomb bomb)
         {
@@ -19,7 +18,7 @@ namespace Sprint2
                 throw new ArgumentNullException(nameof(bomb));
             }
             this.bomb = bomb;
-            bomb.bombSprite = new BombExplodeSprite(texture);
+            bomb.bombSprite = ItemSpriteFactory.Instance.CreateBombSprite(true, false);
         }
       
 

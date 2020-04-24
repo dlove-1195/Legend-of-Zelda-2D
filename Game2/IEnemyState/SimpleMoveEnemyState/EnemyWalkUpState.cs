@@ -7,9 +7,6 @@ namespace Sprint2
     {
         private int number; 
         private IEnemy  enemy;
-       //private Texture2D texture1 = Texture2DStorage.GetEnemySpriteSheet();
-        private Texture2D texture2 = Texture2DStorage.GetEnemySpriteSheet2();
-        private Texture2D texture3 = Texture2DStorage.GetEnemySpriteSheet3();
         public EnemyWalkUpState(IEnemy enemy, int number)
         {
             if (enemy == null)
@@ -24,20 +21,20 @@ namespace Sprint2
                     // trap maybe 
                     // fix later
                     // enemy.ChangeSprite(new BatSprite(texture1, "Up"));
-                    enemy.ChangeSprite(new BatSprite(texture3, "Up",enemy));
+                    enemy.ChangeSprite(EnemySpriteFactory.Instance.CreateBatSprite("Up", enemy));
                      break;
                 case 1:
-                    enemy.ChangeSprite(new StalfoSprite(texture3, "Up",enemy));
+                    enemy.ChangeSprite(EnemySpriteFactory.Instance.CreateStalfoSprite("Up", enemy));
                     break;
                 case 2:
 
-                  enemy.ChangeSprite(new RedGoriyaSprite(texture3, "Up",enemy));
+                  enemy.ChangeSprite(EnemySpriteFactory.Instance.CreateRedGoriyaSprite("Up", enemy));
                   break;
                 case 3:
-                    enemy.ChangeSprite(new ZolSprite(texture3, "Up",enemy));
+                    enemy.ChangeSprite(EnemySpriteFactory.Instance.CreateZolSprite("Up", enemy));
                     break;
                 case 4:
-                    enemy.ChangeSprite(new RopeSprite(texture2, "Up",enemy));
+                    enemy.ChangeSprite(EnemySpriteFactory.Instance.CreateRopeSprite("Up", enemy));
 
                     break;
                 default:

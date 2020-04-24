@@ -152,7 +152,7 @@ namespace Sprint2
                 {
                     int distanceX = Math.Abs(Link.posX - posX);
                     int distanceY = Math.Abs(Link.posY - posY);
-                    if (distanceX < 100 && distanceY < 100)
+                    if (distanceX < 150 && distanceY < 150)
                     {
                         show = true;
                     }

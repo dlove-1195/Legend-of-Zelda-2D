@@ -10,7 +10,7 @@ namespace Sprint2
     public class GreenDragonWalkRightState : IEnemyState
     {
         private GreenDragon greenDragon;
-        private Texture2D texture = Texture2DStorage.GetEnemySpriteSheet();
+ 
         public GreenDragonWalkRightState(GreenDragon dragon)
         {
             if (dragon == null)
@@ -18,7 +18,7 @@ namespace Sprint2
                 throw new ArgumentNullException(nameof(dragon));
             }
             this.greenDragon = dragon;
-            greenDragon.GreenDragonSprite = new GreenDragonWalkRightSprite(texture, greenDragon);
+            greenDragon.GreenDragonSprite = EnemySpriteFactory.Instance.CreateGreenDragonSprite("Right", greenDragon, false);
             greenDragon.fire = new FireSpreadMiddle(greenDragon.posX - 30, greenDragon.posY + 30, 2);
             greenDragon.fireSpreadDown = new FireSpreadDown(greenDragon.posX - 30, greenDragon.posY + 40, 2);
             greenDragon.fireSpreadUp = new FireSpreadUp(greenDragon.posX - 30, greenDragon.posY + 10, 2);

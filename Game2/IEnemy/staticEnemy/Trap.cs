@@ -33,7 +33,7 @@ namespace Sprint2
             posX = (int)vector.X;
             posY = (int)vector.Y;
             initialPos = new Vector2(posX, posY);
-            trapSprite = new TrapSprite(Texture2DStorage.GetEnemySpriteSheet2(), this);
+            trapSprite = EnemySpriteFactory.Instance.CreateTrapSprite(this);
         }
 
 
