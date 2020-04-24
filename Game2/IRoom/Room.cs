@@ -11,8 +11,8 @@ namespace Sprint2
     public class Room : IRoom
     {
         private CultureInfo culture;
-        private String type;
-        private String name;
+        private string type;
+        private string name;
         private XmlNodeList nodeList;
         private XmlDocument doc;
         private int x;
@@ -146,6 +146,7 @@ namespace Sprint2
                 else if (type == "Block")
                 {
                     blockLocation.Add(new KeyValuePair<int, int>((int)vector.X, (int)vector.Y));
+                    
                 }
                 else if (type == "Door")
                 {
@@ -226,7 +227,6 @@ namespace Sprint2
                 LetterGenerator.drawSentence(spriteBatch, "CANDLE              TEN DIAMONDS", new Vector2(100, 380), new Vector2(19, 19));
             }
 
-          
             foreach (LockedDoor doorX in lockedDoor)
             {
                 if (doorX != null)
