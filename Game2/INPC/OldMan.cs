@@ -48,8 +48,9 @@ namespace Sprint2
             }
             else {
                 OldManSprite.Draw(spriteBatch, new Vector2(posX, posY));
-                LetterGenerator.drawSentence(spriteBatch, "GO SAVE THE PRINCESS", new Vector2(posX - 250, posY - 94), new Vector2(19, 19));
-                LetterGenerator.drawSentence(spriteBatch, "YOUR JOURNEY BEGIN", new Vector2(posX - 200, posY - 72), new Vector2(19, 19));
+                LetterGenerator.drawSentence(spriteBatch, "PRINCESS IS TAKEN", new Vector2(posX - 200, posY - 90), new Vector2(19, 19));
+                LetterGenerator.drawSentence(spriteBatch, "GO AND SAVE HER", new Vector2(posX - 200, posY - 70), new Vector2(19, 19));
+                LetterGenerator.drawSentence(spriteBatch, "YOUR JOURNEY BEGINS HERE", new Vector2(posX - 200, posY - 50), new Vector2(19, 19));
             }
         }
         public void Talk() {
