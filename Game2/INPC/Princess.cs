@@ -38,7 +38,7 @@ namespace Sprint2
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            if (ifTalk == true)
+            if (ifTalk != true)
             {
                 PrincessSprite.Draw(spriteBatch, new Vector2(posX, posY));
             }
