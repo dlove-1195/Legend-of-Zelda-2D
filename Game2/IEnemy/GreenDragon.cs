@@ -140,7 +140,7 @@ namespace Sprint2
                     updateDelay = 0;
                  
                     var rnd = new Random((int)Stopwatch.GetTimestamp());
-                    int randomNumber = rnd.Next(0, 1); 
+                    int randomNumber = rnd.Next(0, 2); 
                     switch (randomNumber)
                     { 
                         case 0:
@@ -149,6 +149,10 @@ namespace Sprint2
                         case 1:
                             this.ChangeToRight();
                             break;
+                        case 2:
+                            this.ChangeToRight();
+                            break;
+                       
 
                         default:
 #pragma warning disable CA1303 // Do not pass literals as localized parameters
