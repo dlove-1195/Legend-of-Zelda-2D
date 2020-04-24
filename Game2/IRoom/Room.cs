@@ -152,7 +152,7 @@ namespace Sprint2
                 {
                     doorDirection.Add(name); //door direction stores in name
                 }
-                else if (type == "Wall")
+                else if (type == "Wall" || type =="SmallBox")
                 {
                     objects.loadObject(this, type, name, vector);
                 }

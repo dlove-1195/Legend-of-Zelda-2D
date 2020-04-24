@@ -188,6 +188,10 @@ namespace Sprint2
        public void HandleLinkBoxCollision(int itemNum, string direction)
         {
             StayPosition(direction);
+            if(direction == "Up")
+            {
+                room.pickUpItems[itemNum].PosY--;
+            }
 
         }
 
