@@ -39,7 +39,7 @@ namespace Sprint2
 		{
 			if (ifDamage)
 			{
-				if (direction.Equals("Up") || direction.Equals("Down"))
+				if (direction.Equals("Up", StringComparison.Ordinal) || direction.Equals("Down", StringComparison.Ordinal))
 				{
 					return new ArrowDamageSprite(textureHurtWeapon, arrow, direction);
 				}
@@ -113,7 +113,7 @@ namespace Sprint2
 		{
 			if (ifDamage)
 			{
-				if (direction.Equals("Up") || direction.Equals("Down"))
+				if (direction.Equals("Up", StringComparison.Ordinal) || direction.Equals("Down", StringComparison.Ordinal))
 				{
 					return new WoodSwordDamageSprite(textureHurtWeapon, sword, direction);
 				}
