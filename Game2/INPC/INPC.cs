@@ -18,7 +18,7 @@ namespace Sprint2
 
          void Draw(SpriteBatch spriteBatch);
 
-
+        void Talk();
 
          void previousNPC(Game1 game); //FIX LATER
 

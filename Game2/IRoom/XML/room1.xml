@@ -145,9 +145,8 @@
     <posX>17</posX>
     <posY>47</posY>
   </Item>
-  <!--  item  -->
-  <!--  NPC  -->
-  <!--<Item>
+
+  <Item>
     <ObjectType>NPC</ObjectType>
     <ObjectName>Merchant</ObjectName>
     <posX>32</posX>
@@ -161,12 +160,11 @@
   </Item>
   <Item>
     <ObjectType>NPC</ObjectType>
-    <ObjectName>Princess</ObjectName>
+    <ObjectName>GonePrincess</ObjectName>
     <posX>53</posX>
     <posY>21</posY>
-  </Item> -->
-  <!--  NPC  -->
-  <!--  Block  -->
+  </Item> 
+
   <Item>
     <ObjectType>Block</ObjectType>
     <ObjectName>Block1</ObjectName>

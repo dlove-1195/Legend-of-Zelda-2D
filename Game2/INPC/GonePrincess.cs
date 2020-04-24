@@ -4,7 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Sprint2
 {
-    public class Princess : INpc
+    public class GonePrincess : INpc
     {
 
 
@@ -17,7 +17,7 @@ namespace Sprint2
         private int princessHeight = 26;//sprite height
 
         public Rectangle boundingBox { get; set; }
-        public Princess(Vector2 vector)
+        public GonePrincess(Vector2 vector)
         {
             posX = (int)vector.X;
             posY = (int)vector.Y;
@@ -31,6 +31,7 @@ namespace Sprint2
         public void Update()
         {
             boundingBox = new Rectangle(posX, posY, princessWidth * 3, princessHeight * 3);
+     
             PrincessSprite.Update();
 
 
@@ -41,8 +42,9 @@ namespace Sprint2
             PrincessSprite.Draw(spriteBatch, new Vector2(posX, posY));
         }
 
-        public void Talk() { 
-            
+        public void Talk()
+        {
+
         }
 
         public void previousNPC(Game1 game)

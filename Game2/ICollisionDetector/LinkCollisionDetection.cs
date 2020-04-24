@@ -252,7 +252,7 @@ namespace Sprint2
                 if (!overlapRec.IsEmpty)
                 {
                     String direction = detectCollisionDirection(overlapRec, linkRectangle, singleNpcRec);
-                    linkHandler.HandleLinkNpcCollsion(direction);
+                    linkHandler.HandleLinkNpcCollsion(direction,i);
                 }
 
 

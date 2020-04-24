@@ -16,12 +16,15 @@ namespace Sprint2
         private int oldManWidth = 16;//sprite width
         private int oldManHeight = 16;//sprite height
 
+        private bool ifTalk;
+
         public Rectangle boundingBox { get; set; }
 
         public OldMan(Vector2 vector)
         {
             posX = (int)vector.X;
             posY = (int)vector.Y;
+            ifTalk = false;
             //initial sprite
             OldManSprite = new StaticSprite(texture, 0, 5, 16, 16);
         }
@@ -39,9 +42,18 @@ namespace Sprint2
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            OldManSprite.Draw(spriteBatch, new Vector2(posX, posY));
-        }
+            if (ifTalk != true)
+            {
+                OldManSprite.Draw(spriteBatch, new Vector2(posX, posY));
+            }
+            else {
+                OldManSprite.Draw(spriteBatch, new Vector2(posX, posY));
 
+            }
+        }
+        public void Talk() {
+            ifTalk = true;
+        }
 
         public void previousNPC(Game1 game)
         {

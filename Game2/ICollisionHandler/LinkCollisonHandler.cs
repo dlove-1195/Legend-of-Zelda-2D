@@ -150,32 +150,11 @@ namespace Sprint2
             }
       
     } 
-        public void HandleLinkNpcCollsion(String direction)
+        public void HandleLinkNpcCollsion(String direction,int npcNum)
         {
-            Sound.PlayItemCollision(); 
-            switch (direction)
-            {
-                case "Left":
-                    Link.posX-=2; 
-                    break;
-                case "Right":
-                    Link.posX +=2 ;
-                    break;
-                case "Up":
-                    Link.posY +=2;
-
-                    break;
-                case "Down":
-                    Link.posY -=2;
-                    break;
-
-                default:
-#pragma warning disable CA1303 // Do not pass literals as localized parameters
-                    Console.WriteLine("error: no such situation");
-#pragma warning restore CA1303 // Do not pass literals as localized parameters
-                    break;
-
-            } 
+            Sound.PlayItemCollision();
+            room.npcs[npcNum].Talk();
+            
         }
 
         public void HandleLinkItemCollsion(int itemNum)
