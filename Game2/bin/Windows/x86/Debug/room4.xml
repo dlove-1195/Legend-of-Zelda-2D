@@ -105,12 +105,7 @@
       <posX>35</posX>
       <posY>75</posY>
     </Item>
-    <Item>
-      <ObjectType>Item</ObjectType>
-      <ObjectName>BluePotion</ObjectName>
-      <posX>33</posX>
-      <posY>29</posY>
-    </Item>
+    
     <Item>
       <ObjectType>Door</ObjectType>
       <ObjectName>Down</ObjectName>

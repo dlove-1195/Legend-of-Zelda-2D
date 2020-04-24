@@ -44,37 +44,27 @@
     </Item>
     <Item>
       <ObjectType>Enemy</ObjectType>
-      <ObjectName>Keese</ObjectName>
+      <ObjectName>Zol</ObjectName>
       <posX>20</posX>
       <posY>60</posY>
     </Item>
     <Item>
       <ObjectType>Enemy</ObjectType>
-      <ObjectName>Keese</ObjectName>
+      <ObjectName>Zol</ObjectName>
       <posX>30</posX>
       <posY>70</posY>
     </Item>
     <Item>
       <ObjectType>Enemy</ObjectType>
-      <ObjectName>Keese</ObjectName>
+      <ObjectName>Zol</ObjectName>
       <posX>40</posX>
       <posY>60</posY>
     </Item>
+   
+    
     <Item>
       <ObjectType>Enemy</ObjectType>
-      <ObjectName>Keese</ObjectName>
-      <posX>50</posX>
-      <posY>70</posY>
-    </Item>
-    <Item>
-      <ObjectType>Enemy</ObjectType>
-      <ObjectName>Keese</ObjectName>
-      <posX>60</posX>
-      <posY>60</posY>
-    </Item>
-    <Item>
-      <ObjectType>Enemy</ObjectType>
-      <ObjectName>Keese</ObjectName>
+      <ObjectName>Zol</ObjectName>
       <posX>70</posX>
       <posY>70</posY>
     </Item>
@@ -86,51 +76,52 @@
     </Item>
     <Item>
       <ObjectType>Enemy</ObjectType>
-      <ObjectName>Keese</ObjectName>
+      <ObjectName>Zol</ObjectName>
       <posX>30</posX>
       <posY>55</posY>
     </Item>
     <Item>
       <ObjectType>Enemy</ObjectType>
-      <ObjectName>Keese</ObjectName>
+      <ObjectName>Zol</ObjectName>
       <posX>65</posX>
       <posY>50</posY>
     </Item>
     <Item>
       <ObjectType>Enemy</ObjectType>
-      <ObjectName>Keese</ObjectName>
+      <ObjectName>Zol</ObjectName>
       <posX>30</posX>
       <posY>30</posY>
     </Item>
+   
     <Item>
       <ObjectType>Enemy</ObjectType>
-      <ObjectName>Keese</ObjectName>
-      <posX>20</posX>
-      <posY>40</posY>
-    </Item>
-    <Item>
-      <ObjectType>Enemy</ObjectType>
-      <ObjectName>Keese</ObjectName>
+      <ObjectName>Zol</ObjectName>
       <posX>40</posX>
       <posY>30</posY>
     </Item>
     <Item>
       <ObjectType>Enemy</ObjectType>
-      <ObjectName>Keese</ObjectName>
+      <ObjectName>Zol</ObjectName>
       <posX>50</posX>
       <posY>40</posY>
     </Item>
     <Item>
       <ObjectType>Enemy</ObjectType>
-      <ObjectName>Keese</ObjectName>
+      <ObjectName>Zol</ObjectName>
       <posX>60</posX>
       <posY>30</posY>
     </Item>
     <Item>
       <ObjectType>Enemy</ObjectType>
-      <ObjectName>Keese</ObjectName>
+      <ObjectName>Zol</ObjectName>
       <posX>70</posX>
       <posY>40</posY>
+    </Item>
+    <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>Dragon</ObjectName>
+      <posX>30</posX>
+      <posY>46</posY>
     </Item>
     <Item>
       <ObjectType>Door</ObjectType>
@@ -150,6 +141,12 @@
       <ObjectName>Right</ObjectName>
       <posX>88</posX>
       <posY>46</posY>
+    </Item>
+    <Item>
+      <ObjectType>Item</ObjectType>
+      <ObjectName>Up</ObjectName>
+      <posX>44</posX>
+      <posY>8</posY>
     </Item>
   </Asset>
 </XnaContent>

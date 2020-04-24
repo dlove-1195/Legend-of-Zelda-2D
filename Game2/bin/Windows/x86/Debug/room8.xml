@@ -78,25 +78,25 @@
     <Item>
       <ObjectType>Enemy</ObjectType>
       <ObjectName>WallMaster</ObjectName>
-      <posX>13</posX>
+      <posX>25</posX>
       <posY>35</posY>
     </Item>
     <Item>
       <ObjectType>Enemy</ObjectType>
       <ObjectName>WallMaster</ObjectName>
-      <posX>13</posX>
+      <posX>25</posX>
       <posY>45</posY>
     </Item>
     <Item>
       <ObjectType>Enemy</ObjectType>
       <ObjectName>WallMaster</ObjectName>
-      <posX>13</posX>
+      <posX>25</posX>
       <posY>55</posY>
     </Item>
     <Item>
       <ObjectType>Enemy</ObjectType>
       <ObjectName>WallMaster</ObjectName>
-      <posX>13</posX>
+      <posX>25</posX>
       <posY>65</posY>
     </Item>
     <Item>
@@ -143,5 +143,12 @@
       <posY>30</posY>
     </Item>
     <!--  Wall   -->
+
+    <Item>
+      <ObjectType>Item</ObjectType>
+      <ObjectName>StaticBomb</ObjectName>
+      <posX>59</posX>
+      <posY>55</posY>
+    </Item>
   </Asset>
 </XnaContent>

@@ -72,6 +72,12 @@
     <!--  enemy  -->
     <Item>
       <ObjectType>Enemy</ObjectType>
+      <ObjectName>Dragon</ObjectName>
+      <posX>50</posX>
+      <posY>46</posY>
+    </Item>
+    <Item>
+      <ObjectType>Enemy</ObjectType>
       <ObjectName>Stalfos</ObjectName>
       <posX>60</posX>
       <posY>42</posY>

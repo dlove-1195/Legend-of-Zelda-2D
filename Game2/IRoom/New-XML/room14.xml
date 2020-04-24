@@ -48,13 +48,13 @@
   </Item>
   <Item>
     <ObjectType>Enemy</ObjectType>
-    <ObjectName>Keese</ObjectName>
+    <ObjectName>Stalfos</ObjectName>
     <posX>19</posX>
     <posY>36</posY>
   </Item>
   <Item>
     <ObjectType>Enemy</ObjectType>
-    <ObjectName>Keese</ObjectName>
+    <ObjectName>Stalfos</ObjectName>
     <posX>32</posX>
     <posY>60</posY>
   </Item>
@@ -65,6 +65,12 @@
     <ObjectName>Heart</ObjectName>
     <posX>35</posX>
     <posY>46</posY>
+  </Item>
+  <Item>
+    <ObjectType>Item</ObjectType>
+    <ObjectName>BluePotion</ObjectName>
+    <posX>13</posX>
+    <posY>69</posY>
   </Item>
   <!--  item  -->
   <!--  NPC  -->

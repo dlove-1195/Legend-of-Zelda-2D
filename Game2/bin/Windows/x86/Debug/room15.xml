@@ -23,43 +23,55 @@
   <!--  enemy  -->
   <Item>
     <ObjectType>Enemy</ObjectType>
-    <ObjectName>Zol</ObjectName>
+    <ObjectName>Keese</ObjectName>
     <posX>69</posX>
     <posY>54</posY>
   </Item>
   <Item>
     <ObjectType>Enemy</ObjectType>
-    <ObjectName>Zol</ObjectName>
+    <ObjectName>Keese</ObjectName>
     <posX>27</posX>
     <posY>58</posY>
   </Item>
   <Item>
     <ObjectType>Enemy</ObjectType>
-    <ObjectName>Zol</ObjectName>
+    <ObjectName>Keese</ObjectName>
     <posX>44</posX>
     <posY>63</posY>
   </Item>
   <Item>
     <ObjectType>Enemy</ObjectType>
-    <ObjectName>Zol</ObjectName>
+    <ObjectName>Keese</ObjectName>
     <posX>38</posX>
     <posY>27</posY>
   </Item>
   <Item>
     <ObjectType>Enemy</ObjectType>
-    <ObjectName>Zol</ObjectName>
+    <ObjectName>Keese</ObjectName>
+    <posX>58</posX>
+    <posY>27</posY>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Keese</ObjectName>
+    <posX>48</posX>
+    <posY>54</posY>
+  </Item>
+  <Item>
+    <ObjectType>Enemy</ObjectType>
+    <ObjectName>Keese</ObjectName>
     <posX>75</posX>
     <posY>46</posY>
   </Item>
   <Item>
     <ObjectType>Enemy</ObjectType>
-    <ObjectName>Zol</ObjectName>
+    <ObjectName>Keese</ObjectName>
     <posX>50</posX>
     <posY>36</posY>
   </Item>
   <Item>
     <ObjectType>Enemy</ObjectType>
-    <ObjectName>Zol</ObjectName>
+    <ObjectName>Keese</ObjectName>
     <posX>25</posX>
     <posY>36</posY>
   </Item>
@@ -69,6 +81,12 @@
     <ObjectType>Item</ObjectType>
     <ObjectName>TriforcePiece</ObjectName>
     <posX>66</posX>
+    <posY>47</posY>
+  </Item>
+  <Item>
+    <ObjectType>Item</ObjectType>
+    <ObjectName>Heart</ObjectName>
+    <posX>60</posX>
     <posY>47</posY>
   </Item>
   

@@ -45,15 +45,7 @@ namespace Sprint2
             
         }
 
-        public void previousNPC(Game1 game)
-        {
-
-        }
-        public void nextNPC(Game1 game)
-        {
-
-        }
-
+      
 
 
     }

@@ -47,7 +47,7 @@
     </Item>
     <Item>
       <ObjectType>Item</ObjectType>
-      <ObjectName>Key</ObjectName>
+      <ObjectName>StaticBomb</ObjectName>
       <posX>28</posX>
       <posY>46</posY>
     </Item>
@@ -58,7 +58,7 @@
       <ObjectType>NPC</ObjectType>
       <ObjectName>OldMan</ObjectName>
       <posX>46</posX>
-      <posY>70</posY>
+      <posY>50</posY>
     </Item>
     <Item>
       <ObjectType>NPC</ObjectType>
@@ -105,6 +105,7 @@
   
 
     <!--  LockedDoor  -->
+     
     
   </Asset>
 </XnaContent>

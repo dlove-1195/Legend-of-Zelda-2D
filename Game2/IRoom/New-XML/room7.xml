@@ -36,48 +36,37 @@
     <!--the position would be 125 145-->
     <!-- player -->
     <!--Insert all wanted items here-->>
-    <Item>
-      <ObjectType>NPC</ObjectType>
-      <ObjectName>GonePrincess</ObjectName>
-      <posX>48</posX>
-      <posY>35</posY>
-    </Item>
+     
     <Item>
       <ObjectType>Enemy</ObjectType>
       <ObjectName>Dragon</ObjectName>
       <posX>35</posX>
       <posY>46</posY>
     </Item>
-    <Item>
-      <ObjectType>Enemy</ObjectType>
-      <ObjectName>GreenDragon</ObjectName>
-      <posX>32</posX>
-      <posY>30</posY>
-    </Item>
-    <Item>
-      <ObjectType>Enemy</ObjectType>
-      <ObjectName>GreenDragon</ObjectName>
-      <posX>32</posX>
-      <posY>70</posY>
-    </Item>
+
     <Item>
       <ObjectType>Enemy</ObjectType>
       <ObjectName>Dragon</ObjectName>
-      <posX>65</posX>
-      <posY>46</posY>
+      <posX>46</posX>
+      <posY>21</posY>
     </Item>
+
+    <Item>
+      <ObjectType>Enemy</ObjectType>
+      <ObjectName>Dragon</ObjectName>
+      <posX>46</posX>
+      <posY>60</posY>
+    </Item>
+    
     <Item>
       <ObjectType>Enemy</ObjectType>
       <ObjectName>GreenDragon</ObjectName>
-      <posX>68</posX>
-      <posY>30</posY>
+      <posX>80</posX>
+      <posY>50</posY>
     </Item>
-    <Item>
-      <ObjectType>Enemy</ObjectType>
-      <ObjectName>GreenDragon</ObjectName>
-      <posX>68</posX>
-      <posY>70</posY>
-    </Item>
+     
+   
+    
     <Item>
       <ObjectType>Item</ObjectType>
       <ObjectName>Clock</ObjectName>
@@ -119,6 +108,8 @@
     <posX>44</posX>
     <posY>8</posY>
   </Item>
+
+     
  
   </Asset>
 </XnaContent>

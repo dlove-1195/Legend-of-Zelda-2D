@@ -56,15 +56,7 @@ namespace Sprint2
             ifTalk = true;
         }
 
-        public void previousNPC(Game1 game)
-        {
-
-        }
-        public void nextNPC(Game1 game)
-        {
-
-        }
-
+        
 
 
     }
