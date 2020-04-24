@@ -10,6 +10,7 @@ namespace Sprint2
 {
 	class ItemSpriteFactory
 	{
+		private Texture2D itemArrowSpriteSheet = Texture2DStorage.GetItemSpriteSheet();
 		private Texture2D itemSpriteSheet = Texture2DStorage.GetLinkSpriteSheet();
 		private Texture2D textureHurtWeapon = Texture2DStorage.GetHurtWeaponSpriteSheet();
 		private Texture2D textureFire = Texture2DStorage.GetEnemySpriteSheet2();
@@ -50,7 +51,7 @@ namespace Sprint2
 			}
 			else
 			{
-				return new ArrowSprite(itemSpriteSheet, arrow, direction);
+				return new ArrowSprite(itemArrowSpriteSheet, arrow, direction);
 			}
 		}
 		public ISprite CreateBlueCandleSprite(string direction, IItem candle, bool ifDamage)
