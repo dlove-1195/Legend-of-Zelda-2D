@@ -16,9 +16,9 @@
 
 
 ## Major changes to the structure
-* Create sprite factories. 
-* Condense sprite classes.
-* Seperate all the draw methods from inventory class into a separate class.
+* Sprite Factories
+* Sprite classes condensation
+* Inventory class encapsulation
 
 ## How to play 
 
