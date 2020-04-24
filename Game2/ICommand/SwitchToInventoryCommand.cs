@@ -3,14 +3,16 @@
     public class SwitchToInventoryCommand : ICommand
     {
         private Game1 myGame;
-        public SwitchToInventoryCommand(Game1 game)
+        private PlayState play;
+        public SwitchToInventoryCommand(Game1 game, PlayState play)
         {
             myGame = game;
+            this.play = play;
         }
 
         public void Execute()
         {
-            myGame.gameState = new InventoryScreen(myGame);
+            myGame.gameState = new InventoryScreen(myGame, play);
         }
     }
 }

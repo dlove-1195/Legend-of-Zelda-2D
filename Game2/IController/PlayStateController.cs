@@ -34,8 +34,7 @@ namespace Sprint2
             map.Add(Keys.Right, new ChangeToRightCommand(myPlay)); ;
             map.Add(Keys.Down, new ChangeToDownCommand(myPlay));
 
-            map.Add(Keys.E, new GetDamagedCommand(myPlay));
-
+          
             map.Add(Keys.Z, new AttackCommand(myPlay));
             map.Add(Keys.N, new AttackCommand(myPlay)); 
             map.Add(Keys.D1, new Gear1(myPlay));
@@ -43,8 +42,8 @@ namespace Sprint2
             map.Add(Keys.Q, new  SwitchToStartCommand(myGame));
             map.Add(Keys.Escape, new QuitCommand(myGame));
            
-            map.Add(Keys.P, new SwitchToPauseCommand(myGame)); 
-            map.Add(Keys.I, new SwitchToInventoryCommand(myGame));
+            map.Add(Keys.P, new SwitchToPauseCommand(myGame, myPlay)); 
+            map.Add(Keys.I, new SwitchToInventoryCommand(myGame, myPlay));
         }
         public void Update()
         {

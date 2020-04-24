@@ -22,16 +22,16 @@ namespace Sprint2
         private int width = 140;
         private int height = 70;
         private int change = 0;
-        private Vector2 triLoc = new Vector2(250, -70);
-        private Game1 myGame;
+        private Vector2 triLoc = new Vector2(250, -70); 
+        private PlayState play;
 
         public IInventory inventoryBar { get; set; }
         private IController winStateController;
-        public WinState(Game1 game)
+        public WinState(Game1 game, PlayState paly)
         {
             Sound.PlayWin();
             winStateController = new WinStateController(game);
-            myGame = game;
+            this.play = play;
         }
 
         public void Update()
@@ -42,8 +42,7 @@ namespace Sprint2
                 change++;
             }
             if (change >= 400)
-            {
-                myGame.playState = null;
+            { 
                 if (triLoc.Y < 180 && width < 290 && height < 220)
                 {
                     triLoc.Y++;
@@ -61,6 +60,10 @@ namespace Sprint2
         }
         public void Draw(SpriteBatch spriteBatch)
         {
+            if (change<=400)
+            {
+                 play.Draw(spriteBatch);
+            }
             
             //background
             Rectangle destinationBackRectangle1 = new Rectangle(-400 + change, (int)triLoc.Y, 400, 1000);
@@ -72,18 +75,7 @@ namespace Sprint2
 
 
             if (change >= 400)
-            {
-                /*
-                //Restart button
-                Rectangle sourceButtonRectangle1 = new Rectangle(478, 42, 92, 34);
-                Rectangle destinationButtonRectangle1 = new Rectangle((int)button1Location.X, (int)button1Location.Y, 100, 55);
-                spriteBatch.Draw(ButtonTexture, destinationButtonRectangle1, sourceButtonRectangle1, Color.White);
-
-                //Exit button
-                Rectangle sourceButtonRectangle2 = new Rectangle(477, 263, 92, 34);
-                Rectangle destinationButtonRectangle2 = new Rectangle((int)button2Location.X, (int)button2Location.Y, 100, 55);
-                spriteBatch.Draw(ButtonTexture, destinationButtonRectangle2, sourceButtonRectangle2, Color.White);
-                */
+            { 
 
                 LetterGenerator.drawSentence(spriteBatch, win, winLocation, fontSize);
                 LetterGenerator.drawSentence(spriteBatch, sentence1, sentence1Location, fontSize);

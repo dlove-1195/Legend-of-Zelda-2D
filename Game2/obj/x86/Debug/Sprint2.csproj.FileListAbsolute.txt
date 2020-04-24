@@ -142,7 +142,7 @@ C:\Users\zz\Desktop\new\CSE-3902\Game2\bin\Windows\x86\Debug\SharpDX.XInput.xml
 C:\Users\zz\Desktop\new\CSE-3902\Game2\obj\x86\Debug\Sprint2.csprojAssemblyReference.cache
 C:\Users\zz\Desktop\new\CSE-3902\Game2\obj\x86\Debug\Sprint2.csproj.CopyComplete
 C:\Users\zz\Desktop\new\CSE-3902\Game2\obj\x86\Debug\Game2.exe
-C:\Users\zz\Desktop\new\CSE-3902\Game2\obj\x86\Debug\Game2.pdb 
+C:\Users\zz\Desktop\new\CSE-3902\Game2\obj\x86\Debug\Game2.pdb
 C:\Users\Mingjie\OneDrive\Documents\zelda\Game2\bin\Windows\x86\Debug\Game2.exe
 C:\Users\Mingjie\OneDrive\Documents\zelda\Game2\bin\Windows\x86\Debug\Game2.pdb
 C:\Users\Mingjie\OneDrive\Documents\zelda\Game2\bin\Windows\x86\Debug\Game2.exe.CodeAnalysisLog.xml

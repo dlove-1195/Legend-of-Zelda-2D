@@ -14,8 +14,7 @@ namespace Sprint2
 
         public void Execute()
         {
-            Room.DoorOpen= new List<int>();
-            myGame.playState = null;
+            Room.DoorOpen= new List<int>(); 
             myGame.gameState = new StartState(myGame);
         }
     }

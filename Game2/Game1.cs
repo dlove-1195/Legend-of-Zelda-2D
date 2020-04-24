@@ -13,7 +13,7 @@ namespace Sprint2
         //responsible for start/pause/win/gameOver state
         public IGameState gameState { get; set; }
         //responsible for play state
-        public  PlayState playState { get; set; }
+       // public  PlayState playState { get; set; }
 
 
 
@@ -57,16 +57,8 @@ namespace Sprint2
         }
 
         protected override void Update(GameTime gameTime)
-        { 
-            if(gameState!=null)
-            { 
-                gameState.Update();
-            }
-           else if (playState != null)
-            {
-                playState.Update();
-            }
-             
+        {  
+                gameState.Update(); 
             base.Update(gameTime);
         }
 
@@ -74,17 +66,8 @@ namespace Sprint2
         {
             GraphicsDevice.Clear(Color.Black);
             spriteBatch.Begin();
-            //Draw sequence cannot change for drawing the inventory screen  
-            if (playState != null)
-            {
-                playState.Draw(spriteBatch);
-            }
-            if (gameState != null)
-            {
-                gameState.Draw(spriteBatch);
-            }
             
-          
+            gameState.Draw(spriteBatch); 
             spriteBatch.End();
            
             base.Draw(gameTime);

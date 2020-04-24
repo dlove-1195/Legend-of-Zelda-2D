@@ -11,18 +11,18 @@ namespace Sprint2
         private IInventory inventory;
         private KeyboardState oldState;
         private KeyboardState newState;
-        
-        public InventoryScreenController(Game1 game )
+         
+        public InventoryScreenController(Game1 game, PlayState play )
         {
 #pragma warning disable CA1062 // Validate arguments of public methods
-            this.inventory = game.playState.inventoryBar;
+            this.inventory = play.inventoryBar;
 #pragma warning restore CA1062 // Validate arguments of public methods
 
             myGame = game;
             map = new Dictionary<Keys, ICommand>
             {
                 { Keys.Escape, new QuitCommand(myGame) },
-                { Keys.R, new SwitchToPlayCommand(myGame) },
+                { Keys.R, new SwitchToPlayCommand(myGame,play) },
 
                 { Keys.Up, new UpLineCommand(inventory) },
                 { Keys.Down, new DownLineCommand(inventory) },

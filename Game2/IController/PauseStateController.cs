@@ -11,13 +11,13 @@ namespace Sprint2
         private Dictionary<Keys, ICommand> map;
         
         private Game1 myGame;
-        public PauseStateController(Game1 game )  {
+        public PauseStateController(Game1 game, PlayState play )  {
             
             myGame = game;
             map = new Dictionary<Keys, ICommand>();
 
             map.Add(Keys.Escape, new QuitCommand(myGame));
-            map.Add(Keys.R, new  SwitchToPlayCommand(myGame));
+            map.Add(Keys.R, new  SwitchToPlayCommand(myGame, play));
              
         }
         public void Update()

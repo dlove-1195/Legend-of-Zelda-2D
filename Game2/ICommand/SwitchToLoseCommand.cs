@@ -9,8 +9,7 @@
         }
 
         public void Execute()
-        {
-            myGame.playState = null;
+        { 
             myGame.gameState = new LoseState(myGame);
         }
     }

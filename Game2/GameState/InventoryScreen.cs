@@ -17,14 +17,15 @@ namespace Sprint2
         private Game1 game;
 #pragma warning restore IDE0052 // Remove unread private members
 #pragma warning restore IDE0044 // Add readonly modifier
+        private PlayState play;
 
-
-        public InventoryScreen(Game1 game) {
+        public InventoryScreen(Game1 game, PlayState play) {
             this.game = game;
 #pragma warning disable CA1062 // Validate arguments of public methods
-            inventory = game.playState.inventoryBar;
+            this.play = play;
+            inventory = play.inventoryBar;
 #pragma warning restore CA1062 // Validate arguments of public methods
-            inventoryStateController = new InventoryScreenController(game);
+            inventoryStateController = new InventoryScreenController(game, play);
         }
         public void Update() {
            // inventoryStateController = new InventoryStateController(game, this);

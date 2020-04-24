@@ -3,15 +3,16 @@
     public class SwitchToWinCommand : ICommand
     {
         private Game1 myGame;
-        public SwitchToWinCommand(Game1 game)
+        private PlayState play;
+        public SwitchToWinCommand(Game1 game, PlayState play)
         {
             myGame = game;
+            this.play = play;
         }
 
         public void Execute()
-        {
-            //myGame.playState = null;
-            myGame.gameState = new WinState(myGame);
+        { 
+            myGame.gameState = new WinState(myGame,play);
         }
     }
 }

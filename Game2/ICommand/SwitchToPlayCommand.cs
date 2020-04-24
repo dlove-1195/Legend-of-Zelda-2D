@@ -5,24 +5,28 @@ namespace Sprint2
     public class SwitchToPlayCommand : ICommand
     {
         private Game1 myGame;
-        public SwitchToPlayCommand(Game1 game)
+        private IGameState play;
+        public SwitchToPlayCommand(Game1 game, PlayState play)
+        {
+            myGame = game;
+            this.play = play;
+        }
+        public SwitchToPlayCommand(Game1 game )
         {
             myGame = game;
         }
 
         public void Execute()
         {
-           
-            if (myGame.playState != null  )
+            if (play != null)
             {
-                myGame.gameState = null;
+                myGame.gameState = play;
             }
             else
             {
-                myGame.playState = new PlayState(myGame);
-                myGame.gameState = null;
+                myGame.gameState = new PlayState(myGame);
             }
-          
+                
         }
     }
 }

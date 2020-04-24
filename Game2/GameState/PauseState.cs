@@ -21,10 +21,11 @@ namespace Sprint2
         Texture2D whiteRectangle;
 
         private IController pauseStateController;
-        public PauseState(Game1 game)
+        private IGameState play;
+        public PauseState(Game1 game, PlayState play)
         {
-           
-            pauseStateController = new PauseStateController(game );
+            this.play = play;
+            pauseStateController = new PauseStateController(game,play );
         }
 
         public void Update()
@@ -33,6 +34,7 @@ namespace Sprint2
         }
         public void Draw(SpriteBatch spriteBatch)
         {
+            play.Draw(spriteBatch);
             // draw black rectangle
 #pragma warning disable CA1062 // Validate arguments of public methods
             whiteRectangle = new Texture2D(spriteBatch.GraphicsDevice, 1, 1);

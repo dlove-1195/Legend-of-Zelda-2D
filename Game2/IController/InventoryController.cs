@@ -14,22 +14,23 @@ namespace Sprint2
         private Game1 myGame;
 
         private ICommand command;
-        public InventoryController(Game1 game )
+        private PlayState play;
+        public InventoryController(Game1 game, PlayState play )
         {
+            this.play = play;
             myGame = game;
             
         }
         public void Update()
-        {    if (myGame.playState != null)
-            {
-                IInventory inventory = myGame.playState.inventoryBar;
+        {    
+                IInventory inventory = play.inventoryBar;
                 InventoryDetector(inventory);
 
                 if (command != null)
                 {
                     command.Execute();
                 }
-            }
+            
 
         }
 
@@ -44,7 +45,7 @@ namespace Sprint2
             }
             else if (inventory.triPieceNum >= 3)
             {
-                command = new SwitchToWinCommand(myGame);
+                command = new SwitchToWinCommand(myGame, play);
             }
         }
     }

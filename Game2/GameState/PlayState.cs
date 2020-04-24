@@ -1,8 +1,7 @@
 ﻿using Microsoft.Xna.Framework.Graphics; 
 using Microsoft.Xna.Framework;
 
-//please add inventoryBar.heartNum--; and inventoryBar.itemList.add("item-name"); in link collision handler
-//set itemB using inventoryBar object by inventoryBar.itemB = "string"
+ 
 namespace Sprint2
 {
     public class PlayState : IGameState
@@ -43,7 +42,7 @@ namespace Sprint2
             enemyDetection = new EnemyCollisionDetection(level); 
             Sound.PlayRoom();
             playStateController = new PlayStateController(game, this);
-            inventoryController = new InventoryController(game);
+            inventoryController = new InventoryController(game, this);
             //initialize the inventory here for the first time 
 
             inventoryBar = new Inventory(this);
